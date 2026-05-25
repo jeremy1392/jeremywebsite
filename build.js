@@ -13,7 +13,7 @@
 
 const fs = require('fs');
 
-const BASE_URL  = 'https://jeremycanale.com';
+const BASE_URL  = 'https://www.jeremycanale.com';
 const SOURCE    = 'index.html';
 const LOCALES   = [
   { lang: 'fr', file: 'fr.html', dir: 'ltr' },
