@@ -1,0 +1,743 @@
+{
+  "azure-ai-foundry": {
+    "category": "智能体 AI 平台",
+    "subtitle": "在 Azure 上构建并治理智能体 AI，面向受监管企业开箱即用。",
+    "what": "Microsoft 在 Azure 上构建、评估、治理并运营生成式 AI 应用与智能体的统一平台。Azure AI Foundry 整合了模型目录、智能体编排、内容安全、Prompt Shields、评估能力以及将 AI 智能体投放至受监管企业环境所需的安全原语。",
+    "why": [
+      "覆盖 Azure 租户内所有 AI 工作负载的统一控制面",
+      "与 Microsoft Entra、Defender for Cloud 和 Sentinel 原生集成",
+      "内置内容安全、Prompt Shield 与基于事实性的评估",
+      "对齐 EU AI Act、NIST AI RMF 与 ISO/IEC 42001 等监管要求",
+      "将 AI 智能体的投产周期从数月压缩至数周"
+    ],
+    "how": "我端到端主导 Azure AI Foundry 落地：着陆区设计、基于 Microsoft Entra 的身份模型、智能体护栏与内容安全策略集、Prompt 防护、可观测性、威胁建模，以及通过 Defender for Cloud 基线所需的安全评审。同时为内部团队提供安全运营模式的辅导。",
+    "deliverables": [
+      "参考架构与着陆区蓝图",
+      "基于 Microsoft Entra 的身份与权限模型",
+      "智能体护栏与内容安全策略集",
+      "智能体生态的威胁模型",
+      "运营模式、操作手册与值班 playbook",
+      "对齐内部合规框架的安全评审包"
+    ]
+  },
+  "langgraph": {
+    "category": "有状态智能体编排",
+    "subtitle": "面向有状态、多角色智能体工作流的图式运行时。",
+    "what": "LangGraph 是以图形方式构建有状态、多角色智能体工作流的开源框架。每个节点是一次 LLM 调用或工具调用，边表示控制流，运行时跨轮次持久化状态。当智能体需要多步推理、按输出分支以及在人机协同检查点之后恢复执行时，LangGraph 是自然之选。",
+    "why": [
+      "原生支持有状态、长时运行的智能体工作流",
+      "内置人机协同检查点与审批关卡",
+      "支持时间回溯调试与图回放，便于审计",
+      "通过 LangSmith 与 Langfuse 实现一流的可观测性",
+      "贴近生产：流式、重试、持久化、子图皆备"
+    ],
+    "how": "我从第一个节点起就把安全融入 LangGraph 工作流设计：限定范围的工具授权、子图隔离、可审计的确定性检查点，以及在边转换处强制执行的策略护栏。我同时强化持久化层与可观测性管道。",
+    "deliverables": [
+      "带安全护栏的 LangGraph 参考工作流",
+      "工具授权模型与策略引擎集成",
+      "带审计轨迹的持久化与回放设计",
+      "可观测性集成（Langfuse、LangSmith）",
+      "针对工具链滥用与提示注入的红队报告"
+    ]
+  },
+  "langchain": {
+    "category": "LLM 应用框架",
+    "subtitle": "全球部署最广的 LLM 应用编排开源框架。",
+    "what": "LangChain 提供链、智能体、工具调用、检索与记忆等原语，覆盖主流模型供应商与向量库的适配器。它能显著缩短原型周期，但走向生产需要在工具授权、可观测性与评估等方面进行系统化加固。",
+    "why": [
+      "拥有最大的模型、工具与向量库集成生态",
+      "可快速搭建检索、智能体与工具调用原型",
+      "具备生产原语：流式、追踪、批处理、异步",
+      "向 LangGraph 平滑迁移，支撑有状态工作流",
+      "社区庞大，模式文档完善"
+    ],
+    "how": "我审查既有 LangChain 部署的安全短板，将检索与智能体组件迁移至加固后的参考架构，并以策略感知的工具层取代零散集成。我帮助团队从原型走向具备完备可观测性与评估能力的生产级管道。",
+    "deliverables": [
+      "现有 LangChain 代码的安全审计",
+      "链、智能体与检索的加固参考实现",
+      "工具授权封装与策略执行",
+      "评估流水线（Langfuse 搭配 Promptfoo 或 DeepEval）",
+      "生产部署操作手册"
+    ]
+  },
+  "mcp": {
+    "category": "开放式智能体集成标准",
+    "subtitle": "智能体时代的连接器标准，让每次工具调用都安全可控。",
+    "what": "Model Context Protocol 是新兴的开放标准，让自治智能体通过统一接口发现并调用外部工具、数据源与 prompt 服务。MCP 将智能体代码与工具代码解耦，同一套工具可被 Claude Desktop、Cursor、ChatGPT、n8n 以及任何兼容客户端调用。",
+    "why": [
+      "为智能体所需的全部工具提供统一接入面",
+      "将智能体运行时与工具实现解耦",
+      "在主流助手客户端中开箱可用",
+      "支撑联邦化、跨组织的工具生态",
+      "工具调用天生可审计、可限定范围、可回退"
+    ],
+    "how": "我以安全为首要原则设计 MCP 服务器：按工具粒度的授权、传输加固（mTLS、签名令牌）、结构化审计、限流以及沙箱执行。我也帮助团队为其用例与助手客户端选择合适的 MCP 集成模式。",
+    "deliverables": [
+      "MCP 服务器参考实现",
+      "工具授权与范围模型",
+      "传输加固与密钥管理方案",
+      "审计日志 schema 与 SIEM 集成",
+      "覆盖主流 MCP 客户端的兼容性矩阵"
+    ]
+  },
+  "nvidia-nemo": {
+    "category": "生成式 AI 全栈",
+    "subtitle": "NVIDIA 的自有生成式 AI 全栈，内置安全护栏。",
+    "what": "NVIDIA NeMo 是用于构建与定制生成式 AI 模型的全栈，涵盖基础模型训练、微调、检索以及用于安全治理的 NeMo Guardrails。当企业希望在自有边界与加速基础设施内部署并改造模型时，NeMo 是自然之选。",
+    "why": [
+      "从数据治理到部署的端到端全栈",
+      "原生 NeMo Guardrails，覆盖输入、输出与话题安全",
+      "针对 NVIDIA GPU 与加速基础设施做了深度优化",
+      "适配本地化部署与主权云",
+      "可与 Triton 集成，实现高吞吐推理"
+    ],
+    "how": "我帮助团队部署 NeMo 以承载自有生成式 AI 工作负载，配置 NeMo Guardrails 强制执行安全策略，集成 Triton 完成服务化，并通过受监管行业所需的安全与合规评审。",
+    "deliverables": [
+      "NeMo 部署架构",
+      "NeMo Guardrails 策略集",
+      "面向服务化的 Triton 集成方案",
+      "威胁模型与红队报告",
+      "运维手册与监控方案"
+    ]
+  },
+  "nvidia-triton": {
+    "category": "高性能模型服务化",
+    "subtitle": "多框架、多设备的生产级推理服务。",
+    "what": "NVIDIA Triton 是面向各类模型框架的高性能推理服务，支持 PyTorch、TensorFlow、ONNX、TensorRT、OpenVINO 与 vLLM，可在 CPU 或 GPU 上运行，具备动态批处理、模型版本管理与集成模型能力。Triton 是规模化生产推理的主力引擎。",
+    "why": [
+      "单一服务即可承载多框架、多设备推理",
+      "动态批处理，提升 GPU 使用经济性",
+      "支持模型版本、集成模型与推理流水线",
+      "标准化指标（Prometheus）、追踪与健康检查端点",
+      "已在超大规模环境中验证"
+    ],
+    "how": "我设计兼顾时延、吞吐与成本的 Triton 部署，支持滚动更新的模型管理、多租户隔离、GPU 调度以及模型与租户之间的安全边界。我把 Triton 接入更广义的可观测性与安全栈。",
+    "deliverables": [
+      "Triton 部署架构",
+      "模型打包与版本策略",
+      "多租户隔离与授权方案",
+      "可观测性集成（Prometheus、OpenTelemetry）",
+      "性能与成本基准测试"
+    ]
+  },
+  "aws-sagemaker": {
+    "category": "托管式 ML 生命周期",
+    "subtitle": "AWS 边界内承载 ML 工作负载的自然之家。",
+    "what": "AWS SageMaker 是面向 ML 全生命周期的托管平台，覆盖数据标注、训练、部署、监控与治理。SageMaker 现已纳入基础模型托管端点、原生向量库与内置模型评估，并与 AWS 服务深度集成。",
+    "why": [
+      "在 AWS 上托管端到端 ML 生命周期",
+      "与 IAM、KMS、PrivateLink 及 CloudTrail 原生集成",
+      "通过 JumpStart 与 Bedrock 互通部署基础模型",
+      "内置模型监控、漂移检测与 Clarify",
+      "合规姿态稳健（HIPAA、SOC 2、FedRAMP）"
+    ],
+    "how": "我根据贵司的安全边界设计 SageMaker 架构：VPC 隔离、KMS 加密的产物、细粒度 IAM、模型审批流，以及与现有 CSPM 工具的对接。我也协助进行成本与治理评审。",
+    "deliverables": [
+      "SageMaker 着陆区与 VPC 设计",
+      "遵循最小权限边界的 IAM 模型",
+      "端点部署与审批工作流",
+      "监控、漂移检测与审计管道",
+      "成本与治理评审"
+    ]
+  },
+  "palo-alto-prisma-cloud": {
+    "category": "代码到云的安全平台",
+    "subtitle": "覆盖多云资产的统一安全单一视图。",
+    "what": "Palo Alto Prisma Cloud 是覆盖代码到云的安全平台，在 AWS、Azure、GCP 与 Oracle Cloud 上整合 CSPM、CIEM、CWPP、IaC 扫描、容器安全以及 AI 运行时安全。它是横跨多云企业的统一态势与运行时防御层。",
+    "why": [
+      "在 AWS、Azure、GCP 与 OCI 上提供统一态势",
+      "代码到云：IaC 扫描、镜像仓库扫描与运行时防御一体化",
+      "通过 CIEM 治理跨云的身份与权限风险",
+      "为容器、主机、Serverless 及 AI 工作负载提供运行时防御",
+      "对 ISO、SOC、HIPAA、PCI 与 NIST 的合规内容丰富"
+    ],
+    "how": "我曾在一家全球一级保险集团主导 Prisma Cloud 的全球落地。我设计部署拓扑、策略框架、告警分诊流程与 SOC 集成。我也指导团队建立运营模式，确保平台在交付之后长期生根。",
+    "deliverables": [
+      "覆盖所有云账户的部署拓扑",
+      "覆盖治理、代码与运行时的策略框架",
+      "告警分诊与 SOC 集成工作流",
+      "身份与权限修复方案",
+      "上线计划与运营模式"
+    ]
+  },
+  "langfuse": {
+    "category": "LLM 可观测性与评估",
+    "subtitle": "生产级 LLM 与智能体应用的标准可观测层。",
+    "what": "Langfuse 是面向 LLM 应用的开源可观测性与评估平台。它捕获智能体栈中每一次 prompt、工具调用与链路，并提供评估、数据集、prompt 管理与成本追踪能力。Langfuse 正在迅速成为生产级智能体系统的默认可观测层。",
+    "why": [
+      "为每次智能体运行与工具调用提供端到端链路",
+      "支持在线与离线评估，可自定义评估器",
+      "支持 prompt 版本化与 A/B 测试",
+      "在调用粒度追踪成本与时延",
+      "开源、易自托管，覆盖主流框架 SDK"
+    ],
+    "how": "我把 Langfuse 接入贵司既有的智能体栈（LangGraph、LangChain、OpenAI Agents、Bedrock Agents），设计评估流水线，针对漂移与策略违规建立告警，并将链路打入 SIEM 以备审计。",
+    "deliverables": [
+      "Langfuse 自托管部署设计",
+      "智能体栈的 SDK 集成",
+      "带自定义评估器的评估流水线",
+      "漂移与策略违规告警",
+      "面向审计的 SIEM 集成"
+    ]
+  },
+  "iso-42001": {
+    "category": "AI 管理体系",
+    "subtitle": "首个面向负责任 AI 端到端治理的国际标准。",
+    "what": "ISO/IEC 42001 是首个面向 AI 管理体系的国际标准。它定义了组织负责任治理 AI 生命周期所需的要求与控制，理念上与 ISO 27001 类似但聚焦 AI。它正在迅速成为表明组织认真管理 AI 风险的事实信号。",
+    "why": [
+      "首个且唯一的国际 AI 管理体系标准",
+      "对客户、合作伙伴、监管与投资人构成有力信号",
+      "与 NIST AI RMF 及 EU AI Act 期望高度对齐",
+      "强化内部 AI 治理、生命周期与风险实践",
+      "可审计，可由具备资质的认证机构发证"
+    ],
+    "how": "我帮助组织设计并落地对齐 ISO 42001 的 AI 管理体系：差距分析、策略与控制框架、风险登记册、AI 资产清单、生命周期控制以及面向认证审核的准备包。",
+    "deliverables": [
+      "对标 ISO/IEC 42001 的差距分析",
+      "AI 管理体系策略与控制框架",
+      "AI 资产清单与风险登记册",
+      "生命周期控制与证据包",
+      "认证就绪度评估"
+    ]
+  },
+  "nist-ai-rmf": {
+    "category": "AI 风险治理",
+    "subtitle": "全球引用最广的 AI 风险参考，可被落地为运营机制。",
+    "what": "NIST AI 风险管理框架是美国国家标准与技术研究院发布的自愿性框架，从 Govern、Map、Measure 与 Manage 四大职能管理 AI 风险。NIST AI RMF 是全球引用最广的 AI 风险参考，是任何企业 AI 治理项目的天然主干。",
+    "why": [
+      "全球采纳度最高的 AI 风险参考",
+      "与 ISO 42001 及 EU AI Act 高度对齐",
+      "实用结构：Govern、Map、Measure、Manage",
+      "AI RMF Playbook 提供可执行的具体动作",
+      "免费、自愿，并获监管机构认可"
+    ],
+    "how": "我帮助企业将 NIST AI RMF 落地为运营机制：把框架映射到 AI 资产清单、设计控制、以具体指标支撑 Measure 职能，并搭建运行这一框架的治理委员会。",
+    "deliverables": [
+      "NIST AI RMF 与 AI 资产清单的映射",
+      "Govern、Map、Measure、Manage 控制集",
+      "指标目录与仪表盘",
+      "治理委员会职责说明",
+      "面向持续成熟度的路线图"
+    ]
+  },
+  "eu-ai-act": {
+    "category": "具约束力的 AI 法规",
+    "subtitle": "全球首部综合性 AI 法律，具有域外效力。",
+    "what": "EU AI Act 是欧盟针对 AI 系统的具约束力法规。它按风险分级，并对提供方与部署方设定义务。它是全球首部综合性 AI 法律，具有域外效力，只要 AI 系统投放至欧盟市场或影响欧盟公民即受其约束。",
+    "why": [
+      "全球首部具约束力的综合性 AI 法规",
+      "具备域外效力：影响欧盟公民即适用",
+      "按风险等级明确义务",
+      "违规面临严厉的财务处罚",
+      "与 ISO 42001 及 NIST AI RMF 自然对齐"
+    ],
+    "how": "我帮助组织对照 EU AI Act 评估其 AI 资产组合，按风险分类系统，设计所需的文档与人工监督，并构建用于证明符合性的技术与组织控制。",
+    "deliverables": [
+      "按 EU AI Act 风险等级的 AI 资产组合分类",
+      "风险管理体系文档",
+      "人工监督与透明度设计",
+      "技术文档包",
+      "符合性评估路线图"
+    ]
+  },
+  "openai-assistants": {
+    "category": "助手与语音智能体平台",
+    "subtitle": "OpenAI 托管的助手与实时语音运行时，开箱可投产。",
+    "what": "OpenAI Assistants 与 Realtime API 是 OpenAI 用于构建智能体的托管运行时。Assistants 提供线程、工具与文件搜索，并由平台托管状态。Realtime 在此之上加入双向语音与低时延多模态交互。两者结合可在托管基础设施上覆盖大多数智能体与语音智能体场景。",
+    "why": [
+      "全托管，无需自行运维智能体运行时",
+      "内置线程、工具、文件搜索与代码解释器",
+      "Realtime API 适用于生产级语音智能体",
+      "原生集成 OpenAI 的安全与内容审核",
+      "兼容主流编排框架"
+    ],
+    "how": "我设计的 OpenAI Assistant 部署严格尊重贵司数据边界（Azure OpenAI、企业租户、BYOK、PII 脱敏），用策略层封装工具调用，并通过 Langfuse 或 LangSmith 接入可观测性。",
+    "deliverables": [
+      "租户与密钥管理方案",
+      "工具授权封装与策略层",
+      "可观测性集成",
+      "威胁模型与红队报告",
+      "运营模式与操作手册"
+    ]
+  },
+  "aws-bedrock-agents": {
+    "category": "AWS 托管智能体平台",
+    "subtitle": "AWS 边界内的原生智能体运行时，深度集成 IAM 与 KMS。",
+    "what": "AWS Bedrock Agents 是基于 Bedrock 托管基础模型的托管智能体运行时，原生提供动作组、知识库与 Guardrails。当智能体工作负载必须留在 AWS 安全边界内时，它是自然之选。",
+    "why": [
+      "完整托管在 AWS 边界内",
+      "原生 IAM、KMS、PrivateLink、CloudTrail",
+      "可选 Anthropic、Meta、AI21、Mistral、Amazon 等基础模型",
+      "内置 Bedrock Guardrails，过滤输入与输出",
+      "合规姿态稳健（HIPAA、SOC 2、FedRAMP）"
+    ],
+    "how": "我根据贵司 AWS 安全边界设计 Bedrock Agents 架构：VPC 隔离、动作组授权、知识库加固、Guardrails 策略，以及与现有 CSPM 工具的对接。",
+    "deliverables": [
+      "Bedrock Agents 着陆区设计",
+      "动作组与工具授权方案",
+      "知识库加固与 PII 脱敏",
+      "Bedrock Guardrails 策略集",
+      "面向 SIEM 的审计日志管道"
+    ]
+  },
+  "vertex-ai-agents": {
+    "category": "Google Cloud 托管智能体平台",
+    "subtitle": "Vertex AI Agent Builder，Google Cloud 边界内 Gemini 原生智能体。",
+    "what": "Google Vertex AI Agents 把 Agent Builder、Gemini 基础模型与 Google Cloud 安全原语整合成托管智能体运行时。当智能体工作负载必须留在 Google Cloud 安全边界内、并默认使用 Gemini 模型家族时，它是自然之选。",
+    "why": [
+      "完整托管在 Google Cloud 边界内",
+      "原生 IAM、KMS、VPC-SC、Cloud Audit Logs",
+      "Gemini 基础模型，具备长上下文窗口",
+      "内置安全过滤与 Model Armor",
+      "合规姿态稳健（HIPAA、SOC 2、ISO）"
+    ],
+    "how": "我根据贵司 Google Cloud 安全边界设计 Vertex AI Agent 部署：VPC Service Controls、IAM 模型、Model Armor 配置、可观测性，以及与现有 CSPM 工具的对接。",
+    "deliverables": [
+      "Vertex AI Agent 着陆区设计",
+      "遵循最小权限边界的 IAM 模型",
+      "Model Armor 与安全策略集",
+      "可观测性与审计管道",
+      "运营模式与操作手册"
+    ]
+  },
+  "n8n-cursor-mcp-clients": {
+    "category": "智能体客户端生态",
+    "subtitle": "原生 MCP 客户端生态，把智能体引入日常工作流。",
+    "what": "n8n、Cursor、Claude Desktop 以及不断壮大的原生 MCP 客户端家族，是智能体在生产中触达终端用户的方式。它们消费 MCP 服务器与助手运行时，把 AI 能力带入开发者工作流、业务自动化与内部工具。",
+    "why": [
+      "n8n：开源自动化平台，原生 MCP，可自托管",
+      "Cursor：AI 原生 IDE，支持 MCP 工具调用",
+      "Claude Desktop：参考级 MCP 宿主，完整支持协议",
+      "兼容客户端生态高速扩张",
+      "将能力与用户界面解耦"
+    ],
+    "how": "我帮助团队把 MCP 服务器封装为面向多客户端的安全分发包：身份认证、按客户端的范围映射、版本兼容性、可观测性与审计，并提供管理多个消费端的运营模式。",
+    "deliverables": [
+      "客户端兼容性矩阵",
+      "按客户端的身份认证与范围映射",
+      "版本兼容性与弃用策略",
+      "跨客户端的可观测性与审计",
+      "终端用户上线计划"
+    ]
+  },
+  "azure-machine-learning": {
+    "category": "Azure 托管 ML 生命周期",
+    "subtitle": "Azure 边界内承载 ML 工作负载的自然之家，与 AI Foundry 互补。",
+    "what": "Azure Machine Learning 是 Microsoft 面向 ML 全生命周期的托管平台：数据标注、训练、实验、部署、监控与治理。它与 Azure AI Foundry 互补，覆盖传统 ML、自定义模型训练与规模化 MLOps。",
+    "why": [
+      "在 Azure 上托管端到端 ML 生命周期",
+      "与 Microsoft Entra、Key Vault、专用终结点原生集成",
+      "通过托管在线与批量端点实现 MLOps",
+      "提供负责任 AI 仪表盘与模型注册表",
+      "合规能力强（HIPAA、SOC 2、FedRAMP、EU Data Boundary）"
+    ],
+    "how": "我根据贵司安全边界设计 Azure ML 架构：工作区隔离、专用终结点、细粒度基于角色的访问控制、模型注册表治理，以及与 Defender for Cloud 和现有 CSPM 工具的对接。",
+    "deliverables": [
+      "Azure ML 着陆区设计",
+      "身份与权限模型",
+      "端点部署与审批工作流",
+      "负责任 AI 与审计管道",
+      "成本与治理评审"
+    ]
+  },
+  "vertex-ai-model-garden": {
+    "category": "Google Cloud 托管模型目录",
+    "subtitle": "Vertex AI 上精选的基础模型，在 Google Cloud 边界内服务化。",
+    "what": "Vertex AI Model Garden 是 Google Cloud 精选的基础模型与开源模型目录，依托 Vertex AI 提供托管端点、评估工具与微调能力。对任何希望在 Google Cloud 上标准化 AI 的团队而言，它都是中央目录。",
+    "why": [
+      "精选的一方、合作伙伴与开源模型目录",
+      "托管端点支持自动伸缩与可观测性",
+      "原生支持微调、蒸馏与评估",
+      "全程具备 VPC Service Controls 与 Cloud Audit Logs",
+      "跨地域具备稳健的合规姿态"
+    ],
+    "how": "我帮助团队为每个工作负载选择合适的模型，设计端点拓扑，配置 VPC-SC 边界与 Model Armor，并与可观测性和审计栈对接。",
+    "deliverables": [
+      "按工作负载的模型选型矩阵",
+      "端点部署与审批工作流",
+      "VPC Service Controls 与安全边界",
+      "可观测性与审计集成",
+      "成本与治理评审"
+    ]
+  },
+  "huggingface-tgi": {
+    "category": "开源推理服务",
+    "subtitle": "Hugging Face Text Generation Inference，服务开源权重 LLM 的开源默认选择。",
+    "what": "Hugging Face Text Generation Inference（TGI）是为生产级服务开源权重 LLM 而生的开源服务。它支持最新的开源模型、优化的注意力内核与结构化流式输出，并与更广义的 Hugging Face 生态无缝衔接。",
+    "why": [
+      "开箱即用支持最新开源权重 LLM",
+      "具备生产原语：流式、批处理、结构化输出",
+      "与 Hugging Face Hub 深度集成",
+      "可自托管，无供应商锁定",
+      "社区活跃，模型覆盖速度快"
+    ],
+    "how": "我帮助团队建立面向时延、吞吐与成本调优的 TGI 部署，配套模型注册表治理、面向受限模型的密钥管理、可观测性以及模型与租户之间的安全边界。",
+    "deliverables": [
+      "TGI 部署架构",
+      "模型选型与注册表方案",
+      "GPU 调度与自动伸缩设计",
+      "可观测性集成（Prometheus、OpenTelemetry）",
+      "性能与成本基准测试"
+    ]
+  },
+  "vllm-ray-serve": {
+    "category": "高吞吐开源推理",
+    "subtitle": "高吞吐 LLM 服务化与弹性模型编排的开源栈。",
+    "what": "vLLM 是面向 GPU 吞吐优化的开源推理引擎，具备 PagedAttention 与连续批处理。Ray Serve 在此之上提供模型副本与流水线的弹性、分布式编排。两者共同构成规模化高吞吐 LLM 服务化的开源栈。",
+    "why": [
+      "PagedAttention 与连续批处理带来顶级吞吐",
+      "兼容多数开源权重 LLM",
+      "Ray Serve 提供弹性编排与流水线",
+      "可自托管，无供应商锁定",
+      "社区活跃，模型覆盖速度快"
+    ],
+    "how": "我按贵司的吞吐、时延与成本目标设计 vLLM 与 Ray Serve 部署，配套多租户隔离、GPU 调度与安全边界，并把该栈与更广义的可观测性与安全工具对接。",
+    "deliverables": [
+      "vLLM + Ray Serve 部署架构",
+      "GPU 调度与自动伸缩方案",
+      "多租户隔离与授权",
+      "可观测性集成（Prometheus、OpenTelemetry）",
+      "性能与成本基准测试"
+    ]
+  },
+  "aws-security-hub": {
+    "category": "AWS 原生安全运营",
+    "subtitle": "AWS 原生的安全态势、威胁检测与漏洞管理三件套。",
+    "what": "AWS Security Hub 汇聚 AWS 服务与合作伙伴工具的安全发现。GuardDuty 为账户、工作负载与数据提供威胁检测。Inspector 扫描 EC2、容器与 Serverless 的漏洞。三者共同构成 AWS 原生的安全运营栈。",
+    "why": [
+      "AWS 安全信号的单一视图",
+      "覆盖日志、网络与运行时的威胁检测",
+      "对 EC2、ECR 与 Lambda 的漏洞扫描",
+      "与 EventBridge、Lambda 和 Step Functions 原生集成",
+      "合规内容丰富（CIS、PCI、NIST、ISO）"
+    ],
+    "how": "我设计在贵司全部 AWS 账户上的启用拓扑，调优策略框架，把发现路由至 SOC 工具，并通过 EventBridge 与 Lambda 设计响应自动化。",
+    "deliverables": [
+      "多账户启用拓扑",
+      "策略框架与严重度调优",
+      "SOC 集成与告警分诊工作流",
+      "响应自动化设计",
+      "上线计划与运营模式"
+    ]
+  },
+  "microsoft-defender-cloud": {
+    "category": "Microsoft 云安全与 SIEM",
+    "subtitle": "Microsoft 的 CSPM、CWPP 与 SIEM 栈，统一覆盖云与身份。",
+    "what": "Microsoft Defender for Cloud 在 Azure、AWS 与 GCP 上提供 CSPM 与 CWPP，并面向 Azure AI Foundry 提供 AI 专属态势。Microsoft Sentinel 是云原生 SIEM 与 SOAR。两者共同构成 Microsoft 统一的安全运营平台。",
+    "why": [
+      "多云态势与工作负载防护合于一体",
+      "与 Microsoft Entra 及 Microsoft graph 原生集成",
+      "为 Azure AI Foundry 智能体提供 AI 态势管理",
+      "Sentinel 提供 SIEM 与 SOAR，拥有数百个连接器",
+      "合规内容丰富（CIS、PCI、NIST、ISO 与监管要求）"
+    ],
+    "how": "我在多云资产上设计 Defender for Cloud 与 Sentinel 部署，调优策略框架，配置分析规则，并围绕它们构建 SOC 运营模式。",
+    "deliverables": [
+      "多云启用与策略框架",
+      "Sentinel 工作区与数据接入设计",
+      "分析规则与 SOAR playbook",
+      "SOC 运营模式与操作手册",
+      "上线计划与成本优化"
+    ]
+  },
+  "google-security-command-center": {
+    "category": "Google Cloud 安全平台",
+    "subtitle": "Google 的 CSPM、CWPP 与威胁检测平台，Google Cloud 原生。",
+    "what": "Google Security Command Center 是 Google Cloud 的原生安全平台。它将安全态势、攻击面管理、威胁检测与 Mandiant 情报整合为单一控制台，深度集成 Google Cloud 控制面。",
+    "why": [
+      "覆盖贵司所有 Google Cloud 项目的原生态势",
+      "内置 Mandiant 威胁情报",
+      "支持攻击路径分析与风险优先级排序",
+      "与 VPC Service Controls 及 IAM Recommender 集成",
+      "合规内容丰富（CIS、PCI、NIST、ISO）"
+    ],
+    "how": "我在贵司 Google Cloud 组织范围内设计启用拓扑，调优策略框架，配置 Mandiant 集成，并把发现路由至 SOC 工具。",
+    "deliverables": [
+      "组织级启用拓扑",
+      "策略框架与严重度调优",
+      "Mandiant 与威胁情报集成",
+      "SOC 集成与告警工作流",
+      "上线计划与运营模式"
+    ]
+  },
+  "cloudflare-zero-trust": {
+    "category": "边缘零信任与 WAF",
+    "subtitle": "Cloudflare 的边缘安全栈：零信任接入、WAF、机器人管理与 AI Gateway。",
+    "what": "Cloudflare Zero Trust 在边缘提供身份感知接入、ZTNA、安全 Web 网关、浏览器隔离与邮件安全。Cloudflare WAF 与 AI Gateway 在此之上加入应用防护与对外向 LLM 流量的控制点。我曾在一家一级金融信息供应商主导 Cloudflare 的全球部署。",
+    "why": [
+      "边缘交付：全球任意位置都享低时延",
+      "ZTNA、SWG、CASB、WAF 与邮件安全统一控制台",
+      "AI Gateway 作为对外向 LLM 流量的控制点",
+      "与主流 IdP 原生集成",
+      "开箱即用的稳健 DDoS 防护姿态"
+    ],
+    "how": "我在贵司全球资产上设计 Cloudflare Zero Trust 与 WAF 部署，设计策略框架，与 IdP 集成，并围绕平台搭建运营模式。",
+    "deliverables": [
+      "零信任部署拓扑",
+      "策略框架（ZTNA、SWG、WAF、AI Gateway）",
+      "IdP 集成与身份模型",
+      "SOC 集成与告警工作流",
+      "上线计划与运营模式"
+    ]
+  },
+  "wiz-lacework-orca": {
+    "category": "无代理 CNAPP",
+    "subtitle": "独立的无代理 CNAPP 选项，适用于需要超越云供应商原生能力的 CSPM 场景。",
+    "what": "Wiz、Lacework 与 Orca 是领先的独立 CNAPP 平台。它们通过 API 与快照对多云资产进行无代理扫描，借助攻击路径分析显性化风险，并在单一控制台提供 CIEM、CWPP 与 DSPM。当贵司需要超越云供应商原生能力的 CSPM 覆盖时，它们是自然之选。",
+    "why": [
+      "对 AWS、Azure、GCP、OCI 进行无代理扫描",
+      "支持攻击路径分析与风险优先级排序",
+      "CIEM、CWPP 与 DSPM 一体化",
+      "上线快，零代理占用",
+      "独立供应商，无云厂商锁定"
+    ],
+    "how": "我帮助团队评估、选型并落地适合其资产的 CNAPP，设计策略框架，与 SOC 及工单工具集成，并实现平台的长期可持续运营。",
+    "deliverables": [
+      "CNAPP 评估与选型报告",
+      "覆盖所有云账户的部署拓扑",
+      "策略框架与严重度调优",
+      "SOC 与工单系统集成",
+      "上线计划与运营模式"
+    ]
+  },
+  "hashicorp-vault-terraform": {
+    "category": "密钥与基础设施即代码",
+    "subtitle": "HashiCorp 的密钥管理与基础设施即代码，多云的基础底座。",
+    "what": "HashiCorp Vault 是密钥管理、动态凭据、加密即服务与 PKI 的行业标准。Terraform 是事实意义上的多云基础设施即代码语言。两者共同构成 AI 及更广场景下安全、可复用多云基础设施的底座。",
+    "why": [
+      "Vault：动态密钥、KV、PKI、传输加密、KMIP",
+      "Terraform：幂等、声明式、多云配置",
+      "稳固的开源姿态，可选企业级功能",
+      "与每个主流云与平台原生集成",
+      "成熟治理：Sentinel 策略即代码、OPA、Terraform Cloud"
+    ],
+    "how": "我根据贵司安全边界设计 Vault 与 Terraform 部署：密钥命名空间模型、面向云的动态凭据、用于 mTLS 的 PKI、Terraform 模块库以及 Sentinel 或 OPA 策略框架。",
+    "deliverables": [
+      "Vault 部署拓扑与命名空间模型",
+      "动态凭据与 PKI 方案",
+      "Terraform 模块库与 CI 集成",
+      "策略即代码框架",
+      "运营模式与值班 playbook"
+    ]
+  },
+  "weights-and-biases": {
+    "category": "ML 与 LLM 实验跟踪",
+    "subtitle": "ML 与 LLM 团队的标准实验跟踪、评估与模型注册表。",
+    "what": "Weights & Biases（W&B）提供实验跟踪、评估、模型注册表以及用于 LLM 可观测性的 Weave。对需要严格实验管理的 ML 团队而言，它是标准工具，并正在快速延伸至 LLM 与智能体可观测性领域。",
+    "why": [
+      "实验跟踪具备完整血缘与可复现性",
+      "模型注册表支持晋升与审批工作流",
+      "Weave 提供 prompt 与智能体可观测性",
+      "原生集成 PyTorch、JAX、Hugging Face、LangChain",
+      "面向受监管 ML 流水线的稳健治理"
+    ],
+    "how": "我把 W&B 接入贵司 ML 与智能体栈，设计实验与模型生命周期，配置注册表晋升工作流，并把平台对接到审计与 SIEM 工具。",
+    "deliverables": [
+      "W&B 与贵司 ML 及智能体栈的集成",
+      "实验与模型生命周期设计",
+      "注册表晋升与审批工作流",
+      "审计与 SIEM 集成",
+      "运营模式与团队赋能"
+    ]
+  },
+  "arize-phoenix": {
+    "category": "开源 LLM 评估与追踪",
+    "subtitle": "面向 LLM 应用的开源可观测性与评估。",
+    "what": "Arize Phoenix 是面向 LLM 与智能体应用的开源可观测性与评估工具，原生支持 OpenTelemetry 追踪。TruLens 为 RAG 与智能体应用提供可编程的评估原语。两者结合，端到端覆盖开源 LLM 可观测性与评估。",
+    "why": [
+      "开源，可自托管",
+      "原生支持 OpenTelemetry 追踪",
+      "为 RAG 与智能体质量提供可编程评估器",
+      "集成 LangChain、LlamaIndex、OpenAI Agents",
+      "与 Langfuse 等可观测层共存良好"
+    ],
+    "how": "我把 Phoenix 与 TruLens 接入贵司既有的 LLM 栈，设计评估流水线，为业务领域配置自定义评估器，并把追踪接入更广义的可观测性平台。",
+    "deliverables": [
+      "Phoenix 与 TruLens 部署设计",
+      "带自定义评估器的评估流水线",
+      "OpenTelemetry 追踪集成",
+      "漂移与质量告警",
+      "运营模式与团队赋能"
+    ]
+  },
+  "promptfoo-deepeval": {
+    "category": "prompt 与智能体评估",
+    "subtitle": "面向 prompt、智能体与 RAG 流水线、对 CI 友好的评估流水线。",
+    "what": "Promptfoo 与 DeepEval 是面向 prompt、智能体与 RAG 流水线的开源评估流水线。它们支持确定性评估与 LLM-as-judge，能像普通测试套件一样运行于 CI，并产出结构化报告，让回归问题在代码合入之前即可见。",
+    "why": [
+      "像测试套件一样运行，原生贴合 CI/CD",
+      "内置评估器：事实性、安全、时延、成本",
+      "可选用任意模型作为 LLM-as-judge",
+      "在 prompt、模型与配置之间并排比较",
+      "开源，可自托管，无供应商锁定"
+    ],
+    "how": "我为贵司智能体与 RAG 流水线设计评估流水线，接入 CI，为业务领域定义自定义评估器，并设置阻断不良变更进入生产的回归关卡。",
+    "deliverables": [
+      "面向 prompt、智能体与 RAG 的评估流水线",
+      "带回归关卡的 CI 集成",
+      "业务领域的自定义评估器",
+      "报告仪表盘与评审节奏",
+      "团队赋能与运营模式"
+    ]
+  },
+  "guardrails-ai": {
+    "category": "可编程智能体护栏",
+    "subtitle": "在 prompt、输出与工具调用层强制执行策略的开源框架。",
+    "what": "Guardrails AI 与 NeMo Guardrails 是面向 LLM 输入、输出与智能体行为执行策略的领先开源框架。它们提供可编程校验器、结构化输出、话题护栏与工具调用过滤器，与模型并行确定性执行。",
+    "why": [
+      "在 prompt 层确定性强制执行策略",
+      "结构化输出的校验与修复",
+      "面向输入与输出的话题与内容护栏",
+      "工具调用过滤与对话管理（NeMo）",
+      "开源，框架无关"
+    ],
+    "how": "我为贵司智能体生态设计护栏策略集，把框架接入运行时，为业务领域编写自定义校验器，并搭建可观测性，证明护栏按预期触发。",
+    "deliverables": [
+      "面向贵司智能体生态的护栏策略集",
+      "面向业务领域的自定义校验器",
+      "接入 LangGraph、LangChain 或托管运行时",
+      "护栏触发的可观测性与审计",
+      "面向绕过尝试的红队报告"
+    ]
+  },
+  "datadog-llm-observability": {
+    "category": "企业级 LLM 可观测性",
+    "subtitle": "在贵司既有的 Datadog 可观测性平台中承载 LLM 与智能体链路。",
+    "what": "Datadog LLM Observability 把 LLM 与智能体应用的 prompt、链路、评估与成本追踪带入 Datadog 平台。对已经使用 Datadog 又希望避免另起一个平台的企业而言，它是自然之选。",
+    "why": [
+      "一个平台覆盖基础设施、应用与 LLM 可观测性",
+      "为 LLM 原生提供链路、评估与成本追踪",
+      "与其他栈链路具备强关联性",
+      "开箱具备企业级合规、SSO、RBAC",
+      "与主流模型供应商与框架原生集成"
+    ],
+    "how": "我把 Datadog LLM Observability 接入贵司智能体栈，设计链路与评估模型，针对漂移、成本与策略违规建立告警，并把链路接入更广义的 Datadog 仪表盘与操作手册。",
+    "deliverables": [
+      "Datadog LLM Observability 与贵司智能体栈的集成",
+      "链路与评估模型设计",
+      "漂移、成本与策略违规告警",
+      "仪表盘与操作手册",
+      "运营模式与团队赋能"
+    ]
+  },
+  "opentelemetry-splunk": {
+    "category": "开放可观测性与 SIEM",
+    "subtitle": "以 OpenTelemetry 作为 LLM 与智能体遥测标准，以 Splunk 作为 SIEM 落地端。",
+    "what": "OpenTelemetry 是遥测、链路、指标与日志的开放标准，OpenTelemetry GenAI 语义约定现已覆盖 LLM 与智能体链路。Splunk 是众多受监管行业既已采用、用于接入与处理此类遥测的成熟 SIEM 与可观测性平台。",
+    "why": [
+      "供应商中立的遥测标准",
+      "面向 LLM 链路的 OpenTelemetry GenAI 语义约定",
+      "Splunk 提供数据接入、检索、告警与合规",
+      "复用既有的 SIEM 投资与运营模式",
+      "与 Langfuse、Phoenix 与 Datadog 协同良好"
+    ],
+    "how": "我按 OpenTelemetry GenAI 约定为贵司智能体栈做埋点，设计收集器拓扑，把链路与日志路由至 Splunk 与 LLM 可观测性平台，并定义检测与审计 playbook。",
+    "deliverables": [
+      "OpenTelemetry 埋点方案",
+      "收集器拓扑与路由设计",
+      "Splunk 接入与检测 playbook",
+      "SIEM 与审计集成",
+      "运营模式与值班 playbook"
+    ]
+  },
+  "iso-27001": {
+    "category": "信息安全与隐私 ISMS",
+    "subtitle": "事实意义上的国际信息安全标准，及其隐私扩展。",
+    "what": "ISO/IEC 27001 是信息安全管理体系的国际标准，是受监管行业的全球信任基线。ISO/IEC 27701 是隐私扩展，把 ISMS 映射至 GDPR 与更广义的隐私法规。我曾在多元化控股集团层面主导 ISO 27001 认证项目。",
+    "why": [
+      "信息安全的国际基线",
+      "对客户、合作伙伴、监管与投资人构成有力信号",
+      "与 SOC 2、NIST CSF 及多数监管体系高度对齐",
+      "27701 将 ISMS 扩展至 GDPR 与全球隐私法",
+      "可审计，可由具备资质的认证机构发证"
+    ],
+    "how": "我帮助组织设计并落地对齐 ISO 27001 与 27701 的 ISMS：差距分析、策略与控制框架、风险登记册、适用性声明、生命周期控制以及面向认证审核的准备包。",
+    "deliverables": [
+      "对标 ISO 27001 与 27701 的差距分析",
+      "ISMS 策略与控制框架",
+      "风险登记册与适用性声明",
+      "生命周期控制与证据包",
+      "认证就绪度评估"
+    ]
+  },
+  "soc-2": {
+    "category": "信任服务合规",
+    "subtitle": "SaaS 与 B2B 技术供应商事实意义上的信任信号。",
+    "what": "SOC 2 Type II 是 AICPA 面向技术服务供应商的审计框架，评估安全、可用性、保密性、处理完整性与隐私五大信任原则下控制的运行有效性。它是任何 SaaS 或 B2B 供应商都被期待具备的事实信任信号。",
+    "why": [
+      "SaaS 与 B2B 供应商被期待具备的信任信号",
+      "Type II 证明控制在一段时间内有效运行",
+      "覆盖安全、可用性、保密性与隐私",
+      "与 ISO 27001 及多数监管体系高度对齐",
+      "可审计，由具备资质的审计师出具鉴证"
+    ],
+    "how": "我帮助组织为 SOC 2 Type II 设计控制集，开展就绪度评估，落地缺失控制，准备证据包，并在观察期内与审计师协同推进。",
+    "deliverables": [
+      "SOC 2 Type II 就绪度评估",
+      "覆盖信任服务原则的控制集",
+      "证据包与持续收集流程",
+      "审计师协同与观察期计划",
+      "审计后的运营模式"
+    ]
+  },
+  "hipaa-pci-dss": {
+    "category": "行业受监管工作负载",
+    "subtitle": "受监管行业 AI 工作负载所适用的医疗与支付安全规制。",
+    "what": "HIPAA 是美国医疗信息保护规制，适用于任何处理受保护健康信息的系统。PCI-DSS 是支付卡行业数据安全标准，适用于任何处理持卡人数据的主体。两者都对其范围内的 AI 工作负载施加特定的技术与组织控制。",
+    "why": [
+      "任何涉及 PHI 或 PAN 数据的 AI 工作负载都需遵从",
+      "定义具体的技术与组织控制",
+      "与 ISO 27001 和 SOC 2 基线高度对齐",
+      "对云、加密与访问提供专门指引",
+      "由具备资质的机构或 QSA 进行审核"
+    ],
+    "how": "我帮助团队界定其 AI 工作负载的 HIPAA 与 PCI-DSS 范围，设计分段、加密与访问控制，构建证据包，并与 HIPAA 审计师或 PCI QSA 协同推进。",
+    "deliverables": [
+      "HIPAA 或 PCI-DSS 的范围评估",
+      "分段、加密与访问设计",
+      "控制落地方案",
+      "证据包与审计协同",
+      "审计后的运营模式"
+    ]
+  },
+  "dora-nis2": {
+    "category": "欧盟运营韧性与网络安全",
+    "subtitle": "欧盟针对数字运营韧性与关键行业网络安全的具约束力法规。",
+    "what": "DORA（数字运营韧性法案）是欧盟针对金融服务数字运营韧性的具约束力法规。NIS2 则在欧盟范围内将网络安全基线扩展至关键与重要行业。两者均施加特定的治理、风险与事件响应控制，违规将面临严厉处罚。",
+    "why": [
+      "具约束力的欧盟法规，处罚严厉",
+      "DORA：金融实体及其 ICT 提供方必须遵从",
+      "NIS2：覆盖欧盟范围内的关键与重要行业",
+      "对事件响应与第三方风险设定具体控制",
+      "与 ISO 27001 及 SOC 2 基线高度对齐"
+    ],
+    "how": "我帮助组织评估其 DORA 或 NIS2 适用范围，设计治理与风险管理框架，将控制映射到法规要求，构建事件响应与第三方风险项目，并准备证据包。",
+    "deliverables": [
+      "DORA 与 NIS2 范围评估",
+      "治理与风险管理框架",
+      "事件响应与第三方风险项目",
+      "控制落地与证据包",
+      "面向监管的就绪计划"
+    ]
+  },
+  "pdpl-gdpr": {
+    "category": "全球隐私法规",
+    "subtitle": "管辖 AI 工作负载中个人数据的区域与全球隐私规制。",
+    "what": "UAE PDPL 与 KSA PDPL 分别是阿拉伯联合酋长国与沙特阿拉伯王国的个人数据保护法。GDPR 是欧盟的通用数据保护条例。三者共同覆盖了欧洲、海湾合作委员会区域以及服务上述地区公民的组织最需关注的隐私规制。",
+    "why": [
+      "任何涉及上述地区个人数据的 AI 工作负载均需遵从",
+      "定义合法依据、个体权利与跨境传输规则",
+      "违规面临严厉处罚",
+      "GDPR 是事实意义上的全球隐私基准",
+      "UAE 与 KSA PDPL 是 GCC 的对应规制，整体方向一致"
+    ],
+    "how": "我帮助组织评估在上述规制下的隐私足迹，设计数据清单与合法依据登记册，落地个体权利工作流，梳理跨境传输，并为监管沟通做准备。",
+    "deliverables": [
+      "隐私足迹与数据清单",
+      "合法依据登记册与同意设计",
+      "个体权利工作流（访问、删除、可携带）",
+      "跨境传输评估",
+      "面向监管的就绪计划"
+    ]
+  }
+}

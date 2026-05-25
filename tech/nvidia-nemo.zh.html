@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh" dir="ltr" data-theme="dark" class="tech-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>NVIDIA NeMo 咨询服务 | Jeremy Canale, 世界级智能体安全专家</title>
+  <meta name="description" content="NVIDIA 的自有生成式 AI 全栈，内置安全护栏。 保护您的智能体平台，从一次对话开始。" />
+  <meta name="author" content="Jeremy Canale" />
+
+  <link rel="canonical" href="https://jeremycanale.com/tech/nvidia-nemo.zh.html" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-nemo.html" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/tech/nvidia-nemo.fr.html" />
+  <link rel="alternate" hreflang="zh" href="https://jeremycanale.com/tech/nvidia-nemo.zh.html" />
+  <link rel="alternate" hreflang="ar" href="https://jeremycanale.com/tech/nvidia-nemo.ar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/tech/nvidia-nemo.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="NVIDIA NeMo 咨询服务 | Jeremy Canale, 世界级智能体安全专家" />
+  <meta property="og:description" content="NVIDIA 的自有生成式 AI 全栈，内置安全护栏。" />
+  <meta property="og:url" content="https://jeremycanale.com/tech/nvidia-nemo.zh.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NVIDIA NeMo 咨询服务 | Jeremy Canale, 世界级智能体安全专家" />
+  <meta name="twitter:description" content="NVIDIA 的自有生成式 AI 全栈，内置安全护栏。" />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "NVIDIA NeMo consulting, implementation and audit",
+  "name": "NVIDIA NeMo consulting by Jeremy Canale",
+  "description": "NVIDIA 的自有生成式 AI 全栈，内置安全护栏。",
+  "provider": {
+    "@type": "Person",
+    "name": "Jeremy Canale",
+    "url": "https://jeremycanale.com",
+    "jobTitle": "Agentic Security Architect"
+  },
+  "areaServed": [
+    "Europe",
+    "Middle East",
+    "Asia"
+  ],
+  "category": "生成式 AI 全栈",
+  "url": "https://jeremycanale.com/tech/nvidia-nemo.zh.html"
+}
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../zh.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">智能体安全</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../zh.html#expertise">专长领域</a>
+      <a href="../zh.html#consulting">咨询服务</a>
+      <a href="../zh.html#cases">客户案例</a>
+      <a href="../zh.html#experience">履历</a>
+      <a href="../zh.html#certifications">资质认证</a>
+      <a href="../zh.html#faq">常见问题</a>
+      <a href="../zh.html#contact">联系</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;nvidia-nemo.html&quot;,&quot;fr&quot;:&quot;nvidia-nemo.fr.html&quot;,&quot;zh&quot;:&quot;nvidia-nemo.zh.html&quot;,&quot;ar&quot;:&quot;nvidia-nemo.ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>中文</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../zh.html#contact">
+        <span>开启合作</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="tech-hero">
+      <a href="../zh.html#consulting" class="tech-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        返回咨询服务
+      </a>
+
+      <div class="tech-hero-head">
+        <div class="tech-hero-logo"><svg viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#0a0f0a"/><text x="24" y="28" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="10.5" fill="#76B900" letter-spacing="0.5">NVIDIA</text><rect x="10" y="33" width="28" height="2" rx="1" fill="#76B900"/></svg></div>
+        <div class="tech-hero-meta">
+          <span class="tech-hero-category">生成式 AI 全栈</span>
+          <span class="tech-hero-vendor">由 NVIDIA</span>
+        </div>
+      </div>
+
+      <h1>NVIDIA NeMo</h1>
+      <p class="tech-hero-subtitle">NVIDIA 的自有生成式 AI 全栈，内置安全护栏。</p>
+    </section>
+
+    <div class="tech-content">
+      <article class="tech-block span-2">
+        <h2><span class="tech-num">01</span> 这是什么？</h2>
+        <p>NVIDIA NeMo 是用于构建与定制生成式 AI 模型的全栈，涵盖基础模型训练、微调、检索以及用于安全治理的 NeMo Guardrails。当企业希望在自有边界与加速基础设施内部署并改造模型时，NeMo 是自然之选。</p>
+      </article>
+      <article class="tech-block">
+        <h2><span class="tech-num">02</span> 为什么要采用？</h2>
+        <ul class="tech-bullets">
+        <li>从数据治理到部署的端到端全栈</li>
+        <li>原生 NeMo Guardrails，覆盖输入、输出与话题安全</li>
+        <li>针对 NVIDIA GPU 与加速基础设施做了深度优化</li>
+        <li>适配本地化部署与主权云</li>
+        <li>可与 Triton 集成，实现高吞吐推理</li>
+        </ul>
+      </article>
+      <article class="tech-block">
+        <h2><span class="tech-num">03</span> 我如何提供帮助</h2>
+        <p>我帮助团队部署 NeMo 以承载自有生成式 AI 工作负载，配置 NeMo Guardrails 强制执行安全策略，集成 Triton 完成服务化，并通过受监管行业所需的安全与合规评审。</p>
+      </article>
+      <article class="tech-block span-2">
+        <h2><span class="tech-num">04</span> 预期交付物</h2>
+        <ul class="tech-bullets">
+        <li>NeMo 部署架构</li>
+        <li>NeMo Guardrails 策略集</li>
+        <li>面向服务化的 Triton 集成方案</li>
+        <li>威胁模型与红队报告</li>
+        <li>运维手册与监控方案</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="tech-cta-bar">
+      <div class="tech-cta-text">
+        <strong>准备开始落地？</strong>
+        <span>首次范围沟通，通常 30 分钟，无须承诺。</span>
+      </div>
+      <a class="btn btn-primary" href="mailto:contact@jeremycanale.com?subject=NVIDIA%20NeMo%20consulting%20enquiry">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        contact@jeremycanale.com
+      </a>
+    </div>
+
+    <div class="tech-related">
+      <div class="tech-related-title">相关技术</div>
+      <ul class="tech-related-list">
+      <li><a href="vllm-ray-serve.zh.html">vLLM &amp; Ray Serve</a></li>
+      <li><a href="huggingface-tgi.zh.html">Hugging Face TGI</a></li>
+      <li><a href="vertex-ai-model-garden.zh.html">Vertex AI Model Garden</a></li>
+      <li><a href="azure-machine-learning.zh.html">Azure Machine Learning</a></li>
+      <li><a href="aws-sagemaker.zh.html">AWS SageMaker</a></li>
+      <li><a href="nvidia-triton.zh.html">NVIDIA Triton Inference Server</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>智能体安全 · AI 信任 · 云端 GRC</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../i18n.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>

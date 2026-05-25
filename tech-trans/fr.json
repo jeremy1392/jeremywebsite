@@ -1,0 +1,743 @@
+{
+  "azure-ai-foundry": {
+    "category": "Plateforme d'IA agentique",
+    "subtitle": "Concevoir et gouverner l'IA agentique sur Azure, prête pour les entreprises régulées.",
+    "what": "La plateforme unifiée de Microsoft pour concevoir, évaluer, gouverner et exploiter des applications et agents d'IA générative sur Azure. Azure AI Foundry rassemble un catalogue de modèles, l'orchestration d'agents, la sûreté de contenu, les prompt shields, les évaluations et les primitives de sécurité nécessaires pour déployer des agents IA dans des environnements d'entreprise régulés.",
+    "why": [
+      "Plan de contrôle unique pour toutes les charges IA du tenant Azure",
+      "Intégration native avec Microsoft Entra, Defender for Cloud et Sentinel",
+      "Sûreté de contenu, prompt shield et évaluations de groundedness intégrés",
+      "Alignement réglementaire EU AI Act, NIST AI RMF et ISO/IEC 42001",
+      "Réduit le délai de mise en production des agents IA de mois à semaines"
+    ],
+    "how": "Je pilote les déploiements Azure AI Foundry de bout en bout : conception de la landing zone, modèle d'identité sur Microsoft Entra, jeu de politiques de garde-fous d'agents et de sûreté de contenu, prompt shielding, observabilité, modélisation des menaces et revue de sécurité nécessaire pour passer les benchmarks Defender for Cloud. J'accompagne aussi les équipes internes sur le modèle opérationnel sécurisé.",
+    "deliverables": [
+      "Architecture de référence et blueprint de landing zone",
+      "Modèle d'identité et d'habilitations sur Microsoft Entra",
+      "Jeu de politiques de garde-fous d'agents et de sûreté de contenu",
+      "Modélisation des menaces sur le parc d'agents",
+      "Modèle opérationnel, runbooks et playbook d'astreinte",
+      "Dossier de revue de sécurité aligné aux référentiels de conformité internes"
+    ]
+  },
+  "langgraph": {
+    "category": "Orchestration d'agents à état",
+    "subtitle": "Le runtime en graphe pour des workflows d'agents multi-acteurs à état.",
+    "what": "LangGraph est le framework ouvert pour concevoir des workflows d'agents multi-acteurs à état sous forme de graphes. Chaque nœud est un appel LLM ou une invocation d'outil, les arêtes encodent le flux de contrôle et le runtime persiste l'état entre les tours. LangGraph s'impose dès qu'un agent doit raisonner sur plusieurs étapes, brancher sur des sorties et reprendre après des points de contrôle human-in-the-loop.",
+    "why": [
+      "Support natif des workflows d'agents à état et de longue durée",
+      "Points de contrôle human-in-the-loop et portes d'approbation intégrés",
+      "Débogage time-travel et rejeu de graphe pour l'audit",
+      "Observabilité de première classe via LangSmith et Langfuse",
+      "Prêt pour la production : streaming, retries, persistance, sous-graphes"
+    ],
+    "how": "Je conçois des workflows LangGraph avec la sécurité intégrée dès le premier nœud : autorisation d'outils à portée limitée, isolation des sous-graphes, points de contrôle déterministes pour l'audit et garde-fous de politique appliqués aux transitions d'arêtes. Je durcis aussi la couche de persistance et le pipeline d'observabilité.",
+    "deliverables": [
+      "Workflow LangGraph de référence avec garde-fous de sécurité",
+      "Modèle d'autorisation d'outils et intégration au moteur de politiques",
+      "Conception de persistance et de rejeu avec piste d'audit",
+      "Intégration de l'observabilité (Langfuse, LangSmith)",
+      "Rapport de red team sur l'abus de chaînes d'outils et l'injection de prompt"
+    ]
+  },
+  "langchain": {
+    "category": "Framework applicatif LLM",
+    "subtitle": "Le framework open source le plus largement déployé pour composer des applications LLM.",
+    "what": "LangChain fournit les primitives pour les chaînes, agents, appels d'outils, retrieval et mémoire, avec des adaptateurs pour tous les grands fournisseurs de modèles et magasins vectoriels. Il accélère le time-to-prototype, mais atteindre la production exige un durcissement soigné sur l'autorisation d'outils, l'observabilité et l'évaluation.",
+    "why": [
+      "Plus grand écosystème d'intégrations de modèles, outils et magasins vectoriels",
+      "Prototypage rapide pour retrieval, agents et tool use",
+      "Primitives de production : streaming, tracing, batching, async",
+      "Chemin de migration fluide vers LangGraph pour les workflows à état",
+      "Communauté forte et patterns bien documentés"
+    ],
+    "how": "Je passe en revue les déploiements LangChain existants pour identifier les failles de sécurité, je migre les composants retrieval et agents vers une architecture de référence durcie, et je remplace les intégrations d'outils ad hoc par une couche d'outils sensible aux politiques. J'aide les équipes à passer du prototype à un pipeline de qualité production avec une observabilité et des évaluations appropriées.",
+    "deliverables": [
+      "Audit de sécurité du code LangChain existant",
+      "Référence durcie pour chaînes, agents et retrieval",
+      "Wrapper d'autorisation d'outils et application des politiques",
+      "Harness d'évaluation (Langfuse avec Promptfoo ou DeepEval)",
+      "Runbook de déploiement en production"
+    ]
+  },
+  "mcp": {
+    "category": "Standard ouvert d'intégration d'agents",
+    "subtitle": "Le standard de connecteurs de l'ère agentique, qui sécurise chaque appel d'outil.",
+    "what": "Le Model Context Protocol est le standard ouvert émergent qui permet à des agents autonomes de découvrir et d'appeler des outils, sources de données et serveurs de prompts externes via une interface unifiée. MCP découple le code d'agent du code d'outil, et les mêmes outils deviennent utilisables par Claude Desktop, Cursor, ChatGPT, n8n et tout client conforme.",
+    "why": [
+      "Surface d'intégration unique pour tous les outils dont un agent a besoin",
+      "Découple le runtime de l'agent de l'implémentation des outils",
+      "Support prêt à l'emploi dans les principaux clients assistants",
+      "Permet des écosystèmes d'outils fédérés et inter-organisationnels",
+      "Rend les appels d'outils auditables, à portée définie et réversibles par conception"
+    ],
+    "how": "Je conçois des serveurs MCP avec la sécurité comme premier principe : autorisation par outil, durcissement du transport (mTLS, jetons signés), audit structuré, limitation de débit et exécution sandboxée. J'aide aussi les équipes à choisir le bon modèle d'intégration MCP pour leur cas d'usage et leurs clients assistants.",
+    "deliverables": [
+      "Implémentation de référence d'un serveur MCP",
+      "Modèle d'autorisation et de portée d'outils",
+      "Plan de durcissement du transport et de gestion des clés",
+      "Schéma de journal d'audit et intégration SIEM",
+      "Matrice de compatibilité avec les principaux clients MCP"
+    ]
+  },
+  "nvidia-nemo": {
+    "category": "Stack d'IA générative",
+    "subtitle": "La stack complète de NVIDIA pour l'IA générative interne, avec garde-fous intégrés.",
+    "what": "NVIDIA NeMo est la stack complète pour concevoir et adapter des modèles d'IA générative, incluant l'entraînement de modèles de fondation, le fine-tuning, le retrieval et NeMo Guardrails pour la sûreté. NeMo s'impose quand une entreprise veut déployer et adapter des modèles à l'intérieur de son propre périmètre, sur une infrastructure accélérée.",
+    "why": [
+      "Stack de bout en bout, de la curation des données au déploiement",
+      "NeMo Guardrails natifs pour la sûreté en entrée, sortie et par sujet",
+      "Optimisée pour les GPU NVIDIA et l'infrastructure accélérée",
+      "Compatible on-premise et cloud souverain",
+      "S'intègre à Triton pour l'inférence à fort débit"
+    ],
+    "how": "J'aide les équipes à déployer NeMo pour des charges d'IA générative internes, à configurer NeMo Guardrails pour appliquer des politiques de sûreté, à l'intégrer à Triton pour le serving, et à passer la revue de sécurité et réglementaire requise dans les industries régulées.",
+    "deliverables": [
+      "Architecture de déploiement NeMo",
+      "Jeu de politiques NeMo Guardrails",
+      "Plan d'intégration Triton pour le serving",
+      "Modélisation des menaces et rapport de red team",
+      "Runbooks opérationnels et supervision"
+    ]
+  },
+  "nvidia-triton": {
+    "category": "Serving de modèles haute performance",
+    "subtitle": "Inférence multi-framework et multi-device à l'échelle de la production.",
+    "what": "NVIDIA Triton est le serveur d'inférence haute performance pour servir n'importe quel framework de modèle, dont PyTorch, TensorFlow, ONNX, TensorRT, OpenVINO et vLLM, sur CPU ou GPU, avec batching dynamique, versioning de modèles et support des ensembles. Triton est le cheval de trait du serving de modèles en production à grande échelle.",
+    "why": [
+      "Serving multi-framework et multi-device dans un seul serveur",
+      "Batching dynamique pour une utilisation GPU efficiente en coût",
+      "Versioning de modèles, ensembles et pipelines d'inférence",
+      "Métriques standard (Prometheus), tracing et endpoints de santé",
+      "Éprouvé à l'échelle hyperscale"
+    ],
+    "how": "Je conçois des déploiements Triton optimisés pour la latence, le débit et le coût, avec gestion de modèles en rolling-update, isolation multi-tenant, scheduling GPU et frontières de sécurité entre modèles et tenants. J'intègre Triton à la stack plus large d'observabilité et de sécurité.",
+    "deliverables": [
+      "Architecture de déploiement Triton",
+      "Politique de packaging et de versions de modèles",
+      "Plan d'isolation multi-tenant et d'autorisation",
+      "Intégration de l'observabilité (Prometheus, OpenTelemetry)",
+      "Benchmark de performance et de coût"
+    ]
+  },
+  "aws-sagemaker": {
+    "category": "Cycle de vie ML managé",
+    "subtitle": "Le foyer naturel des charges ML à l'intérieur du périmètre AWS.",
+    "what": "AWS SageMaker est la plateforme managée pour l'intégralité du cycle de vie ML, de l'étiquetage des données et l'entraînement au déploiement, à la supervision et à la gouvernance. SageMaker inclut désormais des endpoints managés pour les modèles de fondation, des magasins vectoriels natifs et l'évaluation de modèles intégrée, avec une intégration AWS profonde.",
+    "why": [
+      "Cycle de vie ML managé de bout en bout sur AWS",
+      "Intégration native avec IAM, KMS, PrivateLink et CloudTrail",
+      "Déploiement de modèles de fondation via JumpStart et interopérabilité Bedrock",
+      "Supervision de modèles, détection de dérive et Clarify intégrés",
+      "Posture de conformité solide (HIPAA, SOC 2, FedRAMP)"
+    ],
+    "how": "Je conçois des architectures SageMaker alignées à votre frontière de sécurité : isolation VPC, artefacts chiffrés par KMS, IAM à granularité fine, workflow d'approbation de modèles et intégration à votre outillage CSPM existant. J'accompagne aussi la revue de coûts et de gouvernance.",
+    "deliverables": [
+      "Landing zone SageMaker et conception VPC",
+      "Modèle IAM avec frontières de moindre privilège",
+      "Workflow de déploiement et d'approbation d'endpoints",
+      "Pipeline de supervision, détection de dérive et audit",
+      "Revue de coûts et de gouvernance"
+    ]
+  },
+  "palo-alto-prisma-cloud": {
+    "category": "Plateforme de sécurité code-to-cloud",
+    "subtitle": "Une vue unique pour la sécurité sur des parcs multi-cloud.",
+    "what": "Palo Alto Prisma Cloud est la plateforme de sécurité code-to-cloud qui rassemble CSPM, CIEM, CWPP, scan IaC, sécurité des conteneurs et sécurité runtime de l'IA sur AWS, Azure, GCP et Oracle Cloud. C'est la couche unifiée de posture et de défense runtime pour les entreprises opérant sur plusieurs clouds.",
+    "why": [
+      "Posture unifiée sur AWS, Azure, GCP et OCI",
+      "Code-to-cloud : scan IaC, scan de registre et runtime dans un seul produit",
+      "CIEM pour le risque d'identité et d'habilitations entre clouds",
+      "Défense runtime pour conteneurs, hôtes, serverless et charges IA",
+      "Contenu de conformité solide pour ISO, SOC, HIPAA, PCI et NIST"
+    ],
+    "how": "J'ai piloté le déploiement mondial de Prisma Cloud chez un assureur global de premier rang. Je conçois la topologie de déploiement, le cadre de politiques, le workflow de triage d'alertes et l'intégration au SOC. J'accompagne aussi les équipes sur le modèle opérationnel pour que la plateforme s'enracine bien après l'onboarding.",
+    "deliverables": [
+      "Topologie de déploiement sur l'ensemble des comptes cloud",
+      "Cadre de politiques couvrant gouvernance, code et runtime",
+      "Workflow de triage d'alertes et intégration SOC",
+      "Plan de remédiation des identités et habilitations",
+      "Plan d'onboarding et modèle opérationnel"
+    ]
+  },
+  "langfuse": {
+    "category": "Observabilité et évaluation LLM",
+    "subtitle": "La couche d'observabilité standard pour les applications LLM et agents en production.",
+    "what": "Langfuse est la plateforme open source d'observabilité et d'évaluation pour les applications LLM. Elle capture chaque prompt, appel d'outil et trace de votre stack d'agents, puis fournit évaluations, datasets, gestion de prompts et suivi des coûts. Langfuse devient rapidement la couche d'observabilité par défaut des systèmes agentiques en production.",
+    "why": [
+      "Traces de bout en bout pour chaque exécution d'agent et appel d'outil",
+      "Évaluations online et offline avec évaluateurs personnalisés",
+      "Versioning de prompts et tests A/B",
+      "Suivi des coûts et de la latence au niveau de l'appel",
+      "Open source, compatible self-hosted, SDK pour les principaux frameworks"
+    ],
+    "how": "J'intègre Langfuse dans votre stack d'agents existante (LangGraph, LangChain, OpenAI Agents, Bedrock Agents), je conçois le harness d'évaluation, je mets en place des alertes sur les dérives et les violations de politique, et je redirige les traces vers votre SIEM pour l'audit.",
+    "deliverables": [
+      "Conception du déploiement Langfuse self-hosted",
+      "Intégration SDK sur l'ensemble de votre stack d'agents",
+      "Harness d'évaluation avec évaluateurs personnalisés",
+      "Alerting sur dérive et violations de politique",
+      "Intégration SIEM pour l'audit"
+    ]
+  },
+  "iso-42001": {
+    "category": "Systèmes de management de l'IA",
+    "subtitle": "La première norme internationale pour gérer l'IA de manière responsable, de bout en bout.",
+    "what": "ISO/IEC 42001 est la première norme internationale pour les systèmes de management de l'IA. Elle définit les exigences et contrôles dont une organisation a besoin pour gouverner son cycle de vie IA de manière responsable, dans l'esprit d'ISO 27001 mais spécifique à l'IA. Elle devient rapidement le signal de fait qu'une organisation gère sérieusement le risque IA.",
+    "why": [
+      "Première et seule norme internationale de système de management de l'IA",
+      "Signal fort pour clients, partenaires, régulateurs et investisseurs",
+      "Se mappe proprement aux attentes du NIST AI RMF et de l'EU AI Act",
+      "Renforce la gouvernance IA interne, le cycle de vie et les pratiques de risque",
+      "Prête à l'audit, certifiable par des organismes accrédités"
+    ],
+    "how": "J'aide les organisations à concevoir et mettre en œuvre un système de management de l'IA aligné à ISO 42001 : analyse d'écart, cadre de politiques et de contrôles, registre de risques, inventaire IA, contrôles du cycle de vie et dossier de préparation à l'audit de certification.",
+    "deliverables": [
+      "Analyse d'écart par rapport à ISO/IEC 42001",
+      "Cadre de politiques et de contrôles du système de management de l'IA",
+      "Inventaire IA et registre de risques",
+      "Contrôles du cycle de vie et dossier de preuves",
+      "Évaluation de préparation à la certification"
+    ]
+  },
+  "nist-ai-rmf": {
+    "category": "Gouvernance du risque IA",
+    "subtitle": "Le référentiel de risque IA le plus largement cité au monde, rendu opérationnel.",
+    "what": "Le NIST AI Risk Management Framework est le cadre volontaire du National Institute of Standards and Technology des États-Unis pour gérer le risque IA à travers les fonctions Govern, Map, Measure et Manage. Le NIST AI RMF est le référentiel de risque IA le plus largement cité au monde et l'ossature naturelle de tout programme de gouvernance IA en entreprise.",
+    "why": [
+      "Référentiel de risque IA le plus largement adopté au monde",
+      "Se mappe proprement à ISO 42001 et à l'EU AI Act",
+      "Structure pratique : Govern, Map, Measure, Manage",
+      "Appuyé par l'AI RMF Playbook avec des actions concrètes",
+      "Gratuit, volontaire et respecté par les régulateurs"
+    ],
+    "how": "J'aide les entreprises à opérationnaliser le NIST AI RMF : mapping du cadre à votre inventaire IA, conception des contrôles, instrumentation de la fonction Measure avec des métriques concrètes et mise en place du comité de gouvernance qui le pilote.",
+    "deliverables": [
+      "Mapping du NIST AI RMF sur votre inventaire IA",
+      "Jeu de contrôles Govern, Map, Measure, Manage",
+      "Catalogue de métriques et tableaux de bord",
+      "Termes de référence du comité de gouvernance",
+      "Feuille de route vers une maturité continue"
+    ]
+  },
+  "eu-ai-act": {
+    "category": "Réglementation IA contraignante",
+    "subtitle": "La première loi globale sur l'IA au monde, à portée extraterritoriale.",
+    "what": "L'EU AI Act est la réglementation contraignante de l'Union européenne pour les systèmes d'IA. Elle classifie les systèmes par risque et impose des obligations aux fournisseurs et déployeurs. C'est la première loi globale sur l'IA au monde, à portée extraterritoriale, et elle s'applique dès qu'un système d'IA est mis sur le marché de l'UE ou affecte des citoyens européens.",
+    "why": [
+      "Première réglementation IA globale et contraignante au monde",
+      "Portée extraterritoriale : s'applique partout où des citoyens européens sont affectés",
+      "Définit des obligations claires par classe de risque",
+      "Sanctions financières significatives en cas de non-conformité",
+      "S'aligne naturellement à ISO 42001 et au NIST AI RMF"
+    ],
+    "how": "J'aide les organisations à évaluer leur portefeuille IA au regard de l'EU AI Act, à classifier les systèmes par risque, à concevoir la documentation et la supervision humaine requises, et à bâtir les contrôles techniques et organisationnels nécessaires pour démontrer la conformité.",
+    "deliverables": [
+      "Classification du portefeuille IA par classe de risque EU AI Act",
+      "Documentation du système de gestion des risques",
+      "Conception de la supervision humaine et de la transparence",
+      "Dossier de documentation technique",
+      "Feuille de route d'évaluation de conformité"
+    ]
+  },
+  "openai-assistants": {
+    "category": "Plateforme d'assistants et d'agents vocaux",
+    "subtitle": "Les runtimes hébergés d'OpenAI pour assistants et voix temps réel, prêts pour la production.",
+    "what": "OpenAI Assistants et l'API Realtime sont les runtimes hébergés d'OpenAI pour concevoir des agents. Assistants apporte threads, outils et recherche de fichiers avec état managé. Realtime ajoute la voix bidirectionnelle et l'interaction multi-modale à faible latence. Ensemble ils couvrent la plupart des cas d'usage agents et agents vocaux sur une infrastructure managée.",
+    "why": [
+      "Entièrement managé : pas de runtime d'agent à exploiter",
+      "Threads, outils, recherche de fichiers et code interpreter intégrés",
+      "API Realtime pour des agents vocaux de qualité production",
+      "Intégration native avec la sûreté et la modération OpenAI",
+      "Compatible avec les principaux frameworks d'orchestration"
+    ],
+    "how": "Je conçois des déploiements OpenAI Assistants qui respectent votre périmètre de données (Azure OpenAI, tenancy entreprise, BYOK, masquage PII), j'enveloppe les appels d'outils d'une couche de politiques et j'ajoute l'observabilité via Langfuse ou LangSmith.",
+    "deliverables": [
+      "Plan de tenancy et de gestion des clés",
+      "Wrapper d'autorisation d'outils et couche de politiques",
+      "Intégration de l'observabilité",
+      "Modélisation des menaces et rapport de red team",
+      "Modèle opérationnel et runbooks"
+    ]
+  },
+  "aws-bedrock-agents": {
+    "category": "Plateforme d'agents managée sur AWS",
+    "subtitle": "Runtime d'agents natif à l'intérieur du périmètre AWS, avec intégration complète IAM et KMS.",
+    "what": "AWS Bedrock Agents est le runtime d'agents managé qui s'appuie sur les modèles de fondation hébergés sur Bedrock, avec action groups natifs, knowledge bases et guardrails. C'est le choix naturel pour des charges agentiques qui doivent rester à l'intérieur de la frontière de sécurité AWS.",
+    "why": [
+      "Hébergé entièrement à l'intérieur du périmètre AWS",
+      "IAM, KMS, PrivateLink, CloudTrail natifs",
+      "Choix de modèles de fondation (Anthropic, Meta, AI21, Mistral, Amazon)",
+      "Bedrock Guardrails intégrés pour le filtrage en entrée et sortie",
+      "Posture de conformité solide (HIPAA, SOC 2, FedRAMP)"
+    ],
+    "how": "Je conçois des architectures Bedrock Agents alignées à votre frontière de sécurité AWS : isolation VPC, autorisation des action groups, durcissement des knowledge bases, politique Guardrails et intégration à votre outillage CSPM existant.",
+    "deliverables": [
+      "Conception de landing zone Bedrock Agents",
+      "Plan d'autorisation des action groups et des outils",
+      "Durcissement des knowledge bases et masquage PII",
+      "Jeu de politiques Bedrock Guardrails",
+      "Pipeline de journal d'audit vers votre SIEM"
+    ]
+  },
+  "vertex-ai-agents": {
+    "category": "Plateforme d'agents managée sur Google Cloud",
+    "subtitle": "Vertex AI Agent Builder, des agents natifs Gemini à l'intérieur du périmètre Google Cloud.",
+    "what": "Google Vertex AI Agents combine Agent Builder, les modèles de fondation Gemini et les primitives de sécurité de Google Cloud dans un runtime d'agents managé. C'est l'option naturelle pour des charges agentiques qui doivent rester à l'intérieur de la frontière de sécurité Google Cloud, avec Gemini comme famille de modèles par défaut.",
+    "why": [
+      "Hébergé entièrement à l'intérieur du périmètre Google Cloud",
+      "IAM, KMS, VPC-SC, Cloud Audit Logs natifs",
+      "Modèles de fondation Gemini avec longues fenêtres de contexte",
+      "Filtres de sûreté et Model Armor intégrés",
+      "Posture de conformité solide (HIPAA, SOC 2, ISO)"
+    ],
+    "how": "Je conçois des déploiements Vertex AI Agents alignés à votre frontière de sécurité Google Cloud : VPC Service Controls, modèle IAM, configuration Model Armor, observabilité et intégration à votre outillage CSPM existant.",
+    "deliverables": [
+      "Conception de landing zone Vertex AI Agents",
+      "Modèle IAM avec frontières de moindre privilège",
+      "Jeu de politiques Model Armor et de sûreté",
+      "Pipeline d'observabilité et d'audit",
+      "Modèle opérationnel et runbooks"
+    ]
+  },
+  "n8n-cursor-mcp-clients": {
+    "category": "Écosystème de clients d'agents",
+    "subtitle": "L'écosystème de clients natifs MCP qui amène les agents dans les workflows du quotidien.",
+    "what": "n8n, Cursor, Claude Desktop et la famille grandissante de clients natifs MCP sont la façon dont les agents atteignent les utilisateurs finaux en production. Ils consomment des serveurs MCP et des runtimes d'assistants pour apporter les capacités IA dans les workflows développeurs, l'automatisation métier et l'outillage interne.",
+    "why": [
+      "n8n : plateforme d'automatisation open source, native MCP, self-hostable",
+      "Cursor : IDE AI-native, appels d'outils via MCP",
+      "Claude Desktop : hôte MCP de référence avec le protocole complet",
+      "Écosystème de clients conformes en forte croissance",
+      "Découple la capacité de la surface utilisateur"
+    ],
+    "how": "J'aide les équipes à empaqueter leurs serveurs MCP pour une distribution multi-clients sûre : authentification, mapping de portée par client, compatibilité de versions, observabilité et audit, plus le modèle opérationnel pour gérer plusieurs surfaces consommatrices.",
+    "deliverables": [
+      "Matrice de compatibilité des clients",
+      "Authentification et mapping de portée par client",
+      "Politique de compatibilité de versions et de dépréciation",
+      "Observabilité et audit transverses aux clients",
+      "Plan de déploiement auprès des utilisateurs finaux"
+    ]
+  },
+  "azure-machine-learning": {
+    "category": "Cycle de vie ML managé sur Azure",
+    "subtitle": "Le foyer naturel des charges ML à l'intérieur du périmètre Azure, complémentaire d'AI Foundry.",
+    "what": "Azure Machine Learning est la plateforme managée de Microsoft pour l'intégralité du cycle de vie ML : étiquetage des données, entraînement, expérimentation, déploiement, supervision et gouvernance. Elle complète Azure AI Foundry en couvrant le ML classique, l'entraînement de modèles sur mesure et le MLOps à grande échelle.",
+    "why": [
+      "Cycle de vie ML managé de bout en bout sur Azure",
+      "Intégration native avec Microsoft Entra, Key Vault, Private Endpoints",
+      "MLOps avec endpoints online et batch managés",
+      "Tableaux de bord Responsible AI et registre de modèles",
+      "Conformité solide (HIPAA, SOC 2, FedRAMP, EU Data Boundary)"
+    ],
+    "how": "Je conçois des architectures Azure ML alignées à votre frontière de sécurité : isolation des workspaces, private endpoints, contrôle d'accès basé sur les rôles à granularité fine, gouvernance du registre de modèles, et intégration à Defender for Cloud et à votre outillage CSPM existant.",
+    "deliverables": [
+      "Conception de landing zone Azure ML",
+      "Modèle d'identité et d'habilitations",
+      "Workflow de déploiement et d'approbation d'endpoints",
+      "Pipeline Responsible AI et audit",
+      "Revue de coûts et de gouvernance"
+    ]
+  },
+  "vertex-ai-model-garden": {
+    "category": "Catalogue de modèles managé sur Google Cloud",
+    "subtitle": "Modèles de fondation curés sur Vertex AI, servis à l'intérieur du périmètre Google Cloud.",
+    "what": "Vertex AI Model Garden est le catalogue curé de modèles de fondation et open source de Google Cloud, servis sur Vertex AI avec endpoints managés, outils d'évaluation et fine-tuning. C'est le catalogue central pour toute équipe qui standardise son IA sur Google Cloud.",
+    "why": [
+      "Catalogue curé de modèles first-party, partenaires et open source",
+      "Endpoints managés avec autoscaling et observabilité",
+      "Fine-tuning, distillation et évaluation natifs",
+      "VPC Service Controls et Cloud Audit Logs partout",
+      "Posture de conformité solide sur toutes les régions"
+    ],
+    "how": "J'aide les équipes à choisir le bon modèle pour chaque charge, à concevoir la topologie des endpoints, à configurer le périmètre VPC-SC et Model Armor, et à intégrer le tout au reste de votre stack d'observabilité et d'audit.",
+    "deliverables": [
+      "Matrice de sélection de modèles par charge",
+      "Workflow de déploiement et d'approbation d'endpoints",
+      "VPC Service Controls et périmètre de sécurité",
+      "Intégration de l'observabilité et de l'audit",
+      "Revue de coûts et de gouvernance"
+    ]
+  },
+  "huggingface-tgi": {
+    "category": "Serveur d'inférence open source",
+    "subtitle": "Hugging Face Text Generation Inference, la référence ouverte pour servir des LLM à poids ouverts.",
+    "what": "Hugging Face Text Generation Inference (TGI) est le serveur open source dédié au serving de LLM à poids ouverts à l'échelle de la production. Il prend en charge les derniers modèles ouverts, des kernels d'attention optimisés et le streaming structuré, et s'intègre proprement à l'écosystème Hugging Face plus large.",
+    "why": [
+      "Conçu pour les derniers LLM à poids ouverts d'emblée",
+      "Primitives de production : streaming, batching, sortie structurée",
+      "Intégration étroite avec le Hugging Face Hub",
+      "Self-hostable, pas d'enfermement fournisseur",
+      "Communauté forte et couverture rapide des nouveaux modèles"
+    ],
+    "how": "J'aide les équipes à mettre en place des déploiements TGI optimisés pour la latence, le débit et le coût, avec gouvernance du registre de modèles, gestion de clés pour les modèles gatés, observabilité et frontière de sécurité entre modèles et tenants.",
+    "deliverables": [
+      "Architecture de déploiement TGI",
+      "Plan de sélection de modèles et de registre",
+      "Conception du scheduling GPU et de l'autoscaling",
+      "Intégration de l'observabilité (Prometheus, OpenTelemetry)",
+      "Benchmark de performance et de coût"
+    ]
+  },
+  "vllm-ray-serve": {
+    "category": "Inférence ouverte à fort débit",
+    "subtitle": "La stack open source pour le serving LLM à fort débit et l'orchestration élastique de modèles.",
+    "what": "vLLM est le moteur d'inférence open source optimisé pour le débit sur GPU, avec PagedAttention et batching continu. Ray Serve ajoute une orchestration élastique et distribuée des réplicas de modèles et des pipelines. Ensemble ils forment la stack ouverte pour le serving LLM à fort débit à grande échelle.",
+    "why": [
+      "PagedAttention et batching continu pour un débit de premier plan",
+      "Compatible avec la plupart des LLM à poids ouverts",
+      "Ray Serve pour l'orchestration élastique et les pipelines",
+      "Self-hostable, pas d'enfermement fournisseur",
+      "Communauté active et couverture rapide des nouveaux modèles"
+    ],
+    "how": "Je conçois des déploiements vLLM et Ray Serve ajustés à vos objectifs de débit, de latence et de coût, avec isolation multi-tenant, scheduling GPU et frontières de sécurité. J'intègre la stack à l'outillage plus large d'observabilité et de sécurité.",
+    "deliverables": [
+      "Architecture de déploiement vLLM + Ray Serve",
+      "Plan de scheduling GPU et d'autoscaling",
+      "Isolation multi-tenant et autorisation",
+      "Intégration de l'observabilité (Prometheus, OpenTelemetry)",
+      "Benchmark de performance et de coût"
+    ]
+  },
+  "aws-security-hub": {
+    "category": "Opérations de sécurité natives AWS",
+    "subtitle": "Le trio natif AWS pour la posture de sécurité, la détection de menaces et la gestion des vulnérabilités.",
+    "what": "AWS Security Hub agrège les findings de sécurité entre les services AWS et les outils partenaires. GuardDuty fournit la détection de menaces sur les comptes, charges et données. Inspector scanne EC2, conteneurs et serverless pour les vulnérabilités. Ensemble ils forment la stack native AWS d'opérations de sécurité.",
+    "why": [
+      "Vue unique sur l'ensemble du signal de sécurité AWS",
+      "Détection de menaces sur logs, réseau et runtime",
+      "Scan de vulnérabilités pour EC2, ECR et Lambda",
+      "Intégration native avec EventBridge, Lambda et Step Functions",
+      "Contenu de conformité solide (CIS, PCI, NIST, ISO)"
+    ],
+    "how": "Je conçois la topologie d'activation sur l'ensemble de vos comptes AWS, j'ajuste le cadre de politiques, je route les findings vers votre outillage SOC et je conçois les automatisations de réponse via EventBridge et Lambda.",
+    "deliverables": [
+      "Topologie d'activation multi-comptes",
+      "Cadre de politiques et ajustement des sévérités",
+      "Intégration SOC et workflow de triage d'alertes",
+      "Conception des automatisations de réponse",
+      "Plan d'onboarding et modèle opérationnel"
+    ]
+  },
+  "microsoft-defender-cloud": {
+    "category": "Sécurité cloud et SIEM Microsoft",
+    "subtitle": "La stack CSPM, CWPP et SIEM de Microsoft, unifiée à travers cloud et identité.",
+    "what": "Microsoft Defender for Cloud fournit CSPM et CWPP sur Azure, AWS et GCP, plus la posture spécifique IA pour Azure AI Foundry. Microsoft Sentinel est le SIEM et SOAR cloud-native. Ensemble ils forment la plateforme unifiée d'opérations de sécurité de Microsoft.",
+    "why": [
+      "Posture multi-cloud et protection des charges dans un seul produit",
+      "Intégration native avec Microsoft Entra et le graphe Microsoft",
+      "Gestion de posture IA pour les agents Azure AI Foundry",
+      "Sentinel pour SIEM et SOAR avec des centaines de connecteurs",
+      "Contenu de conformité solide (CIS, PCI, NIST, ISO, réglementaire)"
+    ],
+    "how": "Je conçois les déploiements Defender for Cloud et Sentinel sur des parcs multi-cloud, j'ajuste le cadre de politiques, je configure les règles analytiques et je conçois le modèle opérationnel SOC autour.",
+    "deliverables": [
+      "Activation multi-cloud et cadre de politiques",
+      "Conception du workspace Sentinel et de l'ingestion",
+      "Règles analytiques et playbooks SOAR",
+      "Modèle opérationnel SOC et runbooks",
+      "Plan d'onboarding et optimisation des coûts"
+    ]
+  },
+  "google-security-command-center": {
+    "category": "Plateforme de sécurité Google Cloud",
+    "subtitle": "La plateforme CSPM, CWPP et de détection de menaces de Google, native sur Google Cloud.",
+    "what": "Google Security Command Center est la plateforme de sécurité native de Google Cloud. Elle rassemble posture de sécurité, gestion de la surface d'attaque, détection de menaces et threat intelligence Mandiant dans une console unique, avec une intégration profonde au plan de contrôle Google Cloud.",
+    "why": [
+      "Posture native sur l'ensemble de vos projets Google Cloud",
+      "Threat intelligence Mandiant intégrée",
+      "Analyse des chemins d'attaque et priorisation du risque",
+      "Intégrations avec VPC Service Controls et IAM Recommender",
+      "Contenu de conformité solide (CIS, PCI, NIST, ISO)"
+    ],
+    "how": "Je conçois la topologie d'activation à l'échelle de votre organisation Google Cloud, j'ajuste le cadre de politiques, je configure les intégrations Mandiant et je route les findings vers votre outillage SOC.",
+    "deliverables": [
+      "Topologie d'activation à l'échelle de l'organisation",
+      "Cadre de politiques et ajustement des sévérités",
+      "Intégration Mandiant et threat intelligence",
+      "Intégration SOC et workflow d'alertes",
+      "Plan d'onboarding et modèle opérationnel"
+    ]
+  },
+  "cloudflare-zero-trust": {
+    "category": "Zero trust en edge et WAF",
+    "subtitle": "La stack de sécurité edge de Cloudflare : accès zero trust, WAF, bot management et AI Gateway.",
+    "what": "Cloudflare Zero Trust fournit accès identity-aware, ZTNA, secure web gateway, isolation navigateur et sécurité e-mail en edge. Le WAF Cloudflare et l'AI Gateway ajoutent la protection applicative et un point de contrôle pour le trafic LLM sortant. J'ai piloté le déploiement mondial de Cloudflare chez un fournisseur d'informations financières de premier rang.",
+    "why": [
+      "Livré en edge : faible latence partout dans le monde",
+      "Console unique pour ZTNA, SWG, CASB, WAF et sécurité e-mail",
+      "AI Gateway comme point de contrôle pour le trafic LLM sortant",
+      "Intégration native avec les principaux IdP",
+      "Posture anti-DDoS forte d'emblée"
+    ],
+    "how": "Je conçois les déploiements Cloudflare Zero Trust et WAF sur votre parc global, je conçois le cadre de politiques, j'intègre votre IdP et je mets en place le modèle opérationnel autour de la plateforme.",
+    "deliverables": [
+      "Topologie de déploiement Zero Trust",
+      "Cadre de politiques (ZTNA, SWG, WAF, AI Gateway)",
+      "Intégration IdP et modèle d'identité",
+      "Intégration SOC et workflow d'alertes",
+      "Plan d'onboarding et modèle opérationnel"
+    ]
+  },
+  "wiz-lacework-orca": {
+    "category": "CNAPP sans agent",
+    "subtitle": "Les options indépendantes de CNAPP sans agent, quand vous voulez du CSPM au-delà de votre fournisseur cloud.",
+    "what": "Wiz, Lacework et Orca sont les principales plateformes CNAPP indépendantes. Elles scannent les parcs multi-cloud sans agent, via API et snapshots, font émerger le risque par analyse des chemins d'attaque et fournissent CIEM, CWPP et DSPM dans une console unique. C'est le choix naturel quand vous voulez une couverture CSPM au-delà de ce qu'offre nativement votre fournisseur cloud.",
+    "why": [
+      "Scan sans agent sur AWS, Azure, GCP, OCI",
+      "Analyse des chemins d'attaque et priorisation du risque",
+      "CIEM, CWPP et DSPM dans un seul produit",
+      "Time-to-value rapide, pas d'empreinte d'agent",
+      "Fournisseurs indépendants, pas d'enfermement fournisseur cloud"
+    ],
+    "how": "J'aide les équipes à évaluer, sélectionner et déployer le bon CNAPP pour leur parc, à concevoir le cadre de politiques, à intégrer avec leur outillage SOC et ticketing et à exploiter la plateforme dans la durée.",
+    "deliverables": [
+      "Rapport d'évaluation et de sélection CNAPP",
+      "Topologie de déploiement sur l'ensemble des comptes cloud",
+      "Cadre de politiques et ajustement des sévérités",
+      "Intégration SOC et ticketing",
+      "Plan d'onboarding et modèle opérationnel"
+    ]
+  },
+  "hashicorp-vault-terraform": {
+    "category": "Secrets et infrastructure as code",
+    "subtitle": "La gestion de secrets et l'infrastructure as code de HashiCorp, fondation multi-cloud.",
+    "what": "HashiCorp Vault est le standard du marché pour la gestion de secrets, les credentials dynamiques, le chiffrement-as-a-service et le PKI. Terraform est le langage de fait de l'infrastructure as code multi-cloud. Ensemble ils forment le socle d'une infrastructure multi-cloud sûre et reproductible, pour l'IA et au-delà.",
+    "why": [
+      "Vault : secrets dynamiques, KV, PKI, chiffrement transit, KMIP",
+      "Terraform : provisioning idempotent, déclaratif, multi-cloud",
+      "Posture open source forte, fonctionnalités enterprise en option",
+      "Intégrations natives avec tous les grands clouds et plateformes",
+      "Gouvernance mûre : Sentinel policy-as-code, OPA, Terraform Cloud"
+    ],
+    "how": "Je conçois les déploiements Vault et Terraform alignés à votre frontière de sécurité : modèle de namespaces de secrets, credentials dynamiques pour le cloud, PKI pour mTLS, bibliothèque de modules Terraform, cadre de policy Sentinel ou OPA.",
+    "deliverables": [
+      "Topologie de déploiement Vault et modèle de namespaces",
+      "Plan de credentials dynamiques et PKI",
+      "Bibliothèque de modules Terraform et intégration CI",
+      "Cadre policy-as-code",
+      "Modèle opérationnel et playbook d'astreinte"
+    ]
+  },
+  "weights-and-biases": {
+    "category": "Suivi d'expériences ML et LLM",
+    "subtitle": "Le standard de suivi d'expériences, d'évaluation et de registre de modèles pour les équipes ML et LLM.",
+    "what": "Weights & Biases (W&B) fournit suivi d'expériences, évaluations, registre de modèles et Weave pour l'observabilité LLM. C'est l'outil de référence pour les équipes ML qui ont besoin d'une gestion rigoureuse des expériences, et il s'étend rapidement à l'observabilité LLM et agents.",
+    "why": [
+      "Suivi d'expériences avec traçabilité complète et reproductibilité",
+      "Registre de modèles avec workflows de promotion et d'approbation",
+      "Weave pour l'observabilité de prompts et d'agents",
+      "Intégrations natives avec PyTorch, JAX, Hugging Face, LangChain",
+      "Gouvernance solide pour les pipelines ML régulés"
+    ],
+    "how": "J'intègre W&B dans votre stack ML et agents, je conçois le cycle de vie d'expériences et de modèles, je configure le workflow de promotion du registre et je connecte la plateforme à votre outillage d'audit et SIEM.",
+    "deliverables": [
+      "Intégration de W&B dans votre stack ML et agents",
+      "Conception du cycle de vie d'expériences et de modèles",
+      "Workflow de promotion et d'approbation du registre",
+      "Intégration audit et SIEM",
+      "Modèle opérationnel et montée en compétence des équipes"
+    ]
+  },
+  "arize-phoenix": {
+    "category": "Évaluation et tracing LLM ouverts",
+    "subtitle": "Observabilité et évaluation open source pour les applications LLM.",
+    "what": "Arize Phoenix est un outil open source d'observabilité et d'évaluation pour applications LLM et agents, avec tracing OpenTelemetry complet. TruLens fournit des primitives d'évaluation programmables pour les applications RAG et agents. Ensemble ils couvrent de bout en bout l'observabilité et l'évaluation LLM open source.",
+    "why": [
+      "Open source et self-hostable",
+      "Support natif OpenTelemetry pour les traces",
+      "Évaluateurs programmables pour la qualité RAG et agents",
+      "Intégrations avec LangChain, LlamaIndex, OpenAI Agents",
+      "Se combine bien avec Langfuse et d'autres couches d'observabilité"
+    ],
+    "how": "J'intègre Phoenix et TruLens dans votre stack LLM existante, je conçois le harness d'évaluation, je configure des évaluateurs personnalisés pour votre domaine et je connecte les traces à votre plateforme d'observabilité plus large.",
+    "deliverables": [
+      "Conception du déploiement Phoenix et TruLens",
+      "Harness d'évaluation avec évaluateurs personnalisés",
+      "Intégration des traces OpenTelemetry",
+      "Alerting sur dérive et qualité",
+      "Modèle opérationnel et montée en compétence des équipes"
+    ]
+  },
+  "promptfoo-deepeval": {
+    "category": "Évaluation de prompts et d'agents",
+    "subtitle": "Harness d'évaluation compatibles CI pour prompts, agents et pipelines RAG.",
+    "what": "Promptfoo et DeepEval sont les harness d'évaluation open source pour prompts, agents et pipelines RAG. Ils supportent évaluateurs déterministes et LLM-as-judge, s'exécutent en CI comme n'importe quelle suite de tests et produisent des rapports structurés qui rendent la régression visible avant que le code n'arrive en production.",
+    "why": [
+      "S'exécutent comme une suite de tests, natifs en CI/CD",
+      "Évaluateurs intégrés : factualité, sûreté, latence, coût",
+      "LLM-as-judge avec le modèle de votre choix",
+      "Comparaison côte à côte de prompts, modèles et configurations",
+      "Open source, self-hostable, pas d'enfermement fournisseur"
+    ],
+    "how": "Je conçois des harness d'évaluation pour vos pipelines d'agents et RAG, je les câble en CI, je définis des évaluateurs personnalisés pour votre domaine et je pose les portes de régression qui bloquent les mauvaises modifications avant la production.",
+    "deliverables": [
+      "Harness d'évaluation pour prompts, agents et RAG",
+      "Intégration CI avec portes de régression",
+      "Évaluateurs personnalisés pour votre domaine",
+      "Tableaux de bord de reporting et cadence de revue",
+      "Montée en compétence des équipes et modèle opérationnel"
+    ]
+  },
+  "guardrails-ai": {
+    "category": "Garde-fous d'agents programmables",
+    "subtitle": "Les frameworks ouverts pour appliquer la politique en entrée, en sortie et sur les appels d'outils.",
+    "what": "Guardrails AI et NeMo Guardrails sont les principaux frameworks ouverts pour appliquer la politique sur les entrées, sorties et actions d'agents LLM. Ils fournissent validators programmables, sortie structurée, gardes thématiques et filtres d'appels d'outils, exécutés de manière déterministe aux côtés du modèle.",
+    "why": [
+      "Application déterministe des politiques à la couche prompt",
+      "Validation et réparation de sortie structurée",
+      "Gardes thématiques et de contenu en entrée et sortie",
+      "Filtres d'appels d'outils et gestion de dialogue (NeMo)",
+      "Open source, agnostiques du framework"
+    ],
+    "how": "Je conçois les jeux de politiques de garde-fous pour votre parc d'agents, j'intègre les frameworks à votre runtime, j'écris des validators personnalisés pour votre domaine et j'instrumente l'observabilité qui prouve que les garde-fous se déclenchent comme prévu.",
+    "deliverables": [
+      "Jeu de politiques de garde-fous pour votre parc d'agents",
+      "Validators personnalisés pour votre domaine",
+      "Intégration runtime à LangGraph, LangChain ou runtimes hébergés",
+      "Observabilité et audit des déclenchements de garde-fous",
+      "Rapport de red team sur les tentatives de contournement"
+    ]
+  },
+  "datadog-llm-observability": {
+    "category": "Observabilité LLM d'entreprise",
+    "subtitle": "Traces LLM et agents à l'intérieur de la plateforme d'observabilité Datadog que vous exploitez déjà.",
+    "what": "Datadog LLM Observability apporte prompts, traces, évaluations et suivi des coûts pour les applications LLM et agents à l'intérieur de la plateforme Datadog. C'est l'option naturelle pour les entreprises qui exploitent déjà Datadog et veulent l'observabilité LLM sans monter une plateforme séparée.",
+    "why": [
+      "Une plateforme unique pour l'infra, l'app et l'observabilité LLM",
+      "Traces, évaluations et suivi des coûts natifs pour les LLM",
+      "Corrélation forte avec les traces du reste de votre stack",
+      "Conformité d'entreprise, SSO, RBAC d'emblée",
+      "Intégration native avec les principaux fournisseurs de modèles et frameworks"
+    ],
+    "how": "J'intègre Datadog LLM Observability dans votre stack d'agents, je conçois le modèle de traces et d'évaluations, je mets en place des alertes sur dérive, coût et violations de politique, et je connecte les traces à vos tableaux de bord et runbooks Datadog plus larges.",
+    "deliverables": [
+      "Intégration Datadog LLM Observability sur l'ensemble de votre stack d'agents",
+      "Conception du modèle de traces et d'évaluations",
+      "Alertes sur dérive, coût et violations de politique",
+      "Tableaux de bord et runbooks",
+      "Modèle opérationnel et montée en compétence des équipes"
+    ]
+  },
+  "opentelemetry-splunk": {
+    "category": "Observabilité ouverte et SIEM",
+    "subtitle": "OpenTelemetry comme standard de télémétrie LLM et agents, Splunk comme destination SIEM.",
+    "what": "OpenTelemetry est le standard ouvert de télémétrie, traces, métriques et logs, et les conventions sémantiques OpenTelemetry GenAI couvrent désormais les traces LLM et agents. Splunk est la plateforme SIEM et d'observabilité mature que beaucoup d'industries régulées utilisent déjà pour ingérer et agir sur cette télémétrie.",
+    "why": [
+      "Standard de télémétrie agnostique du fournisseur",
+      "Conventions sémantiques OpenTelemetry GenAI pour les traces LLM",
+      "Splunk pour l'ingestion, la recherche, l'alerting et la conformité",
+      "Réutilise l'investissement SIEM existant et le modèle opérationnel",
+      "Se combine proprement avec Langfuse, Phoenix et Datadog"
+    ],
+    "how": "J'instrumente votre stack d'agents avec les conventions OpenTelemetry GenAI, je conçois la topologie des collectors, je route traces et logs vers Splunk et votre plateforme d'observabilité LLM, et je définis les playbooks de détection et d'audit.",
+    "deliverables": [
+      "Plan d'instrumentation OpenTelemetry",
+      "Topologie de collectors et conception du routage",
+      "Playbooks d'ingestion et de détection Splunk",
+      "Intégration SIEM et audit",
+      "Modèle opérationnel et playbook d'astreinte"
+    ]
+  },
+  "iso-27001": {
+    "category": "ISMS sécurité de l'information et vie privée",
+    "subtitle": "La norme internationale de fait pour la sécurité de l'information, plus son extension vie privée.",
+    "what": "ISO/IEC 27001 est la norme internationale pour les systèmes de management de la sécurité de l'information, la base mondiale de confiance dans les industries régulées. ISO/IEC 27701 est l'extension vie privée qui mappe l'ISMS sur le RGPD et le régime de protection des données plus large. J'ai piloté des programmes de certification ISO 27001 à l'échelle du groupe dans des holdings diversifiés.",
+    "why": [
+      "Base internationale pour la sécurité de l'information",
+      "Signal fort pour clients, partenaires, régulateurs et investisseurs",
+      "Se mappe proprement à SOC 2, NIST CSF et à la plupart des régimes réglementaires",
+      "27701 étend l'ISMS au RGPD et aux lois mondiales de vie privée",
+      "Prête à l'audit, certifiable par des organismes accrédités"
+    ],
+    "how": "J'aide les organisations à concevoir et mettre en œuvre un ISMS aligné à ISO 27001 et 27701 : analyse d'écart, cadre de politiques et de contrôles, registre de risques, Déclaration d'Applicabilité, contrôles du cycle de vie et dossier de préparation à l'audit de certification.",
+    "deliverables": [
+      "Analyse d'écart par rapport à ISO 27001 et 27701",
+      "Cadre de politiques et de contrôles ISMS",
+      "Registre de risques et Déclaration d'Applicabilité",
+      "Contrôles du cycle de vie et dossier de preuves",
+      "Évaluation de préparation à la certification"
+    ]
+  },
+  "soc-2": {
+    "category": "Conformité Trust Services",
+    "subtitle": "Le signal de confiance de fait pour les fournisseurs SaaS et B2B.",
+    "what": "SOC 2 Type II est le cadre d'audit de l'AICPA pour les fournisseurs de services technologiques, qui évalue l'efficacité opérationnelle des contrôles sur la sécurité, la disponibilité, la confidentialité, l'intégrité de traitement et la vie privée. C'est le signal de confiance de fait attendu de tout fournisseur SaaS ou B2B.",
+    "why": [
+      "Signal de confiance attendu des fournisseurs SaaS et B2B",
+      "Type II prouve que les contrôles opèrent efficacement dans le temps",
+      "Couvre sécurité, disponibilité, confidentialité et vie privée",
+      "Se mappe proprement à ISO 27001 et à la plupart des régimes réglementaires",
+      "Prêt à l'audit, attesté par des auditeurs accrédités"
+    ],
+    "how": "J'aide les organisations à concevoir le jeu de contrôles pour SOC 2 Type II, à mener l'évaluation de préparation, à mettre en œuvre les contrôles manquants, à préparer le dossier de preuves et à coordonner avec l'auditeur pendant la fenêtre d'observation.",
+    "deliverables": [
+      "Évaluation de préparation SOC 2 Type II",
+      "Jeu de contrôles sur les critères Trust Services",
+      "Dossier de preuves et processus de collecte continu",
+      "Coordination avec l'auditeur et plan de fenêtre d'observation",
+      "Modèle opérationnel post-audit"
+    ]
+  },
+  "hipaa-pci-dss": {
+    "category": "Charges régulées par secteur",
+    "subtitle": "Les régimes de sécurité santé et paiement pour les charges IA dans les industries régulées.",
+    "what": "HIPAA est le régime américain de protection de l'information de santé, qui s'applique à tout système traitant des informations de santé protégées. PCI-DSS est le standard de sécurité des données du secteur des cartes de paiement, qui s'applique à quiconque traite des données porteur. Tous deux imposent des contrôles techniques et organisationnels spécifiques aux charges IA dans leur périmètre.",
+    "why": [
+      "Requis pour toute charge IA touchant des données PHI ou PAN",
+      "Définissent des contrôles techniques et organisationnels spécifiques",
+      "Se mappent proprement aux bases ISO 27001 et SOC 2",
+      "Orientations spécifiques pour cloud, chiffrement et accès",
+      "Audités par des organismes accrédités ou des QSA"
+    ],
+    "how": "J'aide les équipes à cadrer HIPAA et PCI-DSS pour leurs charges IA, à concevoir la segmentation, le chiffrement et les contrôles d'accès, à constituer le dossier de preuves et à coordonner avec les auditeurs HIPAA ou les QSA PCI.",
+    "deliverables": [
+      "Évaluation de cadrage HIPAA ou PCI-DSS",
+      "Conception de segmentation, chiffrement et accès",
+      "Plan de mise en œuvre des contrôles",
+      "Dossier de preuves et coordination d'audit",
+      "Modèle opérationnel post-audit"
+    ]
+  },
+  "dora-nis2": {
+    "category": "Résilience opérationnelle et cyber UE",
+    "subtitle": "Les réglementations contraignantes de l'UE pour la résilience opérationnelle numérique et la cybersécurité des secteurs critiques.",
+    "what": "DORA (Digital Operational Resilience Act) est la réglementation contraignante de l'UE pour la résilience opérationnelle numérique des services financiers. NIS2 étend la base cybersécurité de l'UE aux secteurs critiques et importants. Tous deux imposent des contrôles spécifiques de gouvernance, de risque et de réponse aux incidents, avec des sanctions significatives en cas de non-conformité.",
+    "why": [
+      "Réglementations UE contraignantes avec sanctions significatives",
+      "DORA : requise pour les entités financières et leurs fournisseurs ICT",
+      "NIS2 : couvre les secteurs critiques et importants à travers l'UE",
+      "Contrôles spécifiques pour la réponse aux incidents et le risque tiers",
+      "S'alignent proprement aux bases ISO 27001 et SOC 2"
+    ],
+    "how": "J'aide les organisations à évaluer leur périmètre DORA ou NIS2, à concevoir le cadre de gouvernance et de gestion des risques, à mapper les contrôles aux réglementations, à bâtir les programmes de réponse aux incidents et de risque tiers, et à préparer le dossier de preuves.",
+    "deliverables": [
+      "Évaluation de cadrage DORA et NIS2",
+      "Cadre de gouvernance et de gestion des risques",
+      "Programmes de réponse aux incidents et de risque tiers",
+      "Mise en œuvre des contrôles et dossier de preuves",
+      "Plan de préparation au régulateur"
+    ]
+  },
+  "pdpl-gdpr": {
+    "category": "Réglementations mondiales de vie privée",
+    "subtitle": "Les régimes régionaux et mondiaux de vie privée qui gouvernent les données personnelles dans les charges IA.",
+    "what": "UAE PDPL et KSA PDPL sont les lois de protection des données personnelles des Émirats arabes unis et du Royaume d'Arabie saoudite. Le RGPD est le règlement général de l'Union européenne sur la protection des données. Ensemble ils couvrent les régimes de vie privée les plus pertinents pour les charges IA en Europe, dans le CCG et pour toute organisation servant les citoyens de ces régions.",
+    "why": [
+      "Requis pour toute charge IA touchant des données personnelles de ces régions",
+      "Définissent la base légale, les droits et les règles de transfert transfrontalier",
+      "Sanctions significatives en cas de non-conformité",
+      "Le RGPD est le repère mondial de fait pour la vie privée",
+      "UAE et KSA PDPL sont les équivalents du CCG, largement alignés"
+    ],
+    "how": "J'aide les organisations à évaluer leur empreinte vie privée sur ces régimes, à concevoir l'inventaire de données et le registre de bases légales, à mettre en œuvre les workflows de droits, à mapper les transferts transfrontaliers et à se préparer à l'engagement avec le régulateur.",
+    "deliverables": [
+      "Empreinte vie privée et inventaire de données",
+      "Registre de bases légales et conception du consentement",
+      "Workflows de droits (accès, suppression, portabilité)",
+      "Évaluation des transferts transfrontaliers",
+      "Plan de préparation au régulateur"
+    ]
+  }
+}

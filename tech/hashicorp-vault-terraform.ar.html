@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark" class="tech-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>HashiCorp Vault &amp; Terraform الاستشارات | Jeremy Canale, خبير عالمي في أمن الوكلاء الذكيين</title>
+  <meta name="description" content="إدارة الأسرار والبنية التحتية كشيفرة من HashiCorp، الأساس لمتعدّد السحابة. تأمين منصتك للوكلاء الذكيين يبدأ بمحادثة." />
+  <meta name="author" content="Jeremy Canale" />
+
+  <link rel="canonical" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.ar.html" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.html" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.fr.html" />
+  <link rel="alternate" hreflang="zh" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.zh.html" />
+  <link rel="alternate" hreflang="ar" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.ar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="HashiCorp Vault &amp; Terraform الاستشارات | Jeremy Canale, خبير عالمي في أمن الوكلاء الذكيين" />
+  <meta property="og:description" content="إدارة الأسرار والبنية التحتية كشيفرة من HashiCorp، الأساس لمتعدّد السحابة." />
+  <meta property="og:url" content="https://jeremycanale.com/tech/hashicorp-vault-terraform.ar.html" />
+  <meta property="og:locale" content="ar_AE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HashiCorp Vault &amp; Terraform الاستشارات | Jeremy Canale, خبير عالمي في أمن الوكلاء الذكيين" />
+  <meta name="twitter:description" content="إدارة الأسرار والبنية التحتية كشيفرة من HashiCorp، الأساس لمتعدّد السحابة." />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "HashiCorp Vault & Terraform consulting, implementation and audit",
+  "name": "HashiCorp Vault & Terraform consulting by Jeremy Canale",
+  "description": "إدارة الأسرار والبنية التحتية كشيفرة من HashiCorp، الأساس لمتعدّد السحابة.",
+  "provider": {
+    "@type": "Person",
+    "name": "Jeremy Canale",
+    "url": "https://jeremycanale.com",
+    "jobTitle": "Agentic Security Architect"
+  },
+  "areaServed": [
+    "Europe",
+    "Middle East",
+    "Asia"
+  ],
+  "category": "الأسرار والبنية التحتية كشيفرة",
+  "url": "https://jeremycanale.com/tech/hashicorp-vault-terraform.ar.html"
+}
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../ar.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">أمن الوكلاء الذكيين</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../ar.html#expertise">الخبرة</a>
+      <a href="../ar.html#consulting">الاستشارات</a>
+      <a href="../ar.html#cases">دراسات حالة</a>
+      <a href="../ar.html#experience">المسيرة</a>
+      <a href="../ar.html#certifications">الشهادات</a>
+      <a href="../ar.html#faq">الأسئلة الشائعة</a>
+      <a href="../ar.html#contact">تواصل</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;hashicorp-vault-terraform.html&quot;,&quot;fr&quot;:&quot;hashicorp-vault-terraform.fr.html&quot;,&quot;zh&quot;:&quot;hashicorp-vault-terraform.zh.html&quot;,&quot;ar&quot;:&quot;hashicorp-vault-terraform.ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>AR</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../ar.html#contact">
+        <span>ابدأ التعاون</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="tech-hero">
+      <a href="../ar.html#consulting" class="tech-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        العودة إلى الاستشارات
+      </a>
+
+      <div class="tech-hero-head">
+        <div class="tech-hero-logo"><svg viewBox="0 0 48 48"><defs><linearGradient id="gv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs><rect width="48" height="48" rx="10" fill="url(#gv)"/><g fill="none" stroke="#fff" stroke-width="2"><circle cx="16" cy="18" r="4"/><circle cx="32" cy="18" r="4"/><circle cx="24" cy="32" r="4"/><line x1="16" y1="18" x2="32" y2="18"/><line x1="16" y1="18" x2="24" y2="32"/><line x1="32" y1="18" x2="24" y2="32"/></g></svg></div>
+        <div class="tech-hero-meta">
+          <span class="tech-hero-category">الأسرار والبنية التحتية كشيفرة</span>
+          <span class="tech-hero-vendor">بواسطة HashiCorp</span>
+        </div>
+      </div>
+
+      <h1>HashiCorp Vault &amp; Terraform</h1>
+      <p class="tech-hero-subtitle">إدارة الأسرار والبنية التحتية كشيفرة من HashiCorp، الأساس لمتعدّد السحابة.</p>
+    </section>
+
+    <div class="tech-content">
+      <article class="tech-block span-2">
+        <h2><span class="tech-num">01</span> ما هذا؟</h2>
+        <p>HashiCorp Vault هو المعيار الصناعي لإدارة الأسرار، والاعتمادات الديناميكية، والتشفير كخدمة، وPKI. Terraform هي اللغة الفعلية للبنية التحتية كشيفرة عبر السحابات المتعدّدة. يُشكّلان معاً أساس بنية تحتية آمنة وقابلة للتكرار عبر السحابات المتعدّدة للذكاء الاصطناعي وما بعده.</p>
+      </article>
+      <article class="tech-block">
+        <h2><span class="tech-num">02</span> لماذا تطبيقه؟</h2>
+        <ul class="tech-bullets">
+        <li>Vault، أسرار ديناميكية، KV، PKI، تشفير العبور، KMIP</li>
+        <li>Terraform، توفير مُجرَّد، تصريحي، عبر سحابات متعدّدة</li>
+        <li>وضع قوي مفتوح المصدر، بميزات مؤسسية اختيارية</li>
+        <li>تكاملات أصلية مع كل سحابة ومنصّة كبرى</li>
+        <li>حوكمة ناضجة، Sentinel للسياسة كشيفرة، OPA، Terraform Cloud</li>
+        </ul>
+      </article>
+      <article class="tech-block">
+        <h2><span class="tech-num">03</span> كيف أساعدك</h2>
+        <p>أصمّم عمليات نشر Vault وTerraform متوائمة مع حدودك الأمنية، نموذج فضاءات الأسرار، اعتمادات ديناميكية للسحابة، PKI لـ mTLS، مكتبة وحدات Terraform، إطار سياسة كشيفرة عبر Sentinel أو OPA.</p>
+      </article>
+      <article class="tech-block span-2">
+        <h2><span class="tech-num">04</span> المخرجات المتوقعة</h2>
+        <ul class="tech-bullets">
+        <li>طوبولوجيا نشر Vault ونموذج فضاءات الأسماء</li>
+        <li>خطة اعتمادات ديناميكية وPKI</li>
+        <li>مكتبة وحدات Terraform وتكامل CI</li>
+        <li>إطار سياسة كشيفرة</li>
+        <li>نموذج تشغيلي ودليل المناوبة</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="tech-cta-bar">
+      <div class="tech-cta-text">
+        <strong>هل أنت جاهز للتطبيق؟</strong>
+        <span>مكالمة استكشاف أولية، عادةً ثلاثون دقيقة، دون أي التزام.</span>
+      </div>
+      <a class="btn btn-primary" href="mailto:contact@jeremycanale.com?subject=HashiCorp%20Vault%20%26%20Terraform%20consulting%20enquiry">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        contact@jeremycanale.com
+      </a>
+    </div>
+
+    <div class="tech-related">
+      <div class="tech-related-title">تقنيات ذات صلة</div>
+      <ul class="tech-related-list">
+      <li><a href="wiz-lacework-orca.ar.html">Wiz, Lacework &amp; Orca</a></li>
+      <li><a href="cloudflare-zero-trust.ar.html">Cloudflare Zero Trust &amp; WAF</a></li>
+      <li><a href="google-security-command-center.ar.html">Google Security Command Center</a></li>
+      <li><a href="microsoft-defender-cloud.ar.html">Microsoft Defender for Cloud &amp; Sentinel</a></li>
+      <li><a href="aws-security-hub.ar.html">AWS Security Hub, GuardDuty &amp; Inspector</a></li>
+      <li><a href="palo-alto-prisma-cloud.ar.html">Palo Alto Prisma Cloud</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>أمن الوكلاء الذكيين · ثقة الذكاء الاصطناعي · GRC السحابي</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../i18n.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>

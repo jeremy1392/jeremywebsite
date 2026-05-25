@@ -1,0 +1,385 @@
+<svg class="orbit-shield" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Central trust shield surrounded by orbiting compliance frameworks">
+  <defs>
+    <!-- ============ GRADIENTS ============ -->
+    <linearGradient id="os-shieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="55%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="os-crestGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="os-checkGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="os-pillCyan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1633"/>
+      <stop offset="100%" stop-color="#0a0f24"/>
+    </linearGradient>
+    <linearGradient id="os-pillViolet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#150f33"/>
+      <stop offset="100%" stop-color="#0a0f24"/>
+    </linearGradient>
+    <linearGradient id="os-scan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#67e8f9" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#67e8f9" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#67e8f9" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="os-shieldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="os-vignette" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0a0f24" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#070b1c" stop-opacity="0.9"/>
+    </radialGradient>
+    <radialGradient id="os-topGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#fbbf24" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ============ FILTERS ============ -->
+    <filter id="os-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="os-bigGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- ============ HEX BACKGROUND PATTERN ============ -->
+    <pattern id="os-hex" x="0" y="0" width="32" height="27.7" patternUnits="userSpaceOnUse">
+      <path d="M16 0 L32 9.2 V 18.5 L16 27.7 L0 18.5 V 9.2 Z" fill="none" stroke="#22d3ee" stroke-opacity="0.06" stroke-width="0.6"/>
+    </pattern>
+
+    <!-- ============ ORBIT PATHS (for particle motion) ============ -->
+    <path id="os-orbitA" d="M 240 240 m -210 0 a 210 210 0 1 1 420 0 a 210 210 0 1 1 -420 0"/>
+    <path id="os-orbitB" d="M 240 240 m -170 0 a 170 170 0 1 1 340 0 a 170 170 0 1 1 -340 0"/>
+    <path id="os-orbitC" d="M 240 240 m -130 0 a 130 130 0 1 1 260 0 a 130 130 0 1 1 -260 0"/>
+
+    <!-- ============ COMPLIANCE PILL SYMBOLS (icon + label) ============ -->
+    <!-- Icons are designed to fit at x=-26..-16, y=-6..6 inside the pill -->
+    <symbol id="os-ico-doc" viewBox="-8 -8 16 16">
+      <rect x="-5" y="-6" width="10" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="-3" y1="-2" x2="3" y2="-2" stroke="currentColor" stroke-width="1"/>
+      <line x1="-3" y1="1" x2="3" y2="1" stroke="currentColor" stroke-width="1"/>
+      <line x1="-3" y1="4" x2="1" y2="4" stroke="currentColor" stroke-width="1"/>
+    </symbol>
+    <symbol id="os-ico-lock" viewBox="-8 -8 16 16">
+      <rect x="-5" y="-1" width="10" height="8" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M-3 -1 V -4 a 3 3 0 0 1 6 0 V -1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="0" cy="3" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="os-ico-check" viewBox="-8 -8 16 16">
+      <circle r="6" cx="0" cy="0" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M-3 0 L -0.5 2.5 L 3.5 -2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="os-ico-scale" viewBox="-8 -8 16 16">
+      <line x1="0" y1="-6" x2="0" y2="6" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="-5" y1="-4" x2="5" y2="-4" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M-5 -4 L -7 1 H -3 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+      <path d="M5 -4 L 3 1 H 7 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+      <line x1="-2.5" y1="6" x2="2.5" y2="6" stroke="currentColor" stroke-width="1.2"/>
+    </symbol>
+    <symbol id="os-ico-flag" viewBox="-8 -8 16 16">
+      <line x1="-4" y1="-6" x2="-4" y2="6" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M-4 -6 L 5 -4 L 1 -1 L 5 2 L -4 0 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    </symbol>
+    <symbol id="os-ico-chip" viewBox="-8 -8 16 16">
+      <rect x="-4.5" y="-4.5" width="9" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <rect x="-2" y="-2" width="4" height="4" fill="currentColor" opacity="0.5"/>
+      <line x1="-4.5" y1="-2" x2="-6.5" y2="-2" stroke="currentColor" stroke-width="1"/>
+      <line x1="-4.5" y1="2" x2="-6.5" y2="2" stroke="currentColor" stroke-width="1"/>
+      <line x1="4.5" y1="-2" x2="6.5" y2="-2" stroke="currentColor" stroke-width="1"/>
+      <line x1="4.5" y1="2" x2="6.5" y2="2" stroke="currentColor" stroke-width="1"/>
+      <line x1="-2" y1="-4.5" x2="-2" y2="-6.5" stroke="currentColor" stroke-width="1"/>
+      <line x1="2" y1="-4.5" x2="2" y2="-6.5" stroke="currentColor" stroke-width="1"/>
+      <line x1="-2" y1="4.5" x2="-2" y2="6.5" stroke="currentColor" stroke-width="1"/>
+      <line x1="2" y1="4.5" x2="2" y2="6.5" stroke="currentColor" stroke-width="1"/>
+    </symbol>
+    <symbol id="os-ico-shieldmini" viewBox="-8 -8 16 16">
+      <path d="M0 -6 L5 -4 V 1 C 5 4 3 5.5 0 6.5 C -3 5.5 -5 4 -5 1 V -4 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M-2 0 L -0.5 1.8 L 2.5 -1.6" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="os-ico-star" viewBox="-8 -8 16 16">
+      <circle cx="0" cy="0" r="5.5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <g stroke="currentColor" stroke-width="0.9">
+        <circle cx="0" cy="-3.2" r="0.7" fill="currentColor"/>
+        <circle cx="3" cy="-1" r="0.7" fill="currentColor"/>
+        <circle cx="1.9" cy="2.6" r="0.7" fill="currentColor"/>
+        <circle cx="-1.9" cy="2.6" r="0.7" fill="currentColor"/>
+        <circle cx="-3" cy="-1" r="0.7" fill="currentColor"/>
+      </g>
+    </symbol>
+    <symbol id="os-ico-brain" viewBox="-8 -8 16 16">
+      <path d="M-1 -5 a 3 3 0 0 0 -4 3 a 2.5 2.5 0 0 0 0 5 a 3 3 0 0 0 4 2 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M1 -5 a 3 3 0 0 1 4 3 a 2.5 2.5 0 0 1 0 5 a 3 3 0 0 1 -4 2 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="currentColor" stroke-width="0.9" stroke-dasharray="1 1.2"/>
+    </symbol>
+
+    <!-- ============ REUSABLE PILL DEFINITIONS ============ -->
+    <!-- Cyan pill template, anchored such that center is (0,0); icon left, text right -->
+  </defs>
+
+  <!-- ============ SCOPED STYLE ============ -->
+  <style>
+    .os-pill-cy   { fill: url(#os-pillCyan);  stroke: #22d3ee; stroke-width: 1; }
+    .os-pill-vi   { fill: url(#os-pillViolet); stroke: #a78bfa; stroke-width: 1; }
+    .os-pill-am   { fill: url(#os-pillCyan);  stroke: #fbbf24; stroke-width: 1; }
+    .os-txt-cy    { fill: #67e8f9; font: 700 10px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.4px; }
+    .os-txt-vi    { fill: #c4b5fd; font: 700 10px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.4px; }
+    .os-txt-am    { fill: #fbbf24; font: 700  9px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.4px; }
+    .os-ico-cy    { color: #67e8f9; }
+    .os-ico-vi    { color: #c4b5fd; }
+    .os-ico-am    { color: #fbbf24; }
+
+    .os-ring-base { fill: none; }
+    .os-spin-cw       { animation: os-spincw 38s linear infinite; transform-origin: 240px 240px; transform-box: fill-box; }
+    .os-spin-ccw      { animation: os-spinccw 28s linear infinite; transform-origin: 240px 240px; transform-box: fill-box; }
+    .os-spin-cw-fast  { animation: os-spincw 20s linear infinite; transform-origin: 240px 240px; transform-box: fill-box; }
+    .os-spin-cw-slow  { animation: os-spincw 70s linear infinite; transform-origin: 240px 240px; transform-box: fill-box; }
+    .os-spin-spokes   { animation: os-spincw 55s linear infinite; transform-origin: 240px 240px; transform-box: fill-box; }
+
+    .os-pulse-soft    { animation: os-pulse 4s ease-in-out infinite; transform-origin: 240px 240px; transform-box: fill-box; }
+    .os-stamp         { animation: os-stamp 6s ease-out infinite; transform-origin: 240px 240px; transform-box: fill-box; }
+    .os-scanline      { animation: os-scan 7s linear infinite; }
+    .os-twinkle       { animation: os-twinkle 3.6s ease-in-out infinite; }
+    .os-twinkle-2     { animation: os-twinkle 5.1s ease-in-out infinite; }
+
+    @keyframes os-spincw  { to { transform: rotate(360deg); } }
+    @keyframes os-spinccw { to { transform: rotate(-360deg); } }
+    @keyframes os-pulse   { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+    @keyframes os-stamp   { 0% { transform: scale(0.4); opacity: 0; }
+                             8% { transform: scale(1.18); opacity: 1; }
+                            14% { transform: scale(1.0);  opacity: 1; }
+                            85% { transform: scale(1.0);  opacity: 1; }
+                           100% { transform: scale(1.0);  opacity: 1; } }
+    @keyframes os-twinkle { 0%,100% { opacity: 0.15; } 50% { opacity: 0.9; } }
+    @keyframes os-scan    { 0% { transform: translate(-260px,-260px); }
+                           100% { transform: translate(260px,260px); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .os-spin-cw, .os-spin-ccw, .os-spin-cw-fast, .os-spin-cw-slow, .os-spin-spokes,
+      .os-pulse-soft, .os-stamp, .os-scanline, .os-twinkle, .os-twinkle-2 {
+        animation: none !important;
+      }
+      .os-particle { display: none; }
+    }
+  </style>
+
+  <!-- ============ BACKGROUND HEX GRID + VIGNETTE ============ -->
+  <g>
+    <circle cx="240" cy="240" r="230" fill="url(#os-hex)" opacity="0.9"/>
+    <circle cx="240" cy="240" r="230" fill="url(#os-vignette)"/>
+  </g>
+
+  <!-- ============ FAR STAR PARTICLES (twinkle) ============ -->
+  <g fill="#67e8f9">
+    <circle cx="86"  cy="120" r="1.2" class="os-twinkle"/>
+    <circle cx="402" cy="160" r="1.0" class="os-twinkle-2"/>
+    <circle cx="120" cy="372" r="1.1" class="os-twinkle-2"/>
+    <circle cx="380" cy="350" r="1.3" class="os-twinkle"/>
+    <circle cx="60"  cy="240" r="0.9" class="os-twinkle-2"/>
+    <circle cx="430" cy="245" r="1.0" class="os-twinkle"/>
+    <circle cx="240" cy="40"  r="1.1" class="os-twinkle"/>
+    <circle cx="240" cy="442" r="1.0" class="os-twinkle-2"/>
+  </g>
+
+  <!-- ============ TOP-OF-ORBIT GLOW (stationary, makes pills brighten when passing 12 o'clock) ============ -->
+  <circle cx="240" cy="36" r="50" fill="url(#os-topGlow)"/>
+
+  <!-- ============ ORBIT RING GUIDES ============ -->
+  <g fill="none">
+    <circle cx="240" cy="240" r="210" stroke="#22d3ee" stroke-opacity="0.12" stroke-width="1"/>
+    <circle cx="240" cy="240" r="170" stroke="#a78bfa" stroke-opacity="0.14" stroke-width="1" stroke-dasharray="2 6"/>
+    <circle cx="240" cy="240" r="130" stroke="#22d3ee" stroke-opacity="0.18" stroke-width="1"/>
+    <circle cx="240" cy="240" r="98"  stroke="#a78bfa" stroke-opacity="0.10" stroke-width="1" stroke-dasharray="1 3"/>
+  </g>
+
+  <!-- ============ ROTATING RADIATING SPOKES (very subtle) ============ -->
+  <g class="orbit os-spin-spokes" opacity="0.18">
+    <g stroke="#67e8f9" stroke-width="0.8" stroke-linecap="round">
+      <line x1="240" y1="108" x2="240" y2="64"/>
+      <line x1="240" y1="372" x2="240" y2="416"/>
+      <line x1="108" y1="240" x2="64"  y2="240"/>
+      <line x1="372" y1="240" x2="416" y2="240"/>
+      <line x1="146" y1="146" x2="115" y2="115"/>
+      <line x1="334" y1="334" x2="365" y2="365"/>
+      <line x1="146" y1="334" x2="115" y2="365"/>
+      <line x1="334" y1="146" x2="365" y2="115"/>
+    </g>
+  </g>
+
+  <!-- ============ ORBIT 1 (CW, 38s, radius 210, CYAN, 3 pills) ============ -->
+  <g class="orbit orbit-cw os-spin-cw">
+    <!-- ISO 27001 -->
+    <g transform="translate(450 240)">
+      <g transform="rotate(0)">
+        <rect x="-44" y="-13" width="88" height="26" rx="13" class="os-pill-cy"/>
+        <g class="os-ico-cy" transform="translate(-32 0)"><use href="#os-ico-lock" width="14" height="14" x="-7" y="-7"/></g>
+        <text text-anchor="middle" x="6" y="3.6" class="os-txt-cy">ISO 27001</text>
+      </g>
+    </g>
+    <!-- SOC 2 -->
+    <g transform="rotate(120 240 240) translate(450 240)">
+      <g transform="rotate(-120)">
+        <rect x="-40" y="-13" width="80" height="26" rx="13" class="os-pill-cy"/>
+        <g class="os-ico-cy" transform="translate(-28 0)"><use href="#os-ico-check" width="14" height="14" x="-7" y="-7"/></g>
+        <text text-anchor="middle" x="6" y="3.6" class="os-txt-cy">SOC 2</text>
+      </g>
+    </g>
+    <!-- NIST -->
+    <g transform="rotate(240 240 240) translate(450 240)">
+      <g transform="rotate(-240)">
+        <rect x="-40" y="-13" width="80" height="26" rx="13" class="os-pill-cy"/>
+        <g class="os-ico-cy" transform="translate(-28 0)"><use href="#os-ico-flag" width="14" height="14" x="-7" y="-7"/></g>
+        <text text-anchor="middle" x="6" y="3.6" class="os-txt-cy">NIST</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ ORBIT 2 (CCW, 28s, radius 170, VIOLET, 4 pills) ============ -->
+  <g class="orbit orbit-ccw os-spin-ccw">
+    <!-- DORA -->
+    <g transform="translate(410 240)">
+      <g transform="rotate(0)">
+        <rect x="-38" y="-12" width="76" height="24" rx="12" class="os-pill-vi"/>
+        <g class="os-ico-vi" transform="translate(-26 0)"><use href="#os-ico-scale" width="13" height="13" x="-6.5" y="-6.5"/></g>
+        <text text-anchor="middle" x="6" y="3.4" class="os-txt-vi">DORA</text>
+      </g>
+    </g>
+    <!-- NIS2 -->
+    <g transform="rotate(90 240 240) translate(410 240)">
+      <g transform="rotate(-90)">
+        <rect x="-38" y="-12" width="76" height="24" rx="12" class="os-pill-vi"/>
+        <g class="os-ico-vi" transform="translate(-26 0)"><use href="#os-ico-shieldmini" width="13" height="13" x="-6.5" y="-6.5"/></g>
+        <text text-anchor="middle" x="6" y="3.4" class="os-txt-vi">NIS2</text>
+      </g>
+    </g>
+    <!-- PDPL -->
+    <g transform="rotate(180 240 240) translate(410 240)">
+      <g transform="rotate(-180)">
+        <rect x="-38" y="-12" width="76" height="24" rx="12" class="os-pill-vi"/>
+        <g class="os-ico-vi" transform="translate(-26 0)"><use href="#os-ico-doc" width="13" height="13" x="-6.5" y="-6.5"/></g>
+        <text text-anchor="middle" x="6" y="3.4" class="os-txt-vi">PDPL</text>
+      </g>
+    </g>
+    <!-- HIPAA -->
+    <g transform="rotate(270 240 240) translate(410 240)">
+      <g transform="rotate(-270)">
+        <rect x="-38" y="-12" width="76" height="24" rx="12" class="os-pill-vi"/>
+        <g class="os-ico-vi" transform="translate(-26 0)"><use href="#os-ico-check" width="13" height="13" x="-6.5" y="-6.5"/></g>
+        <text text-anchor="middle" x="6" y="3.4" class="os-txt-vi">HIPAA</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ ORBIT 3 (CW fast, 20s, radius 130, AMBER + CYAN, 2 pills) ============ -->
+  <g class="orbit orbit-cw-fast os-spin-cw-fast">
+    <!-- EU AI Act -->
+    <g transform="translate(370 240)">
+      <g transform="rotate(0)">
+        <rect x="-42" y="-11" width="84" height="22" rx="11" class="os-pill-am"/>
+        <g class="os-ico-am" transform="translate(-30 0)"><use href="#os-ico-star" width="12" height="12" x="-6" y="-6"/></g>
+        <text text-anchor="middle" x="6" y="3.2" class="os-txt-am">EU AI Act</text>
+      </g>
+    </g>
+    <!-- ISO 42001 -->
+    <g transform="rotate(180 240 240) translate(370 240)">
+      <g transform="rotate(-180)">
+        <rect x="-42" y="-11" width="84" height="22" rx="11" class="os-pill-cy"/>
+        <g class="os-ico-cy" transform="translate(-30 0)"><use href="#os-ico-brain" width="12" height="12" x="-6" y="-6"/></g>
+        <text text-anchor="middle" x="6" y="3.2" class="os-txt-cy">ISO 42001</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ DRIFTING PARTICLES BETWEEN ORBITS (SMIL animateMotion) ============ -->
+  <g class="os-particle">
+    <circle r="1.6" fill="#67e8f9" opacity="0.85">
+      <animateMotion dur="22s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#os-orbitA"/>
+      </animateMotion>
+    </circle>
+    <circle r="1.4" fill="#c4b5fd" opacity="0.8">
+      <animateMotion dur="18s" repeatCount="indefinite" rotate="auto" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+        <mpath href="#os-orbitB"/>
+      </animateMotion>
+    </circle>
+    <circle r="1.2" fill="#67e8f9" opacity="0.7">
+      <animateMotion dur="14s" repeatCount="indefinite" rotate="auto" begin="2s">
+        <mpath href="#os-orbitC"/>
+      </animateMotion>
+    </circle>
+    <circle r="1.0" fill="#fbbf24" opacity="0.85">
+      <animateMotion dur="26s" repeatCount="indefinite" rotate="auto" begin="5s">
+        <mpath href="#os-orbitA"/>
+      </animateMotion>
+    </circle>
+    <circle r="1.2" fill="#a78bfa" opacity="0.7">
+      <animateMotion dur="20s" repeatCount="indefinite" rotate="auto" begin="8s" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+        <mpath href="#os-orbitB"/>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <!-- ============ CENTRAL SHIELD ASSEMBLY ============ -->
+  <g transform="translate(240 240)">
+
+    <!-- Outer shield aura -->
+    <circle r="110" fill="url(#os-shieldGlow)" class="os-pulse-soft"/>
+
+    <!-- Concentric back-shields (offset, ghost layers for depth) -->
+    <g opacity="0.35">
+      <path d="M0 -92 L80 -58 V 14 C 80 56 46 84 0 100 C -46 84 -80 56 -80 14 V -58 Z"
+            fill="none" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.5"/>
+      <path d="M0 -100 L88 -64 V 18 C 88 62 50 92 0 110 C -50 92 -88 62 -88 18 V -64 Z"
+            fill="none" stroke="#a78bfa" stroke-width="0.8" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+    </g>
+
+    <!-- Main shield body -->
+    <g filter="url(#os-soft)">
+      <path d="M0 -82 L72 -52 V 12 C 72 52 40 78 0 92 C -40 78 -72 52 -72 12 V -52 Z"
+            fill="#0a0f24" stroke="url(#os-shieldGrad)" stroke-width="2.6"/>
+      <!-- inner shield outline -->
+      <path d="M0 -66 L58 -42 V 10 C 58 44 32 64 0 76 C -32 64 -58 44 -58 10 V -42 Z"
+            fill="none" stroke="url(#os-shieldGrad)" stroke-width="1" stroke-opacity="0.55"/>
+      <!-- inner medallion ring -->
+      <circle r="38" fill="none" stroke="url(#os-crestGrad)" stroke-width="0.8" stroke-opacity="0.55" stroke-dasharray="1 3"/>
+      <circle r="30" fill="#070b1c" stroke="url(#os-crestGrad)" stroke-width="1" stroke-opacity="0.7"/>
+
+      <!-- Tiny crest corner ornaments -->
+      <g stroke="#22d3ee" stroke-opacity="0.6" stroke-width="1" fill="none">
+        <path d="M-58 -34 L -48 -34 M -58 -34 L -58 -24"/>
+        <path d="M 58 -34 L  48 -34 M  58 -34 L  58 -24"/>
+        <path d="M-44  42 L -34  46 M -44  42 L -40  32"/>
+        <path d="M 44  42 L  34  46 M  44  42 L  40  32"/>
+      </g>
+
+      <!-- Stamped check inside medallion -->
+      <g class="os-stamp">
+        <circle r="22" fill="none" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="0.8"/>
+        <path d="M-14 1 L -3 13 L 18 -10" fill="none" stroke="url(#os-checkGrad)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#os-bigGlow)"/>
+      </g>
+
+      <!-- VERIFIED micro-text under check -->
+      <text text-anchor="middle" y="30" fill="#67e8f9" font-family="JetBrains Mono, ui-monospace, monospace" font-size="6.5" letter-spacing="2.4" opacity="0.75">VERIFIED</text>
+    </g>
+
+    <!-- Diagonal scan line clipped to shield bounds -->
+    <g opacity="0.55">
+      <clipPath id="os-shieldClip">
+        <path d="M0 -82 L72 -52 V 12 C 72 52 40 78 0 92 C -40 78 -72 52 -72 12 V -52 Z"/>
+      </clipPath>
+      <g clip-path="url(#os-shieldClip)">
+        <rect x="-130" y="-6" width="260" height="12" fill="url(#os-scan)" class="os-scanline"/>
+      </g>
+    </g>
+
+  </g>
+</svg>
