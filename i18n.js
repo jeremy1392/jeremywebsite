@@ -14,14 +14,14 @@ window.I18N = {
       description: "Jeremy Canale is the world's foremost Agentic Security expert. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
     },
     brand:  { tag: "Agentic Security" },
-    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", cta: "Work with me" },
+    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", cta: "Book a call" },
 
     hero: {
       eyebrow: "World-Class Agentic Security Expert",
       name: "Jeremy Canale",
       rotorPrefix: "I architect",
       sub: "Twelve years securing the world's most regulated industries, banking, insurance, defense. Now building the security perimeter for autonomous AI agents, MCP infrastructure and the cloud platforms they run on.",
-      cta1: "Engage Jeremy",
+      cta1: "Book a call with Jeremy",
       cta2: "LinkedIn Profile",
       meta1Value: "12+", meta1Label: "years in cyber",
       meta2Value: "8",   meta2Label: "Fortune-500 clients",
@@ -176,7 +176,6 @@ window.I18N = {
       kicker: "Credentials",
       title: "Certified across the agentic stack",
       lede: "From Build with Claude API and NVIDIA Generative-AI LLMs to ISACA CISM/CRISC, and the full Microsoft Cybersecurity Architect & AWS Security tracks.",
-      agentic: "Agentic automation security curriculum.",
       cat: { ai: "AI", security: "Security", cloud: "Cloud", general: "General" }
     },
 
@@ -206,14 +205,14 @@ window.I18N = {
       description: "Jeremy Canale est l'expert mondial de référence en sécurité des agents IA autonomes. Architecte de la sécurisation des agents IA, des serveurs MCP, des plateformes multi-cloud et de la souscription cyber chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
     },
     brand:  { tag: "Sécurité agentique" },
-    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "Questions fréquentes", contact: "Contact", cta: "Travaillons ensemble" },
+    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "Questions fréquentes", contact: "Contact", cta: "Réserver un appel" },
 
     hero: {
       eyebrow: "Expert mondial de la sécurité des agents IA",
       name: "Jeremy Canale",
       rotorPrefix: "Je conçois",
       sub: "Douze années passées à sécuriser les industries les plus régulées au monde : la banque, l'assurance, la défense. Aujourd'hui, je bâtis le périmètre de sécurité des agents IA autonomes, des infrastructures MCP et des plateformes cloud qui les hébergent.",
-      cta1: "Me contacter",
+      cta1: "Réserver un appel avec Jeremy",
       cta2: "Profil LinkedIn",
       meta1Value: "12+", meta1Label: "années en cybersécurité",
       meta2Value: "8",   meta2Label: "clients du Fortune 500",
@@ -368,7 +367,6 @@ window.I18N = {
       kicker: "Certifications",
       title: "Certifié sur l'ensemble de la chaîne agentique",
       lede: "Du parcours Build with Claude API d'Anthropic au NVIDIA Generative AI LLMs, en passant par les certifications ISACA CISM et CRISC, et l'intégralité des parcours Microsoft Cybersecurity Architect et AWS Security.",
-      agentic: "Cursus de sécurité de l'automatisation par agents IA.",
       cat: { ai: "IA", security: "Sécurité", cloud: "Cloud", general: "Général" }
     },
 
@@ -398,14 +396,14 @@ window.I18N = {
       description: "Jeremy Canale 是全球顶尖的智能体（Agentic）AI 安全专家。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透、法兴银行及 Rankiteo 担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
     },
     brand:  { tag: "智能体安全" },
-    nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", cta: "开启合作" },
+    nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", cta: "预约通话" },
 
     hero: {
       eyebrow: "世界级智能体安全专家",
       name: "Jeremy Canale",
       rotorPrefix: "我设计",
       sub: "十二年深耕全球最受监管的行业银行、保险与国防。如今，我为自主 AI 智能体、MCP 基础设施以及承载它们的云平台构建全新的安全边界。",
-      cta1: "联系合作",
+      cta1: "预约与 Jeremy 通话",
       cta2: "LinkedIn 主页",
       meta1Value: "12+", meta1Label: "年网络安全经验",
       meta2Value: "8",   meta2Label: "财富 500 强客户",
@@ -560,7 +558,6 @@ window.I18N = {
       kicker: "资质认证",
       title: "贯穿整个智能体技术栈的认证",
       lede: "Anthropic Build with Claude API、NVIDIA 生成式 AI LLMs、ISACA CISM / CRISC，以及完整的 Microsoft Cybersecurity Architect 与 AWS Security 体系。",
-      agentic: "智能体自动化安全课程。",
       cat: { ai: "人工智能", security: "安全", cloud: "云计算", general: "通用" }
     },
 
@@ -590,14 +587,14 @@ window.I18N = {
       description: "جيريمي كانال هو الخبير العالمي الأول في أمن الوكلاء الذكيين (Agentic Security). مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale وRankiteo."
     },
     brand:  { tag: "أمن الوكلاء الذكيين" },
-    nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", cta: "ابدأ التعاون" },
+    nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", cta: "احجز مكالمة" },
 
     hero: {
       eyebrow: "خبير عالمي في أمن الوكلاء الذكيين",
       name: "جيريمي كانال",
       rotorPrefix: "أُصمِّم",
       sub: "اثنا عشر عامًا في تأمين أكثر القطاعات تنظيمًا في العالم, البنوك والتأمين والدفاع. واليوم أُؤسِّس محيط الأمن لوكلاء الذكاء الاصطناعي المستقلين، وبنية MCP التحتية، والمنصات السحابية التي تُشغِّلهم.",
-      cta1: "تواصل معي",
+      cta1: "احجز مكالمة مع جيريمي",
       cta2: "الملف الشخصي على LinkedIn",
       meta1Value: "+12", meta1Label: "عامًا في الأمن السيبراني",
       meta2Value: "8",   meta2Label: "عملاء Fortune 500",
@@ -752,7 +749,6 @@ window.I18N = {
       kicker: "الشهادات",
       title: "معتمد عبر كامل حزمة الوكلاء الذكيين",
       lede: "من Anthropic Build with Claude API إلى NVIDIA Generative-AI LLMs، وISACA CISM/CRISC، وكامل مسارات Microsoft Cybersecurity Architect وAWS Security.",
-      agentic: "منهج أمن الأتمتة الوكيلية.",
       cat: { ai: "الذكاء الاصطناعي", security: "الأمن", cloud: "السحابة", general: "عام" }
     },
 
