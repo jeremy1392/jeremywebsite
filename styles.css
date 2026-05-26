@@ -899,6 +899,26 @@ html[dir="rtl"] .t-card:hover { transform: translateX(-4px); }
   border-radius: var(--radius-pill);
   font-weight: 700;
 }
+.cert-categories { display: flex; flex-direction: column; gap: 28px; }
+.cert-categories .cert-grid { margin-top: 0; }
+.cert-cat-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0 -2px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.cert-cat-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-strong), transparent);
+}
 
 /* ====================== CONSULTING ====================== */
 .consulting-grid {

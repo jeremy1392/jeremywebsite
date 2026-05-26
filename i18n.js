@@ -25,7 +25,7 @@ window.I18N = {
       cta2: "LinkedIn Profile",
       meta1Value: "12+", meta1Label: "years in cyber",
       meta2Value: "8",   meta2Label: "Fortune-500 clients",
-      meta3Value: "25+", meta3Label: "industry certifications",
+      meta3Value: "20+", meta3Label: "industry certifications",
       meta4Value: "3",   meta4Label: "continents · SG · UAE · EU",
       rotor: ["secure AI agents", "MCP infrastructure", "cloud security", "cyber underwriting", "AI governance"]
     },
@@ -175,8 +175,9 @@ window.I18N = {
     certs: {
       kicker: "Credentials",
       title: "Certified across the agentic stack",
-      lede: "From Anthropic AI Fluency to NVIDIA Generative-AI LLMs, ISACA CISM/CRISC, and the full Microsoft Cybersecurity Architect & AWS Security tracks.",
-      agentic: "Agentic automation security curriculum."
+      lede: "From Build with Claude API and NVIDIA Generative-AI LLMs to ISACA CISM/CRISC, and the full Microsoft Cybersecurity Architect & AWS Security tracks.",
+      agentic: "Agentic automation security curriculum.",
+      cat: { ai: "AI", security: "Security", cloud: "Cloud", general: "General" }
     },
 
     manifesto: {
@@ -216,7 +217,7 @@ window.I18N = {
       cta2: "Profil LinkedIn",
       meta1Value: "12+", meta1Label: "années en cybersécurité",
       meta2Value: "8",   meta2Label: "clients du Fortune 500",
-      meta3Value: "25+", meta3Label: "certifications professionnelles",
+      meta3Value: "20+", meta3Label: "certifications professionnelles",
       meta4Value: "3",   meta4Label: "continents · SG · EAU · UE",
       rotor: ["des agents IA sécurisés", "des infrastructures MCP", "la sécurité du cloud", "la souscription cyber", "la gouvernance de l'IA"]
     },
@@ -366,8 +367,9 @@ window.I18N = {
     certs: {
       kicker: "Certifications",
       title: "Certifié sur l'ensemble de la chaîne agentique",
-      lede: "De l'AI Fluency d'Anthropic au NVIDIA Generative AI LLMs, en passant par les certifications ISACA CISM et CRISC et l'intégralité des parcours Microsoft Cybersecurity Architect et AWS Security.",
-      agentic: "Cursus de sécurité de l'automatisation par agents IA."
+      lede: "Du parcours Build with Claude API d'Anthropic au NVIDIA Generative AI LLMs, en passant par les certifications ISACA CISM et CRISC, et l'intégralité des parcours Microsoft Cybersecurity Architect et AWS Security.",
+      agentic: "Cursus de sécurité de l'automatisation par agents IA.",
+      cat: { ai: "IA", security: "Sécurité", cloud: "Cloud", general: "Général" }
     },
 
     manifesto: {
@@ -407,7 +409,7 @@ window.I18N = {
       cta2: "LinkedIn 主页",
       meta1Value: "12+", meta1Label: "年网络安全经验",
       meta2Value: "8",   meta2Label: "财富 500 强客户",
-      meta3Value: "25+", meta3Label: "行业认证",
+      meta3Value: "20+", meta3Label: "行业认证",
       meta4Value: "3",   meta4Label: "大洲 · 新加坡 · 阿联酋 · 欧洲",
       rotor: ["安全 AI 智能体", "MCP 基础设施", "云安全架构", "网络风险承保", "AI 治理框架"]
     },
@@ -557,8 +559,9 @@ window.I18N = {
     certs: {
       kicker: "资质认证",
       title: "贯穿整个智能体技术栈的认证",
-      lede: "Anthropic AI Fluency、NVIDIA 生成式 AI LLMs、ISACA CISM / CRISC，以及完整的 Microsoft Cybersecurity Architect 与 AWS Security 体系。",
-      agentic: "智能体自动化安全课程。"
+      lede: "Anthropic Build with Claude API、NVIDIA 生成式 AI LLMs、ISACA CISM / CRISC，以及完整的 Microsoft Cybersecurity Architect 与 AWS Security 体系。",
+      agentic: "智能体自动化安全课程。",
+      cat: { ai: "人工智能", security: "安全", cloud: "云计算", general: "通用" }
     },
 
     manifesto: {
@@ -598,7 +601,7 @@ window.I18N = {
       cta2: "الملف الشخصي على LinkedIn",
       meta1Value: "+12", meta1Label: "عامًا في الأمن السيبراني",
       meta2Value: "8",   meta2Label: "عملاء Fortune 500",
-      meta3Value: "+25", meta3Label: "شهادة مهنية",
+      meta3Value: "+20", meta3Label: "شهادة مهنية",
       meta4Value: "3",   meta4Label: "قارات · سنغافورة · الإمارات · أوروبا",
       rotor: ["وكلاء ذكاء اصطناعي آمنين", "بنية MCP", "أمن السحابة", "اكتتاب سيبراني", "حوكمة الذكاء الاصطناعي"]
     },
@@ -748,8 +751,9 @@ window.I18N = {
     certs: {
       kicker: "الشهادات",
       title: "معتمد عبر كامل حزمة الوكلاء الذكيين",
-      lede: "من Anthropic AI Fluency إلى NVIDIA Generative-AI LLMs، وISACA CISM/CRISC، وكامل مسارات Microsoft Cybersecurity Architect وAWS Security.",
-      agentic: "منهج أمن الأتمتة الوكيلية."
+      lede: "من Anthropic Build with Claude API إلى NVIDIA Generative-AI LLMs، وISACA CISM/CRISC، وكامل مسارات Microsoft Cybersecurity Architect وAWS Security.",
+      agentic: "منهج أمن الأتمتة الوكيلية.",
+      cat: { ai: "الذكاء الاصطناعي", security: "الأمن", cloud: "السحابة", general: "عام" }
     },
 
     manifesto: {
