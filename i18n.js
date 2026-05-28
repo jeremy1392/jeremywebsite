@@ -10,14 +10,14 @@ window.I18N = {
   /* ------------------------------------------------------------ ENGLISH */
   en: {
     meta: {
-      title: "Jeremy Canale, World-Class Agentic Security Expert | AI & Cloud Security Architect",
-      description: "Jeremy Canale is the world's foremost Agentic Security expert. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
+      title: "Jeremy Canale, AI Agentic Security Architect | AI & Cloud Security Architect",
+      description: "Jeremy Canale is an AI Agentic Security Architect. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
     },
     brand:  { tag: "Agentic Security" },
     nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", cta: "Book a call" },
 
     hero: {
-      eyebrow: "World-Class Agentic Security Expert",
+      eyebrow: "AI Agentic Security Architect",
       name: "Jeremy Canale",
       rotorPrefix: "I architect",
       sub: "Twelve years securing the world's most regulated industries, banking, insurance, defense. Now building the security perimeter for autonomous AI agents, MCP infrastructure and the cloud platforms they run on.",
@@ -201,14 +201,14 @@ window.I18N = {
   /* ------------------------------------------------------------ FRANÇAIS */
   fr: {
     meta: {
-      title: "Jeremy Canale, expert mondial de la sécurité des agents IA | Architecte sécurité IA et cloud",
-      description: "Jeremy Canale est l'expert mondial de référence en sécurité des agents IA autonomes. Architecte de la sécurisation des agents IA, des serveurs MCP, des plateformes multi-cloud et de la souscription cyber chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
+      title: "Jeremy Canale, architecte en sécurité agentique IA | Architecte sécurité IA et cloud",
+      description: "Jeremy Canale est architecte en sécurité agentique IA. Architecte de la sécurisation des agents IA, des serveurs MCP, des plateformes multi-cloud et de la souscription cyber chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
     },
     brand:  { tag: "Sécurité agentique" },
     nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "Questions fréquentes", contact: "Contact", cta: "Réserver un appel" },
 
     hero: {
-      eyebrow: "Expert mondial de la sécurité des agents IA",
+      eyebrow: "Architecte en sécurité agentique IA",
       name: "Jeremy Canale",
       rotorPrefix: "Je conçois",
       sub: "Douze années passées à sécuriser les industries les plus régulées au monde : la banque, l'assurance, la défense. Aujourd'hui, je bâtis le périmètre de sécurité des agents IA autonomes, des infrastructures MCP et des plateformes cloud qui les hébergent.",
@@ -392,14 +392,14 @@ window.I18N = {
   /* ------------------------------------------------------------ 中文 (Simplified Chinese) */
   zh: {
     meta: {
-      title: "Jeremy Canale, 世界级智能体安全专家 | AI 与云安全架构师",
-      description: "Jeremy Canale 是全球顶尖的智能体（Agentic）AI 安全专家。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透、法兴银行及 Rankiteo 担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
+      title: "Jeremy Canale, AI 智能体安全架构师 | AI 与云安全架构师",
+      description: "Jeremy Canale 是 AI 智能体安全架构师。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透、法兴银行及 Rankiteo 担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
     },
     brand:  { tag: "智能体安全" },
     nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", cta: "预约通话" },
 
     hero: {
-      eyebrow: "世界级智能体安全专家",
+      eyebrow: "AI 智能体安全架构师",
       name: "Jeremy Canale",
       rotorPrefix: "我设计",
       sub: "十二年深耕全球最受监管的行业银行、保险与国防。如今，我为自主 AI 智能体、MCP 基础设施以及承载它们的云平台构建全新的安全边界。",
@@ -583,14 +583,14 @@ window.I18N = {
   /* ------------------------------------------------------------ العربية (Arabic, RTL) */
   ar: {
     meta: {
-      title: "جيريمي كانال, خبير عالمي في أمن الوكلاء الذكيين | مهندس أمن الذكاء الاصطناعي والسحابة",
-      description: "جيريمي كانال هو الخبير العالمي الأول في أمن الوكلاء الذكيين (Agentic Security). مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale وRankiteo."
+      title: "جيريمي كانال, مهندس أمن الوكلاء الذكيين بالذكاء الاصطناعي | مهندس أمن الذكاء الاصطناعي والسحابة",
+      description: "جيريمي كانال هو مهندس أمن الوكلاء الذكيين بالذكاء الاصطناعي. مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale وRankiteo."
     },
     brand:  { tag: "أمن الوكلاء الذكيين" },
     nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", cta: "احجز مكالمة" },
 
     hero: {
-      eyebrow: "خبير عالمي في أمن الوكلاء الذكيين",
+      eyebrow: "مهندس أمن الوكلاء الذكيين بالذكاء الاصطناعي",
       name: "جيريمي كانال",
       rotorPrefix: "أُصمِّم",
       sub: "اثنا عشر عامًا في تأمين أكثر القطاعات تنظيمًا في العالم, البنوك والتأمين والدفاع. واليوم أُؤسِّس محيط الأمن لوكلاء الذكاء الاصطناعي المستقلين، وبنية MCP التحتية، والمنصات السحابية التي تُشغِّلهم.",
