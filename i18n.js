@@ -10,22 +10,22 @@ window.I18N = {
   /* ------------------------------------------------------------ ENGLISH */
   en: {
     meta: {
-      title: "Jeremy Canale, AI Agentic Security Architect | AI & Cloud Security Architect",
-      description: "Jeremy Canale is an AI Agentic Security Architect. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
+      title: "Jeremy Canale, World-Class Agentic Security Expert | AI & Cloud Security Architect",
+      description: "Jeremy Canale is the world's foremost Agentic Security expert. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
     },
     brand:  { tag: "Agentic Security" },
-    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", cta: "Book a call" },
+    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", cta: "Work with me" },
 
     hero: {
-      eyebrow: "AI Agentic Security Architect",
+      eyebrow: "World-Class Agentic Security Expert",
       name: "Jeremy Canale",
       rotorPrefix: "I architect",
       sub: "Twelve years securing the world's most regulated industries, banking, insurance, defense. Now building the security perimeter for autonomous AI agents, MCP infrastructure and the cloud platforms they run on.",
-      cta1: "Book a call with Jeremy",
+      cta1: "Engage Jeremy",
       cta2: "LinkedIn Profile",
       meta1Value: "12+", meta1Label: "years in cyber",
       meta2Value: "8",   meta2Label: "Fortune-500 clients",
-      meta3Value: "20+", meta3Label: "industry certifications",
+      meta3Value: "25+", meta3Label: "industry certifications",
       meta4Value: "3",   meta4Label: "continents · SG · UAE · EU",
       rotor: ["secure AI agents", "MCP infrastructure", "cloud security", "cyber underwriting", "AI governance"]
     },
@@ -175,8 +175,8 @@ window.I18N = {
     certs: {
       kicker: "Credentials",
       title: "Certified across the agentic stack",
-      lede: "From Build with Claude API and NVIDIA Generative-AI LLMs to ISACA CISM/CRISC, and the full Microsoft Cybersecurity Architect & AWS Security tracks.",
-      cat: { ai: "AI", security: "Security", cloud: "Cloud", general: "General" }
+      lede: "From Anthropic AI Fluency to NVIDIA Generative-AI LLMs, ISACA CISM/CRISC, and the full Microsoft Cybersecurity Architect & AWS Security tracks.",
+      agentic: "Agentic automation security curriculum."
     },
 
     manifesto: {
@@ -201,213 +201,213 @@ window.I18N = {
   /* ------------------------------------------------------------ FRANÇAIS */
   fr: {
     meta: {
-      title: "Jeremy Canale, architecte en sécurité agentique IA | Architecte sécurité IA et cloud",
-      description: "Jeremy Canale est architecte en sécurité agentique IA. Architecte de la sécurisation des agents IA, des serveurs MCP, des plateformes multi-cloud et de la souscription cyber chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
+      title: "Jeremy Canale, Expert mondial en Sécurité Agentique | Architecte IA & Cloud Security",
+      description: "Jeremy Canale est l'expert mondial de référence en sécurité agentique. Architecte de la sécurité des agents IA autonomes, des serveurs MCP, des plateformes cloud et du cyber-underwriting chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
     },
-    brand:  { tag: "Sécurité agentique" },
-    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "Questions fréquentes", contact: "Contact", cta: "Réserver un appel" },
+    brand:  { tag: "Sécurité Agentique" },
+    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", cta: "Collaborer" },
 
     hero: {
-      eyebrow: "Architecte en sécurité agentique IA",
+      eyebrow: "Expert mondial en Sécurité Agentique",
       name: "Jeremy Canale",
       rotorPrefix: "Je conçois",
-      sub: "Douze années passées à sécuriser les industries les plus régulées au monde : la banque, l'assurance, la défense. Aujourd'hui, je bâtis le périmètre de sécurité des agents IA autonomes, des infrastructures MCP et des plateformes cloud qui les hébergent.",
-      cta1: "Réserver un appel avec Jeremy",
+      sub: "Douze ans à sécuriser les industries les plus régulées au monde, banque, assurance, défense. Aujourd'hui je construis le périmètre de sécurité des agents IA autonomes, des infrastructures MCP et des plateformes cloud qui les supportent.",
+      cta1: "Me solliciter",
       cta2: "Profil LinkedIn",
-      meta1Value: "12+", meta1Label: "années en cybersécurité",
-      meta2Value: "8",   meta2Label: "clients du Fortune 500",
-      meta3Value: "20+", meta3Label: "certifications professionnelles",
-      meta4Value: "3",   meta4Label: "continents · SG · EAU · UE",
-      rotor: ["des agents IA sécurisés", "des infrastructures MCP", "la sécurité du cloud", "la souscription cyber", "la gouvernance de l'IA"]
+      meta1Value: "12+", meta1Label: "ans en cybersécurité",
+      meta2Value: "8",   meta2Label: "clients Fortune-500",
+      meta3Value: "25+", meta3Label: "certifications",
+      meta4Value: "3",   meta4Label: "continents · SG · UAE · UE",
+      rotor: ["agents IA sécurisés", "infrastructures MCP", "sécurité cloud", "cyber-underwriting", "gouvernance IA"]
     },
 
-    trust: { label: "Missions menées pour" },
+    trust: { label: "En mission pour" },
 
     expertise: {
-      kicker: "Domaines d'intervention",
-      title: "Là où j'interviens, à la pointe",
-      lede: "De la sécurisation des agents IA autonomes à la tarification du cyber-risque pour les grands assureurs, mes missions se situent à la croisée des industries régulées et de l'intelligence artificielle émergente.",
-      flagship: "Spécialité phare",
-      c1: { title: "Sécurité des agents IA",         desc: "Sécurisation de bout en bout des agents LLM autonomes : serveurs MCP, autorisation des appels d'outils, défense contre l'injection d'instructions, isolation des sous-agents et garde-fous à l'exécution." },
-      c2: { title: "Gouvernance et confiance de l'IA", desc: "Mise en œuvre opérationnelle de la norme ISO/IEC 42001, du référentiel NIST AI RMF et du Règlement européen sur l'IA. Intégration du cadre AI Fluency d'Anthropic dans la cartographie des risques de l'entreprise." },
-      c3: { title: "Sécurité du cloud et CSPM",       desc: "Architectures de sécurité multi-cloud pour AWS, Azure et GCP. Déploiement mondial de Prisma Cloud chez AXA. Parc Cloudflare chez Thomson Reuters. Architectures de référence durcies, infrastructure-as-code et pratiques SRE." },
-      c4: { title: "Quantification du cyber-risque", desc: "Fondateur et président de Rankiteo, la première plateforme de bureau de souscription cyber pilotée par l'IA. Tarification, mesure de l'exposition et analyses de portefeuille pour les assureurs et les réassureurs." },
-      c5: { title: "Gouvernance, risque et conformité", desc: "Certifications ISO/IEC 27001 au niveau du groupe, SOC 2, HIPAA, DORA, NIS2, PDPL Émirats arabes unis et Arabie saoudite. Conception du programme GRC de Seddiqi Holding et de la feuille de route de maturité de BNP Paribas." },
-      c6: { title: "Renseignement sur les menaces et offensive", desc: "Travaux de recherche OWASP publiés dans le magazine Hakin9. Tests d'intrusion, prédiction des exploits, renseignement sur la surface d'attaque et chronique des incidents cyber de Rankiteo (plus de 100 000 incidents)." }
+      kicker: "Domaines",
+      title: "Là où j'opère à la frontière",
+      lede: "De la sécurisation des agents IA autonomes au pricing du cyber-risque pour les grands assureurs, mon travail se situe à l'intersection des industries régulées et de l'IA émergente.",
+      flagship: "Pratique signature",
+      c1: { title: "Sécurité IA agentique",       desc: "Sécurisation de bout en bout des agents LLM autonomes : serveurs MCP, autorisation des tool-calls, défense contre l'injection de prompt, isolation des sous-agents et garde-fous runtime." },
+      c2: { title: "Gouvernance IA & Confiance",  desc: "Opérationnalisation d'ISO/IEC 42001, du NIST AI RMF et de l'AI Act européen. Intégration du AI Fluency Framework d'Anthropic dans le registre des risques d'entreprise." },
+      c3: { title: "Sécurité Cloud & CSPM",       desc: "Architecture multi-cloud AWS, Azure et GCP. Déploiement Prisma Cloud mondial chez AXA. Estate Cloudflare chez Thomson Reuters. Blueprints durcis, IaC et pratiques SRE." },
+      c4: { title: "Quantification du cyber-risque", desc: "Fondateur & CEO de Rankiteo, la première plateforme desktop d'AI cyber-underwriting. Pricing, exposition et analytique de portefeuille pour assureurs et réassureurs." },
+      c5: { title: "GRC & Conformité",            desc: "Certifications ISO/IEC 27001 groupe, SOC 2, HIPAA, DORA, NIS2, PDPL EAU & KSA. Programme GRC chez Seddiqi Holding et roadmap de maturité BNP Paribas." },
+      c6: { title: "Threat Intel & Offensif",     desc: "Publications OWASP dans Hakin9. Pentesting, prédiction d'exploits, attack-surface intelligence et la Cyber Incident Chronicle Rankiteo (100k+ incidents)." }
     },
 
     showcase: {
-      kicker: "La confiance dès la conception",
-      title: "Un seul architecte. Tous les référentiels qui comptent.",
-      desc: "De la norme ISO/IEC 27001 au Règlement européen sur l'IA, mes missions font le pont entre l'ingénierie et la régulation. Je traduis les référentiels en contrôles déployables, et j'en apporte la preuve par une assurance mesurable.",
-      b1: "Maturité cyber portée de 0 à 30 % en moins de douze mois pour BNP Paribas Asset Management.",
-      b2: "Déploiement mondial de Prisma CSPM sur l'ensemble des entités d'AXA.",
-      b3: "Programme ISO 27001 à l'échelle du groupe Seddiqi Holding, aligné sur les PDPL Émirats arabes unis et Arabie saoudite.",
-      b4: "Garant de l'architecture de sécurité chez Swiss Re et Thomson Reuters."
+      kicker: "Confiance dès la conception",
+      title: "Un seul architecte. Tous les frameworks qui comptent.",
+      desc: "D'ISO/IEC 27001 à l'AI Act européen, mes missions font le pont entre ingénierie et régulation. Je traduis les frameworks en contrôles déployables, et les prouve par une assurance mesurable.",
+      b1: "Maturité cyber 0 → 30 % en moins de 12 mois pour BNP Paribas Asset Management.",
+      b2: "Déploiement Prisma CSPM mondial sur toutes les entités AXA.",
+      b3: "Programme ISO 27001 groupe chez Seddiqi Holding, aligné PDPL EAU & KSA.",
+      b4: "Gardien de l'architecture de sécurité chez Swiss Re & Thomson Reuters."
     },
 
     experience: {
       kicker: "Parcours",
-      title: "Douze années à la tête de la sécurité d'entreprises régulées",
-      lede: "Des fonctions opérationnelles, de vice-président chez Swiss Re à responsable adjoint de la sécurité des systèmes d'information chez BNP Paribas Asset Management, et aujourd'hui président d'une société de souscription cyber pilotée par l'IA.",
-      now: "aujourd'hui", remote: "À distance", hybrid: "Hybride",
-      nusavest: "Stratégie cyber et système de management de la sécurité de l'information pour une plateforme sud-est-asiatique de titres adossés à des actifs (SC Ventures · Standard Chartered).",
-      rankiteo: "Conception de la première plateforme de bureau multi-OS de souscription cyber pilotée par l'IA. Notations cyber, gestion du risque tiers et modélisation de l'exposition, distribuée nativement en MCP vers Cursor, Claude Desktop, ChatGPT et n8n.",
-      seddiqi:  "Programme de certification ISO/IEC 27001 à l'échelle du holding tout entier. Cartographie des risques, déclaration d'applicabilité et mise en conformité avec les PDPL Émirats arabes unis et Arabie saoudite, département par département.",
-      gambit:   "Mise sur pied, en partant de zéro, d'un programme de cybersécurité fondé sur le NIST. À la suite de l'acquisition par BNP Paribas, conduite de la transformation de la maturité, de 0 à 30 %, au sein du référentiel du groupe.",
-      axa:      "Responsable technique du déploiement mondial de Palo Alto Prisma CSPM sur l'ensemble des entités d'AXA. Alignement des standards du groupe avec les contraintes réglementaires locales.",
-      tr:       "Garant de l'architecture de sécurité au sein de la gouvernance d'architecture d'entreprise. Déploiement mondial de Cloudflare. Conseil en souscription cyber, à la croisée de l'ingénierie et de l'assurance.",
-      swissre:  "Sécurité dès la conception à l'échelle de l'entreprise. Revue d'architecture pour chaque programme majeur. Architectures de référence réutilisables pour le cloud, les applications et les infrastructures.",
-      sg:       "Définition et application du référentiel de sécurité cloud de la banque. Gouvernance cloud fondée sur les risques et sécurité dès la conception pour chaque initiative cloud.",
-      architectTitle: "Architecte de solutions de sécurité · plusieurs entreprises du Fortune 500",
-      architect: "Migrations cloud sous PCI-DSS, HIPAA et autres environnements régulés. Infrastructure-as-code, architectures de référence durcies, automatisation de la gestion des vulnérabilités et authentification unique cloud native."
+      title: "Douze ans à la barre de la sécurité des entreprises régulées",
+      lede: "Postes opérationnels, de Vice-Président chez Swiss Re à Deputy CISO chez BNP Paribas Asset Management, et aujourd'hui CEO d'une société de cyber-underwriting IA.",
+      now: "auj.", remote: "Distanciel", hybrid: "Hybride",
+      nusavest: "Stratégie cyber et SMSI pour une plateforme sud-est-asiatique d'asset-backed securities (SC Ventures · Standard Chartered).",
+      rankiteo: "Construction de la première plateforme desktop multi-OS d'AI cyber-underwriting. Cyber-ratings, risque tiers, modélisation d'exposition, distribuée nativement en MCP vers Cursor, Claude Desktop, ChatGPT et n8n.",
+      seddiqi:  "Programme de certification ISO/IEC 27001 groupe à travers tout le holding. Registre des risques, SoA, alignement PDPL EAU & KSA pour chaque département.",
+      gambit:   "Construction d'un programme cybersécurité basé NIST de zéro. Après acquisition par BNP Paribas, transformation de la maturité de 0 % à 30 % dans le framework groupe.",
+      axa:      "Lead technique du déploiement mondial de Palo Alto Prisma CSPM sur chaque entité AXA. Alignement des standards globaux avec les contraintes réglementaires locales.",
+      tr:       "Gardien de l'architecture de sécurité dans la gouvernance d'architecture d'entreprise. Déploiement Cloudflare global. Conseil cyber-underwriting au pont entre ingénierie et assurance.",
+      swissre:  "Security by design à l'échelle entreprise. Revue d'architecture pour chaque programme majeur. Blueprints de sécurité réutilisables cloud, application et infrastructure.",
+      sg:       "Définition et application du framework de sécurité cloud de la banque. Gouvernance cloud risque-based et security-by-design pour chaque initiative cloud.",
+      architectTitle: "Security Solutions Architect · plusieurs Fortune-500",
+      architect: "Migrations cloud sous PCI-DSS, HIPAA et workloads régulés. IaC, blueprints durcis, automation vulnérabilité et SSO cloud natif."
     },
 
     cases: {
       kicker: "Études de cas",
-      title: "Une sélection de missions à la pointe de la sécurité des agents IA",
-      lede: "Synthèses anonymisées de missions récentes en cyber-assurance, sécurité multi-cloud et gouvernance de groupe. Les détails varient selon le secteur et restent volontairement généraux, par respect de la confidentialité des clients.",
-      label: { challenge: "Enjeu", approach: "Démarche", outcome: "Résultat" },
-      c1: { sector: "Cyber-assurance", title: "Plateforme de souscription cyber pilotée par l'IA",
-            challenge: "Les assureurs et les réassureurs avaient besoin de données de cyber-risque en temps réel, fondées sur la preuve, pour remplacer les questionnaires statiques et accélérer la tarification.",
-            approach: "Conception et livraison d'une application de bureau multi-OS adossée à un moteur de notation par IA, avec une distribution MCP native vers les principaux clients d'assistants, le tout reposant sur un corpus d'incidents de référence.",
-            outcome: "Une plateforme de niveau production, reconnue sur le marché de la cyber-assurance." },
-      c2: { sector: "Groupe d'assurance mondial", title: "Déploiement mondial du CSPM",
-            challenge: "Un assureur multinational présent dans des dizaines d'entités affichait une posture de sécurité cloud hétérogène, sans vision unifiée.",
-            approach: "Pilotage technique du déploiement mondial. Ateliers transversaux entre entités, alignement des standards de sécurité du groupe sur les contraintes réglementaires locales, puis traduction en contrôles concrets.",
-            outcome: "Un signal CSPM unique à l'échelle du groupe entier, avec un alignement réglementaire par juridiction." },
-      c3: { sector: "Gestion d'actifs, banque de premier plan", title: "Maturité cyber après acquisition",
-            challenge: "Une entité récemment acquise devait formaliser un programme cyber aligné sur le référentiel du groupe acquéreur, avec des preuves de progression à la fois mesurables et défendables.",
-            approach: "Mise sur pied, en partant de zéro, d'un programme de cybersécurité fondé sur le NIST. Contrôles, politiques et procédures, cartographie des risques, comptes rendus structurés aux parties prenantes du groupe.",
-            outcome: "Une progression de maturité validée au sein du référentiel du groupe acquéreur." },
-      c4: { sector: "Holding diversifié, Golfe", title: "Certification ISO 27001 à l'échelle du groupe",
-            challenge: "Un holding multi-métiers ne disposait d'aucun système de management de la sécurité de l'information unifié, tout en évoluant sous des lois régionales de protection des données.",
-            approach: "Conceptions de haut niveau, évaluations des risques informatiques au niveau applicatif, cadre de politiques de groupe, déclaration d'applicabilité et mise en conformité avec les exigences réglementaires régionales.",
-            outcome: "Préparation à l'ISO 27001 à l'échelle du groupe, avec une assurance structurée pour chaque département." },
-      c5: { sector: "Fournisseur mondial d'informations financières", title: "Garant de l'architecture de sécurité",
-            challenge: "Une entreprise mondiale exigeait une démarche de sécurité dès la conception, cohérente sur l'ensemble de ses initiatives numériques majeures.",
-            approach: "Rôle de garant de l'architecture de sécurité au sein de la gouvernance d'architecture d'entreprise, avec des architectures de référence réutilisables pour le cloud, les applications et les infrastructures.",
-            outcome: "Une livraison sécurisée accélérée et une maturité des contrôles à la fois plus solide et plus homogène." },
-      c6: { sector: "Asie du Sud-Est, titres adossés à des actifs", title: "Mandat de RSSI à temps partagé",
-            challenge: "Une plateforme d'investissement émergente avait besoin d'une direction cyber expérimentée pour définir sa stratégie de sécurité de l'information et son SMSI dès le premier jour.",
-            approach: "Mandat de RSSI à temps partagé couvrant le modèle opérationnel cible, l'appétence au risque, le catalogue de contrôles et la feuille de route réglementaire, en coordination avec une maison mère bancaire mondiale.",
-            outcome: "Une posture cyber défendable, prête à soutenir l'examen des investisseurs et des régulateurs." }
+      title: "Quelques missions à la frontière de la sécurité agentique",
+      lede: "Résumés anonymisés de missions récentes en cyber-assurance, sécurité multi-cloud et GRC de groupe. Les détails varient selon le secteur et restent délibérément larges pour préserver la confidentialité des clients.",
+      label: { challenge: "Enjeu", approach: "Approche", outcome: "Résultat" },
+      c1: { sector: "Cyber-assurance", title: "Plateforme de cyber-underwriting pilotée par l'IA",
+            challenge: "Les assureurs et réassureurs avaient besoin de données de cyber-risque en temps réel et basées sur la preuve, pour remplacer les questionnaires statiques et accélérer le pricing.",
+            approach: "Conception et livraison d'une application desktop multi-OS adossée à un moteur de notation IA, avec distribution MCP native vers les clients assistants courants et un corpus d'incidents sous-jacent.",
+            outcome: "Une plateforme de niveau production reconnue sur le marché de la cyber-assurance." },
+      c2: { sector: "Groupe d'assurance mondial", title: "Déploiement CSPM mondial",
+            challenge: "Un assureur multinational opérant à travers des dizaines d'entités avait une posture cloud hétérogène et aucune visibilité unifiée.",
+            approach: "Lead technique du déploiement mondial. Ateliers inter-entités, alignement des standards de sécurité groupe avec les contraintes réglementaires locales et traduction en contrôles implémentables.",
+            outcome: "Un signal CSPM unique sur tout le groupe, avec alignement réglementaire par juridiction." },
+      c3: { sector: "Gestion d'actifs, banque de premier plan", title: "Maturité cyber post-acquisition",
+            challenge: "Une entité nouvellement acquise devait formaliser un programme cyber aligné sur le cadre de l'acquéreur, avec une preuve mesurable et défendable de la progression.",
+            approach: "Construction d'un programme cybersécurité basé NIST de zéro. Contrôles, politiques et procédures, registre des risques, reporting structuré aux parties prenantes du groupe.",
+            outcome: "Progression de maturité validée dans le cadre de l'acquéreur." },
+      c4: { sector: "Holding diversifié, CCG", title: "Certification ISO 27001 groupe",
+            challenge: "Un holding multi-métiers sans système de management de la sécurité de l'information unifié, opérant sous des lois régionales de protection des données.",
+            approach: "High-level designs, évaluations de risque IT au niveau applicatif, cadre politique groupe, Statement of Applicability et alignement aux exigences réglementaires régionales.",
+            outcome: "Préparation ISO 27001 à l'échelle du groupe avec assurance structurée par département." },
+      c5: { sector: "Fournisseur mondial d'information financière", title: "Pilotage de l'architecture de sécurité",
+            challenge: "Une entreprise mondiale exigeait une approche security-by-design cohérente sur chaque initiative numérique majeure.",
+            approach: "Gardien de l'architecture de sécurité au sein de la gouvernance d'architecture d'entreprise, avec des blueprints réutilisables cloud, application et infrastructure.",
+            outcome: "Livraison sécurisée accélérée et maturité de contrôle plus forte et plus homogène." },
+      c6: { sector: "Asie du Sud-Est, titres adossés à des actifs", title: "Mandat de CISO fractionné",
+            challenge: "Une plateforme d'investissement émergente avait besoin d'un leadership cyber senior pour définir sa stratégie de sécurité de l'information et son SMSI dès le premier jour.",
+            approach: "Mission de CISO fractionné couvrant le modèle opérationnel cible, l'appétit au risque, le catalogue de contrôles et la feuille de route réglementaire, en coordination avec un groupe bancaire mondial.",
+            outcome: "Une posture cyber défendable, prête pour la scrutation des investisseurs et des régulateurs." }
     },
 
     pubs: {
-      kicker: "Publications et reconnaissance",
+      kicker: "Publications & Reconnaissance",
       title: "Une décennie de contribution au débat public",
-      lede: "Recherche sur les vulnérabilités OWASP, un moteur de recherche pour les réseaux sociaux pionnier salué au plus haut niveau, et une couverture médiatique soutenue des travaux de souscription cyber pilotée par l'IA.",
+      lede: "Recherche de vulnérabilités OWASP, un moteur de recherche social précoce reconnu au plus haut niveau, et une couverture continue des travaux d'agentic cyber-underwriting.",
       p1: { tag: "Magazine, recherche OWASP",
-            title: "Hakin9, magazine international de sécurité informatique",
-            desc: "Travaux de recherche approfondis sur des vulnérabilités issues du référentiel OWASP affectant des plateformes majeures, publiés dans un magazine international reconnu en sécurité informatique." },
-      p2: { tag: "Produit, distinction",
-            title: "AnoSearch, moteur de recherche pour les réseaux sociaux",
-            desc: "Création d'un moteur de recherche pour les réseaux sociaux, pionnier en son temps, extrayant un signal pertinent de plus d'une vingtaine de réseaux. Distingué meilleur projet informatique français de l'année et présenté à des dirigeants de premier plan ainsi qu'au ministre français de la Défense." },
-      p3: { tag: "Presse professionnelle",
-            title: "Couverture internationale de Rankiteo dans la presse de la réassurance",
-            desc: "Prises de parole reprises sur la souscription cyber pilotée par l'IA et l'assurance cyber fondée sur les données, dans les principaux médias internationaux de la réassurance." },
+            title: "Hakin9 Magazine, publication internationale de sécurité informatique",
+            desc: "Recherche approfondie sur des vulnérabilités OWASP affectant des plateformes majeures, publiée dans un magazine international de sécurité informatique reconnu." },
+      p2: { tag: "Produit, reconnaissance",
+            title: "AnoSearch, moteur de recherche réseaux sociaux",
+            desc: "Construction d'un moteur de recherche social précoce extrayant le signal de plus de vingt réseaux. Reconnu projet IT national de l'année et présenté à des CEOs de premier plan et au Ministre français de la Défense." },
+      p3: { tag: "Presse spécialisée",
+            title: "Couverture internationale de Rankiteo dans la presse réassurance",
+            desc: "Commentaires repris sur l'IA cyber-underwriting et la cyber-assurance data-driven dans les médias internationaux de la réassurance." },
       p4: { tag: "Open source, MCP",
-            title: "Documentation MCP publique pour l'outillage de notation cyber",
-            desc: "Documentation et intégrations ouvertes d'un serveur MCP natif de notation cyber, déployable dans les principaux clients d'assistants et plateformes d'automatisation." },
-      p5: { tag: "Mise en avant en place de marché",
-            title: "Serveur MCP de notation cyber mis en avant sur Smithery.ai",
-            desc: "Référencé comme serveur MCP de référence pour les flux de notation cyber dans l'un des principaux annuaires de découverte MCP." }
+            title: "Documentation MCP publique pour outillage de cyber-rating",
+            desc: "Documentation ouverte et intégrations d'un serveur MCP natif de cyber-rating, déployable dans les clients assistants courants et les plateformes d'automatisation." },
+      p5: { tag: "Mise en avant marketplace",
+            title: "Serveur MCP de cyber-rating mis en avant sur Smithery.ai",
+            desc: "Référencé comme serveur MCP de référence pour les workflows de cyber-rating dans l'un des annuaires MCP majeurs." }
     },
 
     faq: {
-      kicker: "Questions fréquentes",
-      title: "Les questions posées par les entreprises avant chaque mission",
-      lede: "Réponses brèves aux questions les plus fréquemment soulevées par les conseils d'administration, les RSSI et les équipes plateformes IA au moment de cadrer leur première mission de sécurité des agents IA.",
-      q1: { q: "Qu'est-ce que la sécurité agentique et pourquoi est-elle décisive aujourd'hui ?",
-            a: "La sécurité agentique est la discipline qui consiste à sécuriser les agents IA autonomes ainsi que les infrastructures qu'ils sollicitent. À la différence d'un agent conversationnel, un agent IA raisonne, planifie, invoque des outils, génère des sous-agents et enchaîne des décisions à travers les systèmes d'information. Chaque appel d'outil est une action exécutable aux conséquences réelles : le périmètre de sécurité doit donc se déplacer de la session utilisateur vers l'invocation d'outil elle-même. Avec l'adoption rapide du Model Context Protocol, de LangGraph, de LangChain et de cadres tels qu'Azure AI Foundry, les entreprises mettent des agents en production plus vite que leurs équipes de sécurité ne parviennent à suivre. La sécurité agentique vient précisément combler cet écart." },
-      q2: { q: "En quoi se distingue-t-elle de la sécurité traditionnelle de l'IA ou des LLM ?",
-            a: "La sécurité des LLM dite traditionnelle se concentre sur l'invite et la sortie du modèle : contournements, injections d'instructions, hallucinations, fuites de données à l'inférence. La sécurité agentique étend ce périmètre à tout ce que l'agent peut accomplir une fois qu'il a élaboré un plan : autorisation des appels d'outils, isolation des sous-agents, observabilité des flux à plusieurs étapes, réversibilité des actions, et exercices en équipe rouge contre les abus de chaîne d'outils et l'exfiltration de données. La zone d'impact n'est plus une réponse isolée, mais un flux de travail tout entier." },
-      q3: { q: "Quels types de mission proposez-vous ?",
-            a: "Trois grands types de mission. Stratégie : un diagnostic présenté au conseil d'administration sur votre parc d'agents IA, assorti d'une architecture cible et d'une feuille de route à douze mois. Construction : une ingénierie en immersion auprès de vos équipes pour mettre en œuvre garde-fous, isolation des sous-agents, autorisation des appels d'outils et observabilité Langfuse jusqu'en production. Assurance : un audit indépendant de sécurité agentique, comprenant des exercices en équipe rouge et un dossier de cartographie réglementaire prêt à être présenté au conseil. Des mandats de RSSI à temps partagé sont également proposés aux plateformes émergentes." },
-      q4: { q: "Quels secteurs accompagnez-vous ?",
-            a: "Les secteurs régulés à forts enjeux : banque, assurance et réassurance, gestion d'actifs, fournisseurs d'informations financières, défense, santé et secteur public. Douze années de missions à travers l'Europe, le Golfe et l'Asie, avec une expérience de terrain pour Swiss Re, AXA, BNP Paribas, Standard Chartered, Thomson Reuters, Société Générale, Seddiqi Holding, NusaVest, Thales, Dassault Systèmes, Veolia, Baxter et Gemalto." },
-      q5: { q: "Sur quels référentiels et quelles réglementations vous appuyez-vous ?",
-            a: "La norme ISO/IEC 42001 pour les systèmes de management de l'IA, le référentiel NIST AI Risk Management Framework et le Règlement européen sur l'IA pour la gouvernance propre à l'IA. ISO/IEC 27001 et 27701, SOC 2 Type II, HIPAA, PCI DSS, DORA, NIS2, ainsi que les régimes régionaux tels que les PDPL Émirats arabes unis, PDPL Arabie saoudite et le RGPD pour la sécurité de l'information et la protection des données à caractère personnel. Mes missions traduisent systématiquement ces référentiels en contrôles déployables, plutôt qu'en empilement documentaire." },
-      q6: { q: "Où êtes-vous basé et comment travaillez-vous ?",
-            a: "Mon activité se répartit entre Singapour, Dubaï, Paris et Palo Alto, avec des missions en cours sur trois continents. La grande majorité du travail s'effectue à distance, les déplacements sur site étant cadrés au cas par cas selon la mission. Les projets s'étendent généralement de quelques semaines, pour une stratégie ou un audit, à plusieurs trimestres, pour des chantiers complets ou des mandats de RSSI à temps partagé." },
-      q7: { q: "Comment démarre-t-on une mission ?",
-            a: "Un court échange de cadrage, d'une trentaine de minutes en général, et sans engagement. Cet entretien permet de clarifier votre parc d'agents, votre exposition réglementaire et le résultat attendu. La plupart des missions s'engagent par un diagnostic structuré et une proposition écrite, remis sous dix jours ouvrés." }
+      kicker: "FAQ",
+      title: "Les questions posées avant chaque mission",
+      lede: "Réponses courtes aux questions les plus fréquentes des conseils d'administration, des CISOs et des équipes plateforme IA qui cadrent leur première mission de sécurité agentique.",
+      q1: { q: "Qu'est-ce que la Sécurité Agentique et pourquoi est-elle cruciale maintenant ?",
+            a: "La Sécurité Agentique est la discipline qui sécurise les agents IA autonomes et l'infrastructure qu'ils appellent. Contrairement à un chatbot, un agent raisonne, planifie, invoque des outils, génère des sous-agents et enchaîne des décisions à travers des systèmes. Chaque tool-call est une action exécutable avec un impact réel : le périmètre de sécurité doit donc se déplacer de la session utilisateur vers l'invocation d'outil elle-même. Avec l'adoption rapide du Model Context Protocol, de LangGraph, LangChain et de frameworks comme Azure AI Foundry, les entreprises mettent des agents en production plus vite que leurs équipes de sécurité ne suivent. La Sécurité Agentique comble cet écart." },
+      q2: { q: "En quoi diffère-t-elle de la sécurité IA / LLM traditionnelle ?",
+            a: "La sécurité LLM traditionnelle se concentre sur le prompt et la sortie du modèle : jailbreaks, injection de prompt, hallucinations, fuite de données à l'inférence. La Sécurité Agentique étend ce périmètre à tout ce que l'agent peut faire une fois qu'il a produit un plan : autorisation des tool-calls, isolation des sous-agents, observabilité des workflows multi-étapes, réversibilité des actions et red-team contre l'abus de chaîne d'outils et l'exfiltration de données. Le blast radius n'est plus une réponse unique, mais un workflow entier." },
+      q3: { q: "Quels modèles de mission proposes-tu ?",
+            a: "Trois modèles principaux. Stratégie : diagnostic comité exécutif de votre parc d'agents IA, architecture cible et roadmap 12 mois. Build : ingénierie forward-deployed avec vos équipes pour implémenter garde-fous, isolation des sous-agents, autorisation tool-call et observabilité Langfuse en production. Assurance : audit indépendant de sécurité agentique incluant red-team et dossier de cartographie réglementaire prêt pour le board. Des mandats de CISO fractionné sont également possibles pour les plateformes émergentes." },
+      q4: { q: "Quelles industries servez-vous ?",
+            a: "Les industries régulées à forts enjeux : banque, assurance et réassurance, gestion d'actifs, fournisseurs d'information financière, défense, santé et secteur public. Douze ans de missions à travers l'Europe, le CCG et l'Asie, avec une expérience terrain pour Swiss Re, AXA, BNP Paribas, Standard Chartered, Thomson Reuters, Société Générale, Seddiqi Holding, NusaVest, Thales, Dassault Systèmes, Veolia, Baxter et Gemalto." },
+      q5: { q: "Sur quels cadres et régulations vous alignez-vous ?",
+            a: "ISO/IEC 42001 pour les systèmes de management de l'IA, NIST AI Risk Management Framework et l'AI Act européen pour la gouvernance IA. ISO/IEC 27001 et 27701, SOC 2 Type II, HIPAA, PCI DSS, DORA, NIS2 et les régimes régionaux comme PDPL EAU, PDPL KSA et RGPD pour la sécurité de l'information et la protection des données. Les missions traduisent systématiquement ces cadres en contrôles déployables plutôt qu'en paperasse." },
+      q6: { q: "Où es-tu basé et comment travailles-tu ?",
+            a: "Basé entre Singapour, Dubaï, Paris et Palo Alto, avec des missions actives sur trois continents. La majorité du travail est livrée à distance, avec des visites sur site cadrées selon la mission. Les projets typiques vont de quelques semaines pour une stratégie ou un audit, à plusieurs trimestres pour des builds complets et des mandats de CISO fractionné." },
+      q7: { q: "Comment commence-t-on ?",
+            a: "Un appel de cadrage court, typiquement trente minutes, sans engagement. L'appel clarifie votre parc d'agents, votre exposition réglementaire et le résultat attendu. La plupart des missions démarrent par un diagnostic structuré et une proposition écrite sous dix jours ouvrés." }
     },
 
     consulting: {
       kicker: "Conseil",
-      title: "Un conseil opérationnel pour les entreprises nativement IA",
-      lede: "Conseil et mise en œuvre de bout en bout sur l'ensemble de la chaîne de sécurité des agents IA, de la stratégie présentée au conseil d'administration aux plans d'architecture, jusqu'aux garde-fous en production sur Azure AI Foundry, LangGraph, NeMo, SageMaker et Prisma Cloud.",
-      t1: { step: "Phase 01 · Stratégie", title: "Stratégie de sécurité des agents IA",
-            desc: "Diagnostic présenté au conseil d'administration sur votre parc d'agents IA. Architecture cible, posture réglementaire et feuille de route à douze mois pour y parvenir.",
-            l1: "Modélisation des menaces pour chaque agent et chaque appel d'outil",
-            l2: "Mise en correspondance avec NIST AI RMF, ISO 42001 et le Règlement européen sur l'IA",
-            l3: "Modèle de risque et de coût prêt à présenter au RSSI" },
-      t2: { step: "Phase 02 · Construction", title: "Construction et durcissement",
-            desc: "Ingénierie en immersion sur votre socle technique. Garde-fous, isolation des sous-agents, autorisation des appels d'outils et observabilité Langfuse, livrés jusqu'en production.",
-            l1: "Architecture de référence sur Azure AI Foundry ou AWS Bedrock",
-            l2: "Flux LangGraph et LangChain dotés de garde-fous",
-            l3: "Intégration Prisma Cloud et Cloudflare" },
-      t3: { step: "Phase 03 · Assurance", title: "Audit et assurance",
-            desc: "Audit indépendant de sécurité agentique. Exercices en équipe rouge ciblant l'injection d'instructions, l'abus de chaîne d'outils et l'exfiltration de données. Dossier de preuves prêt à être présenté au conseil d'administration.",
-            l1: "Équipes rouges sur les couches invite, outils et données",
-            l2: "Mise en correspondance SOC 2 / ISO 27001 / DORA / NIS2",
-            l3: "Tableaux de bord Langfuse d'assurance continue" },
-      s1: { title: "Plateformes d'agents IA et orchestration" },
-      s2: { title: "Mise à disposition de modèles et inférence" },
-      s3: { title: "Sécurité du cloud et CSPM" },
-      s4: { title: "Observabilité, évaluations et garde-fous" },
-      s5: { title: "Gouvernance, risque et conformité" },
-      cta: { title: "Prêt à sécuriser votre plateforme d'agents IA ?",
-             sub: "Premier échange de cadrage, d'une trentaine de minutes en général, sans engagement." }
+      title: "Conseil opérationnel pour les entreprises AI-native",
+      lede: "Conseil et implémentation de bout en bout sur toute la pile de sécurité agentique, de la stratégie comité exécutif aux blueprints d'architecture, jusqu'aux garde-fous de production sur Azure AI Foundry, LangGraph, NeMo, SageMaker et Prisma Cloud.",
+      t1: { step: "Phase 01 · Stratégie", title: "Stratégie de sécurité IA agentique",
+            desc: "Diagnostic comité exécutif de votre parc d'agents IA. Architecture cible, posture réglementaire et roadmap 12 mois pour y parvenir.",
+            l1: "Threat-model de chaque agent et tool-call",
+            l2: "Cartographie NIST AI RMF, ISO 42001, AI Act",
+            l3: "Modèle risque & coût prêt pour le CISO" },
+      t2: { step: "Phase 02 · Build", title: "Construction & durcissement",
+            desc: "Ingénierie forward-deployed sur votre stack. Garde-fous, isolation des sous-agents, autorisation tool-call, observabilité Langfuse, livrés en production.",
+            l1: "Architecture de référence sur Azure AI Foundry / AWS Bedrock",
+            l2: "Workflows LangGraph + LangChain avec garde-fous",
+            l3: "Intégration Prisma Cloud + Cloudflare" },
+      t3: { step: "Phase 03 · Assurance", title: "Audit & Assurance",
+            desc: "Audit indépendant de sécurité agentique. Red-team d'injection de prompt, abus de chaîne d'outils, exfiltration de données. Dossier de preuve prêt pour le board.",
+            l1: "Red-team sur les couches prompt, tool et data",
+            l2: "Cartographie SOC 2 / ISO 27001 / DORA / NIS2",
+            l3: "Dashboards Langfuse d'assurance continue" },
+      s1: { title: "Plateformes agentiques & orchestration" },
+      s2: { title: "Serving de modèles & inférence" },
+      s3: { title: "Sécurité cloud & CSPM" },
+      s4: { title: "Observabilité, évals & garde-fous" },
+      s5: { title: "Gouvernance, risque & conformité" },
+      cta: { title: "Prêt à sécuriser votre plateforme agentique ?",
+             sub: "Premier appel de cadrage, typiquement 30 minutes, sans engagement." }
     },
 
     certs: {
       kicker: "Certifications",
-      title: "Certifié sur l'ensemble de la chaîne agentique",
-      lede: "Du parcours Build with Claude API d'Anthropic au NVIDIA Generative AI LLMs, en passant par les certifications ISACA CISM et CRISC, et l'intégralité des parcours Microsoft Cybersecurity Architect et AWS Security.",
-      cat: { ai: "IA", security: "Sécurité", cloud: "Cloud", general: "Général" }
+      title: "Certifié sur toute la pile agentique",
+      lede: "De l'AI Fluency Anthropic au NVIDIA Generative-AI LLMs, ISACA CISM/CRISC, et l'intégralité des parcours Microsoft Cybersecurity Architect & AWS Security.",
+      agentic: "Cursus de sécurité de l'automation agentique."
     },
 
     manifesto: {
       kicker: "Manifeste",
-      title: "Les agents autonomes appellent un nouveau périmètre de sécurité.",
-      p1: "La sécurité historique a été pensée pour des humains qui cliquent sur des boutons. Les agents, eux, en cliquent des milliers à la minute, font appel à des outils externes, déclenchent des sous-agents et enchaînent des décisions à travers les systèmes d'information. La zone d'impact n'est plus une session : c'est un flux de travail tout entier.",
-      p2: "Mon travail consiste à réancrer le périmètre là où l'intention rencontre l'exécution : l'appel d'outil. Je conçois l'autorisation, l'observabilité et les garde-fous de politique qui rendent les agents autonomes auditables, réversibles et dignes de confiance à l'échelle de l'entreprise.",
-      quote: "« À l'ère des agents, la question n'est plus de savoir si l'IA <em>peut</em> exécuter une action. Elle est de savoir si elle le <em>doit</em>, et <em>si nous pourrons l'établir</em> a posteriori. »"
+      title: "Les agents autonomes exigent un nouveau périmètre.",
+      p1: "La sécurité historique a été construite pour des humains qui cliquent. Les agents cliquent des milliers de fois par minute, appellent des outils externes, déclenchent des sous-agents et enchaînent des décisions à travers des systèmes. Le blast radius n'est plus une session, c'est un workflow entier.",
+      p2: "Mon travail ré-ancre le périmètre là où l'intention rencontre l'exécution : le tool-call. Je conçois l'autorisation, l'observabilité et les garde-fous de politique qui rendent les agents autonomes auditables, réversibles et dignes de confiance à l'échelle entreprise.",
+      quote: "« À l'ère agentique, la question n'est plus de savoir si l'IA <em>peut</em> exécuter une action. C'est de savoir si elle <em>doit</em>, et <em>si nous pouvons le prouver</em> a posteriori. »"
     },
 
     contact: {
-      kicker: "Discutons",
-      title: "Sécuriser votre plateforme d'agents IA commence par une conversation.",
-      desc: "Conseils d'administration, RSSI, assureurs, équipes plateformes IA : si vous déployez des agents autonomes, des charges de travail multi-cloud, ou que vous bâtissez une capacité de souscription cyber, je peux vous accompagner.",
+      kicker: "Échangeons",
+      title: "Sécuriser votre plateforme agentique commence par une conversation.",
+      desc: "Conseils d'administration, CISOs, assureurs, équipes plateforme IA, si vous déployez des agents autonomes, des workloads multi-cloud ou bâtissez une capacité de cyber-underwriting, je peux vous aider.",
       linkedin: "LinkedIn",
       loc1: "Singapour", loc2: "Dubaï", loc3: "Paris", loc4: "Palo Alto"
     },
 
-    footer: { tag: "Sécurité agentique · Confiance dans l'IA · GRC cloud" }
+    footer: { tag: "Sécurité Agentique · Confiance IA · GRC Cloud" }
   },
 
   /* ------------------------------------------------------------ 中文 (Simplified Chinese) */
   zh: {
     meta: {
-      title: "Jeremy Canale, AI 智能体安全架构师 | AI 与云安全架构师",
-      description: "Jeremy Canale 是 AI 智能体安全架构师。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透、法兴银行及 Rankiteo 担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
+      title: "Jeremy Canale, 世界级智能体安全专家 | AI 与云安全架构师",
+      description: "Jeremy Canale 是全球顶尖的智能体（Agentic）AI 安全专家。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透、法兴银行及 Rankiteo 担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
     },
     brand:  { tag: "智能体安全" },
-    nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", cta: "预约通话" },
+    nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", cta: "开启合作" },
 
     hero: {
-      eyebrow: "AI 智能体安全架构师",
+      eyebrow: "世界级智能体安全专家",
       name: "Jeremy Canale",
       rotorPrefix: "我设计",
       sub: "十二年深耕全球最受监管的行业银行、保险与国防。如今，我为自主 AI 智能体、MCP 基础设施以及承载它们的云平台构建全新的安全边界。",
-      cta1: "预约与 Jeremy 通话",
+      cta1: "联系合作",
       cta2: "LinkedIn 主页",
       meta1Value: "12+", meta1Label: "年网络安全经验",
       meta2Value: "8",   meta2Label: "财富 500 强客户",
-      meta3Value: "20+", meta3Label: "行业认证",
+      meta3Value: "25+", meta3Label: "行业认证",
       meta4Value: "3",   meta4Label: "大洲 · 新加坡 · 阿联酋 · 欧洲",
       rotor: ["安全 AI 智能体", "MCP 基础设施", "云安全架构", "网络风险承保", "AI 治理框架"]
     },
@@ -557,8 +557,8 @@ window.I18N = {
     certs: {
       kicker: "资质认证",
       title: "贯穿整个智能体技术栈的认证",
-      lede: "Anthropic Build with Claude API、NVIDIA 生成式 AI LLMs、ISACA CISM / CRISC，以及完整的 Microsoft Cybersecurity Architect 与 AWS Security 体系。",
-      cat: { ai: "人工智能", security: "安全", cloud: "云计算", general: "通用" }
+      lede: "Anthropic AI Fluency、NVIDIA 生成式 AI LLMs、ISACA CISM / CRISC，以及完整的 Microsoft Cybersecurity Architect 与 AWS Security 体系。",
+      agentic: "智能体自动化安全课程。"
     },
 
     manifesto: {
@@ -583,22 +583,22 @@ window.I18N = {
   /* ------------------------------------------------------------ العربية (Arabic, RTL) */
   ar: {
     meta: {
-      title: "جيريمي كانال, مهندس أمن الوكلاء الذكيين بالذكاء الاصطناعي | مهندس أمن الذكاء الاصطناعي والسحابة",
-      description: "جيريمي كانال هو مهندس أمن الوكلاء الذكيين بالذكاء الاصطناعي. مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale وRankiteo."
+      title: "جيريمي كانال, خبير عالمي في أمن الوكلاء الذكيين | مهندس أمن الذكاء الاصطناعي والسحابة",
+      description: "جيريمي كانال هو الخبير العالمي الأول في أمن الوكلاء الذكيين (Agentic Security). مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale وRankiteo."
     },
     brand:  { tag: "أمن الوكلاء الذكيين" },
-    nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", cta: "احجز مكالمة" },
+    nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", cta: "ابدأ التعاون" },
 
     hero: {
-      eyebrow: "مهندس أمن الوكلاء الذكيين بالذكاء الاصطناعي",
+      eyebrow: "خبير عالمي في أمن الوكلاء الذكيين",
       name: "جيريمي كانال",
       rotorPrefix: "أُصمِّم",
       sub: "اثنا عشر عامًا في تأمين أكثر القطاعات تنظيمًا في العالم, البنوك والتأمين والدفاع. واليوم أُؤسِّس محيط الأمن لوكلاء الذكاء الاصطناعي المستقلين، وبنية MCP التحتية، والمنصات السحابية التي تُشغِّلهم.",
-      cta1: "احجز مكالمة مع جيريمي",
+      cta1: "تواصل معي",
       cta2: "الملف الشخصي على LinkedIn",
       meta1Value: "+12", meta1Label: "عامًا في الأمن السيبراني",
       meta2Value: "8",   meta2Label: "عملاء Fortune 500",
-      meta3Value: "+20", meta3Label: "شهادة مهنية",
+      meta3Value: "+25", meta3Label: "شهادة مهنية",
       meta4Value: "3",   meta4Label: "قارات · سنغافورة · الإمارات · أوروبا",
       rotor: ["وكلاء ذكاء اصطناعي آمنين", "بنية MCP", "أمن السحابة", "اكتتاب سيبراني", "حوكمة الذكاء الاصطناعي"]
     },
@@ -748,8 +748,8 @@ window.I18N = {
     certs: {
       kicker: "الشهادات",
       title: "معتمد عبر كامل حزمة الوكلاء الذكيين",
-      lede: "من Anthropic Build with Claude API إلى NVIDIA Generative-AI LLMs، وISACA CISM/CRISC، وكامل مسارات Microsoft Cybersecurity Architect وAWS Security.",
-      cat: { ai: "الذكاء الاصطناعي", security: "الأمن", cloud: "السحابة", general: "عام" }
+      lede: "من Anthropic AI Fluency إلى NVIDIA Generative-AI LLMs، وISACA CISM/CRISC، وكامل مسارات Microsoft Cybersecurity Architect وAWS Security.",
+      agentic: "منهج أمن الأتمتة الوكيلية."
     },
 
     manifesto: {

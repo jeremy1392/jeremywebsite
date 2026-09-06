@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="fr" dir="ltr" data-theme="dark" class="tech-page guide-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>Architecte Sécurité : le kit de survie (PDF gratuit, 124 slides) | Jeremy Canale</title>
+  <meta name="description" content="Où doit se placer l'architecte sécurité ? Rôle, attentes et parcours dans le Cadre de Gouvernance Numérique (DGF) : jalons, contrat, grille CIA+TN, IAM Azure et AWS, matrice de risques, projets IA. Un kit de survie de 124 slides à télécharger gratuitement." />
+  <meta name="keywords" content="architecte sécurité, kit de survie, DGF, cadre de gouvernance numérique, jalon sécurité et architecture, CIA+TN, dossier d'architecture, IAM Azure, IAM AWS, Entra ID, matrice de risques, fiche de risque, sécurité des agents IA, RSSI, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/security-architect-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/security-architect-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/security-architect-guide/" />
+
+  <!-- Open Graph : LinkedIn lit ces balises pour construire l'aperçu du lien (image = 1re slide, 1200x627) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Architecte Sécurité : le kit de survie" />
+  <meta property="og:description" content="124 slides pour se placer au bon endroit, au bon moment : DGF, contrat, grille CIA+TN, IAM Azure et AWS, matrice de risques, projets IA. PDF gratuit, sans inscription." />
+  <meta property="og:url" content="https://jeremycanale.com/security-architect-guide/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/security-architect-guide-cover.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/security-architect-guide-cover.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="Couverture du kit de survie Architecte Sécurité, par Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-09-07T08:00:00+02:00" />
+  <meta property="article:section" content="Sécurité" />
+  <meta property="article:tag" content="Architecte Sécurité" />
+  <meta property="article:tag" content="Gouvernance" />
+  <meta property="article:tag" content="IAM" />
+  <meta property="article:tag" content="Azure" />
+  <meta property="article:tag" content="AWS" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Architecte Sécurité : le kit de survie" />
+  <meta name="twitter:description" content="124 slides pour se placer au bon endroit, au bon moment : DGF, contrat, grille CIA+TN, IAM Azure et AWS, matrice de risques, projets IA. PDF gratuit." />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/security-architect-guide-cover.jpg" />
+  <meta name="twitter:image:alt" content="Couverture du kit de survie Architecte Sécurité, par Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/security-architect-guide/" },
+    "headline": "Architecte Sécurité : le kit de survie",
+    "alternativeHeadline": "Rôle, attentes et parcours au sein du Cadre de Gouvernance Numérique (DGF)",
+    "description": "Où doit se placer l'architecte sécurité ? Un kit de survie de 124 slides : jalons du DGF, accès au contrat, grille CIA+TN, IAM Azure et AWS, matrice de risques, projets IA, patrons d'architecture et pièges classiques.",
+    "image": "https://jeremycanale.com/images/security-architect-guide-cover.jpg",
+    "inLanguage": "fr",
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "Architecte Sécurité AWS / Azure",
+      "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://github.com/jeremy1392"]
+    },
+    "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
+    "keywords": "architecte sécurité, DGF, gouvernance numérique, CIA+TN, IAM, Azure, AWS, matrice de risques, agents IA",
+    "associatedMedia": {
+      "@type": "DigitalDocument",
+      "name": "Architecte Sécurité, kit de survie (PDF)",
+      "encodingFormat": "application/pdf",
+      "contentUrl": "https://jeremycanale.com/Architecte_Securite_Kit_de_survie.pdf",
+      "isAccessibleForFree": true,
+      "inLanguage": "fr",
+      "author": { "@type": "Person", "name": "Jeremy Canale" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": "https://jeremycanale.com/fr.html" },
+      { "@type": "ListItem", "position": 2, "name": "Kit de survie Architecte Sécurité", "item": "https://jeremycanale.com/security-architect-guide/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../fr.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Sécurité Agentique</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="../fr.html#expertise">Expertise</a>
+      <a href="../fr.html#consulting">Conseil</a>
+      <a href="../fr.html#cases">Études de cas</a>
+      <a href="../fr.html#experience">Parcours</a>
+      <a href="../fr.html#certifications">Certifications</a>
+      <a href="../fr.html#faq">FAQ</a>
+      <a href="../fr.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary header-cta" href="../fr.html#contact">
+        <span>Collaborer</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ====================== HERO ====================== -->
+    <section class="guide-hero">
+      <div class="guide-hero-text">
+        <a href="../fr.html" class="tech-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          Retour au site
+        </a>
+        <span class="eyebrow"><span class="dot"></span> Ressource gratuite · PDF · 124 slides</span>
+        <h1>Architecte Sécurité :<br />le kit de survie</h1>
+        <p class="guide-hero-subtitle">Rôle, attentes et parcours au sein du Cadre de Gouvernance Numérique (DGF) : du contrat au comité, de la lecture du dossier à la matrice de risques.</p>
+        <ul class="guide-meta">
+          <li>Jeremy Canale</li>
+          <li>Septembre 2026</li>
+          <li>Français</li>
+          <li>PDF · 4,5 Mo</li>
+        </ul>
+        <div class="guide-actions">
+          <a class="btn btn-primary" href="../Architecte_Securite_Kit_de_survie.pdf" download="Architecte_Securite_Kit_de_survie.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg>
+            Télécharger le PDF
+          </a>
+          <a class="btn btn-ghost" href="#sommaire">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            Voir le sommaire
+          </a>
+        </div>
+        <p class="guide-note">Gratuit, sans inscription. Le lien ouvre ou enregistre directement le PDF.</p>
+      </div>
+
+      <figure class="guide-cover">
+        <a href="../Architecte_Securite_Kit_de_survie.pdf" download="Architecte_Securite_Kit_de_survie.pdf" aria-label="Télécharger le kit de survie (PDF)">
+          <img src="../images/security-architect-guide/slide-01.jpg" width="1600" height="900" alt="Première slide du kit de survie : Architecte Sécurité, rôle, attentes et parcours au sein du DGF" fetchpriority="high" />
+        </a>
+        <figcaption class="guide-cover-caption">Slide 1 sur 124 · cliquer pour télécharger</figcaption>
+      </figure>
+    </section>
+
+    <ul class="guide-stats" aria-label="Le kit en chiffres">
+      <li><strong>124</strong><span>slides</span></li>
+      <li><strong>12</strong><span>parties</span></li>
+      <li><strong>36</strong><span>catégories techniques</span></li>
+      <li><strong>8</strong><span>patrons d'architecture</span></li>
+      <li><strong>10</strong><span>pièges à éviter</span></li>
+      <li><strong>3</strong><span>cas pratiques</span></li>
+    </ul>
+
+    <!-- ====================== POURQUOI ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">Le constat</span>
+        <h2>Pourquoi ce kit ?</h2>
+      </div>
+      <div class="guide-prose">
+        <p>Les entreprises ne comprennent pas toujours <strong>où l'architecte sécurité doit se placer</strong> : trop tôt, trop tard, ou en dehors du processus. Convoqué au jalon quand le contrat est déjà signé, il découvre les exigences au lieu de les confirmer. Sollicité sans criticité ni RTO exprimés par le métier, il invente des exigences, et se trompe.</p>
+        <p>Ce kit donne des repères concrets pour se positionner <strong>au bon endroit, au bon moment</strong>, notamment dans le Cadre de Gouvernance Numérique (DGF) : la succession de jalons qui encadre toute évolution significative du système d'information, de l'achat d'une plateforme SaaS à l'intégration d'une entité acquise.</p>
+        <p>Il est écrit depuis le terrain : plus de dix ans d'architecture sécurité AWS et Azure, en grandes entreprises, dans la finance, la banque, l'assurance, la défense, la pharmacie et la distribution, en France, en Belgique, en Suisse et au Moyen-Orient.</p>
+      </div>
+      <div class="guide-facts">
+        <div class="guide-fact amber">
+          <strong>30 %</strong>
+          <p>des entreprises ont un vrai DGF en place, avec une application dédiée pour suivre le cycle de vie d'un projet. Pour les autres, les jalons vivent dans les courriels et les tableurs.</p>
+          <small>Constat personnel, fondé sur les organisations accompagnées : pas une étude formelle.</small>
+        </div>
+        <div class="guide-fact rose">
+          <strong>90 %</strong>
+          <p>des personnes qui instruisent un dossier n'évaluent pas correctement la partie identités et accès (IAM). On vérifie le SSO et le MFA, et on s'arrête là.</p>
+          <small>Constat personnel, fondé sur les dossiers instruits ou relus.</small>
+        </div>
+      </div>
+      <blockquote class="guide-callout"><strong>Un jalon se prépare, il ne se subit pas.</strong> Impliquer la sécurité dès le besoin métier coûte une heure de cadrage ; la découvrir au jalon coûte des semaines de renégociation.</blockquote>
+    </section>
+
+    <!-- ====================== POUR QUI ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">Mode d'emploi</span>
+        <h2>Trois lectures, selon votre rôle</h2>
+        <p class="lede">Le document est conçu pour être parcouru en dix minutes ou lu intégralement. Chaque profil a son chemin.</p>
+      </div>
+      <div class="guide-audience">
+        <article>
+          <header>
+            <span class="aud-icon rose" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <div><h3>Dirigeant</h3><span class="aud-time">10 minutes</span></div>
+          </header>
+          <ul class="tech-bullets">
+            <li>Constat : un vrai DGF reste rare</li>
+            <li>Les jalons du DGF</li>
+            <li>Le métier, propriétaire du risque</li>
+            <li>Les quatre statuts d'un dossier</li>
+            <li>Les dix pièges</li>
+            <li>Mettre en place un DGF en 90 jours</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <span class="aud-icon cyan" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            <div><h3>Chef de projet</h3><span class="aud-time">30 minutes</span></div>
+          </header>
+          <ul class="tech-bullets">
+            <li>Les trois parcours et la liste par jalon</li>
+            <li>Accéder au contrat dès le départ</li>
+            <li>Le formulaire d'évaluation initiale</li>
+            <li>La liste de contrôle complète</li>
+            <li>La matrice et la fiche de risque</li>
+            <li>Les cas pratiques</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <span class="aud-icon violet" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div><h3>Architecte sécurité</h3><span class="aud-time">Tout, dans l'ordre</span></div>
+          </header>
+          <ul class="tech-bullets">
+            <li>La boussole CIA+TN et ses sous-critères</li>
+            <li>Les trente-six catégories techniques</li>
+            <li>IAM, Azure et AWS : les permissions</li>
+            <li>La sécurité des projets IA</li>
+            <li>Convaincre et piloter</li>
+            <li>Patrons, pièges, boîte à outils, glossaire</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== SOMMAIRE ====================== -->
+    <section class="guide-section" id="sommaire">
+      <div class="guide-section-head">
+        <span class="kicker">Au programme</span>
+        <h2>Douze parties, du rôle au glossaire</h2>
+      </div>
+      <ol class="guide-toc">
+        <li><span class="toc-num">01</span><div><strong>Qui suis-je, et pourquoi ce kit ?</strong><span>Parcours, certifications, terrains et intention</span></div></li>
+        <li><span class="toc-num">02</span><div><strong>Le rôle de l'architecte sécurité</strong><span>Positionnement, six missions, attentes, livrables, les 8 indispensables</span></div></li>
+        <li><span class="toc-num">03</span><div><strong>Le DGF</strong><span>Jalons, trois parcours, liste par jalon, et un DGF en 90 jours</span></div></li>
+        <li><span class="toc-num">04</span><div><strong>Survivre aux jalons</strong><span>Le jalon Sécurité &amp; Architecture et les six bons réflexes</span></div></li>
+        <li><span class="toc-num">05</span><div><strong>Maturité DGF par pays et par secteur</strong><span>Classements personnels, fondés sur le terrain</span></div></li>
+        <li><span class="toc-num">06</span><div><strong>Achats, SI, Métiers &amp; Sécurité</strong><span>Le contrat, le cadre existant de la DSI, le métier propriétaire du risque</span></div></li>
+        <li><span class="toc-num">07</span><div><strong>Étudier un dossier : la lecture</strong><span>Boussole CIA+TN, grille, sous-critères, signaux d'alerte</span></div></li>
+        <li><span class="toc-num">08</span><div><strong>Évaluation technique</strong><span>Le questionnaire DGF, trente-six catégories, Azure et AWS, ISO et NIST</span></div></li>
+        <li><span class="toc-num">09</span><div><strong>Matrice de risques</strong><span>Évaluer, décider, tracer : statuts, fiche de risque, avis, trois cas pratiques</span></div></li>
+        <li><span class="toc-num">10</span><div><strong>Projets IA</strong><span>Architecture des agents, identités, risques, évaluation</span></div></li>
+        <li><span class="toc-num">11</span><div><strong>Convaincre et piloter</strong><span>Communication, remarques classiques, indicateurs</span></div></li>
+        <li><span class="toc-num">12</span><div><strong>Patrons, pièges, outils et glossaire</strong><span>Huit patrons, dix pièges, huit modèles, le vocabulaire</span></div></li>
+      </ol>
+    </section>
+
+    <!-- ====================== EXTRAITS ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">Extraits</span>
+        <h2>Ce que vous y trouverez</h2>
+        <p class="lede">Sept idées qui structurent le kit, illustrées par les slides correspondantes. Cliquez sur une image pour l'agrandir.</p>
+      </div>
+
+      <div class="guide-features">
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../images/security-architect-guide/slide-20-trois-parcours.jpg" target="_blank" rel="noopener">
+              <img src="../images/security-architect-guide/slide-20-trois-parcours.jpg" width="1200" height="675" loading="lazy" alt="Slide : trois parcours DGF, une constante, le jalon Sécurité et Architecture" />
+            </a>
+            <figcaption>Partie 3 · Trois parcours, une constante</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Le DGF</span>
+            <h3>Un jalon incontournable, quel que soit le parcours</h3>
+            <p>Nouvelle plateforme, fusion-acquisition ou nouveau projet : le déclencheur change, l'ordre des jalons change, mais le jalon Sécurité &amp; Architecture est toujours là. Pour une plateforme fournisseur, il passe même avant la DSI : la sécurité qualifie la solution et le contrat avant l'engagement.</p>
+            <ul class="tech-bullets">
+              <li>Ce que chaque jalon vérifie, qui le tient, et l'avis qu'il rend : feu vert, orange ou rouge</li>
+              <li>La liste de ce qu'il faut avoir avant chaque jalon</li>
+              <li>Six réflexes pour survivre aux jalons, et un plan pour monter un DGF en 90 jours</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../images/security-architect-guide/slide-41-boussole-cia-tn.jpg" target="_blank" rel="noopener">
+              <img src="../images/security-architect-guide/slide-41-boussole-cia-tn.jpg" width="1200" height="675" loading="lazy" alt="Slide : la boussole CIA+TN, confidentialité, intégrité, disponibilité, traçabilité, non-répudiation" />
+            </a>
+            <figcaption>Partie 7 · La boussole CIA+TN</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Lire un dossier</span>
+            <h3>Cinq critères, trois questions par critère</h3>
+            <p>Confidentialité, intégrité, disponibilité, traçabilité, non-répudiation : tout s'évalue à travers ces cinq critères. Chaque section du dossier d'architecture, chaque question posée et chaque avis rendu se rattache à l'un d'eux.</p>
+            <ul class="tech-bullets">
+              <li>L'anatomie d'un dossier d'architecture en neuf sections, avec les critères que chacune doit éclairer</li>
+              <li>Pour chaque critère, « ce qu'on demande » et « ce qui ne passe pas », sur des cas vécus</li>
+              <li>Huit signaux d'alerte : flux « à définir plus tard », compte de service partagé, dérogation sans échéance…</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../images/security-architect-guide/slide-61-iam-sept-points.jpg" target="_blank" rel="noopener">
+              <img src="../images/security-architect-guide/slide-61-iam-sept-points.jpg" width="1200" height="675" loading="lazy" alt="Slide : IAM, le point que 90 % évaluent mal, les sept points à évaluer" />
+            </a>
+            <figcaption>Partie 8 · IAM, les sept points à évaluer</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Identités et accès</span>
+            <h3>IAM : le point que 90 % évaluent mal</h3>
+            <p>« Qui a accès à quoi » se cache dans sept endroits différents : rôles RBAC et Entra ID, identités managées, permissions déléguées, permissions d'application Graph, identité d'agent IA, accès conditionnel, compte de secours. Le kit les passe en revue pour Azure et pour AWS, avec l'erreur classique de chacun.</p>
+            <ul class="tech-bullets">
+              <li>L'oubli classique : le compte de secours (break-glass), ses règles, et la question à poser au dossier</li>
+              <li>Seize constats issus d'un audit Entra ID réel de 2026, anonymisés et classés par criticité</li>
+              <li>Annuaire hybride AD et Entra, invités et identités externes, accès des administrateurs</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../images/security-architect-guide/slide-94-liste-de-controle.jpg" target="_blank" rel="noopener">
+              <img src="../images/security-architect-guide/slide-94-liste-de-controle.jpg" width="1200" height="675" loading="lazy" alt="Slide : la liste de contrôle complète, trente-six catégories techniques en six familles" />
+            </a>
+            <figcaption>Partie 8 · La liste de contrôle complète</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Évaluation technique</span>
+            <h3>Trente-six catégories, chacune avec ses exemples vécus</h3>
+            <p>Secrets, infrastructure as code, conteneurs, tests d'intrusion, licences, réseau, PaaS, API, mobile, PKI, messagerie, chiffrement, RGPD, sauvegardes, SOC, réponse à incident, sensibilisation, IA… Pour chaque catégorie, une slide : ce qu'on demande, et ce qui ne passe pas.</p>
+            <ul class="tech-bullets">
+              <li>Le formulaire d'évaluation initiale en dix blocs, à remplir au cadrage avec le demandeur</li>
+              <li>Le bloc Architecture du formulaire : douze questions, et la réponse attendue</li>
+              <li>La correspondance avec ISO 27001:2022 (annexe A) et NIST CSF 2.0</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../images/security-architect-guide/slide-99-matrice-de-risques.jpg" target="_blank" rel="noopener">
+              <img src="../images/security-architect-guide/slide-99-matrice-de-risques.jpg" width="1200" height="675" loading="lazy" alt="Slide : matrice de risques impact fois probabilité, associée au cas pratique du CRM SaaS" />
+            </a>
+            <figcaption>Partie 9 · Matrice associée au cas pratique</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Décider et tracer</span>
+            <h3>Du constat au risque, du risque à l'avis</h3>
+            <p>Un constat sans scénario n'est pas un risque ; un risque sans propriétaire n'est pas géré ; un risque sans sortie n'est pas suivi. Le kit déroule la chaîne complète : score impact × probabilité de 1 à 16, seuils, quatre statuts d'un dossier, fiche de risque, modèle d'avis.</p>
+            <ul class="tech-bullets">
+              <li>Trois cas pratiques instruits de bout en bout : un CRM en mode SaaS, une fusion-acquisition, un agent IA de support interne</li>
+              <li>La fiche de risque complète, toujours signée par le métier</li>
+              <li>L'avis en cinq blocs : synthèse, un feu par critère, conditions datées, alternative, décision</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../images/security-architect-guide/slide-107-agent-ia-plateforme.jpg" target="_blank" rel="noopener">
+              <img src="../images/security-architect-guide/slide-107-agent-ia-plateforme.jpg" width="1200" height="675" loading="lazy" alt="Slide : un agent IA en entreprise, plus qu'un appel au modèle, la plateforme de production" />
+            </a>
+            <figcaption>Partie 10 · Un agent IA en entreprise</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Projets IA</span>
+            <h3>Un agent IA, c'est plus qu'un appel au modèle</h3>
+            <p>Passerelle IA, orchestrateur, agents, outils, données et modèles, et cinq contrôles transverses autour de la chaîne. L'architecture de référence couche par couche, et ce qu'on vérifie à chaque niveau.</p>
+            <ul class="tech-bullets">
+              <li>L'identité des agents et l'accès conditionnel : le piège des politiques « Tous les utilisateurs » qui n'incluent pas les agents</li>
+              <li>Les risques spécifiques : injection de prompt, fuite via la mémoire ou l'index RAG, outils sur-privilégiés, serveurs MCP tiers</li>
+              <li>Douze questions pour évaluer un dossier IA</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../images/security-architect-guide/slide-119-dix-pieges.jpg" target="_blank" rel="noopener">
+              <img src="../images/security-architect-guide/slide-119-dix-pieges.jpg" width="1200" height="675" loading="lazy" alt="Slide : les dix pièges de l'architecte sécurité, et leur antidote" />
+            </a>
+            <figcaption>Partie 12 · Les dix pièges</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Patrons et pièges</span>
+            <h3>Huit patrons sécurisés, dix pièges et leur antidote</h3>
+            <p>Exposition web, intégration SaaS, landing zone cloud, accès partenaires, données sensibles, accès distant Zero Trust, chaîne de déploiement, agent IA : huit patrons d'architecture prêts à réutiliser, avec leurs règles.</p>
+            <ul class="tech-bullets">
+              <li>Les dix pièges : arriver au jalon, le « non » sans alternative, la dérogation éternelle, le risque zéro, le contrat découvert après signature…</li>
+              <li>Les remarques classiques (« c'est du SaaS, l'éditeur gère la sécurité ») et comment y répondre</li>
+              <li>Huit indicateurs pour piloter le rôle, et un glossaire d'une cinquantaine de termes</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====================== BOITE A OUTILS ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">Boîte à outils</span>
+        <h2>Huit modèles à emporter</h2>
+        <p class="lede">Des modèles prêts à l'emploi, réutilisables tels quels dans vos propres dossiers.</p>
+      </div>
+      <ul class="guide-toolbox">
+        <li><span class="tool-part">Partie 8</span><strong>Formulaire d'évaluation initiale</strong><span>Au cadrage, en réunion avec le demandeur : dix blocs de questions fermées.</span></li>
+        <li><span class="tool-part">Partie 7</span><strong>Plan du dossier d'architecture</strong><span>Les neuf sections attendues, avec les critères CIA+TN que chacune éclaire.</span></li>
+        <li><span class="tool-part">Partie 7</span><strong>Grille CIA+TN</strong><span>Quinze questions, trois par critère, et les sous-critères avec leurs exemples.</span></li>
+        <li><span class="tool-part">Partie 8</span><strong>Liste de contrôle technique</strong><span>Trente-six catégories à cocher pendant l'instruction.</span></li>
+        <li><span class="tool-part">Partie 9</span><strong>Fiche de risque</strong><span>La dérogation formalisée : scénario, évaluation, mesures, propriétaire, échéance.</span></li>
+        <li><span class="tool-part">Partie 9</span><strong>Modèle d'avis</strong><span>Synthèse, un feu par critère, conditions datées, alternative, décision.</span></li>
+        <li><span class="tool-part">Partie 3</span><strong>Liste par jalon</strong><span>Ce qu'il faut avoir avant chaque jalon : SI, Sécurité, Préparation Technique, Gouvernance.</span></li>
+        <li><span class="tool-part">Partie 6</span><strong>Annexe sécurité fournisseur</strong><span>Les exigences à contractualiser avec les Achats, avant la signature.</span></li>
+      </ul>
+    </section>
+
+    <!-- ====================== A RETENIR ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">À retenir</span>
+        <h2>Quatre idées à emporter</h2>
+      </div>
+      <ol class="guide-takeaways">
+        <li><span class="tk-num amber">1</span><strong>Concevoir, pas subir</strong><p>La sécurité se construit dès la conception ; l'architecte sécurité en est le garant.</p></li>
+        <li><span class="tk-num rose">2</span><strong>Trois dimensions</strong><p>Savoir, savoir-faire, savoir-être : la posture compte autant que la technique.</p></li>
+        <li><span class="tk-num cyan">3</span><strong>Un jalon incontournable</strong><p>Quel que soit le parcours DGF, le jalon Sécurité &amp; Architecture est toujours là ; seule sa position change.</p></li>
+        <li><span class="tk-num green">4</span><strong>Le pragmatisme documenté</strong><p>Feu orange, dérogations tracées, plans d'actions suivis : sécuriser sans bloquer.</p></li>
+      </ol>
+    </section>
+
+    <!-- ====================== CTA ====================== -->
+    <section class="guide-cta" id="telecharger">
+      <div class="guide-cta-inner">
+        <div>
+          <h2>Téléchargez le kit de survie</h2>
+          <p>124 slides, gratuites et sans inscription. Partagez-les à votre RSSI, à vos chefs de projet, à vos Achats : c'est fait pour ça.</p>
+          <div class="guide-actions">
+            <a class="btn btn-primary" href="../Architecte_Securite_Kit_de_survie.pdf" download="Architecte_Securite_Kit_de_survie.pdf">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg>
+              Télécharger le PDF (4,5 Mo)
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Fsecurity-architect-guide%2F" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              Partager sur LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="mailto:contact@jeremycanale.com?subject=Kit%20de%20survie%20Architecte%20S%C3%A9curit%C3%A9">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              Me contacter
+            </a>
+          </div>
+        </div>
+        <div class="guide-cta-cover" aria-hidden="true">
+          <img src="../images/security-architect-guide/slide-123-quatre-idees.jpg" width="1200" height="675" loading="lazy" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== AUTEUR ====================== -->
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">Architecte Sécurité AWS / Azure · Sécurité agentique</span>
+          <p>Plus de dix ans d'expérience en architecture sécurité cloud, un des premiers consultants cloud en Europe en 2013. Vingt-six certifications et formations (Microsoft, AWS, ISACA, NVIDIA, Anthropic, Palo Alto). Grandes entreprises uniquement, en finance, banque, assurance, défense, pharmacie et distribution. Disponible en France, en Belgique et en Suisse.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../fr.html#consulting">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              Mes offres de conseil
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Sécurité Agentique · Confiance IA · GRC Cloud</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

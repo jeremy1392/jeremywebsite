@@ -13,7 +13,7 @@
 
 const fs = require('fs');
 
-const BASE_URL  = 'https://www.jeremycanale.com';
+const BASE_URL  = 'https://jeremycanale.com';
 const SOURCE    = 'index.html';
 const LOCALES   = [
   { lang: 'fr', file: 'fr.html', dir: 'ltr' },
@@ -433,6 +433,19 @@ function buildSitemap() {
 ${mainAlternates}
   </url>`).join('\n');
 
+  // Standalone pages (blog / downloadable resources), single language.
+  const EXTRA_PAGES = [
+    { loc: BASE_URL + '/security-architect-guide/', lang: 'fr', changefreq: 'yearly', priority: '0.8' }
+  ];
+  const extraEntries = EXTRA_PAGES.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+      <xhtml:link rel="alternate" hreflang="${u.lang}" href="${u.loc}"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="${u.loc}"/>
+  </url>`).join('\n');
+
   // Tech pages: one URL entry per tech per lang, with hreflang alternates for that tech.
   const techEntries = TECH.flatMap(tech => {
     const alts = ['en', 'fr', 'zh', 'ar']
@@ -452,11 +465,12 @@ ${alts}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${mainEntries}
+${extraEntries}
 ${techEntries}
 </urlset>
 `;
   fs.writeFileSync('sitemap.xml', xml);
-  console.log(`  ✓ sitemap.xml (${main.length + TECH.length * 4} urls)`);
+  console.log(`  ✓ sitemap.xml (${main.length + EXTRA_PAGES.length + TECH.length * 4} urls)`);
 }
 
 /* ---------- robots.txt ---------- */
