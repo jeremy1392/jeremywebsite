@@ -12,12 +12,14 @@
   <meta name="author" content="Jeremy Canale" />
   <link rel="canonical" href="https://jeremycanale.com/security-architect-guide/" />
   <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/security-architect-guide/" />
-  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/security-architect-guide/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/security-architect-guide/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/security-architect-guide/en/" />
 
   <!-- Open Graph : LinkedIn lit ces balises pour construire l'aperçu du lien (image = 1re slide, 1200x627) -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Jeremy Canale" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Architecte Sécurité : le kit de survie" />
   <meta property="og:description" content="124 slides pour se placer au bon endroit, au bon moment : DGF, contrat, grille CIA+TN, IAM Azure et AWS, matrice de risques, projets IA. PDF gratuit, sans inscription." />
   <meta property="og:url" content="https://jeremycanale.com/security-architect-guide/" />
@@ -69,6 +71,7 @@
     },
     "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
     "keywords": "architecte sécurité, DGF, gouvernance numérique, CIA+TN, IAM, Azure, AWS, matrice de risques, agents IA",
+    "workTranslation": { "@type": "BlogPosting", "inLanguage": "en", "url": "https://jeremycanale.com/security-architect-guide/en/" },
     "associatedMedia": {
       "@type": "DigitalDocument",
       "name": "Architecte Sécurité, kit de survie (PDF)",
@@ -145,6 +148,23 @@
     </nav>
 
     <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;en/&quot;,&quot;fr&quot;:&quot;./&quot;,&quot;zh&quot;:&quot;../zh.html&quot;,&quot;ar&quot;:&quot;../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>FR</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
       <a class="btn btn-primary header-cta" href="../fr.html#contact">
         <span>Collaborer</span>
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -169,6 +189,7 @@
           <li>Septembre 2026</li>
           <li>Français</li>
           <li>PDF · 4,5 Mo</li>
+          <li><a href="en/" hreflang="en" lang="en">English version</a></li>
         </ul>
         <div class="guide-actions">
           <a class="btn btn-primary" href="../Architecte_Securite_Kit_de_survie.pdf" download="Architecte_Securite_Kit_de_survie.pdf">

@@ -14,7 +14,17 @@ window.I18N = {
       description: "Jeremy Canale is the world's foremost Agentic Security expert. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
     },
     brand:  { tag: "Agentic Security" },
-    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", cta: "Work with me" },
+    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", guide: "Survival kit", cta: "Work with me" },
+    /* English survival-kit page: banner and nav link injected by build.js (see fr.guide). */
+    guide: {
+      kicker: "New · Free PDF · 124 slides",
+      title: "Security Architect: the survival kit",
+      desc: "Where to stand in the Digital Governance Framework (DGF): gates, contract, CIA+TN reading grid, Azure and AWS IAM, risk matrix, AI projects.",
+      note: "Free · no sign-up",
+      cta: "Read and download",
+      url: "security-architect-guide/en/",
+      cover: "images/security-architect-guide-cover-en.jpg"
+    },
 
     hero: {
       eyebrow: "World-Class Agentic Security Expert",
@@ -60,6 +70,7 @@ window.I18N = {
       title: "Twelve years at the security helm of regulated enterprises",
       lede: "Hands-on roles, from Vice-President at Swiss Re to Deputy CISO at the BNP Paribas Asset Management group, and now CEO of an AI cyber-underwriting company.",
       now: "now", remote: "Remote", hybrid: "Hybrid",
+      hal: "Security leadership for Hal, SC Ventures' born-in-AI, agentic-first growth platform for GCC SMEs, built with Microsoft. Cyber strategy, ISMS, cloud and AI-agent security governance.",
       nusavest: "Cyber strategy and ISMS for a Southeast-Asia asset-backed securities platform (SC Ventures · Standard Chartered).",
       rankiteo: "Building the world's first multi-OS AI cyber-underwriting desktop platform. Cyber ratings, third-party risk and exposure modeling, distributed MCP-native to Cursor, Claude Desktop, ChatGPT and n8n.",
       seddiqi:  "Group ISO/IEC 27001 certification program across the holding. Risk register, Statement of Applicability, UAE & KSA PDPL alignment for every department.",
@@ -262,6 +273,7 @@ window.I18N = {
       title: "Douze ans à la barre de la sécurité des entreprises régulées",
       lede: "Postes opérationnels, de Vice-Président chez Swiss Re à Deputy CISO chez BNP Paribas Asset Management, et aujourd'hui CEO d'une société de cyber-underwriting IA.",
       now: "auj.", remote: "Distanciel", hybrid: "Hybride",
+      hal: "Direction sécurité de Hal, la plateforme de croissance née dans l'IA et agentic-first de SC Ventures pour les PME du Golfe, construite avec Microsoft. Stratégie cyber, SMSI, gouvernance de la sécurité cloud et des agents IA.",
       nusavest: "Stratégie cyber et SMSI pour une plateforme sud-est-asiatique d'asset-backed securities (SC Ventures · Standard Chartered).",
       rankiteo: "Construction de la première plateforme desktop multi-OS d'AI cyber-underwriting. Cyber-ratings, risque tiers, modélisation d'exposition, distribuée nativement en MCP vers Cursor, Claude Desktop, ChatGPT et n8n.",
       seddiqi:  "Programme de certification ISO/IEC 27001 groupe à travers tout le holding. Registre des risques, SoA, alignement PDPL EAU & KSA pour chaque département.",
@@ -453,6 +465,7 @@ window.I18N = {
       title: "十二年掌舵受监管企业的安全战略",
       lede: "亲历一线，从瑞士再保险副总裁到 BNP Paribas 资产管理副 CISO如今是一家 AI 网络承保公司的 CEO。",
       now: "至今", remote: "远程", hybrid: "混合办公",
+      hal: "为 Hal 提供安全领导：SC Ventures 面向海湾中小企业、与 Microsoft 共建的 AI 原生、智能体优先增长平台。网络战略、ISMS、云与 AI 智能体安全治理。",
       nusavest: "为东南亚资产支持证券平台（SC Ventures · 渣打银行）制定网络战略与 ISMS。",
       rankiteo: "打造全球首个多操作系统 AI 网络承保桌面平台。提供网络评级、第三方风险与敞口建模通过 MCP 原生分发至 Cursor、Claude Desktop、ChatGPT 与 n8n。",
       seddiqi:  "在整个控股集团推行 ISO/IEC 27001 认证计划。风险登记、SoA 与阿联酋 / 沙特 PDPL 对齐。",
@@ -644,6 +657,7 @@ window.I18N = {
       title: "اثنا عشر عامًا في قيادة أمن المؤسسات المنظَّمة",
       lede: "أدوار ميدانية، من نائب رئيس Swiss Re إلى نائب رئيس أمن المعلومات في مجموعة BNP Paribas Asset Management, واليوم رئيس تنفيذي لشركة اكتتاب سيبراني بالذكاء الاصطناعي.",
       now: "الآن", remote: "عن بُعد", hybrid: "هجين",
+      hal: "قيادة الأمن لمنصة Hal، منصة النمو المولودة في الذكاء الاصطناعي والقائمة على الوكلاء من SC Ventures للمنشآت الصغيرة والمتوسطة في الخليج، والمبنية مع Microsoft. استراتيجية سيبرانية، نظام إدارة أمن المعلومات، وحوكمة أمن السحابة ووكلاء الذكاء الاصطناعي.",
       nusavest: "استراتيجية الأمن السيبراني ونظام إدارة أمن المعلومات لمنصة جنوب شرق آسيوية للأوراق المالية المدعومة بالأصول (SC Ventures · Standard Chartered).",
       rankiteo: "بناء أول منصة سطح مكتب متعددة الأنظمة للاكتتاب السيبراني بالذكاء الاصطناعي. تصنيفات سيبرانية، مخاطر الطرف الثالث ونمذجة التعرُّض, مع توزيع MCP أصيل إلى Cursor وClaude Desktop وChatGPT وn8n.",
       seddiqi:  "برنامج شهادة ISO/IEC 27001 على مستوى المجموعة عبر كامل القابضة. سجل المخاطر، بيان القابلية للتطبيق، ومحاذاة PDPL الإمارات والسعودية لكل قسم.",

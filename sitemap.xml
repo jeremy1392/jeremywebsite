@@ -51,7 +51,17 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/security-architect-guide/"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/security-architect-guide/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/security-architect-guide/en/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/security-architect-guide/en/"/>
+  </url>
+  <url>
+    <loc>https://jeremycanale.com/security-architect-guide/en/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/security-architect-guide/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/security-architect-guide/en/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/security-architect-guide/en/"/>
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-ai-foundry.html</loc>

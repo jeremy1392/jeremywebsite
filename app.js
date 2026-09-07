@@ -212,9 +212,52 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  /* ---------- browser-language redirect ---------- */
+  // Once per browser session, send the visitor to the version of the current page that
+  // matches their stored preference (language switcher) or, failing that, their browser
+  // language, when such a version exists (declared with <link rel="alternate" hreflang>).
+  // An explicit ?lang= wins, direct links are respected after the first check, and
+  // nothing happens on file:// so local previews stay put.
+
+  function autoRedirectToBrowserLang() {
+    var FLAG = 'jc.autolang';
+    if (window.location.protocol === 'file:') return false;
+    // Crawlers render pages with an English browser: never redirect them, so every
+    // language version stays indexable at its own URL (hreflang does the rest).
+    if (navigator.webdriver || /bot|crawl|spider|slurp|linkedin|facebookexternalhit|preview/i.test(navigator.userAgent || '')) return false;
+    try { if (sessionStorage.getItem(FLAG)) return false; } catch (_) {}
+    try { sessionStorage.setItem(FLAG, '1'); } catch (_) {}
+    if (new URLSearchParams(window.location.search).get('lang')) return false;
+
+    var pageLang = currentPageLang();
+    var want = null;
+    try { want = localStorage.getItem(STORAGE_KEY); } catch (_) {}
+    if (!want || SUPPORTED.indexOf(want) === -1) {
+      want = null;
+      var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (var i = 0; i < prefs.length; i++) {
+        var code = String(prefs[i]).slice(0, 2).toLowerCase();
+        if (SUPPORTED.indexOf(code) !== -1) { want = code; break; }
+      }
+    }
+    if (!want || want === pageLang) return false;
+
+    var link = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+    if (!link || !link.getAttribute('href')) return false;
+    var target;
+    try {
+      var u = new URL(link.getAttribute('href'), window.location.href);
+      target = window.location.origin + u.pathname + u.search;   // same host as the current page
+    } catch (_) { return false; }
+    if (target === window.location.origin + window.location.pathname + window.location.search) return false;
+    window.location.replace(target + (window.location.hash || ''));
+    return true;
+  }
+
   /* ---------- boot ---------- */
 
   function boot() {
+    if (autoRedirectToBrowserLang()) return;
     initLangSwitch();
     initRotor();
     setYear();

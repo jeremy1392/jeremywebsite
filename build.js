@@ -102,10 +102,19 @@ function buildLocale({ lang, file, dir }) {
 
   // 7. Locale-specific resource (e.g. the French survival-kit PDF): nav link + banner
   //    injected only when the locale defines a `guide` block in i18n.js.
-  html = injectGuide(html, dict, '');
+  html = injectGuide(stripGuide(html), dict, '');
 
   fs.writeFileSync(file, html);
   console.log(`  ✓ ${file.padEnd(12)} ${html.length} bytes`);
+}
+
+/* Remove a previously injected guide block (nav link + banner) so injection stays idempotent
+   and index.html, which is both the English output and the source of the other locales,
+   never carries two banners or a banner in the wrong language. */
+function stripGuide(html) {
+  html = html.replace(/[ \t]*<a href="[^"]*" data-guide-link>[^<]*<\/a>\r?\n/g, '');
+  html = html.replace(/[ \t]*<!-- guide:start -->\r?\n[\s\S]*?<!-- guide:end -->\r?\n\r?\n?/g, '');
+  return html;
 }
 
 /* Inject the survival-kit nav link and homepage banner for locales that define dict.guide.
@@ -117,10 +126,11 @@ function injectGuide(html, dict, prefix) {
   // Nav link, right after the "cases" entry (main page) when present.
   html = html.replace(
     /(<a href="[^"]*#cases"\s+data-i18n="nav.cases">[^<]*<\/a>\r?\n)/,
-    `$1      <a href="${url}">${escapeHtml(dict.nav.guide || g.title)}</a>\n`
+    `$1      <a href="${url}" data-guide-link>${escapeHtml(dict.nav.guide || g.title)}</a>\n`
   );
   // Banner between the hero and the first section.
-  const banner = `    <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
+  const banner = `    <!-- guide:start -->
+    <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
     <section class="resource-banner" id="guide" aria-labelledby="guide-title">
       <a class="resource-banner-inner" href="${url}">
         <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
@@ -136,6 +146,7 @@ function injectGuide(html, dict, prefix) {
         </span>
       </a>
     </section>
+    <!-- guide:end -->
 
 `;
   html = html.replace(/(    <section id="certifications" class="section">)/, banner + '$1');
@@ -320,7 +331,7 @@ ${JSON.stringify(serviceLd, null, 2)}
       <a href="../${langRoot}#expertise">${escapeHtml(dict.nav.expertise)}</a>
       <a href="../${langRoot}#consulting">${escapeHtml(dict.nav.consulting)}</a>
       <a href="../${langRoot}#cases">${escapeHtml(dict.nav.cases)}</a>
-${dict.nav.guide ? `      <a href="../security-architect-guide/">${escapeHtml(dict.nav.guide)}</a>\n` : ''}      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
+${dict.guide ? `      <a href="../${dict.guide.url}">${escapeHtml(dict.nav.guide || dict.guide.title)}</a>\n` : ''}      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
       <a href="../${langRoot}#certifications">${escapeHtml(dict.nav.certifications)}</a>
       <a href="../${langRoot}#faq">${escapeHtml(dict.nav.faq)}</a>
       <a href="../${langRoot}#contact">${escapeHtml(dict.nav.contact)}</a>
@@ -471,18 +482,25 @@ function buildSitemap() {
 ${mainAlternates}
   </url>`).join('\n');
 
-  // Standalone pages (blog / downloadable resources), single language.
-  const EXTRA_PAGES = [
-    { loc: BASE_URL + '/security-architect-guide/', lang: 'fr', changefreq: 'yearly', priority: '0.8' }
+  // Standalone pages (blog / downloadable resources). Each group lists its language
+  // versions so every entry carries the hreflang alternates of its siblings.
+  const EXTRA_GROUPS = [
+    { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
+      pages: { fr: BASE_URL + '/security-architect-guide/', en: BASE_URL + '/security-architect-guide/en/' } }
   ];
-  const extraEntries = EXTRA_PAGES.map(u => `  <url>
-    <loc>${u.loc}</loc>
+  const extraEntries = EXTRA_GROUPS.flatMap(gr => {
+    const alts = Object.entries(gr.pages)
+      .map(([l, loc]) => `      <xhtml:link rel="alternate" hreflang="${l}" href="${loc}"/>`)
+      .concat([`      <xhtml:link rel="alternate" hreflang="x-default" href="${gr.pages[gr.xDefault]}"/>`])
+      .join('\n');
+    return Object.values(gr.pages).map(loc => `  <url>
+    <loc>${loc}</loc>
     <lastmod>${lastmod}</lastmod>
-    <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
-      <xhtml:link rel="alternate" hreflang="${u.lang}" href="${u.loc}"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="${u.loc}"/>
-  </url>`).join('\n');
+    <changefreq>${gr.changefreq}</changefreq>
+    <priority>${gr.priority}</priority>
+${alts}
+  </url>`);
+  }).join('\n');
 
   // Tech pages: one URL entry per tech per lang, with hreflang alternates for that tech.
   const techEntries = TECH.flatMap(tech => {
@@ -508,7 +526,7 @@ ${techEntries}
 </urlset>
 `;
   fs.writeFileSync('sitemap.xml', xml);
-  console.log(`  ✓ sitemap.xml (${main.length + EXTRA_PAGES.length + TECH.length * 4} urls)`);
+  console.log(`  ✓ sitemap.xml (${main.length + EXTRA_GROUPS.reduce((n, g) => n + Object.keys(g.pages).length, 0) + TECH.length * 4} urls)`);
 }
 
 /* ---------- robots.txt ---------- */
@@ -545,8 +563,23 @@ function buildFavicon() {
   console.log('  ✓ favicon.svg');
 }
 
+/* ---------- English root page (index.html is both source and output) ---------- */
+function buildRoot() {
+  let html = fs.readFileSync(SOURCE, 'utf8');
+  const next = injectGuide(stripGuide(html), I18N.en, '');
+  if (next !== html) {
+    fs.writeFileSync(SOURCE, next);
+    console.log(`  ✓ ${SOURCE.padEnd(12)} guide block ${I18N.en.guide ? 'injected' : 'removed'}`);
+  } else {
+    console.log(`  ✓ ${SOURCE.padEnd(12)} unchanged`);
+  }
+}
+
 /* ---------- run ---------- */
 console.log('Building Jeremy Canale personal site...');
+console.log('');
+console.log('English root:');
+buildRoot();
 console.log('');
 console.log('Locales:');
 LOCALES.forEach(buildLocale);

@@ -885,6 +885,12 @@ html[dir="rtl"] .t-card:hover { transform: translateX(-4px); }
   margin-top: 8px !important;
   letter-spacing: 0.04em;
 }
+.cert-credid a { color: inherit; text-decoration: underline dotted; text-underline-offset: 3px; }
+.cert-credid a:hover { color: var(--cyan); }
+
+/* keep the year clear of the absolutely-positioned pill on flagship cards */
+.cert-card.cert-flagship .cert-body > header { padding-inline-end: 78px; }
+
 .cert-pill {
   position: absolute;
   top: 14px;
@@ -1749,6 +1755,8 @@ html[dir="rtl"] .tech-back svg { transform: rotate(180deg); }
   background: var(--amber);
   box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
 }
+.guide-meta a { color: var(--cyan); text-decoration: underline dotted; text-underline-offset: 3px; }
+.guide-meta a:hover { color: var(--cyan-soft); }
 .guide-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 .guide-actions .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .guide-note { font-size: 0.8rem; color: var(--text-mute); }

@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark" class="tech-page guide-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>Security Architect: the survival kit (free PDF, 124 slides) | Jeremy Canale</title>
+  <meta name="description" content="Where does the security architect belong? Role, expectations and journey within the Digital Governance Framework (DGF): gates, contract, CIA+TN grid, Azure and AWS IAM, risk matrix, AI projects. A 124-slide survival kit, free to download." />
+  <meta name="keywords" content="security architect, survival kit, DGF, digital governance framework, security and architecture gate, CIA+TN, architecture file, Azure IAM, AWS IAM, Entra ID, risk matrix, risk card, AI agent security, CISO, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/security-architect-guide/en/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/security-architect-guide/en/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/security-architect-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/security-architect-guide/en/" />
+
+  <!-- Open Graph: LinkedIn reads these tags to build the link preview (image = slide 1, 1200x627) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:title" content="Security Architect: the survival kit" />
+  <meta property="og:description" content="124 slides to be in the right place at the right time: DGF, contract, CIA+TN grid, Azure and AWS IAM, risk matrix, AI projects. Free PDF, no sign-up." />
+  <meta property="og:url" content="https://jeremycanale.com/security-architect-guide/en/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/security-architect-guide-cover-en.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/security-architect-guide-cover-en.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="Cover of the Security Architect survival kit, by Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-09-07T08:00:00+02:00" />
+  <meta property="article:section" content="Security" />
+  <meta property="article:tag" content="Security Architect" />
+  <meta property="article:tag" content="Governance" />
+  <meta property="article:tag" content="IAM" />
+  <meta property="article:tag" content="Azure" />
+  <meta property="article:tag" content="AWS" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Security Architect: the survival kit" />
+  <meta name="twitter:description" content="124 slides to be in the right place at the right time: DGF, contract, CIA+TN grid, Azure and AWS IAM, risk matrix, AI projects. Free PDF." />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/security-architect-guide-cover-en.jpg" />
+  <meta name="twitter:image:alt" content="Cover of the Security Architect survival kit, by Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/security-architect-guide/en/" },
+    "headline": "Security Architect: the survival kit",
+    "alternativeHeadline": "Role, expectations and journey within the Digital Governance Framework (DGF)",
+    "description": "Where does the security architect belong? A 124-slide survival kit: DGF gates, access to the contract, CIA+TN grid, Azure and AWS IAM, risk matrix, AI projects, architecture patterns and classic pitfalls.",
+    "image": "https://jeremycanale.com/images/security-architect-guide-cover-en.jpg",
+    "inLanguage": "en",
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "AWS / Azure Security Architect",
+      "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://github.com/jeremy1392"]
+    },
+    "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
+    "keywords": "security architect, DGF, digital governance, CIA+TN, IAM, Azure, AWS, risk matrix, AI agents",
+    "workTranslation": { "@type": "BlogPosting", "inLanguage": "fr", "url": "https://jeremycanale.com/security-architect-guide/" },
+    "associatedMedia": {
+      "@type": "DigitalDocument",
+      "name": "Security Architect, survival kit (PDF)",
+      "encodingFormat": "application/pdf",
+      "contentUrl": "https://jeremycanale.com/Security_Architect_Survival_Kit.pdf",
+      "isAccessibleForFree": true,
+      "inLanguage": "en",
+      "author": { "@type": "Person", "name": "Jeremy Canale" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": "https://jeremycanale.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Security Architect Survival Kit", "item": "https://jeremycanale.com/security-architect-guide/en/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../../index.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Agentic Security</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html#expertise">Expertise</a>
+      <a href="../../index.html#consulting">Consulting</a>
+      <a href="../../index.html#cases">Case Studies</a>
+      <a href="./" aria-current="page">Survival kit</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../index.html#certifications">Credentials</a>
+      <a href="../../index.html#faq">FAQ</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;./&quot;,&quot;fr&quot;:&quot;../&quot;,&quot;zh&quot;:&quot;../../zh.html&quot;,&quot;ar&quot;:&quot;../../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>EN</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../../index.html#contact">
+        <span>Work with me</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ====================== HERO ====================== -->
+    <section class="guide-hero">
+      <div class="guide-hero-text">
+        <a href="../../index.html" class="tech-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          Back to the site
+        </a>
+        <span class="eyebrow"><span class="dot"></span> Free resource · PDF · 124 slides</span>
+        <h1>Security Architect:<br />the survival kit</h1>
+        <p class="guide-hero-subtitle">Role, expectations and journey within the Digital Governance Framework (DGF): from the contract to the committee, from reading the file to the risk matrix.</p>
+        <ul class="guide-meta">
+          <li>Jeremy Canale</li>
+          <li>September 2026</li>
+          <li>English</li>
+          <li>PDF · 5 MB</li>
+          <li><a href="../" hreflang="fr" lang="fr">Version française</a></li>
+        </ul>
+        <div class="guide-actions">
+          <a class="btn btn-primary" href="../../Security_Architect_Survival_Kit.pdf" download="Security_Architect_Survival_Kit.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg>
+            Download the PDF
+          </a>
+          <a class="btn btn-ghost" href="#agenda">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            See the agenda
+          </a>
+        </div>
+        <p class="guide-note">Free, no sign-up. The link opens or saves the PDF directly.</p>
+      </div>
+
+      <figure class="guide-cover">
+        <a href="../../Security_Architect_Survival_Kit.pdf" download="Security_Architect_Survival_Kit.pdf" aria-label="Download the survival kit (PDF)">
+          <img src="../../images/security-architect-guide/en/slide-01.jpg" width="1600" height="900" alt="First slide of the survival kit: Security Architect, role, expectations and journey within the DGF" fetchpriority="high" />
+        </a>
+        <figcaption class="guide-cover-caption">Slide 1 of 124 · click to download</figcaption>
+      </figure>
+    </section>
+
+    <ul class="guide-stats" aria-label="The kit in numbers">
+      <li><strong>124</strong><span>slides</span></li>
+      <li><strong>12</strong><span>parts</span></li>
+      <li><strong>36</strong><span>technical categories</span></li>
+      <li><strong>8</strong><span>architecture patterns</span></li>
+      <li><strong>10</strong><span>pitfalls to avoid</span></li>
+      <li><strong>3</strong><span>case studies</span></li>
+    </ul>
+
+    <!-- ====================== WHY ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">The finding</span>
+        <h2>Why this kit?</h2>
+      </div>
+      <div class="guide-prose">
+        <p>Companies do not always understand <strong>where the security architect belongs</strong>: too early, too late, or outside the process. Summoned at the gate once the contract is already signed, they discover the requirements instead of confirming them. Called in without any criticality or RTO expressed by the business, they invent requirements, and get them wrong.</p>
+        <p>This kit gives concrete reference points to be <strong>in the right place at the right time</strong>, in particular within the Digital Governance Framework (DGF): the sequence of gates that governs every significant change to the information system, from buying a SaaS platform to integrating an acquired entity.</p>
+        <p>It is written from the field: more than ten years of AWS and Azure security architecture in large enterprises, across finance, banking, insurance, defense, pharma and retail, in France, Belgium, Switzerland and the Middle East.</p>
+      </div>
+      <div class="guide-facts">
+        <div class="guide-fact amber">
+          <strong>30%</strong>
+          <p>of companies have a real DGF in place, with a dedicated application to track a project's life cycle. For the others, the gates live in emails and spreadsheets.</p>
+          <small>Personal finding, based on the organizations I have worked with: not a formal study.</small>
+        </div>
+        <div class="guide-fact rose">
+          <strong>90%</strong>
+          <p>of the people who review a file do not properly assess the identity and access part (IAM). We check SSO and MFA, and stop there.</p>
+          <small>Personal finding, based on the files I have reviewed or re-read.</small>
+        </div>
+      </div>
+      <blockquote class="guide-callout"><strong>A gate is prepared, not endured.</strong> Involving security from the business need costs one hour of scoping; discovering it at the gate costs weeks of renegotiation.</blockquote>
+    </section>
+
+    <!-- ====================== WHO IS IT FOR ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">How to use</span>
+        <h2>Three ways to read it, depending on your role</h2>
+        <p class="lede">The document is designed to be skimmed in ten minutes or read end to end. Each profile has its own path.</p>
+      </div>
+      <div class="guide-audience">
+        <article>
+          <header>
+            <span class="aud-icon rose" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <div><h3>Executive</h3><span class="aud-time">10 minutes</span></div>
+          </header>
+          <ul class="tech-bullets">
+            <li>Finding: a real DGF is still rare</li>
+            <li>DGF gates</li>
+            <li>Business as risk owner</li>
+            <li>Four statuses of a file</li>
+            <li>Ten pitfalls</li>
+            <li>Setting up a DGF in 90 days</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <span class="aud-icon cyan" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            <div><h3>Project manager</h3><span class="aud-time">30 minutes</span></div>
+          </header>
+          <ul class="tech-bullets">
+            <li>Three paths and checklist per gate</li>
+            <li>Access the contract from day one</li>
+            <li>Initial assessment form</li>
+            <li>Complete checklist</li>
+            <li>Matrix and risk card</li>
+            <li>Case studies</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <span class="aud-icon violet" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div><h3>Security architect</h3><span class="aud-time">Everything, in order</span></div>
+          </header>
+          <ul class="tech-bullets">
+            <li>CIA+TN compass and its sub-criteria</li>
+            <li>Thirty-six technical categories</li>
+            <li>IAM, Azure and AWS: permissions</li>
+            <li>AI project security</li>
+            <li>Convincing and steering</li>
+            <li>Patterns, pitfalls, toolbox, glossary</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== AGENDA ====================== -->
+    <section class="guide-section" id="agenda">
+      <div class="guide-section-head">
+        <span class="kicker">Agenda</span>
+        <h2>Twelve parts, from the role to the glossary</h2>
+      </div>
+      <ol class="guide-toc">
+        <li><span class="toc-num">01</span><div><strong>Who am I, and why this kit?</strong><span>Background, certifications, industries and intent</span></div></li>
+        <li><span class="toc-num">02</span><div><strong>The security architect role</strong><span>Positioning, six missions, expectations, deliverables, the 8 essentials</span></div></li>
+        <li><span class="toc-num">03</span><div><strong>The DGF</strong><span>Gates, three paths, checklist per gate, and a DGF in 90 days</span></div></li>
+        <li><span class="toc-num">04</span><div><strong>Surviving the gates</strong><span>The Security &amp; Architecture gate and the six right reflexes</span></div></li>
+        <li><span class="toc-num">05</span><div><strong>DGF maturity by country and by industry</strong><span>Personal rankings, based on field experience</span></div></li>
+        <li><span class="toc-num">06</span><div><strong>Procurement, IT, Business &amp; Security</strong><span>The contract, the IT department's existing framework, the business as risk owner</span></div></li>
+        <li><span class="toc-num">07</span><div><strong>Reviewing a file: the reading</strong><span>CIA+TN compass, reading grid, sub-criteria, warning signs</span></div></li>
+        <li><span class="toc-num">08</span><div><strong>Technical assessment</strong><span>DGF questionnaire, thirty-six categories, Azure and AWS, ISO and NIST</span></div></li>
+        <li><span class="toc-num">09</span><div><strong>Risk matrix</strong><span>Assess, decide, record: statuses, risk card, opinion, three case studies</span></div></li>
+        <li><span class="toc-num">10</span><div><strong>AI projects</strong><span>Agent architecture, identities, risks, assessment</span></div></li>
+        <li><span class="toc-num">11</span><div><strong>Convincing and steering</strong><span>Communication, classic remarks, indicators</span></div></li>
+        <li><span class="toc-num">12</span><div><strong>Patterns, pitfalls, tools and glossary</strong><span>Eight patterns, ten pitfalls, eight templates, the vocabulary</span></div></li>
+      </ol>
+    </section>
+
+    <!-- ====================== EXCERPTS ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">Excerpts</span>
+        <h2>What you will find inside</h2>
+        <p class="lede">Seven ideas that structure the kit, illustrated by the matching slides. Click an image to enlarge it.</p>
+      </div>
+
+      <div class="guide-features">
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../../images/security-architect-guide/en/slide-20-three-paths.jpg" target="_blank" rel="noopener">
+              <img src="../../images/security-architect-guide/en/slide-20-three-paths.jpg" width="1200" height="675" loading="lazy" alt="Slide: three DGF paths, one constant, the Security and Architecture gate" />
+            </a>
+            <figcaption>Part 3 · Three paths, one constant</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">The DGF</span>
+            <h3>An unavoidable gate, whatever the path</h3>
+            <p>New platform, merger and acquisition or new project: the trigger changes, the order of the gates changes, but the Security &amp; Architecture gate is always there. For a vendor platform it even comes before IT: security qualifies the solution and the contract before the commitment.</p>
+            <ul class="tech-bullets">
+              <li>What each gate checks, who holds it, and the opinion it gives: green, yellow or red light</li>
+              <li>The checklist of what you need before each gate</li>
+              <li>Six reflexes to survive the gates, and a plan to set up a DGF in 90 days</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../../images/security-architect-guide/en/slide-41-cia-tn-compass.jpg" target="_blank" rel="noopener">
+              <img src="../../images/security-architect-guide/en/slide-41-cia-tn-compass.jpg" width="1200" height="675" loading="lazy" alt="Slide: the CIA+TN compass, confidentiality, integrity, availability, traceability, non-repudiation" />
+            </a>
+            <figcaption>Part 7 · The CIA+TN compass</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Reading a file</span>
+            <h3>Five criteria, three questions per criterion</h3>
+            <p>Confidentiality, integrity, availability, traceability, non-repudiation: everything is assessed through these five criteria. Every section of the architecture file, every question asked and every opinion given maps to one of them.</p>
+            <ul class="tech-bullets">
+              <li>The anatomy of an architecture file in nine sections, with the criteria each one must address</li>
+              <li>For each criterion, "what we expect" and "what does not pass", drawn from real cases</li>
+              <li>Eight warning signs: flows "to be defined later", shared service accounts, exceptions without a due date…</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../../images/security-architect-guide/en/slide-61-iam-seven-points.jpg" target="_blank" rel="noopener">
+              <img src="../../images/security-architect-guide/en/slide-61-iam-seven-points.jpg" width="1200" height="675" loading="lazy" alt="Slide: IAM, the point that 90% assess badly, the seven points to assess" />
+            </a>
+            <figcaption>Part 8 · IAM, the seven points to assess</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Identity and access</span>
+            <h3>IAM: the point that 90% assess badly</h3>
+            <p>"Who has access to what" hides in seven different places: Azure RBAC and Entra ID roles, managed identities, delegated permissions, Graph application permissions, AI agent identity, Conditional Access, break-glass account. The kit walks through each of them for Azure and for AWS, with the classic mistake of each.</p>
+            <ul class="tech-bullets">
+              <li>The classic omission: the break-glass account, its rules, and the question to ask the file</li>
+              <li>Sixteen findings from a real 2026 Entra ID audit, anonymized and ranked by criticality</li>
+              <li>Hybrid AD and Entra directory, guests and external identities, administrator access</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../../images/security-architect-guide/en/slide-94-full-checklist.jpg" target="_blank" rel="noopener">
+              <img src="../../images/security-architect-guide/en/slide-94-full-checklist.jpg" width="1200" height="675" loading="lazy" alt="Slide: the complete checklist, thirty-six technical categories in six families" />
+            </a>
+            <figcaption>Part 8 · The complete checklist</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Technical assessment</span>
+            <h3>Thirty-six categories, each with real-life examples</h3>
+            <p>Secrets, infrastructure as code, containers, penetration tests, licenses, network, PaaS, APIs, mobile, PKI, email, encryption, GDPR, backups, SOC, incident response, awareness, AI… One slide per category: what we expect, and what does not pass.</p>
+            <ul class="tech-bullets">
+              <li>The initial assessment form in ten blocks, filled in at scoping with the requester</li>
+              <li>The Architecture block of the form: twelve questions, and the expected answer</li>
+              <li>The mapping to ISO 27001:2022 (Annex A) and NIST CSF 2.0</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../../images/security-architect-guide/en/slide-99-risk-matrix.jpg" target="_blank" rel="noopener">
+              <img src="../../images/security-architect-guide/en/slide-99-risk-matrix.jpg" width="1200" height="675" loading="lazy" alt="Slide: impact times probability risk matrix, applied to the SaaS CRM case study" />
+            </a>
+            <figcaption>Part 9 · Matrix applied to the case study</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Decide and record</span>
+            <h3>From finding to risk, from risk to opinion</h3>
+            <p>A finding without a scenario is not a risk; a risk without an owner is not managed; a risk without an exit is not tracked. The kit runs through the full chain: impact × probability score from 1 to 16, thresholds, four statuses of a file, risk card, opinion template.</p>
+            <ul class="tech-bullets">
+              <li>Three case studies reviewed end to end: a SaaS CRM, a merger and acquisition, an internal AI support agent</li>
+              <li>The complete risk card, always signed by the business</li>
+              <li>The opinion in five blocks: summary, one light per criterion, dated conditions, alternative, decision</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../../images/security-architect-guide/en/slide-107-ai-agent-platform.jpg" target="_blank" rel="noopener">
+              <img src="../../images/security-architect-guide/en/slide-107-ai-agent-platform.jpg" width="1200" height="675" loading="lazy" alt="Slide: an enterprise AI agent, more than a call to the model, the production platform" />
+            </a>
+            <figcaption>Part 10 · An enterprise AI agent</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">AI projects</span>
+            <h3>An AI agent is more than a call to the model</h3>
+            <p>AI gateway, orchestrator, agents, tools, data and models, and five cross-cutting controls around the chain. The reference architecture layer by layer, and what we check at each level.</p>
+            <ul class="tech-bullets">
+              <li>Agent identities and Conditional Access: the trap of "All users" policies that do not include agents</li>
+              <li>The specific risks: prompt injection, leakage through memory or the RAG index, over-privileged tools, third-party MCP servers</li>
+              <li>Twelve questions to assess an AI file</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-feature">
+          <figure class="guide-feature-media">
+            <a href="../../images/security-architect-guide/en/slide-119-ten-traps.jpg" target="_blank" rel="noopener">
+              <img src="../../images/security-architect-guide/en/slide-119-ten-traps.jpg" width="1200" height="675" loading="lazy" alt="Slide: the ten pitfalls of the security architect, and their antidote" />
+            </a>
+            <figcaption>Part 12 · The ten pitfalls</figcaption>
+          </figure>
+          <div class="guide-feature-text">
+            <span class="kicker">Patterns and pitfalls</span>
+            <h3>Eight secure patterns, ten pitfalls and their antidote</h3>
+            <p>Web exposure, SaaS integration, cloud landing zone, partner access, sensitive data, Zero Trust remote access, deployment pipeline, AI agent: eight ready-to-reuse architecture patterns, with their rules.</p>
+            <ul class="tech-bullets">
+              <li>The ten pitfalls: arriving at the gate, the "no" without an alternative, the eternal exception, zero risk, the contract discovered after signature…</li>
+              <li>The classic remarks ("it's SaaS, the vendor handles security") and how to answer them</li>
+              <li>Eight indicators to steer the role, and a glossary of about fifty terms</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====================== TOOLBOX ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">Toolbox</span>
+        <h2>Eight templates to take away</h2>
+        <p class="lede">Ready-to-use templates, reusable as they are in your own files.</p>
+      </div>
+      <ul class="guide-toolbox">
+        <li><span class="tool-part">Part 8</span><strong>Initial assessment form</strong><span>At scoping, in a meeting with the requester: ten blocks of closed questions.</span></li>
+        <li><span class="tool-part">Part 7</span><strong>Architecture file outline</strong><span>The nine expected sections, with the CIA+TN criteria each one addresses.</span></li>
+        <li><span class="tool-part">Part 7</span><strong>CIA+TN grid</strong><span>Fifteen questions, three per criterion, and the sub-criteria with their examples.</span></li>
+        <li><span class="tool-part">Part 8</span><strong>Technical checklist</strong><span>Thirty-six categories to check during the review.</span></li>
+        <li><span class="tool-part">Part 9</span><strong>Risk card</strong><span>The formalized exception: scenario, assessment, measures, owner, due date.</span></li>
+        <li><span class="tool-part">Part 9</span><strong>Opinion template</strong><span>Summary, one light per criterion, dated conditions, alternative, decision.</span></li>
+        <li><span class="tool-part">Part 3</span><strong>Checklist per gate</strong><span>What you need before each gate: IT, Security, Tech Readiness, Governance.</span></li>
+        <li><span class="tool-part">Part 6</span><strong>Vendor security annex</strong><span>The requirements to write into the contract with Procurement, before signature.</span></li>
+      </ul>
+    </section>
+
+    <!-- ====================== KEY TAKEAWAYS ====================== -->
+    <section class="guide-section">
+      <div class="guide-section-head">
+        <span class="kicker">Key takeaways</span>
+        <h2>Four ideas to take away</h2>
+      </div>
+      <ol class="guide-takeaways">
+        <li><span class="tk-num amber">1</span><strong>Design, don't endure</strong><p>Security is built from the design stage; the security architect is its guarantor.</p></li>
+        <li><span class="tk-num rose">2</span><strong>Three dimensions</strong><p>Knowledge, know-how, attitude: posture matters as much as technique.</p></li>
+        <li><span class="tk-num cyan">3</span><strong>An unavoidable gate</strong><p>Whatever the DGF path, the Security &amp; Architecture gate is always there; only its position changes.</p></li>
+        <li><span class="tk-num green">4</span><strong>Documented pragmatism</strong><p>Yellow light, recorded exceptions, tracked action plans: secure without blocking.</p></li>
+      </ol>
+    </section>
+
+    <!-- ====================== CTA ====================== -->
+    <section class="guide-cta" id="download">
+      <div class="guide-cta-inner">
+        <div>
+          <h2>Download the survival kit</h2>
+          <p>124 slides, free, no sign-up. Share them with your CISO, your project managers, your procurement team: that is what they are for.</p>
+          <div class="guide-actions">
+            <a class="btn btn-primary" href="../../Security_Architect_Survival_Kit.pdf" download="Security_Architect_Survival_Kit.pdf">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg>
+              Download the PDF (5 MB)
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Fsecurity-architect-guide%2Fen%2F" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              Share on LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="mailto:contact@jeremycanale.com?subject=Security%20Architect%20Survival%20Kit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              Contact me
+            </a>
+          </div>
+        </div>
+        <div class="guide-cta-cover" aria-hidden="true">
+          <img src="../../images/security-architect-guide/en/slide-123-four-ideas.jpg" width="1200" height="675" loading="lazy" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== AUTHOR ====================== -->
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">AWS / Azure Security Architect · Agentic security</span>
+          <p>More than ten years of cloud security architecture, one of the first cloud consultants in Europe in 2013. Twenty-six certifications and trainings (Microsoft, AWS, ISACA, NVIDIA, Anthropic, Palo Alto). Large enterprises only, in finance, banking, insurance, defense, pharma and retail. Available in France, Belgium and Switzerland.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../../index.html#consulting">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              My consulting offers
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Agentic Security · AI Trust · Cloud GRC</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../../app.js" defer></script>
+</body>
+</html>
