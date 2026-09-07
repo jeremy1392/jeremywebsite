@@ -205,7 +205,18 @@ window.I18N = {
       description: "Jeremy Canale est l'expert mondial de référence en sécurité agentique. Architecte de la sécurité des agents IA autonomes, des serveurs MCP, des plateformes cloud et du cyber-underwriting chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
     },
     brand:  { tag: "Sécurité Agentique" },
-    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", cta: "Collaborer" },
+    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", guide: "Kit de survie", cta: "Collaborer" },
+    /* Ressource FR uniquement : le bandeau et le lien de menu sont injectés par build.js
+       pour chaque locale qui possède ce bloc `guide`. */
+    guide: {
+      kicker: "Nouveau · PDF gratuit · 124 slides",
+      title: "Architecte Sécurité : le kit de survie",
+      desc: "Où se placer dans le Cadre de Gouvernance Numérique (DGF) : jalons, contrat, grille de lecture CIA+TN, IAM Azure et AWS, matrice de risques, projets IA.",
+      note: "Gratuit · sans inscription",
+      cta: "Découvrir et télécharger",
+      url: "security-architect-guide/",
+      cover: "images/security-architect-guide-cover.jpg"
+    },
 
     hero: {
       eyebrow: "Expert mondial en Sécurité Agentique",

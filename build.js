@@ -100,8 +100,46 @@ function buildLocale({ lang, file, dir }) {
     `<span data-current-lang>${LANG_LABEL[lang]}</span>`
   );
 
+  // 7. Locale-specific resource (e.g. the French survival-kit PDF): nav link + banner
+  //    injected only when the locale defines a `guide` block in i18n.js.
+  html = injectGuide(html, dict, '');
+
   fs.writeFileSync(file, html);
   console.log(`  ✓ ${file.padEnd(12)} ${html.length} bytes`);
+}
+
+/* Inject the survival-kit nav link and homepage banner for locales that define dict.guide.
+   `prefix` is the relative path back to the site root ('' for root pages, '../' for /tech/). */
+function injectGuide(html, dict, prefix) {
+  const g = dict.guide;
+  if (!g) return html;
+  const url = prefix + g.url;
+  // Nav link, right after the "cases" entry (main page) when present.
+  html = html.replace(
+    /(<a href="[^"]*#cases"\s+data-i18n="nav.cases">[^<]*<\/a>\r?\n)/,
+    `$1      <a href="${url}">${escapeHtml(dict.nav.guide || g.title)}</a>\n`
+  );
+  // Banner between the hero and the first section.
+  const banner = `    <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
+    <section class="resource-banner" id="guide" aria-labelledby="guide-title">
+      <a class="resource-banner-inner" href="${url}">
+        <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
+        <div class="resource-banner-text">
+          <span class="resource-banner-kicker">${escapeHtml(g.kicker)}</span>
+          <h2 id="guide-title">${escapeHtml(g.title)}</h2>
+          <p>${escapeHtml(g.desc)}</p>
+          <span class="resource-banner-note">${escapeHtml(g.note)}</span>
+        </div>
+        <span class="btn btn-primary resource-banner-cta">
+          <span>${escapeHtml(g.cta)}</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </section>
+
+`;
+  html = html.replace(/(    <section id="certifications" class="section">)/, banner + '$1');
+  return html;
 }
 
 function ogLocale(lang) {
@@ -282,7 +320,7 @@ ${JSON.stringify(serviceLd, null, 2)}
       <a href="../${langRoot}#expertise">${escapeHtml(dict.nav.expertise)}</a>
       <a href="../${langRoot}#consulting">${escapeHtml(dict.nav.consulting)}</a>
       <a href="../${langRoot}#cases">${escapeHtml(dict.nav.cases)}</a>
-      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
+${dict.nav.guide ? `      <a href="../security-architect-guide/">${escapeHtml(dict.nav.guide)}</a>\n` : ''}      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
       <a href="../${langRoot}#certifications">${escapeHtml(dict.nav.certifications)}</a>
       <a href="../${langRoot}#faq">${escapeHtml(dict.nav.faq)}</a>
       <a href="../${langRoot}#contact">${escapeHtml(dict.nav.contact)}</a>
