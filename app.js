@@ -92,6 +92,88 @@
 
   /* ---------- language switcher UI ---------- */
 
+  /* ---------- language peers ---------- */
+  // Crawlers and preview fetchers render pages with a neutral browser profile. They must
+  // never be sent anywhere by client-side code: each URL has to answer with its own
+  // content and its own canonical, so no automated hit is filed as a redirect.
+  function isAutomatedClient() {
+    return !!navigator.webdriver ||
+      /bot|crawl|spider|slurp|linkedin|facebookexternalhit|preview/i.test(navigator.userAgent || '');
+  }
+
+
+  // Resolve the URL of the current page in another language. Order of preference:
+  //   1. the data-lang-urls JSON map baked on the switcher (guide and tech pages)
+  //   2. <link rel="alternate" hreflang="xx"> (present on every pre-rendered page)
+  //   3. LANG_FILES, the site-root fallback
+  // hreflang hrefs are absolute; they are re-based on the current origin so a visitor
+  // on www, on localhost or on a preview host stays on that host.
+  function peerUrlForLang(lang) {
+    const wrap = document.querySelector('[data-lang-switch]');
+    if (wrap) {
+      try {
+        const raw = wrap.getAttribute('data-lang-urls');
+        if (raw) {
+          const map = JSON.parse(raw);
+          if (map && map[lang]) return map[lang];
+        }
+      } catch (_) {}
+    }
+    const link = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    if (link && link.getAttribute('href')) {
+      try {
+        const u = new URL(link.getAttribute('href'), window.location.href);
+        return window.location.origin + u.pathname + u.search;
+      } catch (_) {}
+    }
+    return LANG_FILES[lang] || null;
+  }
+
+  // Drop ?lang= from the address bar, keeping any other parameter and the hash.
+  // Shared links and the canonical tag then stay on the clean URL.
+  function stripLangParam() {
+    if (!window.history || !window.history.replaceState) return;
+    try {
+      const url = new URL(window.location.href);
+      if (!url.searchParams.has('lang')) return;
+      url.searchParams.delete('lang');
+      const qs = url.searchParams.toString();
+      window.history.replaceState(null, '', url.pathname + (qs ? '?' + qs : '') + (window.location.hash || ''));
+    } catch (_) {}
+  }
+
+  /* ---------- ?lang=xx selector ---------- */
+
+  // An explicit ?lang=xx anywhere on the site selects that language: it navigates to the
+  // matching pre-rendered page when one exists, remembers the choice for later visits,
+  // and disables the browser-language redirect for this session.
+  // Returns true when a navigation was started, so boot() can stop there.
+  function applyLangQueryParam() {
+    let want = null;
+    try { want = new URLSearchParams(window.location.search).get('lang'); } catch (_) { return false; }
+    if (!want) return false;
+    want = String(want).toLowerCase().slice(0, 2);
+    if (SUPPORTED.indexOf(want) === -1) { stripLangParam(); return false; }
+    if (isAutomatedClient()) return false;
+
+    // Explicit choice: remember it, and stand down the automatic redirect.
+    try { localStorage.setItem(STORAGE_KEY, want); } catch (_) {}
+    try { sessionStorage.setItem('jc.autolang', '1'); } catch (_) {}
+
+    if (currentPageLang() === want) { stripLangParam(); return false; }
+
+    const target = peerUrlForLang(want);
+    if (!target) { stripLangParam(); return false; }
+    let abs;
+    try { abs = new URL(target, window.location.href); } catch (_) { stripLangParam(); return false; }
+    if (abs.origin + abs.pathname === window.location.origin + window.location.pathname) {
+      stripLangParam();
+      return false;
+    }
+    window.location.replace(abs.href + (window.location.hash || ''));
+    return true;
+  }
+
   function initLangSwitch() {
     const wrap = document.querySelector('[data-lang-switch]');
     if (!wrap) return;
@@ -127,7 +209,7 @@
         // Persist for any subsequent visits.
         try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) {}
         // Prefer navigating to the pre-rendered peer file (SEO-correct URL).
-        const target = (pageLangUrls && pageLangUrls[lang]) || LANG_FILES[lang];
+        const target = (pageLangUrls && pageLangUrls[lang]) || peerUrlForLang(lang);
         if (target) {
           window.location.href = target + (location.hash || '');
           return;
@@ -224,7 +306,7 @@
     if (window.location.protocol === 'file:') return false;
     // Crawlers render pages with an English browser: never redirect them, so every
     // language version stays indexable at its own URL (hreflang does the rest).
-    if (navigator.webdriver || /bot|crawl|spider|slurp|linkedin|facebookexternalhit|preview/i.test(navigator.userAgent || '')) return false;
+    if (isAutomatedClient()) return false;
     try { if (sessionStorage.getItem(FLAG)) return false; } catch (_) {}
     try { sessionStorage.setItem(FLAG, '1'); } catch (_) {}
     if (new URLSearchParams(window.location.search).get('lang')) return false;
@@ -257,6 +339,7 @@
   /* ---------- boot ---------- */
 
   function boot() {
+    if (applyLangQueryParam()) return;
     if (autoRedirectToBrowserLang()) return;
     initLangSwitch();
     initRotor();

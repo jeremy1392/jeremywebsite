@@ -102,10 +102,22 @@ function buildLocale({ lang, file, dir }) {
 
   // 7. Locale-specific resource (e.g. the French survival-kit PDF): nav link + banner
   //    injected only when the locale defines a `guide` block in i18n.js.
+  // 6b. /tech/ links must target this locale's pages, not the English ones.
+  html = localizeTechLinks(html, lang);
+
   html = injectGuide(stripGuide(html), dict, '');
 
   fs.writeFileSync(file, html);
   console.log(`  ✓ ${file.padEnd(12)} ${html.length} bytes`);
+}
+
+/* Point /tech/ links at the current locale's pre-rendered pages.
+   The locale files are copied from index.html, whose tech links are the English ones
+   (tech/<slug>.html). Without this rewrite fr/zh/ar linked to English pages, and the
+   localized tech pages had no inbound link from anywhere on the site. */
+function localizeTechLinks(html, lang) {
+  if (lang === 'en') return html;
+  return html.replace(/href="tech\/([a-z0-9-]+)\.html"/g, `href="tech/$1.${lang}.html"`);
 }
 
 /* Remove a previously injected guide block (nav link + banner) so injection stays idempotent
