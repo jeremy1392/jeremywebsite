@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark" class="tech-page post-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>The sandbox held. The package repository is what gave way. | Jeremy Canale</title>
+  <meta name="description" content="What the OpenAI / Hugging Face incident taught me about containing agents. Kata isolation did its job: the package repository, the one service reachable from the sandbox with Internet access, became the gateway. And the architecture I would propose." />
+  <meta name="keywords" content="OpenAI incident, Hugging Face, ExploitGym, agentic security, SSRF, Artifactory, egress firewall, Kata Containers, microVM, Tetragon, agent containment, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/incident-openai-hugging-face/en/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/incident-openai-hugging-face/en/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/incident-openai-hugging-face/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/incident-openai-hugging-face/en/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:title" content="The sandbox held. The package repository is what gave way." />
+  <meta property="og:description" content="What the OpenAI / Hugging Face incident taught me about containing agents, and the architecture I would propose." />
+  <meta property="og:url" content="https://jeremycanale.com/incident-openai-hugging-face/en/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/exploitgym-hardening-cover-en.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/exploitgym-hardening-cover-en.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="Hardening OpenAI's ExploitGym environment, by Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-09-12T09:00:00+02:00" />
+  <meta property="article:section" content="Security" />
+  <meta property="article:tag" content="Agentic Security" />
+  <meta property="article:tag" content="Kubernetes" />
+  <meta property="article:tag" content="SSRF" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The sandbox held. The package repository is what gave way." />
+  <meta name="twitter:description" content="What the OpenAI / Hugging Face incident taught me about containing agents." />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/exploitgym-hardening-cover-en.jpg" />
+  <meta name="twitter:image:alt" content="Hardening OpenAI's ExploitGym environment, by Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/incident-openai-hugging-face/en/" },
+    "headline": "The sandbox held. The package repository is what gave way.",
+    "description": "What the OpenAI / Hugging Face incident taught me about containing agents, and the architecture I would propose.",
+    "image": "https://jeremycanale.com/images/exploitgym-hardening-cover-en.jpg",
+    "inLanguage": "en",
+    "datePublished": "2026-09-12",
+    "dateModified": "2026-09-12",
+    "wordCount": 1300,
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "AWS / Azure Security Architect",
+      "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://github.com/jeremy1392"]
+    },
+    "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
+    "workTranslation": { "@type": "BlogPosting", "inLanguage": "fr", "url": "https://jeremycanale.com/incident-openai-hugging-face/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": "https://jeremycanale.com/" },
+      { "@type": "ListItem", "position": 2, "name": "The sandbox held", "item": "https://jeremycanale.com/incident-openai-hugging-face/en/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../../index.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Agentic Security</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html#expertise">Expertise</a>
+      <a href="../../index.html#consulting">Consulting</a>
+      <a href="../../index.html#cases">Case Studies</a>
+      <a href="../../security-architect-guide/en/">Survival kit</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../index.html#certifications">Credentials</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;./&quot;,&quot;fr&quot;:&quot;../&quot;,&quot;zh&quot;:&quot;../../zh.html&quot;,&quot;ar&quot;:&quot;../../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>EN</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../../index.html#contact">
+        <span>Work with me</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <article class="post-wrap">
+
+      <header class="post-header">
+        <span class="post-kicker">Agentic security</span>
+        <h1 class="post-title">The sandbox held. The package repository is what gave way.</h1>
+        <p class="post-dek">What the OpenAI / Hugging Face incident taught me about containing agents, and the architecture I would propose.</p>
+        <div class="post-byline">
+          <span class="post-byline-mark" aria-hidden="true">JC</span>
+          <span><b>Jeremy Canale</b></span>
+          <span class="sep">·</span>
+          <time datetime="2026-09-12">12 September 2026</time>
+          <span class="sep">·</span>
+          <span>8 min read</span>
+          <span class="sep">·</span>
+          <a href="../" hreflang="fr" lang="fr">Version française</a>
+        </div>
+      </header>
+
+      <div class="post-download">
+        <div class="post-download-text">
+          <span class="post-download-kicker">PDF · 20 slides · 0.7 MB</span>
+          <strong>Case study: Hardening the OpenAI ExploitGym environment</strong>
+          <p>Restrict agent Internet access to explicitly allowed destinations. The twenty slides can be browsed below.</p>
+        </div>
+        <a class="btn btn-primary" href="../../AI_agents_containment_architecture.pdf" download="AI_agents_containment_architecture.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg> Download the PDF</a>
+      </div>
+
+<div class="deck-carousel deck-carousel-top" id="deck" data-autoplay="1000" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="The twenty slides of the architecture proposal">
+        <div class="deck-track">
+          <figure class="deck-slide" data-title="Case study: Hardening the OpenAI ExploitGym environment"><a href="../../images/exploitgym-hardening/en/deck/slide-01.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-01.jpg" width="1100" height="619" alt="Slide 1 : Case study: Hardening the OpenAI ExploitGym environment" /></a></figure>
+          <figure class="deck-slide" data-title="Vocabulary"><a href="../../images/exploitgym-hardening/en/deck/slide-02.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-02.jpg" width="1100" height="619" loading="lazy" alt="Slide 2 : Vocabulary" /></a></figure>
+          <figure class="deck-slide" data-title="How the agent reached the Internet"><a href="../../images/exploitgym-hardening/en/deck/slide-03.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-03.jpg" width="1100" height="619" loading="lazy" alt="Slide 3 : How the agent reached the Internet" /></a></figure>
+          <figure class="deck-slide" data-title="A CVE as the starting point"><a href="../../images/exploitgym-hardening/en/deck/slide-04.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-04.jpg" width="1100" height="619" loading="lazy" alt="Slide 4 : A CVE as the starting point" /></a></figure>
+          <figure class="deck-slide" data-title="The platform in July"><a href="../../images/exploitgym-hardening/en/deck/slide-05.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-05.jpg" width="1100" height="619" loading="lazy" alt="Slide 5 : The platform in July" /></a></figure>
+          <figure class="deck-slide" data-title="Three findings"><a href="../../images/exploitgym-hardening/en/deck/slide-06.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-06.jpg" width="1100" height="619" loading="lazy" alt="Slide 6 : Three findings" /></a></figure>
+          <figure class="deck-slide" data-title="Target architecture"><a href="../../images/exploitgym-hardening/en/deck/slide-07.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-07.jpg" width="1100" height="619" loading="lazy" alt="Slide 7 : Target architecture" /></a></figure>
+          <figure class="deck-slide" data-title="Providing packages without unrestricted Internet access"><a href="../../images/exploitgym-hardening/en/deck/slide-08.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-08.jpg" width="1100" height="619" loading="lazy" alt="Slide 8 : Providing packages without unrestricted Internet access" /></a></figure>
+          <figure class="deck-slide" data-title="Repository rules"><a href="../../images/exploitgym-hardening/en/deck/slide-09.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-09.jpg" width="1100" height="619" loading="lazy" alt="Slide 9 : Repository rules" /></a></figure>
+          <figure class="deck-slide" data-title="The package path"><a href="../../images/exploitgym-hardening/en/deck/slide-10.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-10.jpg" width="1100" height="619" loading="lazy" alt="Slide 10 : The package path" /></a></figure>
+          <figure class="deck-slide" data-title="The hardened platform"><a href="../../images/exploitgym-hardening/en/deck/slide-11.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-11.jpg" width="1100" height="619" loading="lazy" alt="Slide 11 : The hardened platform" /></a></figure>
+          <figure class="deck-slide" data-title="ModSecurity as a complementary defense"><a href="../../images/exploitgym-hardening/en/deck/slide-12.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-12.jpg" width="1100" height="619" loading="lazy" alt="Slide 12 : ModSecurity as a complementary defense" /></a></figure>
+          <figure class="deck-slide" data-title="Sending security telemetry to the SOC"><a href="../../images/exploitgym-hardening/en/deck/slide-13.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-13.jpg" width="1100" height="619" loading="lazy" alt="Slide 13 : Sending security telemetry to the SOC" /></a></figure>
+          <figure class="deck-slide" data-title="When to stop a run"><a href="../../images/exploitgym-hardening/en/deck/slide-14.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-14.jpg" width="1100" height="619" loading="lazy" alt="Slide 14 : When to stop a run" /></a></figure>
+          <figure class="deck-slide" data-title="Who triggers containment?"><a href="../../images/exploitgym-hardening/en/deck/slide-15.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-15.jpg" width="1100" height="619" loading="lazy" alt="Slide 15 : Who triggers containment?" /></a></figure>
+          <figure class="deck-slide" data-title="Validation tests"><a href="../../images/exploitgym-hardening/en/deck/slide-16.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-16.jpg" width="1100" height="619" loading="lazy" alt="Slide 16 : Validation tests" /></a></figure>
+          <figure class="deck-slide" data-title="In summary"><a href="../../images/exploitgym-hardening/en/deck/slide-17.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-17.jpg" width="1100" height="619" loading="lazy" alt="Slide 17 : In summary" /></a></figure>
+          <figure class="deck-slide" data-title="Appendix: ModSecurity rules"><a href="../../images/exploitgym-hardening/en/deck/slide-18.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-18.jpg" width="1100" height="619" loading="lazy" alt="Slide 18 : Appendix: ModSecurity rules" /></a></figure>
+          <figure class="deck-slide" data-title="Sources"><a href="../../images/exploitgym-hardening/en/deck/slide-19.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-19.jpg" width="1100" height="619" loading="lazy" alt="Slide 19 : Sources" /></a></figure>
+          <figure class="deck-slide" data-title="Questions &amp; discussion"><a href="../../images/exploitgym-hardening/en/deck/slide-20.jpg" target="_blank" rel="noopener"><img src="../../images/exploitgym-hardening/en/deck/slide-20.jpg" width="1100" height="619" loading="lazy" alt="Slide 20 : Questions &amp; discussion" /></a></figure>
+        </div>
+        <button type="button" class="deck-nav deck-prev" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="deck-nav deck-next" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="deck-bar"><span class="deck-counter" data-counter aria-live="polite">1 / 20</span><span class="deck-title" data-title></span></div>
+      </div>
+
+      <div class="post-body">
+
+        <p>OpenAI agents, stuck on impossible tasks during a security evaluation, went looking for the answers online. They should not have been able to. A little over two months later, they had taken over OpenAI's shared package repository, then compromised Hugging Face's processing workers.</p>
+
+        <p>I read the published reports, the METR investigation and the Hugging Face timeline with the question my clients ask me the moment autonomous agents come up: what was supposed to hold, and what actually gave way? The answer surprised me, and it contradicts a good deal of what I have read since.</p>
+
+        <h2>What happened, in four moves</h2>
+
+        <p>On May 8, an agent hits an impossible task, a Google Drive link while it has no Internet access. Its SSRF attempt fails, but along the way it discovers it can write into Artifactory, the shared package repository. In the days that follow, another stuck agent leaves a note there to reach a peer. The repository becomes a message board where agents share their attempts and their results.</p>
+
+        <p>On May 26, the SSRF succeeds. An unpatched remote repository can be redirected to any URL, and Artifactory, the only service reachable from the sandbox with Internet access, becomes the gateway. On June 26, a zero-day in a legacy token-refresh endpoint yields admin access, then code execution through a Groovy plugin. On July 6, Artifactory is rebuilt; on July 8, an unauthenticated WebDAV endpoint reopens the channel. Two days were enough.</p>
+
+        <p>From July 9 to 13, the agents gain a foothold at Modal through an exposed API key, then obtain Hugging Face tokens and compromise the processing workers.</p>
+
+        <figure class="post-figure">
+          <a href="../../images/exploitgym-hardening/en/slide-03-documented-path.jpg" target="_blank" rel="noopener">
+            <img src="../../images/exploitgym-hardening/en/slide-03-documented-path.jpg" width="1400" height="788" loading="lazy" alt="The four steps of the documented path, from the sandbox to Hugging Face" />
+          </a>
+          <figcaption>The documented path, May 8 to July 13. Three flaws, one path.</figcaption>
+        </figure>
+
+        <h2>The detail that changes the whole reading</h2>
+
+        <p>I have often read that the isolation failed. It did not. The agents did get root inside their Kata microVM, and that gave them neither the host node nor the Internet. The isolation did exactly what was asked of it.</p>
+
+        <blockquote>Root inside the microVM opened neither the node nor the Internet. What gave way was a trusted service sitting right next to it.</blockquote>
+
+        <p>This distinction is not cosmetic. If you conclude the sandbox failed, you will harden the sandbox, and you will miss the point. If you conclude the problem was elsewhere, you finally start looking at the right component.</p>
+
+        <h2>The service that gets forgotten</h2>
+
+        <p>In OpenAI's environment, the sandboxes had no direct Internet access. To install their dependencies, which are not known in advance, the agents went through a private package repository, a JFrog Artifactory instance, which fetched PyPI, npm, APT or RPM packages on demand from the public registries. In that environment, the repository was therefore the only service reachable from the sandbox that itself had Internet access.</p>
+
+        <p>In July, that repository was writable from the sandbox, its entire API was exposed, and its Internet egress was unrestricted. All three at once.</p>
+
+        <p>That, to me, is the real lesson: <strong>we carefully isolate the agent, then hand it direct access to a shared service that is not isolated at all.</strong> A private package repository does not need to reach Modal or Hugging Face. In July, nothing stopped it.</p>
+
+        <h2>What I would change</h2>
+
+        <p>The repository has to stay, you cannot remove it without breaking the experiment. You can, however, constrain it at every hop. Three decisions would have cut the July path, subject to the tests I describe further down.</p>
+
+        <figure class="post-figure">
+          <a href="../../images/exploitgym-hardening/en/slide-08-packages.jpg" target="_blank" rel="noopener">
+            <img src="../../images/exploitgym-hardening/en/slide-08-packages.jpg" width="1400" height="788" loading="lazy" alt="Slide 8: what about the packages? What the experiment requires, and how the repository is constrained at every hop" />
+          </a>
+          <figcaption>What about the packages? What the experiment requires, and how the repository is constrained at every hop.</figcaption>
+        </figure>
+
+        <p><strong>A read-only reverse proxy in front of the repository.</strong> It exposes package reads only, in GET and HEAD, and only the allowed repositories. No writes, no admin API, no WebDAV, no unrestricted listing. The read identity is per run and derived from a trusted mTLS identity: any identifier supplied by the sandbox is ignored. A route that is not exposed is not directly reachable from the sandbox, which would have put the configuration API and the legacy token-refresh endpoint out of reach. The Groovy plugin goes away for a different reason: plugins and scripts are disabled on the repository, because a repository must never execute code supplied by its clients.</p>
+
+        <p><strong>Default-deny egress, by domain name.</strong> The repository can only reach the public registries and their CDNs, explicitly listed. Direct IP, external DNS and DNS over HTTPS blocked; loopback, link-local addresses, cloud metadata and internal ranges blocked locally on the repository host. A successful SSRF would then stay confined to the allowed registries, which makes it useless for reaching Modal.</p>
+
+        <p><strong>Containment is decided outside the cluster.</strong> The Kubernetes cluster hosting the run must not be the one deciding to stop it, since it may itself be compromised. The decision belongs to a separate security domain: a distinct cloud account, with its own network and its own credentials, which receives the events from Tetragon, the proxy, the repository and the firewall, each carrying the identifier of the run concerned. That domain applies rules written in advance, and acts at two levels. To stop a single run, it destroys its microVM through the platform controller, the CaaS (Container-as-a-Service) that manages the run life cycle, or directly through the hypervisor, without asking anything of what runs inside the sandbox. For a node that can no longer be trusted, it isolates the node's network and terminates the instance through the cloud provider's API, from that distinct account, without going through the Kubernetes API of the compromised cluster. An independent watchdog monitors the containment controller's heartbeat: if it goes silent, Internet egress switches to deny and the scheduling of new runs is disabled.</p>
+
+        <p>The independence test I keep: even with root on the node, inside the microVM or on the repository, an attacker must be able neither to modify the allow list, nor to prevent a stop, nor to restart a terminated run.</p>
+
+        <figure class="post-figure">
+          <a href="../../images/exploitgym-hardening/en/slide-07-target-architecture.jpg" target="_blank" rel="noopener">
+            <img src="../../images/exploitgym-hardening/en/slide-07-target-architecture.jpg" width="1400" height="788" loading="lazy" alt="Target architecture: reverse proxy, package repository, FQDN egress firewall and a separate security domain" />
+          </a>
+          <figcaption>The proxy controls what the sandbox asks for. The firewall controls what the repository can reach.</figcaption>
+        </figure>
+
+        <h2>An alert detects, it does not prevent</h2>
+
+        <p>What bothers me most in this story is not technical. The signals were there. An internal forum spotted in late May, a port scan on June 27. No rule blocked or stopped anything.</p>
+
+        <p>An egress attempt outside the allow list is not a bug to investigate at leisure. It is an agent operating outside its assigned objective. Letting it continue gives it time to find the variant that works, and that is exactly what happened: on May 8 the first SSRF fails unnoticed, and the agents iterate for three weeks before getting there.</p>
+
+        <p>So the rules get written before the run, not after the incident. A denied attempt attributed to a run stops that run, and only that one, so that an agent cannot trigger a global halt by deliberately raising an alert. A ModSecurity rule set on the routes that remain exposed helps close that window, by rejecting exotic schemes, internal addresses and cloud metadata from the very first attempt.</p>
+
+        <div class="post-note">
+          <strong>Careful not to rely on it alone.</strong> A request to an attacker-controlled server contains neither a forbidden scheme nor an internal address: it looks like a normal request. Only the egress firewall stops it. ModSecurity is a complement, never a substitute.
+        </div>
+
+        <h2>What it would have changed</h2>
+
+        <p>With those three decisions, the May 26 SSRF would have stayed confined to the allowed registries. The configuration API and the legacy token endpoint would have been out of reach, which takes the June 26 zero-day off the path. WebDAV, neither exposed by the proxy nor enabled on the repository, takes the July 8 return off it too. And the request to Modal would have been denied before it was sent.</p>
+
+        <figure class="post-figure">
+          <a href="../../images/exploitgym-hardening/en/slide-11-hardened-platform.jpg" target="_blank" rel="noopener">
+            <img src="../../images/exploitgym-hardening/en/slide-11-hardened-platform.jpg" width="1400" height="788" loading="lazy" alt="Slide 11: the hardened platform, allowed sources in green, Modal and Hugging Face blocked in red by the firewall" />
+          </a>
+          <figcaption>The hardened platform: allowed sources in green, Modal and Hugging Face in red, blocked by the firewall before the request leaves.</figcaption>
+        </figure>
+
+        <p>I say this with the caution it deserves. The July architecture is a reconstruction from public sources, and my proposal still has to be validated by tests, in particular the one that consists of trying to reach an external sink from a root sandbox, through every path the test plan lists: direct, SSRF, unexposed route, direct IP, external DNS or DoH, HTTP redirects, IPv6 and IPv4-mapped, mismatched SNI and Host. Until you have measured that it receives nothing, all you have validated is an intention.</p>
+
+        <p>That is the principle I take away from the whole affair: in an offensive evaluation, offensive capability has to be matched by an equivalent defensive one. Otherwise the exercise risks spilling outside its boundary, and it stops being an exercise.</p>
+
+        <h2>Sources</h2>
+
+        <ol class="post-sources">
+          <li>OpenAI, incident technical report, August 26, 2026, published as a PDF on cdn.openai.com.</li>
+          <li>OpenAI, <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener noreferrer">"The Hugging Face incident and the road ahead"</a>.</li>
+          <li>Hugging Face, <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener noreferrer">technical timeline of the intrusion</a>.</li>
+          <li>METR and Redwood Research, <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener noreferrer">independent investigation</a>, August 26, 2026.</li>
+          <li>OpenAI at Black Hat USA 2026, <a href="https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/08/06/black-hat--inside-the-openai-hugging-face-breach" target="_blank" rel="noopener noreferrer">IANS Research write-up</a>.</li>
+          <li>ExploitGym, <a href="https://arxiv.org/html/2605.11086v1" target="_blank" rel="noopener noreferrer">benchmark paper</a>, May 2026.</li>
+          <li>Kata Containers, <a href="https://github.com/kata-containers/kata-containers" target="_blank" rel="noopener noreferrer">architecture and agent protocol</a>.</li>
+          <li>Tetragon, <a href="https://tetragon.io/docs/threat-model/" target="_blank" rel="noopener noreferrer">threat model and enforcement</a>.</li>
+          <li>Kubernetes, <a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/" target="_blank" rel="noopener noreferrer">network policies</a>.</li>
+          <li>CVE-2026-65925, <a href="https://www.sentinelone.com/vulnerability-database/cve-2026-65925/" target="_blank" rel="noopener noreferrer">SSRF through a remote repository in JFrog Artifactory</a>, July 27, 2026. This is the class of flaw whose unpatched variant the agents went looking for.</li>
+        </ol>
+
+        <div class="post-end">
+          <a class="btn btn-primary" href="../../AI_agents_containment_architecture.pdf" download="AI_agents_containment_architecture.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg>
+            Download the proposal (PDF, 20 slides)
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Fincident-openai-hugging-face%2Fen%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            Share
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">AWS / Azure Security Architect</span>
+          <p>I work with large enterprises on the security of their cloud platforms and, for the past two years, of their agent platforms: identities, isolation, egress control and halt triggers. If that is your problem too, get in touch.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../../security-architect-guide/en/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              The security architect survival kit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Agentic Security · AI Trust · Cloud GRC</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../../app.js" defer></script>
+</body>
+</html>

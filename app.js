@@ -275,6 +275,82 @@
     timer = setTimeout(step, 400);
   }
 
+  /* ---------- deck carousel (blog posts) ---------- */
+  // Horizontal scroll-snap track, one slide per view. Buttons and arrow keys move one
+  // slide; swiping works natively. The counter and title follow the scroll position.
+  // data-autoplay="<ms>" advances automatically; it pauses while the pointer or the
+  // keyboard focus is on the carousel, during a touch, and while the tab is hidden.
+
+  function initDeckCarousels() {
+    document.querySelectorAll('[data-carousel]').forEach(function (root) {
+      var track = root.querySelector('.deck-track');
+      if (!track) return;
+      var slides = Array.prototype.slice.call(track.children);
+      var prev = root.querySelector('[data-prev]');
+      var next = root.querySelector('[data-next]');
+      var counter = root.querySelector('[data-counter]');
+      var title = root.querySelector('.deck-title');   // not [data-title]: every slide carries that attribute too
+      var index = 0, raf = 0;
+      var delay = parseInt(root.getAttribute('data-autoplay') || '0', 10);
+      var timer = null, paused = false;
+
+      function render() {
+        if (counter) counter.textContent = (index + 1) + ' / ' + slides.length;
+        if (title) title.textContent = slides[index].getAttribute('data-title') || '';
+        if (prev) prev.disabled = index === 0;
+        if (next) next.disabled = index === slides.length - 1;
+      }
+      function update() {   // follow a manual swipe
+        var w = track.clientWidth || 1;
+        index = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / w)));
+        render();
+      }
+      var settling = 0;   // while a programmatic scroll is in flight, ignore scroll events
+      function go(i, instant) {   // move, and reflect the target at once rather than after the smooth scroll
+        index = Math.max(0, Math.min(slides.length - 1, i));
+        render();
+        clearTimeout(settling);
+        settling = setTimeout(function () { settling = 0; update(); }, instant ? 50 : 700);
+        track.scrollTo({ left: index * track.clientWidth, behavior: instant ? 'instant' : 'smooth' });
+      }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      function start() {
+        if (!(delay > 0)) return;
+        stop();
+        timer = setInterval(function () {
+          if (paused) return;   // hidden tabs are handled by the visibilitychange listener below
+          if (index >= slides.length - 1) go(0, true); else go(index + 1);
+        }, delay);
+      }
+
+      if (prev) prev.addEventListener('click', function () { go(index - 1); start(); });
+      if (next) next.addEventListener('click', function () { go(index + 1); start(); });
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); go(index - 1); start(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(index + 1); start(); }
+      });
+      track.addEventListener('scroll', function () {
+        if (settling) return;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(update);
+      }, { passive: true });
+      window.addEventListener('resize', update);
+
+      if (delay > 0) {
+        root.addEventListener('mouseenter', function () { paused = true; });
+        root.addEventListener('mouseleave', function () { paused = false; });
+        root.addEventListener('focusin',    function () { paused = true; });
+        root.addEventListener('focusout',   function () { paused = false; });
+        track.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+        track.addEventListener('touchend',   function () { setTimeout(function () { paused = false; }, delay * 2); }, { passive: true });
+        document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+      }
+
+      update();
+      start();
+    });
+  }
+
   /* ---------- year ---------- */
 
   function setYear() {
@@ -345,6 +421,7 @@
     initRotor();
     setYear();
     initHeaderShadow();
+    initDeckCarousels();
     // If we're on a pre-rendered page (lang baked into <html lang>), only update
     // the rotor words and the trigger label, do not rewrite the body.
     const pageLang = currentPageLang();

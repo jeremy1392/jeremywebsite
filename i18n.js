@@ -15,9 +15,25 @@ window.I18N = {
     },
     brand:  { tag: "Agentic Security" },
     nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", guide: "Survival kit", cta: "Work with me" },
+    /* Incident post-mortem. Any locale that declares an `incident` block gets its
+       banner on the home page, newest first, above the guide banner. */
+    incident: {
+      kicker: "Agentic security",
+      date: "12 September 2026",
+      dateISO: "2026-09-12",
+      title: "Case study: Hardening the OpenAI ExploitGym environment",
+      desc: "Restrict agent Internet access to explicitly allowed destinations.",
+      note: "Article · 8 min read",
+      cta: "Read the article",
+      url: "incident-openai-hugging-face/en/",
+      cover: "images/exploitgym-hardening-cover-en.jpg",
+      variant: "alert"
+    },
     /* English survival-kit page: banner and nav link injected by build.js (see fr.guide). */
     guide: {
-      kicker: "New · Free PDF · 124 slides",
+      kicker: "Free PDF · 124 slides",
+      date: "7 September 2026",
+      dateISO: "2026-09-07",
       title: "Security Architect: the survival kit",
       desc: "Where to stand in the Digital Governance Framework (DGF): gates, contract, CIA+TN reading grid, Azure and AWS IAM, risk matrix, AI projects.",
       note: "Free · no sign-up",
@@ -217,10 +233,26 @@ window.I18N = {
     },
     brand:  { tag: "Sécurité Agentique" },
     nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", guide: "Kit de survie", cta: "Collaborer" },
+    /* Post-mortem d'incident. Toute locale qui déclare un bloc `incident` reçoit son
+       bandeau en page d'accueil, le plus récent d'abord, au-dessus du bandeau du kit. */
+    incident: {
+      kicker: "Sécurité agentique",
+      date: "12 septembre 2026",
+      dateISO: "2026-09-12",
+      title: "Cas pratique : Sécurisation de l'environnement ExploitGym d'OpenAI",
+      desc: "Empêcher les agents d'atteindre Internet en dehors des destinations explicitement autorisées.",
+      note: "Article · 8 min de lecture",
+      cta: "Lire l'article",
+      url: "incident-openai-hugging-face/",
+      cover: "images/exploitgym-hardening-cover-fr.jpg",
+      variant: "alert"
+    },
     /* Ressource FR uniquement : le bandeau et le lien de menu sont injectés par build.js
        pour chaque locale qui possède ce bloc `guide`. */
     guide: {
-      kicker: "Nouveau · PDF gratuit · 124 slides",
+      kicker: "PDF gratuit · 124 slides",
+      date: "7 septembre 2026",
+      dateISO: "2026-09-07",
       title: "Architecte Sécurité : le kit de survie",
       desc: "Où se placer dans le Cadre de Gouvernance Numérique (DGF) : jalons, contrat, grille de lecture CIA+TN, IAM Azure et AWS, matrice de risques, projets IA.",
       note: "Gratuit · sans inscription",

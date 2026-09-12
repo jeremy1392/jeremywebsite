@@ -105,7 +105,7 @@ function buildLocale({ lang, file, dir }) {
   // 6b. /tech/ links must target this locale's pages, not the English ones.
   html = localizeTechLinks(html, lang);
 
-  html = injectGuide(stripGuide(html), dict, '');
+  html = injectBanners(stripGuide(html), dict, '');
 
   fs.writeFileSync(file, html);
   console.log(`  ✓ ${file.padEnd(12)} ${html.length} bytes`);
@@ -120,6 +120,11 @@ function localizeTechLinks(html, lang) {
   return html.replace(/href="tech\/([a-z0-9-]+)\.html"/g, `href="tech/$1.${lang}.html"`);
 }
 
+/* A stable DOM id per banner, derived from its URL: 'security-architect-guide/en/' -> 'security-architect-guide'. */
+function slugOf(url) {
+  return String(url).replace(/^\/+|\/+$/g, '').split('/')[0] || 'resource';
+}
+
 /* Remove a previously injected guide block (nav link + banner) so injection stays idempotent
    and index.html, which is both the English output and the source of the other locales,
    never carries two banners or a banner in the wrong language. */
@@ -131,24 +136,39 @@ function stripGuide(html) {
 
 /* Inject the survival-kit nav link and homepage banner for locales that define dict.guide.
    `prefix` is the relative path back to the site root ('' for root pages, '../' for /tech/). */
-function injectGuide(html, dict, prefix) {
+function injectBanners(html, dict, prefix) {
+  // Newest first: the incident post-mortem sits above the survival-kit banner.
+  const nav = dict.guide ? injectGuideNavLink(html, dict, prefix) : html;
+  return [dict.incident, dict.guide].filter(Boolean)
+    .reduce((acc, block) => injectBanner(acc, block, prefix), nav);
+}
+
+function injectGuideNavLink(html, dict, prefix) {
   const g = dict.guide;
   if (!g) return html;
   const url = prefix + g.url;
-  // Nav link, right after the "cases" entry (main page) when present.
   html = html.replace(
     /(<a href="[^"]*#cases"\s+data-i18n="nav.cases">[^<]*<\/a>\r?\n)/,
     `$1      <a href="${url}" data-guide-link>${escapeHtml(dict.nav.guide || g.title)}</a>\n`
   );
-  // Banner between the hero and the first section.
+  return html;
+}
+
+/* Render one banner (survival kit, incident post-mortem, ...) above the first section.
+   `g.date` / `g.dateISO` add a publication date, `g.variant` picks the accent. */
+function injectBanner(html, g, prefix) {
+  const url = prefix + g.url;
   const banner = `    <!-- guide:start -->
     <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
-    <section class="resource-banner" id="guide" aria-labelledby="guide-title">
+    <section class="resource-banner${g.variant ? ' resource-banner-' + g.variant : ''}" id="${slugOf(g.url)}" aria-labelledby="${slugOf(g.url)}-title">
       <a class="resource-banner-inner" href="${url}">
         <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
         <div class="resource-banner-text">
-          <span class="resource-banner-kicker">${escapeHtml(g.kicker)}</span>
-          <h2 id="guide-title">${escapeHtml(g.title)}</h2>
+          <div class="resource-banner-head">
+            <span class="resource-banner-kicker">${escapeHtml(g.kicker)}</span>
+            ${g.date ? `<time class="resource-banner-date" datetime="${escapeHtml(g.dateISO || '')}">${escapeHtml(g.date)}</time>` : ''}
+          </div>
+          <h2 id="${slugOf(g.url)}-title">${escapeHtml(g.title)}</h2>
           <p>${escapeHtml(g.desc)}</p>
           <span class="resource-banner-note">${escapeHtml(g.note)}</span>
         </div>
@@ -498,7 +518,9 @@ ${mainAlternates}
   // versions so every entry carries the hreflang alternates of its siblings.
   const EXTRA_GROUPS = [
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
-      pages: { fr: BASE_URL + '/security-architect-guide/', en: BASE_URL + '/security-architect-guide/en/' } }
+      pages: { fr: BASE_URL + '/security-architect-guide/', en: BASE_URL + '/security-architect-guide/en/' } },
+    { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
+      pages: { fr: BASE_URL + '/incident-openai-hugging-face/', en: BASE_URL + '/incident-openai-hugging-face/en/' } }
   ];
   const extraEntries = EXTRA_GROUPS.flatMap(gr => {
     const alts = Object.entries(gr.pages)
@@ -578,10 +600,10 @@ function buildFavicon() {
 /* ---------- English root page (index.html is both source and output) ---------- */
 function buildRoot() {
   let html = fs.readFileSync(SOURCE, 'utf8');
-  const next = injectGuide(stripGuide(html), I18N.en, '');
+  const next = injectBanners(stripGuide(html), I18N.en, '');
   if (next !== html) {
     fs.writeFileSync(SOURCE, next);
-    console.log(`  ✓ ${SOURCE.padEnd(12)} guide block ${I18N.en.guide ? 'injected' : 'removed'}`);
+    console.log(`  ✓ ${SOURCE.padEnd(12)} banners injected`);
   } else {
     console.log(`  ✓ ${SOURCE.padEnd(12)} unchanged`);
   }
