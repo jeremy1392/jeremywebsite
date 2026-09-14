@@ -637,7 +637,7 @@ function renderBlogPage(lang) {
     ? { en: './', fr: '../', zh: '../../zh.html', ar: '../../ar.html' }
     : { en: 'en/', fr: './', zh: '../zh.html', ar: '../ar.html' }).replace(/"/g, '&quot;');
   const posts = blogPosts(dict);
-  const person = { "@type": "Person", "name": "Jeremy Canale", "url": BASE_URL, "sameAs": ["https://www.linkedin.com/in/jcanale13/"] };
+  const person = { "@type": "Person", "name": "Jeremy Canale", "url": BASE_URL, "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://www.malt.fr/profile/jeremycanale"] };
   const ld = {
     "@context": "https://schema.org", "@type": "Blog", "@id": url, "url": url,
     "name": bl.heading, "description": bl.metaDesc, "inLanguage": lang, "author": person, "publisher": person,
