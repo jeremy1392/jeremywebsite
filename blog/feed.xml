@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jeremy Canale, blog (français)</title>
+    <link>https://jeremycanale.com/blog/</link>
+    <description>Analyses d'incidents, propositions d'architecture et ressources gratuites sur la sécurité des plateformes d'agents, du cloud et de leur gouvernance.</description>
+    <language>fr</language>
+    <atom:link href="https://jeremycanale.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cas pratique : Sécurisation de l'environnement ExploitGym d'OpenAI</title>
+      <link>https://jeremycanale.com/incident-openai-hugging-face/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/incident-openai-hugging-face/</guid>
+      <pubDate>Sat, 12 Sep 2026 07:00:00 GMT</pubDate>
+      <description>Empêcher les agents d'atteindre Internet en dehors des destinations explicitement autorisées.</description>
+    </item>
+    <item>
+      <title>Architecte Sécurité : le kit de survie</title>
+      <link>https://jeremycanale.com/security-architect-guide/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/security-architect-guide/</guid>
+      <pubDate>Mon, 07 Sep 2026 07:00:00 GMT</pubDate>
+      <description>Où se placer dans le Cadre de Gouvernance Numérique (DGF) : jalons, contrat, grille de lecture CIA+TN, IAM Azure et AWS, matrice de risques, projets IA.</description>
+    </item>
+  </channel>
+</rss>

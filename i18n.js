@@ -29,6 +29,18 @@ window.I18N = {
       cover: "images/exploitgym-hardening-cover-en.jpg",
       variant: "alert"
     },
+    /* Blog index (blog/en/): listing of the articles, built by build.js from the incident and guide blocks. */
+    blog: {
+      nav: "Blog",
+      url: "blog/en/",
+      heading: "Notes from a security architect",
+      lede: "Incident analyses, architecture proposals and free resources on securing agent platforms, cloud estates and their governance.",
+      metaTitle: "Blog | Jeremy Canale, AWS / Azure Security Architect",
+      metaDesc: "Incident analyses, architecture proposals and free resources by Jeremy Canale, security architect: agent containment, the OpenAI / Hugging Face incident, the security architect survival kit.",
+      allPosts: "All posts",
+      latest: "Latest posts",
+      feedTitle: "Jeremy Canale, blog (English)"
+    },
     /* English survival-kit page: banner and nav link injected by build.js (see fr.guide). */
     guide: {
       kicker: "Free PDF · 124 slides",
@@ -246,6 +258,18 @@ window.I18N = {
       url: "incident-openai-hugging-face/",
       cover: "images/exploitgym-hardening-cover-fr.jpg",
       variant: "alert"
+    },
+    /* Index du blog (blog/) : liste des articles, construite par build.js à partir des blocs incident et guide. */
+    blog: {
+      nav: "Blog",
+      url: "blog/",
+      heading: "Notes d'architecte sécurité",
+      lede: "Analyses d'incidents, propositions d'architecture et ressources gratuites sur la sécurité des plateformes d'agents, du cloud et de leur gouvernance.",
+      metaTitle: "Blog | Jeremy Canale, architecte sécurité AWS / Azure",
+      metaDesc: "Analyses d'incidents, propositions d'architecture et ressources gratuites par Jeremy Canale, architecte sécurité : confinement des agents, incident OpenAI / Hugging Face, kit de survie de l'architecte sécurité.",
+      allPosts: "Toutes les publications",
+      latest: "Dernières publications",
+      feedTitle: "Jeremy Canale, blog (français)"
     },
     /* Ressource FR uniquement : le bandeau et le lien de menu sont injectés par build.js
        pour chaque locale qui possède ce bloc `guide`. */

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jeremy Canale, blog (English)</title>
+    <link>https://jeremycanale.com/blog/en/</link>
+    <description>Incident analyses, architecture proposals and free resources on securing agent platforms, cloud estates and their governance.</description>
+    <language>en</language>
+    <atom:link href="https://jeremycanale.com/blog/en/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Case study: Hardening the OpenAI ExploitGym environment</title>
+      <link>https://jeremycanale.com/incident-openai-hugging-face/en/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/incident-openai-hugging-face/en/</guid>
+      <pubDate>Sat, 12 Sep 2026 07:00:00 GMT</pubDate>
+      <description>Restrict agent Internet access to explicitly allowed destinations.</description>
+    </item>
+    <item>
+      <title>Security Architect: the survival kit</title>
+      <link>https://jeremycanale.com/security-architect-guide/en/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/security-architect-guide/en/</guid>
+      <pubDate>Mon, 07 Sep 2026 07:00:00 GMT</pubDate>
+      <description>Where to stand in the Digital Governance Framework (DGF): gates, contract, CIA+TN reading grid, Azure and AWS IAM, risk matrix, AI projects.</description>
+    </item>
+  </channel>
+</rss>

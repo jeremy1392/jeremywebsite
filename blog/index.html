@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="fr" dir="ltr" data-theme="dark" class="tech-page blog-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>Blog | Jeremy Canale, architecte sécurité AWS / Azure</title>
+  <meta name="description" content="Analyses d'incidents, propositions d'architecture et ressources gratuites par Jeremy Canale, architecte sécurité : confinement des agents, incident OpenAI / Hugging Face, kit de survie de l'architecte sécurité." />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/blog/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/blog/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/blog/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/blog/en/" />
+  <link rel="alternate" type="application/rss+xml" title="Jeremy Canale, blog (français)" href="https://jeremycanale.com/blog/feed.xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Notes d'architecte sécurité" />
+  <meta property="og:description" content="Analyses d'incidents, propositions d'architecture et ressources gratuites sur la sécurité des plateformes d'agents, du cloud et de leur gouvernance." />
+  <meta property="og:url" content="https://jeremycanale.com/blog/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/exploitgym-hardening-cover-fr.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Notes d'architecte sécurité" />
+  <meta name="twitter:description" content="Analyses d'incidents, propositions d'architecture et ressources gratuites sur la sécurité des plateformes d'agents, du cloud et de leur gouvernance." />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://jeremycanale.com/blog/",
+  "url": "https://jeremycanale.com/blog/",
+  "name": "Notes d'architecte sécurité",
+  "description": "Analyses d'incidents, propositions d'architecture et ressources gratuites par Jeremy Canale, architecte sécurité : confinement des agents, incident OpenAI / Hugging Face, kit de survie de l'architecte sécurité.",
+  "inLanguage": "fr",
+  "author": {
+    "@type": "Person",
+    "name": "Jeremy Canale",
+    "url": "https://jeremycanale.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/jcanale13/"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Jeremy Canale",
+    "url": "https://jeremycanale.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/jcanale13/"
+    ]
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Cas pratique : Sécurisation de l'environnement ExploitGym d'OpenAI",
+      "description": "Empêcher les agents d'atteindre Internet en dehors des destinations explicitement autorisées.",
+      "url": "https://jeremycanale.com/incident-openai-hugging-face/",
+      "datePublished": "2026-09-12",
+      "image": "https://jeremycanale.com/images/exploitgym-hardening-cover-fr.jpg",
+      "inLanguage": "fr",
+      "author": {
+        "@type": "Person",
+        "name": "Jeremy Canale",
+        "url": "https://jeremycanale.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/jcanale13/"
+        ]
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Architecte Sécurité : le kit de survie",
+      "description": "Où se placer dans le Cadre de Gouvernance Numérique (DGF) : jalons, contrat, grille de lecture CIA+TN, IAM Azure et AWS, matrice de risques, projets IA.",
+      "url": "https://jeremycanale.com/security-architect-guide/",
+      "datePublished": "2026-09-07",
+      "image": "https://jeremycanale.com/images/security-architect-guide-cover.jpg",
+      "inLanguage": "fr",
+      "author": {
+        "@type": "Person",
+        "name": "Jeremy Canale",
+        "url": "https://jeremycanale.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/jcanale13/"
+        ]
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Jeremy Canale",
+      "item": "https://jeremycanale.com/fr.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://jeremycanale.com/blog/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../fr.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Sécurité Agentique</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../fr.html#expertise">Expertise</a>
+      <a href="../fr.html#consulting">Conseil</a>
+      <a href="../fr.html#cases">Études de cas</a>
+      <a href="./" aria-current="page">Blog</a>
+      <a href="../security-architect-guide/">Kit de survie</a>
+      <a href="../fr.html#experience">Parcours</a>
+      <a href="../fr.html#certifications">Certifications</a>
+      <a href="../fr.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;en/&quot;,&quot;fr&quot;:&quot;./&quot;,&quot;zh&quot;:&quot;../zh.html&quot;,&quot;ar&quot;:&quot;../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>FR</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../fr.html#contact">
+        <span>Collaborer</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="blog-wrap">
+      <header class="blog-head">
+        <span class="kicker">Blog</span>
+        <h1>Notes d'architecte sécurité</h1>
+        <p class="lede">Analyses d'incidents, propositions d'architecture et ressources gratuites sur la sécurité des plateformes d'agents, du cloud et de leur gouvernance.</p>
+      </header>
+      <h2 class="blog-list-title">Dernières publications</h2>
+      <div class="blog-list">
+
+        <article class="blog-card">
+          <a class="resource-banner-inner resource-banner-alert" href="../incident-openai-hugging-face/">
+            <img class="resource-banner-cover" src="../images/exploitgym-hardening-cover-fr.jpg" width="1200" height="627" alt="" loading="lazy" />
+            <div class="resource-banner-text">
+              <div class="resource-banner-head">
+                <span class="resource-banner-kicker">Sécurité agentique</span>
+                <time class="resource-banner-date" datetime="2026-09-12">12 septembre 2026</time>
+              </div>
+              <h2>Cas pratique : Sécurisation de l'environnement ExploitGym d'OpenAI</h2>
+              <p>Empêcher les agents d'atteindre Internet en dehors des destinations explicitement autorisées.</p>
+              <span class="resource-banner-note">Article · 8 min de lecture</span>
+            </div>
+            <span class="btn btn-primary resource-banner-cta">
+              <span>Lire l'article</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <a class="resource-banner-inner" href="../security-architect-guide/">
+            <img class="resource-banner-cover" src="../images/security-architect-guide-cover.jpg" width="1200" height="627" alt="" loading="lazy" />
+            <div class="resource-banner-text">
+              <div class="resource-banner-head">
+                <span class="resource-banner-kicker">PDF gratuit · 124 slides</span>
+                <time class="resource-banner-date" datetime="2026-09-07">7 septembre 2026</time>
+              </div>
+              <h2>Architecte Sécurité : le kit de survie</h2>
+              <p>Où se placer dans le Cadre de Gouvernance Numérique (DGF) : jalons, contrat, grille de lecture CIA+TN, IAM Azure et AWS, matrice de risques, projets IA.</p>
+              <span class="resource-banner-note">Gratuit · sans inscription</span>
+            </div>
+            <span class="btn btn-primary resource-banner-cta">
+              <span>Découvrir et télécharger</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Sécurité Agentique · Confiance IA · GRC Cloud</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+      <span class="dot-sep">·</span>
+      <a href="https://jeremycanale.com/blog/feed.xml">RSS</a>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

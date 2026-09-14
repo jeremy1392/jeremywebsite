@@ -138,20 +138,29 @@ function stripGuide(html) {
    `prefix` is the relative path back to the site root ('' for root pages, '../' for /tech/). */
 function injectBanners(html, dict, prefix) {
   // Newest first: the incident post-mortem sits above the survival-kit banner.
-  const nav = dict.guide ? injectGuideNavLink(html, dict, prefix) : html;
-  return [dict.incident, dict.guide].filter(Boolean)
-    .reduce((acc, block) => injectBanner(acc, block, prefix), nav);
+  let out = injectGuideNavLink(html, dict, prefix);
+  out = [dict.incident, dict.guide].filter(Boolean)
+    .reduce((acc, block) => injectBanner(acc, block, prefix), out);
+  if (dict.blog && (dict.incident || dict.guide)) {
+    const more = `    <!-- guide:start -->
+    <p class="resource-more"><a href="${prefix + dict.blog.url}">${escapeHtml(dict.blog.allPosts)}</a></p>
+    <!-- guide:end -->
+
+`;
+    out = out.replace(/(    <section id="certifications" class="section">)/, more + '$1');
+  }
+  return out;
 }
 
 function injectGuideNavLink(html, dict, prefix) {
-  const g = dict.guide;
-  if (!g) return html;
-  const url = prefix + g.url;
-  html = html.replace(
+  const links = [];
+  if (dict.blog)  links.push(`      <a href="${prefix + dict.blog.url}" data-guide-link>${escapeHtml(dict.blog.nav)}</a>`);
+  if (dict.guide) links.push(`      <a href="${prefix + dict.guide.url}" data-guide-link>${escapeHtml(dict.nav.guide || dict.guide.title)}</a>`);
+  if (!links.length) return html;
+  return html.replace(
     /(<a href="[^"]*#cases"\s+data-i18n="nav.cases">[^<]*<\/a>\r?\n)/,
-    `$1      <a href="${url}" data-guide-link>${escapeHtml(dict.nav.guide || g.title)}</a>\n`
+    '$1' + links.join('\n') + '\n'
   );
-  return html;
 }
 
 /* Render one banner (survival kit, incident post-mortem, ...) above the first section.
@@ -363,7 +372,7 @@ ${JSON.stringify(serviceLd, null, 2)}
       <a href="../${langRoot}#expertise">${escapeHtml(dict.nav.expertise)}</a>
       <a href="../${langRoot}#consulting">${escapeHtml(dict.nav.consulting)}</a>
       <a href="../${langRoot}#cases">${escapeHtml(dict.nav.cases)}</a>
-${dict.guide ? `      <a href="../${dict.guide.url}">${escapeHtml(dict.nav.guide || dict.guide.title)}</a>\n` : ''}      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
+${dict.blog ? `      <a href="../${dict.blog.url}">${escapeHtml(dict.blog.nav)}</a>\n` : ''}${dict.guide ? `      <a href="../${dict.guide.url}">${escapeHtml(dict.nav.guide || dict.guide.title)}</a>\n` : ''}      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
       <a href="../${langRoot}#certifications">${escapeHtml(dict.nav.certifications)}</a>
       <a href="../${langRoot}#faq">${escapeHtml(dict.nav.faq)}</a>
       <a href="../${langRoot}#contact">${escapeHtml(dict.nav.contact)}</a>
@@ -520,7 +529,9 @@ ${mainAlternates}
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
       pages: { fr: BASE_URL + '/security-architect-guide/', en: BASE_URL + '/security-architect-guide/en/' } },
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
-      pages: { fr: BASE_URL + '/incident-openai-hugging-face/', en: BASE_URL + '/incident-openai-hugging-face/en/' } }
+      pages: { fr: BASE_URL + '/incident-openai-hugging-face/', en: BASE_URL + '/incident-openai-hugging-face/en/' } },
+    { xDefault: 'en', changefreq: 'weekly', priority: '0.9',
+      pages: { fr: BASE_URL + '/blog/', en: BASE_URL + '/blog/en/' } }
   ];
   const extraEntries = EXTRA_GROUPS.flatMap(gr => {
     const alts = Object.entries(gr.pages)
@@ -609,6 +620,244 @@ function buildRoot() {
   }
 }
 
+/* ---------- BLOG INDEX (fr + en) ---------- */
+/* One page per locale that declares a `blog` block, listing the incident and guide entries
+   (newest first) with the same data as the home banners, plus an RSS feed next to it. */
+function blogPosts(dict) { return [dict.incident, dict.guide].filter(Boolean); }
+
+function renderBlogPage(lang) {
+  const dict = I18N[lang], bl = dict.blog;
+  if (!bl) return null;
+  const isEn = lang === 'en';
+  const prefix = isEn ? '../../' : '../';
+  const url = `${BASE_URL}/${bl.url}`;
+  const feed = url + 'feed.xml';
+  const langRoot = LANG_ROOT[lang];
+  const langUrls = JSON.stringify(isEn
+    ? { en: './', fr: '../', zh: '../../zh.html', ar: '../../ar.html' }
+    : { en: 'en/', fr: './', zh: '../zh.html', ar: '../ar.html' }).replace(/"/g, '&quot;');
+  const posts = blogPosts(dict);
+  const person = { "@type": "Person", "name": "Jeremy Canale", "url": BASE_URL, "sameAs": ["https://www.linkedin.com/in/jcanale13/"] };
+  const ld = {
+    "@context": "https://schema.org", "@type": "Blog", "@id": url, "url": url,
+    "name": bl.heading, "description": bl.metaDesc, "inLanguage": lang, "author": person, "publisher": person,
+    "blogPost": posts.map(g => ({
+      "@type": "BlogPosting", "headline": g.title, "description": g.desc, "url": `${BASE_URL}/${g.url}`,
+      "datePublished": g.dateISO, "image": `${BASE_URL}/${g.cover}`, "inLanguage": lang, "author": person
+    }))
+  };
+  const crumbs = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": `${BASE_URL}/${isEn ? '' : langRoot}` },
+    { "@type": "ListItem", "position": 2, "name": bl.nav, "item": url } ] };
+  const cards = posts.map(g => `
+        <article class="blog-card">
+          <a class="resource-banner-inner${g.variant ? ' resource-banner-' + g.variant : ''}" href="${prefix + g.url}">
+            <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
+            <div class="resource-banner-text">
+              <div class="resource-banner-head">
+                <span class="resource-banner-kicker">${escapeHtml(g.kicker)}</span>
+                ${g.date ? `<time class="resource-banner-date" datetime="${escapeHtml(g.dateISO || '')}">${escapeHtml(g.date)}</time>` : ''}
+              </div>
+              <h2>${escapeHtml(g.title)}</h2>
+              <p>${escapeHtml(g.desc)}</p>
+              <span class="resource-banner-note">${escapeHtml(g.note)}</span>
+            </div>
+            <span class="btn btn-primary resource-banner-cta">
+              <span>${escapeHtml(g.cta)}</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>`).join('\n');
+
+  return `<!doctype html>
+<html lang="${lang}" dir="ltr" data-theme="dark" class="tech-page blog-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>${escapeHtml(bl.metaTitle)}</title>
+  <meta name="description" content="${escapeAttr(bl.metaDesc)}" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="${url}" />
+  <link rel="alternate" hreflang="fr" href="${BASE_URL}/blog/" />
+  <link rel="alternate" hreflang="en" href="${BASE_URL}/blog/en/" />
+  <link rel="alternate" hreflang="x-default" href="${BASE_URL}/blog/en/" />
+  <link rel="alternate" type="application/rss+xml" title="${escapeAttr(bl.feedTitle)}" href="${feed}" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="${ogLocale(lang)}" />
+  <meta property="og:title" content="${escapeAttr(bl.heading)}" />
+  <meta property="og:description" content="${escapeAttr(bl.lede)}" />
+  <meta property="og:url" content="${url}" />
+  <meta property="og:image" content="${BASE_URL}/${posts[0] ? posts[0].cover : ''}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escapeAttr(bl.heading)}" />
+  <meta name="twitter:description" content="${escapeAttr(bl.lede)}" />
+
+  <link rel="icon" type="image/svg+xml" href="${prefix}favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="${prefix}styles.css" />
+
+  <script type="application/ld+json">
+${JSON.stringify(ld, null, 2)}
+  </script>
+  <script type="application/ld+json">
+${JSON.stringify(crumbs, null, 2)}
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="${prefix}${langRoot}#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">${escapeHtml(dict.brand.tag)}</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="${prefix}${langRoot}#expertise">${escapeHtml(dict.nav.expertise)}</a>
+      <a href="${prefix}${langRoot}#consulting">${escapeHtml(dict.nav.consulting)}</a>
+      <a href="${prefix}${langRoot}#cases">${escapeHtml(dict.nav.cases)}</a>
+      <a href="./" aria-current="page">${escapeHtml(bl.nav)}</a>
+${dict.guide ? `      <a href="${prefix}${dict.guide.url}">${escapeHtml(dict.nav.guide || dict.guide.title)}</a>\n` : ''}      <a href="${prefix}${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
+      <a href="${prefix}${langRoot}#certifications">${escapeHtml(dict.nav.certifications)}</a>
+      <a href="${prefix}${langRoot}#contact">${escapeHtml(dict.nav.contact)}</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="${langUrls}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>${LANG_LABEL[lang]}</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="${prefix}${langRoot}#contact">
+        <span>${escapeHtml(dict.nav.cta)}</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="blog-wrap">
+      <header class="blog-head">
+        <span class="kicker">${escapeHtml(bl.nav)}</span>
+        <h1>${escapeHtml(bl.heading)}</h1>
+        <p class="lede">${escapeHtml(bl.lede)}</p>
+      </header>
+      <h2 class="blog-list-title">${escapeHtml(bl.latest)}</h2>
+      <div class="blog-list">
+${cards}
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>${escapeHtml(dict.footer.tag)}</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+      <span class="dot-sep">·</span>
+      <a href="${feed}">RSS</a>
+    </div>
+  </footer>
+
+  <script src="${prefix}app.js" defer></script>
+</body>
+</html>
+`;
+}
+
+function renderBlogFeed(lang) {
+  const dict = I18N[lang], bl = dict.blog;
+  if (!bl) return null;
+  const url = `${BASE_URL}/${bl.url}`;
+  const items = blogPosts(dict).map(g => `    <item>
+      <title>${escapeXml(g.title)}</title>
+      <link>${BASE_URL}/${g.url}</link>
+      <guid isPermaLink="true">${BASE_URL}/${g.url}</guid>
+      <pubDate>${new Date(g.dateISO + 'T09:00:00+02:00').toUTCString()}</pubDate>
+      <description>${escapeXml(g.desc)}</description>
+    </item>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeXml(bl.feedTitle)}</title>
+    <link>${url}</link>
+    <description>${escapeXml(bl.lede)}</description>
+    <language>${lang}</language>
+    <atom:link href="${url}feed.xml" rel="self" type="application/rss+xml" />
+${items}
+  </channel>
+</rss>
+`;
+}
+
+function escapeXml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
+function buildBlog() {
+  for (const lang of ['fr', 'en']) {
+    const html = renderBlogPage(lang);
+    if (!html) continue;
+    const dir = path.join(__dirname, I18N[lang].blog.url);
+    ensureDir(dir);
+    fs.writeFileSync(path.join(dir, 'index.html'), html);
+    fs.writeFileSync(path.join(dir, 'feed.xml'), renderBlogFeed(lang));
+    console.log(`  ✓ ${I18N[lang].blog.url}index.html + feed.xml (${blogPosts(I18N[lang]).length} posts)`);
+  }
+}
+
 /* ---------- run ---------- */
 console.log('Building Jeremy Canale personal site...');
 console.log('');
@@ -620,6 +869,9 @@ LOCALES.forEach(buildLocale);
 console.log('');
 console.log('Tech landing pages:');
 buildTechPages();
+console.log('');
+console.log('Blog:');
+buildBlog();
 console.log('');
 console.log('SEO infrastructure:');
 buildSitemap();
