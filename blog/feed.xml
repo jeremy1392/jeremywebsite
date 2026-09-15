@@ -7,6 +7,13 @@
     <language>fr</language>
     <atom:link href="https://jeremycanale.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Une course à la puissance. Mais... un retard sur l'alignement</title>
+      <link>https://jeremycanale.com/capability-race-control-lag/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/capability-race-control-lag/</guid>
+      <pubDate>Wed, 16 Sep 2026 07:00:00 GMT</pubDate>
+      <description>Ce que les alertes d'Anthropic, d'OpenAI et de Musk changent pour une entreprise qui délègue du travail à des agents : alignement, surveillance et périmètre d'autonomie.</description>
+    </item>
+    <item>
       <title>Cas pratique : Sécurisation de l'environnement ExploitGym d'OpenAI</title>
       <link>https://jeremycanale.com/incident-openai-hugging-face/</link>
       <guid isPermaLink="true">https://jeremycanale.com/incident-openai-hugging-face/</guid>

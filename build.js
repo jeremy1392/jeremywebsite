@@ -137,11 +137,10 @@ function stripGuide(html) {
 /* Inject the survival-kit nav link and homepage banner for locales that define dict.guide.
    `prefix` is the relative path back to the site root ('' for root pages, '../' for /tech/). */
 function injectBanners(html, dict, prefix) {
-  // Newest first: the incident post-mortem sits above the survival-kit banner.
+  // Newest first, in blogPosts() order.
   let out = injectGuideNavLink(html, dict, prefix);
-  out = [dict.incident, dict.guide].filter(Boolean)
-    .reduce((acc, block) => injectBanner(acc, block, prefix), out);
-  if (dict.blog && (dict.incident || dict.guide)) {
+  out = blogPosts(dict).reduce((acc, block) => injectBanner(acc, block, prefix), out);
+  if (dict.blog && blogPosts(dict).length) {
     const more = `    <!-- guide:start -->
     <p class="resource-more"><a href="${prefix + dict.blog.url}">${escapeHtml(dict.blog.allPosts)}</a></p>
     <!-- guide:end -->
@@ -527,6 +526,8 @@ ${mainAlternates}
   // versions so every entry carries the hreflang alternates of its siblings.
   const EXTRA_GROUPS = [
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
+      pages: { fr: BASE_URL + '/capability-race-control-lag/', en: BASE_URL + '/capability-race-control-lag/en/' } },
+    { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
       pages: { fr: BASE_URL + '/security-architect-guide/', en: BASE_URL + '/security-architect-guide/en/' } },
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
       pages: { fr: BASE_URL + '/incident-openai-hugging-face/', en: BASE_URL + '/incident-openai-hugging-face/en/' } },
@@ -621,9 +622,9 @@ function buildRoot() {
 }
 
 /* ---------- BLOG INDEX (fr + en) ---------- */
-/* One page per locale that declares a `blog` block, listing the incident and guide entries
-   (newest first) with the same data as the home banners, plus an RSS feed next to it. */
-function blogPosts(dict) { return [dict.incident, dict.guide].filter(Boolean); }
+/* One page per locale that declares a `blog` block, listing the analysis, incident and guide
+   entries (newest first) with the same data as the home banners, plus an RSS feed next to it. */
+function blogPosts(dict) { return [dict.analysis, dict.incident, dict.guide].filter(Boolean); }
 
 function renderBlogPage(lang) {
   const dict = I18N[lang], bl = dict.blog;

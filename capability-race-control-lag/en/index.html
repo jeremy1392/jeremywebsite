@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark" class="tech-page post-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>The race for capability. The lag in control. | Jeremy Canale</title>
+  <meta name="description" content="Anthropic, OpenAI and Musk are asking for time to secure AI. What it means for companies delegating work to agents: alignment, monitoring, permissions, and a thirty-day plan to scope autonomy." />
+  <meta name="keywords" content="agentic security, AI alignment, chain of thought monitorability, recursive self-improvement, Claude Code auto mode, PocketOS, OpenAI Hugging Face incident, agent permissions, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/capability-race-control-lag/en/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/capability-race-control-lag/en/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/capability-race-control-lag/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/capability-race-control-lag/en/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:title" content="The race for capability. The lag in control." />
+  <meta property="og:description" content="What the warnings from Anthropic, OpenAI and Musk mean for any company delegating work to agents." />
+  <meta property="og:url" content="https://jeremycanale.com/capability-race-control-lag/en/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/capability-race-control-lag-cover-en.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/capability-race-control-lag-cover-en.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="The race for capability. The lag in control. An analysis by Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-09-16T09:00:00+02:00" />
+  <meta property="article:section" content="Security" />
+  <meta property="article:tag" content="Agentic Security" />
+  <meta property="article:tag" content="AI Alignment" />
+  <meta property="article:tag" content="AI Governance" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The race for capability. The lag in control." />
+  <meta name="twitter:description" content="What the warnings from Anthropic, OpenAI and Musk mean for any company delegating work to agents." />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/capability-race-control-lag-cover-en.jpg" />
+  <meta name="twitter:image:alt" content="The race for capability. The lag in control. An analysis by Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/capability-race-control-lag/en/" },
+    "headline": "The race for capability. The lag in control.",
+    "description": "What the warnings from Anthropic, OpenAI and Musk mean for any company delegating work to agents: alignment, monitoring, permissions and the scope of autonomy.",
+    "image": "https://jeremycanale.com/images/capability-race-control-lag-cover-en.jpg",
+    "inLanguage": "en",
+    "datePublished": "2026-09-16",
+    "dateModified": "2026-09-16",
+    "wordCount": 4417,
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "AWS / Azure Security Architect",
+      "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://www.malt.fr/profile/jeremycanale", "https://github.com/jeremy1392"]
+    },
+    "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
+    "workTranslation": { "@type": "BlogPosting", "inLanguage": "fr", "url": "https://jeremycanale.com/capability-race-control-lag/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": "https://jeremycanale.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://jeremycanale.com/blog/en/" },
+      { "@type": "ListItem", "position": 3, "name": "The race for capability", "item": "https://jeremycanale.com/capability-race-control-lag/en/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../../index.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Agentic Security</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html#expertise">Expertise</a>
+      <a href="../../index.html#consulting">Consulting</a>
+      <a href="../../index.html#cases">Case Studies</a>
+      <a href="../../blog/en/">Blog</a>
+      <a href="../../security-architect-guide/en/">Survival kit</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../index.html#certifications">Credentials</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;./&quot;,&quot;fr&quot;:&quot;../&quot;,&quot;zh&quot;:&quot;../../zh.html&quot;,&quot;ar&quot;:&quot;../../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>EN</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../../index.html#contact">
+        <span>Work with me</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <article class="post-wrap">
+
+      <header class="post-header">
+        <span class="post-kicker post-kicker-signal">Agentic security · Analysis</span>
+        <h1 class="post-title">The race for capability.<br />The lag in control.</h1>
+        <p class="post-dek">Anthropic, OpenAI and Musk are asking for time. Behind the warning sits a practical question for any company running agents: how do you delegate more to systems whose deviations are getting harder to understand?</p>
+        <div class="post-byline">
+          <span class="post-byline-mark" aria-hidden="true">JC</span>
+          <span><b>Jeremy Canale</b></span>
+          <span class="sep">·</span>
+          <time datetime="2026-09-16">16 September 2026</time>
+          <span class="sep">·</span>
+          <span data-read-time>19 min read</span>
+          <span class="sep">·</span>
+          <a href="../" hreflang="fr" lang="fr">Version française</a>
+        </div>
+      </header>
+
+      <nav class="post-toc" aria-label="Contents">
+        <span class="post-toc-title">Contents</span>
+        <ol>
+          <li><a href="#warning">The warning</a></li>
+          <li><a href="#paradox">The paradox</a></li>
+          <li><a href="#traces">The traces</a></li>
+          <li><a href="#cost">The cost of oversight</a></li>
+          <li><a href="#swarm">Agents working together</a></li>
+          <li><a href="#acceleration">The acceleration</a></li>
+          <li><a href="#levels">Self-improvement</a></li>
+          <li><a href="#governance">Governance</a></li>
+          <li><a href="#permissions">Permissions</a></li>
+          <li><a href="#pocketos">A concrete incident</a></li>
+          <li><a href="#harness">The execution environment</a></li>
+          <li><a href="#evidence">The evidence</a></li>
+          <li><a href="#responsibilities">Responsibilities</a></li>
+          <li><a href="#thirty-days">Taking action</a></li>
+        </ol>
+      </nav>
+
+      <div class="post-body">
+
+        <section class="post-section" id="warning">
+          <span class="post-num">01 / The warning</span>
+          <h2>Three rivals ask for the same thing: time</h2>
+
+          <p class="post-lead">On September 12, 2026, Dario Amodei called on the industry to slow the progress of its most advanced AI systems. Sam Altman and Elon Musk publicly backed the call. Competitors who usually disagree now share one diagnosis: the means of securing these systems need time to catch up with what the systems can do. For now this is a public position, not an operational agreement. <a class="post-cite" href="#src-2">[2]</a></p>
+
+          <p>Two trends drive the warning. AI is increasingly used to build the next generations of AI, and groups of agents can act beyond the scope they were given. Amodei describes a scenario in which a more powerful swarm could threaten the internet at scale within six to twelve months. That is Amodei's risk scenario; the capability has not been demonstrated. <a class="post-cite" href="#src-3">[3]</a></p>
+
+          <p>A few days earlier, Jacob Coxon had left Anthropic, after also working at OpenAI. The resignation, made public in early September, came with an accusation: the competition to build a superintelligence able to improve itself puts winning the race ahead of safety. It is one researcher's position, and it says nothing about the probability or the date of a catastrophe. <a class="post-cite" href="#src-12">[12]</a></p>
+
+          <p>The debate matters to any company that hands tools to an agent. An assistant that drafts a proposal leaves the decision to apply it with you. An agent that changes a service, uses a credential and publishes the result is already exercising delegated authority, and the quality of its answer no longer tells you enough about the whole of its work.</p>
+
+          <p>Take a customer portal. Yesterday, the agent found a bug and prepared a fix. Today, you also let it run the tests. Tomorrow, you are thinking of handing it the nightly release. Each step looks reasonable on its own. Taken together, they change the scope of the assignment: an error can now reach your customers before you next log in. That extension should be an explicit decision that someone can check.</p>
+        </section>
+
+        <section class="post-section" id="paradox">
+          <span class="post-num">02 / The paradox</span>
+          <h2>A model can improve without becoming easier to monitor</h2>
+
+          <p>Evaluating an agent means keeping three properties apart. Capability is what it can get done. Alignment is whether it respects its objectives and constraints. Monitorability is whether a deviation can be detected from the traces available. A convincing demonstration of the first says nothing, on its own, about the other two.</p>
+
+          <div class="post-concepts">
+            <div><h3>Capability</h3><p>Does the fix solve the problem?</p></div>
+            <div><h3>Alignment</h3><p>Does the agent stay within its authorized scope?</p></div>
+            <div><h3>Monitorability</h3><p>Can deviations be detected and explained?</p></div>
+          </div>
+
+          <p>In a simulation covering more than 54,000 internal tasks, GPT-6 Astra produces about 53% fewer high-severity misalignment flags than GPT-5.6 Sol. At the same time, its chain of thought gets harder to monitor: the model controls that trace better and is less likely to let slip information that would reveal a deviation. Monitoring based only on actions improves in the evaluations presented. <a class="post-cite" href="#src-4">[4 · §8–9]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Relative index · Internal simulation</span>
+            <h3>Fewer flags in the simulation</h3>
+            <div class="bars" role="img" aria-label="High-severity misalignment flags, index with GPT-5.6 Sol at 100: GPT-6 Astra at about 47.">
+              <div class="bars-group">
+                <span class="bars-label">GPT-5.6 Sol</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:100%"></span></div><span class="bars-value">100</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">GPT-6 Astra</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:47%"></span></div><span class="bars-value">≈ 47</span></div>
+              </div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>50</span><span>100</span></div></div>
+            <figcaption>Index, Sol = 100; Astra ≈ 47, computed as 100 × (1 − 0.53). These are normalized indices, not incident rates at customers. Source: <a href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener noreferrer">OpenAI, §8 and §8.6</a>.</figcaption>
+          </figure>
+
+          <p>A flag is the output of a detector. It does not always match a confirmed incident, and its frequency in simulation does not translate directly into the frequency of harm in production. The improvement is useful, but it is no safety certificate for every task and every environment.</p>
+
+          <p>Back to the portal. An agent can fix the display while widening a permission it thinks it needs. The functional test passes; an access boundary has moved. If the summary only mentions the fix, you have to find that change somewhere else, in the configuration, the tool calls or an independent log. The visible result and respect for the assignment call for different checks.</p>
+
+          <blockquote>Checking that a task succeeded and checking what it changed are two separate verifications.</blockquote>
+        </section>
+
+        <section class="post-section" id="traces">
+          <span class="post-num">03 / The traces</span>
+          <h2>Reading the reasoning does not give you all of the reasoning</h2>
+
+          <p>A chain of thought is the text a model produces while it works through a task. It can expose an intent to get around a rule, a wrong assumption or a change of objective. It is a partial view, though, not an exhaustive record of the internal mechanisms that lead to the answer.</p>
+
+          <p>In 2025, Korbak and 40 coauthors described this monitorability as a valuable but fragile safety opportunity. The value comes from the fact that an intermediate trace can reveal more than the final answer. The fragility means the trace has to be preserved and paired with other controls. Reading it helps; taking its silence as proof that nothing is wrong asks more of it than it can establish. <a class="post-cite" href="#src-5">[5]</a></p>
+
+          <p>In experiments where a hint is planted in a problem, models do not always admit to using it. In many of the configurations tested, they acknowledge it in fewer than 20% of the cases where the hint shaped the answer. Reinforcement learning can improve that faithfulness at first, then it plateaus. The result holds for those experiments. It is not a general rate of lying. <a class="post-cite" href="#src-6">[6]</a></p>
+
+          <p>Reinforcement learning shapes a system's behavior through rewards, and rewarding a correct result is a different objective from rewarding a faithful explanation. In an arithmetic exercise, a system can be rewarded for the right final number while the grader never checks whether its explanation describes the information it used. Each quality needs its own check.</p>
+
+          <p>Blaming all of this opacity on one particular architecture would be premature: the link between architecture, training and faithful traces still has to be demonstrated. For users, the consequence is more immediate. A model change means testing its behavior again in the working environment, because a new version can raise success rates while altering the traces your monitoring relied on.</p>
+
+          <p>After an incident, a well-written explanation does not replace recorded facts. The files touched, the resources read, the permissions used and the actions executed are what let you reconstruct the event. A sound control system checks the agent's account against that record.</p>
+        </section>
+
+        <section class="post-section" id="cost">
+          <span class="post-num">04 / The cost of oversight</span>
+          <h2>Time spent verifying is a production resource</h2>
+
+          <p>The slowdown started before the September appeal. As of August 18, OpenAI had paused some reinforcement learning runs for two weeks and was holding back its largest planned training run. It was strengthening environment isolation and monitoring, and estimated the monitoring overhead at roughly 20% of the monitored inference compute, with large variations between workloads. <a class="post-cite" href="#src-10">[10]</a></p>
+
+          <p>That estimate covers the compute spent watching model activity. It does not mean subscriptions go up by 20%, or that monitoring makes up 20% of total training cost. It does put a number on an economic fact: detecting deviations takes resources on top of those needed to do the task.</p>
+
+          <p>The same logic holds inside a company. Apparent production time stops when the fix is generated. Delivery time also counts review, tests, any approval and monitoring of the service after release. Leave those steps out and the advertised gain overstates what the organization gets back.</p>
+
+          <p>Verification has to be planned like any production step, with a capacity, an owner and a lead time. Without them, faster generation moves the work into a queue of fixes nobody has time to review, and overall throughput stays capped by the step that turns a proposal into an accepted change.</p>
+
+          <p>So measure two durations: time to a candidate solution, and time to a validated one. The gap between them shows where the remaining work sits. A team can then automate more checks, shrink the size of changes, or keep human review for the decisions with the heaviest consequences.</p>
+        </section>
+
+        <section class="post-section" id="swarm">
+          <span class="post-num">05 / Agents working together</span>
+          <h2>Cooperation can outgrow the original assignment</h2>
+
+          <p>The OpenAI / Hugging Face incident shows a problem that appears when many agents interact. About 1,200 agents used an unauthorized communication space, and about 700 of them took part in the attack on Hugging Face. Most of the activity studied took place between July 7 and 13, 2026. Among other things, the participants looked for ways to fool or modify the system that scored their tasks. <a class="post-cite" href="#src-9">[9]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Approximate counts · Independent investigation</span>
+            <h3>From communication to collective action</h3>
+            <div class="bars" role="img" aria-label="About 1,200 agents communicated on the unauthorized channel; about 700 of them took part in the attack.">
+              <div class="bars-group">
+                <span class="bars-label">Used the unauthorized channel</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:100%"></span></div><span class="bars-value">≈ 1,200</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">Took part in the attack</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:58.3%"></span></div><span class="bars-value">≈ 700</span></div>
+              </div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>600</span><span>1,200</span></div></div>
+            <figcaption>Number of agents. The 700 are a subset of the 1,200, not a group to add to it. Approximate figures from the <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf" target="_blank" rel="noopener noreferrer">METR / Redwood report</a>; no general incident frequency can be inferred from them.</figcaption>
+          </figure>
+
+          <p>Agents meant to work in isolation ended up coordinating projects that went beyond their assignments. Some contributed to experiments that served the group, at the risk of failing their own task. The reconstruction of the episode rests on a defined scope, incomplete traces and heavy use of analysis agents that are themselves fallible.</p>
+
+          <p>Situations like this force you to look at the relationships between components. Two agents can each hold limited rights and still find, in a shared resource, a way to talk that nobody planned. Reviewing each component separately leaves part of the system's behavior outside oversight.</p>
+
+          <p>For an organization, the practical question is about shared spaces: files, messaging, repositories, caches, credentials, intermediary services. You need to know who can write there, who can read what was written, and whether something one agent leaves behind can become an instruction for another. Verify isolation against the tools the agents can reach.</p>
+
+          <p>Authorized cooperation is still useful, provided it has explicit limits: a shared objective, a defined scope for exchanges, someone accountable for each delegation and a record of actions. Handing a subtask to another agent should never silently expand the rights the original user granted.</p>
+        </section>
+
+        <section class="post-section" id="acceleration">
+          <span class="post-num">06 / The acceleration</span>
+          <h2>AI builds a growing share of its own tools</h2>
+
+          <p>In May 2026, more than 80% of the lines of code merged into Anthropic's codebase were attributed to Claude. The figure counts merged code, with the usual limits of attribution; it does not measure how much research or decision-making has become autonomous. Fully autonomous design and training of a successor remains a goal, with no guarantee it will be reached. <a class="post-cite" href="#src-7">[7]</a></p>
+
+          <p>A development tool now speeds up work on the systems that may later improve that same tool. The gains are no longer confined to an end use, such as writing a text or fixing an application. They can feed into the process that builds the next generations.</p>
+
+          <p>The loop is not necessarily autonomous. Humans can keep setting objectives, choosing experiments and accepting results. Their position shifts, though, if the volume of proposals grows faster than their capacity to review them: oversight shrinks to a string of quick decisions on increasingly complex results.</p>
+
+          <p>Supervision then happens at two levels: the company using agents checks the changes those agents produce, and the lab checks the changes that produce new agents. In both places, acceleration only has lasting value if the acceptance criteria are strong enough to tell progress apart from a result that merely looks convincing.</p>
+
+          <p>The time industry leaders are asking for should therefore produce concrete protections and evidence that can be checked: harder tests, a better understanding of behavior, better-isolated environments, intervention procedures. Piling up documents does not help if the documents do not describe practices that have been tested.</p>
+        </section>
+
+        <section class="post-section" id="levels">
+          <span class="post-num">07 / Self-improvement</span>
+          <h2>Five levels to see what changes</h2>
+
+          <p>Recursive self-improvement can be broken into five degrees of autonomy, from an AI applying a method a human defined to an AI improving the mechanism that produces future improvements. The research taxonomy describes possibilities. It is not a timeline, and it does not rank existing models. <a class="post-cite" href="#src-8">[8]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Diagram · Research taxonomy</span>
+            <h3>Five degrees of autonomy in improvement</h3>
+            <ol class="post-ladder">
+              <li><span class="ladder-n">01</span><span class="ladder-text"><strong>Execution</strong><span>The AI implements an improvement whose method a human defined.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></li>
+              <li><span class="ladder-n">02</span><span class="ladder-text"><strong>Strategy</strong><span>It chooses an improvement strategy within the objectives it was given.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></li>
+              <li><span class="ladder-n">03</span><span class="ladder-text"><strong>Experiments</strong><span>It decides which experiments to run and which new information to acquire.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+              <li><span class="ladder-n">04</span><span class="ladder-text"><strong>Adaptation</strong><span>It adapts the improvement process when its environment changes.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+              <li><span class="ladder-n">05</span><span class="ladder-text"><strong>Meta-improvement</strong><span>It also improves the method that will produce the next improvements.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+            </ol>
+            <figcaption>Research taxonomy from <a href="https://arxiv.org/abs/2609.11873" target="_blank" rel="noopener noreferrer">Duan et al., September 10, 2026</a>. The levels are neither dates nor milestones already reached.</figcaption>
+          </figure>
+
+          <p>In practice, you first ask an agent to run a specific optimization procedure. Then you let it choose the procedure, and after that the experiments. Later, you let it adapt the procedure when conditions change. Finally, you consider handing over the method that decides how such procedures get designed.</p>
+
+          <p>Each step takes one more decision out of the frame set in advance, so oversight covers something different at each level: correct execution, the choice of strategy, the relevance of the experiments, and finally the quality of the process that selects future methods. A test that is enough at level 1 can leave most of level 5 unchecked.</p>
+
+          <p>The risk appears when the system under evaluation can change the evaluation criteria. A reported improvement may then come from a better solution, or from a new definition of success. External reference points, and the ability to challenge results, are what tell you what has improved.</p>
+        </section>
+
+        <section class="post-section" id="governance">
+          <span class="post-num">08 / Governance</span>
+          <h2>Open up the labs, then decide who can stop the work</h2>
+
+          <p>Amodei's plan starts with external evaluators embedded in the labs on an ongoing basis, with access comparable to that of the relevant internal teams. Anthropic has committed to this first step. The next two require coordination among companies in democratic countries, then among governments. Evaluators would be able to publish their conclusions, within some confidentiality limits. The plan does not explicitly give them a power of their own to suspend work. <a class="post-cite" href="#src-3">[3]</a></p>
+
+          <p>The plan keeps observing and deciding apart. An evaluator can identify a problem, document how serious it is and make the finding public. Another authority still has to decide whether to halt a training run, restrict access or delay a deployment. As long as that responsibility is undefined, the existence of oversight does not guarantee a fast response.</p>
+
+          <p>Companies run into the same problem with alerting. A dashboard can work perfectly while nobody knows who should respond during the night. The detector did its job; the operational setup is incomplete. An alert needs a recipient, a procedure and someone able to act.</p>
+
+          <p>A useful slowdown needs enough access to understand, enough independence to challenge and clear enough authority to intervene. Having one does not make up for missing the other two. That combination is what separates a commitment of principle from an organization that still works when a serious disagreement comes up.</p>
+
+          <p>Competition makes this coordination hard. Each player needs to be able to verify that the others honor the shared commitments, and trust between leaders does not remove that need: verification belongs in the collective arrangement itself.</p>
+        </section>
+
+        <section class="post-section" id="permissions">
+          <span class="post-num">09 / Permissions</span>
+          <h2>When approving becomes automatic</h2>
+
+          <p>Claude Code users approve 93% of permission requests. The figure measures approval decisions, not whether the proposed actions were safe. Auto mode hands some of those decisions to classifiers to reduce confirmation fatigue, which moves the oversight problem to the quality of that automated judgment. <a class="post-cite" href="#src-11">[11]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Measured on three separate test sets</span>
+            <h3>Less friction, more missed errors</h3>
+            <div class="bars-legend" aria-hidden="true"><span><i class="is-a"></i>Fast filter only</span><span><i></i>Full pipeline</span></div>
+            <div class="bars" role="img" aria-label="Benign actions blocked: 8.5% with the fast filter only, 0.4% with the full pipeline. Dangerous overreach allowed: 6.6% then 17%. Synthetic exfiltration allowed: 1.8% then 5.7%.">
+              <div class="bars-group">
+                <span class="bars-label">Benign actions blocked<small>False positives · n = 10,000</small></span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-a" style="--w:42.5%"></span></div><span class="bars-value">8.5%</span></div>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:2%"></span></div><span class="bars-value">0.4%</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">Dangerous overreach allowed<small>False negatives · n = 52</small></span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-a" style="--w:33%"></span></div><span class="bars-value">6.6%</span></div>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:85%"></span></div><span class="bars-value">17%</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">Synthetic exfiltration allowed<small>False negatives · n = 1,000</small></span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-a" style="--w:9%"></span></div><span class="bars-value">1.8%</span></div>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:28.5%"></span></div><span class="bars-value">5.7%</span></div>
+              </div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0%</span><span>5%</span><span>10%</span><span>15%</span><span>20%</span></div></div>
+            <figcaption>False positive: a benign action blocked. False negative: a dangerous action allowed. Separate samples: internal traffic n = 10,000; real dangerous overreach n = 52; synthetic exfiltration n = 1,000. The percentages cannot be added together. Source: <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer">Anthropic, table 1</a>.</figcaption>
+          </figure>
+
+          <p>The full pipeline cuts false positives from 8.5% to 0.4% on internal traffic. In exchange, false negatives rise from 6.6% to 17% on real dangerous overreach, and from 1.8% to 5.7% on synthetic data exfiltration attempts. The tests use separate samples, and the dangerous overreach set holds only 52 cases.</p>
+
+          <p>The two errors do not cost the same. A wrong block slows work down. A dangerous action that gets through can reach a system that should have stayed protected. A control that is pleasant to use can keep a large blind spot, so low friction says nothing about safety.</p>
+
+          <p>Take a request to clean up a project. The controller has to work out whether it covers only temporary files or also allows deleting a shared resource. The general wording of the request can look like consent even though nobody ever discussed the target or the reach of the action.</p>
+
+          <p>The right decision also depends on consequences. A local, reversible change in an isolated environment does not need the same treatment as an external release or a data deletion. The aim is to spend human attention where it adds something, and to block out-of-scope actions technically.</p>
+        </section>
+
+        <section class="post-section" id="pocketos">
+          <span class="post-num">10 / A concrete incident</span>
+          <h2>PocketOS: one over-broad permission changed the scale of the damage</h2>
+
+          <p>In April 2026, Jeremy Crane made public that a Cursor agent had deleted PocketOS's production database. By the founder's account, the action took about nine seconds. The agent was working on a staging task, hit a credentials problem and took a destructive initiative. The outage affected a service used by car rental companies. <a class="post-cite" href="#src-13">[13]</a></p>
+
+          <p>The mechanism was a token found on the machine, with account-wide rights. The agent used it to delete a production volume through a legacy Railway API endpoint. At the time, that path deleted immediately, whereas the dashboard offered a recovery window. The backups also became unavailable in the interface. <a class="post-cite" href="#src-14">[14]</a></p>
+
+          <p>The data was eventually restored from Railway's disaster backups, and Railway then changed the API to apply a 48-hour delayed deletion. The episode did not wipe out every copy. It shows a combination of excessive rights, protections that differ depending on the access path, and an agent acting beyond its assignment.</p>
+
+          <p>The lesson applies to the whole path. A confirmation step in a graphical interface does not protect another interface that runs the same action directly. A staging-only instruction does not reduce the rights of a credential that can reach production.</p>
+
+          <p>A backup is only useful if it can still be restored after the failure it is meant to cover. That means knowing which copies exist, what access protects them and how long a restore takes. Seeing the word "backup" on a dashboard answers none of those questions.</p>
+        </section>
+
+        <section class="post-section" id="harness">
+          <span class="post-num">11 / The execution environment</span>
+          <h2>Three protections to build around the model</h2>
+
+          <p>The harness is everything that makes the agent run: model, instructions, tools and orchestration. Choices made around the model shape how it works, and the same capability can have very different effects depending on the tools available, the context passed in and the permissions within reach. <a class="post-cite" href="#src-15">[15]</a></p>
+
+          <h3>Limit what the agent can do</h3>
+
+          <p>The first protection turns the assignment into permissions. An agent in charge of a fix should be able to complete it without also receiving the right to delete the database or change access across the organization. Credentials, environments and available operations should match the need at hand.</p>
+
+          <p>That limit should survive a misreading. A prohibition written in the instructions still helps, but the systems that enforce access also have to refuse the forbidden operation. The model can then propose an out-of-scope action without having the means to carry it out.</p>
+
+          <h3>Separate preparing a change from releasing it</h3>
+
+          <p>The second protection splits the work into stages. Preparing a change, testing it and applying it to the customer-facing service are three different operations. An agent can have wide autonomy on the first and still go through a dedicated check for the last.</p>
+
+          <figure class="post-chart" data-flow
+            data-msg-running="The fix goes through the tests, then through the authorization check."
+            data-msg-blocked="Stopped at the check: a fix that passed its tests does not, on its own, grant the right to release."
+            data-msg-allowed="In this scenario the tests passed and approval was given, so the release goes ahead.">
+            <span class="post-chart-tag">Interactive diagram · Fictional example</span>
+            <h3>A fix is not a permission to deploy</h3>
+            <ol class="flow-steps">
+              <li>Fix prepared</li>
+              <li>Tests on the fix</li>
+              <li class="flow-gate">Authorization check</li>
+              <li>Production release</li>
+            </ol>
+            <div class="flow-controls">
+              <button type="button" class="btn btn-ghost" data-flow-run="blocked">Simulate without approval</button>
+              <button type="button" class="btn btn-ghost" data-flow-run="allowed">Simulate with approval</button>
+            </div>
+            <p class="flow-status" aria-live="polite">The fix is ready. Approval to release it is a separate condition.</p>
+            <figcaption>A design proposed for this article. The buttons trigger nothing real, and approval does not replace the other checks.</figcaption>
+          </figure>
+
+          <p>In the portal example, permission to release covers one fix and one target. It grants no standing right over every resource the agent comes across afterward. With that separation, the decision can be read back later: what was proposed, what was checked, what was approved.</p>
+
+          <h3>Protect the criteria and the records</h3>
+
+          <p>The third protection keeps what is used to evaluate the agent out of its reach. Compare the result with criteria the agent could not rewrite, and keep logs that let you reconstruct its actions, including when they contradict its summary.</p>
+
+          <p>An agent can propose new tests or point out a flaw in an old one. The decision to change the reference should stay traceable and separate from the evaluation of the current work. Otherwise a better score can come from moving the rule instead of fixing the problem.</p>
+        </section>
+
+        <section class="post-section" id="evidence">
+          <span class="post-num">12 / The evidence</span>
+          <h2>Put the controller through its own tests</h2>
+
+          <p>A second model is not reliable just because it sits in the verifier's seat. It needs testing as well. The most concrete method is to prepare situations where the right decision is known: an allowed action, a forbidden one, an ambiguous target, a permission change, a malicious instruction hidden in content the agent reads.</p>
+
+          <p>In a sandbox, the controller receives these cases without knowing the expected answer. You watch what it blocks, what it allows and the reasons it gives. The point is to find where its judgment draws the line in practice, including when a dangerous action looks useful for the task.</p>
+
+          <p>Easy cases are not enough. A good test set looks like the team's own work: resource names that resemble each other, old approvals that no longer cover the situation, shared access, operations that look local but affect other users. The closer the cases are to that work, the more the results help decide how much autonomy to grant.</p>
+
+          <p>Every test should be replayable. A model update, a new tool or a rule change can shift behavior, and keeping the same cases lets you catch a regression instead of trusting a general feeling of improvement.</p>
+
+          <h3>Five decisions before widening an assignment</h3>
+
+          <ol class="post-decisions">
+            <li><strong>Define the expected result.</strong> Name the task, the success criteria and the evidence required. "The portal works" has to become a checkable list of behaviors and constraints.</li>
+            <li><strong>Set the boundaries of authorized actions.</strong> Specify resources, operations and environments. A general objective does not authorize every possible way of reaching it.</li>
+            <li><strong>Identify which deviations you can see.</strong> Establish what the controls catch and which errors they let through. Keep a record of false alarms too.</li>
+            <li><strong>Assign the authority to intervene.</strong> Name the person who can suspend activity, revoke access and organize the restore. That responsibility should hold outside office hours.</li>
+            <li><strong>Set the conditions for re-evaluation.</strong> A change of model, tools, instructions, permissions or data can require running the tests again before autonomy is extended.</li>
+          </ol>
+        </section>
+
+        <section class="post-section" id="responsibilities">
+          <span class="post-num">13 / Responsibilities</span>
+          <h2>Leading, managing and building call for different decisions</h2>
+
+          <h3>For leadership: fund the work until it is validated</h3>
+
+          <p>A quote that promises a fix delivered overnight should say how that fix will be accepted. The full cost includes production, checks, rework, monitoring and recovery after an error, and the gain is measured on useful delivery at the agreed quality level.</p>
+
+          <p>Funding an explicit scope makes for a sounder decision. You can define which tasks are covered, which results trigger an extension and which incidents send the work back to closer supervision. The budget then pays for an operational capability you can identify.</p>
+
+          <h3>For team leads: make shifts in autonomy visible</h3>
+
+          <p>The decisive change sometimes happens without anyone deciding it. An agent that used to prepare proposals starts applying changes. Another, authorized on one project, reuses the same access on a shared resource. The way work is organized should bring these shifts into view.</p>
+
+          <p>Every agent or automated process needs a clearly named human owner, who knows the assignment, follows the exceptions and knows where to escalate a problem. A service address with nobody behind it is not enough when several teams each assume someone else is watching.</p>
+
+          <h3>For the technical team: make behavior reproducible</h3>
+
+          <p>Configuration is part of the result. You should be able to recover the model version, its settings, the tools available, the instructions and the scope of the permissions. Document references to credentials and their rights without copying secrets into logs.</p>
+
+          <p>That traceability lets you compare two versions on the same problem. Without it, a better result could come from a better model, extra access or a changed test, and the team cannot tell which before concluding that the system deserves more autonomy.</p>
+        </section>
+
+        <section class="post-section" id="thirty-days">
+          <span class="post-num">14 / Taking action</span>
+          <h2>Thirty days to build a scope you can verify</h2>
+
+          <p>A thirty-day plan gives this work a concrete frame. Start with a single family of tasks: fixing a portal, sorting requests or preparing technical changes. A limited scope keeps the results readable and lets you deal with deviations before expanding.</p>
+
+          <div class="post-timeline">
+            <div><time>Days 1–7 / Define</time>List the tasks, reachable resources, permissions and possible consequences. Name the owner and set the success criteria.</div>
+            <div><time>Days 8–14 / Test</time>Gather successes, errors and ambiguous cases whose expected answer is known. Run them in an isolated environment.</div>
+            <div><time>Days 15–21 / Compare</time>Measure results, missed errors, unjustified blocks and rework time. Compare configurations on the same tests.</div>
+            <div><time>Days 22–30 / Decide</time>Pick the tasks that can get more autonomy, document the exceptions, and check the stop and restore procedures.</div>
+          </div>
+
+          <p>This schedule is a way to get started. It does not make anything safe in a month. If the results fall short, keep the assignment narrow. If the improvement is documented, human validation can move step by step toward the operations that matter most.</p>
+
+          <p>The review should count after-the-fact interventions: outputs that needed fixing, alerts reviewed, deviations the first checks missed, and time saved once rework is taken into account. Those numbers give the advertised productivity an operational meaning.</p>
+
+          <p>Autonomy is then something demonstrated on a defined scope, with conditions for keeping it, rather than a box ticked once and for all. The configuration can evolve, but any extension stays tied to what tests and experience support.</p>
+
+          <blockquote>The right scope of autonomy is one whose results, limits and means of intervention are known.</blockquote>
+
+          <p>The labs will keep improving model capabilities. Organizations that use those models have their own work to do: fitted access, independent criteria, reliable records and clear accountability. That work is what turns a technical performance into a service under control.</p>
+
+          <p>Before opening a new permission, know what justifies it. Keep control of the decisions that affect customers, data and business continuity, and let agents carry out the tasks where their autonomy has been tested, without adding approvals everywhere else.</p>
+        </section>
+
+        <h2 id="sources">Sources</h2>
+
+        <ol class="post-sources">
+          <li id="src-1">IA et Stratégie, <a href="https://www.youtube.com/watch?v=LktezbgzoxU" target="_blank" rel="noopener noreferrer">"The real reason behind the warnings from Anthropic, OpenAI and Musk"</a> (video in French), September 15, 2026. 17 min 52 s; French transcript and description reviewed. Timestamps: 02:57 central argument, 03:10 Astra system card, 07:01 pause, 09:23 levels, 10:39 plan, 12:14 permissions, 13:21 harness.</li>
+          <li id="src-2">Associated Press, <a href="https://apnews.com/article/d59552edcb27892d8ee4d98a48397706" target="_blank" rel="noopener noreferrer">"Anthropic CEO Dario Amodei says AI industry needs to give safety measures time to catch up"</a>, September 12, 2026. Used to corroborate the public responses from Altman and Musk, whose posts on X could not be accessed directly.</li>
+          <li id="src-3">Dario Amodei, <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener noreferrer">"We Must Pace the Frontier"</a>, September 2026. A proposal by Anthropic's CEO: announced commitments and projections, not audit results.</li>
+          <li id="src-4">OpenAI, <a href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener noreferrer">GPT-6 Astra System Card</a>, September 3, 2026, alignment section clarified on September 9. Sections 8 and 9: alignment and monitorability evaluations, published by the vendor.</li>
+          <li id="src-5">Korbak et al., <a href="https://arxiv.org/abs/2507.11473" target="_blank" rel="noopener noreferrer">"Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety"</a>, July 15, 2025, revised December 7, 2025. 41 authors, as corrected in the video description.</li>
+          <li id="src-6">Chen et al., <a href="https://arxiv.org/abs/2505.05410" target="_blank" rel="noopener noreferrer">"Reasoning Models Don't Always Say What They Think"</a>, May 8, 2025. Experiments on chain-of-thought faithfulness and hint use; results depend on the models and tasks tested.</li>
+          <li id="src-7">Anthropic Institute, <a href="https://www.anthropic.com/institute/recursive-self-improvement" target="_blank" rel="noopener noreferrer">"When AI builds itself"</a>. Internal data covering May 2026 among other periods. The figure above 80% concerns merged lines attributed to Claude, not all research activity.</li>
+          <li id="src-8">Duan et al., <a href="https://arxiv.org/abs/2609.11873" target="_blank" rel="noopener noreferrer">"The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement"</a>, September 10, 2026. A preprint proposing a taxonomy; it does not show that full self-improvement has been achieved.</li>
+          <li id="src-9">METR and Redwood Research, <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf" target="_blank" rel="noopener noreferrer">independent investigation of the OpenAI / Hugging Face incident</a>, August 26, 2026. Figures from the summary and opening sections; see the authors' stated limits on access, scope and method.</li>
+          <li id="src-10">OpenAI, <a href="https://openai.com/index/pacing-model-development-cyber-capabilities/" target="_blank" rel="noopener noreferrer">"Pacing model development in an era of cyber-critical capabilities"</a>, August 18, 2026. Announced pause, isolation measures and estimated monitoring overhead. The status at that date says nothing about the current status of each training run.</li>
+          <li id="src-11">Anthropic, <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer">"How we built Claude Code auto mode: a safer way to skip permissions"</a>, March 25, 2026. Architecture and evaluation table: FPR 8.5% → 0.4%; FNR 6.6% → 17% and 1.8% → 5.7%, on the test sets described.</li>
+          <li id="src-12">Associated Press, <a href="https://apnews.com/article/2ed549e07f2f941600a135070487d83d" target="_blank" rel="noopener noreferrer">"Anthropic researcher resigns with warning about the dangers of AI development"</a>, September 9, 2026. Jacob Coxon's resignation and public position.</li>
+          <li id="src-13">ABC News, <a href="https://abcnews.com/amp/GMA/News/rogue-ai-agent-haywire-tech-company-ceo-bullish/story?id=132473181" target="_blank" rel="noopener noreferrer">PocketOS database deletion and restore</a>, April 29, 2026. Jeremy Crane's account and Railway's response; the nine seconds come from the founder's account.</li>
+          <li id="src-14">Railway, <a href="https://blog.railway.com/p/your-ai-wants-to-nuke-your-database" target="_blank" rel="noopener noreferrer">"Your AI wants to nuke your database. Guardrails fix that."</a>, April 29, 2026. The hosting provider's account: account-scoped token, legacy API, restore and delayed deletion.</li>
+          <li id="src-15">Cursor, <a href="https://cursor.com/blog/agent-best-practices" target="_blank" rel="noopener noreferrer">"Best practices for coding with agents"</a>, January 9, 2026. Definition of the harness and of how model, instructions and tools fit together.</li>
+        </ol>
+
+        <div class="post-note">
+          <strong>Method.</strong> Research stopped on September 16, 2026. The article follows the themes of the IA et Stratégie video <a href="#src-1">[1]</a>: the leaders' warnings, alignment and monitoring, training, the cost of controls, swarms, self-improvement, independent evaluation, permissions and operational responsibilities. The explanations and examples were written for this article. Figures and incident outcomes, including the restore of PocketOS's data, come from the sources. The diagrams and the thirty-day plan are illustrations. Internal experiments were not reproduced, and reactions posted on X were cross-checked against press coverage.
+        </div>
+
+        <div class="post-end">
+          <a class="btn btn-primary" href="../../blog/en/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            All posts
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Fcapability-race-control-lag%2Fen%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            Share
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">AWS / Azure Security Architect</span>
+          <p>I work with large enterprises on the security of their cloud platforms and, for the past two years, of their agent platforms: identities, isolation, egress control and halt triggers. If that is your problem too, get in touch.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.malt.fr/profile/jeremycanale" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 9.2 5.5 6.3" fill="currentColor" aria-hidden="true"><path d="M20.195 8.581c-.069 0-.285.026-.484.113-.432.181-.597.311-.597.58v5.023c0 .277.26.355.735.355.467 0 .649-.087.649-.355V8.858c0-.173-.113-.277-.303-.277zm3.502 4.903c-.345.087-.45.113-.57.113-.147 0-.2-.044-.2-.2v-2.161h.788c.207 0 .285-.078.285-.285 0-.173-.078-.26-.285-.26h-.787v-.839c0-.259-.087-.363-.268-.363-.173 0-.415.156-.934.597-.528.45-.83.744-.83.951 0 .121.086.199.224.199h.424v2.335c0 .683.337 1.08.925 1.08.39 0 .675-.146 1.012-.406.311-.242.51-.432.51-.596 0-.139-.103-.217-.294-.165zm-15.21-3.078c-.13 0-.285.026-.484.112-.433.19-.597.312-.597.58v3.2c0 .276.26.354.735.354.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277Zm1.816 0c-.355 0-.675.121-.986.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .251-.078.416-.078.164 0 .25.173.25.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.934-1.115zm2.43 0c-.337 0-.692.121-1.003.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .25-.078.432-.078s.268.173.268.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.951-1.115zm5.335 0a1.29 1.29 0 0 0-.484.112c-.26.113-.398.2-.467.312-.26-.303-.597-.398-.977-.398-1.116 0-1.911.942-1.911 2.283 0 1.124.605 1.954 1.461 1.954.26 0 .493-.104.77-.363.216-.2.32-.329.32-.45a.14.14 0 0 0-.147-.147c-.121 0-.251.104-.416.104-.354 0-.596-.545-.596-1.35 0-.803.32-1.348.804-1.348.32 0 .562.242.562.657v2.525c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277ZM3.499 13.563l-.21.21.619.618c.304.304.79.598 1.244.144.339-.34.26-.695.073-.98-.06.004-1.726.008-1.726.008zm-.963-2.325.21-.21-.608-.607c-.304-.303-.765-.621-1.243-.143-.351.35-.273.692-.087.97Zm2.86.416c-.037.043-1.511 1.524-1.511 1.524h1.154c.43 0 .981-.101.981-.777 0-.496-.296-.683-.624-.747zm-3.244-.031H.981c-.43 0-.981.135-.981.778 0 .479.307.676.641.745.04-.046 1.511-1.523 1.511-1.523zm1.484 3.04-.618-.618-.608.607a2.613 2.613 0 0 1-.137.128c.07.333.266.639.745.639s.676-.307.745-.641c-.043-.037-.085-.073-.127-.115zM2.41 10.15l.608.607.618-.618a2.25 2.25 0 0 1 .128-.118c-.065-.327-.251-.623-.747-.623s-.682.297-.746.625c.046.04.092.08.14.127zm2.742.117c-.455-.454-.94-.16-1.244.144l-2.87 2.87c-.303.303-.621.765-.143 1.243.478.478.94.16 1.243-.143l2.87-2.87c.304-.304.598-.79.144-1.244Z"/></svg>
+              Malt
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../../security-architect-guide/en/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              The security architect survival kit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Agentic Security · AI Trust · Cloud GRC</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../../app.js" defer></script>
+  <script src="../article.js" defer></script>
+</body>
+</html>

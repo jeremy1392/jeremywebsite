@@ -15,6 +15,20 @@ window.I18N = {
     },
     brand:  { tag: "Agentic Security" },
     nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", guide: "Survival kit", cta: "Work with me" },
+    /* Long-form analysis. Blog posts are listed newest first: analysis, incident, guide
+       (see blogPosts() in build.js). Each block also gets a home page banner. */
+    analysis: {
+      kicker: "Agentic security · Analysis",
+      date: "16 September 2026",
+      dateISO: "2026-09-16",
+      title: "The race for capability. The lag in control.",
+      desc: "What the warnings from Anthropic, OpenAI and Musk mean for any company delegating work to agents: alignment, monitoring and the scope of autonomy.",
+      note: "Article · 19 min read",
+      cta: "Read the analysis",
+      url: "capability-race-control-lag/en/",
+      cover: "images/capability-race-control-lag-cover-en.jpg",
+      variant: "signal"
+    },
     /* Incident post-mortem. Any locale that declares an `incident` block gets its
        banner on the home page, newest first, above the guide banner. */
     incident: {
@@ -29,7 +43,7 @@ window.I18N = {
       cover: "images/exploitgym-hardening-cover-en.jpg",
       variant: "alert"
     },
-    /* Blog index (blog/en/): listing of the articles, built by build.js from the incident and guide blocks. */
+    /* Blog index (blog/en/): listing of the articles, built by build.js from the analysis, incident and guide blocks. */
     blog: {
       nav: "Blog",
       url: "blog/en/",
@@ -247,6 +261,20 @@ window.I18N = {
     },
     brand:  { tag: "Sécurité Agentique" },
     nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", guide: "Kit de survie", cta: "Collaborer" },
+    /* Analyse longue. Les articles du blog sont listés du plus récent au plus ancien :
+       analysis, incident, guide (voir blogPosts() dans build.js). */
+    analysis: {
+      kicker: "Sécurité agentique · Analyse",
+      date: "16 septembre 2026",
+      dateISO: "2026-09-16",
+      title: "Une course à la puissance. Mais... un retard sur l'alignement",
+      desc: "Ce que les alertes d'Anthropic, d'OpenAI et de Musk changent pour une entreprise qui délègue du travail à des agents : alignement, surveillance et périmètre d'autonomie.",
+      note: "Article · 20 min de lecture",
+      cta: "Lire l'analyse",
+      url: "capability-race-control-lag/",
+      cover: "images/capability-race-control-lag-cover-fr.jpg",
+      variant: "signal"
+    },
     /* Post-mortem d'incident. Toute locale qui déclare un bloc `incident` reçoit son
        bandeau en page d'accueil, le plus récent d'abord, au-dessus du bandeau du kit. */
     incident: {
@@ -261,7 +289,7 @@ window.I18N = {
       cover: "images/exploitgym-hardening-cover-fr.jpg",
       variant: "alert"
     },
-    /* Index du blog (blog/) : liste des articles, construite par build.js à partir des blocs incident et guide. */
+    /* Index du blog (blog/) : liste des articles, construite par build.js à partir des blocs analysis, incident et guide. */
     blog: {
       nav: "Blog",
       url: "blog/",

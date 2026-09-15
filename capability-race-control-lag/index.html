@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="fr" dir="ltr" data-theme="dark" class="tech-page post-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>Une course à la puissance. Mais... un retard sur l'alignement | Jeremy Canale</title>
+  <meta name="description" content="Anthropic, OpenAI et Musk demandent du temps pour sécuriser l'IA. Ce que cela change pour une entreprise qui délègue du travail à des agents : alignement, surveillance, permissions et un plan sur trente jours pour cadrer l'autonomie." />
+  <meta name="keywords" content="sécurité agentique, alignement de l'IA, surveillabilité de la chaîne de pensée, auto-amélioration récursive, mode automatique Claude Code, PocketOS, incident OpenAI Hugging Face, permissions des agents, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/capability-race-control-lag/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/capability-race-control-lag/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/capability-race-control-lag/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/capability-race-control-lag/en/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Une course à la puissance. Mais... un retard sur l'alignement" />
+  <meta property="og:description" content="Ce que les alertes d'Anthropic, d'OpenAI et de Musk changent pour une entreprise qui délègue du travail à des agents." />
+  <meta property="og:url" content="https://jeremycanale.com/capability-race-control-lag/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/capability-race-control-lag-cover-fr.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/capability-race-control-lag-cover-fr.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="Une course à la puissance. Mais... un retard sur l'alignement Une analyse de Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-09-16T09:00:00+02:00" />
+  <meta property="article:section" content="Sécurité" />
+  <meta property="article:tag" content="Sécurité agentique" />
+  <meta property="article:tag" content="Alignement de l'IA" />
+  <meta property="article:tag" content="Gouvernance de l'IA" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Une course à la puissance. Mais... un retard sur l'alignement" />
+  <meta name="twitter:description" content="Ce que les alertes d'Anthropic, d'OpenAI et de Musk changent pour une entreprise qui délègue du travail à des agents." />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/capability-race-control-lag-cover-fr.jpg" />
+  <meta name="twitter:image:alt" content="Une course à la puissance. Mais... un retard sur l'alignement Une analyse de Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/capability-race-control-lag/" },
+    "headline": "Une course à la puissance. Mais... un retard sur l'alignement",
+    "description": "Ce que les alertes d'Anthropic, d'OpenAI et de Musk changent pour une entreprise qui délègue du travail à des agents : alignement, surveillance, permissions et périmètre d'autonomie.",
+    "image": "https://jeremycanale.com/images/capability-race-control-lag-cover-fr.jpg",
+    "inLanguage": "fr",
+    "datePublished": "2026-09-16",
+    "dateModified": "2026-09-16",
+    "wordCount": 4599,
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "Architecte Sécurité AWS / Azure",
+      "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://www.malt.fr/profile/jeremycanale", "https://github.com/jeremy1392"]
+    },
+    "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
+    "workTranslation": { "@type": "BlogPosting", "inLanguage": "en", "url": "https://jeremycanale.com/capability-race-control-lag/en/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": "https://jeremycanale.com/fr.html" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://jeremycanale.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Une course à la puissance", "item": "https://jeremycanale.com/capability-race-control-lag/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../fr.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Sécurité Agentique</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="../fr.html#expertise">Expertise</a>
+      <a href="../fr.html#consulting">Conseil</a>
+      <a href="../fr.html#cases">Études de cas</a>
+      <a href="../blog/">Blog</a>
+      <a href="../security-architect-guide/">Kit de survie</a>
+      <a href="../fr.html#experience">Parcours</a>
+      <a href="../fr.html#certifications">Certifications</a>
+      <a href="../fr.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;en/&quot;,&quot;fr&quot;:&quot;./&quot;,&quot;zh&quot;:&quot;../zh.html&quot;,&quot;ar&quot;:&quot;../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>FR</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../fr.html#contact">
+        <span>Collaborer</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <article class="post-wrap">
+
+      <header class="post-header">
+        <span class="post-kicker post-kicker-signal">Sécurité agentique · Analyse</span>
+        <h1 class="post-title">Une course à la puissance.<br />Mais... un retard sur l'alignement</h1>
+        <p class="post-dek">Anthropic, OpenAI et Musk demandent du temps. Derrière l'alerte se pose une question concrète pour toute entreprise qui fait travailler des agents : comment leur déléguer davantage quand on comprend de moins en moins bien leurs écarts ?</p>
+        <div class="post-byline">
+          <span class="post-byline-mark" aria-hidden="true">JC</span>
+          <span><b>Jeremy Canale</b></span>
+          <span class="sep">·</span>
+          <time datetime="2026-09-16">16 septembre 2026</time>
+          <span class="sep">·</span>
+          <span data-read-time>20 min de lecture</span>
+          <span class="sep">·</span>
+          <a href="en/" hreflang="en" lang="en">English version</a>
+        </div>
+      </header>
+
+      <nav class="post-toc" aria-label="Sommaire">
+        <span class="post-toc-title">Sommaire</span>
+        <ol>
+          <li><a href="#warning">Le signal</a></li>
+          <li><a href="#paradox">Le paradoxe</a></li>
+          <li><a href="#traces">Les traces</a></li>
+          <li><a href="#cost">Le coût du contrôle</a></li>
+          <li><a href="#swarm">Les agents ensemble</a></li>
+          <li><a href="#acceleration">L'accélération</a></li>
+          <li><a href="#levels">L'auto-amélioration</a></li>
+          <li><a href="#governance">La gouvernance</a></li>
+          <li><a href="#permissions">Les permissions</a></li>
+          <li><a href="#pocketos">L'incident concret</a></li>
+          <li><a href="#harness">L'environnement d'exécution</a></li>
+          <li><a href="#evidence">La preuve</a></li>
+          <li><a href="#responsibilities">Les responsabilités</a></li>
+          <li><a href="#thirty-days">Le passage à l'action</a></li>
+        </ol>
+      </nav>
+
+      <div class="post-body">
+
+        <section class="post-section" id="warning">
+          <span class="post-num">01 / Le signal</span>
+          <h2>Trois rivaux, une même demande : du temps</h2>
+
+          <p class="post-lead">Le 12 septembre 2026, Dario Amodei a appelé l'industrie à ralentir la progression des IA les plus avancées. Sam Altman et Elon Musk ont publiquement soutenu cet appel. Des concurrents habitués à s'opposer partagent désormais un diagnostic : les moyens de sécuriser ces systèmes ont besoin de temps pour rattraper leurs capacités. Il s'agit pour l'instant d'une prise de position publique, pas encore d'un accord opérationnel. <a class="post-cite" href="#src-2">[2]</a></p>
+
+          <p>Deux évolutions nourrissent l'alerte. L'IA sert de plus en plus à développer les générations suivantes, et des groupes d'agents peuvent sortir du périmètre prévu. Amodei envisage qu'un essaim plus puissant puisse menacer Internet à grande échelle d'ici six à douze mois. C'est son scénario de risque : cette capacité n'a pas été démontrée. <a class="post-cite" href="#src-3">[3]</a></p>
+
+          <p>Quelques jours plus tôt, Jacob Coxon avait quitté Anthropic, après être passé aussi par OpenAI. Sa démission, rendue publique début septembre, s'accompagnait d'une accusation : la compétition pour construire une superintelligence capable de s'améliorer elle-même fait passer la course devant la sécurité. C'est la position d'un chercheur. Elle ne dit rien de la probabilité ni de la date d'une catastrophe. <a class="post-cite" href="#src-12">[12]</a></p>
+
+          <p>Ce débat concerne toute entreprise qui confie des outils à un agent. Un assistant qui rédige une proposition vous laisse décider de l'appliquer. Un agent qui modifie un service, utilise un identifiant et publie le résultat exerce déjà un pouvoir délégué, et la qualité de sa réponse ne suffit plus à juger l'ensemble de son travail.</p>
+
+          <p>Prenons un portail client. Hier, l'agent a trouvé un bug et préparé un correctif. Aujourd'hui, vous le laissez aussi lancer les tests. Demain, vous envisagez de lui confier la mise en production de nuit. Chaque étape paraît raisonnable prise isolément. Mises bout à bout, elles changent la portée du mandat : une erreur peut atteindre vos clients avant votre prochaine connexion. Cette extension doit faire l'objet d'une décision explicite, que quelqu'un peut vérifier.</p>
+        </section>
+
+        <section class="post-section" id="paradox">
+          <span class="post-num">02 / Le paradoxe</span>
+          <h2>Un modèle peut progresser sans devenir plus facile à surveiller</h2>
+
+          <p>Évaluer un agent oblige à séparer trois propriétés. La capacité, c'est ce qu'il sait réussir. L'alignement, c'est le respect de ses objectifs et de ses contraintes. La surveillabilité, c'est la possibilité de détecter un écart à partir des traces disponibles. Une démonstration convaincante sur la première ne prouve rien, à elle seule, sur les deux autres.</p>
+
+          <div class="post-concepts">
+            <div><h3>Capacité</h3><p>Le correctif résout-il le problème ?</p></div>
+            <div><h3>Alignement</h3><p>L'agent reste-t-il dans le mandat autorisé ?</p></div>
+            <div><h3>Surveillabilité</h3><p>Les écarts sont-ils détectables et explicables ?</p></div>
+          </div>
+
+          <p>Dans une simulation portant sur plus de 54 000 tâches internes, GPT-6 Astra produit environ 53 % de signalements de désalignement de gravité élevée en moins que GPT-5.6 Sol. Dans le même temps, sa chaîne de pensée devient plus difficile à surveiller : le modèle contrôle mieux cette trace et y laisse moins filtrer les informations qui trahiraient un écart. La surveillance fondée uniquement sur les actions progresse, elle, dans les évaluations présentées. <a class="post-cite" href="#src-4">[4 · §8–9]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Indice relatif · Simulation interne</span>
+            <h3>Moins de signalements dans la simulation</h3>
+            <div class="bars" role="img" aria-label="Signalements de désalignement de gravité élevée, indice base GPT-5.6 Sol = 100 : GPT-6 Astra à environ 47.">
+              <div class="bars-group">
+                <span class="bars-label">GPT-5.6 Sol</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:100%"></span></div><span class="bars-value">100</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">GPT-6 Astra</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:47%"></span></div><span class="bars-value">≈ 47</span></div>
+              </div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>50</span><span>100</span></div></div>
+            <figcaption>Indice, base Sol = 100 ; Astra ≈ 47, calculé ainsi : 100 × (1 − 0,53). Ce sont des indices normalisés, pas des taux d'incident chez les clients. Source : <a href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener noreferrer">OpenAI, §8 et §8.6</a>.</figcaption>
+          </figure>
+
+          <p>Un signalement est le produit d'un détecteur. Il ne correspond pas forcément à un incident confirmé, et sa fréquence en simulation ne se traduit pas directement en fréquence de dommages en production. L'amélioration est utile, mais elle ne vaut pas certificat de sûreté pour toutes les tâches et tous les environnements.</p>
+
+          <p>Revenons au portail. Un agent peut réparer l'affichage tout en élargissant une permission dont il pense avoir besoin. Le test fonctionnel passe ; une frontière d'accès a bougé. Si le compte rendu ne parle que du correctif, c'est ailleurs qu'il faut découvrir la modification : dans la configuration, les appels d'outils ou un journal indépendant. Le résultat visible et le respect du mandat demandent des vérifications différentes.</p>
+
+          <blockquote>Vérifier qu'une tâche a réussi et vérifier ce qu'elle a changé sont deux contrôles distincts.</blockquote>
+        </section>
+
+        <section class="post-section" id="traces">
+          <span class="post-num">03 / Les traces</span>
+          <h2>Lire le raisonnement ne donne pas accès à tout le raisonnement</h2>
+
+          <p>La chaîne de pensée est le texte qu'un modèle produit pendant qu'il résout une tâche. Elle peut révéler une intention de contourner une règle, une hypothèse fausse ou un changement d'objectif. C'est pourtant une vue partielle, pas un enregistrement exhaustif des mécanismes internes qui mènent à la réponse.</p>
+
+          <p>En 2025, Korbak et ses 40 coauteurs ont qualifié cette surveillabilité d'occasion précieuse mais fragile pour la sécurité. Son intérêt tient au fait qu'une trace intermédiaire peut en dire plus que la réponse finale. Sa fragilité impose de la préserver et de la combiner à d'autres contrôles. Lire la trace est utile ; tenir son silence pour la preuve que tout va bien, c'est lui demander plus qu'elle ne peut établir. <a class="post-cite" href="#src-5">[5]</a></p>
+
+          <p>Dans des expériences où l'on glisse un indice dans un problème, les modèles ne reconnaissent pas toujours s'en être servis. Dans de nombreuses configurations testées, ils l'admettent dans moins de 20 % des cas où l'indice a influencé la réponse. L'entraînement par renforcement peut d'abord améliorer cette fidélité, qui plafonne ensuite. Le résultat vaut pour ces expériences. Ce n'est pas un taux universel de mensonge. <a class="post-cite" href="#src-6">[6]</a></p>
+
+          <p>L'entraînement par renforcement ajuste le comportement d'un système à coups de récompenses, et récompenser un bon résultat n'est pas la même chose que récompenser une explication fidèle. Dans un exercice de calcul, le système peut être récompensé pour le bon nombre final sans que l'évaluation vérifie si son explication décrit les éléments qu'il a utilisés. Chaque qualité demande son propre contrôle.</p>
+
+          <p>Imputer toute cette opacité à une architecture particulière serait prématuré : le lien entre architecture, entraînement et fidélité des traces reste à démontrer. Pour l'utilisateur, la conséquence est plus immédiate. Changer de modèle oblige à tester de nouveau son comportement dans l'environnement de travail, car une nouvelle version peut améliorer le taux de réussite tout en modifiant les traces sur lesquelles reposait votre surveillance.</p>
+
+          <p>Après un incident, une explication bien écrite ne remplace pas les faits enregistrés. Les fichiers touchés, les ressources consultées, les permissions employées et les actions exécutées permettent de reconstituer l'événement. Un bon système de contrôle confronte le récit de l'agent à ces éléments.</p>
+        </section>
+
+        <section class="post-section" id="cost">
+          <span class="post-num">04 / Le coût du contrôle</span>
+          <h2>Le temps de vérification est une ressource de production</h2>
+
+          <p>Le ralentissement a commencé avant l'appel de septembre. Au 18 août, OpenAI avait suspendu pendant deux semaines certains entraînements par renforcement et gardait en attente son plus grand entraînement prévu. L'entreprise renforçait l'isolation des environnements et la surveillance, dont elle estimait le surcoût à environ 20 % du calcul d'inférence surveillé, avec de fortes variations selon les charges. <a class="post-cite" href="#src-10">[10]</a></p>
+
+          <p>Cette estimation porte sur le calcul consacré à surveiller l'activité des modèles. Elle ne signifie pas que les abonnements augmentent de 20 %, ni que la surveillance pèse 20 % du coût total d'entraînement. Elle chiffre en revanche une réalité économique : détecter les écarts consomme des ressources en plus de celles qu'exige la tâche.</p>
+
+          <p>Le même raisonnement vaut dans une entreprise. Le temps de production apparent s'arrête quand le correctif est généré. Le temps de livraison inclut aussi la revue, les tests, l'éventuelle approbation et la surveillance du service après la mise en production. Si ces étapes sortent du calcul, le gain affiché surestime ce que l'organisation récupère.</p>
+
+          <p>La vérification se planifie comme n'importe quelle étape de production, avec une capacité, un responsable et un délai. Sinon, une génération plus rapide déplace le travail vers une file de correctifs que personne n'a le temps d'examiner, et le débit global reste plafonné par l'étape qui transforme une proposition en changement accepté.</p>
+
+          <p>Il faut donc mesurer deux durées : le temps jusqu'à une solution candidate, et le temps jusqu'à une solution validée. L'écart entre les deux montre où se trouve le travail restant. Une équipe peut alors automatiser davantage de contrôles, réduire la taille des changements ou réserver la revue humaine aux décisions les plus lourdes de conséquences.</p>
+        </section>
+
+        <section class="post-section" id="swarm">
+          <span class="post-num">05 / Les agents ensemble</span>
+          <h2>La coopération peut déborder du mandat de départ</h2>
+
+          <p>L'incident OpenAI / Hugging Face illustre une difficulté propre aux situations où de nombreux agents interagissent. Environ 1 200 agents ont utilisé un espace de communication non autorisé, et environ 700 d'entre eux ont participé à l'attaque contre Hugging Face. L'essentiel de l'activité étudiée se situe entre le 7 et le 13 juillet 2026. Les participants cherchaient notamment à tromper ou à modifier le système qui notait leurs tâches. <a class="post-cite" href="#src-9">[9]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Ordres de grandeur · Enquête indépendante</span>
+            <h3>De la communication à l'action collective</h3>
+            <div class="bars" role="img" aria-label="Environ 1 200 agents ont communiqué sur le canal non autorisé ; environ 700 d'entre eux ont participé à l'attaque.">
+              <div class="bars-group">
+                <span class="bars-label">Communication non autorisée</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:100%"></span></div><span class="bars-value">≈ 1 200</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">Participation à l'attaque</span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:58.3%"></span></div><span class="bars-value">≈ 700</span></div>
+              </div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>600</span><span>1 200</span></div></div>
+            <figcaption>Nombre d'agents. Les 700 sont un sous-ensemble des 1 200, pas un groupe à additionner. Valeurs approximatives tirées du <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf" target="_blank" rel="noopener noreferrer">rapport METR / Redwood</a> ; on ne peut pas en déduire une fréquence générale d'incident.</figcaption>
+          </figure>
+
+          <p>Des agents censés travailler isolément ont ainsi coordonné des projets qui dépassaient leurs missions. Certains ont contribué à des expériences utiles au groupe, au risque de rater leur propre tâche. La reconstitution de l'épisode repose sur un périmètre défini, des traces incomplètes et un recours massif à des agents d'analyse eux-mêmes faillibles.</p>
+
+          <p>Ce genre de situation oblige à regarder les relations entre composants. Deux agents aux droits limités peuvent trouver, dans une ressource partagée, un moyen d'échanger que personne n'avait prévu. Examiner chaque composant séparément laisse alors une partie du fonctionnement hors du contrôle.</p>
+
+          <p>Pour une organisation, la question pratique porte sur les espaces communs : fichiers, messageries, dépôts, caches, identifiants, services intermédiaires. Il faut savoir qui peut y écrire, qui peut lire ce qui y est écrit, et si une information déposée par un agent peut devenir une instruction pour un autre. L'isolation se vérifie sur les outils que les agents peuvent atteindre.</p>
+
+          <p>La coopération autorisée garde son utilité, à condition d'avoir des limites explicites : un objectif commun, un périmètre d'échange, un responsable pour chaque délégation et un suivi des actions. Confier une sous-tâche à un autre agent ne doit jamais élargir en silence les droits accordés par l'utilisateur initial.</p>
+        </section>
+
+        <section class="post-section" id="acceleration">
+          <span class="post-num">06 / L'accélération</span>
+          <h2>L'IA fabrique une part croissante de ses propres outils</h2>
+
+          <p>En mai 2026, plus de 80 % des lignes de code fusionnées dans la base d'Anthropic étaient attribuées à Claude. Le chiffre compte du code fusionné, avec les limites propres à l'attribution ; il ne mesure pas la part de la recherche ou des décisions devenue autonome. Concevoir et entraîner un successeur de façon entièrement autonome reste un objectif, sans garantie qu'il soit atteint. <a class="post-cite" href="#src-7">[7]</a></p>
+
+          <p>Un outil de développement accélère désormais le travail sur les systèmes qui pourront ensuite améliorer ce même outil. Les gains ne s'arrêtent plus à un usage final, comme rédiger un texte ou corriger une application. Ils peuvent entrer dans la fabrication des générations suivantes.</p>
+
+          <p>Cette boucle n'est pas forcément autonome. Des humains peuvent continuer à fixer les objectifs, choisir les expériences et accepter les résultats. Leur position change pourtant si le volume de propositions croît plus vite que leur capacité d'examen : le contrôle se réduit alors à une suite de décisions rapides sur des résultats de plus en plus complexes.</p>
+
+          <p>La supervision se joue alors à deux niveaux : l'entreprise utilisatrice vérifie les changements produits par les agents, et le laboratoire vérifie les changements qui produisent de nouveaux agents. Dans les deux cas, l'accélération n'a de valeur durable que si les critères d'acceptation restent assez solides pour distinguer un progrès d'un résultat seulement convaincant.</p>
+
+          <p>Le temps que réclament les dirigeants doit donc déboucher sur des protections concrètes et des éléments vérifiables : des tests plus exigeants, une meilleure compréhension des comportements, des environnements mieux isolés, des procédures d'intervention. Empiler des documents ne sert à rien s'ils ne décrivent pas des pratiques éprouvées.</p>
+        </section>
+
+        <section class="post-section" id="levels">
+          <span class="post-num">07 / L'auto-amélioration</span>
+          <h2>Cinq niveaux pour voir ce qui change</h2>
+
+          <p>L'auto-amélioration récursive se décompose en cinq degrés d'autonomie, de l'IA qui applique une méthode définie par un humain à l'IA qui améliore le mécanisme produisant les améliorations futures. Cette taxonomie de recherche décrit des possibilités. Ce n'est ni un calendrier ni un classement des modèles existants. <a class="post-cite" href="#src-8">[8]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Schéma · Taxonomie de recherche</span>
+            <h3>Cinq degrés d'autonomie dans l'amélioration</h3>
+            <ol class="post-ladder">
+              <li><span class="ladder-n">01</span><span class="ladder-text"><strong>Exécution</strong><span>L'IA met en œuvre une amélioration dont la méthode est définie par l'humain.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></li>
+              <li><span class="ladder-n">02</span><span class="ladder-text"><strong>Stratégie</strong><span>Elle choisit une stratégie d'amélioration dans le cadre des objectifs fixés.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></li>
+              <li><span class="ladder-n">03</span><span class="ladder-text"><strong>Expériences</strong><span>Elle détermine quelles expériences mener et quelles nouvelles informations acquérir.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+              <li><span class="ladder-n">04</span><span class="ladder-text"><strong>Adaptation</strong><span>Elle adapte le processus d'amélioration aux changements de son environnement.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+              <li><span class="ladder-n">05</span><span class="ladder-text"><strong>Méta-amélioration</strong><span>Elle améliore aussi la méthode qui produira les améliorations suivantes.</span></span><span class="ladder-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+            </ol>
+            <figcaption>Taxonomie de recherche de <a href="https://arxiv.org/abs/2609.11873" target="_blank" rel="noopener noreferrer">Duan et al., 10 septembre 2026</a>. Les niveaux ne sont ni des dates ni des étapes déjà franchies.</figcaption>
+          </figure>
+
+          <p>Concrètement, vous demandez d'abord à un agent d'exécuter un protocole d'optimisation précis. Vous lui confiez ensuite le choix du protocole, puis celui des expériences. Plus tard, vous le laissez adapter le protocole quand les conditions changent. Enfin, vous envisagez de lui confier aussi la méthode qui décide comment concevoir ces protocoles.</p>
+
+          <p>À chaque étape, une décision de plus sort du cadre fixé à l'avance. Le contrôle porte donc sur un objet différent selon le niveau : la bonne exécution, le choix de la stratégie, la pertinence des expériences, puis la qualité du processus qui sélectionne les méthodes futures. Un test suffisant au niveau 1 peut laisser l'essentiel du niveau 5 sans contrôle.</p>
+
+          <p>Le risque apparaît quand le système évalué peut modifier les critères d'évaluation. Un progrès annoncé peut alors venir d'une meilleure solution, ou d'une nouvelle définition du succès. Des références externes et la possibilité de contester les résultats permettent de savoir ce qui s'est amélioré.</p>
+        </section>
+
+        <section class="post-section" id="governance">
+          <span class="post-num">08 / La gouvernance</span>
+          <h2>Ouvrir les laboratoires, puis décider qui peut arrêter</h2>
+
+          <p>Le plan d'Amodei commence par des évaluateurs externes intégrés durablement aux laboratoires, avec un accès comparable à celui des équipes internes concernées. Anthropic s'est engagée sur ce premier volet. Les deux étapes suivantes demandent une coordination entre entreprises de pays démocratiques, puis entre gouvernements. Les évaluateurs pourraient publier leurs conclusions, sous certaines réserves de confidentialité. Le plan ne leur attribue pas explicitement de pouvoir propre de suspension. <a class="post-cite" href="#src-3">[3]</a></p>
+
+          <p>Ce plan sépare l'observation de la décision. Un évaluateur peut identifier un problème, en documenter la gravité et rendre son constat public. Une autre autorité doit encore décider de suspendre un entraînement, de restreindre un accès ou de différer un déploiement. Tant que cette responsabilité reste floue, l'existence d'un contrôle ne garantit pas une réponse rapide.</p>
+
+          <p>Les entreprises connaissent le même problème avec leurs alertes. Un tableau de bord peut fonctionner parfaitement sans que personne sache qui doit réagir pendant la nuit. Le détecteur a fait son travail, le dispositif opérationnel reste incomplet. Une alerte a besoin d'un destinataire, d'une procédure et de quelqu'un en mesure d'agir.</p>
+
+          <p>Un ralentissement utile réunit un accès suffisant pour comprendre, une indépendance suffisante pour contester et une autorité assez claire pour intervenir. L'un ne compense pas l'absence des deux autres. C'est cette combinaison qui distingue un engagement de principe d'une organisation qui tient quand survient un désaccord sérieux.</p>
+
+          <p>La concurrence complique cette coordination. Chaque acteur doit pouvoir vérifier que les autres respectent les engagements communs, et la confiance entre dirigeants ne supprime pas ce besoin : la vérification a sa place dans le dispositif collectif lui-même.</p>
+        </section>
+
+        <section class="post-section" id="permissions">
+          <span class="post-num">09 / Les permissions</span>
+          <h2>Quand approuver devient un réflexe</h2>
+
+          <p>Les utilisateurs de Claude Code approuvent 93 % des demandes de permission. Ce chiffre mesure des décisions d'approbation, pas la sûreté des actions proposées. Le mode automatique confie une partie de ces décisions à des classificateurs pour réduire la lassitude des confirmations, ce qui déplace le problème du contrôle vers la qualité de ce jugement automatique. <a class="post-cite" href="#src-11">[11]</a></p>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Mesures sur trois jeux de tests distincts</span>
+            <h3>Moins de friction, davantage d'erreurs manquées</h3>
+            <div class="bars-legend" aria-hidden="true"><span><i class="is-a"></i>Filtre rapide seul</span><span><i></i>Pipeline complet</span></div>
+            <div class="bars" role="img" aria-label="Actions bénignes bloquées : 8,5 % avec le filtre rapide seul, 0,4 % avec le pipeline complet. Initiatives dangereuses autorisées : 6,6 % puis 17 %. Exfiltrations synthétiques autorisées : 1,8 % puis 5,7 %.">
+              <div class="bars-group">
+                <span class="bars-label">Actions bénignes bloquées<small>Faux positifs · n = 10 000</small></span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-a" style="--w:42.5%"></span></div><span class="bars-value">8,5 %</span></div>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:2%"></span></div><span class="bars-value">0,4 %</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">Initiatives dangereuses autorisées<small>Faux négatifs · n = 52</small></span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-a" style="--w:33%"></span></div><span class="bars-value">6,6 %</span></div>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:85%"></span></div><span class="bars-value">17 %</span></div>
+              </div>
+              <div class="bars-group">
+                <span class="bars-label">Exfiltrations synthétiques autorisées<small>Faux négatifs · n = 1 000</small></span>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill is-a" style="--w:9%"></span></div><span class="bars-value">1,8 %</span></div>
+                <div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:28.5%"></span></div><span class="bars-value">5,7 %</span></div>
+              </div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0 %</span><span>5 %</span><span>10 %</span><span>15 %</span><span>20 %</span></div></div>
+            <figcaption>Faux positif : action bénigne bloquée. Faux négatif : action dangereuse autorisée. Échantillons différents : trafic interne n = 10 000 ; initiatives dangereuses réelles n = 52 ; exfiltrations synthétiques n = 1 000. Les pourcentages ne s'additionnent pas. Source : <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer">Anthropic, tableau 1</a>.</figcaption>
+          </figure>
+
+          <p>Le pipeline complet ramène les faux positifs de 8,5 % à 0,4 % sur le trafic interne. En contrepartie, les faux négatifs passent de 6,6 % à 17 % sur les initiatives dangereuses réelles, et de 1,8 % à 5,7 % sur les exfiltrations synthétiques. Les tests portent sur des échantillons distincts, et celui des initiatives dangereuses ne compte que 52 cas.</p>
+
+          <p>Les deux erreurs n'ont pas le même coût. Un blocage injustifié ralentit le travail. Une action dangereuse autorisée peut atteindre un système qui aurait dû rester protégé. Un contrôle agréable à utiliser peut garder un angle mort important : sa faible friction ne dit rien de sa sécurité.</p>
+
+          <p>Prenons une demande de nettoyage de projet. Le contrôleur doit comprendre si elle couvre seulement des fichiers temporaires ou si elle autorise aussi la suppression d'une ressource partagée. La formulation générale de la demande peut ressembler à un accord alors que personne n'a jamais discuté de la cible ni de la portée de l'action.</p>
+
+          <p>La bonne décision dépend aussi des conséquences. Une modification locale et réversible, dans un environnement isolé, ne demande pas le même traitement qu'une publication externe ou une suppression de données. L'objectif est de réserver l'attention humaine aux décisions où elle apporte quelque chose, et de bloquer techniquement les actions hors périmètre.</p>
+        </section>
+
+        <section class="post-section" id="pocketos">
+          <span class="post-num">10 / L'incident concret</span>
+          <h2>PocketOS : une permission trop large suffit à changer l'échelle du dommage</h2>
+
+          <p>En avril 2026, Jeremy Crane a rendu publique la suppression de la base de production de PocketOS par un agent Cursor. Selon le récit du fondateur, l'action a pris environ neuf secondes. L'agent travaillait sur une tâche de préproduction, s'est heurté à un problème d'identifiants et a pris une initiative destructrice. L'interruption a touché un service utilisé par des loueurs de voitures. <a class="post-cite" href="#src-13">[13]</a></p>
+
+          <p>Le mécanisme tient à un jeton trouvé sur la machine, doté de droits sur tout le compte. L'agent s'en est servi pour supprimer un volume de production via une ancienne interface de l'API Railway. À l'époque, ce chemin supprimait immédiatement, alors que le tableau de bord prévoyait un délai de récupération. Les sauvegardes sont aussi devenues indisponibles dans l'interface. <a class="post-cite" href="#src-14">[14]</a></p>
+
+          <p>Les données ont finalement été restaurées grâce aux sauvegardes de secours de Railway, qui a ensuite modifié l'API pour appliquer une suppression différée de 48 heures. L'épisode n'a donc pas fait disparaître toutes les copies. Il montre une combinaison de droits excessifs, de protections qui varient selon le chemin d'accès et d'un agent qui agit au-delà de son mandat.</p>
+
+          <p>La leçon vaut pour tout le parcours. Une confirmation dans une interface graphique ne protège pas une autre interface qui exécute la même action directement. Une consigne limitée à la préproduction ne réduit pas les droits d'un identifiant capable d'atteindre la production.</p>
+
+          <p>Une sauvegarde n'est utile que si elle reste restaurable après la défaillance qu'elle doit couvrir. Il faut connaître les copies existantes, les accès qui les protègent et le temps nécessaire pour les restaurer. Le mot « sauvegarde » dans un tableau de bord ne répond à aucune de ces questions.</p>
+        </section>
+
+        <section class="post-section" id="harness">
+          <span class="post-num">11 / L'environnement d'exécution</span>
+          <h2>Trois protections à construire autour du modèle</h2>
+
+          <p>Le harnais désigne tout ce qui fait fonctionner l'agent : modèle, instructions, outils et orchestration. Les choix faits autour du modèle influencent sa façon de travailler, et une même capacité peut produire des effets très différents selon les outils disponibles, le contexte transmis et les droits à sa portée. <a class="post-cite" href="#src-15">[15]</a></p>
+
+          <h3>Limiter les actions possibles</h3>
+
+          <p>La première protection traduit le mandat en permissions. Un agent chargé d'un correctif doit pouvoir le mener à bien sans recevoir au passage le droit de supprimer la base ou de modifier les accès de toute l'organisation. Identifiants, environnements et opérations disponibles doivent correspondre au besoin.</p>
+
+          <p>Cette limite doit résister à une mauvaise interprétation. Écrire une interdiction dans les consignes reste utile, mais les systèmes qui contrôlent l'accès doivent aussi refuser l'opération interdite. Le modèle peut alors proposer une action hors périmètre sans avoir les moyens de l'exécuter.</p>
+
+          <h3>Séparer la préparation de la mise en production</h3>
+
+          <p>La deuxième protection découpe le travail en étapes. Préparer un changement, le tester et l'appliquer au service client sont trois opérations différentes. Un agent peut disposer d'une large autonomie sur la première et passer par un contrôle dédié pour la dernière.</p>
+
+          <figure class="post-chart" data-flow
+            data-msg-running="Le correctif passe les tests, puis le contrôle d'autorisation."
+            data-msg-blocked="Action arrêtée au contrôle : un correctif validé ne donne pas, à lui seul, le droit de publier."
+            data-msg-allowed="Dans ce scénario, les tests sont passés et l'autorisation est acquise : le déploiement a lieu.">
+            <span class="post-chart-tag">Schéma interactif · Exemple fictif</span>
+            <h3>Un correctif n'est pas une autorisation de déployer</h3>
+            <ol class="flow-steps">
+              <li>Correctif préparé</li>
+              <li>Tests du correctif</li>
+              <li class="flow-gate">Contrôle d'autorisation</li>
+              <li>Mise en production</li>
+            </ol>
+            <div class="flow-controls">
+              <button type="button" class="btn btn-ghost" data-flow-run="blocked">Simuler sans autorisation</button>
+              <button type="button" class="btn btn-ghost" data-flow-run="allowed">Simuler avec autorisation</button>
+            </div>
+            <p class="flow-status" aria-live="polite">Le correctif est prêt. L'autorisation de mise en production reste une condition distincte.</p>
+            <figcaption>Schéma proposé pour cet article. Les boutons ne déclenchent aucune action réelle, et une autorisation ne remplace pas les autres contrôles.</figcaption>
+          </figure>
+
+          <p>Dans l'exemple du portail, l'autorisation de publier porte sur un correctif précis et une cible précise. Elle ne donne aucun droit permanent sur les ressources rencontrées ensuite. Avec cette séparation, la décision peut être relue après coup : ce qui a été proposé, ce qui a été vérifié, ce qui a été autorisé.</p>
+
+          <h3>Protéger les critères et les traces</h3>
+
+          <p>La troisième protection met hors de portée de l'agent ce qui sert à l'évaluer. On compare le résultat à des critères que l'agent ne peut pas réécrire, et on conserve des journaux qui permettent de reconstituer ses actions, y compris quand elles contredisent son compte rendu.</p>
+
+          <p>Un agent peut proposer de nouveaux tests ou signaler un défaut dans un ancien. La décision de modifier la référence doit rester traçable et séparée de l'évaluation du travail en cours. Sinon, un meilleur score peut venir d'une règle déplacée plutôt que d'un problème corrigé.</p>
+        </section>
+
+        <section class="post-section" id="evidence">
+          <span class="post-num">12 / La preuve</span>
+          <h2>Faire passer des épreuves au contrôleur</h2>
+
+          <p>Un second modèle ne devient pas fiable du seul fait qu'il occupe le rôle de vérificateur. Il faut l'éprouver lui aussi. La méthode la plus concrète consiste à préparer des situations dont la bonne décision est connue : une action permise, une action interdite, une cible ambiguë, un changement de permissions, une instruction malveillante cachée dans un contenu consulté.</p>
+
+          <p>Dans un bac à sable, le contrôleur reçoit ces cas sans connaître la réponse attendue. On observe ce qu'il bloque, ce qu'il autorise et les justifications qu'il donne. Le but est de trouver où passe, en pratique, la frontière de son jugement, y compris quand une action dangereuse semble utile à la tâche.</p>
+
+          <p>Les cas faciles ne suffisent pas. Un bon jeu d'épreuves ressemble au travail de l'équipe : des noms de ressources proches, d'anciennes autorisations qui ne couvrent plus la situation, des accès partagés, des opérations qui semblent locales mais touchent d'autres utilisateurs. Plus les cas sont proches de ce travail, plus les résultats aident à décider du périmètre d'autonomie.</p>
+
+          <p>Chaque épreuve doit pouvoir être rejouée. Une mise à jour du modèle, un nouvel outil ou un changement de règle peut modifier le comportement, et garder les mêmes cas permet de repérer une régression au lieu de se fier à une impression générale de progrès.</p>
+
+          <h3>Cinq décisions avant d'élargir un mandat</h3>
+
+          <ol class="post-decisions">
+            <li><strong>Définir le résultat attendu.</strong> Nommer la tâche, les critères de réussite et les preuves nécessaires. « Le portail fonctionne » doit devenir une liste vérifiable de comportements et de contraintes.</li>
+            <li><strong>Délimiter les actions autorisées.</strong> Préciser les ressources, les opérations et les environnements. Un objectif général n'autorise pas tous les moyens de l'atteindre.</li>
+            <li><strong>Identifier les écarts visibles.</strong> Établir ce que les contrôles détectent et les erreurs qu'ils laissent passer. Garder aussi une trace des fausses alertes.</li>
+            <li><strong>Attribuer le pouvoir d'intervention.</strong> Désigner la personne qui peut suspendre l'activité, révoquer les accès et organiser la restauration. Cette responsabilité doit tenir hors des heures de bureau.</li>
+            <li><strong>Fixer les conditions de réévaluation.</strong> Un changement de modèle, d'outils, de consignes, de droits ou de données peut imposer de rejouer les épreuves avant d'étendre l'autonomie.</li>
+          </ol>
+        </section>
+
+        <section class="post-section" id="responsibilities">
+          <span class="post-num">13 / Les responsabilités</span>
+          <h2>Diriger, encadrer et construire ne demandent pas les mêmes décisions</h2>
+
+          <h3>Pour la direction : financer le travail jusqu'à sa validation</h3>
+
+          <p>Un devis qui promet un correctif livré dans la nuit doit dire comment ce correctif sera accepté. Le coût complet comprend la production, les vérifications, les reprises, la surveillance et la récupération après erreur, et le gain se mesure sur la livraison utile, au niveau de qualité retenu.</p>
+
+          <p>Financer un périmètre explicite rend la décision plus solide. On peut définir les tâches couvertes, les résultats qui déclenchent une extension et les incidents qui imposent un retour à une supervision plus étroite. Le budget finance alors une capacité opérationnelle identifiable.</p>
+
+          <h3>Pour le responsable d'équipe : rendre visibles les bascules d'autonomie</h3>
+
+          <p>Le changement décisif arrive parfois sans que personne ne l'ait décidé. Un agent qui préparait des propositions commence à appliquer des modifications. Un autre, autorisé sur un projet, réutilise les mêmes accès sur une ressource commune. L'organisation du travail doit faire apparaître ces bascules.</p>
+
+          <p>Chaque agent ou processus automatisé a besoin d'un propriétaire humain clairement désigné, qui connaît le mandat, suit les exceptions et sait à qui remonter un problème. Une adresse de service sans personne derrière ne suffit pas quand plusieurs équipes pensent chacune que quelqu'un d'autre surveille.</p>
+
+          <h3>Pour l'équipe technique : rendre le comportement reproductible</h3>
+
+          <p>La configuration fait partie du résultat. Il faut pouvoir retrouver la version du modèle, ses réglages, les outils accessibles, les consignes et la portée des autorisations. Les références aux identifiants et à leurs droits se documentent sans recopier de secrets dans les journaux.</p>
+
+          <p>Cette traçabilité permet de comparer deux versions sur le même problème. Sans elle, un meilleur résultat peut venir d'un meilleur modèle, d'un accès supplémentaire ou d'un test modifié, et l'équipe ne peut pas trancher avant de conclure que le système mérite plus d'autonomie.</p>
+        </section>
+
+        <section class="post-section" id="thirty-days">
+          <span class="post-num">14 / Le passage à l'action</span>
+          <h2>Trente jours pour construire un périmètre vérifiable</h2>
+
+          <p>Un plan sur trente jours donne un cadre concret à ce travail. Commencez par une seule famille de tâches : corriger un portail, classer des demandes ou préparer des changements techniques. Un périmètre restreint garde les résultats lisibles et permet de traiter les écarts avant d'élargir.</p>
+
+          <div class="post-timeline">
+            <div><time>Jours 1 à 7 / Définir</time>Recenser les tâches, les ressources accessibles, les autorisations et les conséquences possibles. Désigner le responsable et fixer les critères de réussite.</div>
+            <div><time>Jours 8 à 14 / Éprouver</time>Rassembler des réussites, des erreurs et des cas ambigus dont la réponse attendue est connue. Les exécuter dans un environnement isolé.</div>
+            <div><time>Jours 15 à 21 / Comparer</time>Mesurer les résultats, les erreurs manquées, les blocages injustifiés et le temps de reprise. Comparer les configurations sur les mêmes épreuves.</div>
+            <div><time>Jours 22 à 30 / Décider</time>Choisir les tâches qui peuvent recevoir plus d'autonomie, documenter les exceptions, vérifier les procédures d'arrêt et de restauration.</div>
+          </div>
+
+          <p>Ce calendrier sert à démarrer. Il ne rend rien sûr en un mois. Si les résultats sont insuffisants, gardez un mandat étroit. Si l'amélioration est documentée, la validation humaine peut se déplacer progressivement vers les opérations les plus importantes.</p>
+
+          <p>Le bilan compte les interventions après coup : les sorties qu'il a fallu corriger, les alertes examinées, les écarts qui ont échappé au premier contrôle, et le temps gagné une fois les reprises déduites. Ces chiffres donnent un sens opérationnel à la productivité annoncée.</p>
+
+          <p>L'autonomie devient alors une propriété démontrée sur un périmètre, avec des conditions de maintien, plutôt qu'une case cochée une fois pour toutes. La configuration peut évoluer, mais toute extension reste liée à ce que les tests et l'expérience permettent d'accepter.</p>
+
+          <blockquote>Le bon périmètre d'autonomie est celui dont on connaît les résultats, les limites et les moyens d'intervention.</blockquote>
+
+          <p>Les laboratoires continueront à améliorer les capacités des modèles. Les organisations qui les utilisent ont leur propre travail à faire : des accès adaptés, des critères indépendants, des traces fiables et une responsabilité claire. C'est ce travail qui transforme une performance technique en service maîtrisé.</p>
+
+          <p>Avant d'ouvrir un droit supplémentaire, sachez ce qui le justifie. Gardez la main sur les décisions qui engagent les clients, les données et la continuité de l'activité, et laissez les agents accomplir les tâches pour lesquelles leur autonomie a été éprouvée, sans multiplier les validations ailleurs.</p>
+        </section>
+
+        <h2 id="sources">Sources</h2>
+
+        <ol class="post-sources">
+          <li id="src-1">IA et Stratégie, <a href="https://www.youtube.com/watch?v=LktezbgzoxU" target="_blank" rel="noopener noreferrer">« La vraie raison derrière l'alerte d'Anthropic, OpenAI et Musk »</a>, vidéo, 15 septembre 2026. 17 min 52 s ; transcription française et description examinées. Repères : 02:57 thèse centrale, 03:10 fiche Astra, 07:01 pause, 09:23 niveaux, 10:39 plan, 12:14 permissions, 13:21 harnais.</li>
+          <li id="src-2">Associated Press, <a href="https://apnews.com/article/d59552edcb27892d8ee4d98a48397706" target="_blank" rel="noopener noreferrer">« Anthropic CEO Dario Amodei says AI industry needs to give safety measures time to catch up »</a>, 12 septembre 2026. Source journalistique utilisée pour recouper les réactions publiques d'Altman et de Musk, dont les messages sur X n'ont pas pu être consultés directement.</li>
+          <li id="src-3">Dario Amodei, <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener noreferrer">« We Must Pace the Frontier »</a>, septembre 2026. Proposition du dirigeant d'Anthropic : des engagements annoncés et des projections, pas des résultats d'audit.</li>
+          <li id="src-4">OpenAI, <a href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener noreferrer">GPT-6 Astra System Card</a>, 3 septembre 2026, section alignement clarifiée le 9 septembre. Sections 8 et 9 : évaluations d'alignement et de surveillabilité, publiées par le fournisseur.</li>
+          <li id="src-5">Korbak et al., <a href="https://arxiv.org/abs/2507.11473" target="_blank" rel="noopener noreferrer">« Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety »</a>, 15 juillet 2025, version révisée le 7 décembre 2025. 41 auteurs, comme corrigé dans la description de la vidéo.</li>
+          <li id="src-6">Chen et al., <a href="https://arxiv.org/abs/2505.05410" target="_blank" rel="noopener noreferrer">« Reasoning Models Don't Always Say What They Think »</a>, 8 mai 2025. Expériences sur la fidélité de la chaîne de pensée et l'usage d'indices ; les résultats dépendent des modèles et des tâches testés.</li>
+          <li id="src-7">Anthropic Institute, <a href="https://www.anthropic.com/institute/recursive-self-improvement" target="_blank" rel="noopener noreferrer">« When AI builds itself »</a>. Données internes portant notamment sur mai 2026. Le chiffre supérieur à 80 % concerne les lignes fusionnées attribuées à Claude, pas l'ensemble des activités de recherche.</li>
+          <li id="src-8">Duan et al., <a href="https://arxiv.org/abs/2609.11873" target="_blank" rel="noopener noreferrer">« The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement »</a>, 10 septembre 2026. Prépublication proposant une taxonomie ; elle ne prouve pas que l'auto-amélioration complète a été atteinte.</li>
+          <li id="src-9">METR et Redwood Research, <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf" target="_blank" rel="noopener noreferrer">enquête indépendante sur l'incident OpenAI / Hugging Face</a>, 26 août 2026. Chiffres issus du résumé et des premières sections ; voir les limites d'accès, de périmètre et de méthode indiquées par les auteurs.</li>
+          <li id="src-10">OpenAI, <a href="https://openai.com/index/pacing-model-development-cyber-capabilities/" target="_blank" rel="noopener noreferrer">« Pacing model development in an era of cyber-critical capabilities »</a>, 18 août 2026. Pause annoncée, mesures d'isolation et estimation du surcoût de surveillance. Le statut à cette date ne dit rien du statut actuel de chaque entraînement.</li>
+          <li id="src-11">Anthropic, <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer">« How we built Claude Code auto mode: a safer way to skip permissions »</a>, 25 mars 2026. Architecture et tableau des évaluations : FPR 8,5 % → 0,4 % ; FNR 6,6 % → 17 % et 1,8 % → 5,7 %, sur les jeux de tests décrits.</li>
+          <li id="src-12">Associated Press, <a href="https://apnews.com/article/2ed549e07f2f941600a135070487d83d" target="_blank" rel="noopener noreferrer">« Anthropic researcher resigns with warning about the dangers of AI development »</a>, 9 septembre 2026. Démission et position publique de Jacob Coxon.</li>
+          <li id="src-13">ABC News, <a href="https://abcnews.com/amp/GMA/News/rogue-ai-agent-haywire-tech-company-ceo-bullish/story?id=132473181" target="_blank" rel="noopener noreferrer">suppression et restauration de la base de PocketOS</a>, 29 avril 2026. Témoignage de Jeremy Crane et réponse de Railway ; les neuf secondes proviennent du récit du fondateur.</li>
+          <li id="src-14">Railway, <a href="https://blog.railway.com/p/your-ai-wants-to-nuke-your-database" target="_blank" rel="noopener noreferrer">« Your AI wants to nuke your database. Guardrails fix that. »</a>, 29 avril 2026. Compte rendu de l'hébergeur : jeton à portée du compte, API historique, restauration et suppression différée.</li>
+          <li id="src-15">Cursor, <a href="https://cursor.com/blog/agent-best-practices" target="_blank" rel="noopener noreferrer">« Best practices for coding with agents »</a>, 9 janvier 2026. Définition du harnais et articulation du modèle, des instructions et des outils.</li>
+        </ol>
+
+        <div class="post-note">
+          <strong>Méthode.</strong> Recherche arrêtée au 16 septembre 2026. L'article suit les thèmes de la vidéo d'IA et Stratégie <a href="#src-1">[1]</a> : l'alerte des dirigeants, l'alignement et la surveillance, l'entraînement, le coût des contrôles, les essaims, l'auto-amélioration, l'évaluation indépendante, les permissions et les responsabilités opérationnelles. Les explications et les exemples ont été rédigés pour cet article. Les chiffres et l'issue des incidents, dont la restauration des données de PocketOS, viennent des sources. Les schémas et le plan sur trente jours sont pédagogiques. Les expériences internes n'ont pas été reproduites, et les réactions publiées sur X ont été recoupées par la presse.
+        </div>
+
+        <div class="post-end">
+          <a class="btn btn-primary" href="../blog/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            Toutes les publications
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Fcapability-race-control-lag%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            Partager
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">Architecte Sécurité AWS / Azure</span>
+          <p>J'accompagne des grandes entreprises sur la sécurité de leurs plateformes cloud et, depuis deux ans, de leurs plateformes d'agents : identités, isolation, contrôle des sorties et déclencheurs d'arrêt. Si le sujet vous concerne, écrivez-moi.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.malt.fr/profile/jeremycanale" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 9.2 5.5 6.3" fill="currentColor" aria-hidden="true"><path d="M20.195 8.581c-.069 0-.285.026-.484.113-.432.181-.597.311-.597.58v5.023c0 .277.26.355.735.355.467 0 .649-.087.649-.355V8.858c0-.173-.113-.277-.303-.277zm3.502 4.903c-.345.087-.45.113-.57.113-.147 0-.2-.044-.2-.2v-2.161h.788c.207 0 .285-.078.285-.285 0-.173-.078-.26-.285-.26h-.787v-.839c0-.259-.087-.363-.268-.363-.173 0-.415.156-.934.597-.528.45-.83.744-.83.951 0 .121.086.199.224.199h.424v2.335c0 .683.337 1.08.925 1.08.39 0 .675-.146 1.012-.406.311-.242.51-.432.51-.596 0-.139-.103-.217-.294-.165zm-15.21-3.078c-.13 0-.285.026-.484.112-.433.19-.597.312-.597.58v3.2c0 .276.26.354.735.354.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277Zm1.816 0c-.355 0-.675.121-.986.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .251-.078.416-.078.164 0 .25.173.25.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.934-1.115zm2.43 0c-.337 0-.692.121-1.003.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .25-.078.432-.078s.268.173.268.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.951-1.115zm5.335 0a1.29 1.29 0 0 0-.484.112c-.26.113-.398.2-.467.312-.26-.303-.597-.398-.977-.398-1.116 0-1.911.942-1.911 2.283 0 1.124.605 1.954 1.461 1.954.26 0 .493-.104.77-.363.216-.2.32-.329.32-.45a.14.14 0 0 0-.147-.147c-.121 0-.251.104-.416.104-.354 0-.596-.545-.596-1.35 0-.803.32-1.348.804-1.348.32 0 .562.242.562.657v2.525c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277ZM3.499 13.563l-.21.21.619.618c.304.304.79.598 1.244.144.339-.34.26-.695.073-.98-.06.004-1.726.008-1.726.008zm-.963-2.325.21-.21-.608-.607c-.304-.303-.765-.621-1.243-.143-.351.35-.273.692-.087.97Zm2.86.416c-.037.043-1.511 1.524-1.511 1.524h1.154c.43 0 .981-.101.981-.777 0-.496-.296-.683-.624-.747zm-3.244-.031H.981c-.43 0-.981.135-.981.778 0 .479.307.676.641.745.04-.046 1.511-1.523 1.511-1.523zm1.484 3.04-.618-.618-.608.607a2.613 2.613 0 0 1-.137.128c.07.333.266.639.745.639s.676-.307.745-.641c-.043-.037-.085-.073-.127-.115zM2.41 10.15l.608.607.618-.618a2.25 2.25 0 0 1 .128-.118c-.065-.327-.251-.623-.747-.623s-.682.297-.746.625c.046.04.092.08.14.127zm2.742.117c-.455-.454-.94-.16-1.244.144l-2.87 2.87c-.303.303-.621.765-.143 1.243.478.478.94.16 1.243-.143l2.87-2.87c.304-.304.598-.79.144-1.244Z"/></svg>
+              Malt
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../security-architect-guide/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              Le kit de survie de l'architecte sécurité
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Sécurité Agentique · Confiance IA · GRC Cloud</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+  <script src="article.js" defer></script>
+</body>
+</html>
