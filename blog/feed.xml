@@ -7,11 +7,11 @@
     <language>fr</language>
     <atom:link href="https://jeremycanale.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SOC et Blue Teaming : deux cas d'usage de l'IA pour les opérations de sécurité</title>
+      <title>SOC et Blue Teaming : deux cas d'usage de l'IA appliquée aux opérations de sécurité</title>
       <link>https://jeremycanale.com/ai-soc-blue/</link>
       <guid isPermaLink="true">https://jeremycanale.com/ai-soc-blue/</guid>
       <pubDate>Thu, 17 Sep 2026 07:00:00 GMT</pubDate>
-      <description>Un agent d'investigation pour le SOC, une chaîne de triage de malware pour la Blue Team, l'architecture de sécurité qui les encadre et une analyse de rentabilité : environ 456 k€ de gain net par an et un retour sur investissement en 10,5 mois dans le scénario modélisé.</description>
+      <description>Accélérer l'investigation SOC sans donner au modèle de pouvoir direct sur la production, et automatiser le triage de malware avec Malcat : architecture de sécurité, limites d'automatisation et analyse économique détaillée.</description>
     </item>
     <item>
       <title>Une course à la puissance. Mais... un retard sur l'alignement</title>
