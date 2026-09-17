@@ -15,7 +15,20 @@ window.I18N = {
     },
     brand:  { tag: "Agentic Security" },
     nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", guide: "Survival kit", cta: "Work with me" },
-    /* Long-form analysis. Blog posts are listed newest first: analysis, incident, guide
+    /* Case study: SOC and Blue Team automation with AI (deck + article). Newest post. */
+    soc: {
+      kicker: "Agentic security",
+      date: "17 September 2026",
+      dateISO: "2026-09-17",
+      title: "SOC and Blue Teaming: two applied AI use cases for security operations",
+      desc: "An investigation agent for the SOC, a malware triage pipeline for the Blue Team, the trust architecture behind both, and a business case: about €456k of net benefit a year and a 10.5-month payback in the modeled scenario.",
+      note: "Case study · 19 min read · PDF, 26 slides",
+      cta: "Read the case study",
+      url: "ai-soc-blue/en/",
+      cover: "images/ai-soc-blue-cover-en.jpg",
+      variant: "alert"
+    },
+    /* Long-form analysis. Blog posts are listed newest first: soc, analysis, incident, guide
        (see blogPosts() in build.js). Each block also gets a home page banner. */
     analysis: {
       kicker: "Agentic security · Analysis",
@@ -261,8 +274,21 @@ window.I18N = {
     },
     brand:  { tag: "Sécurité Agentique" },
     nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", guide: "Kit de survie", cta: "Collaborer" },
+    /* Cas pratique : automatiser le SOC et la Blue Team avec l'IA (deck + article). Article le plus récent. */
+    soc: {
+      kicker: "Sécurité agentique",
+      date: "17 septembre 2026",
+      dateISO: "2026-09-17",
+      title: "SOC et Blue Teaming : deux cas d'usage de l'IA pour les opérations de sécurité",
+      desc: "Un agent d'investigation pour le SOC, une chaîne de triage malware pour la Blue Team, l'architecture de confiance derrière les deux, et un business case : environ 456 k€ de gain net par an et un payback de 10,5 mois dans le scénario modélisé.",
+      note: "Cas pratique · 24 min de lecture · PDF, 26 slides",
+      cta: "Lire le cas pratique",
+      url: "ai-soc-blue/",
+      cover: "images/ai-soc-blue-cover-fr.jpg",
+      variant: "alert"
+    },
     /* Analyse longue. Les articles du blog sont listés du plus récent au plus ancien :
-       analysis, incident, guide (voir blogPosts() dans build.js). */
+       soc, analysis, incident, guide (voir blogPosts() dans build.js). */
     analysis: {
       kicker: "Sécurité agentique · Analyse",
       date: "16 septembre 2026",

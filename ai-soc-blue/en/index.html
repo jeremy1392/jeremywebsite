@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark" class="tech-page post-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>SOC and Blue Teaming: two applied AI use cases for security operations | Jeremy Canale</title>
+  <meta name="description" content="An investigation agent for the SOC and an AI-assisted malware triage pipeline for the Blue Team: trust architecture, automation boundaries and a detailed business case. Ten SOC analysts kept, a Blue Team resized from ten to five, about €456k of net benefit a year and a 10.5-month payback." />
+  <meta name="keywords" content="agentic SOC, AI SOC automation, SOC ROI, Blue Team ROI, business case, prompt injection, Microsoft Sentinel, Defender XDR, Microsoft Foundry, Policy Decision Point, action manifest, Malcat MCP, malware triage, Kesakode, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/ai-soc-blue/en/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/ai-soc-blue/en/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/ai-soc-blue/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/ai-soc-blue/en/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:title" content="SOC and Blue Teaming: two applied AI use cases for security operations" />
+  <meta property="og:description" content="Trust architecture, automation boundaries and a business case for the CISO: the SOC gains capacity, the Blue Team goes from ten to five, with about €456k of net benefit a year." />
+  <meta property="og:url" content="https://jeremycanale.com/ai-soc-blue/en/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/ai-soc-blue-cover-en.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/ai-soc-blue-cover-en.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="SOC and Blue Teaming: automation with AI, by Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-09-17T09:00:00+02:00" />
+  <meta property="article:section" content="Security" />
+  <meta property="article:tag" content="Agentic Security" />
+  <meta property="article:tag" content="SOC" />
+  <meta property="article:tag" content="Prompt injection" />
+  <meta property="article:tag" content="Malware triage" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SOC and Blue Teaming: two applied AI use cases for security operations" />
+  <meta name="twitter:description" content="Two AI use cases for security operations, with the architecture and the business case behind them." />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/ai-soc-blue-cover-en.jpg" />
+  <meta name="twitter:image:alt" content="SOC and Blue Teaming: automation with AI, by Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/ai-soc-blue/en/" },
+    "headline": "SOC and Blue Teaming: two applied AI use cases for security operations",
+    "alternativeHeadline": "Two concrete scenarios, the trust architecture behind them and a detailed CISO business case",
+    "description": "An investigation agent for the SOC and an AI-assisted malware triage pipeline for the Blue Team: trust architecture, automation boundaries and a detailed business case. Ten SOC analysts kept, a Blue Team resized from ten to five, about €456k of net benefit a year and a 10.5-month payback.",
+    "image": "https://jeremycanale.com/images/ai-soc-blue-cover-en.jpg",
+    "inLanguage": "en",
+    "datePublished": "2026-09-17",
+    "dateModified": "2026-09-17",
+    "wordCount": 4381,
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "AWS / Azure Security Architect",
+      "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://www.malt.fr/profile/jeremycanale", "https://github.com/jeremy1392"]
+    },
+    "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
+    "workTranslation": { "@type": "BlogPosting", "inLanguage": "fr", "url": "https://jeremycanale.com/ai-soc-blue/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": "https://jeremycanale.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://jeremycanale.com/blog/en/" },
+      { "@type": "ListItem", "position": 3, "name": "SOC and Blue Teaming: two AI use cases", "item": "https://jeremycanale.com/ai-soc-blue/en/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../../index.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Agentic Security</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html#expertise">Expertise</a>
+      <a href="../../index.html#consulting">Consulting</a>
+      <a href="../../index.html#cases">Case Studies</a>
+      <a href="../../blog/en/">Blog</a>
+      <a href="../../security-architect-guide/en/">Survival kit</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../index.html#certifications">Credentials</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;./&quot;,&quot;fr&quot;:&quot;../&quot;,&quot;zh&quot;:&quot;../../zh.html&quot;,&quot;ar&quot;:&quot;../../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>EN</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../../index.html#contact">
+        <span>Work with me</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <article class="post-wrap">
+
+      <header class="post-header">
+        <span class="post-kicker">Agentic security · Case study</span>
+        <h1 class="post-title">SOC and Blue Teaming: two applied AI use cases for security operations</h1>
+        <p class="post-dek">An investigation agent for the SOC and an AI-assisted malware triage pipeline for the Blue Team: the trust architecture, where the automation stops, and a business case a CISO can defend in front of a CFO.</p>
+        <div class="post-byline">
+          <span class="post-byline-mark" aria-hidden="true">JC</span>
+          <span><b>Jeremy Canale</b></span>
+          <span class="sep">·</span>
+          <time datetime="2026-09-17">17 September 2026</time>
+          <span class="sep">·</span>
+          <span data-read-time>19 min read</span>
+          <span class="sep">·</span>
+          <a href="../" hreflang="fr" lang="fr">Version française</a>
+        </div>
+      </header>
+
+      <div class="post-download">
+        <div class="post-download-text">
+          <span class="post-download-kicker">PDF · 26 slides · 1.9 MB</span>
+          <strong>SOC &amp; Blue Teaming: Automation with AI</strong>
+          <p>The deck behind both use cases: an investigation agent that proposes but never executes, and a Blue Team that hands malware triage to an agent. The 26 slides can be browsed below.</p>
+        </div>
+        <a class="btn btn-primary" href="../../SOC_and_Blue_Teaming_Automation_with_AI_EN.pdf" download="SOC_and_Blue_Teaming_Automation_with_AI_EN.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg> Download the PDF</a>
+      </div>
+
+<div class="deck-carousel deck-carousel-top" id="deck" data-autoplay="1000" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="The twenty-six slides of the case study">
+        <div class="deck-track">
+          <figure class="deck-slide" data-title="SOC &amp; Blue Teaming: Automation with AI"><a href="../../images/ai-soc-blue/en/deck/slide-01.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-01.jpg" width="1100" height="619" alt="Slide 1: SOC and Blue Teaming, automation with AI" /></a></figure>
+          <figure class="deck-slide" data-title="Vocabulary"><a href="../../images/ai-soc-blue/en/deck/slide-02.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-02.jpg" width="1100" height="619" loading="lazy" alt="Slide 2: Vocabulary" /></a></figure>
+          <figure class="deck-slide" data-title="An autonomous AI SOC"><a href="../../images/ai-soc-blue/en/deck/slide-03.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-03.jpg" width="1100" height="619" loading="lazy" alt="Slide 3: An autonomous AI SOC" /></a></figure>
+          <figure class="deck-slide" data-title="An AI agent with production permissions"><a href="../../images/ai-soc-blue/en/deck/slide-04.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-04.jpg" width="1100" height="619" loading="lazy" alt="Slide 4: An AI agent with production permissions" /></a></figure>
+          <figure class="deck-slide" data-title="How a prompt injection can hijack the agent"><a href="../../images/ai-soc-blue/en/deck/slide-05.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-05.jpg" width="1100" height="619" loading="lazy" alt="Slide 5: How a prompt injection can hijack the agent" /></a></figure>
+          <figure class="deck-slide" data-title="The same agent analyzes untrusted data and can act on production"><a href="../../images/ai-soc-blue/en/deck/slide-06.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-06.jpg" width="1100" height="619" loading="lazy" alt="Slide 6: The same agent analyzes untrusted data and can act on production" /></a></figure>
+          <figure class="deck-slide" data-title="Separate reasoning from the power to act"><a href="../../images/ai-soc-blue/en/deck/slide-07.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-07.jpg" width="1100" height="619" loading="lazy" alt="Slide 7: Separate reasoning from the power to act" /></a></figure>
+          <figure class="deck-slide" data-title="Target Azure platform"><a href="../../images/ai-soc-blue/en/deck/slide-08.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-08.jpg" width="1100" height="619" loading="lazy" alt="Slide 8: Target Azure platform" /></a></figure>
+          <figure class="deck-slide" data-title="The agent proposes an action, but never executes it"><a href="../../images/ai-soc-blue/en/deck/slide-09.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-09.jpg" width="1100" height="619" loading="lazy" alt="Slide 9: The agent proposes an action, but never executes it" /></a></figure>
+          <figure class="deck-slide" data-title="Four predefined action tiers"><a href="../../images/ai-soc-blue/en/deck/slide-10.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-10.jpg" width="1100" height="619" loading="lazy" alt="Slide 10: Four predefined action tiers" /></a></figure>
+          <figure class="deck-slide" data-title="Approve one specific action, grant no extra power"><a href="../../images/ai-soc-blue/en/deck/slide-11.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-11.jpg" width="1100" height="619" loading="lazy" alt="Slide 11: Approve one specific action, grant no extra power" /></a></figure>
+          <figure class="deck-slide" data-title="A distinct identity for every agent and every worker"><a href="../../images/ai-soc-blue/en/deck/slide-12.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-12.jpg" width="1100" height="619" loading="lazy" alt="Slide 12: A distinct identity for every agent and every worker" /></a></figure>
+          <figure class="deck-slide" data-title="Disable the agent's capabilities without relying on its runtime"><a href="../../images/ai-soc-blue/en/deck/slide-13.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-13.jpg" width="1100" height="619" loading="lazy" alt="Slide 13: Disable the agent's capabilities without relying on its runtime" /></a></figure>
+          <figure class="deck-slide" data-title="Prompt injection: impact before and after hardening"><a href="../../images/ai-soc-blue/en/deck/slide-14.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-14.jpg" width="1100" height="619" loading="lazy" alt="Slide 14: Prompt injection, impact before and after hardening" /></a></figure>
+          <figure class="deck-slide" data-title="Validation scenarios for the target architecture"><a href="../../images/ai-soc-blue/en/deck/slide-15.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-15.jpg" width="1100" height="619" loading="lazy" alt="Slide 15: Validation scenarios for the target architecture" /></a></figure>
+          <figure class="deck-slide" data-title="Every proposal, decision and execution must be logged"><a href="../../images/ai-soc-blue/en/deck/slide-16.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-16.jpg" width="1100" height="619" loading="lazy" alt="Slide 16: Every proposal, decision and execution must be logged" /></a></figure>
+          <figure class="deck-slide" data-title="AI Blue Teaming: malware triage with Malcat MCP &amp; LLMs"><a href="../../images/ai-soc-blue/en/deck/slide-17.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-17.jpg" width="1100" height="619" loading="lazy" alt="Slide 17: AI Blue Teaming, malware triage with Malcat MCP and LLMs" /></a></figure>
+          <figure class="deck-slide" data-title="The benchmark in numbers"><a href="../../images/ai-soc-blue/en/deck/slide-18.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-18.jpg" width="1100" height="619" loading="lazy" alt="Slide 18: The benchmark in numbers" /></a></figure>
+          <figure class="deck-slide" data-title="Malcat's MCP server in action"><a href="../../images/ai-soc-blue/en/deck/slide-19.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-19.jpg" width="1100" height="619" loading="lazy" alt="Slide 19: Malcat's MCP server in action" /></a></figure>
+          <figure class="deck-slide" data-title="From family identification to threat intelligence context"><a href="../../images/ai-soc-blue/en/deck/slide-20.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-20.jpg" width="1100" height="619" loading="lazy" alt="Slide 20: From family identification to threat intelligence context" /></a></figure>
+          <figure class="deck-slide" data-title="Malware triage: analysis, decision and action"><a href="../../images/ai-soc-blue/en/deck/slide-21.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-21.jpg" width="1100" height="619" loading="lazy" alt="Slide 21: Malware triage, analysis, decision and action" /></a></figure>
+          <figure class="deck-slide" data-title="Targeted or opportunistic attack?"><a href="../../images/ai-soc-blue/en/deck/slide-22.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-22.jpg" width="1100" height="619" loading="lazy" alt="Slide 22: Targeted or opportunistic attack?" /></a></figure>
+          <figure class="deck-slide" data-title="The report received by the Blue Team"><a href="../../images/ai-soc-blue/en/deck/slide-23.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-23.jpg" width="1100" height="619" loading="lazy" alt="Slide 23: The report received by the Blue Team" /></a></figure>
+          <figure class="deck-slide" data-title="In summary"><a href="../../images/ai-soc-blue/en/deck/slide-24.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-24.jpg" width="1100" height="619" loading="lazy" alt="Slide 24: In summary" /></a></figure>
+          <figure class="deck-slide" data-title="Sources"><a href="../../images/ai-soc-blue/en/deck/slide-25.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-25.jpg" width="1100" height="619" loading="lazy" alt="Slide 25: Sources" /></a></figure>
+          <figure class="deck-slide" data-title="Questions &amp; discussion"><a href="../../images/ai-soc-blue/en/deck/slide-26.jpg" target="_blank" rel="noopener"><img src="../../images/ai-soc-blue/en/deck/slide-26.jpg" width="1100" height="619" loading="lazy" alt="Slide 26: Questions and discussion" /></a></figure>
+        </div>
+        <button type="button" class="deck-nav deck-prev" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="deck-nav deck-next" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="deck-bar"><span class="deck-counter" data-counter aria-live="polite">1 / 26</span><span class="deck-title" data-title></span></div>
+      </div>
+
+      <nav class="post-toc" aria-label="In this article">
+        <span class="post-toc-title">In this article</span>
+        <ol>
+          <li><a href="#intro">Two ROI profiles</a></li>
+          <li><a href="#soc">Use case 1: SOC investigation</a></li>
+          <li><a href="#roi-soc">SOC ROI</a></li>
+          <li><a href="#blue">Use case 2: malware triage</a></li>
+          <li><a href="#roi-blue">Blue Team ROI</a></li>
+          <li><a href="#risk">Speed, auditability, banking</a></li>
+          <li><a href="#principles">Shared principles</a></li>
+          <li><a href="#conclusion">What the two cases say</a></li>
+        </ol>
+      </nav>
+
+      <div class="post-body">
+
+        <section class="post-section" id="intro">
+          <span class="post-num">Introduction</span>
+          <h2>Two use cases, two very different ROI profiles</h2>
+
+          <p class="post-lead">The return is visible from the first page, and it is not the same for the two teams. In the banking scenario this article uses, a ten-person generalist SOC costs about €1.02M a year in direct labor and stays at ten: AI gives it capacity, speed and consistency, not a smaller payroll. A ten-person Blue Team costs about €1.36M a year. If close to half of its capacity goes to malware triage and analysis, and automation absorbs most of that first pass, the operating model can be rebuilt around five senior profiles for about €700k a year.</p>
+
+          <p>That gap is worth about €656k a year in direct savings. Against an illustrative €400k build and €200k of annual OPEX for the AI platform, the net recurring benefit comes to about €456k a year, which pays the build back in roughly 10.5 months. Over three years the scenario produces close to €968k of cumulative net benefit, about 97% ROI on platform spend, before putting any value on SOC productivity or on cheaper incidents.</p>
+
+          <div class="post-stats">
+            <div><b>€1.02M</b><span>Per year, ten-person SOC. Team kept; the gain is capacity and speed.</span></div>
+            <div><b>€1.36M</b><span>Per year, ten-person Blue Team before automation.</span></div>
+            <div><b>€0.70M</b><span>Per year, target Blue Team of five senior profiles in the modeled scenario.</span></div>
+            <div><b>10.5 months</b><span>Approximate payback on a €400k build, after €200k of annual OPEX.</span></div>
+          </div>
+
+          <p>Those numbers are not a general promise about AI and headcount. The calculation is deliberately transparent and it depends on the shape of the workload. The SOC is a broad operational function: identity, endpoint, email, cloud, network, escalations, incident coordination, often round-the-clock coverage. The Blue Team in this scenario spends a large share of its time on one far more repeatable process, malware analysis. That structural difference is what produces two different business cases.</p>
+
+          <p>The article shows how two concrete uses, SOC investigation and malware triage, can be designed safely enough to produce operational value, then how that value translates into terms a CISO, a CFO or an investment committee can work with. It is neither a case for replacing analysts with AI nor a productivity pitch.</p>
+
+          <h3>How to read ROI: direct savings, reclaimed capacity and risk reduction</h3>
+
+          <p>Cyber-automation business cases often mix three benefits that do not hit the budget the same way.</p>
+
+          <p>The first is direct budget saving. It exists only when a role is removed and not backfilled or moved into another funded function, or when external spend disappears. In this scenario, resizing the Blue Team from ten to five creates that kind of benefit, provided the workload can be absorbed by the new operating model.</p>
+
+          <p>The second is reclaimed capacity. If ten SOC analysts become 10 to 20% more productive and all ten stay, payroll does not move. The value exists all the same: the team handles more incidents, backlogs shrink, senior analysts get time back and a future hire can be deferred. For many CISOs that is a more realistic SOC benefit than an immediate headcount cut.</p>
+
+          <p>The third is a lower cost of risk. Faster investigation, earlier session revocation or better detection can reduce what a serious breach costs. That value may be larger than the other two, but it is hard to budget cleanly, so it stays out of the core ROI calculation.</p>
+
+          <pre class="post-formula"><b>Annual net benefit</b> = direct savings + avoided hiring + avoided external spend
+                     + monetized reclaimed capacity - platform OPEX
+
+<b>Simple payback</b>     = initial program cost / annual net benefit
+
+<b>3-year ROI</b>         = (cumulative benefits - cumulative costs) / cumulative costs</pre>
+
+          <h3>An important assumption: 50% of malware workload does not mean 50% fewer people</h3>
+
+          <p>A ten-person team that spends half its capacity on malware carries about five FTE of workload on that activity. If automation removes 80% of that work, it frees about four FTE, not five. Reaching a five-person target takes very high automation of the repetitive first pass and a redesign of what remains: validation built into the flow, automated reporting, better prioritization, and retained staff senior enough to absorb the exceptions.</p>
+
+          <div class="post-table-wrap">
+            <table class="post-table">
+              <thead>
+                <tr><th>Share of the malware half automated</th><th class="num">Capacity released, out of 10</th><th>Prudent reading</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="wrap">70%</td><td class="num">3.5 FTE</td><td>A target team of 6 to 7 is more credible.</td></tr>
+                <tr><td class="wrap">80%</td><td class="num">4 FTE</td><td>A team of about 6 may be possible, depending on the residual workload.</td></tr>
+                <tr><td class="wrap">90%</td><td class="num">4.5 FTE</td><td>A 5 to 6 person model becomes plausible if reporting and enrichment are automated too.</td></tr>
+                <tr><td class="wrap">≈ 100% of the repetitive first pass</td><td class="num">≈ 5 FTE</td><td>The five-person target becomes reachable; human expertise still handles the exceptions.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>The 10 to 5 scenario is a target operating model, not an arithmetic rule.</p>
+        </section>
+
+        <section class="post-section" id="soc">
+          <span class="post-num">Use case 1 · SOC</span>
+          <h2>Let an AI agent investigate, correlate and assist SOC analysts</h2>
+
+          <p>The first use case starts from an ordinary operational problem. A security incident rarely lives in one console. An alert can start in Defender for Office 365, get correlated in Microsoft Sentinel, need a look in Defender for Endpoint, then Entra ID sign-in analysis, then threat intelligence enrichment. Analysts rebuild a timeline, decide whether several events belong to the same story, identify the affected systems and identities, and decide what happens next.</p>
+
+          <p>Much of that work is exactly where an LLM helps: reading large volumes of text, surfacing the relevant events, linking entities, summarizing a timeline, proposing hypotheses. The agent can also produce a consistent incident summary and prepare candidate remediation actions.</p>
+
+          <p>For a bank, that does not mean letting the model run the SOC. It means building an environment where the model becomes a very fast software analyst whose authority stops at analysis and proposal.</p>
+
+          <h3>Example: potential credential theft</h3>
+
+          <p>Take an incident that points to credential theft for one user. The investigation has to check the Defender alerts, the Sentinel incident entities, the endpoint timeline, the Entra ID sign-ins, the source IP and the reputation of a few indicators. Several actions are on the table at the end: isolate the device, revoke sessions, quarantine the originating email, block an IOC, open a ServiceNow incident.</p>
+
+          <p>The agent speeds up the analysis because it can query those sources through read-only tools and synthesize what it finds. The risk appears the moment it is also allowed to perform the actions.</p>
+
+          <h3>The efficient design that creates the wrong problem</h3>
+
+          <p>The most direct way to build an autonomous agent is to give it one identity with read rights on the security sources and write permissions on the remediation APIs. The agent reads, reasons and executes. On paper the flow is simple. In practice it collapses two trust levels that should stay apart.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-04-naive-architecture.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-04-naive-architecture.jpg" width="1400" height="788" loading="lazy" alt="Slide 4: the naive architecture, where one SOC agent in Microsoft Foundry reads attacker-controlled signals and holds every production permission through a single privileged Entra identity" />
+            </a>
+            <figcaption>The risky architecture: the same component interprets incident data and holds the permissions to act on production.</figcaption>
+          </figure>
+
+          <p>The problem comes from the nature of the inputs. Emails, command lines, file names, HTTP User-Agent strings, IOCs, even content returned by tools can carry text an attacker chose. Once that content enters the model's context, it can influence the reasoning.</p>
+
+          <p>So an indirect prompt injection does not need to break the model. The attacker only needs to slip in an instruction convincing enough to change what the system does.</p>
+
+          <h3>Attack path: the email becomes a control input</h3>
+
+          <ol class="post-steps">
+            <li><strong>The phishing email is detected.</strong> Defender creates an incident and Sentinel starts the investigation workflow.</li>
+            <li><strong>The agent reads the full content.</strong> Hidden or obfuscated attacker-controlled text enters the same context as the evidence.</li>
+            <li><strong>The instruction shapes the reasoning.</strong> It may ask the model not to isolate the endpoint, to fetch more events, or to send data elsewhere.</li>
+            <li><strong>In a naive architecture, the privileged identity turns the error into an action.</strong> The calls are signed by a legitimate identity; the runtime never had to be compromised.</li>
+          </ol>
+
+          <p>Looking for an LLM that cannot be injected leads nowhere. The trust boundary has to move.</p>
+
+          <div class="post-note post-note-alert"><strong>Principle:</strong> data may influence the model's reasoning. On its own, it must never grant or extend the authority to execute.</div>
+
+          <h3>Separate reasoning, authorization and execution</h3>
+
+          <p>The target architecture has three logical domains. The investigation agent stays read-only and queries Sentinel, Defender, Entra ID and threat intelligence. An action proposal crosses an explicit trust boundary as a structured manifest. A deterministic Policy Decision Point, with no LLM in it, decides whether the proposal is allowed, needs human approval, or is denied.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-07-target-architecture.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-07-target-architecture.jpg" width="1400" height="788" loading="lazy" alt="Slide 7: investigation agent, action manifest, Policy Decision Point, execution broker and action workers, with deterministic response rules and SOC approval" />
+            </a>
+            <figcaption>The agent analyzes and proposes. The Policy Decision Point decides. Specialized workers execute only the authorized actions.</figcaption>
+          </figure>
+
+          <p>Execution authority lives in a separate security domain. The orchestrator accepts valid PDP decisions and nothing else. Each worker has its own identity and the minimum permissions for its one job. For an action the organization wants to make impossible, there is simply no worker.</p>
+
+          <p>This design accepts something important: the model can produce a bad proposal without the system collapsing. The bad proposal becomes an input that policy rejects.</p>
+
+          <h3>The action manifest as a security boundary</h3>
+
+          <p>The manifest is structured data, not natural language. The action comes from a closed enum, the target is typed, the incident is referenced, the evidence references are explicit, and the proposal carries a unique ID and a short expiry. A rationale can be kept for humans, but no free text reaches the execution worker as an instruction.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-09-action-manifest.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-09-action-manifest.jpg" width="1400" height="788" loading="lazy" alt="Slide 9: an example action manifest in JSON on the left, and on the right the eight checks the Policy Decision Point performs: schema, allowlist, target in evidence, verdict, action budget, freshness and single use, asset class, provenance" />
+            </a>
+            <figcaption>An example manifest: what the model proposes on the left, what the PDP verifies on its own on the right.</figcaption>
+          </figure>
+
+          <p>The PDP re-reads the facts that matter with its own identity. It can check that the target belongs to the incident, that the Defender verdict matches the policy, that the asset is not Tier 0, that the rate limits are respected and that the manifest has never been consumed.</p>
+
+          <p>That also protects against the model's confidence claims. An agent may report 0.97 confidence; the number is an assertion. It does not replace a verdict or a fact re-read from a trusted system.</p>
+
+          <blockquote>The model can explain why it proposes an action. It must not become the authority that decides the action is allowed.</blockquote>
+
+          <h3>Human in the loop: approve an action, not the agent</h3>
+
+          <p>For sensitive actions the model prepares the proposal and a human analyst approves it. The approval stays bound to one manifest hash, one target and one short validity window. It never adds a permission to the agent's identity.</p>
+
+          <p>That supports several levels of automation. Limited-impact actions can run automatically. Workstation isolation or session revocation can require stricter deterministic conditions. Disabling an account or acting on a server can require human approval. Critical operations, such as changing Conditional Access, RBAC, PIM, Azure Policy, the detection rules or the PDP itself, can stay out of reach altogether.</p>
+
+          <h3>Why identities matter as much as prompts</h3>
+
+          <p>In an agentic architecture the blast radius comes down to the identity that signs each call. A perfect prompt does not compensate for an overpowered identity, so the reasoning agent, the PDP, the orchestrator and every worker use distinct identities.</p>
+
+          <p>An isolation worker gets only what it needs to isolate a device. A session-revocation worker cannot disable the account. An IOC-blocking worker is limited to one predefined firewall scope. If one component is compromised, the damage is bounded by its own authority.</p>
+
+          <h3>Kill switch: stop the system without asking the model</h3>
+
+          <p>The agent runtime must not control its own shutdown. The design layers three switches: disable the agent identity, cut access to the tools and to new proposals, and disable execution at the orchestrator. A watchdog can also fail closed when the PDP heartbeat disappears.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-13-kill-switch.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-13-kill-switch.jpg" width="1400" height="788" loading="lazy" alt="Slide 13: three independent kill switches, identity, gateway and queue, broker, each with where it lives and who owns it, and the independence test" />
+            </a>
+            <figcaption>Three independent switches. None of them is reachable from the model or the agent runtime.</figcaption>
+          </figure>
+
+          <p>This is a useful architectural test. Even with full control of the prompt, the memory or an MCP server, an attacker should still be unable to re-enable a worker, extend a manifest's lifetime, change the policy or disable the kill switch.</p>
+
+          <h3>Test as if the injection will succeed</h3>
+
+          <p>Validation is a security exercise, not a demonstration of prompt quality. Malicious instructions go into emails, command lines, User-Agent strings, IOCs, MCP tool descriptions and tool responses. Replays, target substitution and fake confidence scores get tested too.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-14-before-after.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-14-before-after.jpg" width="1400" height="788" loading="lazy" alt="Slide 14: the same phishing email before and after hardening; before, the injection reaches production; after, the Policy Decision Point denies the two proposals" />
+            </a>
+            <figcaption>The model can be influenced in both architectures. Only the hardened platform keeps that influence from becoming execution authority.</figcaption>
+          </figure>
+
+          <p>Success does not mean that no injection ever worked. The criterion is that even with the reasoning component compromised, no privileged action fires without passing the independent controls.</p>
+
+          <h3>Observability: denials become detections</h3>
+
+          <p>A well-designed agentic system produces richer telemetry than an execution log. It records the manifest, its hash, the PDP decision, the exact policy rule, the human approver where one was needed, the worker identity and the result from the target system.</p>
+
+          <p>Denials are the most useful part. An agent that keeps requesting a forbidden action, targets an asset absent from the incident, or claims a confidence inconsistent with Defender is a signal in itself. The SOC can detect attempts to influence the automation, not only attacks on the environment.</p>
+        </section>
+
+        <section class="post-section" id="roi-soc">
+          <span class="post-num">ROI · Use case 1</span>
+          <h2>SOC ROI: do not confuse productivity with headcount savings</h2>
+
+          <p>The SOC financial model is deliberately conservative: all ten people stay. The modeled team has four L1 analysts at €55k, three L2 analysts at €68k, two seniors at €84k and one SOC lead at €100k, €692k in fixed salaries. With Eurostat's structure, where non-wage costs are 32.3% of total labor cost in France, direct annual labor cost comes to about €1.02M. <a class="post-cite" href="#src-3">[3]</a></p>
+
+          <p>Microsoft measured an average 22% speed gain and 7% accuracy gain in a randomized trial with 147 security professionals using Copilot for Security on the tested tasks. <a class="post-cite" href="#src-4">[4]</a> Applying 22% to a whole banking SOC would be a stretch. It remains a useful upper reference for the value of reclaimed capacity.</p>
+
+          <div class="post-table-wrap">
+            <table class="post-table">
+              <thead>
+                <tr><th>Net productivity captured</th><th class="num">Annual value on €1.02M</th><th>How to read it</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>10%</td><td class="num">≈ €102k</td><td>Reclaimed analyst capacity, not necessarily an accounting saving.</td></tr>
+                <tr><td>15%</td><td class="num">≈ €153k</td><td>Can absorb alert growth or defer a hire.</td></tr>
+                <tr><td>20%</td><td class="num">≈ €204k</td><td>Material benefit if the workflows are deeply integrated and adopted.</td></tr>
+                <tr><td>22%</td><td class="num">≈ €225k</td><td>Illustrates Microsoft's trial result; not a budget assumption to copy as is.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>The right executive framing separates economic value from cash savings. If all ten analysts stay, €153k of reclaimed capacity does not leave the payroll. If that capacity avoids an eleventh hire, cuts overtime or replaces part of an MSSP contract, some of it becomes budget.</p>
+        </section>
+
+        <section class="post-section" id="blue">
+          <span class="post-num">Use case 2 · Blue Team</span>
+          <h2>Blue Team: delegate malware triage without delegating authority</h2>
+
+          <p>The second use case has a different economic profile because the work is more concentrated. A Blue Team can spend a lot of time on samples: identify the format, inspect the strings, review the anomalies, follow references, check the YARA hits, decompile a few functions, extract IOCs, compare the sample with known families and draft a first report.</p>
+
+          <p>That first pass is technical, and it often follows a repeatable method. A model connected to a specialized analyzer can automate much of the navigation and the synthesis without being handed a general-purpose execution environment.</p>
+
+          <h3>Malcat MCP: give the model analysis tools, not a shell</h3>
+
+          <p>Malcat exposes a set of read and transform tools through MCP. The model can inspect many formats, follow functions, read strings and anomalies, use the YARA results, disassemble, decompile and apply selected static unpackers.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-17-malcat-mcp.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-17-malcat-mcp.jpg" width="1400" height="788" loading="lazy" alt="Slide 17: what the model can do through Malcat's MCP server, the benchmark in numbers (45 tools, under 5 minutes per triage, 9 models by 9 samples, 0 samples executed) and why it fits the architecture" />
+            </a>
+            <figcaption>The model drives Malcat and its static-analysis tools. It gets no general-purpose shell and no arbitrary execution.</figcaption>
+          </figure>
+
+          <p>The constraint matters as much as the capability. In the deck's scenario the agent has no shell, no arbitrary Python and no open Internet access. It does not execute the sample. The model can be strong at analysis without becoming a detonation environment.</p>
+
+          <p>Malcat's benchmark of 18 May 2026 tested nine models and found substantial value in triage, with more mixed results on reverse-engineering-heavy work and unpacking. <a class="post-cite" href="#src-7">[7]</a> Its author states that it is not an academic study. Read it as evidence of feasibility rather than as a staffing guarantee.</p>
+
+          <h3>Kesakode and Malpedia: enrich without over-attributing</h3>
+
+          <p>Kesakode compares a binary's functions against a knowledge base and estimates a probable family. The agent can use that signal to focus on the suspicious functions. Malpedia then adds documented context on families, aliases and the groups historically associated with them.</p>
+
+          <p>That chain calls for caution. Function similarity is not attribution evidence, and a historical association in Malpedia does not prove that this sample belongs to a given actor's campaign. The model's job is to structure those signals for the analyst, not to turn a correlation into a certainty.</p>
+
+          <h3>Keep the sample and the actions inside a controlled pipeline</h3>
+
+          <p>The malware itself is hostile data. The agent must not choose where it is downloaded, sent or executed. The design uses a dedicated quarantine-extraction worker, immutable storage indexed by SHA-256, a read-only mount in the analysis environment and controlled outputs.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-21-malware-triage.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-21-malware-triage.jpg" width="1400" height="788" loading="lazy" alt="Slide 21: the malware triage platform, from the Defender for Office 365 quarantine to the triage agent driving Malcat, the security domain and the allowed destinations" />
+            </a>
+            <figcaption>The agent controls the logical analysis. Extraction, policy decisions and production actions stay inside the security domain.</figcaption>
+          </figure>
+
+          <p>The agent writes a report and requests delivery through a manifest. The report worker has a predefined sender and recipient, and the malware is never attached. Another manifest can propose an IOC block, but policy is evaluated first and a narrowly scoped worker performs the action.</p>
+
+          <h3>Triage does not replace reverse engineering</h3>
+
+          <p>This nuance is essential to the staffing model. AI can automate large parts of the first pass: collecting evidence, navigating the binary, synthesizing, reporting, matching families and signatures. It does not remove the need for experts who can explain an unknown packer, an anti-analysis technique, a new loader, conditional behavior or a targeted campaign.</p>
+
+          <p>Far from five operators validating ChatGPT, the remaining five form a more senior team. They take the hard cases, validate the conclusions that matter, keep detection quality up, improve the prompts and the tools, run threat hunting and step in when the automated workflow falls short.</p>
+        </section>
+
+        <section class="post-section" id="roi-blue">
+          <span class="post-num">ROI · Use case 2</span>
+          <h2>Blue Team ROI: when reclaimed capacity becomes a smaller payroll</h2>
+
+          <p>The initial modeled Blue Team has two detection engineers at €84k, two threat hunters at €90k, two DFIR profiles at €90k, two cloud and endpoint security engineers at €90k, one malware analyst at €95k and one Blue Team lead at €115k. That is €918k of fixed salary, about €1.36M of direct labor cost with the same method.</p>
+
+          <p>The target team keeps one detection engineer, one threat hunter, one DFIR specialist, one malware analyst and reverse engineer, and the Blue Team lead. Fixed salaries total €474k, about €700k of direct labor cost.</p>
+
+          <div class="post-table-wrap">
+            <table class="post-table">
+              <thead>
+                <tr><th>Model</th><th class="num">Headcount</th><th class="num">Fixed salary</th><th class="num">Estimated direct labor cost</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Initial Blue Team</td><td class="num">10</td><td class="num">€918k</td><td class="num">≈ €1.36M</td></tr>
+                <tr><td>Target Blue Team</td><td class="num">5</td><td class="num">€474k</td><td class="num">≈ €700k</td></tr>
+                <tr class="is-total"><td>Difference</td><td class="num">-5</td><td class="num">-€444k</td><td class="num">≈ -€656k / year</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Modeled scenario · direct labor cost · salary / 0.677</span>
+            <h3>Blue Team direct labor cost, before and after</h3>
+            <div class="bars" role="img" aria-label="Direct labor cost per year: initial Blue Team of 10 people, 1.36 million euros; target Blue Team of 5 people, 0.70 million euros.">
+              <div class="bars-group"><span class="bars-label">Initial Blue Team <small>10 people · €918k of fixed salary</small></span><div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:97.1%"></span></div><span class="bars-value">€1.36M</span></div></div>
+              <div class="bars-group"><span class="bars-label">Target Blue Team <small>5 people · €474k of fixed salary</small></span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:50%"></span></div><span class="bars-value">€0.70M</span></div></div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>€0.7M</span><span>€1.4M</span></div></div>
+            <figcaption>Illustrative salaries; the labor cost applies Eurostat's 32.3% non-wage share for France <a class="post-cite" href="#src-3">[3]</a>. The €656k gap is the direct annual saving used below.</figcaption>
+          </figure>
+
+          <h3>Full program ROI</h3>
+
+          <p>The central scenario uses two platform assumptions kept apart from external benchmarks: a €400k initial build and a €200k recurring annual cost. The build covers integration, identities, the PDP, orchestration, workers, observability, testing and industrialization. OPEX is a single envelope for model runtime, infrastructure, operations, monitoring, continuous evaluation and maintenance.</p>
+
+          <div class="post-table-wrap">
+            <table class="post-table">
+              <thead>
+                <tr><th>Item</th><th class="num">Year 1</th><th class="num">Year 2</th><th class="num">Year 3</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Blue Team savings</td><td class="num">+€656k</td><td class="num">+€656k</td><td class="num">+€656k</td></tr>
+                <tr><td>Platform OPEX</td><td class="num">-€200k</td><td class="num">-€200k</td><td class="num">-€200k</td></tr>
+                <tr><td>Initial build</td><td class="num">-€400k</td><td class="num"></td><td class="num"></td></tr>
+                <tr class="is-total"><td>Annual net flow</td><td class="num">+€56k</td><td class="num">+€456k</td><td class="num">+€456k</td></tr>
+                <tr class="is-total"><td>Cumulative</td><td class="num">+€56k</td><td class="num">+€512k</td><td class="num">+€968k</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <figure class="post-chart">
+            <span class="post-chart-tag">Central scenario · €400k build · €200k OPEX a year</span>
+            <h3>Cumulative net benefit over three years</h3>
+            <div class="bars" role="img" aria-label="Cumulative net benefit: 56 thousand euros at the end of year 1, 512 thousand at the end of year 2, 968 thousand at the end of year 3.">
+              <div class="bars-group"><span class="bars-label">End of year 1</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:5.6%"></span></div><span class="bars-value">+€56k</span></div></div>
+              <div class="bars-group"><span class="bars-label">End of year 2</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:51.2%"></span></div><span class="bars-value">+€512k</span></div></div>
+              <div class="bars-group"><span class="bars-label">End of year 3</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:96.8%"></span></div><span class="bars-value">+€968k</span></div></div>
+            </div>
+            <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>€500k</span><span>€1M</span></div></div>
+            <figcaption>€1.0M of program cost over three years (€400k build plus €600k OPEX) against about €1.97M of direct Blue Team savings.</figcaption>
+          </figure>
+
+          <p>Cumulative net benefit reaches about €968k, roughly 97% three-year ROI on program cost. Year 1 is close to break-even because the build is paid that year; years 2 and 3 each add €456k.</p>
+
+          <h3>Sensitivity: what if the reduction is less aggressive?</h3>
+
+          <p>Five people is the target case. A CISO should also test at least two softer variants. If the platform frees only three or four positions, the business case can stay positive with a longer payback.</p>
+
+          <div class="post-table-wrap">
+            <table class="post-table">
+              <thead>
+                <tr><th>Target team</th><th class="num">Indicative annual saving</th><th class="num">After €200k OPEX</th><th>Reading</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>7 people</td><td class="num">≈ €390k</td><td class="num">≈ €190k net</td><td>Positive business case, longer payback.</td></tr>
+                <tr><td>6 people</td><td class="num">≈ €523k</td><td class="num">≈ €323k net</td><td>Material saving while keeping more human capacity.</td></tr>
+                <tr><td>5 people</td><td class="num">≈ €656k</td><td class="num">≈ €456k net</td><td>Target scenario, payback in about 10.5 months.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>This sensitivity matters. The program is not a failure if the organization ends up keeping six people instead of five. The trade-off depends on resilience, malware volume, average sample complexity, on-call requirements and how much critical expertise the bank wants to keep in-house.</p>
+
+          <h3>What the central calculation leaves out</h3>
+
+          <p>The core ROI excludes SOC productivity on purpose. It also excludes reduced MSSP dependence, avoided future hiring, lower overtime and MTTR gains, and it puts no value on a cheaper breach.</p>
+
+          <p>In other words, the calculation is conservative on secondary benefits and aggressive on the Blue Team staffing assumption. That is the most honest way to bring it to an investment committee.</p>
+        </section>
+
+        <section class="post-section" id="risk">
+          <span class="post-num">Context · Banking</span>
+          <h2>For a bank, response speed and auditability have a value too</h2>
+
+          <p>IBM's 2026 report puts the global average cost of a data breach at $4.99M, and around $6.3M for financial services. The same study reports $1.93M of average savings for organizations that make extensive use of AI and automation in security, compared with those that use none. <a class="post-cite" href="#src-5">[5]</a> Those are aggregate observations and cannot be attributed to this architecture.</p>
+
+          <p>They still give a sense of scale. Cutting the time to isolate a compromised endpoint or revoke a stolen session by minutes or hours can be worth far more than the analyst time saved on that single action.</p>
+
+          <p>Financial institutions also work under strict auditability requirements. DORA requires European financial entities to run an ICT incident management process covering detection, management, recording, categorization and classification, and follow-up. <a class="post-cite" href="#src-6">[6]</a> A platform that logs every proposal, policy decision, approval and execution adds governance value on top.</p>
+        </section>
+
+        <section class="post-section" id="principles">
+          <span class="post-num">Both cases</span>
+          <h2>Principles shared by both use cases</h2>
+
+          <div class="post-concepts post-concepts-4">
+            <div><span class="post-concept-n">01</span><h3>Reasoning is not authorization</h3><p>The model can be very good at analysis without being the authority that permits execution.</p></div>
+            <div><span class="post-concept-n">02</span><h3>Tools narrower than natural language</h3><p>Typed actions and specialized workers bound the risk far better than one general-purpose privileged tool.</p></div>
+            <div><span class="post-concept-n">03</span><h3>ROI depends on the shape of the work</h3><p>A generalist SOC mostly gains capacity. A specialist team concentrated on an automatable workflow can be resized.</p></div>
+            <div><span class="post-concept-n">04</span><h3>Human expertise moves up the stack</h3><p>People move away from repetitive first-pass work and toward deep investigation, governance, threat hunting and detection design.</p></div>
+          </div>
+        </section>
+
+        <section class="post-section" id="conclusion">
+          <span class="post-num">Conclusion</span>
+          <h2>The value depends on the work you automate</h2>
+
+          <p>These two cases show why "AI in cybersecurity" is too broad a category. The value depends on the type of work being automated.</p>
+
+          <p>In the SOC, AI mostly multiplies what ten analysts can do: better correlation, faster investigation, more consistent summaries, less time spent hopping between consoles. The team stays at ten because its value also comes from breadth of coverage and from handling the unexpected.</p>
+
+          <p>In the Blue Team the workload can look different. If five FTE go to malware triage and most of that first pass becomes automatable, the operating model can be rebuilt around five more senior people. That is where reclaimed capacity turns into direct budget savings.</p>
+
+          <p>The economic incentive should never lead to giving the model more authority than it needs. The more automation matters, the more it matters to separate reasoning from execution, to re-validate critical facts independently, to isolate identities and to keep external kill switches.</p>
+
+          <figure class="post-figure">
+            <a href="../../images/ai-soc-blue/en/slide-24-summary.jpg" target="_blank" rel="noopener">
+              <img src="../../images/ai-soc-blue/en/slide-24-summary.jpg" width="1400" height="788" loading="lazy" alt="Slide 24: the four decisions in summary, read-only reasoning, deterministic policy, approve transactions, authority outside the runtime" />
+            </a>
+            <figcaption>The shared principle: read-only reasoning, deterministic authorization, precise approval when needed, and execution authority kept apart.</figcaption>
+          </figure>
+
+          <blockquote>The goal is not an agent that never makes a mistake. It is an architecture where a model's mistake stays an analysis mistake and never becomes a privileged action on its own.</blockquote>
+        </section>
+
+        <h2 id="sources">Sources, method and assumptions</h2>
+
+        <ol class="post-sources">
+          <li id="src-1"><strong>Source deck, SOC &amp; Blue Teaming: Automation with AI.</strong> The architectures, prompt-injection scenarios, action manifests, PDP, identities, kill switches, validation scenarios and the Malcat and Kesakode use case come from the author's case study, downloadable above.</li>
+          <li id="src-2"><strong>Robert Half, 2026 Paris salary guide.</strong> Cybersecurity expert: €54,600 to €84,000, median €68,250; CISO median €136,500. <a href="https://www.roberthalf.com/fr/fr/details-emploi/expert-cybersecurite/paris" target="_blank" rel="noopener noreferrer">Source</a>.</li>
+          <li id="src-3"><strong>Eurostat, hourly labour costs, 2025 data published on 31 March 2026.</strong> Non-wage costs are 32.3% of total labour costs in France. The "salary / 0.677" calculation used here is a modeling approximation, not payroll accounting. <a href="https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/23015.pdf" target="_blank" rel="noopener noreferrer">Source</a>.</li>
+          <li id="src-4"><strong>Microsoft Office of the Chief Economist.</strong> Controlled study with 147 security professionals: 22% faster and 7% more accurate with Copilot for Security on the tested tasks. <a href="https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/" target="_blank" rel="noopener noreferrer">Source</a>.</li>
+          <li id="src-5"><strong>IBM, Cost of a Data Breach 2026.</strong> Global average: $4.99M; IBM also reports $1.93M of average savings associated with extensive use of AI and automation in security. <a href="https://www.ibm.com/reports/data-breach" target="_blank" rel="noopener noreferrer">Report</a>.</li>
+          <li id="src-6"><strong>DORA, Regulation (EU) 2022/2554.</strong> Article 17: ICT-related incident management process. <a href="https://eur-lex.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener noreferrer">EUR-Lex</a>.</li>
+          <li id="src-7"><strong>Malcat, 18 May 2026.</strong> "Benchmarking LLMs for malware triage and static unpacking with Malcat". The author states that it is not an academic scientific benchmark. <a href="https://malcat.fr/blog/benchmarking-llms-for-malware-triage-and-static-unpacking-with-malcat/" target="_blank" rel="noopener noreferrer">Source</a>.</li>
+        </ol>
+
+        <p class="post-note"><strong>Business-case assumptions.</strong> The exact team composition, the role-level salaries, the 50% malware share of the Blue Team workload, the move from 10 to 5 people, the €400k build and the €200k annual OPEX are illustrative scenario assumptions. Replace them with the organization's own data before any decision. The diagrams from the deck are conceptual architectures proposed by the author, not Microsoft reference architectures.</p>
+
+        <div class="post-end">
+          <a class="btn btn-primary" href="../../SOC_and_Blue_Teaming_Automation_with_AI_EN.pdf" download="SOC_and_Blue_Teaming_Automation_with_AI_EN.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg>
+            Download the case study (PDF, 26 slides)
+          </a>
+          <a class="btn btn-ghost" href="../../blog/en/">All posts</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Fai-soc-blue%2Fen%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            Share
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">AWS / Azure Security Architect</span>
+          <p>I work with large enterprises on the security of their cloud platforms and, for the past two years, of their agent platforms: identities, isolation, egress control and halt triggers. If that is your problem too, get in touch.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.malt.fr/profile/jeremycanale" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 9.2 5.5 6.3" fill="currentColor" aria-hidden="true"><path d="M20.195 8.581c-.069 0-.285.026-.484.113-.432.181-.597.311-.597.58v5.023c0 .277.26.355.735.355.467 0 .649-.087.649-.355V8.858c0-.173-.113-.277-.303-.277zm3.502 4.903c-.345.087-.45.113-.57.113-.147 0-.2-.044-.2-.2v-2.161h.788c.207 0 .285-.078.285-.285 0-.173-.078-.26-.285-.26h-.787v-.839c0-.259-.087-.363-.268-.363-.173 0-.415.156-.934.597-.528.45-.83.744-.83.951 0 .121.086.199.224.199h.424v2.335c0 .683.337 1.08.925 1.08.39 0 .675-.146 1.012-.406.311-.242.51-.432.51-.596 0-.139-.103-.217-.294-.165zm-15.21-3.078c-.13 0-.285.026-.484.112-.433.19-.597.312-.597.58v3.2c0 .276.26.354.735.354.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277Zm1.816 0c-.355 0-.675.121-.986.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .251-.078.416-.078.164 0 .25.173.25.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.934-1.115zm2.43 0c-.337 0-.692.121-1.003.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .25-.078.432-.078s.268.173.268.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.951-1.115zm5.335 0a1.29 1.29 0 0 0-.484.112c-.26.113-.398.2-.467.312-.26-.303-.597-.398-.977-.398-1.116 0-1.911.942-1.911 2.283 0 1.124.605 1.954 1.461 1.954.26 0 .493-.104.77-.363.216-.2.32-.329.32-.45a.14.14 0 0 0-.147-.147c-.121 0-.251.104-.416.104-.354 0-.596-.545-.596-1.35 0-.803.32-1.348.804-1.348.32 0 .562.242.562.657v2.525c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277ZM3.499 13.563l-.21.21.619.618c.304.304.79.598 1.244.144.339-.34.26-.695.073-.98-.06.004-1.726.008-1.726.008zm-.963-2.325.21-.21-.608-.607c-.304-.303-.765-.621-1.243-.143-.351.35-.273.692-.087.97Zm2.86.416c-.037.043-1.511 1.524-1.511 1.524h1.154c.43 0 .981-.101.981-.777 0-.496-.296-.683-.624-.747zm-3.244-.031H.981c-.43 0-.981.135-.981.778 0 .479.307.676.641.745.04-.046 1.511-1.523 1.511-1.523zm1.484 3.04-.618-.618-.608.607a2.613 2.613 0 0 1-.137.128c.07.333.266.639.745.639s.676-.307.745-.641c-.043-.037-.085-.073-.127-.115zM2.41 10.15l.608.607.618-.618a2.25 2.25 0 0 1 .128-.118c-.065-.327-.251-.623-.747-.623s-.682.297-.746.625c.046.04.092.08.14.127zm2.742.117c-.455-.454-.94-.16-1.244.144l-2.87 2.87c-.303.303-.621.765-.143 1.243.478.478.94.16 1.243-.143l2.87-2.87c.304-.304.598-.79.144-1.244Z"/></svg>
+              Malt
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../../security-architect-guide/en/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              The security architect survival kit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Agentic Security · AI Trust · Cloud GRC</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../../app.js" defer></script>
+</body>
+</html>

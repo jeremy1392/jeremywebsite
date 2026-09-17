@@ -526,6 +526,8 @@ ${mainAlternates}
   // versions so every entry carries the hreflang alternates of its siblings.
   const EXTRA_GROUPS = [
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
+      pages: { fr: BASE_URL + '/ai-soc-blue/', en: BASE_URL + '/ai-soc-blue/en/' } },
+    { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
       pages: { fr: BASE_URL + '/capability-race-control-lag/', en: BASE_URL + '/capability-race-control-lag/en/' } },
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
       pages: { fr: BASE_URL + '/security-architect-guide/', en: BASE_URL + '/security-architect-guide/en/' } },
@@ -622,9 +624,9 @@ function buildRoot() {
 }
 
 /* ---------- BLOG INDEX (fr + en) ---------- */
-/* One page per locale that declares a `blog` block, listing the analysis, incident and guide
+/* One page per locale that declares a `blog` block, listing the soc, analysis, incident and guide
    entries (newest first) with the same data as the home banners, plus an RSS feed next to it. */
-function blogPosts(dict) { return [dict.analysis, dict.incident, dict.guide].filter(Boolean); }
+function blogPosts(dict) { return [dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
 
 function renderBlogPage(lang) {
   const dict = I18N[lang], bl = dict.blog;

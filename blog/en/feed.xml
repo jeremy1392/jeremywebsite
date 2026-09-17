@@ -7,6 +7,13 @@
     <language>en</language>
     <atom:link href="https://jeremycanale.com/blog/en/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>SOC and Blue Teaming: two applied AI use cases for security operations</title>
+      <link>https://jeremycanale.com/ai-soc-blue/en/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/ai-soc-blue/en/</guid>
+      <pubDate>Thu, 17 Sep 2026 07:00:00 GMT</pubDate>
+      <description>An investigation agent for the SOC, a malware triage pipeline for the Blue Team, the trust architecture behind both, and a business case: about €456k of net benefit a year and a 10.5-month payback in the modeled scenario.</description>
+    </item>
+    <item>
       <title>The race for capability. The lag in control.</title>
       <link>https://jeremycanale.com/capability-race-control-lag/en/</link>
       <guid isPermaLink="true">https://jeremycanale.com/capability-race-control-lag/en/</guid>

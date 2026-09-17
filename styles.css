@@ -2934,3 +2934,121 @@ html[dir="rtl"] .post-body blockquote { padding: 4px 24px 4px 0; }
 @media (prefers-reduced-motion: reduce) {
   .post-body ol.flow-steps > li { transition: none; }
 }
+
+
+/* ====================== BLOG POST: DATA TABLE (case studies) ====================== */
+/* Same look as .guide-table without the rose last column, for tables inside .post-body. */
+.post-table-wrap {
+  margin: 26px 0 30px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.post-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+.post-table th {
+  text-align: start;
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(34, 211, 238, 0.06);
+  border-bottom: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+.post-table td {
+  padding: 12px 16px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.post-table tbody tr:last-child td { border-bottom: none; }
+.post-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+.post-table code { white-space: normal; }
+.post-table-wrap + figcaption,
+.post-table-note {
+  margin: -22px 0 30px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-mute);
+}
+.post-body .post-chart + .post-chart { margin-top: 20px; }
+
+/* Numbered steps with an inline bold label ("Label: gloss"), used for the kill-switch list */
+.post-body ol.post-steps > li { padding-inline-start: 30px; margin-bottom: 14px; }
+.post-body ol.post-steps strong { color: var(--text-strong); }
+
+
+/* ====================== BLOG POST: BUSINESS CASE (stat tiles, formula, numeric tables, principle cards) ====================== */
+/* KPI row. Values wear text tokens, never a series colour; proportional figures on purpose at display size. */
+.post-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 26px 0 30px;
+}
+.post-stats > div {
+  padding: 16px 18px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.post-stats b {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-strong);
+}
+.post-stats span { display: block; font-size: 0.82rem; line-height: 1.5; color: var(--text-mute); }
+@media (max-width: 720px) { .post-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 380px) { .post-stats { grid-template-columns: 1fr; } }
+
+/* Formula block */
+.post-formula {
+  margin: 26px 0 30px;
+  padding: 18px 22px;
+  background: rgba(10, 15, 36, 0.6);
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--cyan);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre;
+  overflow-x: auto;
+}
+.post-formula b { color: var(--text-strong); font-weight: 600; }
+
+/* Alert variant of the note card */
+.post-note-alert { border-inline-start: 3px solid var(--rose); }
+.post-note-alert strong { color: var(--rose); }
+
+/* Numeric table cells, total rows, wrapping first column */
+.post-table th.num, .post-table td.num { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.post-table tr.is-total td { color: var(--text-strong); font-weight: 600; border-top: 1px solid var(--border-strong); }
+.post-table td.wrap { white-space: normal; }
+
+/* Four principle cards, two per row */
+.post-concepts-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.post-concept-n {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--cyan);
+}
+@media (max-width: 640px) { .post-concepts-4 { grid-template-columns: 1fr; } }

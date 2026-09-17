@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jeremycanale.com/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/"/>
@@ -36,7 +36,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/"/>
@@ -46,8 +46,26 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/"/>
   </url>
   <url>
+    <loc>https://jeremycanale.com/ai-soc-blue/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/ai-soc-blue/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/ai-soc-blue/en/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/ai-soc-blue/en/"/>
+  </url>
+  <url>
+    <loc>https://jeremycanale.com/ai-soc-blue/en/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/ai-soc-blue/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/ai-soc-blue/en/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/ai-soc-blue/en/"/>
+  </url>
+  <url>
     <loc>https://jeremycanale.com/capability-race-control-lag/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/capability-race-control-lag/"/>
@@ -56,7 +74,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/capability-race-control-lag/en/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/capability-race-control-lag/"/>
@@ -65,7 +83,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/security-architect-guide/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/security-architect-guide/"/>
@@ -74,7 +92,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/security-architect-guide/en/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/security-architect-guide/"/>
@@ -83,7 +101,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/incident-openai-hugging-face/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/incident-openai-hugging-face/"/>
@@ -92,7 +110,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/incident-openai-hugging-face/en/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/incident-openai-hugging-face/"/>
@@ -101,7 +119,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/blog/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/blog/"/>
@@ -110,7 +128,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/blog/en/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
       <xhtml:link rel="alternate" hreflang="fr" href="https://jeremycanale.com/blog/"/>
@@ -119,7 +137,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-ai-foundry.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-ai-foundry.html"/>
@@ -130,7 +148,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-ai-foundry.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-ai-foundry.html"/>
@@ -141,7 +159,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-ai-foundry.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-ai-foundry.html"/>
@@ -152,7 +170,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-ai-foundry.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-ai-foundry.html"/>
@@ -163,7 +181,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langgraph.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langgraph.html"/>
@@ -174,7 +192,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langgraph.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langgraph.html"/>
@@ -185,7 +203,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langgraph.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langgraph.html"/>
@@ -196,7 +214,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langgraph.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langgraph.html"/>
@@ -207,7 +225,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langchain.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langchain.html"/>
@@ -218,7 +236,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langchain.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langchain.html"/>
@@ -229,7 +247,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langchain.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langchain.html"/>
@@ -240,7 +258,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langchain.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langchain.html"/>
@@ -251,7 +269,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/mcp.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/mcp.html"/>
@@ -262,7 +280,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/mcp.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/mcp.html"/>
@@ -273,7 +291,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/mcp.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/mcp.html"/>
@@ -284,7 +302,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/mcp.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/mcp.html"/>
@@ -295,7 +313,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-nemo.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-nemo.html"/>
@@ -306,7 +324,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-nemo.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-nemo.html"/>
@@ -317,7 +335,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-nemo.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-nemo.html"/>
@@ -328,7 +346,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-nemo.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-nemo.html"/>
@@ -339,7 +357,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-triton.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-triton.html"/>
@@ -350,7 +368,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-triton.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-triton.html"/>
@@ -361,7 +379,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-triton.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-triton.html"/>
@@ -372,7 +390,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nvidia-triton.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nvidia-triton.html"/>
@@ -383,7 +401,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-sagemaker.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-sagemaker.html"/>
@@ -394,7 +412,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-sagemaker.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-sagemaker.html"/>
@@ -405,7 +423,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-sagemaker.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-sagemaker.html"/>
@@ -416,7 +434,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-sagemaker.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-sagemaker.html"/>
@@ -427,7 +445,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/palo-alto-prisma-cloud.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/palo-alto-prisma-cloud.html"/>
@@ -438,7 +456,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/palo-alto-prisma-cloud.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/palo-alto-prisma-cloud.html"/>
@@ -449,7 +467,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/palo-alto-prisma-cloud.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/palo-alto-prisma-cloud.html"/>
@@ -460,7 +478,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/palo-alto-prisma-cloud.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/palo-alto-prisma-cloud.html"/>
@@ -471,7 +489,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langfuse.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langfuse.html"/>
@@ -482,7 +500,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langfuse.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langfuse.html"/>
@@ -493,7 +511,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langfuse.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langfuse.html"/>
@@ -504,7 +522,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/langfuse.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/langfuse.html"/>
@@ -515,7 +533,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-42001.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-42001.html"/>
@@ -526,7 +544,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-42001.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-42001.html"/>
@@ -537,7 +555,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-42001.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-42001.html"/>
@@ -548,7 +566,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-42001.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-42001.html"/>
@@ -559,7 +577,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nist-ai-rmf.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nist-ai-rmf.html"/>
@@ -570,7 +588,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nist-ai-rmf.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nist-ai-rmf.html"/>
@@ -581,7 +599,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nist-ai-rmf.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nist-ai-rmf.html"/>
@@ -592,7 +610,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/nist-ai-rmf.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/nist-ai-rmf.html"/>
@@ -603,7 +621,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/eu-ai-act.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/eu-ai-act.html"/>
@@ -614,7 +632,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/eu-ai-act.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/eu-ai-act.html"/>
@@ -625,7 +643,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/eu-ai-act.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/eu-ai-act.html"/>
@@ -636,7 +654,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/eu-ai-act.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/eu-ai-act.html"/>
@@ -647,7 +665,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/openai-assistants.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/openai-assistants.html"/>
@@ -658,7 +676,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/openai-assistants.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/openai-assistants.html"/>
@@ -669,7 +687,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/openai-assistants.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/openai-assistants.html"/>
@@ -680,7 +698,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/openai-assistants.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/openai-assistants.html"/>
@@ -691,7 +709,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-bedrock-agents.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-bedrock-agents.html"/>
@@ -702,7 +720,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-bedrock-agents.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-bedrock-agents.html"/>
@@ -713,7 +731,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-bedrock-agents.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-bedrock-agents.html"/>
@@ -724,7 +742,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-bedrock-agents.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-bedrock-agents.html"/>
@@ -735,7 +753,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-agents.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-agents.html"/>
@@ -746,7 +764,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-agents.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-agents.html"/>
@@ -757,7 +775,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-agents.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-agents.html"/>
@@ -768,7 +786,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-agents.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-agents.html"/>
@@ -779,7 +797,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/n8n-cursor-mcp-clients.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/n8n-cursor-mcp-clients.html"/>
@@ -790,7 +808,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/n8n-cursor-mcp-clients.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/n8n-cursor-mcp-clients.html"/>
@@ -801,7 +819,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/n8n-cursor-mcp-clients.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/n8n-cursor-mcp-clients.html"/>
@@ -812,7 +830,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/n8n-cursor-mcp-clients.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/n8n-cursor-mcp-clients.html"/>
@@ -823,7 +841,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-machine-learning.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-machine-learning.html"/>
@@ -834,7 +852,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-machine-learning.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-machine-learning.html"/>
@@ -845,7 +863,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-machine-learning.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-machine-learning.html"/>
@@ -856,7 +874,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/azure-machine-learning.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/azure-machine-learning.html"/>
@@ -867,7 +885,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-model-garden.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-model-garden.html"/>
@@ -878,7 +896,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-model-garden.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-model-garden.html"/>
@@ -889,7 +907,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-model-garden.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-model-garden.html"/>
@@ -900,7 +918,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vertex-ai-model-garden.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vertex-ai-model-garden.html"/>
@@ -911,7 +929,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/huggingface-tgi.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/huggingface-tgi.html"/>
@@ -922,7 +940,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/huggingface-tgi.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/huggingface-tgi.html"/>
@@ -933,7 +951,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/huggingface-tgi.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/huggingface-tgi.html"/>
@@ -944,7 +962,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/huggingface-tgi.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/huggingface-tgi.html"/>
@@ -955,7 +973,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vllm-ray-serve.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vllm-ray-serve.html"/>
@@ -966,7 +984,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vllm-ray-serve.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vllm-ray-serve.html"/>
@@ -977,7 +995,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vllm-ray-serve.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vllm-ray-serve.html"/>
@@ -988,7 +1006,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/vllm-ray-serve.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/vllm-ray-serve.html"/>
@@ -999,7 +1017,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-security-hub.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-security-hub.html"/>
@@ -1010,7 +1028,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-security-hub.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-security-hub.html"/>
@@ -1021,7 +1039,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-security-hub.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-security-hub.html"/>
@@ -1032,7 +1050,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/aws-security-hub.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/aws-security-hub.html"/>
@@ -1043,7 +1061,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/microsoft-defender-cloud.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/microsoft-defender-cloud.html"/>
@@ -1054,7 +1072,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/microsoft-defender-cloud.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/microsoft-defender-cloud.html"/>
@@ -1065,7 +1083,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/microsoft-defender-cloud.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/microsoft-defender-cloud.html"/>
@@ -1076,7 +1094,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/microsoft-defender-cloud.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/microsoft-defender-cloud.html"/>
@@ -1087,7 +1105,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/google-security-command-center.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/google-security-command-center.html"/>
@@ -1098,7 +1116,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/google-security-command-center.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/google-security-command-center.html"/>
@@ -1109,7 +1127,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/google-security-command-center.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/google-security-command-center.html"/>
@@ -1120,7 +1138,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/google-security-command-center.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/google-security-command-center.html"/>
@@ -1131,7 +1149,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/cloudflare-zero-trust.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/cloudflare-zero-trust.html"/>
@@ -1142,7 +1160,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/cloudflare-zero-trust.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/cloudflare-zero-trust.html"/>
@@ -1153,7 +1171,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/cloudflare-zero-trust.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/cloudflare-zero-trust.html"/>
@@ -1164,7 +1182,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/cloudflare-zero-trust.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/cloudflare-zero-trust.html"/>
@@ -1175,7 +1193,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/wiz-lacework-orca.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/wiz-lacework-orca.html"/>
@@ -1186,7 +1204,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/wiz-lacework-orca.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/wiz-lacework-orca.html"/>
@@ -1197,7 +1215,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/wiz-lacework-orca.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/wiz-lacework-orca.html"/>
@@ -1208,7 +1226,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/wiz-lacework-orca.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/wiz-lacework-orca.html"/>
@@ -1219,7 +1237,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hashicorp-vault-terraform.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.html"/>
@@ -1230,7 +1248,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hashicorp-vault-terraform.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.html"/>
@@ -1241,7 +1259,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hashicorp-vault-terraform.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.html"/>
@@ -1252,7 +1270,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hashicorp-vault-terraform.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hashicorp-vault-terraform.html"/>
@@ -1263,7 +1281,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/weights-and-biases.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/weights-and-biases.html"/>
@@ -1274,7 +1292,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/weights-and-biases.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/weights-and-biases.html"/>
@@ -1285,7 +1303,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/weights-and-biases.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/weights-and-biases.html"/>
@@ -1296,7 +1314,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/weights-and-biases.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/weights-and-biases.html"/>
@@ -1307,7 +1325,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/arize-phoenix.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/arize-phoenix.html"/>
@@ -1318,7 +1336,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/arize-phoenix.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/arize-phoenix.html"/>
@@ -1329,7 +1347,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/arize-phoenix.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/arize-phoenix.html"/>
@@ -1340,7 +1358,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/arize-phoenix.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/arize-phoenix.html"/>
@@ -1351,7 +1369,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/promptfoo-deepeval.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/promptfoo-deepeval.html"/>
@@ -1362,7 +1380,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/promptfoo-deepeval.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/promptfoo-deepeval.html"/>
@@ -1373,7 +1391,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/promptfoo-deepeval.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/promptfoo-deepeval.html"/>
@@ -1384,7 +1402,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/promptfoo-deepeval.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/promptfoo-deepeval.html"/>
@@ -1395,7 +1413,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/guardrails-ai.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/guardrails-ai.html"/>
@@ -1406,7 +1424,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/guardrails-ai.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/guardrails-ai.html"/>
@@ -1417,7 +1435,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/guardrails-ai.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/guardrails-ai.html"/>
@@ -1428,7 +1446,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/guardrails-ai.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/guardrails-ai.html"/>
@@ -1439,7 +1457,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/datadog-llm-observability.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/datadog-llm-observability.html"/>
@@ -1450,7 +1468,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/datadog-llm-observability.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/datadog-llm-observability.html"/>
@@ -1461,7 +1479,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/datadog-llm-observability.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/datadog-llm-observability.html"/>
@@ -1472,7 +1490,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/datadog-llm-observability.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/datadog-llm-observability.html"/>
@@ -1483,7 +1501,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/opentelemetry-splunk.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/opentelemetry-splunk.html"/>
@@ -1494,7 +1512,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/opentelemetry-splunk.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/opentelemetry-splunk.html"/>
@@ -1505,7 +1523,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/opentelemetry-splunk.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/opentelemetry-splunk.html"/>
@@ -1516,7 +1534,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/opentelemetry-splunk.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/opentelemetry-splunk.html"/>
@@ -1527,7 +1545,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-27001.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-27001.html"/>
@@ -1538,7 +1556,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-27001.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-27001.html"/>
@@ -1549,7 +1567,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-27001.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-27001.html"/>
@@ -1560,7 +1578,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/iso-27001.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/iso-27001.html"/>
@@ -1571,7 +1589,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/soc-2.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/soc-2.html"/>
@@ -1582,7 +1600,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/soc-2.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/soc-2.html"/>
@@ -1593,7 +1611,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/soc-2.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/soc-2.html"/>
@@ -1604,7 +1622,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/soc-2.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/soc-2.html"/>
@@ -1615,7 +1633,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hipaa-pci-dss.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hipaa-pci-dss.html"/>
@@ -1626,7 +1644,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hipaa-pci-dss.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hipaa-pci-dss.html"/>
@@ -1637,7 +1655,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hipaa-pci-dss.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hipaa-pci-dss.html"/>
@@ -1648,7 +1666,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/hipaa-pci-dss.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/hipaa-pci-dss.html"/>
@@ -1659,7 +1677,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/dora-nis2.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/dora-nis2.html"/>
@@ -1670,7 +1688,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/dora-nis2.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/dora-nis2.html"/>
@@ -1681,7 +1699,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/dora-nis2.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/dora-nis2.html"/>
@@ -1692,7 +1710,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/dora-nis2.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/dora-nis2.html"/>
@@ -1703,7 +1721,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/pdpl-gdpr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/pdpl-gdpr.html"/>
@@ -1714,7 +1732,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/pdpl-gdpr.fr.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/pdpl-gdpr.html"/>
@@ -1725,7 +1743,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/pdpl-gdpr.zh.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/pdpl-gdpr.html"/>
@@ -1736,7 +1754,7 @@
   </url>
   <url>
     <loc>https://jeremycanale.com/tech/pdpl-gdpr.ar.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://jeremycanale.com/tech/pdpl-gdpr.html"/>
