@@ -168,7 +168,7 @@
       <header class="post-header">
         <span class="post-kicker">Agentic security · Case study</span>
         <h1 class="post-title">SOC and Blue Teaming: two applied AI use cases for security operations</h1>
-        <p class="post-dek">An investigation agent for the SOC and an AI-assisted malware triage pipeline for the Blue Team: the trust architecture, where the automation stops, and a business case a CISO can defend in front of a CFO.</p>
+        <p class="post-dek">An investigation agent for the SOC and an AI-assisted malware triage pipeline for the Blue Team: the trust architecture, the boundaries of automation and a detailed business case for the CISO.</p>
         <div class="post-byline">
           <span class="post-byline-mark" aria-hidden="true">JC</span>
           <span><b>Jeremy Canale</b></span>
@@ -234,7 +234,7 @@
           <li><a href="#roi-blue">Blue Team ROI</a></li>
           <li><a href="#risk">Speed, auditability, banking</a></li>
           <li><a href="#principles">Shared principles</a></li>
-          <li><a href="#conclusion">What the two cases say</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
         </ol>
       </nav>
 
@@ -244,9 +244,9 @@
           <span class="post-num">Introduction</span>
           <h2>Two use cases, two very different ROI profiles</h2>
 
-          <p class="post-lead">The return is visible from the first page, and it is not the same for the two teams. In the banking scenario this article uses, a ten-person generalist SOC costs about €1.02M a year in direct labor and stays at ten: AI gives it capacity, speed and consistency, not a smaller payroll. A ten-person Blue Team costs about €1.36M a year. If close to half of its capacity goes to malware triage and analysis, and automation absorbs most of that first pass, the operating model can be rebuilt around five senior profiles for about €700k a year.</p>
+          <p class="post-lead">The return on investment is not the same for the two teams. In the banking scenario used in this article, a ten-person generalist SOC represents about €1.02M a year in direct labor cost and deliberately stays at ten people: AI brings capacity, speed and consistency rather than an immediate headcount reduction. A ten-person Blue Team costs about €1.36M a year. If close to half of its capacity goes to malware triage and analysis, and automation absorbs most of that first pass, the operating model can be rebuilt around five senior profiles for about €700k a year.</p>
 
-          <p>That gap is worth about €656k a year in direct savings. Against an illustrative €400k build and €200k of annual OPEX for the AI platform, the net recurring benefit comes to about €456k a year, which pays the build back in roughly 10.5 months. Over three years the scenario produces close to €968k of cumulative net benefit, about 97% ROI on platform spend, before putting any value on SOC productivity or on cheaper incidents.</p>
+          <p>The difference represents about €656k of direct annual savings. Against an illustrative €400k build and €200k of annual OPEX for the AI platform, the net recurring benefit comes to about €456k a year, which pays the build back in roughly 10.5 months. Over three years the scenario produces close to €968k of cumulative net benefit, about 97% ROI on platform spend, before putting any value on SOC productivity or on cheaper incidents.</p>
 
           <div class="post-stats">
             <div><b>€1.02M</b><span>Per year, ten-person SOC. Team kept; the gain is capacity and speed.</span></div>
@@ -257,7 +257,7 @@
 
           <p>Those numbers are not a general promise about AI and headcount. The calculation is deliberately transparent and it depends on the shape of the workload. The SOC is a broad operational function: identity, endpoint, email, cloud, network, escalations, incident coordination, often round-the-clock coverage. The Blue Team in this scenario spends a large share of its time on one far more repeatable process, malware analysis. That structural difference is what produces two different business cases.</p>
 
-          <p>The article shows how two concrete uses, SOC investigation and malware triage, can be designed safely enough to produce operational value, then how that value translates into terms a CISO, a CFO or an investment committee can work with. It is neither a case for replacing analysts with AI nor a productivity pitch.</p>
+          <p>The article shows how two concrete uses, SOC investigation and malware triage, can be designed safely enough to produce operational value, then how that value translates into terms a CISO, a CFO or an investment committee can work with. It argues neither that AI replaces analysts nor that automation is merely a productivity project.</p>
 
           <h3>How to read ROI: direct savings, reclaimed capacity and risk reduction</h3>
 
@@ -265,9 +265,9 @@
 
           <p>The first is direct budget saving. It exists only when a role is removed and not backfilled or moved into another funded function, or when external spend disappears. In this scenario, resizing the Blue Team from ten to five creates that kind of benefit, provided the workload can be absorbed by the new operating model.</p>
 
-          <p>The second is reclaimed capacity. If ten SOC analysts become 10 to 20% more productive and all ten stay, payroll does not move. The value exists all the same: the team handles more incidents, backlogs shrink, senior analysts get time back and a future hire can be deferred. For many CISOs that is a more realistic SOC benefit than an immediate headcount cut.</p>
+          <p>The second is reclaimed capacity. If ten SOC analysts become 10 to 20% more productive and all ten stay, payroll does not move. The value is nonetheless there: the team handles more incidents, backlogs shrink, senior analysts get time back and a future hire can be deferred. For many CISOs that is a more realistic SOC benefit than an immediate headcount cut.</p>
 
-          <p>The third is a lower cost of risk. Faster investigation, earlier session revocation or better detection can reduce what a serious breach costs. That value may be larger than the other two, but it is hard to budget cleanly, so it stays out of the core ROI calculation.</p>
+          <p>The third is a lower cost of risk. Faster investigation, earlier session revocation or better detection can reduce what a serious breach costs. That value may exceed the other two, but it is harder to budget cleanly, so it is kept separate from the core ROI calculation.</p>
 
           <pre class="post-formula"><b>Annual net benefit</b> = direct savings + avoided hiring + avoided external spend
                      + monetized reclaimed capacity - platform OPEX
@@ -303,13 +303,13 @@
 
           <p>The first use case starts from an ordinary operational problem. A security incident rarely lives in one console. An alert can start in Defender for Office 365, get correlated in Microsoft Sentinel, need a look in Defender for Endpoint, then Entra ID sign-in analysis, then threat intelligence enrichment. Analysts rebuild a timeline, decide whether several events belong to the same story, identify the affected systems and identities, and decide what happens next.</p>
 
-          <p>Much of that work is exactly where an LLM helps: reading large volumes of text, surfacing the relevant events, linking entities, summarizing a timeline, proposing hypotheses. The agent can also produce a consistent incident summary and prepare candidate remediation actions.</p>
+          <p>Much of that work is precisely where an LLM can be useful: reading large volumes of text, surfacing the relevant events, linking entities, summarizing a timeline, proposing hypotheses. The agent can also produce a consistent incident summary and prepare candidate remediation actions.</p>
 
           <p>For a bank, that does not mean letting the model run the SOC. It means building an environment where the model becomes a very fast software analyst whose authority stops at analysis and proposal.</p>
 
           <h3>Example: potential credential theft</h3>
 
-          <p>Take an incident that points to credential theft for one user. The investigation has to check the Defender alerts, the Sentinel incident entities, the endpoint timeline, the Entra ID sign-ins, the source IP and the reputation of a few indicators. Several actions are on the table at the end: isolate the device, revoke sessions, quarantine the originating email, block an IOC, open a ServiceNow incident.</p>
+          <p>Consider an incident that points to credential theft for one user. The investigation has to check the Defender alerts, the Sentinel incident entities, the endpoint timeline, the Entra ID sign-ins, the source IP and the reputation of a few indicators. Several actions are on the table at the end: isolate the device, revoke sessions, quarantine the originating email, block an IOC, open a ServiceNow incident.</p>
 
           <p>The agent speeds up the analysis because it can query those sources through read-only tools and synthesize what it finds. The risk appears the moment it is also allowed to perform the actions.</p>
 
@@ -326,7 +326,7 @@
 
           <p>The problem comes from the nature of the inputs. Emails, command lines, file names, HTTP User-Agent strings, IOCs, even content returned by tools can carry text an attacker chose. Once that content enters the model's context, it can influence the reasoning.</p>
 
-          <p>So an indirect prompt injection does not need to break the model. The attacker only needs to slip in an instruction convincing enough to change what the system does.</p>
+          <p>An indirect prompt injection therefore does not need to break the model. The attacker only needs to introduce an instruction convincing enough to alter the system's behavior.</p>
 
           <h3>Attack path: the email becomes a control input</h3>
 
@@ -337,7 +337,7 @@
             <li><strong>In a naive architecture, the privileged identity turns the error into an action.</strong> The calls are signed by a legitimate identity; the runtime never had to be compromised.</li>
           </ol>
 
-          <p>Looking for an LLM that cannot be injected leads nowhere. The trust boundary has to move.</p>
+          <p>The objective is therefore not to find an LLM that cannot be injected, but to move the trust boundary.</p>
 
           <div class="post-note post-note-alert"><strong>Principle:</strong> data may influence the model's reasoning. On its own, it must never grant or extend the authority to execute.</div>
 
@@ -352,9 +352,9 @@
             <figcaption>The agent analyzes and proposes. The Policy Decision Point decides. Specialized workers execute only the authorized actions.</figcaption>
           </figure>
 
-          <p>Execution authority lives in a separate security domain. The orchestrator accepts valid PDP decisions and nothing else. Each worker has its own identity and the minimum permissions for its one job. For an action the organization wants to make impossible, there is simply no worker.</p>
+          <p>Execution authority remains in a separate security domain. The orchestrator accepts valid PDP decisions and nothing else. Each worker has its own identity and the minimum permissions for its one job. For an action the organization wants to make impossible, there is simply no worker.</p>
 
-          <p>This design accepts something important: the model can produce a bad proposal without the system collapsing. The bad proposal becomes an input that policy rejects.</p>
+          <p>This design accepts an important reality: the model can produce a bad proposal without the system collapsing. The bad proposal becomes an input that policy rejects.</p>
 
           <h3>The action manifest as a security boundary</h3>
 
@@ -367,7 +367,7 @@
             <figcaption>An example manifest: what the model proposes on the left, what the PDP verifies on its own on the right.</figcaption>
           </figure>
 
-          <p>The PDP re-reads the facts that matter with its own identity. It can check that the target belongs to the incident, that the Defender verdict matches the policy, that the asset is not Tier 0, that the rate limits are respected and that the manifest has never been consumed.</p>
+          <p>The PDP re-reads the relevant facts with its own identity. It can check that the target belongs to the incident, that the Defender verdict matches the policy, that the asset is not Tier 0, that the rate limits are respected and that the manifest has never been consumed.</p>
 
           <p>That also protects against the model's confidence claims. An agent may report 0.97 confidence; the number is an assertion. It does not replace a verdict or a fact re-read from a trusted system.</p>
 
@@ -396,11 +396,11 @@
             <figcaption>Three independent switches. None of them is reachable from the model or the agent runtime.</figcaption>
           </figure>
 
-          <p>This is a useful architectural test. Even with full control of the prompt, the memory or an MCP server, an attacker should still be unable to re-enable a worker, extend a manifest's lifetime, change the policy or disable the kill switch.</p>
+          <p>This is a demanding architectural test. Even with full control of the prompt, the memory or an MCP server, an attacker should still be unable to re-enable a worker, extend a manifest's lifetime, change the policy or disable the kill switch.</p>
 
           <h3>Test as if the injection will succeed</h3>
 
-          <p>Validation is a security exercise, not a demonstration of prompt quality. Malicious instructions go into emails, command lines, User-Agent strings, IOCs, MCP tool descriptions and tool responses. Replays, target substitution and fake confidence scores get tested too.</p>
+          <p>Validation is a security exercise, not a demonstration of prompt quality. Malicious instructions are placed in emails, command lines, User-Agent strings, IOCs, MCP tool descriptions and tool responses. Replays, target substitution and fake confidence scores are tested as well.</p>
 
           <figure class="post-figure">
             <a href="../../images/ai-soc-blue/en/slide-14-before-after.jpg" target="_blank" rel="noopener">
@@ -415,7 +415,7 @@
 
           <p>A well-designed agentic system produces richer telemetry than an execution log. It records the manifest, its hash, the PDP decision, the exact policy rule, the human approver where one was needed, the worker identity and the result from the target system.</p>
 
-          <p>Denials are the most useful part. An agent that keeps requesting a forbidden action, targets an asset absent from the incident, or claims a confidence inconsistent with Defender is a signal in itself. The SOC can detect attempts to influence the automation, not only attacks on the environment.</p>
+          <p>Denials are particularly valuable. An agent that keeps requesting a forbidden action, targets an asset absent from the incident, or claims a confidence inconsistent with Defender is a signal in itself. The SOC can detect attempts to influence the automation, not only attacks on the environment.</p>
         </section>
 
         <section class="post-section" id="roi-soc">
@@ -464,7 +464,7 @@
 
           <p>The constraint matters as much as the capability. In the deck's scenario the agent has no shell, no arbitrary Python and no open Internet access. It does not execute the sample. The model can be strong at analysis without becoming a detonation environment.</p>
 
-          <p>Malcat's benchmark of 18 May 2026 tested nine models and found substantial value in triage, with more mixed results on reverse-engineering-heavy work and unpacking. <a class="post-cite" href="#src-7">[7]</a> Its author states that it is not an academic study. Read it as evidence of feasibility rather than as a staffing guarantee.</p>
+          <p>Malcat's benchmark of 18 May 2026 tested nine models and found substantial value in triage, with more mixed results on reverse-engineering-heavy work and unpacking. <a class="post-cite" href="#src-7">[7]</a> Its author states that it is not an academic study. The results support feasibility; they do not guarantee a staffing reduction.</p>
 
           <h3>Kesakode and Malpedia: enrich without over-attributing</h3>
 
@@ -489,12 +489,12 @@
 
           <p>This nuance is essential to the staffing model. AI can automate large parts of the first pass: collecting evidence, navigating the binary, synthesizing, reporting, matching families and signatures. It does not remove the need for experts who can explain an unknown packer, an anti-analysis technique, a new loader, conditional behavior or a targeted campaign.</p>
 
-          <p>Far from five operators validating ChatGPT, the remaining five form a more senior team. They take the hard cases, validate the conclusions that matter, keep detection quality up, improve the prompts and the tools, run threat hunting and step in when the automated workflow falls short.</p>
+          <p>The remaining five people are therefore not "five operators validating ChatGPT". They become a more senior team that takes the hard cases, validates the conclusions that matter, maintains detection quality, improves the prompts and the tools, runs threat hunting and steps in when the automated workflow falls short.</p>
         </section>
 
         <section class="post-section" id="roi-blue">
           <span class="post-num">ROI · Use case 2</span>
-          <h2>Blue Team ROI: when reclaimed capacity becomes a smaller payroll</h2>
+          <h2>Blue Team ROI: turning reclaimed capacity into cost reduction</h2>
 
           <p>The initial modeled Blue Team has two detection engineers at €84k, two threat hunters at €90k, two DFIR profiles at €90k, two cloud and endpoint security engineers at €90k, one malware analyst at €95k and one Blue Team lead at €115k. That is €918k of fixed salary, about €1.36M of direct labor cost with the same method.</p>
 
@@ -559,7 +559,7 @@
 
           <h3>Sensitivity: what if the reduction is less aggressive?</h3>
 
-          <p>Five people is the target case. A CISO should also test at least two softer variants. If the platform frees only three or four positions, the business case can stay positive with a longer payback.</p>
+          <p>The five-person team is the target scenario. A CISO should also test at least two less aggressive variants. If the platform frees only three or four positions, the business case can stay positive with a longer payback.</p>
 
           <div class="post-table-wrap">
             <table class="post-table">
@@ -580,7 +580,7 @@
 
           <p>The core ROI excludes SOC productivity on purpose. It also excludes reduced MSSP dependence, avoided future hiring, lower overtime and MTTR gains, and it puts no value on a cheaper breach.</p>
 
-          <p>In other words, the calculation is conservative on secondary benefits and aggressive on the Blue Team staffing assumption. That is the most honest way to bring it to an investment committee.</p>
+          <p>In other words, the calculation is conservative on secondary benefits and aggressive on the Blue Team staffing assumption. That is the most transparent way to present it to an investment committee.</p>
         </section>
 
         <section class="post-section" id="risk">
@@ -608,13 +608,13 @@
 
         <section class="post-section" id="conclusion">
           <span class="post-num">Conclusion</span>
-          <h2>The value depends on the work you automate</h2>
+          <h2>The value depends on the work being automated</h2>
 
           <p>These two cases show why "AI in cybersecurity" is too broad a category. The value depends on the type of work being automated.</p>
 
-          <p>In the SOC, AI mostly multiplies what ten analysts can do: better correlation, faster investigation, more consistent summaries, less time spent hopping between consoles. The team stays at ten because its value also comes from breadth of coverage and from handling the unexpected.</p>
+          <p>In the SOC, AI primarily extends what ten analysts can do: better correlation, faster investigation, more consistent summaries, less time spent moving between consoles. The team stays at ten because its value also comes from breadth of coverage and from handling the unexpected.</p>
 
-          <p>In the Blue Team the workload can look different. If five FTE go to malware triage and most of that first pass becomes automatable, the operating model can be rebuilt around five more senior people. That is where reclaimed capacity turns into direct budget savings.</p>
+          <p>In the Blue Team, the shape of the workload can be different. If five FTE go to malware triage and most of that first pass becomes automatable, the operating model can be rebuilt around five more senior people. That is where reclaimed capacity turns into direct budget savings.</p>
 
           <p>The economic incentive should never lead to giving the model more authority than it needs. The more automation matters, the more it matters to separate reasoning from execution, to re-validate critical facts independently, to isolate identities and to keep external kill switches.</p>
 
