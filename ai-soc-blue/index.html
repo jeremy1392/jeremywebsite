@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#070b1c" />
 
   <title>SOC et Blue Teaming : deux cas d'usage de l'IA pour les opérations de sécurité | Jeremy Canale</title>
-  <meta name="description" content="Un agent d'investigation pour le SOC et une chaîne de triage malware pour la Blue Team : architecture de confiance, limites d'automatisation et business case détaillé. Dix analystes SOC conservés, une Blue Team qui passe de dix à cinq, environ 456 k€ de gain net par an et un payback de 10,5 mois." />
-  <meta name="keywords" content="SOC agentique, automatisation SOC IA, ROI SOC, ROI Blue Team, business case, injection de prompt, Microsoft Sentinel, Defender XDR, Microsoft Foundry, Policy Decision Point, manifeste d'action, Malcat MCP, triage malware, Kesakode, Jeremy Canale" />
+  <meta name="description" content="Un agent d'investigation pour le SOC et une chaîne de triage de malware pour la Blue Team : architecture de sécurité, limites d'automatisation et analyse de rentabilité détaillée. Dix analystes SOC conservés, une Blue Team qui passe de dix à cinq, environ 456 k€ de gain net par an et un délai de retour sur investissement de 10,5 mois." />
+  <meta name="keywords" content="SOC agentique, automatisation SOC IA, ROI SOC, ROI Blue Team, analyse de rentabilité, business case, injection de prompt, Microsoft Sentinel, Defender XDR, Microsoft Foundry, Policy Decision Point, manifeste d'action, Malcat MCP, triage de malware, Kesakode, Jeremy Canale" />
   <meta name="author" content="Jeremy Canale" />
   <link rel="canonical" href="https://jeremycanale.com/ai-soc-blue/" />
   <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/ai-soc-blue/" />
@@ -20,7 +20,7 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="SOC et Blue Teaming : deux cas d'usage de l'IA pour les opérations de sécurité" />
-  <meta property="og:description" content="Architecture de confiance, limites d'automatisation et business case pour le CISO : le SOC gagne en capacité, la Blue Team passe de dix à cinq, pour environ 456 k€ de gain net par an." />
+  <meta property="og:description" content="Architecture de sécurité, limites d'automatisation et analyse de rentabilité pour le RSSI : le SOC gagne en capacité, la Blue Team passe de dix à cinq, pour environ 456 k€ de gain net par an." />
   <meta property="og:url" content="https://jeremycanale.com/ai-soc-blue/" />
   <meta property="og:image" content="https://jeremycanale.com/images/ai-soc-blue-cover-fr.jpg" />
   <meta property="og:image:secure_url" content="https://jeremycanale.com/images/ai-soc-blue-cover-fr.jpg" />
@@ -38,7 +38,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SOC et Blue Teaming : deux cas d'usage de l'IA pour les opérations de sécurité" />
-  <meta name="twitter:description" content="Deux cas d'usage de l'IA pour les opérations de sécurité, avec l'architecture et le business case derrière." />
+  <meta name="twitter:description" content="Deux cas d'usage de l'IA pour les opérations de sécurité, avec l'architecture et l'analyse de rentabilité associées." />
   <meta name="twitter:image" content="https://jeremycanale.com/images/ai-soc-blue-cover-fr.jpg" />
   <meta name="twitter:image:alt" content="SOC et Blue Teaming : automatisation avec l'IA, par Jeremy Canale" />
 
@@ -54,13 +54,13 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/ai-soc-blue/" },
     "headline": "SOC et Blue Teaming : deux cas d'usage de l'IA pour les opérations de sécurité",
-    "alternativeHeadline": "Deux scénarios concrets, l'architecture de confiance qui les rend sûrs et un business case CISO détaillé",
-    "description": "Un agent d'investigation pour le SOC et une chaîne de triage malware pour la Blue Team : architecture de confiance, limites d'automatisation et business case détaillé. Dix analystes SOC conservés, une Blue Team qui passe de dix à cinq, environ 456 k€ de gain net par an et un payback de 10,5 mois.",
+    "alternativeHeadline": "Deux scénarios concrets, l'architecture de sécurité qui les encadre et une analyse de rentabilité détaillée pour le RSSI",
+    "description": "Un agent d'investigation pour le SOC et une chaîne de triage de malware pour la Blue Team : architecture de sécurité, limites d'automatisation et analyse de rentabilité détaillée. Dix analystes SOC conservés, une Blue Team qui passe de dix à cinq, environ 456 k€ de gain net par an et un délai de retour sur investissement de 10,5 mois.",
     "image": "https://jeremycanale.com/images/ai-soc-blue-cover-fr.jpg",
     "inLanguage": "fr",
     "datePublished": "2026-09-17",
     "dateModified": "2026-09-17",
-    "wordCount": 5041,
+    "wordCount": 5269,
     "author": {
       "@type": "Person",
       "name": "Jeremy Canale",
@@ -168,14 +168,14 @@
       <header class="post-header">
         <span class="post-kicker">Sécurité agentique · Cas pratique</span>
         <h1 class="post-title">SOC et Blue Teaming : deux cas d'usage de l'IA pour les opérations de sécurité</h1>
-        <p class="post-dek">Un agent d'investigation pour le SOC et une chaîne de triage malware pour la Blue Team : l'architecture de confiance, les limites de l'automatisation et un business case détaillé pour le CISO.</p>
+        <p class="post-dek">Un agent d'investigation pour le SOC et une chaîne de triage de malware pour la Blue Team : l'architecture de sécurité, les limites de l'automatisation et une analyse de rentabilité détaillée pour le RSSI.</p>
         <div class="post-byline">
           <span class="post-byline-mark" aria-hidden="true">JC</span>
           <span><b>Jeremy Canale</b></span>
           <span class="sep">·</span>
           <time datetime="2026-09-17">17 septembre 2026</time>
           <span class="sep">·</span>
-          <span data-read-time>24 min de lecture</span>
+          <span data-read-time>25 min de lecture</span>
           <span class="sep">·</span>
           <a href="en/" hreflang="en" lang="en">English version</a>
         </div>
@@ -185,7 +185,7 @@
         <div class="post-download-text">
           <span class="post-download-kicker">PDF · 26 slides · 2 Mo</span>
           <strong>SOC &amp; Blue Teaming : Automatisation avec l'IA</strong>
-          <p>Le deck qui sous-tend les deux cas d'usage : un agent d'investigation qui propose mais n'exécute jamais, et une Blue Team qui confie le triage de malware à un agent. Les 26 slides sont à feuilleter ci-dessous.</p>
+          <p>Le support qui présente les deux cas d'usage : un agent d'investigation qui propose des actions sans jamais les exécuter directement, et une Blue Team qui confie le premier triage de malware à un agent. Les 26 slides sont consultables ci-dessous.</p>
         </div>
         <a class="btn btn-primary" href="../SOC_and_Blue_Teaming_Automation_with_AI_FR.pdf" download="SOC_and_Blue_Teaming_Automation_with_AI_FR.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg> Télécharger le PDF</a>
       </div>
@@ -198,20 +198,20 @@
           <figure class="deck-slide" data-title="Un agent IA avec des permissions de production"><a href="../images/ai-soc-blue/fr/deck/slide-04.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-04.jpg" width="1100" height="619" loading="lazy" alt="Slide 4 : Un agent IA avec des permissions de production" /></a></figure>
           <figure class="deck-slide" data-title="Comment une injection de prompt peut détourner l'agent"><a href="../images/ai-soc-blue/fr/deck/slide-05.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-05.jpg" width="1100" height="619" loading="lazy" alt="Slide 5 : Comment une injection de prompt peut détourner l'agent" /></a></figure>
           <figure class="deck-slide" data-title="Le même agent analyse des données non fiables et peut agir en production"><a href="../images/ai-soc-blue/fr/deck/slide-06.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-06.jpg" width="1100" height="619" loading="lazy" alt="Slide 6 : Le même agent analyse des données non fiables et peut agir en production" /></a></figure>
-          <figure class="deck-slide" data-title="Séparer le raisonnement du pouvoir d'action"><a href="../images/ai-soc-blue/fr/deck/slide-07.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-07.jpg" width="1100" height="619" loading="lazy" alt="Slide 7 : Séparer le raisonnement du pouvoir d'action" /></a></figure>
+          <figure class="deck-slide" data-title="Séparer l'analyse du pouvoir d'agir"><a href="../images/ai-soc-blue/fr/deck/slide-07.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-07.jpg" width="1100" height="619" loading="lazy" alt="Slide 7 : Séparer l'analyse du pouvoir d'agir" /></a></figure>
           <figure class="deck-slide" data-title="Plateforme Azure cible"><a href="../images/ai-soc-blue/fr/deck/slide-08.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-08.jpg" width="1100" height="619" loading="lazy" alt="Slide 8 : Plateforme Azure cible" /></a></figure>
           <figure class="deck-slide" data-title="L'agent propose une action, mais ne l'exécute pas"><a href="../images/ai-soc-blue/fr/deck/slide-09.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-09.jpg" width="1100" height="619" loading="lazy" alt="Slide 9 : L'agent propose une action, mais ne l'exécute pas" /></a></figure>
           <figure class="deck-slide" data-title="Quatre niveaux d'action prédéfinis"><a href="../images/ai-soc-blue/fr/deck/slide-10.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-10.jpg" width="1100" height="619" loading="lazy" alt="Slide 10 : Quatre niveaux d'action prédéfinis" /></a></figure>
           <figure class="deck-slide" data-title="Approuver une action précise, sans accorder de pouvoir supplémentaire"><a href="../images/ai-soc-blue/fr/deck/slide-11.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-11.jpg" width="1100" height="619" loading="lazy" alt="Slide 11 : Approuver une action précise, sans accorder de pouvoir supplémentaire" /></a></figure>
           <figure class="deck-slide" data-title="Une identité distincte pour chaque agent et chaque worker"><a href="../images/ai-soc-blue/fr/deck/slide-12.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-12.jpg" width="1100" height="619" loading="lazy" alt="Slide 12 : Une identité distincte pour chaque agent et chaque worker" /></a></figure>
-          <figure class="deck-slide" data-title="Neutraliser les capacités de l'agent sans dépendre de son runtime"><a href="../images/ai-soc-blue/fr/deck/slide-13.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-13.jpg" width="1100" height="619" loading="lazy" alt="Slide 13 : Neutraliser les capacités de l'agent sans dépendre de son runtime" /></a></figure>
+          <figure class="deck-slide" data-title="Neutraliser les capacités de l'agent sans dépendre de son environnement d'exécution"><a href="../images/ai-soc-blue/fr/deck/slide-13.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-13.jpg" width="1100" height="619" loading="lazy" alt="Slide 13 : Neutraliser les capacités de l'agent sans dépendre de son environnement d'exécution" /></a></figure>
           <figure class="deck-slide" data-title="Injection de prompt : impact avant et après durcissement"><a href="../images/ai-soc-blue/fr/deck/slide-14.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-14.jpg" width="1100" height="619" loading="lazy" alt="Slide 14 : Injection de prompt, impact avant et après durcissement" /></a></figure>
           <figure class="deck-slide" data-title="Scénarios de validation de l'architecture cible"><a href="../images/ai-soc-blue/fr/deck/slide-15.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-15.jpg" width="1100" height="619" loading="lazy" alt="Slide 15 : Scénarios de validation de l'architecture cible" /></a></figure>
           <figure class="deck-slide" data-title="Chaque proposition, décision et exécution doit être journalisée"><a href="../images/ai-soc-blue/fr/deck/slide-16.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-16.jpg" width="1100" height="619" loading="lazy" alt="Slide 16 : Chaque proposition, décision et exécution doit être journalisée" /></a></figure>
-          <figure class="deck-slide" data-title="AI Blue Teaming : triage de malware avec Malcat MCP &amp; LLMs"><a href="../images/ai-soc-blue/fr/deck/slide-17.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-17.jpg" width="1100" height="619" loading="lazy" alt="Slide 17 : AI Blue Teaming, triage de malware avec Malcat MCP et LLMs" /></a></figure>
+          <figure class="deck-slide" data-title="AI Blue Teaming : triage de malware avec Malcat MCP et des LLM"><a href="../images/ai-soc-blue/fr/deck/slide-17.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-17.jpg" width="1100" height="619" loading="lazy" alt="Slide 17 : AI Blue Teaming, triage de malware avec Malcat MCP et des LLM" /></a></figure>
           <figure class="deck-slide" data-title="Le benchmark en chiffres"><a href="../images/ai-soc-blue/fr/deck/slide-18.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-18.jpg" width="1100" height="619" loading="lazy" alt="Slide 18 : Le benchmark en chiffres" /></a></figure>
           <figure class="deck-slide" data-title="Le serveur MCP de Malcat en action"><a href="../images/ai-soc-blue/fr/deck/slide-19.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-19.jpg" width="1100" height="619" loading="lazy" alt="Slide 19 : Le serveur MCP de Malcat en action" /></a></figure>
-          <figure class="deck-slide" data-title="De l'identification de la famille au contexte Threat Intelligence"><a href="../images/ai-soc-blue/fr/deck/slide-20.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-20.jpg" width="1100" height="619" loading="lazy" alt="Slide 20 : De l'identification de la famille au contexte Threat Intelligence" /></a></figure>
+          <figure class="deck-slide" data-title="Identifier la famille du malware et consulter le contexte Threat Intelligence"><a href="../images/ai-soc-blue/fr/deck/slide-20.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-20.jpg" width="1100" height="619" loading="lazy" alt="Slide 20 : Identifier la famille du malware et consulter le contexte Threat Intelligence" /></a></figure>
           <figure class="deck-slide" data-title="Triage malware : analyse, décision et action"><a href="../images/ai-soc-blue/fr/deck/slide-21.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-21.jpg" width="1100" height="619" loading="lazy" alt="Slide 21 : Triage malware, analyse, décision et action" /></a></figure>
           <figure class="deck-slide" data-title="Attaque ciblée ou opportuniste ?"><a href="../images/ai-soc-blue/fr/deck/slide-22.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-22.jpg" width="1100" height="619" loading="lazy" alt="Slide 22 : Attaque ciblée ou opportuniste ?" /></a></figure>
           <figure class="deck-slide" data-title="Le rapport reçu par la Blue Team"><a href="../images/ai-soc-blue/fr/deck/slide-23.jpg" target="_blank" rel="noopener"><img src="../images/ai-soc-blue/fr/deck/slide-23.jpg" width="1100" height="619" loading="lazy" alt="Slide 23 : Le rapport reçu par la Blue Team" /></a></figure>
@@ -227,12 +227,12 @@
       <nav class="post-toc" aria-label="Dans cet article">
         <span class="post-toc-title">Dans cet article</span>
         <ol>
-          <li><a href="#intro">Deux profils de ROI</a></li>
+          <li><a href="#intro">Deux logiques de retour sur investissement</a></li>
           <li><a href="#soc">Cas 1 : investigation SOC</a></li>
           <li><a href="#roi-soc">ROI du SOC</a></li>
           <li><a href="#blue">Cas 2 : triage malware</a></li>
           <li><a href="#roi-blue">ROI de la Blue Team</a></li>
-          <li><a href="#risk">Vitesse, auditabilité, banque</a></li>
+          <li><a href="#risk">Vitesse, traçabilité et contraintes bancaires</a></li>
           <li><a href="#principles">Principes communs</a></li>
           <li><a href="#conclusion">Conclusion</a></li>
         </ol>
@@ -242,43 +242,43 @@
 
         <section class="post-section" id="intro">
           <span class="post-num">Introduction</span>
-          <h2>Deux cas d'usage, deux profils de ROI très différents</h2>
+          <h2>Deux cas d'usage, deux logiques de retour sur investissement</h2>
 
-          <p class="post-lead">Le retour sur investissement n'est pas le même pour les deux équipes. Dans le scénario bancaire utilisé dans cet article, un SOC généraliste de dix personnes représente environ 1,02 M€ de coût direct du travail par an et reste volontairement à dix : l'IA y apporte de la capacité, de la vitesse et de la régularité plutôt qu'une réduction immédiate d'effectifs. Une Blue Team de dix personnes représente environ 1,36 M€ par an. Si près de la moitié de sa capacité part dans le triage et l'analyse de malware, et si l'automatisation absorbe l'essentiel de ce premier passage, le modèle opérationnel peut être rebâti autour de cinq profils seniors pour environ 700 k€ par an.</p>
+          <p class="post-lead">Le retour sur investissement n'est pas le même pour les deux équipes. Dans le scénario bancaire présenté ici, un SOC généraliste de dix personnes représente environ 1,02 M€ de coût annuel du travail et reste volontairement à dix : l'IA y apporte surtout de la capacité, de la vitesse et de la régularité, plutôt qu'une réduction immédiate des effectifs. Une Blue Team de dix personnes représente environ 1,36 M€ par an. Si près de la moitié de sa capacité est consacrée au triage et à l'analyse de malware, et si l'automatisation absorbe l'essentiel de cette première analyse, le modèle opérationnel peut être réorganisé autour de cinq profils seniors pour environ 700 k€ par an.</p>
 
-          <p>L'écart représente environ 656 k€ d'économie directe par an. Face à une hypothèse illustrative de 400 k€ de build et de 200 k€ d'OPEX annuel pour la plateforme IA, le gain net récurrent ressort à environ 456 k€ par an, ce qui rembourse le build en 10,5 mois environ. Sur trois ans, le scénario dégage près de 968 k€ de bénéfice net cumulé, soit environ 97 % de ROI sur les dépenses de plateforme, avant de valoriser la capacité gagnée côté SOC ou des incidents moins coûteux.</p>
+          <p>L'écart représente environ 656 k€ d'économie directe par an. Avec une hypothèse illustrative de 400 k€ d'investissement initial et de 200 k€ de coûts d'exploitation annuels (OPEX) pour la plateforme IA, le gain net récurrent atteint environ 456 k€ par an. L'investissement initial est ainsi amorti en environ 10,5 mois. Sur trois ans, le scénario dégage près de 968 k€ de bénéfice net cumulé, soit environ 97 % de retour sur investissement sur les dépenses de plateforme, avant même de valoriser la capacité supplémentaire du SOC ou la réduction potentielle du coût des incidents.</p>
 
           <div class="post-stats">
             <div><b>1,02 M€</b><span>Par an, SOC de dix personnes. Équipe maintenue ; le gain recherché est la capacité et la vitesse.</span></div>
             <div><b>1,36 M€</b><span>Par an, Blue Team de dix personnes avant automatisation.</span></div>
             <div><b>0,70 M€</b><span>Par an, Blue Team cible de cinq profils seniors dans le scénario modélisé.</span></div>
-            <div><b>10,5 mois</b><span>Payback approximatif d'un build de 400 k€, après 200 k€ d'OPEX annuel.</span></div>
+            <div><b>10,5 mois</b><span>Délai de retour sur investissement approximatif pour 400 k€ d'investissement initial, avec 200 k€ d'OPEX annuel.</span></div>
           </div>
 
-          <p>Ces chiffres ne sont pas une promesse générale sur l'IA et les effectifs. Le calcul est volontairement transparent et il dépend du profil de charge. Le SOC est une fonction généraliste : identité, endpoint, messagerie, cloud, réseau, escalades, suivi des incidents, souvent une couverture continue. La Blue Team du scénario, elle, concentre une grande part de son temps sur un processus bien plus répétable, l'analyse de malware. C'est cette différence de structure qui crée deux business cases.</p>
+          <p>Ces chiffres ne constituent pas une promesse générale sur l'IA et les effectifs. Le calcul est volontairement transparent et dépend de la répartition réelle de la charge. Le SOC couvre des activités très diverses : identité, postes de travail, messagerie, cloud, réseau, escalades, gestion des incidents et, souvent, couverture continue. La Blue Team de ce scénario consacre au contraire une grande part de son temps à un processus plus répétable : l'analyse de malware. C'est cette différence de structure qui conduit à deux modèles économiques distincts.</p>
 
-          <p>L'article montre comment deux usages concrets, l'investigation SOC et le triage de malware, peuvent être conçus de façon assez sûre pour créer de la valeur opérationnelle, puis comment cette valeur se traduit dans des termes qu'un CISO, un CFO ou un comité d'investissement peuvent utiliser. Il ne défend ni l'idée que l'IA remplace les analystes, ni celle d'un simple projet de productivité.</p>
+          <p>L'article montre comment deux usages concrets, l'investigation SOC et le triage de malware, peuvent être conçus de manière suffisamment maîtrisée pour créer de la valeur opérationnelle, puis comment cette valeur peut être présentée dans des termes utiles à un RSSI, à un directeur financier ou à un comité d'investissement. L'objectif n'est ni de soutenir que l'IA remplace les analystes, ni de réduire le sujet à un simple projet de productivité.</p>
 
-          <h3>Comment lire le ROI : économie budgétaire, capacité récupérée et réduction du risque</h3>
+          <h3>Comment lire le retour sur investissement : économies budgétaires, capacité libérée et réduction du risque</h3>
 
-          <p>Les business cases d'automatisation cyber mélangent souvent trois bénéfices qui ne se comptabilisent pas de la même manière.</p>
+          <p>Les analyses de rentabilité des projets d'automatisation en cybersécurité mélangent souvent trois types de bénéfices qui ne se comptabilisent pas de la même manière.</p>
 
           <p>Le premier est l'économie budgétaire directe. Elle n'existe que si un poste est supprimé sans être remplacé ni transféré vers une autre fonction financée, ou si une dépense externe disparaît. Dans ce scénario, le passage de dix à cinq personnes dans la Blue Team crée ce type de bénéfice, à condition que la charge soit absorbée par le nouveau modèle.</p>
 
-          <p>Le deuxième est la capacité récupérée. Si dix analystes SOC deviennent 10 à 20 % plus productifs et que les dix postes sont conservés, la masse salariale ne bouge pas. La valeur existe pourtant : davantage d'incidents traités, des backlogs qui diminuent, des seniors qui récupèrent du temps, un recrutement futur qui peut être différé. Pour beaucoup de CISO, c'est un bénéfice SOC plus réaliste qu'une réduction immédiate d'effectifs.</p>
+          <p>Le deuxième est la capacité libérée. Si dix analystes SOC deviennent 10 à 20 % plus productifs et que les dix postes sont conservés, la masse salariale ne diminue pas. La valeur existe néanmoins : davantage d'incidents peuvent être traités, le volume d'alertes en attente diminue, les analystes seniors récupèrent du temps et un recrutement futur peut être différé. Pour beaucoup de RSSI, ce bénéfice est plus réaliste qu'une réduction immédiate des effectifs.</p>
 
           <p>Le troisième est la réduction du coût du risque. Une investigation plus rapide, une révocation de session plus précoce ou une meilleure détection peuvent réduire le coût d'un incident majeur. Cette valeur est potentiellement supérieure aux deux autres, mais elle est plus difficile à budgéter proprement ; elle est donc tenue à l'écart du calcul central du ROI.</p>
 
           <pre class="post-formula"><b>Bénéfice net annuel</b> = économies directes + recrutements évités + prestations externes évitées
                       + capacité récupérée monétisée - OPEX de la plateforme
 
-<b>Payback simple</b>      = coût initial du programme / bénéfice net annuel
+<b>Délai de retour simple</b> = coût initial du programme / bénéfice net annuel
 
 <b>ROI à 3 ans</b>         = (bénéfices cumulés - coûts cumulés) / coûts cumulés</pre>
 
-          <h3>Une hypothèse importante : 50 % de charge malware ne veut pas dire 50 % de postes en moins</h3>
+          <h3>Une hypothèse importante : 50 % de charge liée au malware ne signifie pas 50 % de postes en moins</h3>
 
-          <p>Une équipe de dix personnes qui consacre la moitié de sa capacité au malware porte environ cinq ETP de charge sur cette activité. Si l'automatisation supprime 80 % de ce travail, elle libère environ quatre ETP, pas cinq. Atteindre cinq personnes suppose une automatisation très poussée du premier passage répétitif et une réorganisation du reste : validation intégrée au flux, reporting automatisé, meilleure priorisation, et des profils conservés assez seniors pour absorber les exceptions.</p>
+          <p>Une équipe de dix personnes qui consacre la moitié de sa capacité au malware représente environ cinq ETP de charge sur cette activité. Si l'automatisation absorbe 80 % de ce travail, elle libère environ quatre ETP, pas cinq. Atteindre une équipe de cinq personnes suppose donc une automatisation très poussée de la première analyse répétitive et une réorganisation du travail restant : validation intégrée au processus, production automatisée des rapports, meilleure priorisation et maintien de profils suffisamment seniors pour traiter les exceptions.</p>
 
           <div class="post-table-wrap">
             <table class="post-table">
@@ -288,34 +288,34 @@
               <tbody>
                 <tr><td class="wrap">70 %</td><td class="num">3,5 ETP</td><td>Une équipe cible de 6 à 7 personnes est plus crédible.</td></tr>
                 <tr><td class="wrap">80 %</td><td class="num">4 ETP</td><td>Une équipe d'environ 6 personnes est envisageable selon la charge résiduelle.</td></tr>
-                <tr><td class="wrap">90 %</td><td class="num">4,5 ETP</td><td>Le modèle à 5 ou 6 devient plausible si le reporting et l'enrichissement sont eux aussi automatisés.</td></tr>
-                <tr><td class="wrap">≈ 100 % du premier passage répétitif</td><td class="num">≈ 5 ETP</td><td>La cible à 5 devient atteignable ; l'expertise humaine garde les exceptions.</td></tr>
+                <tr><td class="wrap">90 %</td><td class="num">4,5 ETP</td><td>Le modèle à 5 ou 6 personnes devient plausible si la production des rapports et l'enrichissement sont eux aussi automatisés.</td></tr>
+                <tr><td class="wrap">≈ 100 % de la première analyse répétitive</td><td class="num">≈ 5 ETP</td><td>La cible à 5 devient atteignable ; l'expertise humaine reste concentrée sur les exceptions.</td></tr>
               </tbody>
             </table>
           </div>
 
-          <p>Le scénario de 10 à 5 est un target operating model, pas une règle arithmétique.</p>
+          <p>Le passage de 10 à 5 personnes décrit un modèle opérationnel cible, pas une règle arithmétique.</p>
         </section>
 
         <section class="post-section" id="soc">
           <span class="post-num">Cas d'usage 1 · SOC</span>
-          <h2>Permettre à un agent IA d'investiguer, corréler et assister les analystes SOC</h2>
+          <h2>Permettre à un agent IA d'investiguer, de corréler les signaux et d'assister les analystes SOC</h2>
 
           <p>Le premier cas d'usage part d'un problème opérationnel ordinaire. Un incident de sécurité tient rarement dans une seule console. Une alerte peut commencer dans Defender for Office 365, être corrélée dans Microsoft Sentinel, demander un passage dans Defender for Endpoint, puis l'analyse des connexions Entra ID, puis un enrichissement par la Threat Intelligence. L'analyste reconstruit une chronologie, décide si plusieurs événements appartiennent au même scénario, identifie les systèmes et identités touchés et choisit la prochaine action.</p>
 
-          <p>Une grande partie de ce travail correspond précisément à ce qu'un LLM sait faire : lire de gros volumes de texte, faire ressortir les événements pertinents, relier des entités, résumer une chronologie, proposer des hypothèses. L'agent peut aussi produire une synthèse homogène pour le ticket et préparer une liste d'actions candidates.</p>
+          <p>Une grande partie de ce travail correspond précisément à ce qu'un LLM sait faire : parcourir de gros volumes de texte, faire ressortir les événements pertinents, relier des entités, résumer une chronologie et proposer des hypothèses. L'agent peut aussi produire une synthèse homogène pour le ticket et préparer une liste d'actions possibles.</p>
 
-          <p>Pour une banque, cela ne veut pas dire laisser le modèle gérer le SOC. Cela veut dire construire un environnement où le modèle devient un analyste logiciel très rapide, dont le pouvoir s'arrête à l'analyse et à la proposition.</p>
+          <p>Pour une banque, cela ne signifie pas confier le SOC au modèle. Il s'agit de construire un environnement dans lequel le modèle agit comme un assistant d'analyse très rapide, dont l'autorité s'arrête à l'analyse et à la proposition.</p>
 
           <h3>Exemple : vol potentiel d'identifiants</h3>
 
-          <p>Prenons un incident qui pointe vers un vol d'identifiants pour un utilisateur. L'investigation doit vérifier les alertes Defender, les entités de l'incident Sentinel, la chronologie du poste, les connexions Entra ID, l'adresse IP source et la réputation de quelques indicateurs. Plusieurs actions sont sur la table à la fin : isoler le poste, révoquer les sessions, mettre l'e-mail d'origine en quarantaine, bloquer un IOC, ouvrir un incident ServiceNow.</p>
+          <p>Prenons un incident qui laisse penser qu'un utilisateur a subi un vol d'identifiants. L'investigation doit vérifier les alertes Defender, les entités associées à l'incident Sentinel, la chronologie du poste, les connexions Entra ID, l'adresse IP source et la réputation de plusieurs indicateurs. À l'issue de l'analyse, plusieurs actions peuvent être envisagées : isoler le poste, révoquer les sessions, mettre l'e-mail d'origine en quarantaine, bloquer un IOC ou ouvrir un incident ServiceNow.</p>
 
           <p>L'agent accélère l'analyse parce qu'il peut parcourir ces sources avec des outils en lecture seule et synthétiser ce qu'il trouve. Le risque apparaît dès qu'on lui donne aussi le droit d'exécuter ces actions.</p>
 
-          <h3>L'architecture « efficace » qui crée le mauvais problème</h3>
+          <h3>L'architecture la plus simple… et la plus risquée</h3>
 
-          <p>La manière la plus directe de construire un agent autonome consiste à lui donner une identité qui cumule des droits de lecture sur les sources de sécurité et des droits d'écriture sur les API de remédiation. L'agent lit, raisonne et exécute. Sur le papier, le flux est simple. En pratique, il réunit dans un même composant deux niveaux de confiance qui devraient rester séparés.</p>
+          <p>La manière la plus directe de construire un agent autonome consiste à lui attribuer une identité qui cumule les droits de lecture sur les sources de sécurité et les droits d'écriture sur les API de remédiation. L'agent lit, raisonne et exécute. Sur le papier, le flux est simple. En pratique, le même composant interprète des données potentiellement hostiles et possède les permissions nécessaires pour agir en production.</p>
 
           <figure class="post-figure">
             <a href="../images/ai-soc-blue/fr/slide-04-naive-architecture.jpg" target="_blank" rel="noopener">
@@ -328,75 +328,75 @@
 
           <p>Une injection de prompt indirecte n'a donc pas besoin de « casser » le modèle. L'attaquant cherche simplement à introduire une instruction assez convaincante pour modifier le comportement du système.</p>
 
-          <h3>Chemin d'attaque : l'e-mail devient une entrée de contrôle</h3>
+          <h3>Chemin d'attaque : quand le contenu d'un e-mail influence l'agent</h3>
 
           <ol class="post-steps">
-            <li><strong>L'e-mail de phishing est détecté.</strong> Defender crée un incident et Sentinel déclenche le workflow d'investigation.</li>
-            <li><strong>L'agent lit le contenu complet.</strong> Le message, y compris du texte caché ou obfusqué, entre dans le même contexte que les preuves.</li>
+            <li><strong>L'e-mail de phishing est détecté.</strong> Defender crée un incident et Sentinel déclenche le processus d'investigation.</li>
+            <li><strong>L'agent analyse le contenu complet.</strong> Le message, y compris le texte caché ou obfusqué, entre dans le même contexte que les autres données d'investigation.</li>
             <li><strong>Le contenu oriente le raisonnement.</strong> Il peut demander de ne pas isoler le poste, de consulter d'autres événements ou de transmettre des informations ailleurs.</li>
-            <li><strong>Dans une architecture naïve, l'identité privilégiée transforme l'erreur en action.</strong> Les appels sont authentifiés avec une identité légitime ; le runtime n'a pas eu besoin d'être compromis.</li>
+            <li><strong>Dans une architecture naïve, l'identité privilégiée transforme l'erreur en action.</strong> Les appels sont authentifiés avec une identité légitime ; l'environnement d'exécution de l'agent n'a pas eu besoin d'être compromis.</li>
           </ol>
 
-          <p>L'enjeu n'est donc pas de trouver un LLM impossible à injecter, mais de déplacer la frontière de confiance.</p>
+          <p>L'enjeu n'est donc pas de trouver un LLM impossible à influencer par injection de prompt, mais de repositionner la frontière de confiance.</p>
 
           <div class="post-note post-note-alert"><strong>Principe :</strong> les données peuvent influencer le raisonnement du modèle. À elles seules, elles ne doivent jamais conférer ni étendre une autorité d'exécution.</div>
 
-          <h3>Séparer le raisonnement, l'autorisation et l'exécution</h3>
+          <h3>Séparer l'analyse, l'autorisation et l'exécution</h3>
 
-          <p>L'architecture cible introduit trois domaines logiques. L'agent d'investigation reste en lecture seule et consulte Sentinel, Defender, Entra ID et la Threat Intelligence. Une proposition d'action traverse une frontière de confiance explicite sous la forme d'un manifeste structuré. Un Policy Decision Point déterministe, sans LLM, décide si la proposition est autorisée, doit être approuvée par un humain ou doit être refusée.</p>
+          <p>L'architecture cible sépare clairement trois fonctions. L'agent d'investigation reste en lecture seule et consulte Sentinel, Defender, Entra ID et la Threat Intelligence. Toute proposition d'action franchit une frontière de confiance explicite sous la forme d'un manifeste structuré. Un Policy Decision Point (PDP) déterministe, sans LLM, décide ensuite si la proposition peut être exécutée automatiquement, doit recevoir une approbation humaine ou doit être refusée.</p>
 
           <figure class="post-figure">
             <a href="../images/ai-soc-blue/fr/slide-07-target-architecture.jpg" target="_blank" rel="noopener">
               <img src="../images/ai-soc-blue/fr/slide-07-target-architecture.jpg" width="1400" height="788" loading="lazy" alt="Slide 7 : agent d'investigation, manifeste d'action, Policy Decision Point, orchestrateur d'exécution et workers d'action, avec les règles de réponse déterministes et l'approbation SOC" />
             </a>
-            <figcaption>L'agent analyse et propose. Le Policy Decision Point décide. Des workers spécialisés exécutent seulement les actions autorisées.</figcaption>
+            <figcaption>L'agent analyse et propose. Le Policy Decision Point autorise ou refuse. Des workers spécialisés exécutent uniquement les actions autorisées.</figcaption>
           </figure>
 
           <p>Le pouvoir d'action reste dans un domaine de sécurité séparé. L'orchestrateur accepte les décisions valides du PDP et rien d'autre. Chaque worker a sa propre identité et le minimum de permissions pour sa seule tâche. Pour une action que l'organisation veut rendre impossible, il n'y a tout simplement pas de worker.</p>
 
-          <p>Cette approche permet d'accepter une réalité importante : le modèle peut faire une mauvaise proposition sans que le système s'effondre. La mauvaise proposition devient une entrée que la politique rejette.</p>
+          <p>Cette approche permet d'accepter une réalité importante : le modèle peut produire une proposition erronée sans compromettre le système. La proposition est alors simplement rejetée par les règles de décision.</p>
 
           <h3>Le manifeste d'action comme frontière de sécurité</h3>
 
-          <p>Le manifeste est une structure de données, pas une phrase en langage naturel. L'action vient d'un enum fermé, la cible est typée, l'incident est référencé, les preuves sont identifiées, et la proposition porte un identifiant unique et une expiration courte. Un champ de justification peut être conservé pour les humains, mais aucun texte libre n'atteint le worker d'exécution comme instruction.</p>
+          <p>Le manifeste est une structure de données, pas une phrase en langage naturel. L'action est choisie dans une liste fermée de valeurs autorisées, la cible respecte un type prédéfini, l'incident est référencé et les éléments à l'origine de la proposition sont identifiés. Le manifeste possède aussi un identifiant unique et une durée de validité courte. Un champ de justification peut être conservé pour les humains, mais aucun texte libre n'est transmis au worker comme instruction d'exécution.</p>
 
           <figure class="post-figure">
             <a href="../images/ai-soc-blue/fr/slide-09-action-manifest.jpg" target="_blank" rel="noopener">
-              <img src="../images/ai-soc-blue/fr/slide-09-action-manifest.jpg" width="1400" height="788" loading="lazy" alt="Slide 9 : un exemple de manifeste d'action en JSON à gauche et, à droite, les huit vérifications du Policy Decision Point : schéma, allowlist, cible présente dans les preuves, verdict, limite d'actions, expiration et anti-rejeu, actifs protégés, origine du message" />
+              <img src="../images/ai-soc-blue/fr/slide-09-action-manifest.jpg" width="1400" height="788" loading="lazy" alt="Slide 9 : un exemple de manifeste d'action en JSON à gauche et, à droite, les huit vérifications du Policy Decision Point : schéma, liste d'actions autorisées, cible associée à l'incident, verdict, limite d'actions, expiration et anti-rejeu, actifs protégés et origine du message" />
             </a>
             <figcaption>Un exemple de manifeste : ce que le modèle propose à gauche, ce que le PDP vérifie par lui-même à droite.</figcaption>
           </figure>
 
-          <p>Le PDP revalide ensuite les informations importantes avec sa propre identité. Il peut vérifier que la cible appartient bien à l'incident, que le verdict Defender correspond à la policy, que l'actif n'est pas de classe Tier 0, que la limite d'actions est respectée et que le manifeste n'a jamais été consommé.</p>
+          <p>Le PDP revalide ensuite les informations déterminantes avec sa propre identité. Il peut vérifier que la cible est bien associée à l'incident, que le verdict Defender satisfait les règles prévues, que l'actif n'appartient pas à la classe Tier 0, que les limites d'actions sont respectées et que le manifeste n'a jamais déjà été utilisé.</p>
 
-          <p>Cette distinction protège aussi contre les scores de confiance du modèle. Un agent peut annoncer 0,97 de confiance ; ce nombre reste une assertion. Il ne remplace ni un verdict ni un fait relu depuis un système de confiance.</p>
+          <p>Cette distinction protège aussi contre les scores de confiance produits par le modèle. Un agent peut annoncer un niveau de confiance de 0,97 ; ce nombre reste une déclaration du modèle, pas une source de vérité. Il ne remplace ni un verdict ni une information relue directement depuis un système de confiance.</p>
 
           <blockquote>Le modèle peut expliquer pourquoi il propose une action. Il ne doit pas devenir l'autorité qui décide que cette action est permise.</blockquote>
 
-          <h3>Human in the loop : approuver une action, pas l'agent</h3>
+          <h3>Validation humaine : approuver une action précise, pas l'agent</h3>
 
-          <p>Pour les actions sensibles, le modèle prépare la proposition et un analyste l'approuve. Cette approbation reste liée au hash d'un manifeste précis, à une cible précise et à une fenêtre de validité courte. Elle n'ajoute jamais de permission à l'identité de l'agent.</p>
+          <p>Pour les actions sensibles, le modèle prépare la proposition et un analyste l'approuve. Cette approbation est liée au hash d'un manifeste précis, à une cible donnée et à une durée de validité courte. Elle n'ajoute jamais de permission à l'identité de l'agent.</p>
 
           <p>Cela permet plusieurs niveaux d'automatisation. Une opération à impact limité peut passer automatiquement. Une isolation de poste ou une révocation de sessions peut exiger des conditions déterministes plus strictes. Une désactivation de compte ou une action sur un serveur peut exiger une approbation humaine. Les opérations critiques, comme modifier Conditional Access, RBAC, PIM, Azure Policy, les règles de détection ou le PDP lui-même, peuvent rester totalement hors périmètre.</p>
 
           <h3>Pourquoi les identités comptent autant que les prompts</h3>
 
-          <p>Dans une architecture agentique, le blast radius se ramène à l'identité qui signe chaque appel. Un prompt parfait ne compense pas une identité trop puissante, donc l'agent de raisonnement, le PDP, l'orchestrateur et chaque worker ont des identités distinctes.</p>
+          <p>Dans une architecture agentique, le périmètre d'impact dépend directement de l'identité qui signe chaque appel. Un prompt parfaitement conçu ne compense pas une identité trop puissante : l'agent d'investigation, le PDP, l'orchestrateur et chaque worker doivent donc disposer d'identités distinctes.</p>
 
           <p>Un worker d'isolation ne reçoit que ce qu'il faut pour isoler un poste. Un worker de révocation de sessions ne peut pas désactiver le compte. Un worker de blocage d'IOC est limité à un périmètre de pare-feu prédéfini. Si l'un de ces composants est compromis, les dégâts sont bornés par son propre pouvoir.</p>
 
-          <h3>Kill switch : couper le système sans demander son avis au modèle</h3>
+          <h3>Mécanismes d'arrêt d'urgence : neutraliser le système sans dépendre du modèle</h3>
 
-          <p>Le runtime de l'agent ne doit pas contrôler son propre arrêt. La conception empile trois interrupteurs : désactiver l'identité de l'agent, couper l'accès aux outils et aux nouvelles propositions, puis bloquer l'exécution au niveau de l'orchestrateur. Un watchdog peut en plus passer en fail-closed quand le heartbeat du PDP disparaît.</p>
+          <p>L'environnement d'exécution de l'agent ne doit pas contrôler ses propres mécanismes d'arrêt. La conception prévoit trois contrôles indépendants : désactiver l'identité de l'agent, couper l'accès aux outils et la possibilité de soumettre de nouvelles propositions, puis bloquer toute exécution au niveau de l'orchestrateur. Un superviseur indépendant peut en outre bloquer l'exécution par défaut si le signal de vie du PDP disparaît.</p>
 
           <figure class="post-figure">
             <a href="../images/ai-soc-blue/fr/slide-13-kill-switch.jpg" target="_blank" rel="noopener">
-              <img src="../images/ai-soc-blue/fr/slide-13-kill-switch.jpg" width="1400" height="788" loading="lazy" alt="Slide 13 : trois kill switches indépendants, identité, passerelle et file d'attente, orchestrateur, avec pour chacun l'endroit où il se trouve et son propriétaire, et le test d'indépendance" />
+              <img src="../images/ai-soc-blue/fr/slide-13-kill-switch.jpg" width="1400" height="788" loading="lazy" alt="Slide 13 : trois mécanismes d'arrêt indépendants (identité, passerelle et file d'attente, orchestrateur), avec pour chacun son emplacement, son responsable et le test d'indépendance" />
             </a>
-            <figcaption>Trois interrupteurs indépendants. Aucun n'est accessible depuis le modèle ni depuis le runtime de l'agent.</figcaption>
+            <figcaption>Trois mécanismes d'arrêt indépendants. Aucun n'est contrôlable depuis le modèle ni depuis l'environnement d'exécution de l'agent.</figcaption>
           </figure>
 
-          <p>Ce point est plus important qu'il n'y paraît. Même avec un contrôle total du prompt, de la mémoire ou d'un serveur MCP, un attaquant doit rester incapable de réactiver un worker, de prolonger la durée de vie d'un manifeste, de modifier la policy ou de désactiver le kill switch.</p>
+          <p>Ce point est plus important qu'il n'y paraît. Même avec un contrôle total du prompt, de la mémoire ou d'un serveur MCP, un attaquant doit rester incapable de réactiver un worker, de prolonger la durée de validité d'un manifeste, de modifier les règles de décision ou de désactiver les mécanismes d'arrêt d'urgence.</p>
 
           <h3>Tester en supposant que l'injection va réussir</h3>
 
@@ -411,7 +411,7 @@
 
           <p>La mesure de succès n'est pas « aucune injection n'a fonctionné ». Elle devient : même avec le composant de raisonnement compromis, aucune action privilégiée ne part sans passer par les contrôles indépendants.</p>
 
-          <h3>Observabilité : les refus deviennent des détections</h3>
+          <h3>Observabilité : les refus deviennent des signaux de détection</h3>
 
           <p>Un système agentique bien conçu produit une télémétrie plus riche qu'un journal d'exécution. Il enregistre le manifeste, son hash, la décision du PDP, la règle exacte appliquée, l'approbateur humain quand il y en a un, l'identité du worker et la réponse du système cible.</p>
 
@@ -420,9 +420,9 @@
 
         <section class="post-section" id="roi-soc">
           <span class="post-num">ROI · Cas d'usage 1</span>
-          <h2>ROI du SOC : ne pas confondre productivité et économie de postes</h2>
+          <h2>ROI du SOC : ne pas confondre gain de productivité et réduction des coûts</h2>
 
-          <p>Le modèle économique du SOC est volontairement prudent : les dix personnes restent. L'équipe modélisée compte quatre analystes L1 à 55 k€, trois analystes L2 à 68 k€, deux seniors à 84 k€ et un SOC lead à 100 k€, soit 692 k€ de salaires fixes. Avec la structure Eurostat, où les coûts non salariaux représentent 32,3 % du coût total du travail en France, le coût direct annuel ressort à environ 1,02 M€. <a class="post-cite" href="#src-3">[3]</a></p>
+          <p>Le modèle économique du SOC est volontairement prudent : les dix personnes sont conservées. L'équipe modélisée compte quatre analystes L1 à 55 k€, trois analystes L2 à 68 k€, deux analystes seniors à 84 k€ et un responsable SOC à 100 k€, soit 692 k€ de salaires fixes. En appliquant la structure publiée par Eurostat, où les coûts non salariaux représentent 32,3 % du coût total du travail en France, le coût annuel du travail est estimé à environ 1,02 M€. <a class="post-cite" href="#src-3">[3]</a></p>
 
           <p>Microsoft a mesuré un gain moyen de 22 % en vitesse et de 7 % en précision dans un essai randomisé auprès de 147 professionnels de la sécurité utilisant Copilot for Security sur les tâches testées. <a class="post-cite" href="#src-4">[4]</a> Appliquer 22 % à tout un SOC bancaire serait abusif. Le chiffre reste une borne haute utile pour la valeur de la capacité récupérée.</p>
 
@@ -434,26 +434,26 @@
               <tbody>
                 <tr><td>10 %</td><td class="num">≈ 102 k€</td><td>Capacité analyste récupérée, pas nécessairement une économie comptable.</td></tr>
                 <tr><td>15 %</td><td class="num">≈ 153 k€</td><td>Peut absorber la croissance des alertes ou différer un recrutement.</td></tr>
-                <tr><td>20 %</td><td class="num">≈ 204 k€</td><td>Gain important si les workflows sont intégrés et adoptés.</td></tr>
+                <tr><td>20 %</td><td class="num">≈ 204 k€</td><td>Gain important si les processus sont bien intégrés et réellement adoptés.</td></tr>
                 <tr><td>22 %</td><td class="num">≈ 225 k€</td><td>Illustration du résultat Microsoft ; pas une hypothèse budgétaire à reprendre telle quelle.</td></tr>
               </tbody>
             </table>
           </div>
 
-          <p>Face au comité exécutif, il faut distinguer la valeur économique de l'économie de trésorerie. Si les dix analystes restent, 153 k€ de capacité récupérée ne sortent pas de la masse salariale. Si cette capacité évite un onzième recrutement, réduit les astreintes ou remplace une partie d'un contrat MSSP, une part de cette valeur devient budgétaire.</p>
+          <p>Pour un comité exécutif, il faut distinguer la valeur économique d'une économie budgétaire réelle. Si les dix analystes restent, 153 k€ de capacité libérée ne réduisent pas la masse salariale. En revanche, si cette capacité évite un onzième recrutement, réduit les astreintes ou remplace une partie d'un contrat MSSP, une partie de cette valeur devient effectivement budgétaire.</p>
         </section>
 
         <section class="post-section" id="blue">
           <span class="post-num">Cas d'usage 2 · Blue Team</span>
-          <h2>Blue Team : déléguer le triage malware sans déléguer l'autorité</h2>
+          <h2>Blue Team : automatiser le triage de malware sans déléguer l'autorité</h2>
 
           <p>Le deuxième cas d'usage a un profil économique différent parce que le travail est plus concentré. Une Blue Team peut passer beaucoup de temps sur des échantillons : identifier le format, inspecter les chaînes, relever les anomalies, suivre les références, vérifier les règles YARA, décompiler quelques fonctions, extraire des IOC, comparer l'échantillon à des familles connues et rédiger un premier rapport.</p>
 
-          <p>Ce premier passage est technique, et il suit souvent une méthode répétable. Un modèle connecté à un analyseur spécialisé peut automatiser une bonne part de la navigation et de la synthèse sans recevoir un environnement d'exécution généraliste.</p>
+          <p>Cette première analyse est technique et suit souvent une méthode répétable. Un modèle connecté à un analyseur spécialisé peut automatiser une grande partie de l'exploration et de la synthèse sans disposer d'un environnement d'exécution généraliste.</p>
 
           <h3>Malcat MCP : donner des outils d'analyse, pas un shell</h3>
 
-          <p>Malcat expose via MCP un ensemble d'outils de lecture et de transformation. Le modèle peut inspecter de nombreux formats, suivre les fonctions, lire les chaînes et les anomalies, exploiter les résultats YARA, désassembler, décompiler et appliquer certains unpackers statiques.</p>
+          <p>Malcat expose via MCP un ensemble d'outils de lecture et de transformation. Le modèle peut inspecter de nombreux formats, suivre les fonctions, lire les chaînes et les anomalies, exploiter les résultats YARA, désassembler, décompiler et appliquer certains outils de dépaquetage statique (unpackers).</p>
 
           <figure class="post-figure">
             <a href="../images/ai-soc-blue/fr/slide-17-malcat-mcp.jpg" target="_blank" rel="noopener">
@@ -462,39 +462,39 @@
             <figcaption>Le modèle pilote Malcat et ses outils d'analyse statique. Il ne reçoit ni shell généraliste ni exécution arbitraire.</figcaption>
           </figure>
 
-          <p>La contrainte compte autant que la capacité. Dans le scénario du deck, l'agent n'a pas de shell, pas de Python arbitraire et pas d'accès Internet libre. Il n'exécute pas l'échantillon. Le modèle peut être fort en analyse sans devenir un environnement de détonation.</p>
+          <p>Les restrictions sont aussi importantes que les capacités. Dans le scénario présenté, l'agent ne dispose ni d'un shell, ni d'un interpréteur Python arbitraire, ni d'un accès Internet libre. Il n'exécute jamais l'échantillon. Le modèle peut donc être performant en analyse sans devenir lui-même un environnement d'exécution ou de détonation.</p>
 
-          <p>Le benchmark publié par Malcat le 18 mai 2026 teste neuf modèles et montre une valeur déjà importante pour le triage, avec des résultats plus contrastés sur les tâches lourdes de reverse engineering et d'unpacking. <a class="post-cite" href="#src-7">[7]</a> Son auteur précise qu'il ne s'agit pas d'une étude scientifique au sens académique. Ces résultats illustrent la faisabilité ; ils ne garantissent pas une réduction d'effectifs.</p>
+          <p>Le benchmark publié par Malcat le 18 mai 2026 teste neuf modèles et montre des résultats déjà intéressants pour le triage, avec davantage d'écarts sur les tâches exigeantes de rétro-ingénierie et de dépaquetage. <a class="post-cite" href="#src-7">[7]</a> Son auteur précise qu'il ne s'agit pas d'une étude scientifique au sens académique. Ces résultats illustrent la faisabilité technique ; ils ne garantissent pas une réduction des effectifs.</p>
 
-          <h3>Kesakode et Malpedia : enrichir sans sur-attribuer</h3>
+          <h3>Kesakode et Malpedia : enrichir l'analyse sans conclure trop vite à une attribution</h3>
 
           <p>Kesakode rapproche les fonctions d'un binaire d'une base de connaissances et estime une famille probable. L'agent peut utiliser ce signal pour concentrer son analyse sur les fonctions suspectes. Malpedia apporte ensuite du contexte documenté sur les familles, les alias et les groupes qui leur sont historiquement associés.</p>
 
           <p>Cette chaîne demande de la prudence. Une similarité de fonction n'est pas une preuve d'attribution, et une association historique dans Malpedia ne démontre pas que l'échantillon appartient à la campagne d'un acteur précis. Le rôle du modèle est de structurer ces signaux pour l'analyste, pas de transformer une corrélation en certitude.</p>
 
-          <h3>Conserver le fichier et les actions dans un pipeline contrôlé</h3>
+          <h3>Conserver le fichier et les actions dans une chaîne de traitement contrôlée</h3>
 
-          <p>Le malware lui-même est une donnée hostile. L'agent ne doit pas choisir où il est téléchargé, envoyé ou exécuté. L'architecture prévoit un worker d'extraction dédié depuis la quarantaine, un stockage immuable indexé par SHA-256, un montage en lecture seule dans l'environnement d'analyse et des sorties contrôlées.</p>
+          <p>Le fichier malveillant est, par définition, un contenu potentiellement hostile. L'agent ne doit pas pouvoir choisir où il est extrait, envoyé ou exécuté. L'architecture prévoit un worker dédié à l'extraction depuis la quarantaine, un stockage immuable indexé par SHA-256, un montage en lecture seule dans l'environnement d'analyse et des sorties strictement contrôlées.</p>
 
           <figure class="post-figure">
             <a href="../images/ai-soc-blue/fr/slide-21-malware-triage.jpg" target="_blank" rel="noopener">
               <img src="../images/ai-soc-blue/fr/slide-21-malware-triage.jpg" width="1400" height="788" loading="lazy" alt="Slide 21 : la plateforme de triage malware, de la quarantaine Defender for Office 365 à l'agent de triage qui pilote Malcat, le domaine de sécurité et les destinations autorisées" />
             </a>
-            <figcaption>L'agent contrôle l'analyse logique. L'extraction, les décisions de politique et les actions de production restent dans le domaine de sécurité.</figcaption>
+            <figcaption>L'agent pilote l'analyse, mais ne manipule ni directement le fichier ni les actions de production. L'extraction, la décision et l'exécution restent dans le domaine de sécurité.</figcaption>
           </figure>
 
           <p>L'agent rédige un rapport et en demande l'envoi via un manifeste. Le worker d'envoi a un expéditeur et un destinataire prédéfinis, et le fichier malveillant n'est jamais attaché. Un autre manifeste peut proposer un blocage d'IOC, mais la politique est évaluée d'abord et un worker au périmètre étroit exécute l'opération.</p>
 
-          <h3>Le triage ne remplace pas le reverse engineering</h3>
+          <h3>Le triage automatisé ne remplace pas la rétro-ingénierie</h3>
 
-          <p>Cette nuance est essentielle pour le modèle d'effectifs. L'IA peut automatiser une grande partie du premier passage : collecte des indices, navigation dans le binaire, synthèse, rapport, rapprochement avec des familles et des signatures. Elle ne supprime pas le besoin d'experts capables d'expliquer un packer inconnu, une technique anti-analyse, un loader nouveau, un comportement conditionnel ou une campagne ciblée.</p>
+          <p>Cette nuance est essentielle pour le dimensionnement de l'équipe. L'IA peut automatiser une grande partie de la première analyse : collecte des indices, exploration du binaire, synthèse, rédaction du rapport et rapprochement avec des familles ou des signatures connues. Elle ne supprime pas le besoin d'experts capables d'expliquer un packer inconnu, une technique anti-analyse, un loader inédit, un comportement conditionnel ou une campagne ciblée.</p>
 
-          <p>Les cinq personnes restantes ne sont donc pas « cinq opérateurs qui valident ChatGPT ». Elles deviennent une équipe plus senior : elles prennent les cas difficiles, valident les conclusions qui comptent, entretiennent la qualité des détections, améliorent les prompts et les outils, conduisent le threat hunting et interviennent quand le workflow automatique ne suffit plus.</p>
+          <p>Les cinq personnes restantes ne sont donc pas « cinq opérateurs qui valident ChatGPT ». Elles constituent une équipe plus senior : elles prennent en charge les cas difficiles, valident les conclusions importantes, maintiennent la qualité des détections, améliorent les prompts et les outils, conduisent le threat hunting et interviennent lorsque le processus automatisé ne suffit plus.</p>
         </section>
 
         <section class="post-section" id="roi-blue">
           <span class="post-num">ROI · Cas d'usage 2</span>
-          <h2>ROI de la Blue Team : passer de la capacité récupérée à une réduction de coût effective</h2>
+          <h2>ROI de la Blue Team : transformer la capacité libérée en réduction réelle des coûts</h2>
 
           <p>La Blue Team initiale du modèle compte deux Detection Engineers à 84 k€, deux Threat Hunters à 90 k€, deux profils DFIR à 90 k€, deux Cloud/Endpoint Security Engineers à 90 k€, un Malware Analyst à 95 k€ et un Blue Team Lead à 115 k€. Cela représente 918 k€ de salaires fixes, soit environ 1,36 M€ de coût direct du travail avec la même méthode.</p>
 
@@ -524,9 +524,9 @@
             <figcaption>Salaires illustratifs ; le coût du travail applique la part de 32,3 % de coûts non salariaux d'Eurostat pour la France <a class="post-cite" href="#src-3">[3]</a>. L'écart de 656 k€ est l'économie directe annuelle utilisée plus bas.</figcaption>
           </figure>
 
-          <h3>Le ROI complet du programme</h3>
+          <h3>Le retour sur investissement complet du programme</h3>
 
-          <p>Le scénario central utilise deux hypothèses de plateforme volontairement séparées des benchmarks de marché : 400 k€ de build initial et 200 k€ de coût récurrent annuel. Le build couvre l'intégration, les identités, le PDP, l'orchestration, les workers, l'observabilité, les tests et l'industrialisation. L'OPEX est une enveloppe unique pour le runtime des modèles, l'infrastructure, l'exploitation, le monitoring, les évaluations continues et la maintenance.</p>
+          <p>Le scénario central repose sur deux hypothèses de coût volontairement séparées des benchmarks de marché : 400 k€ d'investissement initial et 200 k€ de coûts d'exploitation annuels. L'investissement initial couvre l'intégration, les identités, le PDP, l'orchestration, les workers, l'observabilité, les tests et l'industrialisation. L'OPEX annuel regroupe l'exécution des modèles, l'infrastructure, l'exploitation, la supervision, les évaluations continues et la maintenance.</p>
 
           <div class="post-table-wrap">
             <table class="post-table">
@@ -536,7 +536,7 @@
               <tbody>
                 <tr><td>Économie Blue Team</td><td class="num">+656 k€</td><td class="num">+656 k€</td><td class="num">+656 k€</td></tr>
                 <tr><td>OPEX plateforme</td><td class="num">-200 k€</td><td class="num">-200 k€</td><td class="num">-200 k€</td></tr>
-                <tr><td>Build initial</td><td class="num">-400 k€</td><td class="num"></td><td class="num"></td></tr>
+                <tr><td>Investissement initial</td><td class="num">-400 k€</td><td class="num"></td><td class="num"></td></tr>
                 <tr class="is-total"><td>Flux net annuel</td><td class="num">+56 k€</td><td class="num">+456 k€</td><td class="num">+456 k€</td></tr>
                 <tr class="is-total"><td>Cumul</td><td class="num">+56 k€</td><td class="num">+512 k€</td><td class="num">+968 k€</td></tr>
               </tbody>
@@ -544,7 +544,7 @@
           </div>
 
           <figure class="post-chart">
-            <span class="post-chart-tag">Scénario central · build 400 k€ · OPEX 200 k€ par an</span>
+            <span class="post-chart-tag">Scénario central · investissement initial 400 k€ · OPEX 200 k€ par an</span>
             <h3>Bénéfice net cumulé sur trois ans</h3>
             <div class="bars" role="img" aria-label="Bénéfice net cumulé : 56 mille euros fin année 1, 512 mille fin année 2, 968 mille fin année 3.">
               <div class="bars-group"><span class="bars-label">Fin de l'année 1</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:5.6%"></span></div><span class="bars-value">+56 k€</span></div></div>
@@ -552,14 +552,14 @@
               <div class="bars-group"><span class="bars-label">Fin de l'année 3</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:96.8%"></span></div><span class="bars-value">+968 k€</span></div></div>
             </div>
             <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>500 k€</span><span>1 M€</span></div></div>
-            <figcaption>1,0 M€ de coût de programme sur trois ans (400 k€ de build plus 600 k€ d'OPEX) face à environ 1,97 M€ d'économie directe de Blue Team.</figcaption>
+            <figcaption>1,0 M€ de coût de programme sur trois ans (400 k€ d'investissement initial et 600 k€ d'OPEX) face à environ 1,97 M€ d'économies directes de Blue Team.</figcaption>
           </figure>
 
-          <p>Le bénéfice net cumulé atteint environ 968 k€, soit environ 97 % de ROI sur trois ans rapporté au coût du programme. L'année 1 est proche de l'équilibre parce que le build s'y paie ; les années 2 et 3 ajoutent chacune 456 k€.</p>
+          <p>Le bénéfice net cumulé atteint environ 968 k€, soit environ 97 % de retour sur investissement sur trois ans par rapport au coût du programme. La première année est proche de l'équilibre, car elle absorbe l'investissement initial ; les années 2 et 3 ajoutent chacune 456 k€ de bénéfice net.</p>
 
-          <h3>Sensibilité : et si le redimensionnement est moins agressif ?</h3>
+          <h3>Analyse de sensibilité : et si l'équipe cible restait plus nombreuse ?</h3>
 
-          <p>Le scénario à cinq personnes est le scénario cible. Un CISO devrait aussi tester au moins deux variantes moins agressives. Si la plateforme ne libère que trois ou quatre postes, le business case peut rester positif avec un payback plus long.</p>
+          <p>Le scénario à cinq personnes est le scénario cible. Un RSSI devrait aussi tester au moins deux variantes plus prudentes. Si la plateforme ne permet de libérer que trois ou quatre postes, l'analyse de rentabilité peut rester favorable, avec un délai de retour sur investissement plus long.</p>
 
           <div class="post-table-wrap">
             <table class="post-table">
@@ -567,9 +567,9 @@
                 <tr><th>Équipe cible</th><th class="num">Économie annuelle indicative</th><th class="num">Après 200 k€ d'OPEX</th><th>Lecture</th></tr>
               </thead>
               <tbody>
-                <tr><td>7 personnes</td><td class="num">≈ 390 k€</td><td class="num">≈ 190 k€ net</td><td>Business case positif, payback plus long.</td></tr>
+                <tr><td>7 personnes</td><td class="num">≈ 390 k€</td><td class="num">≈ 190 k€ net</td><td>Rentabilité positive, avec un délai de retour plus long.</td></tr>
                 <tr><td>6 personnes</td><td class="num">≈ 523 k€</td><td class="num">≈ 323 k€ net</td><td>Économie significative en gardant plus de capacité humaine.</td></tr>
-                <tr><td>5 personnes</td><td class="num">≈ 656 k€</td><td class="num">≈ 456 k€ net</td><td>Scénario cible, payback d'environ 10,5 mois.</td></tr>
+                <tr><td>5 personnes</td><td class="num">≈ 656 k€</td><td class="num">≈ 456 k€ net</td><td>Scénario cible, avec un délai de retour d'environ 10,5 mois.</td></tr>
               </tbody>
             </table>
           </div>
@@ -580,18 +580,18 @@
 
           <p>Le ROI central exclut volontairement le gain de productivité du SOC. Il exclut aussi la moindre dépendance à un MSSP, les recrutements futurs évités, la baisse des astreintes et les gains de MTTR, et il ne monétise pas un incident grave moins coûteux.</p>
 
-          <p>Autrement dit, le calcul est prudent sur les bénéfices annexes et agressif sur l'hypothèse de staffing Blue Team. C'est la façon la plus transparente de le présenter à un comité d'investissement.</p>
+          <p>Autrement dit, le calcul est prudent sur les bénéfices annexes et ambitieux sur l'hypothèse de dimensionnement de la Blue Team. C'est la manière la plus transparente de le présenter à un comité d'investissement.</p>
         </section>
 
         <section class="post-section" id="risk">
           <span class="post-num">Contexte · Banque</span>
-          <h2>Pour une banque, la vitesse de réponse et l'auditabilité ont aussi une valeur</h2>
+          <h2>Pour une banque, la vitesse de réponse et la traçabilité ont aussi une valeur</h2>
 
-          <p>IBM indique dans son rapport 2026 un coût moyen mondial de violation de données de 4,99 M$, et environ 6,3 M$ pour les services financiers. La même étude rapporte 1,93 M$ d'économie moyenne dans les organisations qui font un usage intensif de l'IA et de l'automatisation en sécurité, par rapport à celles qui n'en utilisent pas. <a class="post-cite" href="#src-5">[5]</a> Ce sont des observations agrégées ; elles ne peuvent pas être attribuées à l'architecture décrite ici.</p>
+          <p>IBM indique dans son rapport 2026 qu'une violation de données coûte en moyenne 4,99 M$ dans le monde, et environ 6,3 M$ dans les services financiers. La même étude rapporte 1,93 M$ d'économie moyenne dans les organisations qui utilisent intensivement l'IA et l'automatisation en sécurité, par rapport à celles qui n'en utilisent pas. <a class="post-cite" href="#src-5">[5]</a> Il s'agit d'observations agrégées ; elles ne peuvent pas être attribuées directement à l'architecture décrite ici.</p>
 
-          <p>Elles donnent tout de même un ordre de grandeur. Réduire de quelques minutes ou quelques heures le temps nécessaire pour isoler un endpoint compromis ou révoquer une session volée peut valoir bien plus que le temps d'analyste économisé sur cette seule action.</p>
+          <p>Elles donnent tout de même un ordre de grandeur. Réduire de quelques minutes ou quelques heures le temps nécessaire pour isoler un poste compromis ou révoquer une session volée peut valoir bien plus que le temps d'analyste économisé sur cette seule action.</p>
 
-          <p>Le secteur financier a en plus une contrainte d'auditabilité forte. DORA impose aux entités financières européennes un processus de gestion des incidents TIC couvrant la détection, la gestion, l'enregistrement, la catégorisation et la classification, et le suivi. <a class="post-cite" href="#src-6">[6]</a> Une plateforme qui journalise chaque proposition, décision, approbation et exécution apporte en plus une valeur de gouvernance.</p>
+          <p>Le secteur financier est également soumis à de fortes exigences de traçabilité et d'audit. DORA impose aux entités financières européennes un processus de gestion des incidents TIC couvrant la détection, la gestion, l'enregistrement, la catégorisation, la classification et le suivi. <a class="post-cite" href="#src-6">[6]</a> Une plateforme qui journalise chaque proposition, décision, approbation et exécution apporte donc aussi une valeur de gouvernance.</p>
         </section>
 
         <section class="post-section" id="principles">
@@ -600,9 +600,9 @@
 
           <div class="post-concepts post-concepts-4">
             <div><span class="post-concept-n">01</span><h3>Raisonner n'est pas autoriser</h3><p>Le modèle peut être très bon en analyse sans être l'autorité qui permet l'exécution.</p></div>
-            <div><span class="post-concept-n">02</span><h3>Des outils plus étroits que le langage naturel</h3><p>Des actions typées et des workers spécialisés bornent le risque bien mieux qu'un outil privilégié généraliste.</p></div>
-            <div><span class="post-concept-n">03</span><h3>Le ROI dépend du profil de charge</h3><p>Un SOC généraliste gagne surtout de la capacité. Une équipe spécialisée concentrée sur un workflow automatisable peut être redimensionnée.</p></div>
-            <div><span class="post-concept-n">04</span><h3>L'expertise humaine change de place</h3><p>Les humains quittent le premier passage répétitif pour l'investigation complexe, le contrôle, le threat hunting et la conception de détections.</p></div>
+            <div><span class="post-concept-n">02</span><h3>Des outils aux capacités strictement délimitées</h3><p>Des actions typées et des workers spécialisés limitent le risque bien mieux qu'un outil privilégié généraliste.</p></div>
+            <div><span class="post-concept-n">03</span><h3>Le ROI dépend de la répartition de la charge</h3><p>Un SOC généraliste gagne surtout de la capacité. Une équipe spécialisée, concentrée sur un processus fortement automatisable, peut être redimensionnée.</p></div>
+            <div><span class="post-concept-n">04</span><h3>L'expertise humaine se concentre sur les cas complexes</h3><p>Les analystes quittent la première analyse répétitive pour l'investigation complexe, le contrôle, le threat hunting et la conception de détections.</p></div>
           </div>
         </section>
 
@@ -612,17 +612,17 @@
 
           <p>Ces deux cas montrent pourquoi « l'IA dans la cybersécurité » est une catégorie trop large. La valeur dépend de la nature du travail que l'on automatise.</p>
 
-          <p>Dans le SOC, l'IA sert d'abord à augmenter le levier de dix analystes : meilleure corrélation, investigations plus rapides, résumés plus homogènes, moins de temps passé à naviguer entre les consoles. L'équipe reste à dix parce que sa valeur tient aussi à sa largeur de couverture et à sa capacité à gérer l'imprévu.</p>
+          <p>Dans le SOC, l'IA sert d'abord à amplifier la capacité de dix analystes : meilleure corrélation, investigations plus rapides, résumés plus homogènes et moins de temps passé à naviguer entre les consoles. L'équipe reste à dix parce que sa valeur tient aussi à l'étendue de sa couverture et à sa capacité à gérer l'imprévu.</p>
 
-          <p>Dans la Blue Team, le profil de charge peut être différent. Si cinq ETP partent dans le triage malware et que l'essentiel de ce premier passage devient automatisable, le modèle opérationnel peut être rebâti autour de cinq profils plus seniors. C'est là que la capacité récupérée devient une économie budgétaire directe.</p>
+          <p>Dans la Blue Team, la répartition de la charge peut être différente. Si cinq ETP sont consacrés au triage de malware et que l'essentiel de cette première analyse devient automatisable, le modèle opérationnel peut être réorganisé autour de cinq profils plus seniors. C'est à ce moment que la capacité libérée peut devenir une économie budgétaire directe.</p>
 
-          <p>L'intérêt économique ne doit jamais conduire à donner au modèle plus de pouvoir que nécessaire. Plus l'automatisation pèse, plus il faut séparer le raisonnement du pouvoir d'action, revalider les faits critiques de façon indépendante, cloisonner les identités et garder des interrupteurs d'arrêt externes.</p>
+          <p>L'intérêt économique ne doit jamais conduire à donner au modèle plus de pouvoir que nécessaire. Plus l'automatisation prend de l'importance, plus il faut séparer l'analyse du pouvoir d'agir, revalider indépendamment les informations critiques, cloisonner les identités et conserver des mécanismes d'arrêt d'urgence indépendants de l'environnement d'exécution de l'agent.</p>
 
           <figure class="post-figure">
             <a href="../images/ai-soc-blue/fr/slide-24-summary.jpg" target="_blank" rel="noopener">
-              <img src="../images/ai-soc-blue/fr/slide-24-summary.jpg" width="1400" height="788" loading="lazy" alt="Slide 24 : les quatre décisions en résumé, raisonnement en lecture seule, politique déterministe, approbation de transactions, autorité hors du runtime" />
+              <img src="../images/ai-soc-blue/fr/slide-24-summary.jpg" width="1400" height="788" loading="lazy" alt="Slide 24 : les quatre principes en résumé : analyse en lecture seule, autorisation déterministe, approbation d'une action précise et pouvoir d'action séparé de l'environnement d'exécution de l'agent" />
             </a>
-            <figcaption>Le principe commun : raisonnement en lecture seule, autorisation déterministe, approbation précise quand elle est nécessaire, et pouvoir d'action tenu à l'écart.</figcaption>
+            <figcaption>Le principe commun : analyse en lecture seule, autorisation déterministe, approbation précise lorsqu'elle est nécessaire et pouvoir d'action maintenu dans un domaine séparé.</figcaption>
           </figure>
 
           <blockquote>L'objectif n'est pas un agent qui ne se trompe jamais. C'est une architecture dans laquelle une erreur du modèle reste une erreur d'analyse et ne devient jamais, d'elle-même, une action privilégiée.</blockquote>
@@ -631,7 +631,7 @@
         <h2 id="sources">Sources, méthode et hypothèses</h2>
 
         <ol class="post-sources">
-          <li id="src-1"><strong>Deck source, SOC &amp; Blue Teaming : Automatisation avec l'IA.</strong> Les architectures, les scénarios d'injection de prompt, le manifeste d'action, le PDP, les identités, les kill switches, les scénarios de validation et le cas d'usage Malcat et Kesakode proviennent de l'étude de cas de l'auteur, téléchargeable plus haut.</li>
+          <li id="src-1"><strong>Support source, SOC &amp; Blue Teaming : Automatisation avec l'IA.</strong> Les architectures, les scénarios d'injection de prompt, le manifeste d'action, le PDP, les identités, les mécanismes d'arrêt d'urgence, les scénarios de validation et le cas d'usage Malcat et Kesakode proviennent de l'étude de cas de l'auteur, téléchargeable plus haut.</li>
           <li id="src-2"><strong>Robert Half, Guide des salaires 2026, Paris.</strong> Expert cybersécurité : 54 600 à 84 000 €, médiane 68 250 € ; DSSI : médiane 136 500 €. <a href="https://www.roberthalf.com/fr/fr/details-emploi/expert-cybersecurite/paris" target="_blank" rel="noopener noreferrer">Source</a>.</li>
           <li id="src-3"><strong>Eurostat, coûts horaires du travail, données 2025 publiées le 31 mars 2026.</strong> Les coûts non salariaux représentent 32,3 % du coût total du travail en France. Le calcul « salaire / 0,677 » utilisé ici est une approximation de modélisation, pas un calcul de paie. <a href="https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/23015.pdf" target="_blank" rel="noopener noreferrer">Source</a>.</li>
           <li id="src-4"><strong>Microsoft Office of the Chief Economist.</strong> Essai contrôlé auprès de 147 professionnels de la sécurité : 22 % plus rapides et 7 % plus précis avec Copilot for Security sur les tâches testées. <a href="https://www.microsoft.com/en-us/security/blog/2024/03/13/microsoft-copilot-for-security-is-generally-available-on-april-1-2024-with-new-capabilities/" target="_blank" rel="noopener noreferrer">Source</a>.</li>
@@ -640,7 +640,7 @@
           <li id="src-7"><strong>Malcat, 18 mai 2026.</strong> « Benchmarking LLMs for malware triage and static unpacking with Malcat ». L'auteur précise qu'il ne s'agit pas d'un benchmark scientifique académique. <a href="https://malcat.fr/blog/benchmarking-llms-for-malware-triage-and-static-unpacking-with-malcat/" target="_blank" rel="noopener noreferrer">Source</a>.</li>
         </ol>
 
-        <p class="post-note"><strong>Hypothèses propres au business case.</strong> La composition exacte des équipes, les salaires rôle par rôle, la part de 50 % de la charge Blue Team consacrée au malware, le passage de 10 à 5 personnes, le build à 400 k€ et l'OPEX à 200 k€ par an sont des hypothèses illustratives du scénario. Elles doivent être remplacées par les données réelles de l'organisation avant toute décision. Les schémas du deck sont des architectures conceptuelles proposées par l'auteur, pas des architectures de référence Microsoft.</p>
+        <p class="post-note"><strong>Hypothèses propres à l'analyse de rentabilité.</strong> La composition exacte des équipes, les salaires par rôle, la part de 50 % de la charge Blue Team consacrée au malware, le passage de 10 à 5 personnes, l'investissement initial de 400 k€ et l'OPEX de 200 k€ par an sont des hypothèses illustratives du scénario. Elles doivent être remplacées par les données réelles de l'organisation avant toute décision. Les schémas du support sont des architectures conceptuelles proposées par l'auteur, et non des architectures de référence Microsoft.</p>
 
         <div class="post-end">
           <a class="btn btn-primary" href="../SOC_and_Blue_Teaming_Automation_with_AI_FR.pdf" download="SOC_and_Blue_Teaming_Automation_with_AI_FR.pdf">
@@ -663,7 +663,7 @@
         <div class="guide-author-body">
           <strong>Jeremy Canale</strong>
           <span class="guide-author-role">Architecte Sécurité AWS / Azure</span>
-          <p>J'accompagne des grandes entreprises sur la sécurité de leurs plateformes cloud et, depuis deux ans, de leurs plateformes d'agents : identités, isolation, contrôle des sorties et déclencheurs d'arrêt. Si le sujet vous concerne, écrivez-moi.</p>
+          <p>J'accompagne de grandes entreprises sur la sécurité de leurs plateformes cloud et, depuis deux ans, de leurs plateformes d'agents IA : identités, isolation, contrôle des flux sortants et mécanismes d'arrêt d'urgence. Si le sujet vous concerne, écrivez-moi.</p>
           <div class="guide-author-links">
             <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
