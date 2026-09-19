@@ -14,7 +14,7 @@ window.I18N = {
       description: "Jeremy Canale is the world's foremost Agentic Security expert. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
     },
     brand:  { tag: "Agentic Security" },
-    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", guide: "Survival kit", cta: "Work with me" },
+    nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Work with me" },
     /* Case study: SOC and Blue Team automation with AI (deck + article). Newest post. */
     soc: {
       kicker: "Agentic security",
@@ -170,6 +170,26 @@ window.I18N = {
             outcome: "A defensible cyber posture, ready for investor and regulator scrutiny." }
     },
 
+    /* Open source contributions: merged public pull requests (homepage #contributions). */
+    contrib: {
+      kicker: "Contributions",
+      title: "Merged pull requests on public projects",
+      lede: "Security fixes proposed to open source projects and merged by their maintainers. The list is read from the GitHub API and only shows accepted pull requests; work still in review does not appear.",
+      merged: "Merged",
+      view: "View the pull request",
+      more: "All public activity on GitHub",
+      /* Runtime labels used by initContributions() in app.js for generated cards. */
+      nFiles: "{n} files",
+      synced: "Synced with GitHub",
+      p1: {
+        project: "Salesforce AI Research · rollout engine for evaluating and evolving AI agents",
+        desc: "The local Docker runtime cleared its container handle before stopping and removing the container, and ignored failed exit codes. A failed removal could leave an agent workload running while later cleanup calls did nothing. The fix forces removal even when the stop fails or times out, confirms the container is gone with an independent Docker query, and only then clears the handle. Otherwise it raises an error and keeps the handle for a retry.",
+        context: "Motivated by the containment questions raised by the <a href=\"incident-openai-hugging-face/en/\">OpenAI / Hugging Face incident</a>: stopping an agent workload needs a verifiable outcome.",
+        date: "18 September 2026",
+        files: "4 files",
+        tests: "15 new regression tests"
+      }
+    },
     pubs: {
       kicker: "Publications & Recognition",
       title: "A decade contributing to the public conversation",
@@ -273,7 +293,7 @@ window.I18N = {
       description: "Jeremy Canale est l'expert mondial de référence en sécurité agentique. Architecte de la sécurité des agents IA autonomes, des serveurs MCP, des plateformes cloud et du cyber-underwriting chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
     },
     brand:  { tag: "Sécurité Agentique" },
-    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", guide: "Kit de survie", cta: "Collaborer" },
+    nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Collaborer" },
     /* Cas pratique : automatiser le SOC et la Blue Team avec l'IA (deck + article). Article le plus récent. */
     soc: {
       kicker: "Sécurité agentique",
@@ -430,6 +450,26 @@ window.I18N = {
             outcome: "Une posture cyber défendable, prête pour la scrutation des investisseurs et des régulateurs." }
     },
 
+    /* Open source contributions: merged public pull requests (homepage #contributions). */
+    contrib: {
+      kicker: "Contributions",
+      title: "Pull requests acceptées sur des projets publics",
+      lede: "Correctifs de sécurité proposés à des projets open source et fusionnés par leurs mainteneurs. La liste est lue depuis l'API GitHub et n'affiche que les pull requests acceptées ; les travaux encore en revue n'y figurent pas.",
+      merged: "Fusionnée",
+      view: "Voir la pull request",
+      more: "Toute l'activité publique sur GitHub",
+      /* Runtime labels used by initContributions() in app.js for generated cards. */
+      nFiles: "{n} fichiers",
+      synced: "Synchronisé avec GitHub",
+      p1: {
+        project: "Salesforce AI Research · moteur d'exécution pour évaluer et faire évoluer des agents IA",
+        desc: "Le runtime Docker local effaçait la référence du conteneur avant de l'arrêter et de le supprimer, et ignorait les codes de retour en échec. Une suppression ratée pouvait donc laisser une charge d'agent en cours d'exécution, tandis que les nettoyages suivants ne faisaient plus rien. Le correctif force la suppression même si l'arrêt échoue ou expire, confirme l'absence du conteneur par une requête Docker indépendante, et n'efface la référence qu'à ce moment-là. Sinon, il lève une erreur et conserve la référence pour une nouvelle tentative.",
+        context: "Motivé par les questions de confinement soulevées par l'<a href=\"incident-openai-hugging-face/\">incident OpenAI / Hugging Face</a> : l'arrêt d'une charge d'agent doit avoir un résultat vérifiable.",
+        date: "18 septembre 2026",
+        files: "4 fichiers",
+        tests: "15 nouveaux tests de régression"
+      }
+    },
     pubs: {
       kicker: "Publications & Reconnaissance",
       title: "Une décennie de contribution au débat public",
@@ -533,7 +573,7 @@ window.I18N = {
       description: "Jeremy Canale 是全球顶尖的智能体（Agentic）AI 安全专家。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透、法兴银行及 Rankiteo 担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
     },
     brand:  { tag: "智能体安全" },
-    nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", cta: "开启合作" },
+    nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", contributions: "开源贡献", cta: "开启合作" },
 
     hero: {
       eyebrow: "世界级智能体安全专家",
@@ -624,6 +664,26 @@ window.I18N = {
             outcome: "一套面向投资者与监管者审视的可辩护网络姿态。" }
     },
 
+    /* Open source contributions: merged public pull requests (homepage #contributions). */
+    contrib: {
+      kicker: "开源贡献",
+      title: "已合并到公开项目的 Pull Request",
+      lede: "向开源项目提交并已被维护者合并的安全修复。列表直接读取自 GitHub API，仅显示已被接受的 Pull Request，仍在评审中的工作不会出现。",
+      merged: "已合并",
+      view: "查看 Pull Request",
+      more: "GitHub 上的全部公开活动",
+      /* Runtime labels used by initContributions() in app.js for generated cards. */
+      nFiles: "{n} 个文件",
+      synced: "已与 GitHub 同步",
+      p1: {
+        project: "Salesforce AI Research · 用于评估和演进 AI 智能体的执行引擎",
+        desc: "本地 Docker 运行时在停止并删除容器之前就清除了容器句柄，并且忽略了失败的退出码。一旦删除失败，智能体工作负载可能仍在运行，而后续的清理调用却不再执行任何操作。该修复在停止失败或超时时仍强制删除容器，通过独立的 Docker 查询确认容器已不存在，然后才清除句柄；否则抛出错误并保留句柄以便重试。",
+        context: "起因是 <a href=\"incident-openai-hugging-face/en/\">OpenAI / Hugging Face 事件</a>引出的隔离问题：停止智能体工作负载必须有可验证的结果。",
+        date: "2026年9月18日",
+        files: "4 个文件",
+        tests: "15 个新增回归测试"
+      }
+    },
     pubs: {
       kicker: "出版与认可",
       title: "十年来对公共议题的贡献",
@@ -727,7 +787,7 @@ window.I18N = {
       description: "جيريمي كانال هو الخبير العالمي الأول في أمن الوكلاء الذكيين (Agentic Security). مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale وRankiteo."
     },
     brand:  { tag: "أمن الوكلاء الذكيين" },
-    nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", cta: "ابدأ التعاون" },
+    nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", contributions: "المساهمات", cta: "ابدأ التعاون" },
 
     hero: {
       eyebrow: "خبير عالمي في أمن الوكلاء الذكيين",
@@ -818,6 +878,26 @@ window.I18N = {
             outcome: "وضع سيبراني قابل للدفاع جاهز لتدقيق المستثمرين والجهات التنظيمية." }
     },
 
+    /* Open source contributions: merged public pull requests (homepage #contributions). */
+    contrib: {
+      kicker: "المساهمات",
+      title: "طلبات سحب مدمجة في مشاريع عامة",
+      lede: "إصلاحات أمنية مقترحة على مشاريع مفتوحة المصدر ودمجها القائمون عليها. تُقرأ القائمة من واجهة GitHub البرمجية ولا تعرض إلا طلبات السحب المقبولة، أما الأعمال التي ما زالت قيد المراجعة فلا تظهر.",
+      merged: "مدمج",
+      view: "عرض طلب السحب",
+      more: "كل النشاط العام على GitHub",
+      /* Runtime labels used by initContributions() in app.js for generated cards. */
+      nFiles: "{n} ملفات",
+      synced: "تمت المزامنة مع GitHub",
+      p1: {
+        project: "Salesforce AI Research · محرك تنفيذ لتقييم وكلاء الذكاء الاصطناعي وتطويرهم",
+        desc: "كانت بيئة تشغيل Docker المحلية تمسح مرجع الحاوية قبل إيقافها وحذفها، وتتجاهل رموز الخروج الفاشلة. وبذلك كان فشل الحذف قد يترك حمل عمل الوكيل قيد التشغيل بينما لا تفعل استدعاءات التنظيف اللاحقة شيئاً. يفرض الإصلاح الحذف حتى عند فشل الإيقاف أو انتهاء مهلته، ويتحقق من غياب الحاوية عبر استعلام Docker مستقل، ولا يمسح المرجع إلا بعد ذلك. وإلا فإنه يرفع خطأً ويحتفظ بالمرجع لإعادة المحاولة.",
+        context: "الدافع هو أسئلة الاحتواء التي أثارها <a href=\"incident-openai-hugging-face/en/\">حادث OpenAI / Hugging Face</a>: إيقاف حمل عمل الوكيل يحتاج إلى نتيجة يمكن التحقق منها.",
+        date: "18 سبتمبر 2026",
+        files: "4 ملفات",
+        tests: "15 اختبار انحدار جديداً"
+      }
+    },
     pubs: {
       kicker: "النشر والاعتراف",
       title: "عقد من الإسهام في النقاش العام",

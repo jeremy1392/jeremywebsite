@@ -412,6 +412,199 @@
     return true;
   }
 
+  /* ---------- contributions: merged public pull requests, read live from the GitHub API ---------- */
+  // The <li data-pr="owner/repo#n"> cards already in the page are the curated, translated ones. They are
+  // also the fallback when the API is unreachable or rate limited, and what crawlers see. Every other
+  // merged pull request gets a generated card. Strings coming from the API are only ever written with
+  // textContent, and links are rebuilt from the validated repository name, never taken from the response.
+
+  var CONTRIB_CACHE_KEY = 'jc.contrib.v1';
+  var CONTRIB_TTL = 6 * 60 * 60 * 1000;   // unauthenticated API: 10 searches/min and 60 core calls/h per visitor IP
+  var CONTRIB_MAX = 12;
+  var CONTRIB_REPO = /^[\w.-]+\/[\w.-]+$/;
+
+  function initContributions() {
+    var list = document.querySelector('[data-contrib]');
+    if (!list || !window.fetch) return;
+    var user = list.getAttribute('data-contrib-user') || '';
+    if (!/^[A-Za-z0-9-]+$/.test(user)) return;
+    var cached = readContribCache(user);
+    if (cached) { renderContributions(list, cached); return; }
+    fetchContributions(user, curatedContribCards(list)).then(function (items) {
+      if (!items.length) return;
+      writeContribCache(user, items);
+      renderContributions(list, items);
+    }).catch(function () { /* keep the static cards */ });
+  }
+
+  function curatedContribCards(list) {
+    var map = {};
+    Array.prototype.forEach.call(list.querySelectorAll('[data-pr]'), function (li) {
+      map[li.getAttribute('data-pr')] = li;
+    });
+    return map;
+  }
+
+  function githubJson(url) {
+    return fetch(url, { headers: { Accept: 'application/vnd.github+json' } }).then(function (r) {
+      if (!r.ok) throw new Error('GitHub API ' + r.status);
+      return r.json();
+    });
+  }
+
+  function fetchContributions(user, curated) {
+    // Merged, public, and outside the author's own repositories.
+    var q = 'author:' + user + ' type:pr is:merged is:public -user:' + user;
+    var url = 'https://api.github.com/search/issues?per_page=' + CONTRIB_MAX +
+      '&sort=created&order=desc&q=' + encodeURIComponent(q);
+    return githubJson(url).then(function (data) {
+      return Promise.all((data.items || []).slice(0, CONTRIB_MAX).map(function (it) {
+        var item = {
+          repo: String(it.repository_url || '').replace('https://api.github.com/repos/', ''),
+          number: parseInt(it.number, 10),
+          title: String(it.title || ''),
+          excerpt: contribExcerpt(it.body),
+          mergedAt: (it.pull_request && it.pull_request.merged_at) || ''
+        };
+        if (!CONTRIB_REPO.test(item.repo) || curated[item.repo + '#' + item.number]) return item;
+        // The search result has no diff stats and no repository description; the pull request has both.
+        return githubJson('https://api.github.com/repos/' + item.repo + '/pulls/' + item.number).then(function (pr) {
+          item.additions = pr.additions;
+          item.deletions = pr.deletions;
+          item.files = pr.changed_files;
+          item.mergedAt = pr.merged_at || item.mergedAt;
+          item.repoDesc = String((pr.base && pr.base.repo && pr.base.repo.description) || '');
+          return item;
+        }).catch(function () { return item; });
+      }));
+    }).then(function (items) {
+      return items.filter(function (p) { return CONTRIB_REPO.test(p.repo) && p.number > 0 && p.mergedAt; })
+        .sort(function (a, b) { return a.mergedAt < b.mergedAt ? 1 : -1; });
+    });
+  }
+
+  // First paragraph of the pull request description, as plain text.
+  function contribExcerpt(body) {
+    var text = String(body || '').replace(/\r/g, '');
+    var section = text.match(/^#+\s*(?:Problem|Summary|Description|Context)[^\n]*\n+([\s\S]*?)(?=\n#+\s|$)/im);
+    if (section) text = section[1];
+    text = text.replace(/```[\s\S]*?```/g, ' ').replace(/<!--[\s\S]*?-->/g, ' ')
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/^#+\s.*$/gm, ' ').replace(/^\s*[-+*]\s+/gm, '').replace(/[`*]/g, '')
+      .replace(/\s+/g, ' ').trim();
+    if (text.length <= 320) return text;
+    return text.slice(0, 320).replace(/\s+\S*$/, '') + '…';
+  }
+
+  function readContribCache(user) {
+    try {
+      var c = JSON.parse(localStorage.getItem(CONTRIB_CACHE_KEY) || 'null');
+      if (c && c.user === user && Array.isArray(c.items) && Date.now() - c.t < CONTRIB_TTL) return c.items;
+    } catch (_) {}
+    return null;
+  }
+
+  function writeContribCache(user, items) {
+    try { localStorage.setItem(CONTRIB_CACHE_KEY, JSON.stringify({ user: user, t: Date.now(), items: items })); } catch (_) {}
+  }
+
+  function renderContributions(list, items) {
+    var lang = currentPageLang();
+    var labels = (I18N[lang] && I18N[lang].contrib) || (I18N.en && I18N.en.contrib) || {};
+    var curated = curatedContribCards(list);
+    var icons = {
+      repo: list.querySelector('.contrib-repo svg'),
+      state: list.querySelector('.contrib-state svg'),
+      link: list.querySelector('.contrib-link svg')
+    };
+    // appendChild moves a card that is already in the list, so the list ends up in API order, newest first.
+    items.forEach(function (p) {
+      var card = curated[p.repo + '#' + p.number] || buildContribCard(p, labels, lang, icons);
+      if (card) list.appendChild(card);
+    });
+    var status = document.querySelector('[data-contrib-status]');
+    if (status && labels.synced) { status.textContent = labels.synced; status.hidden = false; }
+  }
+
+  function contribEl(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function contribLink(cls, href, text) {
+    var a = contribEl('a', cls, text);
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    return a;
+  }
+
+  function buildContribCard(p, labels, lang, icons) {
+    var number = parseInt(p.number, 10);
+    if (!CONTRIB_REPO.test(String(p.repo)) || !(number > 0)) return null;   // cached data is re-validated too
+    var repoUrl = 'https://github.com/' + p.repo;
+    var prUrl = repoUrl + '/pull/' + number;
+
+    var li = contribEl('li', 'contrib-item');
+    li.setAttribute('data-pr', p.repo + '#' + number);
+
+    var head = contribEl('div', 'contrib-head');
+    var repo = contribLink('contrib-repo', repoUrl, p.repo);
+    repo.dir = 'ltr';
+    if (icons.repo) repo.insertBefore(icons.repo.cloneNode(true), repo.firstChild);
+    var state = contribEl('div', 'contrib-state');
+    if (icons.state) state.appendChild(icons.state.cloneNode(true));
+    state.appendChild(contribEl('span', '', labels.merged || 'Merged'));
+    head.appendChild(repo);
+    head.appendChild(state);
+    li.appendChild(head);
+
+    var title = contribEl('h3', 'contrib-title');
+    var titleLink = contribLink('', prUrl, String(p.title || '') + ' ');
+    titleLink.dir = 'ltr';
+    titleLink.appendChild(contribEl('span', 'contrib-num', '#' + number));
+    title.appendChild(titleLink);
+    li.appendChild(title);
+
+    var desc = String(p.repoDesc || '').replace(/:[a-z0-9_+-]+:/g, '').replace(/\s+/g, ' ').trim();
+    if (desc) {
+      var project = contribEl('div', 'contrib-project', desc.length > 150 ? desc.slice(0, 150).replace(/\s+\S*$/, '') + '…' : desc);
+      project.dir = 'ltr';
+      project.lang = 'en';
+      li.appendChild(project);
+    }
+    if (p.excerpt) {
+      var para = contribEl('p', '', String(p.excerpt));
+      para.dir = 'ltr';
+      para.lang = 'en';
+      li.appendChild(para);
+    }
+
+    var foot = contribEl('div', 'contrib-foot');
+    var stats = contribEl('div', 'contrib-stats');
+    var merged = new Date(p.mergedAt);
+    if (!isNaN(merged)) {
+      var when = contribEl('time', '', merged.toLocaleDateString({ en: 'en-GB', ar: 'ar-u-nu-latn' }[lang] || lang, { day: 'numeric', month: 'long', year: 'numeric' }));
+      when.dateTime = String(p.mergedAt).slice(0, 10);
+      stats.appendChild(when);
+    }
+    if (typeof p.files === 'number') {
+      stats.appendChild(document.createTextNode(' · ' + (labels.nFiles || '{n} files').replace('{n}', p.files) + ' · '));
+      stats.appendChild(contribEl('b', 'add', '+' + p.additions));
+      stats.appendChild(document.createTextNode(' '));
+      stats.appendChild(contribEl('b', 'del', '-' + p.deletions));
+    }
+    foot.appendChild(stats);
+    var view = contribLink('contrib-link', prUrl, null);
+    view.appendChild(contribEl('span', '', labels.view || 'View the pull request'));
+    if (icons.link) view.appendChild(icons.link.cloneNode(true));
+    foot.appendChild(view);
+    li.appendChild(foot);
+    return li;
+  }
+
   /* ---------- boot ---------- */
 
   function boot() {
@@ -422,6 +615,7 @@
     setYear();
     initHeaderShadow();
     initDeckCarousels();
+    initContributions();
     // If we're on a pre-rendered page (lang baked into <html lang>), only update
     // the rotor words and the trigger label, do not rewrite the body.
     const pageLang = currentPageLang();

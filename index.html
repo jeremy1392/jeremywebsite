@@ -202,7 +202,7 @@
       <a href="#consulting" data-i18n="nav.consulting">Consulting</a>
       <a href="#cases" data-i18n="nav.cases">Case Studies</a>
       <a href="blog/en/" data-guide-link>Blog</a>
-      <a href="security-architect-guide/en/" data-guide-link>Survival kit</a>
+      <a href="#contributions" data-i18n="nav.contributions">Contributions</a>
       <a href="#experience" data-i18n="nav.experience">Experience</a>
       <a href="#certifications" data-i18n="nav.certifications">Credentials</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
@@ -2165,6 +2165,37 @@
         </article>
 
       </div>
+    </section>
+
+
+    <!-- ====================== OPEN SOURCE CONTRIBUTIONS (merged public pull requests) ====================== -->
+    <section id="contributions" class="section">
+      <div class="section-head">
+        <div class="kicker" data-i18n="contrib.kicker">Contributions</div>
+        <h2 data-i18n="contrib.title">Merged pull requests on public projects</h2>
+        <p class="lede" data-i18n="contrib.lede">Security fixes proposed to open source projects and merged by their maintainers. The list is read from the GitHub API and only shows accepted pull requests; work still in review does not appear.</p>
+      </div>
+
+      <ul class="contrib-list" data-contrib data-contrib-user="jeremy1392">
+
+        <li class="contrib-item" data-pr="SalesforceAIResearch/Beagle#3">
+          <div class="contrib-head">
+            <a class="contrib-repo" href="https://github.com/SalesforceAIResearch/Beagle" target="_blank" rel="noopener noreferrer" dir="ltr"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>SalesforceAIResearch/Beagle</a>
+            <div class="contrib-state"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z"/></svg><span data-i18n="contrib.merged">Merged</span></div>
+          </div>
+          <h3 class="contrib-title"><a href="https://github.com/SalesforceAIResearch/Beagle/pull/3" target="_blank" rel="noopener noreferrer" dir="ltr">fix(security): verify local Docker removal before confirming cleanup <span class="contrib-num">#3</span></a></h3>
+          <div class="contrib-project" data-i18n="contrib.p1.project">Salesforce AI Research · rollout engine for evaluating and evolving AI agents</div>
+          <p data-i18n="contrib.p1.desc">The local Docker runtime cleared its container handle before stopping and removing the container, and ignored failed exit codes. A failed removal could leave an agent workload running while later cleanup calls did nothing. The fix forces removal even when the stop fails or times out, confirms the container is gone with an independent Docker query, and only then clears the handle. Otherwise it raises an error and keeps the handle for a retry.</p>
+          <p data-i18n="contrib.p1.context">Motivated by the containment questions raised by the <a href="incident-openai-hugging-face/en/">OpenAI / Hugging Face incident</a>: stopping an agent workload needs a verifiable outcome.</p>
+          <div class="contrib-foot">
+            <div class="contrib-stats"><time datetime="2026-09-18" data-i18n="contrib.p1.date">18 September 2026</time> · <span data-i18n="contrib.p1.files">4 files</span> · <b class="add">+288</b> <b class="del">-19</b> · <span data-i18n="contrib.p1.tests">15 new regression tests</span></div>
+            <a class="contrib-link" href="https://github.com/SalesforceAIResearch/Beagle/pull/3" target="_blank" rel="noopener noreferrer"><span data-i18n="contrib.view">View the pull request</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </li>
+
+      </ul>
+
+      <p class="contrib-more"><a href="https://github.com/jeremy1392" target="_blank" rel="noopener noreferrer" data-i18n="contrib.more">All public activity on GitHub</a><span class="contrib-sync" data-contrib-status aria-live="polite" hidden></span></p>
     </section>
 
 

@@ -154,7 +154,6 @@ function injectBanners(html, dict, prefix) {
 function injectGuideNavLink(html, dict, prefix) {
   const links = [];
   if (dict.blog)  links.push(`      <a href="${prefix + dict.blog.url}" data-guide-link>${escapeHtml(dict.blog.nav)}</a>`);
-  if (dict.guide) links.push(`      <a href="${prefix + dict.guide.url}" data-guide-link>${escapeHtml(dict.nav.guide || dict.guide.title)}</a>`);
   if (!links.length) return html;
   return html.replace(
     /(<a href="[^"]*#cases"\s+data-i18n="nav.cases">[^<]*<\/a>\r?\n)/,
@@ -371,7 +370,8 @@ ${JSON.stringify(serviceLd, null, 2)}
       <a href="../${langRoot}#expertise">${escapeHtml(dict.nav.expertise)}</a>
       <a href="../${langRoot}#consulting">${escapeHtml(dict.nav.consulting)}</a>
       <a href="../${langRoot}#cases">${escapeHtml(dict.nav.cases)}</a>
-${dict.blog ? `      <a href="../${dict.blog.url}">${escapeHtml(dict.blog.nav)}</a>\n` : ''}${dict.guide ? `      <a href="../${dict.guide.url}">${escapeHtml(dict.nav.guide || dict.guide.title)}</a>\n` : ''}      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
+${dict.blog ? `      <a href="../${dict.blog.url}">${escapeHtml(dict.blog.nav)}</a>\n` : ''}      <a href="../${langRoot}#contributions">${escapeHtml(dict.nav.contributions)}</a>
+      <a href="../${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
       <a href="../${langRoot}#certifications">${escapeHtml(dict.nav.certifications)}</a>
       <a href="../${langRoot}#faq">${escapeHtml(dict.nav.faq)}</a>
       <a href="../${langRoot}#contact">${escapeHtml(dict.nav.contact)}</a>
@@ -760,7 +760,8 @@ ${JSON.stringify(crumbs, null, 2)}
       <a href="${prefix}${langRoot}#consulting">${escapeHtml(dict.nav.consulting)}</a>
       <a href="${prefix}${langRoot}#cases">${escapeHtml(dict.nav.cases)}</a>
       <a href="./" aria-current="page">${escapeHtml(bl.nav)}</a>
-${dict.guide ? `      <a href="${prefix}${dict.guide.url}">${escapeHtml(dict.nav.guide || dict.guide.title)}</a>\n` : ''}      <a href="${prefix}${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
+      <a href="${prefix}${langRoot}#contributions">${escapeHtml(dict.nav.contributions)}</a>
+      <a href="${prefix}${langRoot}#experience">${escapeHtml(dict.nav.experience)}</a>
       <a href="${prefix}${langRoot}#certifications">${escapeHtml(dict.nav.certifications)}</a>
       <a href="${prefix}${langRoot}#contact">${escapeHtml(dict.nav.contact)}</a>
     </nav>

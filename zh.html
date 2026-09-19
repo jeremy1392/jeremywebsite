@@ -201,6 +201,7 @@
       <a href="#expertise"  data-i18n="nav.expertise">专长领域</a>
       <a href="#consulting"  data-i18n="nav.consulting">咨询服务</a>
       <a href="#cases"  data-i18n="nav.cases">客户案例</a>
+      <a href="#contributions"  data-i18n="nav.contributions">开源贡献</a>
       <a href="#experience"  data-i18n="nav.experience">履历</a>
       <a href="#certifications"  data-i18n="nav.certifications">资质认证</a>
       <a href="#faq"  data-i18n="nav.faq">常见问题</a>
@@ -2069,6 +2070,37 @@
         </article>
 
       </div>
+    </section>
+
+
+    <!-- ====================== OPEN SOURCE CONTRIBUTIONS (merged public pull requests) ====================== -->
+    <section id="contributions" class="section">
+      <div class="section-head">
+        <div class="kicker"  data-i18n="contrib.kicker">开源贡献</div>
+        <h2  data-i18n="contrib.title">已合并到公开项目的 Pull Request</h2>
+        <p class="lede"  data-i18n="contrib.lede">向开源项目提交并已被维护者合并的安全修复。列表直接读取自 GitHub API，仅显示已被接受的 Pull Request，仍在评审中的工作不会出现。</p>
+      </div>
+
+      <ul class="contrib-list" data-contrib data-contrib-user="jeremy1392">
+
+        <li class="contrib-item" data-pr="SalesforceAIResearch/Beagle#3">
+          <div class="contrib-head">
+            <a class="contrib-repo" href="https://github.com/SalesforceAIResearch/Beagle" target="_blank" rel="noopener noreferrer" dir="ltr"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>SalesforceAIResearch/Beagle</a>
+            <div class="contrib-state"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z"/></svg><span  data-i18n="contrib.merged">已合并</span></div>
+          </div>
+          <h3 class="contrib-title"><a href="https://github.com/SalesforceAIResearch/Beagle/pull/3" target="_blank" rel="noopener noreferrer" dir="ltr">fix(security): verify local Docker removal before confirming cleanup <span class="contrib-num">#3</span></a></h3>
+          <div class="contrib-project"  data-i18n="contrib.p1.project">Salesforce AI Research · 用于评估和演进 AI 智能体的执行引擎</div>
+          <p  data-i18n="contrib.p1.desc">本地 Docker 运行时在停止并删除容器之前就清除了容器句柄，并且忽略了失败的退出码。一旦删除失败，智能体工作负载可能仍在运行，而后续的清理调用却不再执行任何操作。该修复在停止失败或超时时仍强制删除容器，通过独立的 Docker 查询确认容器已不存在，然后才清除句柄；否则抛出错误并保留句柄以便重试。</p>
+          <p  data-i18n="contrib.p1.context">起因是 <a href="incident-openai-hugging-face/en/">OpenAI / Hugging Face 事件</a>引出的隔离问题：停止智能体工作负载必须有可验证的结果。</p>
+          <div class="contrib-foot">
+            <div class="contrib-stats"><time datetime="2026-09-18"  data-i18n="contrib.p1.date">2026年9月18日</time> · <span  data-i18n="contrib.p1.files">4 个文件</span> · <b class="add">+288</b> <b class="del">-19</b> · <span  data-i18n="contrib.p1.tests">15 个新增回归测试</span></div>
+            <a class="contrib-link" href="https://github.com/SalesforceAIResearch/Beagle/pull/3" target="_blank" rel="noopener noreferrer"><span  data-i18n="contrib.view">查看 Pull Request</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </li>
+
+      </ul>
+
+      <p class="contrib-more"><a href="https://github.com/jeremy1392" target="_blank" rel="noopener noreferrer"  data-i18n="contrib.more">GitHub 上的全部公开活动</a><span class="contrib-sync" data-contrib-status aria-live="polite" hidden></span></p>
     </section>
 
 
