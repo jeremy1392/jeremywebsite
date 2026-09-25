@@ -54,7 +54,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/last-human-gate/" },
     "headline": "L’IA peut-elle remplacer les spécialistes qui valident les projets ?",
-    "alternativeHeadline": "Automatiser les revues de projet : l'étude, les résultats du benchmark et la mesure du travail humain restant",
+    "alternativeHeadline": "Automatiser les revues de projet : résultats du benchmark et méthode pour mesurer le travail humain restant",
     "description": "J'ai fait examiner 300 projets d'entreprise fictifs par un agent IA pour voir s'il pouvait prendre en charge les contrôles habituellement confiés à des spécialistes, jusqu'à la décision finale. J'estime ensuite, à l'aide de scénarios chiffrés, le temps que les équipes devraient encore consacrer à ces revues.",
     "image": "https://jeremycanale.com/images/last-human-gate-slide-fr.jpg",
     "inLanguage": "fr",
@@ -185,7 +185,7 @@
         <div class="post-download-text">
           <span class="post-download-kicker">arXiv:2609.29345 · présentation de 30 diapositives · Expérience sur des projets fictifs</span>
           <strong>The Last Human Gate: Forward Deployed Engineering for Governance Automation</strong>
-          <p>L'article distingue les résultats des tests, les scénarios chiffrés et les prédictions.</p>
+          <p>Les résultats des tests, les scénarios de charge de travail et la prédiction pour 2033 sont présentés séparément.</p>
         </div>
         <div class="post-download-actions">
           <a class="btn btn-primary" href="../The_Last_Human_Gate_Research_Paper_FR.pdf" download="The_Last_Human_Gate_Research_Paper_FR.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg> Télécharger la présentation (PDF, 30 diapositives)</a>
@@ -234,17 +234,17 @@
 
       <nav class="post-toc" aria-label="Dans cet article">
         <span class="post-toc-title">Dans cet article</span>
-        <ol><li><a href="#fde">Pourquoi commencer par la gouvernance</a></li>
+        <ol><li><a href="#fde">Pourquoi commencer par les revues de projet</a></li>
 <li><a href="#dgf">Ce que vérifie chaque revue</a></li>
 <li><a href="#conditions">Les conditions pour confier une revue à un agent</a></li>
-<li><a href="#protocole">L'expérience</a></li>
+<li><a href="#protocole">Le test sur 300 projets fictifs</a></li>
 <li><a href="#notation">Comment une revue est notée</a></li>
-<li><a href="#resultats">Les résultats</a></li>
+<li><a href="#resultats">Décisions justes et revues réussies</a></li>
 <li><a href="#exemples">Falcon et Meridian</a></li>
-<li><a href="#repetition">Fiabilité et limites du mandat</a></li>
+<li><a href="#repetition">Essais répétés et contrôle des autorisations</a></li>
 <li><a href="#information">Les informations manquantes</a></li>
 <li><a href="#heures">Compter des heures, pas des dossiers</a></li>
-<li><a href="#scenarios">Quatre scénarios d'effectifs</a></li>
+<li><a href="#scenarios">Quatre scénarios de charge de travail</a></li>
 <li><a href="#long-terme">Jusqu'où pourrait aller l'automatisation</a></li>
 <li><a href="#prediction-2033">Ma prédiction pour 2033</a></li>
 <li><a href="#conclusion">Comment utiliser ces résultats</a></li></ol>
@@ -256,12 +256,12 @@
   <div><b>300</b><span>projets fictifs : 100 achats, 100 intégrations, 100 développements</span></div>
   <div><b>5&nbsp;094</b><span>revues évaluées lors des tests principaux, sur 899 parcours complets</span></div>
   <div><b>3</b><span>modèles testés avec le même agent, les mêmes règles et le même programme de notation</span></div>
-  <div><b>94,98&nbsp;%</b><span>de revues remplissant les cinq critères avec le meilleur modèle</span></div>
+  <div><b>94,98&nbsp;%</b><span>de revues remplissant les cinq critères avec Gemini</span></div>
 </div>
 <p class="post-table-note">Tests principaux des 22 et 23 septembre 2026. Pour réussir une revue, l'agent doit prendre la bonne décision, signaler les problèmes, demander les corrections nécessaires, citer correctement ses sources et respecter son mandat.</p>
 
 <figure class="post-chart">
-<span class="post-chart-tag">Le principe de The Last Human Gate</span>
+<span class="post-chart-tag">Comment une revue peut être confiée à un agent IA</span>
 <div class="post-diagram is-square"><svg viewBox="0 0 360 360" role="img" aria-label="La revue reste obligatoire, mais un agent IA peut la réaliser."><defs><marker id="hero-arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8" fill="#81959b"/></marker></defs><g font-family="Arial, sans-serif" fill="#152d38"><rect x="7" y="12" width="157" height="53" rx="9" fill="#fff" stroke="#dbe3e4"/><rect x="195" y="12" width="157" height="53" rx="9" fill="#fff" stroke="#dbe3e4"/><text x="85" y="44" text-anchor="middle" font-size="12">Documents</text><text x="273" y="44" text-anchor="middle" font-size="12">Règles écrites</text><path d="M85 65 V87 H180 M273 65 V87 H180" fill="none" stroke="#81959b" stroke-width="1.4"/><path d="M180 87 V109" fill="none" stroke="#81959b" stroke-width="1.4" marker-end="url(#hero-arr)"/><rect x="65" y="111" width="230" height="83" rx="11" fill="#e9f3f0" stroke="#b8d3c9"/><text x="180" y="145" font-size="18" font-weight="700" text-anchor="middle">Agent de revue</text><text x="180" y="170" font-size="11" text-anchor="middle">Lit · vérifie · justifie</text><path d="M180 194 V224" stroke="#81959b" fill="none" marker-end="url(#hero-arr)"/><rect x="48" y="226" width="264" height="43" rx="7" fill="#fff" stroke="#dbe3e4"/><path d="M70 239 l8 -4 8 4 v8 q-8 12 -16 0z" fill="none" stroke="#136c66" stroke-width="1.3"/><text x="189" y="252" font-size="12" text-anchor="middle">Contrôle des approbations</text><path d="M180 269 V297" stroke="#81959b" fill="none" marker-end="url(#hero-arr)"/><rect x="65" y="300" width="230" height="50" rx="9" fill="#152d38"/><text x="180" y="331" font-size="14" text-anchor="middle" fill="white">Décision documentée</text></g></svg></div>
 <figcaption>La revue reste obligatoire et conserve les mêmes exigences, qu'elle soit réalisée par un spécialiste ou par un agent IA.</figcaption>
 </figure>
@@ -279,11 +279,11 @@
 <div class="post-concepts post-concepts-4">
   <div><span class="post-concept-n">01</span><h3>Les projets suivent des procédures similaires</h3><p>Dans une grande entreprise, des centaines de projets sont examinés chaque année selon les mêmes procédures, à partir de documents comparables. Un outil conçu pour ces contrôles peut servir à de nombreux projets, puis être adapté aux procédures d'autres entreprises.</p></div>
   <div><span class="post-concept-n">02</span><h3>Les règles sont déjà écrites</h3><p>Les seuils, les documents à fournir et les personnes autorisées à signer sont déjà définis par écrit. Un logiciel peut vérifier le respect de ces règles. Les situations qu'elles ne couvrent pas clairement demandent une analyse plus poussée.</p></div>
-  <div><span class="post-concept-n">03</span><h3>Les constats peuvent être partagés</h3><p>Les observations des équipes de cybersécurité et d'architecture alimentent la décision finale. Un compte rendu commun évite de perdre ou de recopier ces informations entre deux revues.</p></div>
+  <div><span class="post-concept-n">03</span><h3>Les constats peuvent être partagés</h3><p>Les observations des équipes de cybersécurité et d'architecture alimentent la décision finale. Si ces équipes consignent leurs constats dans un même compte rendu, le spécialiste chargé de la revue suivante peut les retrouver sans les ressaisir.</p></div>
   <div><span class="post-concept-n">04</span><h3>La qualité peut être évaluée</h3><p>Des cas de test préparés à l'avance permettent de vérifier la justesse d'une revue, au-delà de la qualité de sa rédaction.</p></div>
 </div>
 
-<p>À cela s'ajoute une raison pratique : tout projet d'IA déployé par un FDE doit lui aussi faire l'objet des revues de l'entreprise. Automatiser ces étapes peut donc faciliter les déploiements suivants. Il faut néanmoins confier à quelqu'un la coordination de l'ensemble du parcours : aucun service ne suit seul toutes les étapes. Le temps passé par les FDE à construire et à exploiter le système doit aussi entrer dans l'estimation du travail qui restera aux équipes. J'y reviens à la section 10.</p>
+<p>Une autre raison est pratique : tout projet d'IA déployé par un FDE doit lui aussi faire l'objet des revues de l'entreprise. Automatiser ces revues peut donc faciliter la validation des prochains projets d'IA. Il faut néanmoins désigner une personne chargée de suivre le projet d'une revue à l'autre, car aucun service ne supervise tout le parcours. Il faut aussi compter les heures que les FDE consacreront à construire et à faire fonctionner l'outil de revue automatisée. J'y reviens à la section 10.</p>
 </section>
 
 <section class="post-section" id="dgf">
@@ -325,7 +325,7 @@
 <p>Plusieurs spécialistes peuvent examiner le même dossier sans chercher les mêmes problèmes. Le juriste s'intéresse notamment aux clauses du contrat ; le responsable de la sécurité vérifie les protections prévues et les risques techniques. Le tableau suivant résume les questions posées à chaque étape.</p>
 
 <div class="post-table-wrap"><table class="post-table"><thead><tr><th>Revue</th><th>Question à trancher</th><th>Exemples d’éléments à vérifier</th></tr></thead><tbody><tr><td>Achats</td><td>Le fournisseur répond-il aux critères de sélection et aux exigences budgétaires ?</td><td>Offres, vérifications sur le fournisseur, présence éventuelle sur une liste de sanctions, coût sur trois ans.</td></tr><tr><td>Juridique</td><td>Le contrat est-il acceptable et son signataire est-il habilité à engager l’entreprise ?</td><td>Accord de traitement des données, responsabilité, résiliation, pouvoir de signature.</td></tr><tr><td class="wrap">Conformité réglementaire</td><td>Le projet respecte-t-il les exigences qui lui sont applicables ?</td><td>Analyse d’impact sur la protection des données, lieux d’hébergement, obligations applicables.</td></tr><tr><td>Cybersécurité</td><td>Les protections sont-elles adaptées aux données et aux risques ?</td><td>Droits d’accès, accès réseau, supervision, vulnérabilités connues.</td></tr><tr><td class="wrap">Validation informatique <code>(IT)</code></td><td>La solution est-elle compatible avec les systèmes de l’entreprise ? L’entreprise pourra-t-elle l’exploiter et la maintenir ?</td><td>Technologies approuvées, capacité, assistance technique, gestion des changements.</td></tr><tr><td>Architecture technique</td><td>La conception respecte-t-elle les contraintes techniques du projet ?</td><td>Plages d’adresses IP, interfaces, temps de réponse, propriété des données, réversibilité.</td></tr><tr><td class="wrap">Préparation à l’exploitation</td><td>Les tests montrent-ils que la solution est prête à être mise en service ?</td><td>Tests de charge, de restauration et de reprise ; procédures ; transmission à l’équipe d’exploitation.</td></tr><tr><td class="wrap">Validation finale <code>(General)</code></td><td>Au vu des revues précédentes, du budget et de la stratégie, le projet peut-il continuer ?</td><td>Décisions précédentes, budget, stratégie et préparation du déploiement auprès des équipes.</td></tr></tbody></table></div>
-<p class="post-table-note">Ces questions résument les règles du benchmark utilisé dans l'étude. Votre entreprise peut regrouper ou réorganiser les revues, à condition de respecter les obligations qu'elles couvrent.</p>
+<p class="post-table-note">Ces questions résument les règles du benchmark utilisé dans l'étude. Votre entreprise peut regrouper ou réorganiser les revues, à condition de continuer à vérifier tous les points imposés par les règles applicables.</p>
 
 <h3>Cinq décisions possibles, pas seulement oui ou non</h3>
 
@@ -348,7 +348,7 @@
 
 <div class="post-concepts">
   <div><span class="post-concept-n">01</span><h3>L'accès à l'information</h3><p>L'agent doit pouvoir consulter les documents et les registres nécessaires à sa décision. Si une information manque et que son mandat le permet, il doit pouvoir la demander. Une note qui indique que des sauvegardes existent ne prouve pas qu'une restauration a été testée avec succès : l'agent doit consulter le compte rendu de ce test.</p></div>
-  <div><span class="post-concept-n">02</span><h3>Une analyse fiable</h3><p>Même lorsque le dossier est complexe ou incomplet, l'agent doit repérer les problèmes, demander les bonnes corrections et indiquer précisément sur quels documents reposent ses constats. La clarté de sa réponse ne garantit pas sa justesse.</p></div>
+  <div><span class="post-concept-n">02</span><h3>Une analyse fiable</h3><p>Même lorsque le dossier est complexe ou incomplet, l'agent doit repérer les problèmes, demander les corrections prévues par les règles et indiquer précisément sur quels documents reposent ses constats. La clarté de sa réponse ne garantit pas sa justesse.</p></div>
   <div><span class="post-concept-n">03</span><h3>Le respect du mandat confié</h3><p>L'agent propose une décision à chaque étape. S'il demande une approbation sous conditions, un outil distinct vérifie que les règles la permettent et qu'il est autorisé à la donner.</p></div>
 </div>
 
@@ -366,13 +366,13 @@
 <div class="post-lane"><h4>REVUE CONFIÉE À L’AGENT</h4>
 <div class="post-lane-step">L’agent réalise la revue</div>
 <div class="post-lane-arrow" aria-hidden="true">↓</div>
-<div class="post-lane-step">Si nécessaire, le système vérifie la demande d’approbation</div>
+<div class="post-lane-step">Si l’agent demande une approbation sous conditions, un outil vérifie son autorisation</div>
 <div class="post-lane-arrow" aria-hidden="true">↓</div>
 <div class="post-lane-step">La décision de l’agent est appliquée sans nouvelle revue humaine</div>
 <div class="post-lane-end">La revue est automatisée ; le travail humain restant doit être comptabilisé.</div>
 </div>
 </div>
-<figcaption>Pour distinguer l'assistance de l'automatisation, il faut regarder qui réalise effectivement la revue. L'entreprise et les personnes qu'elle désigne restent responsables des décisions.</figcaption>
+<figcaption>Pour distinguer l'assistance de l'automatisation, il faut regarder qui réalise effectivement la revue. Même si l'agent réalise la revue, l'entreprise reste responsable des décisions.</figcaption>
 </figure>
 
 <p>Si le but est de réduire la charge de travail, il faut aussi vérifier que les équipes, prestataires compris, consacrent réellement moins d'heures à ces revues. Les confier à un prestataire ne réduit pas le travail nécessaire. De même, si un spécialiste doit reprendre chaque dossier après l'agent, celui-ci n'a pas pris la revue en charge. Il faut donc préciser le rôle de l'agent avant d'estimer les économies de temps.</p>
@@ -382,7 +382,7 @@
 <span class="post-num">04 / L'expérience</span>
 <h2>Comment j'ai testé l'agent sur des projets fictifs</h2>
 
-<p>DGF-Bench comprend 300 projets fictifs : 100 achats de solutions, 100 intégrations de systèmes et 100 développements d'application. Pour chaque projet, un programme définit les caractéristiques du dossier, produit un schéma d'architecture et crée les documents nécessaires aux contrôles. Certains dossiers respectent toutes les règles ; les autres contiennent des problèmes que l'agent doit repérer.</p>
+<p>DGF-Bench comprend 300 projets fictifs : 100 projets d'achat de solutions, 100 projets d'intégration de systèmes et 100 projets de développement d'application. Pour chaque projet, un programme définit les caractéristiques du dossier, produit un schéma d'architecture et crée les documents nécessaires aux contrôles. Certains dossiers respectent toutes les règles ; les autres contiennent des problèmes que l'agent doit repérer.</p>
 
 <p>Chaque dossier comprend environ 26 documents Word, des tableaux et un schéma d'architecture. On y trouve notamment une note de cadrage, des contrats, des rapports de tests de sécurité, des consignes d'exploitation et les résultats de tests de sauvegarde, de restauration et de charge. Certains documents sont volontairement incomplets, périmés ou contradictoires. Un résumé peut ainsi indiquer qu'un contrat est signé alors que le registre des contrats le classe comme brouillon. L'agent doit repérer ces contradictions.</p>
 
@@ -395,7 +395,7 @@
 <figcaption>Le programme génère à la fois le dossier et les réponses attendues, mais l'agent n'a pas accès à ces dernières. Si l’agent demande une approbation sous conditions, l’outil vérifie son autorisation pendant la revue. La notation intervient à la fin du parcours. Personne ne corrige les constats de l'agent entre deux revues.</figcaption>
 </figure>
 
-<div class="post-note"><strong>L'agent ne travaille pas à partir des seuls documents.</strong><p>Il dispose aussi des règles de chaque revue, d'un résumé structuré des faits du projet et d'un accès aux systèmes simulés. Il ne peut pas consulter le fichier qui contient les réponses attendues. Pour interpréter les résultats, il faut tenir compte des informations auxquelles il avait accès. La section 9 montre ce qui se passe lorsqu'une information nécessaire lui manque.</p></div>
+<div class="post-note"><strong>L'agent ne travaille pas à partir des seuls documents.</strong><p>Il dispose aussi des règles de chaque revue, d'un résumé structuré des faits du projet et d'un accès aux systèmes simulés. Il ne peut pas consulter le fichier qui contient les réponses attendues. Les scores mesurent donc sa performance avec ces aides, et non avec les seuls documents Word. La section 9 montre ce qui se passe lorsqu'une information nécessaire lui manque.</p></div>
 
 <figure class="post-chart">
 <h3>Un document du jeu de tests : le schéma d'architecture du projet Falcon</h3>
@@ -403,7 +403,7 @@
 <figcaption>Ce schéma provient directement du dossier fictif. L'agent doit aussi l'examiner : la présence du document ne prouve pas que l'architecture respecte les exigences du projet.</figcaption>
 </figure>
 
-<p>J'ai utilisé le même agent avec trois modèles : Gemini 3.8 Flash, GPT-5.6 Luna et DeepSeek v4.1 Flash. Il s'agit des noms utilisés par leurs fournisseurs lors des tests, les 22 et 23 septembre 2026. Pour chaque modèle, j'ai fixé la température à zéro et limité l'agent à 20 itérations et 40 appels aux outils par revue. Le protocole prévoyait 1&nbsp;700 revues réparties sur 300 parcours complets par modèle, soit 900 parcours en tout. Un incident technique chez un fournisseur a empêché l'achèvement d'un parcours. Les résultats principaux portent donc sur 899 parcours et 5&nbsp;094 revues.</p>
+<p>J'ai utilisé le même agent avec trois modèles : Gemini 3.8 Flash, GPT-5.6 Luna et DeepSeek v4.1 Flash. Il s'agit des noms utilisés par leurs fournisseurs lors des tests, les 22 et 23 septembre 2026. Pour chaque modèle, j'ai réglé à zéro la température, le paramètre qui influe sur la variabilité des réponses. J'ai aussi limité l'agent à 20 tours de traitement du dossier et 40 appels aux outils par revue. Le protocole prévoyait 1&nbsp;700 revues réparties sur 300 parcours complets par modèle, soit 900 parcours en tout. Une erreur technique chez un fournisseur de modèle a empêché l'achèvement d'un parcours. Les résultats principaux portent donc sur 899 parcours et 5&nbsp;094 revues.</p>
 
 <p>Les appels aux modèles pour ces tests principaux ont coûté 87,02&nbsp;$, tentatives échouées comprises. Avec les essais répétés décrits plus loin, le total atteint 99,58&nbsp;$. Ces montants ne couvrent ni la construction du système ni son exploitation en entreprise.</p>
 </section>
@@ -428,7 +428,7 @@
 <figcaption>Pour réussir une revue, l'agent doit satisfaire aux cinq critères. Un seul critère manqué suffit à la faire échouer.</figcaption>
 </figure>
 
-<p>Il ne suffit pas de citer un document qui semble pertinent. Le programme vérifie que l'agent a réellement ouvert les documents cités, puis compare mot pour mot ses citations aux passages attendus. La revue peut donc échouer malgré une décision juste si les preuves citées ne répondent pas aux règles du test.</p>
+<p>Il ne suffit pas de citer un document qui semble pertinent. Le programme vérifie que l'agent a réellement ouvert les documents cités, puis compare mot pour mot ses citations aux passages attendus. La revue peut donc échouer malgré une décision juste si une citation est inexacte ou provient d'une source non admise.</p>
 
 <p>Pendant la revue, l'agent peut demander l'autorisation d'approuver le projet sous conditions. L'outil vérifie alors que son mandat couvre cette étape et cette phase du projet. Il vérifie aussi que l'agent a mentionné tous les problèmes non résolus et que les règles permettent de donner un accord malgré eux. Si ce n'est pas le cas, l'outil refuse la demande et en garde la trace.</p>
 
@@ -439,7 +439,7 @@
 <span class="post-num">06 / Les résultats</span>
 <h2>Avec Gemini, toutes les décisions sont justes, mais seuls 77&nbsp;% des parcours passent le test complet</h2>
 
-<p>Avec Gemini, l'agent prend la bonne décision dans chacune des 1&nbsp;694 revues évaluées. Mais seules 94,98&nbsp;% de ces revues remplissent les cinq critères du test, et seuls 76,92&nbsp;% des parcours les remplissent à chaque étape. Ces chiffres mesurent trois aspects différents de la performance. Il faut les examiner ensemble avant de confier des revues à un agent.</p>
+<p>Avec Gemini, l'agent prend la bonne décision dans chacune des 1&nbsp;694 revues évaluées. Mais seules 94,98&nbsp;% de ces revues remplissent les cinq critères du test, et seuls 76,92&nbsp;% des parcours les remplissent à chaque étape. Le taux de décisions correctes ne suffit donc pas pour juger la qualité des revues.</p>
 
 <p>Le premier indicateur mesure uniquement la justesse des décisions. Le deuxième mesure la part des revues où l'agent remplit les cinq critères : décision correcte, constats complets, actions appropriées, citations exactes et respect du mandat. Le troisième mesure la part des projets pour lesquels il remplit ces critères à chaque revue. Un seul échec suffit à faire échouer le parcours. Un parcours réussi ne signifie donc pas que le projet a été approuvé : certains projets ont été refusés à juste titre.</p>
 
@@ -464,7 +464,7 @@
 <div class="bars-group"><span class="bars-label">DeepSeek v4.1 Flash</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:24.67%"></span></div><span class="bars-value">24,67 %</span></div></div>
 </div>
 <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>50</span><span>100</span></div></div>
-<figcaption>Pour réussir un parcours complet, l'agent doit satisfaire aux cinq critères à chacune des cinq ou six étapes. Un refus correctement justifié peut donc compter comme une revue réussie.</figcaption>
+<figcaption>Pour réussir un parcours complet, l'agent doit satisfaire aux cinq critères à chacune des cinq ou six étapes. Un refus peut compter comme une réussite si la revue satisfait aux cinq critères.</figcaption>
 </figure>
 
 <p>Avec GPT-5.6 Luna et DeepSeek v4.1 Flash, l'agent remplit les cinq critères dans respectivement 83,29&nbsp;% et 74,18&nbsp;% des revues. La part des projets dont toutes les revues réussissent n'est plus que de 42,33&nbsp;% avec Luna et de 24,67&nbsp;% avec DeepSeek. Pourtant, l'agent prend la bonne décision dans environ 98&nbsp;% des revues avec Luna et 95&nbsp;% avec DeepSeek. La décision seule ne suffit donc pas : les constats, les corrections demandées, les citations et le respect du mandat comptent aussi.</p>
@@ -473,7 +473,7 @@
 
 <p>Avec Gemini, les 85 revues qui échouent présentent toutes un problème de sources : il manque une référence ou la citation ne respecte pas la forme exigée. Pour les revues d'achats, l'agent prend la bonne décision dans 96&nbsp;% des cas avec Luna et 97&nbsp;% avec DeepSeek, mais ne remplit les cinq critères que dans 33&nbsp;% et 43&nbsp;% des cas. Avec DeepSeek, il cite parfois une ligne d'un fichier CSV que les règles du test n'acceptent pas comme source. Même lorsqu'il prend la bonne décision, l'agent peut donc échouer à montrer précisément sur quels documents elle repose.</p>
 
-<p>Certains échecs sont plus graves que les erreurs de citation : l'agent peut laisser passer un problème qui devrait bloquer le projet. Avec Luna, il approuve un projet lors de la revue juridique alors que l'accord de traitement des données manque. Avec DeepSeek, il répond <code>GO</code> sans tenir compte d'un chevauchement de plages d'adresses qui impose un <code>NO_GO</code>. Dans les tests principaux, il a donc approuvé un projet à tort avec chacun de ces deux modèles, et aucun avec Gemini. Il a également manqué trois problèmes graves avec Luna, un avec DeepSeek et aucun avec Gemini.</p>
+<p>Certains échecs sont plus graves que les erreurs de citation : l'agent peut laisser passer un problème qui devrait bloquer le projet. Avec Luna, il approuve un projet lors de la revue juridique alors que l'accord de traitement des données manque. Avec DeepSeek, il répond <code>GO</code> alors qu'un chevauchement de plages d'adresses impose un <code>NO_GO</code>. Dans les tests principaux, il a donc approuvé un projet à tort avec chacun de ces deux modèles, et aucun avec Gemini. Il a également manqué trois problèmes graves avec Luna, un avec DeepSeek et aucun avec Gemini.</p>
 
 <figure class="post-chart">
 <h3>Les résultats changent selon le type de revue</h3>
@@ -484,9 +484,9 @@
 
 <h3>Ce que montre la comparaison avec un programme sans IA</h3>
 
-<p>Un programme classique, fondé sur des règles fixes, satisfait aux cinq critères pour les 1&nbsp;700 revues et les 300 parcours. Ce résultat a une conséquence pratique : lorsque les faits sont déjà structurés et les règles explicites, un logiciel classique suffit, sans appel payant à un modèle. L'agent est surtout utile lorsque les informations sont dispersées dans les documents, difficiles à retrouver ou contradictoires. Je commencerais donc par un moteur de règles et utiliserais l'agent pour retrouver et analyser les informations nécessaires.</p>
+<p>Un programme classique, fondé sur des règles fixes, satisfait aux cinq critères pour les 1&nbsp;700 revues et les 300 parcours. Lorsque les faits sont déjà structurés et les règles explicites, un tel programme suffit, sans appel payant à un modèle. L'agent est surtout utile lorsque les informations sont dispersées dans les documents, difficiles à retrouver ou contradictoires. Je commencerais donc par un moteur de règles et utiliserais l'agent pour retrouver et analyser les informations nécessaires.</p>
 
-<p>Un dernier résultat indique une piste d'amélioration. Quand le programme de notation accepte une citation qui présente les bonnes valeurs dans un ordre différent, ou une même valeur numérique écrite autrement, 69 revues supplémentaires réussissent avec Gemini, 38 avec Luna et 52 avec DeepSeek. Gemini atteint alors 99,06&nbsp;% de réussite par revue et 94,98&nbsp;% par parcours complet. L'agent n'a pas produit de nouvelles réponses : seule la vérification des citations a été assouplie. Il serait donc utile de mieux outiller la collecte et la citation des preuves.</p>
+<p>L'effet du contrôle mot à mot des citations est mesurable. Quand le programme de notation accepte une citation qui présente les bonnes valeurs dans un ordre différent, ou une même valeur numérique écrite autrement, 69 revues supplémentaires réussissent avec Gemini, 38 avec Luna et 52 avec DeepSeek. Gemini atteint alors 99,06&nbsp;% de réussite par revue et 94,98&nbsp;% par parcours complet. L'agent n'a pas produit de nouvelles réponses : seule la vérification des citations a été assouplie. Un outil qui prélève directement les passages à citer dans les documents pourrait réduire ces échecs.</p>
 </section>
 
 <section class="post-section" id="exemples">
@@ -513,13 +513,13 @@
 <p>Dans le dossier Meridian, l'agent repère deux défauts : l'absence d'une passerelle d'API obligatoire et un temps de réponse de 55 millisecondes, alors que la cible est de 20 millisecondes. Il demande les deux corrections et prend la décision attendue : À CORRIGER.</p>
 <div class="post-case-flow">
   <div><small>Constats</small>Une passerelle manquante et un temps de réponse trop élevé.</div>
-  <div><small>Autorisation</small>L'agent demande deux fois à approuver le projet sous conditions. L'outil refuse les deux demandes : ces défauts doivent d'abord être corrigés.</div>
+  <div><small>Autorisation</small>L'agent demande à deux reprises l'autorisation d'approuver le projet sous conditions. L'outil refuse les deux demandes : ces défauts doivent d'abord être corrigés.</div>
   <div><small>Notation</small>En citant le registre, l'agent inverse l'ordre de deux faits. La revue échoue à la notation stricte.</div>
 </div>
 <p>L'agent prend la bonne décision, repère les deux problèmes et demande les bonnes corrections. Sa note pondérée est de 0,95 sur 1, mais la revue échoue au test strict, qui exige de satisfaire aux cinq critères. Les deux demandes d'approbation injustifiées ont bien été bloquées.</p>
 </div>
 
-<p>Un outil pourrait prélever directement dans chaque source le passage cité, avec son emplacement et sa version, puis le joindre au constat correspondant. L'agent n'aurait plus à reconstituer les citations. Cela limiterait la principale cause d'échec observée dans ces tests.</p>
+<p>Un outil pourrait prélever directement dans le document ou le registre le passage à citer, avec son emplacement et sa version, puis le joindre au constat correspondant. L'agent n'aurait plus à reconstituer les citations. Cet outil limiterait les échecs dus aux citations inexactes.</p>
 </section>
 
 <section class="post-section" id="repetition">
@@ -538,7 +538,7 @@
 <figcaption>Chaque carré représente un projet. Un carré plein indique que l’agent a réussi toutes les revues de ce projet lors des trois nouveaux essais.</figcaption>
 </figure>
 
-<p>Sur les 45 parcours réalisés avec chaque modèle, l'agent réussit toutes les revues dans 35 cas avec Gemini, 19 avec Luna et 11 avec DeepSeek. Les taux de réussite par revue sont respectivement de 96,08&nbsp;%, de 82,75&nbsp;% et de 73,33&nbsp;% selon la notation stricte. Sur ces 135 parcours, aucun projet n'a été approuvé à tort et aucun problème grave n'a été ignoré. Les appels aux modèles ont coûté 12,56&nbsp;$. Avant de confier les revues à un agent, faites-lui examiner plusieurs fois les mêmes dossiers : une moyenne ne montre pas si ses résultats restent stables d'un essai à l'autre.</p>
+<p>Sur les 45 parcours réalisés avec chaque modèle, l'agent réussit toutes les revues dans 35 cas avec Gemini, 19 avec Luna et 11 avec DeepSeek. Les taux de réussite par revue sont respectivement de 96,08&nbsp;%, de 82,75&nbsp;% et de 73,33&nbsp;% selon la notation stricte. Sur ces 135 parcours, aucun projet n'a été approuvé à tort et aucun problème classé comme grave dans le test n'a été ignoré. Les appels aux modèles ont coûté 12,56&nbsp;$. Avant de confier les revues à un agent, faites-lui examiner plusieurs fois les mêmes dossiers : le taux de réussite global ne montre pas s'il obtient le même résultat à chaque essai.</p>
 
 <h3>Les autorisations doivent être contrôlées indépendamment du modèle</h3>
 
@@ -547,12 +547,12 @@
 <div class="post-table-wrap"><table class="post-table"><thead><tr><th>Demandes enregistrées dans les tests principaux</th><th class="num">Gemini</th><th class="num">Luna</th><th class="num">DeepSeek</th></tr></thead><tbody><tr><td class="wrap">Demandes d’approbation sous conditions</td><td class="num">864</td><td class="num">394</td><td class="num">216</td></tr><tr><td class="wrap">Demandes refusées par le contrôle</td><td class="num">466</td><td class="num">40</td><td class="num">14</td></tr><tr><td class="wrap">Approbations utilisées dans les décisions finales</td><td class="num">398</td><td class="num">353</td><td class="num">202</td></tr></tbody></table></div>
 <p class="post-table-note">Les chiffres portent sur l'ensemble des demandes enregistrées lors des tests principaux. Une même revue peut donner lieu à plusieurs demandes. Une autorisation accordée peut aussi ne pas être utilisée dans la décision finale : c'est arrivé une fois avec Luna.</p>
 
-<p>Avec Gemini, l'agent formule le plus de demandes et reçoit le plus de refus : 466 sur 864. Il peut donc demander, parfois plusieurs fois, une approbation interdite par les règles. L'outil de contrôle bloque ces demandes. L'agent ne doit pas pouvoir s'accorder lui-même l'autorisation qu'il sollicite.</p>
+<p>Avec Gemini, l'agent formule le plus de demandes d'approbation sous conditions et reçoit le plus de refus : 466 sur 864. Ces refus montrent qu'il a demandé à approuver des projets alors que les règles l'interdisaient. L'outil de contrôle a bloqué ces demandes : l'agent ne peut pas s'accorder lui-même l'autorisation qu'il sollicite.</p>
 
 <figure class="post-chart">
 <h3>Extrait des journaux d'exécution de DGF-Bench</h3>
 <div class="post-diagram"><a href="../images/last-human-gate/power.png" target="_blank" rel="noopener"><img alt="Capture de la console DGF-Bench montrant des décisions, des appels aux outils et des coûts pour Gemini, Luna et DeepSeek." height="670" loading="lazy" src="../images/last-human-gate/power.png" width="1880"/></a></div>
-<figcaption>Pour chaque revue, la console indique le modèle, le projet, la décision, le nombre de cycles de raisonnement, les appels aux outils et le coût. Cette capture montre des résultats issus des essais répétés.</figcaption>
+<figcaption>Pour chaque revue, la console indique le modèle, le projet, la décision, le nombre de tours de traitement, les appels aux outils et le coût. Cette capture provient des essais répétés décrits ci-dessus.</figcaption>
 </figure>
 </section>
 
@@ -560,28 +560,28 @@
 <span class="post-num">09 / L'accès à l'information</span>
 <h2>Aucun raisonnement ne peut remplacer une information manquante</h2>
 
-<p>Prenez deux projets dont les 26 documents Word sont strictement identiques. La décision attendue diffère pourtant en raison d'une information consignée dans un registre séparé : pour le premier projet, le contrôle de réputation du fournisseur a été effectué ; pour le second, il n'a pas été réalisé.</p>
+<p>Prenez deux projets dont les 26 documents Word ont le même contenu. La décision attendue diffère pourtant en raison d'une information consignée dans un registre séparé : pour le premier projet, la vérification préalable du fournisseur a été effectuée ; pour le second, elle ne l'a pas été.</p>
 
 <figure class="post-chart">
 <h3>Les mêmes documents, un fait différent, une décision différente</h3>
-<div class="post-fork-head">26 documents Word identiques dans les deux dossiers</div>
+<div class="post-fork-head">Le même contenu dans les 26 documents Word des deux dossiers</div>
 <div class="post-fork">
-<div><h4>PROJET A</h4><p>Dans un registre CSV séparé :<br/><strong>la réputation du fournisseur a été vérifiée.</strong></p><div class="post-fork-result">Décision attendue : APPROUVÉ</div></div>
-<div><h4>PROJET B</h4><p>Dans un registre CSV séparé :<br/><strong>la réputation du fournisseur n’a pas été vérifiée.</strong></p><div class="post-fork-result">Décision attendue : À CORRIGER</div></div>
+<div><h4>PROJET A</h4><p>Dans un registre CSV séparé :<br/><strong>la vérification préalable du fournisseur a été effectuée.</strong></p><div class="post-fork-result">Décision attendue : APPROUVÉ</div></div>
+<div><h4>PROJET B</h4><p>Dans un registre CSV séparé :<br/><strong>la vérification préalable du fournisseur n’a pas été effectuée.</strong></p><div class="post-fork-result">Décision attendue : À CORRIGER</div></div>
 </div>
-<figcaption>Un agent qui n'a accès qu'aux documents Word voit les mêmes informations dans les deux dossiers. Il ne peut donc pas déterminer dans quel projet le fournisseur a été contrôlé.</figcaption>
+<figcaption>Un agent qui n'a accès qu'aux documents Word voit les mêmes informations dans les deux dossiers. Il ne peut donc pas déterminer dans quel projet la vérification préalable du fournisseur a été effectuée.</figcaption>
 </figure>
 
 <p>Si le registre est la seule source de cette information, les documents Word ne permettent ni à une personne ni à l'agent de distinguer les deux projets. Il faut consulter le registre ou demander l'information à quelqu'un qui y a accès avant de décider.</p>
 
-<p>Avant même de rédiger les instructions de l'agent, le FDE doit donc le relier aux registres qui font foi, définir ce qu'il peut consulter et prévoir la marche à suivre lorsqu'une information manque. Dans le cadre proposé ici, une revue n'est fiable que si l'agent a accès aux données nécessaires. Le limiter aux seuls documents du dossier peut le priver d'un fait décisif, tant pour les tests que pour un usage réel.</p>
+<p>Avant même de rédiger les instructions de l'agent, le FDE doit relier l'agent aux registres qui contiennent les données de référence, définir ses droits d'accès et prévoir comment il obtiendra une information manquante. Une revue ne peut être fiable que si l'agent a accès aux informations nécessaires. S'il ne voit que les documents Word, une donnée qui changerait sa décision peut lui échapper, pendant le test comme dans une entreprise.</p>
 </section>
 
 <section class="post-section" id="heures">
 <span class="post-num">10 / Des scores à l'emploi</span>
 <h2>Automatiser 80&nbsp;% des dossiers ne réduit pas nécessairement le travail de 80&nbsp;%</h2>
 
-<p>Le taux de réussite de l'agent ne dit pas combien de temps l'entreprise économise. Il peut traiter la plupart des dossiers simples tout en laissant aux spécialistes les plus longs et les plus difficiles. Il faut aussi compter les vérifications, les corrections et l'exploitation de la plateforme. Le gain réel dépend de toutes ces heures.</p>
+<p>Le taux de réussite de l'agent ne dit pas combien d'heures de travail l'entreprise économise. Il peut traiter la plupart des dossiers simples tout en laissant aux spécialistes les plus longs et les plus difficiles. Il faut aussi compter les heures consacrées aux vérifications, aux corrections et au fonctionnement de l'outil. C'est la somme de ces heures qui détermine le gain réel.</p>
 
 <figure class="post-chart">
 <h3>Quel travail humain reste-t-il à accomplir ?</h3>
@@ -611,10 +611,10 @@
 <span class="post-num">11 / Quatre façons d'organiser le travail</span>
 <h2>Le même taux d'automatisation peut nécessiter entre 44 et 169 ETP</h2>
 
-<p>Prenons une activité de gouvernance qui mobilise aujourd'hui 140 équivalents temps plein (ETP). Un ETP représente le travail d'une personne à temps plein sur la période considérée. L'exemple précédent, avec 80&nbsp;% de dossiers automatisés, servait uniquement à expliquer le calcul. Dans les quatre scénarios qui suivent, la part des dossiers confiés à l'agent varie selon le type de revue, mais reste identique d'un scénario à l'autre. Seule l'organisation du travail restant change le nombre d'ETP nécessaires.</p>
+<p>Prenons une activité de gouvernance qui mobilise aujourd'hui 140 équivalents temps plein (ETP). Un ETP représente le travail d'une personne à temps plein sur la période considérée. L'exemple précédent, avec 80&nbsp;% de dossiers automatisés, servait uniquement à expliquer le calcul. Dans les quatre scénarios qui suivent, la même proportion de dossiers est confiée à l'agent pour chaque type de revue. Cette proportion peut toutefois différer d'un type de revue à l'autre. Seule l'organisation du travail restant change le nombre d'ETP nécessaires.</p>
 
 <figure class="post-chart">
-<h3>Travail humain nécessaire pour la même activité · ETP</h3>
+<h3>ETP nécessaires pour traiter le même volume de projets</h3>
 <div class="bars">
 <div class="bars-group"><span class="bars-label">Situation de départ</span><div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:77.78%"></span></div><span class="bars-value">140,00</span></div></div>
 <div class="bars-group"><span class="bars-label">S0 · Aide de l’IA sur les cas complexes</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:24.18%"></span></div><span class="bars-value">43,52</span></div></div>
@@ -623,18 +623,18 @@
 <div class="bars-group"><span class="bars-label">S3 · Relecture de toutes les décisions</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:93.84%"></span></div><span class="bars-value">168,92</span></div></div>
 </div>
 <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>90</span><span>180</span></div></div>
-<figcaption>Les quatre scénarios utilisent la même technologie et automatisent la même proportion de dossiers. Les écarts viennent du temps consacré aux cas complexes, aux vérifications, aux corrections et au support. Aucun ne descend à 28 ETP, le seuil correspondant à une réduction de 80&nbsp;%.</figcaption>
+<figcaption>Dans les quatre scénarios, l'agent prend en charge la même proportion de dossiers pour chaque type de revue. Les écarts viennent du temps consacré aux dossiers complexes, aux vérifications, aux corrections et au fonctionnement de l'outil. Aucun ne descend à 28 ETP, le seuil correspondant à une réduction de 80&nbsp;%.</figcaption>
 </figure>
 
-<p><strong>S0 : l'IA aide aussi à traiter les cas complexes.</strong> Les spécialistes consacrent deux fois moins de temps à ces dossiers, et les autres ne font l'objet que de contrôles limités. Il faut alors 43,52 ETP, soit environ 69&nbsp;% de moins qu'au départ. Ce scénario optimiste ne compte aucune heure de maintenance.</p>
+<p><strong>S0 : l'IA aide aussi à traiter les dossiers complexes.</strong> Les spécialistes consacrent deux fois moins de temps à ces dossiers. Les dossiers traités par l'agent ne font l'objet que de contrôles limités. Il faut alors 43,52 ETP, soit environ 69&nbsp;% de moins qu'au départ. Ce scénario optimiste ne compte aucune heure de maintenance.</p>
 
-<p><strong>S1 : les cas difficiles prennent autant de temps qu'avant.</strong> Les spécialistes les traitent sans l'aide de l'IA. Les autres dossiers font l'objet de contrôles rapides, et chaque équipe affecte une personne à l'exploitation de la plateforme. Il faut alors 85,32 ETP. <strong>S2</strong> reprend les mêmes hypothèses et ajoute une demi-heure de correction par dossier, ce qui porte le total à 89,07 ETP.</p>
+<p><strong>S1 : les dossiers complexes prennent autant de temps qu'avant.</strong> Les spécialistes les traitent sans l'aide de l'IA. Les dossiers traités par l'agent font l'objet de contrôles rapides. Pour chacun des trois types de projets, une personne est affectée au fonctionnement de l'outil. Il faut alors 85,32 ETP. <strong>S2</strong> reprend les mêmes hypothèses et ajoute une demi-heure de correction par dossier, ce qui porte le total à 89,07 ETP.</p>
 
-<p><strong>S3 : un spécialiste relit chaque décision.</strong> Les spécialistes consacrent 50&nbsp;% de temps en plus aux cas complexes qu'avant l'automatisation. Les contrôles sont plus poussés, les corrections demandent deux heures par dossier et deux personnes par équipe exploitent la plateforme. Il faut alors 168,92 ETP, soit environ 21&nbsp;% de travail humain de plus qu'au départ. L'entreprise supporte le coût de l'agent tout en conservant une relecture humaine systématique.</p>
+<p><strong>S3 : un spécialiste relit chaque décision.</strong> Les spécialistes consacrent 50&nbsp;% de temps en plus aux dossiers complexes qu'avant l'automatisation. Les contrôles sont plus poussés, les corrections demandent deux heures par dossier et deux personnes sont affectées au fonctionnement de l'outil pour chaque type de projet. Il faut alors 168,92 ETP, soit environ 21&nbsp;% de travail humain de plus qu'au départ. L'entreprise supporte le coût de l'agent tout en conservant une relecture humaine systématique.</p>
 
 <blockquote>Pour mesurer les gains de l'automatisation, il faut compter toutes les heures de travail humain qui restent nécessaires.</blockquote>
 
-<p>Avant d'annoncer une réduction des effectifs, précisez qui traitera les cas particuliers, de quelle aide ces personnes disposeront, quels contrôles resteront en place et qui exploitera la plateforme. Selon ces choix, la même proportion de dossiers automatisés peut nécessiter entre 44 et 169 ETP.</p>
+<p>Avant d'annoncer une réduction des effectifs, précisez qui examinera les dossiers que l'agent ne peut pas traiter seul, si l'agent aidera ces spécialistes, combien de décisions seront relues et qui fera fonctionner l'outil. Selon ces choix, la même proportion de dossiers confiés à l'agent peut nécessiter entre 44 et 169 ETP.</p>
 </section>
 
 <section class="post-section" id="long-terme">
@@ -656,41 +656,41 @@
 <figcaption>Ces cinq niveaux sont décrits dans la version longue de l'étude. Le dernier suppose que le support lui-même soit automatisé, d'où l'absence de travail humain dans ce scénario.</figcaption>
 </figure>
 
-<p>Dans ces scénarios, les contrôles restent en place, mais les personnes passent de moins en moins de temps à les réaliser. Le dernier niveau est le plus difficile à atteindre : tant qu'une équipe doit exploiter les agents, ses heures de travail restent à compter.</p>
+<p>Dans ces scénarios, les mêmes règles de contrôle continuent de s'appliquer, mais les agents effectuent une part croissante des vérifications. Le dernier niveau est le plus difficile à atteindre : tant qu'une équipe doit faire fonctionner les agents, ses heures de travail restent à compter.</p>
 
 <p>Le temps nécessaire au support est facile à sous-estimer. Sur une base de 140 ETP, automatiser 80&nbsp;% du travail de revue laisse encore 28 ETP de travail aux équipes. Si l'exploitation de la plateforme demande cinq ETP, le total passe à 33. Pour descendre à 28 ETP au total, il faudrait automatiser environ 84&nbsp;% du travail de revue avec cinq ETP de support, ou environ 91&nbsp;% avec quinze ETP de support.</p>
 
 <h3>Des échéances fondées sur plusieurs hypothèses</h3>
 
-<p>À quel horizon pourrait-on confier une revue entière à un agent ? Mon estimation repose sur plusieurs hypothèses. Son point de départ est une mesure de mai 2026 : les meilleurs agents réussissent 80&nbsp;% des tâches qui demanderaient environ trois heures à une personne. Si, tous les sept mois, ils parviennent à réussir dans la même proportion des tâches deux fois plus longues, ils pourraient atteindre celles qui demandent 24 heures en février 2028.</p>
+<p>À quel horizon pourrait-on confier une revue entière à un agent ? Mon estimation repose sur plusieurs hypothèses. Elle part d'une mesure de mai 2026 : les meilleurs agents réussissent 80&nbsp;% des tâches qui demanderaient environ trois heures à une personne. Dans ce calcul, une revue complète représente environ 24 heures de travail humain. Si, tous les sept mois, les agents parviennent à réussir dans la même proportion des tâches deux fois plus longues, ils pourraient atteindre ce niveau en février 2028.</p>
 
-<p>Cette capacité ne suffirait pas à elle seule. Dans le scénario, le taux d'échec devrait ensuite passer de 20&nbsp;% à environ 0,1&nbsp;%. L'estimation prévoit encore un an de tests avec des spécialistes, puis un an pour obtenir l'autorisation de confier la revue à l'agent. La date dépend surtout de la vitesse à laquelle le taux d'échec diminuerait : il serait divisé par dix tous les six, douze ou vingt-quatre mois selon l'hypothèse retenue.</p>
+<p>Cette capacité ne suffirait pas à elle seule. Dans le scénario, le taux d'échec devrait ensuite passer de 20&nbsp;% à environ 0,1&nbsp;%. L'estimation prévoit encore un an de tests avec des spécialistes, puis un an pour que l'entreprise autorise l'agent à effectuer seul la revue. La date dépend surtout de la vitesse à laquelle le taux d'échec diminuerait : il serait divisé par dix tous les six, douze ou vingt-quatre mois selon l'hypothèse retenue.</p>
 
 <figure class="post-chart">
 <h3>Dates indicatives selon la vitesse de baisse des erreurs</h3>
 <div class="post-timeline">
 <div><time>Mai 2026</time>Point de départ : les agents réussissent 80 % des tâches qui prendraient trois heures à une personne.</div>
 <div><time>Février 2028</time>Dans ce scénario, les agents pourraient réussir 80 % des tâches qui demanderaient 24 heures de travail à une personne.</div>
-<div><time>Avril 2031</time>Délégation d’une revue dans le scénario de baisse rapide des erreurs.</div>
-<div><time>Juin 2032</time>Délégation dans le scénario intermédiaire.</div>
-<div class="is-target"><time>20 septembre 2033</time>Échéance distincte pour tester la prédiction de réduction de 80 % des ETP.</div>
-<div><time>Octobre 2034</time>Délégation dans le scénario de baisse lente des erreurs.</div>
+<div><time>Avril 2031</time>Une revue entière pourrait être confiée à l’agent si les erreurs diminuent rapidement.</div>
+<div><time>Juin 2032</time>Une revue entière pourrait être confiée à l’agent si les erreurs diminuent à un rythme intermédiaire.</div>
+<div class="is-target"><time>20 septembre 2033</time>Échéance distincte pour vérifier la prédiction de 80 % de travail humain en moins.</div>
+<div><time>Octobre 2034</time>Une revue entière pourrait être confiée à l’agent si les erreurs diminuent lentement.</div>
 </div>
-<figcaption>Ces projections tiennent compte successivement du temps nécessaire pour atteindre la capacité visée, réduire le taux d'échec, tester le système avec des spécialistes et autoriser son utilisation. Une information inaccessible ou l'obligation d'une signature humaine peut toutefois empêcher la délégation, même si l'agent réussit les tests.</figcaption>
+<figcaption>Ces projections tiennent compte successivement du temps nécessaire pour atteindre la capacité visée, réduire le taux d'échec, tester le système avec des spécialistes et autoriser son utilisation. Si l'agent ne peut pas consulter une information nécessaire à la décision, ou si une signature humaine reste obligatoire, l'entreprise ne peut pas lui confier toute la revue, même s'il réussit les tests.</figcaption>
 </figure>
 
 <h3>Six hypothèses à confronter à vos propres données</h3>
 
 <div class="post-concepts post-concepts-4">
-  <div><span class="post-concept-n">H1</span><h3>Les revues les mieux définies seraient automatisées en premier</h3><p>Des informations de départ précises, des règles écrites et des résultats vérifiables amélioreraient la fiabilité, quel que soit le modèle.</p></div>
-  <div><span class="post-concept-n">H2</span><h3>Un compte rendu commun réduirait le travail en double</h3><p>Le partage des constats et des sources limiterait les reprises, tandis que les agents pourraient produire ce compte rendu à faible coût.</p></div>
-  <div><span class="post-concept-n">H3</span><h3>Les dossiers restants concentreraient le travail humain</h3><p>La part des heures consacrées à ces dossiers serait supérieure à leur part dans le nombre total de dossiers.</p></div>
-  <div><span class="post-concept-n">H4</span><h3>Un décompte complet permettrait de mieux estimer la charge</h3><p>Mesurer le temps consacré aux cas complexes, aux corrections et au support donnerait une estimation plus fiable que le seul taux d'automatisation.</p></div>
-  <div><span class="post-concept-n">H5</span><h3>L'aide à la décision précéderait la délégation</h3><p>Les entreprises laisseraient d'abord l'IA préparer les décisions, puis lui donneraient éventuellement le droit de les prendre.</p></div>
-  <div><span class="post-concept-n">H6</span><h3>Les tâches réservées aux humains deviendraient moins nombreuses</h3><p>L'automatisation des tâches actuelles progresserait plus vite que l'apparition de nouvelles tâches nécessitant une intervention humaine.</p></div>
+  <div><span class="post-concept-n">H1</span><h3>Les revues les mieux définies seraient automatisées en premier</h3><p>Des informations de projet clairement présentées, des règles écrites et des décisions dont on peut vérifier la justesse rendraient les revues automatisées plus fiables, quel que soit le modèle.</p></div>
+  <div><span class="post-concept-n">H2</span><h3>Un compte rendu commun réduirait le travail en double</h3><p>En transmettant aux équipes suivantes les constats et les documents qui les étayent, on leur éviterait de rechercher les mêmes informations. L'agent pourrait rédiger ce compte rendu commun.</p></div>
+  <div><span class="post-concept-n">H3</span><h3>Les dossiers encore traités par des spécialistes prendraient plus de temps</h3><p>Même peu nombreux, ces dossiers pourraient absorber une grande part des heures de travail.</p></div>
+  <div><span class="post-concept-n">H4</span><h3>Compter toutes les heures rendrait les prévisions plus fiables</h3><p>Compter aussi le temps consacré aux dossiers complexes, aux corrections et au fonctionnement de l'outil donnerait une estimation plus fiable que le seul taux d'automatisation.</p></div>
+  <div><span class="post-concept-n">H5</span><h3>L'IA préparerait les décisions avant d'être autorisée à les prendre</h3><p>Les spécialistes garderaient d'abord le pouvoir d'approuver ou de refuser les projets ; l'agent n'obtiendrait ce droit que plus tard.</p></div>
+  <div><span class="post-concept-n">H6</span><h3>Les tâches qui exigent une intervention humaine deviendraient moins nombreuses</h3><p>L'automatisation des tâches actuelles progresserait plus vite que l'apparition de nouvelles tâches nécessitant une intervention humaine.</p></div>
 </div>
 
-<p>L'hypothèse d'une automatisation complète serait invalidée si certaines revues ou signatures exigeaient toujours une intervention humaine, ou si l'exploitation des agents nécessitait encore une équipe de support, interne ou externe. Ces limites peuvent être vérifiées dans un déploiement réel.</p>
+<p>L'hypothèse d'une automatisation complète serait invalidée si une personne devait encore examiner un dossier, signer une décision ou faire fonctionner les agents, même chez un prestataire. Ces limites peuvent être vérifiées dans un déploiement réel.</p>
 </section>
 
 <section class="post-section" id="prediction-2033">
@@ -702,25 +702,25 @@
 <div class="post-deadline-number">−80&nbsp;%</div>
 <h3>d'ici au 20 septembre 2033</h3>
 <p>À volume et complexité de projets comparables, les revues du DGF demanderaient alors au moins 80&nbsp;% de temps de travail humain en moins qu'au cours des douze mois clos le 20 septembre 2026, sans perte de qualité ni allongement des délais.</p>
-<p>Dans l'exemple à 140 ETP, cela signifie <strong>28 ETP ou moins, tout le travail humain compris</strong>.</p>
+<p>Dans l'exemple à 140 ETP, cela signifie <strong>28 ETP ou moins, en comptant aussi le travail des équipes internes et des prestataires</strong>.</p>
 </div>
 
-<p>Ce chiffre ne découle pas du taux de réussite de Gemini. Il s'agit d'une prédiction distincte, assortie de conditions explicites. Le calcul inclut toutes les heures consacrées à la préparation et à la réalisation des revues, au traitement des cas complexes, aux vérifications, aux corrections, à la maintenance et à la supervision des agents. Il inclut également le support assuré par les fournisseurs.</p>
+<p>Cette réduction de 80&nbsp;% ne découle pas du taux de réussite de Gemini. Il s'agit d'une prédiction distincte, assortie de conditions explicites. Le calcul inclut toutes les heures consacrées à la préparation et à la réalisation des revues, au traitement des dossiers complexes, aux vérifications, aux corrections, à la maintenance et à la supervision des agents. Il inclut également l'assistance fournie par les prestataires.</p>
 
 <p>La prédiction sera infirmée s'il reste plus de 20&nbsp;% du travail humain initial, si la qualité se dégrade ou si les délais s'allongent. On ne pourra pas non plus conclure qu'elle est vérifiée en excluant les équipes chargées des cas les plus difficiles, en oubliant les nouvelles tâches de support ou en repoussant l'échéance. Réduire les effectifs internes en transférant les mêmes heures à des prestataires ne constitue pas un gain. Accélérer les approbations en laissant passer davantage de défauts ne satisfait pas non plus les critères. Enfin, rebaptiser une équipe « supervision de l'IA » ne change rien si elle continue à réaliser les revues manuellement.</p>
 
 <div class="post-note post-note-alert"><strong>Sans relevés d'heures, il est impossible de vérifier la prédiction.</strong><p>La comparaison exige des relevés de temps vérifiables avant et après l'automatisation. À la date de publication, aucune entreprise ne participe encore au suivi et l'année de référence est déjà close. Seules des données conservées pour cette année permettraient de tester la prédiction initiale. Une entreprise qui commence seulement à mesurer maintenant pourra mener une nouvelle évaluation à partir de sa propre année de référence. Cela ne permettra pas de vérifier la prédiction fixée au 20 septembre 2033.</p></div>
 
-<h3>Ce que cela pourrait changer pour les personnes qui font ce travail aujourd'hui</h3>
+<h3>Ce qu'une réduction du travail de revue pourrait changer pour les spécialistes</h3>
 
-<p>Dans l'organisation que je propose, les équipes restent chargées de définir les règles, de prendre les décisions non déléguées, d'apposer les signatures exigées par la loi ou par l'entreprise, de procéder aux contrôles par échantillonnage et d'exploiter le système. Elles réalisent aussi les corrections demandées, tant que ces actions ne sont pas automatisées. Les spécialistes consacreraient moins de temps aux revues courantes et davantage à la conception, aux tests et à la mise à jour des règles de décision.</p>
+<p>Dans l'organisation que je propose, les équipes restent chargées de définir les règles, de prendre les décisions non déléguées, d'apposer les signatures exigées par la loi ou par l'entreprise, de procéder aux contrôles par échantillonnage et de faire fonctionner l'outil de revue. Elles apportent aussi les corrections exigées par les revues, tant que cette tâche n'est pas automatisée. Les spécialistes passeraient moins de temps à examiner chaque dossier et davantage à concevoir et tester le système, puis à tenir ses règles de décision à jour.</p>
 
-<p>Cette évolution ne permet pas de prédire le devenir de chaque poste. Une baisse réelle du travail nécessaire peut conduire à des suppressions de postes, mais l'entreprise peut aussi conserver ses équipes pour traiter davantage de projets. Dans les deux cas, la mesure porte sur le volume de travail humain nécessaire, quel que soit l'intitulé des postes.</p>
+<p>Cette évolution ne permet pas de prédire le devenir de chaque poste. Si les mêmes revues demandent moins d'heures de travail, l'entreprise peut supprimer des postes ou conserver ses équipes pour traiter davantage de projets. Dans les deux cas, la mesure porte sur le nombre d'heures de travail nécessaires, quel que soit l'intitulé des postes.</p>
 
 <details>
-<summary>La même logique s'applique-t-elle à l'assurance ou à la banque ?</summary>
-<p>Certaines tâches de l'assurance et de la banque suivent une logique comparable : examiner un dossier, appliquer des règles, prendre une décision et la justifier. C'est notamment le cas de la souscription d'assurance, de la gestion des sinistres et de l'analyse de crédit. Ces métiers ne sont pas couverts par DGF-Bench. Chez Allianz, des agents traitent les petits sinistres et une personne autorise le paiement. Chez AIG, des agents préparent l'analyse, puis un souscripteur prend la décision. Chez Upstart, plus de 90&nbsp;% des prêts financés sont approuvés sans relecture humaine, tandis qu'environ un quart de l'ensemble des demandes est transmis à une personne. Ces deux proportions portent sur des populations différentes : les prêts effectivement financés d'un côté, toutes les demandes de l'autre.</p>
-<p>Ces usages nécessitent une évaluation adaptée aux règles du secteur et aux conséquences des décisions sur les personnes. Le délai de traitement, le taux d'approbation automatique et le nombre d'heures de travail humain sont trois indicateurs distincts, à mesurer séparément.</p>
+<summary>Peut-on automatiser de la même façon les décisions en assurance ou en banque ?</summary>
+<p>Certaines tâches de l'assurance et de la banque suivent une logique comparable : examiner un dossier, appliquer des règles, prendre une décision et la justifier. C'est notamment le cas de la souscription d'assurance, de la gestion des sinistres et de l'analyse de crédit. DGF-Bench ne teste aucune de ces activités. Chez Allianz, des agents vérifient la couverture et calculent le montant à verser pour de petits sinistres liés à des pertes alimentaires ; un gestionnaire autorise ensuite chaque paiement. Chez AIG, des agents lisent les demandes d'assurance, évaluent les risques selon les règles de souscription et préparent une synthèse ; un souscripteur prend la décision. Chez Upstart, plus de 90&nbsp;% des prêts financés sont approuvés sans relecture humaine, tandis qu'environ un quart de l'ensemble des demandes est transmis à une personne. Ces deux proportions portent sur des populations différentes : les prêts effectivement financés d'un côté, toutes les demandes de l'autre.</p>
+<p>L'automatisation de décisions en assurance ou en crédit nécessite une évaluation adaptée aux règles du secteur et aux conséquences pour les personnes concernées. Le délai de traitement, le taux d'approbation automatique et le nombre d'heures de travail humain sont trois indicateurs distincts, à mesurer séparément.</p>
 </details>
 </section>
 
@@ -728,19 +728,19 @@
 <span class="post-num">14 / Comment utiliser ces résultats</span>
 <h2>Cinq points à définir avant de confier une revue à un agent</h2>
 
-<p>Dans les tests principaux, l'agent a effectué 5&nbsp;094 revues réparties sur 899 parcours complets de validation. Avec Gemini, il a pris la bonne décision dans chacune de ses 1&nbsp;694 revues, mais toutes n'ont pas satisfait aux cinq critères. Son principal point faible était la fidélité des citations. Les essais répétés ont aussi montré que les résultats variaient d'une exécution à l'autre. L'outil de contrôle a bloqué des centaines de demandes d'approbation non autorisées. Ces résultats conduisent à cinq recommandations.</p>
+<p>Dans les tests principaux, l'agent a effectué 5&nbsp;094 revues réparties sur 899 parcours complets de validation. Avec Gemini, il a pris la bonne décision dans chacune de ses 1&nbsp;694 revues, mais toutes n'ont pas satisfait aux cinq critères. Son principal point faible était la fidélité des citations. Lorsqu'il a réexaminé un même dossier, il n'a pas toujours satisfait aux cinq critères à chaque essai. L'outil de contrôle a bloqué des centaines de demandes d'approbation non autorisées. Cinq recommandations découlent de ces résultats.</p>
 
 <ol class="post-decisions">
   <li><strong>Définissez les exigences de la revue avant de rédiger les instructions de l'agent.</strong> Précisez les sources accessibles, la version des règles applicables, le mandat et ce que l'agent doit faire pour satisfaire à chacun des cinq critères. Définissez aussi les types de dossiers à évaluer, y compris les cas difficiles et ceux qui doivent être refusés.</li>
-  <li><strong>Donnez accès aux registres de référence.</strong> Dans l'exemple des projets A et B, la décision dépend d'un champ du fichier CSV. L'agent doit pouvoir le consulter ou obtenir la donnée manquante. Définissez ses droits d'accès et la conduite à tenir lorsqu'une information manque.</li>
+  <li><strong>Donnez accès aux registres de référence.</strong> Dans l'exemple des projets A et B, la décision dépend d'un champ du fichier CSV. L'agent doit pouvoir consulter ce champ ou demander qu'on lui transmette l'information. Définissez ses droits d'accès et la conduite à tenir lorsqu'une information manque.</li>
   <li><strong>Contrôlez les autorisations indépendamment du modèle.</strong> Lorsque l'agent demande une approbation sous conditions, un composant distinct vérifie son mandat et les règles applicables, puis accepte ou refuse la demande. Parmi les 864 demandes faites par l'agent avec Gemini, 466 ont été refusées. Ce contrôle empêche l'agent d'approuver un projet sous conditions lorsqu'il n'y est pas autorisé.</li>
   <li><strong>Joignez à chaque constat l'extrait exact de sa source.</strong> La revue de Meridian a échoué parce qu'une citation inversait l'ordre de deux faits. Un outil peut copier le passage directement depuis le document ou le registre, avec son emplacement et sa version.</li>
-  <li><strong>Mesurez le temps de travail humain restant.</strong> Comparez les mêmes types de dossiers avant et après l'automatisation, en incluant les cas particuliers, les vérifications, les corrections et le support. Estimez les heures qu'exigera l'organisation prévue avant d'annoncer une réduction des effectifs.</li>
+  <li><strong>Mesurez le temps de travail humain restant.</strong> Comparez les mêmes types de dossiers avant et après l'automatisation, en incluant ceux que l'agent ne peut pas traiter seul, les vérifications, les corrections et le fonctionnement de l'outil. Estimez les heures qu'exigera l'organisation prévue avant d'annoncer une réduction des effectifs.</li>
 </ol>
 
-<p>Commencez par les revues dont les règles sont explicites et dont les informations nécessaires figurent dans des champs clairement définis. Appuyez-vous sur un moteur de règles classique et confiez à l'agent la recherche d'informations, l'analyse des documents et la proposition de décision. Faites-lui examiner plusieurs fois les mêmes dossiers pour vérifier la régularité de ses résultats. Mesurez ensuite le travail humain restant pour savoir si le système réduit effectivement le temps consacré aux revues tout en maintenant la qualité des contrôles.</p>
+<p>Commencez par les revues dont les règles sont écrites et dont les informations nécessaires sont accessibles dans les registres de l'entreprise. Appuyez-vous sur un moteur de règles classique et confiez à l'agent la recherche d'informations, l'analyse des documents et la proposition de décision. Faites-lui examiner plusieurs fois les mêmes dossiers pour vérifier s'il obtient régulièrement les mêmes résultats. Mesurez ensuite les heures de travail humain qui restent nécessaires pour savoir si l'outil réduit effectivement le temps consacré aux revues sans dégrader leur qualité.</p>
 
-<blockquote>La revue reste obligatoire. Il faut déterminer qui la réalise, quelles informations sont disponibles, quelles décisions sont autorisées et quelle charge de travail reste aux équipes.</blockquote>
+<blockquote>La revue reste obligatoire. L'entreprise doit préciser qui l'effectue, à quelles sources cette personne ou cet agent aura accès, quelles décisions lui seront permises et combien d'heures de travail resteront aux équipes.</blockquote>
 </section>
 
 <h2 id="sources">Consulter l'étude et reproduire l'évaluation</h2>
