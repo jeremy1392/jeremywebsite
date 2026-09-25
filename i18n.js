@@ -186,10 +186,21 @@ window.I18N = {
     /* Open source contributions: merged public pull requests (homepage #contributions). */
     contrib: {
       kicker: "Contributions",
-      title: "Merged pull requests on public projects",
+      title: "Public repositories and merged pull requests",
       lede: "Security fixes proposed to open source projects and merged by their maintainers. The list is read from the GitHub API and only shows accepted pull requests; work still in review does not appear.",
       merged: "Merged",
       view: "View the pull request",
+      repo: "Public repository",
+      viewRepo: "View the repository",
+      /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
+      p2: {
+        project: "Author's repository · benchmark, dossiers, traces and scores behind The Last Human Gate (arXiv:2609.29345)",
+        desc: "300 fictional projects across the Buy, Integrate and Build routes, 1,700 gate reviews per model, a frozen deterministic evaluator and a rules-only control. The repository holds the generated dossiers with their Word documents and architecture diagrams, the model traces, the failed attempts, the cost ledgers, the repetition study and the audits, so every published number can be recomputed without new model calls.",
+        context: "Read the article: <a href=\"last-human-gate/en/\">Can AI take over the reviews that decide a project’s future?</a>",
+        date: "24 September 2026",
+        files: "Release dgf-bench-300-20260923",
+        tests: "3 models · 5,094 scored gates · $99.58 of API calls"
+      },
       more: "All public activity on GitHub",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
       nFiles: "{n} files",
@@ -479,10 +490,21 @@ window.I18N = {
     /* Open source contributions: merged public pull requests (homepage #contributions). */
     contrib: {
       kicker: "Contributions",
-      title: "Pull requests acceptées sur des projets publics",
+      title: "Dépôts publics et pull requests acceptées",
       lede: "Correctifs de sécurité proposés à des projets open source et fusionnés par leurs mainteneurs. La liste est lue depuis l'API GitHub et n'affiche que les pull requests acceptées ; les travaux encore en revue n'y figurent pas.",
       merged: "Fusionnée",
       view: "Voir la pull request",
+      repo: "Dépôt public",
+      viewRepo: "Voir le dépôt",
+      /* Carte de dépôt curée (DGF-Bench, dépôt de l'auteur), statique : la recherche API exclut les dépôts de l'auteur. */
+      p2: {
+        project: "Dépôt de l'auteur · benchmark, dossiers, traces et scores de The Last Human Gate (arXiv:2609.29345)",
+        desc: "300 projets fictifs sur les parcours Buy, Integrate et Build, 1 700 revues de gate par modèle, un évaluateur déterministe figé et un contrôle à règles seules. Le dépôt contient les dossiers générés avec leurs documents Word et schémas d'architecture, les traces des modèles, les tentatives échouées, les registres de coûts, l'étude de répétition et les audits : chaque chiffre publié peut être recalculé sans nouvel appel aux modèles.",
+        context: "Lire l'article : <a href=\"last-human-gate/\">L’IA peut-elle remplacer les spécialistes qui valident les projets ?</a>",
+        date: "24 septembre 2026",
+        files: "Version dgf-bench-300-20260923",
+        tests: "3 modèles · 5 094 gates notées · 99,58 $ d'appels API"
+      },
       more: "Toute l'activité publique sur GitHub",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
       nFiles: "{n} fichiers",
@@ -693,10 +715,21 @@ window.I18N = {
     /* Open source contributions: merged public pull requests (homepage #contributions). */
     contrib: {
       kicker: "开源贡献",
-      title: "已合并到公开项目的 Pull Request",
+      title: "公开仓库与已合并的 Pull Request",
       lede: "向开源项目提交并已被维护者合并的安全修复。列表直接读取自 GitHub API，仅显示已被接受的 Pull Request，仍在评审中的工作不会出现。",
       merged: "已合并",
       view: "查看 Pull Request",
+      repo: "公开仓库",
+      viewRepo: "查看仓库",
+      /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
+      p2: {
+        project: "作者的仓库 · The Last Human Gate（arXiv:2609.29345）背后的基准测试、案卷、轨迹与评分",
+        desc: "300 个虚构项目，覆盖采购、集成与开发三条路线，每个模型 1,700 次门禁评审，一个冻结的确定性评分程序和一个仅按规则运行的对照。仓库包含生成的案卷（含 Word 文档与架构图）、模型轨迹、失败的尝试、成本账目、重复实验与审计，所有公布的数字都可以在不重新调用模型的情况下复算。",
+        context: "阅读文章：<a href=\"last-human-gate/en/\">Can AI take over the reviews that decide a project’s future?</a>",
+        date: "2026年9月24日",
+        files: "发布版本 dgf-bench-300-20260923",
+        tests: "3 个模型 · 5,094 次评分门禁 · 99.58 美元 API 调用"
+      },
       more: "GitHub 上的全部公开活动",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
       nFiles: "{n} 个文件",
@@ -907,10 +940,21 @@ window.I18N = {
     /* Open source contributions: merged public pull requests (homepage #contributions). */
     contrib: {
       kicker: "المساهمات",
-      title: "طلبات سحب مدمجة في مشاريع عامة",
+      title: "مستودعات عامة وطلبات سحب مدمجة",
       lede: "إصلاحات أمنية مقترحة على مشاريع مفتوحة المصدر ودمجها القائمون عليها. تُقرأ القائمة من واجهة GitHub البرمجية ولا تعرض إلا طلبات السحب المقبولة، أما الأعمال التي ما زالت قيد المراجعة فلا تظهر.",
       merged: "مدمج",
       view: "عرض طلب السحب",
+      repo: "مستودع عام",
+      viewRepo: "عرض المستودع",
+      /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
+      p2: {
+        project: "مستودع المؤلف · المعيار والملفات والآثار والدرجات وراء دراسة The Last Human Gate (arXiv:2609.29345)",
+        desc: "300 مشروع خيالي عبر مسارات الشراء والتكامل والبناء، و1,700 مراجعة بوابة لكل نموذج، ومقيّم حتمي مجمَّد، وضابط يعمل بالقواعد وحدها. يضم المستودع الملفات المولَّدة بمستندات Word ومخططات المعمارية، وآثار النماذج، والمحاولات الفاشلة، وسجلات التكلفة، ودراسة التكرار والتدقيقات، بحيث يمكن إعادة حساب كل رقم منشور دون استدعاءات جديدة للنماذج.",
+        context: "اقرأ المقال: <a href=\"last-human-gate/en/\">Can AI take over the reviews that decide a project’s future?</a>",
+        date: "24 سبتمبر 2026",
+        files: "الإصدار dgf-bench-300-20260923",
+        tests: "3 نماذج · 5,094 بوابة مقيَّمة · 99.58 دولاراً من استدعاءات API"
+      },
       more: "كل النشاط العام على GitHub",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
       nFiles: "{n} ملفات",

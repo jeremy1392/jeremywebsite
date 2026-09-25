@@ -512,10 +512,11 @@
     var lang = currentPageLang();
     var labels = (I18N[lang] && I18N[lang].contrib) || (I18N.en && I18N.en.contrib) || {};
     var curated = curatedContribCards(list);
+    // Icons are cloned from a curated pull-request card, not from the repository card (whose state icon differs).
     var icons = {
-      repo: list.querySelector('.contrib-repo svg'),
-      state: list.querySelector('.contrib-state svg'),
-      link: list.querySelector('.contrib-link svg')
+      repo: list.querySelector('[data-pr] .contrib-repo svg'),
+      state: list.querySelector('[data-pr] .contrib-state svg'),
+      link: list.querySelector('[data-pr] .contrib-link svg')
     };
     // appendChild moves a card that is already in the list, so the list ends up in API order, newest first.
     items.forEach(function (p) {
