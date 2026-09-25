@@ -25,7 +25,7 @@ window.I18N = {
       note: "Research · 26 min read · arXiv + deck of 30 slides",
       cta: "Read the article",
       url: "last-human-gate/en/",
-      cover: "images/last-human-gate-cover-en.jpg",
+      cover: "images/last-human-gate-slide-en.jpg",
       variant: "signal"
     },
     /* Case study: SOC and Blue Team automation with AI (deck + article). */
@@ -328,7 +328,7 @@ window.I18N = {
       note: "Recherche · 29 min de lecture · arXiv + deck de 30 slides",
       cta: "Lire l'article",
       url: "last-human-gate/",
-      cover: "images/last-human-gate-cover-fr.jpg",
+      cover: "images/last-human-gate-slide-fr.jpg",
       variant: "signal"
     },
     /* Cas pratique : automatiser le SOC et la Blue Team avec l'IA (deck + article). */
