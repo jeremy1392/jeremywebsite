@@ -7,6 +7,13 @@
     <language>en</language>
     <atom:link href="https://jeremycanale.com/blog/en/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Can AI take over the reviews that decide a project’s future?</title>
+      <link>https://jeremycanale.com/last-human-gate/en/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/last-human-gate/en/</guid>
+      <pubDate>Fri, 25 Sep 2026 07:00:00 GMT</pubDate>
+      <description>A study of 300 fictional projects tests whether an AI agent can perform a company’s internal reviews. Its results raise a separate question: how much human work would remain?</description>
+    </item>
+    <item>
       <title>SOC and Blue Teaming: two applied AI use cases for security operations</title>
       <link>https://jeremycanale.com/ai-soc-blue/en/</link>
       <guid isPermaLink="true">https://jeremycanale.com/ai-soc-blue/en/</guid>

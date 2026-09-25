@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="fr" dir="ltr" data-theme="dark" class="tech-page post-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>L’IA peut-elle remplacer les spécialistes qui valident les projets ? | Jeremy Canale</title>
+  <meta name="description" content="Une étude sur 300 projets fictifs teste si un agent IA peut réaliser les revues internes d’une entreprise. Ses résultats éclairent une autre question : combien de travail resterait-il aux humains ?" />
+  <meta name="keywords" content="The Last Human Gate, DGF-Bench, Digital Governance Framework, forward deployed engineering, agents IA, automatisation de la gouvernance, substitution de tâches, revue de gate, gate sécurité, arXiv 2609.29345, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/last-human-gate/" />
+  <link rel="alternate" hreflang="fr" href="https://jeremycanale.com/last-human-gate/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/last-human-gate/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/last-human-gate/en/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="L’IA peut-elle remplacer les spécialistes qui valident les projets ?" />
+  <meta property="og:description" content="Une étude sur 300 projets fictifs teste si un agent IA peut réaliser les revues internes d’une entreprise. Ses résultats éclairent une autre question : combien de travail resterait-il aux humains ?" />
+  <meta property="og:url" content="https://jeremycanale.com/last-human-gate/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/last-human-gate-cover-fr.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/last-human-gate-cover-fr.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="The Last Human Gate, un article de recherche de Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-09-25T09:00:00+02:00" />
+  <meta property="article:section" content="Recherche" />
+  <meta property="article:tag" content="Sécurité agentique" />
+  <meta property="article:tag" content="Gouvernance IA" />
+  <meta property="article:tag" content="Forward Deployed Engineering" />
+  <meta property="article:tag" content="Benchmark" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="L’IA peut-elle remplacer les spécialistes qui valident les projets ?" />
+  <meta name="twitter:description" content="Une étude sur 300 projets fictifs teste si un agent IA peut réaliser les revues internes d’une entreprise. Ses résultats éclairent une autre question : combien de travail resterait-il aux humains ?" />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/last-human-gate-cover-fr.jpg" />
+  <meta name="twitter:image:alt" content="The Last Human Gate, un article de recherche de Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/last-human-gate/" },
+    "headline": "L’IA peut-elle remplacer les spécialistes qui valident les projets ?",
+    "alternativeHeadline": "Forward deployed engineering pour l'automatisation de la gouvernance : l'article, le benchmark et le compte du travail humain",
+    "description": "Une étude sur 300 projets fictifs teste si un agent IA peut réaliser les revues internes d’une entreprise. Ses résultats éclairent une autre question : combien de travail resterait-il aux humains ?",
+    "image": "https://jeremycanale.com/images/last-human-gate-cover-fr.jpg",
+    "inLanguage": "fr",
+    "datePublished": "2026-09-25",
+    "dateModified": "2026-09-25",
+    "wordCount": 7109,
+    "citation": "https://arxiv.org/abs/2609.29345",
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "Architecte Sécurité AWS / Azure",
+      "sameAs": ["https://www.linkedin.com/in/jcanale13/", "https://www.malt.fr/profile/jeremycanale", "https://github.com/jeremy1392"]
+    },
+    "publisher": { "@type": "Person", "name": "Jeremy Canale", "url": "https://jeremycanale.com" },
+    "workTranslation": { "@type": "BlogPosting", "inLanguage": "en", "url": "https://jeremycanale.com/last-human-gate/en/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Jeremy Canale", "item": "https://jeremycanale.com/fr.html" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://jeremycanale.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "The Last Human Gate", "item": "https://jeremycanale.com/last-human-gate/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../fr.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Sécurité Agentique</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../fr.html#expertise">Expertise</a>
+      <a href="../fr.html#consulting">Conseil</a>
+      <a href="../fr.html#cases">Études de cas</a>
+      <a href="../blog/">Blog</a>
+      <a href="../fr.html#contributions">Contributions</a>
+      <a href="../fr.html#experience">Parcours</a>
+      <a href="../fr.html#certifications">Certifications</a>
+      <a href="../fr.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;en/&quot;,&quot;fr&quot;:&quot;./&quot;,&quot;zh&quot;:&quot;../zh.html&quot;,&quot;ar&quot;:&quot;../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>FR</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../fr.html#contact">
+        <span>Collaborer</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <article class="post-wrap">
+
+      <header class="post-header">
+        <span class="post-kicker post-kicker-signal">Recherche · IA en entreprise · Travail</span>
+        <h1 class="post-title">L’IA peut-elle remplacer les spécialistes qui valident les projets ?</h1>
+        <p class="post-dek">Une étude sur 300 projets fictifs teste si un agent IA peut réaliser les revues internes d’une entreprise. Ses résultats éclairent une autre question : combien de travail resterait-il aux humains ?</p>
+        <div class="post-byline">
+          <span class="post-byline-mark" aria-hidden="true">JC</span>
+          <span><b>Jeremy Canale</b></span>
+          <span class="sep">·</span>
+          <time datetime="2026-09-25">25 septembre 2026</time>
+          <span class="sep">·</span>
+          <span data-read-time>29 min de lecture</span>
+          <span class="sep">·</span>
+          <a href="en/" hreflang="en" lang="en">English version</a>
+        </div>
+      </header>
+
+      <div class="post-download">
+        <div class="post-download-text">
+          <span class="post-download-kicker">arXiv:2609.29345 · deck de 30 slides · Expérience sur des projets fictifs</span>
+          <strong>The Last Human Gate: Forward Deployed Engineering for Governance Automation</strong>
+          <p>Les résultats mesurés, les scénarios calculés et les prédictions sont présentés séparément.</p>
+        </div>
+        <div class="post-download-actions">
+          <a class="btn btn-primary" href="../The_Last_Human_Gate_Research_Paper_FR.pdf" download="The_Last_Human_Gate_Research_Paper_FR.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg> Télécharger les slides (PDF, 30 slides)</a>
+          <a class="btn btn-ghost" href="https://arxiv.org/abs/2609.29345" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7"/><path d="M21 3l-9 9"/><path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg> Lire l'article sur arXiv</a>
+          <a class="btn btn-ghost" href="https://github.com/jeremy1392/dgf-agentic-bench" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6M18 9a9 9 0 0 1-9 9"/></svg> DGF-Bench sur GitHub</a>
+        </div>
+      </div>
+
+<div class="deck-carousel deck-carousel-top" id="deck" data-autoplay="1000" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Les trente slides du deck de recherche">
+        <div class="deck-track">
+          <figure class="deck-slide" data-title="The Last Human Gate"><a href="../images/last-human-gate/fr/deck/slide-01.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-01.jpg" width="1100" height="619" alt="Slide 1 : The Last Human Gate, et si un agent IA pouvait réaliser la revue d'un projet à la place d'un spécialiste" /></a></figure>
+          <figure class="deck-slide" data-title="4 idées à retenir"><a href="../images/last-human-gate/fr/deck/slide-02.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-02.jpg" width="1100" height="619" loading="lazy" alt="Slide 2 : L'expérience résumée en une minute, quatre idées à retenir" /></a></figure>
+          <figure class="deck-slide" data-title="Six termes expliqués simplement"><a href="../images/last-human-gate/fr/deck/slide-03.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-03.jpg" width="1100" height="619" loading="lazy" alt="Slide 3 : Six termes expliqués simplement" /></a></figure>
+          <figure class="deck-slide" data-title="Forward Deployed Engineer : rôle et responsabilités"><a href="../images/last-human-gate/fr/deck/slide-04.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-04.jpg" width="1100" height="619" loading="lazy" alt="Slide 4 : Forward Deployed Engineer, rôle et responsabilités" /></a></figure>
+          <figure class="deck-slide" data-title="Le DGF : les revues qu'un projet doit passer"><a href="../images/last-human-gate/fr/deck/slide-05.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-05.jpg" width="1100" height="619" loading="lazy" alt="Slide 5 : Le DGF, les revues qu'un projet doit passer" /></a></figure>
+          <figure class="deck-slide" data-title="Les huit types de revue du DGF"><a href="../images/last-human-gate/fr/deck/slide-06.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-06.jpg" width="1100" height="619" loading="lazy" alt="Slide 6 : Les huit types de revue du DGF" /></a></figure>
+          <figure class="deck-slide" data-title="Pourquoi le DGF se prête bien à l'automatisation"><a href="../images/last-human-gate/fr/deck/slide-07.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-07.jpg" width="1100" height="619" loading="lazy" alt="Slide 7 : Pourquoi le DGF se prête bien à l'automatisation" /></a></figure>
+          <figure class="deck-slide" data-title="Ce que l'étude veut montrer"><a href="../images/last-human-gate/fr/deck/slide-08.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-08.jpg" width="1100" height="619" loading="lazy" alt="Slide 8 : Ce que l'étude veut montrer, les trois conditions" /></a></figure>
+          <figure class="deck-slide" data-title="Comment se déroule l'expérience"><a href="../images/last-human-gate/fr/deck/slide-09.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-09.jpg" width="1100" height="619" loading="lazy" alt="Slide 9 : Comment se déroule l'expérience" /></a></figure>
+          <figure class="deck-slide" data-title="Ce que fait l'agent, étape par étape"><a href="../images/last-human-gate/fr/deck/slide-10.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-10.jpg" width="1100" height="619" loading="lazy" alt="Slide 10 : Ce que fait l'agent, étape par étape" /></a></figure>
+          <figure class="deck-slide" data-title="Quelles réponses faut-il donner pour réussir le test ?"><a href="../images/last-human-gate/fr/deck/slide-11.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-11.jpg" width="1100" height="619" loading="lazy" alt="Slide 11 : Quelles réponses faut-il donner pour réussir le test" /></a></figure>
+          <figure class="deck-slide" data-title="Des dossiers fictifs pour tester les agents"><a href="../images/last-human-gate/fr/deck/slide-12.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-12.jpg" width="1100" height="619" loading="lazy" alt="Slide 12 : Des dossiers fictifs pour tester les agents" /></a></figure>
+          <figure class="deck-slide" data-title="Les chiffres à retenir"><a href="../images/last-human-gate/fr/deck/slide-13.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-13.jpg" width="1100" height="619" loading="lazy" alt="Slide 13 : Les chiffres à retenir" /></a></figure>
+          <figure class="deck-slide" data-title="Des agents IA réalisent les revues à la place d'un spécialiste"><a href="../images/last-human-gate/fr/deck/slide-14.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-14.jpg" width="1100" height="619" loading="lazy" alt="Slide 14 : Des agents IA réalisent les revues à la place d'un spécialiste, la console de test" /></a></figure>
+          <figure class="deck-slide" data-title="Les agents décident souvent juste, mais citent parfois mal leurs sources"><a href="../images/last-human-gate/fr/deck/slide-15.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-15.jpg" width="1100" height="619" loading="lazy" alt="Slide 15 : Les agents décident souvent juste, mais citent parfois mal leurs sources" /></a></figure>
+          <figure class="deck-slide" data-title="Les erreurs que les agents font encore"><a href="../images/last-human-gate/fr/deck/slide-16.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-16.jpg" width="1100" height="619" loading="lazy" alt="Slide 16 : Les erreurs que les agents font encore" /></a></figure>
+          <figure class="deck-slide" data-title="Deux exemples concrets"><a href="../images/last-human-gate/fr/deck/slide-17.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-17.jpg" width="1100" height="619" loading="lazy" alt="Slide 17 : Deux exemples concrets, Falcon et Meridian" /></a></figure>
+          <figure class="deck-slide" data-title="L'agent réussit-il encore quand on refait le test ?"><a href="../images/last-human-gate/fr/deck/slide-18.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-18.jpg" width="1100" height="619" loading="lazy" alt="Slide 18 : L'agent réussit-il encore quand on refait le test" /></a></figure>
+          <figure class="deck-slide" data-title="Une information manquante peut changer la décision"><a href="../images/last-human-gate/fr/deck/slide-19.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-19.jpg" width="1100" height="619" loading="lazy" alt="Slide 19 : Une information manquante peut changer la décision" /></a></figure>
+          <figure class="deck-slide" data-title="Combien de travail reste-t-il aux humains ?"><a href="../images/last-human-gate/fr/deck/slide-20.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-20.jpg" width="1100" height="619" loading="lazy" alt="Slide 20 : Combien de travail reste-t-il aux humains" /></a></figure>
+          <figure class="deck-slide" data-title="Le même agent, mais des besoins humains très différents"><a href="../images/last-human-gate/fr/deck/slide-21.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-21.jpg" width="1100" height="619" loading="lazy" alt="Slide 21 : Le même agent, mais des besoins humains très différents" /></a></figure>
+          <figure class="deck-slide" data-title="Jusqu'où l'automatisation pourrait-elle aller ?"><a href="../images/last-human-gate/fr/deck/slide-22.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-22.jpg" width="1100" height="619" loading="lazy" alt="Slide 22 : Jusqu'où l'automatisation pourrait-elle aller" /></a></figure>
+          <figure class="deck-slide" data-title="Quand cela pourrait-il devenir possible ?"><a href="../images/last-human-gate/fr/deck/slide-23.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-23.jpg" width="1100" height="619" loading="lazy" alt="Slide 23 : Quand cela pourrait-il devenir possible" /></a></figure>
+          <figure class="deck-slide" data-title="L'hypothèse : confier une revue entière à l'IA"><a href="../images/last-human-gate/fr/deck/slide-24.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-24.jpg" width="1100" height="619" loading="lazy" alt="Slide 24 : L'hypothèse, confier une revue entière à l'IA" /></a></figure>
+          <figure class="deck-slide" data-title="L'hypothèse pour 2033 : au moins 80 % d'ETP en moins"><a href="../images/last-human-gate/fr/deck/slide-25.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-25.jpg" width="1100" height="619" loading="lazy" alt="Slide 25 : L'hypothèse pour 2033, au moins 80 % d'ETP en moins" /></a></figure>
+          <figure class="deck-slide" data-title="Ce que l'IA peut faire, et ce qui reste aux humains"><a href="../images/last-human-gate/fr/deck/slide-26.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-26.jpg" width="1100" height="619" loading="lazy" alt="Slide 26 : Ce que l'IA peut faire, et ce qui reste aux humains" /></a></figure>
+          <figure class="deck-slide" data-title="Et dans les autres métiers soumis à des règles ?"><a href="../images/last-human-gate/fr/deck/slide-27.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-27.jpg" width="1100" height="619" loading="lazy" alt="Slide 27 : Et dans les autres métiers soumis à des règles" /></a></figure>
+          <figure class="deck-slide" data-title="Ce qu'il faut retenir"><a href="../images/last-human-gate/fr/deck/slide-28.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-28.jpg" width="1100" height="619" loading="lazy" alt="Slide 28 : Ce qu'il faut retenir" /></a></figure>
+          <figure class="deck-slide" data-title="Consulter l'étude et vérifier les résultats"><a href="../images/last-human-gate/fr/deck/slide-29.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-29.jpg" width="1100" height="619" loading="lazy" alt="Slide 29 : Consulter l'étude et vérifier les résultats" /></a></figure>
+          <figure class="deck-slide" data-title="Place aux questions"><a href="../images/last-human-gate/fr/deck/slide-30.jpg" target="_blank" rel="noopener"><img src="../images/last-human-gate/fr/deck/slide-30.jpg" width="1100" height="619" loading="lazy" alt="Slide 30 : Place aux questions" /></a></figure>
+        </div>
+        <button type="button" class="deck-nav deck-prev" data-prev aria-label="Slide précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="deck-nav deck-next" data-next aria-label="Slide suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="deck-bar"><span class="deck-counter" data-counter aria-live="polite">1 / 30</span><span class="deck-title" data-title></span></div>
+      </div>
+
+      <nav class="post-toc" aria-label="Dans cet article">
+        <span class="post-toc-title">Dans cet article</span>
+        <ol><li><a href="#fde">Le rôle des FDE</a></li><li><a href="#dgf">Les revues du DGF</a></li><li><a href="#conditions">Les conditions à remplir</a></li><li><a href="#protocole">Le protocole</a></li><li><a href="#notation">La notation</a></li><li><a href="#resultats">Les résultats</a></li><li><a href="#exemples">Deux revues pas à pas</a></li><li><a href="#repetition">Répéter les tests</a></li><li><a href="#information">L’information manquante</a></li><li><a href="#heures">Compter les heures</a></li><li><a href="#scenarios">Les scénarios d’emploi</a></li><li><a href="#long-terme">L’hypothèse de long terme</a></li><li><a href="#prediction-2033">Le test de 2033</a></li><li><a href="#conclusion">Ce qu’il faut retenir</a></li></ol>
+      </nav>
+
+      <div class="post-body">
+
+<div class="post-stats"><div><b>300</b><span>projets fictifs distincts</span></div><div><b>5 094</b><span>revues notées dans les tests principaux</span></div><div><b>3</b><span>modèles testés avec le même agent</span></div><div><b>94,98 %</b><span>de revues réussies avec le meilleur modèle</span></div></div>
+<p class="post-table-note">Tests principaux : 22–23 septembre 2026. Une revue réussit uniquement si elle remplit les cinq critères de notation. <a class="post-cite" href="#src-4">[4]</a><a class="post-cite" href="#src-6">[6]</a></p>
+
+<figure class="post-chart">
+<span class="post-chart-tag">Le principe de The Last Human Gate</span>
+<div class="post-diagram is-square"><svg viewBox="0 0 360 360" role="img" aria-label="La revue reste obligatoire. Son exécution peut changer."><defs><marker id="hero-arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8" fill="#81959b"/></marker></defs><g font-family="Arial, sans-serif" fill="#152d38"><rect x="7" y="12" width="157" height="53" rx="9" fill="#fff" stroke="#dbe3e4"/><rect x="195" y="12" width="157" height="53" rx="9" fill="#fff" stroke="#dbe3e4"/><text x="85" y="44" text-anchor="middle" font-size="12">Documents</text><text x="273" y="44" text-anchor="middle" font-size="12">Règles écrites</text><path d="M85 65 V87 H180 M273 65 V87 H180" fill="none" stroke="#81959b" stroke-width="1.4"/><path d="M180 87 V109" fill="none" stroke="#81959b" stroke-width="1.4" marker-end="url(#hero-arr)"/><rect x="65" y="111" width="230" height="83" rx="11" fill="#e9f3f0" stroke="#b8d3c9"/><text x="180" y="145" font-size="18" font-weight="700" text-anchor="middle">Agent de revue</text><text x="180" y="170" font-size="11" text-anchor="middle">Lit · vérifie · justifie</text><path d="M180 194 V224" stroke="#81959b" fill="none" marker-end="url(#hero-arr)"/><rect x="48" y="226" width="264" height="43" rx="7" fill="#fff" stroke="#dbe3e4"/><path d="M70 239 l8 -4 8 4 v8 q-8 12 -16 0z" fill="none" stroke="#136c66" stroke-width="1.3"/><text x="189" y="252" font-size="12" text-anchor="middle">Contrôle d’autorisation</text><path d="M180 269 V297" stroke="#81959b" fill="none" marker-end="url(#hero-arr)"/><rect x="65" y="300" width="230" height="50" rx="9" fill="#152d38"/><text x="180" y="331" font-size="14" text-anchor="middle" fill="white">Décision documentée</text></g></svg></div>
+<figcaption><strong>La revue reste obligatoire.</strong><br/>Son exécution peut changer, mais pas ses exigences.</figcaption>
+</figure>
+
+<section class="post-section" id="fde">
+<span class="post-num">01 / Le point de départ</span>
+
+<h2>Pourquoi les revues de projet intéressent les ingénieurs qui déploient l’IA</h2>
+
+<p>Avant qu’une entreprise achète un logiciel, connecte deux systèmes ou mette une application en service, plusieurs spécialistes doivent examiner le projet. Le contrat convient-il ? Les données sont-elles suffisamment protégées ? Les tests permettent-ils de passer en production ? Ces questions ne disparaissent pas avec l’IA. En revanche, la personne — ou le logiciel — qui y répond pourrait changer.</p>
+
+<p>C’est le point de départ de <em>The Last Human Gate</em>, une étude de Jeremy Canale. Elle pose une question précise : <strong>un agent IA peut-il réaliser une revue de projet jusqu’à la décision finale, sans qu’un spécialiste doive reprendre son travail ?</strong> Puis elle en pose une seconde, très différente : combien de travail resterait-il alors aux humains ? <a class="post-cite" href="#src-1">[1]</a></p>
+
+<p>Le titre fait référence aux <em>Forward Deployed Engineers</em>, ou FDE. Dans les présentations, ce sont des ingénieurs qui travaillent directement avec les équipes d’un client pour rendre une solution d’IA utilisable au quotidien. Ils comprennent les besoins, développent la solution, la connectent aux applications et aux données de l’entreprise, puis la mettent en service et la maintiennent. Leur rôle ne se limite pas à la gouvernance des projets. <a class="post-cite" href="#src-1">[1]</a></p>
+
+<p>L’auteur propose néanmoins que les revues internes constituent un premier terrain intéressant pour ces ingénieurs. Les mêmes questions reviennent d’un projet à l’autre ; une partie des règles est déjà écrite ; les conclusions d’une revue alimentent la suivante ; et le résultat peut être testé. Autant de points qui rendent le travail plus facile à décrire et à évaluer. <a class="post-cite" href="#src-3">[3]</a></p>
+
+<div class="post-concepts post-concepts-4">
+<div><span class="post-concept-n">01</span><h3>Des dossiers qui se ressemblent</h3><p>Une même méthode peut servir à plusieurs projets, si leurs informations, leurs règles et leur périmètre sont comparables.</p></div>
+<div><span class="post-concept-n">02</span><h3>Des règles déjà formalisées</h3><p>Les seuils et les autorisations peuvent devenir des contrôles logiciels. Les situations moins structurées restent à interpréter.</p></div>
+<div><span class="post-concept-n">03</span><h3>Des conclusions transmises à la suite</h3><p>Une fiche commune évite de perdre les problèmes identifiés ou de recopier les mêmes informations entre équipes.</p></div>
+<div><span class="post-concept-n">04</span><h3>Des résultats qu’on peut tester</h3><p>On peut vérifier les décisions sur des cas préparés à l’avance, au lieu de juger uniquement la qualité du texte produit.</p></div>
+</div>
+
+<p>Les projets d’IA menés par les FDE doivent eux-mêmes passer par ces revues. Les automatiser pourrait donc faciliter les déploiements suivants. Mais ce scénario suppose qu’un responsable pilote l’ensemble du parcours, au-delà d’un seul service. Et les heures consacrées par les FDE à construire et à maintenir le système doivent entrer dans le calcul des coûts. <strong>Que la gouvernance soit automatisée avant d’autres activités reste une hypothèse de l’étude, pas un ordre d’adoption observé.</strong> <a class="post-cite" href="#src-3">[3]</a></p>
+</section>
+
+<section class="post-section" id="dgf">
+<span class="post-num">02 / Comprendre le DGF</span>
+
+<h2>Que vérifie-t-on, exactement, avant de laisser un projet continuer ?</h2>
+
+<p>L’étude appelle <strong>Digital Governance Framework</strong>, ou DGF, l’ensemble des revues obligatoires qu’un projet doit franchir. Une <em>gate</em> est une étape de ce parcours : on examine les documents et les informations disponibles, on signale les problèmes, on demande les corrections nécessaires et on rend une décision. Il ne s’agit donc pas simplement de remplir une case « validé ». <a class="post-cite" href="#src-2">[2]</a></p>
+
+<p>Tous les projets ne suivent pas le même chemin. Le benchmark distingue l’achat d’une solution, l’intégration de systèmes existants et le développement d’une application. Les deux premiers parcours comportent six revues ; le troisième en comporte cinq. <a class="post-cite" href="#src-2">[2]</a></p>
+
+<figure class="post-chart">
+<h3>Trois parcours, des contrôles qui restent obligatoires</h3>
+<div class="post-route"><span class="post-route-label"><strong>ACHAT</strong> <small>Acquérir une solution · 6 revues</small></span>
+<span class="post-route-node"><span class="stepno">01</span>Achats</span>
+<span class="post-route-node"><span class="stepno">02</span>Juridique</span>
+<span class="post-route-node"><span class="stepno">03</span>Conformité réglementaire</span>
+<span class="post-route-node"><span class="stepno">04</span>Cybersécurité</span>
+<span class="post-route-node"><span class="stepno">05</span>Standardisation technologique</span>
+<span class="post-route-node"><span class="stepno">06</span>Validation finale</span>
+</div>
+<div class="post-route"><span class="post-route-label"><strong>INTÉGRATION</strong> <small>Connecter des systèmes · 6 revues</small></span>
+<span class="post-route-node"><span class="stepno">01</span>Standardisation technologique</span>
+<span class="post-route-node"><span class="stepno">02</span>Architecture technique</span>
+<span class="post-route-node"><span class="stepno">03</span>Cybersécurité</span>
+<span class="post-route-node"><span class="stepno">04</span>Juridique</span>
+<span class="post-route-node"><span class="stepno">05</span>Conformité réglementaire</span>
+<span class="post-route-node"><span class="stepno">06</span>Validation finale</span>
+</div>
+<div class="post-route"><span class="post-route-label"><strong>DÉVELOPPEMENT</strong> <small>Créer une application · 5 revues</small></span>
+<span class="post-route-node"><span class="stepno">01</span>Standardisation technologique</span>
+<span class="post-route-node"><span class="stepno">02</span>Architecture technique</span>
+<span class="post-route-node"><span class="stepno">03</span>Cybersécurité</span>
+<span class="post-route-node"><span class="stepno">04</span>Préparation à l’exploitation</span>
+<span class="post-route-node"><span class="stepno">05</span>Validation finale</span>
+</div>
+<figcaption>Parcours utilisés dans DGF-Bench. Dans l’expérience, toutes les revues prévues sont exécutées, même après un refus, pour pouvoir évaluer la suite du parcours. <a class="post-cite" href="#src-2">[2]</a></figcaption>
+</figure>
+
+<p>Le même dossier peut être lu plusieurs fois sans que les spécialistes fassent le même travail. La personne chargée du contrat et celle chargée de la cybersécurité ne cherchent pas les mêmes problèmes. La validation finale reprend les conclusions des revues précédentes, ainsi que les éléments de budget et de stratégie. <a class="post-cite" href="#src-2">[2]</a></p>
+
+<div class="post-table-wrap"><table class="post-table"><thead><tr><th>Revue</th><th>Question à trancher</th><th>Exemples d’éléments à vérifier</th></tr></thead><tbody><tr><td>Achats</td><td>Le fournisseur répond-il aux critères de sélection et aux exigences de prix ?</td><td>Offres, contrôles du fournisseur, sanctions, coût sur trois ans.</td></tr><tr><td>Juridique</td><td>Le contrat convient-il, et son signataire peut-il engager l’entreprise ?</td><td>Accord de traitement des données, responsabilité, résiliation, pouvoir de signature.</td></tr><tr><td class="wrap">Conformité réglementaire</td><td>Le projet respecte-t-il les exigences qui lui sont applicables ?</td><td>Analyse d’impact sur la protection des données, lieux d’hébergement, obligations applicables.</td></tr><tr><td>Cybersécurité</td><td>Les protections sont-elles adaptées aux données et aux risques ?</td><td>Droits d’accès, accès réseau, supervision, vulnérabilités connues.</td></tr><tr><td class="wrap">Standardisation technologique <code>(IT)</code></td><td>La solution est-elle compatible avec les systèmes de l’entreprise et peut-elle être prise en charge ?</td><td>Technologies approuvées, capacité, support, gestion des changements.</td></tr><tr><td>Architecture technique</td><td>La conception respecte-t-elle les contraintes techniques du projet ?</td><td>Plages d’adresses IP, interfaces, temps de réponse, responsabilité des données, réversibilité.</td></tr><tr><td class="wrap">Préparation à l’exploitation</td><td>Les tests montrent-ils que la solution est prête à fonctionner ?</td><td>Tests de charge, de restauration et de reprise ; procédures ; transmission à l’équipe d’exploitation.</td></tr><tr><td class="wrap">Validation finale <code>(General)</code></td><td>Au vu des revues et des engagements de l’entreprise, le projet peut-il continuer ?</td><td>Décisions précédentes, budget, stratégie et préparation du changement.</td></tr></tbody></table></div>
+
+<p>Ces questions résument les règles fournies dans le benchmark. Elles ne constituent ni des fiches de poste complètes, ni un modèle unique que toutes les entreprises seraient tenues d’appliquer. <a class="post-cite" href="#src-2">[2]</a></p>
+
+<h3>Cinq décisions possibles, pas seulement oui ou non</h3>
+
+<div class="post-concepts post-concepts-4">
+<div><span class="post-concept-n">GO</span><h3>APPROUVÉ</h3><p>Le projet peut continuer.</p></div>
+<div><span class="post-concept-n">GO_WITH_RESERVATIONS</span><h3>APPROUVÉ SOUS CONDITIONS</h3><p>Le projet peut continuer, sous réserve des conditions et des échéances indiquées.</p></div>
+<div><span class="post-concept-n">REWORK</span><h3>À CORRIGER</h3><p>La proposition doit être modifiée puis soumise à une nouvelle revue.</p></div>
+<div><span class="post-concept-n">SUSPENSION</span><h3>EN ATTENTE</h3><p>Le projet est suspendu jusqu’à ce qu’un prérequis soit rempli.</p></div>
+<div><span class="post-concept-n">NO_GO</span><h3>REFUSÉ</h3><p>La proposition ne peut pas être poursuivie sous sa forme actuelle.</p></div>
+</div>
+
+<div class="post-note"><strong>Refuser un projet peut être une réussite.</strong><p>Le test évalue la qualité de la revue, pas la capacité de l’agent à faire approuver tous les projets. Lorsqu’un dossier doit être refusé, le bon résultat est un refus justifié. <a class="post-cite" href="#src-5">[5]</a></p></div>
+</section>
+
+<section class="post-section" id="conditions">
+<span class="post-num">03 / La proposition de l’étude</span>
+
+<h2>À quelles conditions un agent peut-il faire la revue à la place d’un spécialiste ?</h2>
+
+<p>Le raisonnement de l’article distingue le contrôle à réaliser du poste de la personne qui le réalise. Une revue peut être obligatoire sans que son exécution soit, par nature, réservée à un humain. Encore faut-il que le système remplisse trois conditions. <a class="post-cite" href="#src-3">[3]</a></p>
+
+<div class="post-concepts">
+<div><span class="post-concept-n">01</span><h3>Avoir accès aux informations nécessaires</h3><p>L’agent doit pouvoir consulter les documents et les données utiles, ou demander ce qui manque lorsque les règles le permettent. Une sauvegarde annoncée ne prouve pas qu’une restauration a réussi.</p></div>
+<div><span class="post-concept-n">02</span><h3>Produire une revue fiable</h3><p>Il doit traiter les dossiers difficiles ou incomplets, signaler les bons problèmes, demander les bonnes actions et indiquer les sources qui justifient ses conclusions.</p></div>
+<div><span class="post-concept-n">03</span><h3>Rester dans ses autorisations</h3><p>L’agent propose une décision. Un contrôle séparé vérifie qu’il peut effectivement l’accorder. Demander une approbation sous conditions ne suffit pas à l’obtenir.</p></div>
+</div>
+
+<figure class="post-chart">
+<h3>Aider un spécialiste et remplacer sa tâche ne sont pas la même chose</h3>
+<div class="post-lanes">
+<div class="post-lane"><h4>ASSISTANCE</h4>
+<div class="post-lane-step">L’agent prépare un brouillon</div>
+<div class="post-lane-arrow" aria-hidden="true">↓</div>
+<div class="post-lane-step">Un spécialiste reprend la revue</div>
+<div class="post-lane-arrow" aria-hidden="true">↓</div>
+<div class="post-lane-step">Le spécialiste rend la décision</div>
+<div class="post-lane-end">La revue reste un travail humain.</div>
+</div>
+<div class="post-lane"><h4>REVUE CONFIÉE À L’AGENT</h4>
+<div class="post-lane-step">L’agent réalise la revue</div>
+<div class="post-lane-arrow" aria-hidden="true">↓</div>
+<div class="post-lane-step">Le système contrôle ses autorisations</div>
+<div class="post-lane-arrow" aria-hidden="true">↓</div>
+<div class="post-lane-step">La revue est acceptée sans être refaite</div>
+<div class="post-lane-end">La tâche est remplacée ; le travail humain restant doit toujours être compté.</div>
+</div>
+</div>
+<figcaption>La différence porte sur le travail réellement accompli, pas sur l’étiquette « copilote » ou « agent autonome ». La responsabilité reste à l’entreprise et aux personnes qu’elle désigne. <a class="post-cite" href="#src-3">[3]</a></figcaption>
+</figure>
+
+<p>Pour parler de réduction du travail humain, une quatrième condition s’ajoute : <strong>le total des heures doit diminuer</strong>. Une revue qui disparaît du planning d’une équipe mais réapparaît chez un prestataire n’a pas été supprimée. De même, un agent qui renvoie tous les dossiers à un humain ne remplace aucune revue. <a class="post-cite" href="#src-3">[3]</a></p>
+</section>
+
+<section class="post-section" id="protocole">
+<span class="post-num">04 / L’expérience</span>
+
+<h2>Comment tester cette idée sans utiliser les dossiers confidentiels d’une entreprise ?</h2>
+
+<p>DGF-Bench utilise <strong>300 projets entièrement fictifs</strong> : 100 achats, 100 intégrations et 100 développements. Le programme définit les faits de chaque projet, dessine son architecture et prépare les documents nécessaires aux revues. Il crée volontairement des situations conformes et non conformes. <a class="post-cite" href="#src-4">[4]</a></p>
+
+<p>Chaque dossier comprend environ 26 documents Word, auxquels s’ajoutent des tableaux et un schéma d’architecture. On y trouve notamment un document de cadrage, des contrats, des rapports de tests de sécurité, des procédures d’exploitation et des résultats de tests de sauvegarde, de restauration ou de charge. Certains documents sont incomplets, anciens ou contradictoires. Par exemple, un résumé peut annoncer un contrat signé alors que le registre des contrats le présente encore comme un brouillon. <a class="post-cite" href="#src-4">[4]</a></p>
+
+<p>L’agent ne crée pas le projet qu’il examine. Il en lit le dossier, consulte les systèmes d’entreprise simulés, demande les informations manquantes et produit les conclusions de chaque revue. Les conclusions précédentes sont transmises telles quelles à la suivante, <strong>erreurs comprises</strong>. Personne ne les corrige en cours de route. <a class="post-cite" href="#src-5">[5]</a></p>
+
+<figure class="post-chart">
+<h3>Du projet fictif à la notation : deux circuits distincts</h3>
+<p class="post-table-note">Le schéma peut défiler horizontalement sur un petit écran.</p>
+<div class="post-diagram"><svg viewBox="0 0 1010 520" role="img" aria-label="Le même programme prépare le projet et les réponses du test. Le contrôle des autorisations intervient pendant la revue ; la notation vient après le parcours. Aucun évaluateur humain ne rédige les réponses du test ni ne corrige les conclusions entre deux revues."><defs><marker id="wf-arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8" fill="#81959b"/></marker></defs><rect x="15" y="20" width="275" height="90" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="152.5" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Le programme génère</text><text x="152.5" y="77" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">le projet et ses réponses</text><rect x="695" y="20" width="295" height="113" rx="12" fill="#fbf3e7" stroke="#e1d5bd"/><text x="842.5" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Fichier de réponses du test</text><text x="842.5" y="77" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Caché à l’agent</text><text x="842.5" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">99_hidden_ground_truth.json</text><text x="490" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#566b73">préparés à partir des mêmes faits</text><g fill="none" stroke="#81959b" stroke-width="1.5" marker-end="url(#wf-arr)"><path d="M290 72 H694"/><path d="M152 110 V203"/><path d="M290 275 H364"/><path d="M640 275 H695"/><path d="M842 316 V406"/><path d="M499 333 V406"/><path d="M526 407 V334"/></g><rect x="15" y="205" width="275" height="135" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="152.5" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Informations accessibles</text><text x="152.5" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Documents du projet</text><text x="152.5" y="287" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Résumé structuré des faits</text><text x="152.5" y="312" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Règles + systèmes simulés</text><rect x="365" y="205" width="275" height="135" rx="12" fill="#e9f3f0" stroke="#b8d3c9"/><text x="502.5" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Agent de revue</text><text x="502.5" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Lit et vérifie les informations</text><text x="502.5" y="287" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Repère les problèmes</text><text x="502.5" y="312" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Propose une décision</text><rect x="695" y="237" width="295" height="79" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="842.5" y="269" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Résultats du parcours</text><text x="842.5" y="294" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Décisions, sources et journaux</text><text x="428" y="386" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#566b73">PENDANT LA REVUE</text><rect x="365" y="410" width="275" height="80" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="502.5" y="442" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Contrôle d’autorisation</text><text x="502.5" y="467" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Accepte ou refuse la demande</text><text x="765" y="386" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#566b73">APRÈS TOUTES LES REVUES</text><rect x="695" y="410" width="295" height="80" rx="12" fill="#e9f3f0" stroke="#b8d3c9"/><text x="842.5" y="442" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Programme de notation</text><text x="842.5" y="467" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Vérifie les cinq critères</text><path d="M980 133 V175 H1002 V450 H991" fill="none" stroke="#a2854d" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#wf-arr)"/></svg></div>
+<figcaption>Le même programme prépare le projet et les réponses du test. Le contrôle des autorisations intervient pendant la revue ; la notation vient après le parcours. Aucun évaluateur humain ne rédige les réponses du test ni ne corrige les conclusions entre deux revues. <a class="post-cite" href="#src-5">[5]</a></figcaption>
+</figure>
+
+<div class="post-note"><strong>L’agent ne reçoit pas seulement une pile de documents.</strong><p>Le protocole lui fournit aussi les règles écrites et un résumé structuré des faits du projet, ainsi qu’un accès aux informations prévues dans les systèmes simulés. En revanche, il ne peut pas lire le fichier contenant les réponses qui serviront à le noter. Ce périmètre d’information est important pour interpréter les résultats. <a class="post-cite" href="#src-4">[4]</a></p></div>
+
+<figure class="post-chart">
+<h3>Un document réel du jeu de tests : le schéma du projet Falcon</h3>
+<div class="post-diagram is-doc"><a href="../images/last-human-gate/falcon-architecture.png" target="_blank" rel="noopener"><img alt="Schéma d’architecture Azure du dossier fictif DGF-BLD-035200, reproduit depuis la diapositive 12." height="1320" loading="lazy" src="../images/last-human-gate/falcon-architecture.png" width="1980"/></a></div>
+<figcaption>Illustration d’origine, reproduite sans modification. Le schéma fait partie des éléments à vérifier : sa présence dans le dossier ne garantit pas que l’architecture soit correcte. <a class="post-cite" href="#src-4">[4]</a></figcaption>
+</figure>
+
+<p>Le même agent est exécuté avec trois modèles : <strong>Gemini 3.8 Flash, GPT-5.6 Luna et DeepSeek v4.1 Flash</strong>. Ce sont les noms des modèles et des points d’accès rapportés dans les présentations pour les tests des 22 et 23 septembre 2026. Les réglages sont identiques : température à zéro, au plus 20 cycles d’analyse et 40 appels aux outils par revue. <a class="post-cite" href="#src-4">[4]</a></p>
+
+<p>Il était prévu de tester 1 700 revues par modèle, soit 900 parcours de projet au total. Un parcours a été exclu après un incident technique du fournisseur de modèle. Les résultats principaux portent donc sur <strong>899 parcours et 5 094 revues</strong>. Les présentations indiquent 99,58 dollars de frais d’appels aux modèles pour l’étude, tentatives échouées comprises. Ce montant ne représente pas le coût de conception ou d’exploitation d’un système en entreprise. <a class="post-cite" href="#src-4">[4]</a></p>
+</section>
+
+<section class="post-section" id="notation">
+<span class="post-num">05 / Lire les scores</span>
+
+<h2>Qui décide si l’agent a réussi ? Un programme, pas un jury humain</h2>
+
+<p>Au moment de créer un dossier, le programme en définit les faits : par exemple, le contrat est signé ou ne l’est pas, le fournisseur a été contrôlé ou ne l’a pas été, un test a réussi ou manque. <strong>À partir de ces faits et des règles intégrées au programme, il calcule la décision à prendre, les problèmes à signaler et les actions à demander.</strong> Il enregistre ces réponses pour la notation. Aucun évaluateur humain ne les rédige. <a class="post-cite" href="#src-5">[5]</a></p>
+
+<p>Ces informations se trouvent dans le fichier <code>99_hidden_ground_truth.json</code>. Le champ <code>canonical_truth</code> décrit les faits du projet fictif ; <code>reference_decisions</code> contient les réponses prévues pour chaque revue. L’agent n’a pas accès à ce fichier. Une fois le parcours terminé, le programme de notation s’en sert pour contrôler ses réponses, en tenant aussi compte des approbations sous conditions correctement autorisées pendant l’exécution. <a class="post-cite" href="#src-5">[5]</a></p>
+
+<figure class="post-chart">
+<h3>Une revue doit remplir les cinq critères</h3>
+<ol class="post-steps"><li><strong>Décision.</strong> Choisir la décision prévue pour le cas.</li><li><strong>Problèmes.</strong> Signaler tous les problèmes requis, sans en ajouter.</li><li><strong>Actions.</strong> Demander les corrections nécessaires.</li><li><strong>Sources.</strong> Citer les sources admises et les passages exacts.</li><li><strong>Autorisations.</strong> Ne pas dépasser les droits accordés.</li></ol>
+<figcaption>Le score strict fonctionne selon une règle du tout ou rien. La revue échoue dès qu’un seul de ces critères n’est pas rempli. <a class="post-cite" href="#src-5">[5]</a></figcaption>
+</figure>
+
+<p>Pour les sources, la vérification va au-delà d’un lien plausible : le programme consulte les journaux d’utilisation des outils pour voir si l’agent a effectivement ouvert les documents cités. Il vérifie aussi que les extraits reproduisent les passages attendus mot pour mot. Une décision correcte peut donc échouer au test si sa justification n’est pas citée comme le protocole l’exige. <a class="post-cite" href="#src-5">[5]</a></p>
+
+<p>Les autorisations sont contrôlées à un autre moment. Lorsqu’un agent demande à approuver sous conditions, l’outil vérifie notamment que son autorisation couvre la revue et la phase concernées, que tous les problèmes non résolus sont inclus et qu’ils peuvent être acceptés sous conditions. Le test vérifie la présence des conditions demandées ; <strong>il ne démontre pas qu’elles seront efficaces en pratique</strong>. <a class="post-cite" href="#src-5">[5]</a></p>
+
+<div class="post-note post-note-alert"><strong>Demander une correction n’est pas la réaliser.</strong><p>L’agent peut demander un test de restauration. Le benchmark ne restaure pas pour autant une sauvegarde sur un système réel. Il évalue la revue et la décision. Automatiser aussi les corrections nécessiterait d’exécuter l’action autorisée, d’en recueillir le résultat, puis de réexaminer le dossier. <a class="post-cite" href="#src-5">[5]</a></p></div>
+</section>
+
+<section class="post-section" id="resultats">
+<span class="post-num">06 / Les résultats principaux</span>
+
+<h2>100 % de bonnes décisions ne signifie pas 100 % de revues réussies</h2>
+
+<p>Avec Gemini, l’agent choisit la bonne décision dans chacune des <strong>1 694 revues évaluées</strong>. Mais seules 94,98 % de ces revues remplissent les cinq critères de notation. Et 76,92 % des projets réussissent l’ensemble de leurs revues. Ces chiffres mesurent trois choses différentes. <a class="post-cite" href="#src-6">[6]</a></p>
+
+<p>Le premier porte sur le choix de la décision. Le deuxième exige que la revue soit aussi complète, correctement sourcée et autorisée. Le troisième exige que toutes les revues du projet réussissent : une seule revue échouée suffit à faire échouer le parcours. Il ne faut donc pas lire « 77 % de projets réussis » comme « 77 % de projets approuvés ». <a class="post-cite" href="#src-5">[5]</a><a class="post-cite" href="#src-6">[6]</a></p>
+
+<figure class="post-chart">
+<h3>1 / Revues qui remplissent les cinq critères</h3>
+<div class="bars">
+<div class="bars-group"><span class="bars-label">Logiciel à règles fixes, sans IA</span><div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:100.00%"></span></div><span class="bars-value">100,00 %</span></div></div>
+<div class="bars-group"><span class="bars-label">Gemini 3.8 Flash</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:94.98%"></span></div><span class="bars-value">94,98 %</span></div></div>
+<div class="bars-group"><span class="bars-label">GPT-5.6 Luna</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:83.29%"></span></div><span class="bars-value">83,29 %</span></div></div>
+<div class="bars-group"><span class="bars-label">DeepSeek v4.1 Flash</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:74.18%"></span></div><span class="bars-value">74,18 %</span></div></div>
+</div>
+<div class="bars-axis" aria-hidden="true"><div><span>0</span><span>50</span><span>100</span></div></div>
+<figcaption>Score strict : une erreur sur un seul critère suffit à faire échouer la revue. <a class="post-cite" href="#src-6">[6]</a></figcaption>
+</figure>
+
+<figure class="post-chart">
+<h3>2 / Projets dont toutes les revues réussissent</h3>
+<div class="bars">
+<div class="bars-group"><span class="bars-label">Logiciel à règles fixes, sans IA</span><div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:100.00%"></span></div><span class="bars-value">100,00 %</span></div></div>
+<div class="bars-group"><span class="bars-label">Gemini 3.8 Flash</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:76.92%"></span></div><span class="bars-value">76,92 %</span></div></div>
+<div class="bars-group"><span class="bars-label">GPT-5.6 Luna</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:42.33%"></span></div><span class="bars-value">42,33 %</span></div></div>
+<div class="bars-group"><span class="bars-label">DeepSeek v4.1 Flash</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:24.67%"></span></div><span class="bars-value">24,67 %</span></div></div>
+</div>
+<div class="bars-axis" aria-hidden="true"><div><span>0</span><span>50</span><span>100</span></div></div>
+<figcaption>Réussite du parcours complet : les cinq ou six revues du projet doivent toutes réussir. Un refus justifié peut compter comme une revue réussie. <a class="post-cite" href="#src-6">[6]</a></figcaption>
+</figure>
+
+<p>Avec GPT-5.6 Luna et DeepSeek v4.1 Flash, les taux de réussite stricts des revues sont respectivement de 83,29 % et 74,18 %. Les parcours complets réussissent dans 42,33 % et 24,67 % des cas. Les présentations indiquent par ailleurs environ 98 % et 95 % de décisions correctes pour ces deux modèles. <a class="post-cite" href="#src-6">[6]</a></p>
+
+<h3>Le principal point faible : les citations</h3>
+
+<p>Pour Gemini, les 85 revues qui échouent le font uniquement à cause d’une source absente ou d’un extrait qui ne respecte pas les exigences de citation. Aux Achats, Luna et DeepSeek prennent la bonne décision dans 96 % et 97 % des cas, mais ne passent tous les critères que dans 33 % et 43 % des revues. Ils utilisent notamment un tableur que le programme de notation n’accepte pas comme source. <a class="post-cite" href="#src-6">[6]</a></p>
+
+<p>Il existe aussi des erreurs de fond. Les présentations en détaillent deux : Luna approuve une revue Juridique malgré l’absence d’un accord relatif au traitement des données ; DeepSeek soumet un <code>GO</code> par défaut alors qu’un chevauchement d’adresses impose un <code>NO_GO</code>. Aucun accord donné à tort n’est rapporté pour Gemini dans cette série de tests. Cela décrit les cas observés, pas une garantie pour de futurs dossiers. <a class="post-cite" href="#src-6">[6]</a></p>
+
+<figure class="post-chart">
+<h3>Les résultats changent selon le domaine de la revue</h3>
+<div class="post-table-wrap"><table class="post-table"><thead><tr><th>Revue</th><th class="num">Gemini 3.8 Flash</th><th class="num">GPT-5.6 Luna</th><th class="num">DeepSeek v4.1 Flash</th></tr></thead><tbody><tr><td>Architecture technique</td><td style="background:rgba(34,211,238,0.227)" class="num">85,43 %</td><td style="background:rgba(34,211,238,0.238)" class="num"><strong>89,50 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.200)" class="num">75,00 %</td></tr><tr><td class="wrap">Conformité réglementaire</td><td style="background:rgba(34,211,238,0.266)" class="num"><strong>100,00 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.255)" class="num">96,00 %</td><td style="background:rgba(34,211,238,0.234)" class="num">88,00 %</td></tr><tr><td>Validation finale</td><td style="background:rgba(34,211,238,0.234)" class="num"><strong>87,96 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.164)" class="num">61,67 %</td><td style="background:rgba(34,211,238,0.182)" class="num">68,67 %</td></tr><tr><td class="wrap">Standardisation technologique</td><td style="background:rgba(34,211,238,0.266)" class="num"><strong>100,00 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.260)" class="num">97,67 %</td><td style="background:rgba(34,211,238,0.231)" class="num">87,00 %</td></tr><tr><td>Juridique</td><td style="background:rgba(34,211,238,0.265)" class="num"><strong>99,50 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.214)" class="num">80,50 %</td><td style="background:rgba(34,211,238,0.182)" class="num">68,50 %</td></tr><tr><td>Achats</td><td style="background:rgba(34,211,238,0.255)" class="num"><strong>96,00 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.088)" class="num">33,00 %</td><td style="background:rgba(34,211,238,0.115)" class="num">43,00 %</td></tr><tr><td>Cybersécurité</td><td style="background:rgba(34,211,238,0.262)" class="num"><strong>98,66 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.245)" class="num">92,00 %</td><td style="background:rgba(34,211,238,0.192)" class="num">72,33 %</td></tr><tr><td class="wrap">Préparation à l’exploitation</td><td style="background:rgba(34,211,238,0.237)" class="num">89,00 %</td><td style="background:rgba(34,211,238,0.258)" class="num"><strong>97,00 %</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.189)" class="num">71,00 %</td></tr></tbody></table></div>
+<p class="post-table-note">* Meilleur score de la ligne. Une cellule plus foncée indique un taux de réussite plus élevé.</p>
+<figcaption>Part des revues qui remplissent les cinq critères, par type de revue et par modèle. <a class="post-cite" href="#src-6">[6]</a></figcaption>
+</figure>
+
+<h3>Pourquoi comparer l’agent à un logiciel sans IA ?</h3>
+
+<p>Le programme classique à règles fixes obtient 100 % sur les 1 700 revues et les 300 projets. Ce résultat compte : <strong>lorsque les faits sont déjà disponibles sous une forme structurée et que les règles sont explicites, un programme sans IA peut suffire</strong>. La question est alors de savoir ce que l’agent apporte quand les informations sont dispersées, difficiles à retrouver ou contradictoires. Le benchmark n’autorise pas à conclure qu’un modèle de langage serait toujours nécessaire. <a class="post-cite" href="#src-6">[6]</a></p>
+
+<details><summary>Que se passe-t-il si l’on change la manière de noter les citations ?</summary><p>Les présentations rapportent une analyse qui accepte les mêmes valeurs même lorsqu’elles apparaissent dans un ordre différent. Elle ferait réussir 69 revues supplémentaires pour Gemini, 38 pour Luna et 52 pour DeepSeek. Pour Gemini, le taux passerait à 99,06 % des revues et 94,98 % des parcours. Il s’agit d’une autre règle de notation, pas d’une amélioration de l’agent : les résultats principaux restent ceux des graphiques ci-dessus. <a class="post-cite" href="#src-6">[6]</a></p></details>
+</section>
+
+<section class="post-section" id="exemples">
+<span class="post-num">07 / Deux dossiers</span>
+
+<h2>Falcon et Meridian : ce que l’agent fait concrètement</h2>
+
+<p>Deux exemples tirés des journaux d’exécution rendent les scores plus faciles à comprendre. Ils ont été choisis après l’évaluation pour illustrer son fonctionnement, et ne constituent pas à eux seuls une mesure de performance. <a class="post-cite" href="#src-7">[7]</a></p>
+
+<div class="post-case"><div class="post-case-top"><span class="post-case-tag">Projet Falcon</span><span class="post-case-outcome">REVUE RÉUSSIE</span></div>
+<h3>La procédure d’exploitation n’est pas terminée</h3>
+<p>Lors de la revue de préparation à l’exploitation, l’agent découvre que le <em>runbook</em>, c’est-à-dire le document expliquant comment faire fonctionner l’application, est encore à l’état de brouillon.</p>
+<div class="post-case-flow"><div><small>Constat</small>La documentation à remettre à l’équipe d’exploitation est incomplète.</div><div><small>Action demandée</small>Terminer le document et le transmettre à l’équipe concernée.</div><div><small>Décision</small>APPROUVÉ SOUS CONDITIONS, après accord du contrôle d’autorisation.</div></div>
+<p>L’agent cite le passage qui établit le problème. La condition doit être remplie avant la mise en service ; elle reste ouverte et une personne désignée en est responsable. Le test n’affirme pas que le document a déjà été terminé. Avec chacun des trois modèles, les cinq revues de Falcon passent les tests. <a class="post-cite" href="#src-7">[7]</a></p>
+</div>
+
+<div class="post-case"><div class="post-case-top"><span class="post-case-tag">Projet Meridian</span><span class="post-case-outcome is-warn">DÉCISION CORRECTE, REVUE ÉCHOUÉE</span></div>
+<h3>Les bons problèmes, mais une citation inexacte</h3>
+<p>L’agent repère deux défauts : une passerelle d’API obligatoire manque et le temps de réponse atteint 55 millisecondes, au lieu des 20 millisecondes requises. Il demande les corrections nécessaires et rend la bonne décision : À CORRIGER.</p>
+<div class="post-case-flow"><div><small>Constats</small>Passerelle manquante et temps de réponse trop élevé.</div><div><small>Autorisation</small>Deux demandes d’approbation sous conditions sont refusées : les défauts doivent être corrigés.</div><div><small>Notation</small>Une citation inverse l’ordre de deux informations. Le score strict de la revue est nul.</div></div>
+<p>La décision, les problèmes signalés et les corrections demandées sont pourtant corrects. La revue obtient 0,95 avec la méthode pondérée, mais échoue avec le score strict, qui exige de remplir tous les critères. <a class="post-cite" href="#src-7">[7]</a></p>
+</div>
+
+<p>Dans cet exemple, la piste proposée n’est pas nécessairement un modèle plus puissant. C’est un outil qui associe chaque constat au passage exact de la source, sans laisser l’agent le reconstituer librement. L’étude présente cela comme une amélioration à apporter, pas comme une correction déjà démontrée. <a class="post-cite" href="#src-7">[7]</a></p>
+</section>
+
+<section class="post-section" id="repetition">
+<span class="post-num">08 / Fiabilité et autorisations</span>
+
+<h2>Un même dossier peut réussir un essai et échouer au suivant</h2>
+
+<p>Après les tests principaux, 15 projets sont soumis trois fois de plus à chacun des trois modèles, soit <strong>135 parcours supplémentaires</strong>. Cette fois, la question n’est plus seulement « le projet a-t-il réussi ? », mais « ses revues réussissent-elles à chaque tentative ? ». <a class="post-cite" href="#src-8">[8]</a></p>
+
+<figure class="post-chart">
+<h3>Réussir une fois n’est pas réussir trois fois de suite</h3>
+<div class="post-repeat">
+<div><h4>Gemini 3.8 Flash</h4><strong>9 sur 15</strong><div class="post-waffle" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>projets dont toutes les revues réussissent à chacun des trois essais.</p></div>
+<div><h4>GPT-5.6 Luna</h4><strong>3 sur 15</strong><div class="post-waffle" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>projets dont toutes les revues réussissent à chacun des trois essais.</p></div>
+<div><h4>DeepSeek v4.1 Flash</h4><strong>0 sur 15</strong><div class="post-waffle" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>projets dont toutes les revues réussissent à chacun des trois essais.</p></div>
+</div>
+<figcaption>Chaque carré représente un projet. Un carré plein signifie que toutes ses revues ont réussi lors des trois nouveaux essais. <a class="post-cite" href="#src-8">[8]</a></figcaption>
+</figure>
+
+<p>Sur les 45 parcours répétés par modèle, toutes les revues réussissent 35 fois avec Gemini, 19 fois avec Luna et 11 fois avec DeepSeek. Les taux stricts par revue sont de 96,08 %, 82,75 % et 73,33 %. Aucun accord donné à tort ni aucun problème grave manqué n’est rapporté dans ces 135 parcours. Le coût indiqué pour ces répétitions est de 12,56 dollars d’appels aux modèles. <a class="post-cite" href="#src-8">[8]</a></p>
+
+<h3>L’autorisation ne doit pas dépendre de la seule réponse du modèle</h3>
+
+<p>Les présentations rapportent aussi les demandes d’approbation sous conditions adressées à l’outil de contrôle. Elles distinguent les demandes envoyées, celles qui ont été refusées et les approbations finalement utilisées. Ces nombres ne désignent pas des projets uniques. <a class="post-cite" href="#src-8">[8]</a></p>
+
+<div class="post-table-wrap"><table class="post-table"><thead><tr><th>Demandes rapportées dans l’étude</th><th class="num">Gemini</th><th class="num">Luna</th><th class="num">DeepSeek</th></tr></thead><tbody><tr><td class="wrap">Demandes d’approbation sous conditions</td><td class="num">864</td><td class="num">394</td><td class="num">216</td></tr><tr><td class="wrap">Demandes refusées par le contrôle</td><td class="num">466</td><td class="num">40</td><td class="num">14</td></tr><tr><td class="wrap">Approbations utilisées dans les décisions finales</td><td class="num">398</td><td class="num">353</td><td class="num">202</td></tr></tbody></table></div>
+
+<p>Avec Gemini, les demandes sont plus nombreuses, tout comme les refus. L’agent peut donc tenter d’obtenir une approbation que le système ne lui accorde pas. <strong>C’est le contrôle séparé, et non une promesse formulée dans le texte du modèle, qui bloque cette approbation.</strong> <a class="post-cite" href="#src-8">[8]</a></p>
+
+<figure class="post-chart">
+<h3>Journaux d’exécution reproduits depuis la présentation</h3>
+<div class="post-diagram"><a href="../images/last-human-gate/power.png" target="_blank" rel="noopener"><img alt="Capture de la console DGF-Bench montrant des décisions, des appels aux outils et des coûts pour Gemini, Luna et DeepSeek." height="670" loading="lazy" src="../images/last-human-gate/power.png" width="1880"/></a></div>
+<figcaption>Chaque ligne de revue indique notamment le modèle, le projet, la décision, les cycles d’analyse, les appels aux outils et le coût. La capture montre 45 tâches d’une tentative ; les trois tentatives totalisent 135 parcours. <a class="post-cite" href="#src-8">[8]</a></figcaption>
+</figure>
+</section>
+
+<section class="post-section" id="information">
+<span class="post-num">09 / L’accès aux données</span>
+
+<h2>Quand une information manque, mieux raisonner ne suffit pas</h2>
+
+<p>L’étude présente deux variantes d’un projet dont les 26 documents Word sont identiques. Pourtant, la bonne décision n’est pas la même. La différence se trouve dans un enregistrement séparé : le fournisseur a été contrôlé dans un cas, mais pas dans l’autre. <a class="post-cite" href="#src-9">[9]</a></p>
+
+<figure class="post-chart">
+<h3>Les mêmes documents, une information différente, deux décisions</h3>
+<div class="post-fork-head">26 documents Word identiques dans les deux dossiers</div>
+<div class="post-fork">
+<div><h4>PROJET A</h4><p>Dans le fichier CSV de référence :<br/><strong>le contrôle du fournisseur est terminé.</strong></p><div class="post-fork-result">Décision attendue : APPROUVÉ</div></div>
+<div><h4>PROJET B</h4><p>Dans le fichier CSV de référence :<br/><strong>le contrôle du fournisseur n’a pas été réalisé.</strong></p><div class="post-fork-result">Décision attendue : À CORRIGER</div></div>
+</div>
+<figcaption>Un examinateur limité aux documents Word reçoit les mêmes informations dans les deux cas. Il ne peut donc pas les distinguer de manière fiable. <a class="post-cite" href="#src-9">[9]</a></figcaption>
+</figure>
+
+<p>Cette limite vaut pour un humain comme pour un agent IA. On ne peut pas demander au raisonnement de produire une information qui n’a jamais été fournie. Donner accès au fichier CSV, ou permettre une demande justifiée d’information manquante, change la situation. <a class="post-cite" href="#src-9">[9]</a></p>
+
+<p>L’exemple éclaire le rôle du FDE : connecter un agent aux bons registres, gérer ses accès et prévoir ce qu’il doit faire lorsqu’il ne sait pas sont des éléments du système, pas des détails qui viennent après le choix du modèle. Dans le cadre de l’étude, l’accès à l’information est une condition de la revue elle-même. <a class="post-cite" href="#src-3">[3]</a><a class="post-cite" href="#src-9">[9]</a></p>
+</section>
+
+<section class="post-section" id="heures">
+<span class="post-num">10 / Passer des scores à l’emploi</span>
+
+<h2>Automatiser 80 % des dossiers ne fait pas disparaître 80 % du travail</h2>
+
+<p>Un taux de réussite ne mesure pas une économie d’heures. L’agent peut prendre en charge une grande partie des dossiers simples et laisser aux spécialistes ceux qui demandent le plus de temps. À cela s’ajoutent les vérifications, les corrections et le fonctionnement de la plateforme. <a class="post-cite" href="#src-10">[10]</a></p>
+
+<figure class="post-chart">
+<h3>Le travail humain à compter après l’automatisation</h3>
+<div class="post-concepts post-concepts-4">
+<div><span class="post-concept-n">01</span><h3>Dossiers encore traités par les humains</h3><p>Leur nombre, multiplié par le temps réellement nécessaire.</p></div>
+<div><span class="post-concept-n">02</span><h3>Vérifications</h3><p>Signatures, contrôles sur échantillon et relectures qui restent nécessaires.</p></div>
+<div><span class="post-concept-n">03</span><h3>Corrections</h3><p>Recherche et réparation des erreurs, y compris leurs effets en aval.</p></div>
+<div><span class="post-concept-n">04</span><h3>Maintenance et support</h3><p>Connexions, règles, tests, supervision et assistance des prestataires.</p></div>
+</div>
+<figcaption>Toutes les heures comptent, quel que soit le service ou le prestataire qui les effectue. Déplacer du travail n’est pas le supprimer. <a class="post-cite" href="#src-10">[10]</a></figcaption>
+</figure>
+
+<p>Prenons l’exemple utilisé dans la présentation. L’IA traite les 80 % de cas les plus simples. Les 20 % restants demandent chacun deux fois le temps moyen initial : ils représentent déjà <strong>40 % de la charge de travail de départ</strong>. Si la nouvelle organisation rend ces cas encore 50 % plus longs à traiter, ils représentent à eux seuls 60 % de cette charge. Et la maintenance n’a pas encore été ajoutée. <a class="post-cite" href="#src-10">[10]</a></p>
+
+<p>La qualité compte aussi. Une erreur qui n’est pas détectée immédiatement peut créer du travail plus tard. Il faut la retrouver, en comprendre les conséquences et la corriger. Une erreur dangereuse laissée sans correction ne devient pas acceptable parce que le système coûte peu cher. <a class="post-cite" href="#src-10">[10]</a></p>
+
+<details><summary>La formule utilisée dans l’étude</summary><div class="post-formula">L<sub>A</sub> = λ [q h<sub>E</sub> + (1 − q) h<sub>R</sub> + h<sub>W</sub>] + B<sub>A</sub></div>
+<p><strong>λ</strong> est le nombre de cas sur la période ; <strong>q</strong>, la part confiée aux humains ; <strong>h<sub>E</sub></strong>, le temps humain par cas qui leur reste ; <strong>h<sub>R</sub></strong>, le temps de vérification des autres cas ; <strong>h<sub>W</sub></strong>, le temps moyen de correction par cas ; et <strong>B<sub>A</sub></strong>, le travail de maintenance et de support sur la période. L’idée n’est pas de tout ramener à un pourcentage de dossiers, mais d’additionner les heures réellement nécessaires. <a class="post-cite" href="#src-10">[10]</a></p></details>
+
+<p>Pour mesurer une réduction, il faut donc suivre les mêmes types de dossiers avant et après l’automatisation, avec leur durée de traitement, leurs éventuels renvois aux humains, les corrections et le support. Les identifiants de dossier servent à ne pas compter deux fois une même tâche, ni à en oublier une. <a class="post-cite" href="#src-10">[10]</a></p>
+</section>
+
+<section class="post-section" id="scenarios">
+<span class="post-num">11 / Quatre organisations du travail</span>
+
+<h2>La même automatisation peut laisser un besoin de 44 ou de 169 ETP</h2>
+
+<p>L’étude illustre ce problème avec une situation de départ à <strong>140 équivalents temps plein</strong>, ou ETP. Un ETP représente une quantité de travail correspondant à un temps plein ; ce n’est pas nécessairement une personne ou un poste précis. Les quatre scénarios suivants conservent la même part de cas automatisés, mais changent la manière d’organiser le travail restant. <strong>Ce sont des calculs fondés sur des hypothèses, pas des effectifs observés dans une entreprise.</strong> <a class="post-cite" href="#src-11">[11]</a></p>
+
+<figure class="post-chart">
+<h3>Besoins humains pour un même périmètre de travail · ETP</h3>
+<div class="bars">
+<div class="bars-group"><span class="bars-label">Situation de départ</span><div class="bars-row"><div class="bars-track"><span class="bars-fill is-base" style="--w:77.78%"></span></div><span class="bars-value">140,00</span></div></div>
+<div class="bars-group"><span class="bars-label">S0 · Aide de l’IA sur les cas complexes</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:24.18%"></span></div><span class="bars-value">43,52</span></div></div>
+<div class="bars-group"><span class="bars-label">S1 · Cas complexes sans aide</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:47.40%"></span></div><span class="bars-value">85,32</span></div></div>
+<div class="bars-group"><span class="bars-label">S2 · S1 + corrections</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:49.48%"></span></div><span class="bars-value">89,07</span></div></div>
+<div class="bars-group"><span class="bars-label">S3 · Relecture de toutes les décisions</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:93.84%"></span></div><span class="bars-value">168,92</span></div></div>
+</div>
+<div class="bars-axis" aria-hidden="true"><div><span>0</span><span>90</span><span>180</span></div></div>
+<figcaption>Même technologie, même part de cas automatisés. Les différences viennent du temps passé sur les cas difficiles, des relectures, des corrections et du support. Aucun de ces quatre scénarios n’atteint le seuil de 28 ETP correspondant à une réduction de 80 %. <a class="post-cite" href="#src-11">[11]</a></figcaption>
+</figure>
+
+<p><strong>S0 : l’IA aide aussi sur les cas complexes.</strong> Les spécialistes les traitent en deux fois moins de temps, et les autres dossiers ne demandent que des vérifications limitées. Le calcul aboutit à 43,52 ETP, soit environ 69 % de moins. C’est le scénario le plus optimiste ; il ne compte pas de temps de maintenance. <a class="post-cite" href="#src-11">[11]</a></p>
+
+<p><strong>S1 : les cas difficiles prennent autant de temps qu’avant.</strong> Les spécialistes les traitent sans aide de l’IA. Les autres cas reçoivent de brèves vérifications et chaque équipe affecte une personne au fonctionnement de la plateforme. Le besoin passe à 85,32 ETP. <strong>S2</strong> reprend ces hypothèses et ajoute une demi-heure de correction par cas : le résultat est de 89,07 ETP. <a class="post-cite" href="#src-11">[11]</a></p>
+
+<p><strong>S3 : toutes les décisions sont relues.</strong> Les cas complexes prennent 50 % de temps en plus ; les vérifications sont plus importantes ; les corrections prennent deux heures par cas ; et deux personnes par équipe assurent le fonctionnement de la plateforme. Le besoin atteint 168,92 ETP : environ 21 % de travail humain en plus qu’au départ. <a class="post-cite" href="#src-11">[11]</a></p>
+
+<blockquote>Le nombre de dossiers automatisés ne suffit pas. Tout dépend du temps que l’organisation continue à demander aux humains.</blockquote>
+
+<p>L’étude ne prétend pas que l’un de ces scénarios décrive déjà le terrain. Ils servent à montrer pourquoi les résultats d’un benchmark et les réductions de personnel ne se déduisent pas directement les uns des autres. <a class="post-cite" href="#src-11">[11]</a></p>
+</section>
+
+<section class="post-section" id="long-terme">
+<span class="post-num">12 / La version longue</span>
+
+<h2>Jusqu’où l’automatisation pourrait-elle aller, et à quel horizon ?</h2>
+
+<p>La version longue pousse l’hypothèse plus loin : à terme, les agents pourraient réaliser toutes les revues, y compris les dossiers complexes et la décision finale. Puis le travail de supervision, de maintenance des règles et de traitement des exceptions pourrait, lui aussi, être automatisé. <strong>Cette automatisation complète n’est pas un résultat du benchmark.</strong> <a class="post-cite" href="#src-12">[12]</a></p>
+
+<figure class="post-chart">
+<h3>Cinq niveaux d’automatisation, pas cinq dates · ETP</h3>
+<div class="post-levels">
+<div><span class="lbl">Situation de départ</span><div class="post-level-bar" aria-hidden="true"><i class="buy" style="width:36.6071%"></i><i class="integrate" style="width:25.7143%"></i><i class="build" style="width:37.6786%"></i><i class="support" style="width:0.0000%"></i></div><span class="val">140,00</span></div>
+<div><span class="lbl">Une partie des revues automatisée</span><div class="post-level-bar" aria-hidden="true"><i class="buy" style="width:10.9821%"></i><i class="integrate" style="width:19.2857%"></i><i class="build" style="width:9.4196%"></i><i class="support" style="width:3.5714%"></i></div><span class="val">60,56</span></div>
+<div><span class="lbl">La plupart des revues automatisées</span><div class="post-level-bar" aria-hidden="true"><i class="buy" style="width:1.8304%"></i><i class="integrate" style="width:5.1429%"></i><i class="build" style="width:1.1304%"></i><i class="support" style="width:3.5714%"></i></div><span class="val">16,35</span></div>
+<div><span class="lbl">Seule l’équipe de support reste</span><div class="post-level-bar" aria-hidden="true"><i class="buy" style="width:0.0000%"></i><i class="integrate" style="width:0.0000%"></i><i class="build" style="width:0.0000%"></i><i class="support" style="width:3.5714%"></i></div><span class="val">5,00</span></div>
+<div><span class="lbl">Tout le travail est automatisé</span><div class="post-level-bar" aria-hidden="true"><i class="buy" style="width:0.0000%"></i><i class="integrate" style="width:0.0000%"></i><i class="build" style="width:0.0000%"></i><i class="support" style="width:0.0000%"></i></div><span class="val">0,00</span></div>
+</div>
+<div class="post-level-legend"><span><i class="buy"></i>Achats</span><span><i class="integrate"></i>Intégrations</span><span><i class="build"></i>Développements</span><span><i class="support"></i>Support</span></div>
+<figcaption>Scénarios théoriques de la version longue. La dernière barre vaut zéro parce que le scénario suppose que tout le travail, y compris le support, est automatisé ; ce n’est pas une mesure ni une prévision. <a class="post-cite" href="#src-12">[12]</a></figcaption>
+</figure>
+
+<p>Dans ces scénarios, les contrôles ne disparaissent pas. La quantité de travail humain diminue à mesure que leur exécution est automatisée. Le passage à zéro suppose aussi de supprimer le travail de l’équipe qui exploite les agents. Tant que ce travail demeure, il fixe un minimum d’heures qu’on ne peut pas ignorer. <a class="post-cite" href="#src-12">[12]</a></p>
+
+<p>Avec un point de départ à 140 ETP, automatiser 80 % du travail de revue laisse 28 ETP de revue. S’il faut cinq ETP supplémentaires pour faire fonctionner la plateforme, le total est de <strong>33 ETP</strong>, et non 28. Pour rester à 28 ETP au total, il faudrait automatiser environ 84 % du travail de revue avec une équipe de support de cinq ETP, et environ 91 % avec une équipe de quinze ETP. <a class="post-cite" href="#src-12">[12]</a></p>
+
+<h3>Un calendrier construit à partir d’hypothèses</h3>
+
+<p>Les présentations reprennent aussi un calcul de la version longue. Il part d’une estimation citée pour mai 2026 : des tâches représentant trois heures de travail humain, réussies dans 80 % des cas, avec un doublement supposé de leur durée tous les sept mois. La revue type est supposée représenter 24 heures. Trois doublements conduisent alors à février 2028. Ces valeurs sont les points de départ du scénario ; elles ne mesurent pas la durée des revues du benchmark. <a class="post-cite" href="#src-12">[12]</a></p>
+
+<p>Il faut ensuite faire baisser le taux d’erreur de 20 % à environ une erreur sur mille, consacrer un an aux tests avec des spécialistes, puis un an aux autorisations dans l’entreprise. Le calcul fait varier le temps nécessaire pour diviser le taux d’erreur par dix : six, douze ou vingt-quatre mois. <a class="post-cite" href="#src-12">[12]</a></p>
+
+<figure class="post-chart">
+<h3>Des dates illustratives, pas un calendrier de déploiement garanti</h3>
+<div class="post-timeline">
+<div><time>Mai 2026</time>Point de départ repris dans le scénario : trois heures de travail humain, avec 80 % de réussite.</div>
+<div><time>Février 2028</time>Équivalent de 24 heures si le doublement tous les sept mois se poursuit.</div>
+<div><time>Avril 2031</time>Délégation d’une revue dans le scénario de baisse rapide des erreurs.</div>
+<div><time>Juin 2032</time>Délégation dans le scénario intermédiaire.</div>
+<div class="is-target"><time>20 septembre 2033</time>Échéance distincte pour tester la prédiction de réduction de 80 % des ETP.</div>
+<div><time>Octobre 2034</time>Délégation dans le scénario de baisse lente des erreurs.</div>
+</div>
+<figcaption>Les étapes de capacité, de fiabilité, d’évaluation et d’autorisation sont additionnées. Des données inaccessibles ou une obligation de signature humaine peuvent empêcher la délégation, même si le modèle progresse. <a class="post-cite" href="#src-12">[12]</a></figcaption>
+</figure>
+
+<h3>Six prédictions pour rendre l’hypothèse vérifiable</h3>
+
+<div class="post-concepts post-concepts-4"><div><span class="post-concept-n">H1</span><h3>Les revues bien définies se prêtent mieux à l’automatisation.</h3><p>Des informations claires, des règles écrites et des résultats vérifiables devraient améliorer la fiabilité, quel que soit le modèle.</p></div><div><span class="post-concept-n">H2</span><h3>Une fiche commune évite de refaire le même travail.</h3><p>Transmettre les conclusions avec leurs sources devrait réduire les reprises entre revues ; l’agent devrait produire cette fiche à moindre coût.</p></div><div><span class="post-concept-n">H3</span><h3>Les cas laissés aux humains prennent plus de temps.</h3><p>Leur part dans les heures de travail devrait dépasser leur part dans le nombre de dossiers.</p></div><div><span class="post-concept-n">H4</span><h3>Compter tout le travail donne de meilleures estimations.</h3><p>Inclure les cas complexes, les corrections et le support devrait mieux prévoir les heures restantes qu’un simple taux d’automatisation.</p></div><div><span class="post-concept-n">H5</span><h3>Préparer une décision vient avant le droit de l’approuver.</h3><p>Les entreprises devraient accepter que l’IA prépare les décisions avant de lui déléguer les autorisations correspondantes.</p></div><div><span class="post-concept-n">H6</span><h3>Les tâches réservées aux humains deviennent moins nombreuses.</h3><p>Les tâches aujourd’hui nécessairement humaines devraient devenir automatisables plus vite que de nouvelles tâches humaines n’apparaissent.</p></div></div>
+
+<p>L’hypothèse serait mise en défaut si une revue exigeait durablement un humain, si une signature humaine restait obligatoire, si le service « automatisé » reposait sur du travail humain caché ou si l’équipe de support ne pouvait jamais être réduite. La version longue présente une conjecture à tester, pas une loi démontrée. <a class="post-cite" href="#src-12">[12]</a></p>
+</section>
+
+<section class="post-section" id="prediction-2033">
+<span class="post-num">13 / Une échéance précise</span>
+
+<h2>La prédiction de l’auteur : au moins 80 % d’ETP en moins en 2033</h2>
+
+<div class="post-deadline">
+<span class="post-deadline-eyebrow">PRÉDICTION DISTINCTE DES RÉSULTATS DU BENCHMARK</span>
+<div class="post-deadline-number">−80 %</div>
+<h3>au 20 septembre 2033</h3>
+<p>Pour les mêmes revues du DGF, à charge comparable, avec la même qualité et les mêmes délais, par rapport à l’année de référence terminée le 20 septembre 2026.</p>
+<p>Dans l’exemple à 140 ETP, cela signifie <strong>28 ETP ou moins, tout le travail humain compris</strong>. <a class="post-cite" href="#src-13">[13]</a></p>
+</div>
+
+<p>L’auteur ne calcule pas cette réduction à partir du taux de réussite de Gemini. Il formule une prédiction séparée et précise comment elle pourrait échouer. Il faut compter les personnes qui préparent ou réalisent les revues, celles qui traitent les cas complexes, vérifient les résultats, corrigent les erreurs, entretiennent les agents ou les supervisent, ainsi que l’assistance des fournisseurs. <a class="post-cite" href="#src-13">[13]</a></p>
+
+<p>La prédiction échoue si plus de 20 % du travail humain initial reste nécessaire, si la qualité se dégrade ou si les délais augmentent. Écarter les unités les plus difficiles, oublier les nouvelles fonctions de support ou décaler l’échéance empêcherait également de revendiquer le résultat annoncé. <a class="post-cite" href="#src-13">[13]</a></p>
+
+<div class="post-note post-note-alert"><strong>Sans relevés d’heures, le résultat reste inconnu.</strong><p>La présentation anglaise précise qu’aucune entreprise n’était encore inscrite au moment décrit, alors que l’année de référence était terminée. Une nouvelle étude pourrait partir d’une nouvelle année de référence, mais ce serait un autre test sur sept ans, pas une façon de déplacer l’échéance de 2033. <a class="post-cite" href="#src-13">[13]</a></p></div>
+
+<h3>Et pour les personnes qui font ce travail aujourd’hui ?</h3>
+
+<p>La répartition du travail proposée par l’étude laisse aux humains la définition des règles, les décisions non déléguées, les signatures exigées, les contrôles sur échantillon et le fonctionnement du système. Il faut aussi réaliser les corrections demandées par les revues tant que ces actions ne sont pas automatisées. Les spécialistes pourraient passer moins de temps sur chaque dossier et davantage sur la conception, les tests et la mise à jour des règles. <a class="post-cite" href="#src-13">[13]</a></p>
+
+<p>Cette évolution ne garantit ni le maintien de tous les postes, ni leur disparition. Une réduction réelle des heures nécessaires peut conduire à supprimer des postes ; l’entreprise peut aussi garder la même équipe pour traiter davantage de projets. Renommer les personnes « superviseurs IA » ne change pas ce calcul. L’objet de la mesure reste le travail, quel que soit l’intitulé du poste. <a class="post-cite" href="#src-13">[13]</a></p>
+
+<details><summary>La même logique pourrait-elle concerner l’assurance ou la banque ?</summary><p>La version longue envisage des activités qui suivent une structure similaire : examiner un dossier, appliquer des règles, rendre une décision et la justifier. Elle cite notamment la souscription d’assurance, le traitement des sinistres et l’analyse de crédit. Ces métiers n’ont pas été testés dans DGF-Bench. <a class="post-cite" href="#src-13">[13]</a></p>
+<p>Les présentations donnent trois illustrations externes : chez Allianz, des agents préparent de petits sinistres mais un humain autorise le paiement ; chez AIG, ils préparent l’analyse tandis qu’un souscripteur décide ; chez Upstart, elles indiquent que plus de 90 % des prêts financés sont approuvés sans revue humaine, tout en distinguant ce total de l’ensemble des demandes, dont environ un quart est renvoyé à une personne. Ces exemples sont rapportés tels qu’ils sont cités dans les présentations, et ne constituent pas des résultats du benchmark. <a class="post-cite" href="#src-13">[13]</a></p>
+<p>Les règles sectorielles et les décisions qui touchent directement des personnes imposent un autre cadre d’évaluation. Un délai plus court, un taux élevé d’approbation automatique et une réduction des heures humaines ne sont pas des mesures interchangeables.</p></details>
+</section>
+
+<section class="post-section" id="conclusion">
+<span class="post-num">14 / Conclusion</span>
+
+<h2>Ce que l’étude établit — et ce qu’elle laisse à vérifier</h2>
+
+<p>DGF-Bench montre des agents capables de réaliser des revues sur des projets fictifs, avec un accès défini aux documents, aux faits et aux règles. Le meilleur modèle prend toutes les bonnes décisions dans l’échantillon évalué, mais toutes ses revues ne remplissent pas les cinq critères. Les citations exactes et la régularité entre les essais restent des points faibles. <a class="post-cite" href="#src-6">[6]</a><a class="post-cite" href="#src-8">[8]</a></p>
+
+<div class="post-table-wrap"><table class="post-table"><thead><tr><th>Niveau de conclusion</th><th>Ce que les présentations permettent de dire</th></tr></thead><tbody><tr><td class="wrap">Mesuré dans l’expérience</td><td>Des agents ont effectué 5 094 revues notées sur 899 parcours. Les scores de décision, de revue complète et de parcours complet sont distincts.</td></tr><tr><td class="wrap">Calculé sous hypothèses</td><td>Selon l’organisation du travail, le scénario à 140 ETP peut aboutir à environ 44 ou 169 ETP. Les niveaux d’automatisation et les dates de long terme sont illustratifs.</td></tr><tr><td>Prédit par l’auteur</td><td>Une réduction d’au moins 80 % des ETP à périmètre comparable d’ici au 20 septembre 2033 ; à plus long terme, l’automatisation de toutes les revues et de leur supervision.</td></tr><tr><td class="wrap">Non établi par ces tests</td><td>La supériorité sur des spécialistes humains, les économies d’heures en entreprise, l’efficacité réelle des corrections demandées ou l’ordre d’adoption des secteurs.</td></tr></tbody></table></div>
+
+<p>Les présentations annoncent la mise à disposition des dossiers, des réponses, des journaux d’outils, du programme de notation et des coûts. Elles expliquent que l’on peut recalculer les résultats à partir de ces données sans refaire d’appels payants aux modèles. <a class="post-cite" href="#src-14">[14]</a></p>
+
+<blockquote>Le contrôle reste obligatoire. La question est de savoir qui le réalise, avec quelles informations, sous quelles autorisations — et combien de travail il laisse réellement aux autres.</blockquote>
+</section>
+
+<section class="post-section" id="sources">
+<span class="post-num">Pour remonter aux documents</span>
+
+<h2 id="sources">Sources et repères de lecture</h2>
+
+<p>Cet article est une adaptation des deux présentations fournies, en français et en anglais. Les chiffres, les exemples et les hypothèses viennent de ces documents ; il ne s’agit ni d’une nouvelle expérience ni d’une vérification indépendante du dépôt de code. Les graphiques ont été redessinés à partir des valeurs des présentations.</p>
+
+<p class="post-table-note"><strong>Documents de base :</strong><br/>The_Last_Human_Gate_Research_Paper(1).pptx<br/>The_Last_Human_Gate_Research_Paper_FR(1)(2).pptx</p>
+
+<ol class="post-sources">
+<li id="src-1"><strong>Le point de départ et les FDE</strong> Diapositives 1–4 des présentations française et anglaise. Définition du rôle, objet de l’étude et distinction entre expérience et hypothèse.</li>
+<li id="src-2"><strong>Les parcours et les huit revues</strong> Diapositives 5–6. Parcours Buy, Integrate et Build, cinq décisions possibles et questions propres à chaque revue.</li>
+<li id="src-3"><strong>Conditions de substitution et rôle des FDE</strong> Diapositives 7–8. Accès à l’information, qualité de la revue, autorisation et réduction nette du travail humain.</li>
+<li id="src-4"><strong>Jeu de données et protocole</strong> Diapositives 9, 12–13 et notes associées. Dossiers générés, informations accessibles, réglages, dates, volumes et coûts. Schéma d’origine extrait de la diapositive 12.</li>
+<li id="src-5"><strong>Contrôle des autorisations et notation</strong> Diapositives 9–11, en particulier l’explication détaillée du fichier de réponses. Les présentations renvoient à synthetic_environment.py, score_submission.py et openrouter_eval/benchmark_runner.py.</li>
+<li id="src-6"><strong>Résultats principaux et erreurs</strong> Diapositives 15–16 et valeurs des graphiques. Les présentations renvoient aux tables 8–9 de l’article et à PAPER_RESULTS.md. Les taux sont reproduits, sans nouveau calcul des scores.</li>
+<li id="src-7"><strong>Exemples Falcon et Meridian</strong> Diapositive 17 et notes. Projets DGF-BLD-035200_build et DGF-BLD-035201_build. Exemples choisis après l’évaluation, selon la présentation.</li>
+<li id="src-8"><strong>Répétitions, autorisations et journaux</strong> Diapositives 14 et 18 ; note de la diapositive 16 pour les erreurs graves. Les présentations renvoient à la section 6.6 et à la table 10 de l’article. Capture d’origine extraite de la diapositive 14.</li>
+<li id="src-9"><strong>Information inaccessible</strong> Diapositive 19. Deux variantes identiques dans leurs 26 documents Word ; le statut du contrôle fournisseur diffère dans un fichier CSV.</li>
+<li id="src-10"><strong>Mesure du travail humain</strong> Diapositive 20 et notes. Formule de charge, cas les plus longs, corrections et maintenance ; renvoi à la section 4 de l’article.</li>
+<li id="src-11"><strong>Les quatre scénarios d’organisation</strong> Diapositive 21 et données du graphique : 140 ; 43,52 ; 85,32 ; 89,07 ; 168,92 ETP. Hypothèses illustratives, non mesurées en entreprise.</li>
+<li id="src-12"><strong>Version longue : niveaux, délais et hypothèses</strong> Diapositives 22–24. Les présentations renvoient à l’annexe E et aux sections 8, 15 et 17.7 de la version longue. La formulation de H6 reprend le détail de la version anglaise.</li>
+<li id="src-13"><strong>Prédiction de 2033 et conséquences professionnelles</strong> Diapositives 25–27. Périmètre du travail, critères d’échec et cas externes cités. Le constat d’absence d’entreprise inscrite et la distinction entre les périodes de référence figurent dans la version anglaise.</li>
+<li id="src-14"><strong>Conclusion, accès aux données et au code</strong> Diapositives 28–30. Limites de l’expérience, liens vers les deux textes, données, journaux, notation et informations de reproduction.</li>
+</ol>
+
+<details><summary>Précisions sur les documents utilisés</summary><p>Le mécanisme de notation est présenté à partir des explications détaillées des diapositives 9–11 : le programme crée les dossiers et calcule les réponses du test, sans évaluateur humain. « Bonne décision » désigne ici la décision attendue dans ce test, pas le jugement indépendant d’un panel de spécialistes.</p>
+<p>Les deux versions ne donnent pas toujours le même niveau de détail. Les formulations plus précises sur H6, la référence de 2026 et l’absence d’entreprise inscrite sont attribuées à la version anglaise dans les repères ci-dessus.</p>
+<p>Le schéma technique original affiche « Secure Vendor Portal », alors que les commentaires des présentations décrivent Falcon comme un portail RH. L’image est conservée telle quelle ; le récit utilise simplement le nom « projet Falcon ». Certaines anciennes notes françaises mentionnent également une soumission arXiv en attente, alors que les diapositives affichent déjà arXiv:2609.29345. Les liens ci-dessous reprennent ceux affichés dans les présentations.</p></details>
+
+<p class="post-table-note">Les liens suivants sont ceux indiqués dans les présentations :</p>
+
+<div class="post-links">
+<a class="post-link" href="https://arxiv.org/abs/2609.29345" target="_blank" rel="noopener noreferrer"><strong>Lire l’article sur arXiv <span aria-hidden="true">↗</span></strong><small>The Last Human Gate · arXiv:2609.29345</small></a>
+<a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench" target="_blank" rel="noopener noreferrer"><strong>Consulter DGF-Bench <span aria-hidden="true">↗</span></strong><small>Code, données et journaux d’exécution</small></a>
+<a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench/blob/main/paper2/From_Governance_Reviews_to_Task_Substitution.pdf" target="_blank" rel="noopener noreferrer"><strong>Ouvrir la version de 28 pages <span aria-hidden="true">↗</span></strong><small>Article de recherche, lien indiqué dans les présentations</small></a>
+<a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench/blob/main/paper/The_Last_Human_Gate.pdf" target="_blank" rel="noopener noreferrer"><strong>Ouvrir la version longue de 66 pages <span aria-hidden="true">↗</span></strong><small>Hypothèses, objections et scénarios à long terme</small></a>
+</div>
+</section>
+
+        <div class="post-end">
+          <a class="btn btn-primary" href="../The_Last_Human_Gate_Research_Paper_FR.pdf" download="The_Last_Human_Gate_Research_Paper_FR.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 19h16"/></svg>
+            Télécharger les slides (PDF, 30 slides)
+          </a>
+          <a class="btn btn-ghost" href="https://arxiv.org/abs/2609.29345" target="_blank" rel="noopener noreferrer">Article sur arXiv</a>
+          <a class="btn btn-ghost" href="https://github.com/jeremy1392/dgf-agentic-bench" target="_blank" rel="noopener noreferrer">DGF-Bench sur GitHub</a>
+          <a class="btn btn-ghost" href="../blog/">Toutes les publications</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Flast-human-gate%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            Partager
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">Architecte Sécurité AWS / Azure</span>
+          <p>J'accompagne de grandes entreprises dans la sécurisation de leurs plateformes cloud et, depuis deux ans, de leurs plateformes d'agents IA : identités, isolation, contrôle des flux sortants et mécanismes d'arrêt d'urgence. Si vous travaillez sur ces sujets, vous pouvez me contacter.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.malt.fr/profile/jeremycanale" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 9.2 5.5 6.3" fill="currentColor" aria-hidden="true"><path d="M20.195 8.581c-.069 0-.285.026-.484.113-.432.181-.597.311-.597.58v5.023c0 .277.26.355.735.355.467 0 .649-.087.649-.355V8.858c0-.173-.113-.277-.303-.277zm3.502 4.903c-.345.087-.45.113-.57.113-.147 0-.2-.044-.2-.2v-2.161h.788c.207 0 .285-.078.285-.285 0-.173-.078-.26-.285-.26h-.787v-.839c0-.259-.087-.363-.268-.363-.173 0-.415.156-.934.597-.528.45-.83.744-.83.951 0 .121.086.199.224.199h.424v2.335c0 .683.337 1.08.925 1.08.39 0 .675-.146 1.012-.406.311-.242.51-.432.51-.596 0-.139-.103-.217-.294-.165zm-15.21-3.078c-.13 0-.285.026-.484.112-.433.19-.597.312-.597.58v3.2c0 .276.26.354.735.354.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277Zm1.816 0c-.355 0-.675.121-.986.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .251-.078.416-.078.164 0 .25.173.25.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.934-1.115zm2.43 0c-.337 0-.692.121-1.003.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .25-.078.432-.078s.268.173.268.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.951-1.115zm5.335 0a1.29 1.29 0 0 0-.484.112c-.26.113-.398.2-.467.312-.26-.303-.597-.398-.977-.398-1.116 0-1.911.942-1.911 2.283 0 1.124.605 1.954 1.461 1.954.26 0 .493-.104.77-.363.216-.2.32-.329.32-.45a.14.14 0 0 0-.147-.147c-.121 0-.251.104-.416.104-.354 0-.596-.545-.596-1.35 0-.803.32-1.348.804-1.348.32 0 .562.242.562.657v2.525c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277ZM3.499 13.563l-.21.21.619.618c.304.304.79.598 1.244.144.339-.34.26-.695.073-.98-.06.004-1.726.008-1.726.008zm-.963-2.325.21-.21-.608-.607c-.304-.303-.765-.621-1.243-.143-.351.35-.273.692-.087.97Zm2.86.416c-.037.043-1.511 1.524-1.511 1.524h1.154c.43 0 .981-.101.981-.777 0-.496-.296-.683-.624-.747zm-3.244-.031H.981c-.43 0-.981.135-.981.778 0 .479.307.676.641.745.04-.046 1.511-1.523 1.511-1.523zm1.484 3.04-.618-.618-.608.607a2.613 2.613 0 0 1-.137.128c.07.333.266.639.745.639s.676-.307.745-.641c-.043-.037-.085-.073-.127-.115zM2.41 10.15l.608.607.618-.618a2.25 2.25 0 0 1 .128-.118c-.065-.327-.251-.623-.747-.623s-.682.297-.746.625c.046.04.092.08.14.127zm2.742.117c-.455-.454-.94-.16-1.244.144l-2.87 2.87c-.303.303-.621.765-.143 1.243.478.478.94.16 1.243-.143l2.87-2.87c.304-.304.598-.79.144-1.244Z"/></svg>
+              Malt
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../security-architect-guide/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              Le kit de survie de l'architecte sécurité
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Sécurité Agentique · Confiance IA · GRC Cloud</span>
+      <span class="dot-sep">·</span>
+      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

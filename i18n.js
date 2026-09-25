@@ -15,7 +15,20 @@ window.I18N = {
     },
     brand:  { tag: "Agentic Security" },
     nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Work with me" },
-    /* Case study: SOC and Blue Team automation with AI (deck + article). Newest post. */
+    /* Research paper: The Last Human Gate (arXiv 2609.29345) with its 30-slide deck. Newest post. */
+    paper: {
+      kicker: "Agentic security · Research paper",
+      date: "25 September 2026",
+      dateISO: "2026-09-25",
+      title: "Can AI take over the reviews that decide a project’s future?",
+      desc: "A study of 300 fictional projects tests whether an AI agent can perform a company’s internal reviews. Its results raise a separate question: how much human work would remain?",
+      note: "Research · 26 min read · arXiv + deck of 30 slides",
+      cta: "Read the article",
+      url: "last-human-gate/en/",
+      cover: "images/last-human-gate-cover-en.jpg",
+      variant: "signal"
+    },
+    /* Case study: SOC and Blue Team automation with AI (deck + article). */
     soc: {
       kicker: "Agentic security",
       date: "17 September 2026",
@@ -294,7 +307,20 @@ window.I18N = {
     },
     brand:  { tag: "Sécurité Agentique" },
     nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Collaborer" },
-    /* Cas pratique : automatiser le SOC et la Blue Team avec l'IA (deck + article). Article le plus récent. */
+    /* Article de recherche : The Last Human Gate (arXiv 2609.29345) et son deck de 30 slides. Article le plus récent. */
+    paper: {
+      kicker: "Sécurité agentique · Article de recherche",
+      date: "25 septembre 2026",
+      dateISO: "2026-09-25",
+      title: "L’IA peut-elle remplacer les spécialistes qui valident les projets ?",
+      desc: "Une étude sur 300 projets fictifs teste si un agent IA peut réaliser les revues internes d’une entreprise. Ses résultats éclairent une autre question : combien de travail resterait-il aux humains ?",
+      note: "Recherche · 29 min de lecture · arXiv + deck de 30 slides",
+      cta: "Lire l'article",
+      url: "last-human-gate/",
+      cover: "images/last-human-gate-cover-fr.jpg",
+      variant: "signal"
+    },
+    /* Cas pratique : automatiser le SOC et la Blue Team avec l'IA (deck + article). */
     soc: {
       kicker: "Sécurité agentique",
       date: "17 septembre 2026",
