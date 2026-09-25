@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#070b1c" />
 
   <title>Can AI take over the reviews that decide a project’s future? | Jeremy Canale</title>
-  <meta name="description" content="A study of 300 fictional projects tests whether an AI agent can perform a company’s internal reviews. Its results raise a separate question: how much human work would remain?" />
+  <meta name="description" content="I ran an AI agent through 300 fictional company projects to find out whether it can carry out the internal reviews that decide a project's future, all the way to the decision. It can, under conditions I describe here. The harder question is how much human work remains once it does." />
   <meta name="keywords" content="The Last Human Gate, DGF-Bench, Digital Governance Framework, forward deployed engineering, AI agents, governance automation, task substitution, gate review, security gate, arXiv 2609.29345, Jeremy Canale" />
   <meta name="author" content="Jeremy Canale" />
   <link rel="canonical" href="https://jeremycanale.com/last-human-gate/en/" />
@@ -20,7 +20,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:title" content="Can AI take over the reviews that decide a project’s future?" />
-  <meta property="og:description" content="A study of 300 fictional projects tests whether an AI agent can perform a company’s internal reviews. Its results raise a separate question: how much human work would remain?" />
+  <meta property="og:description" content="I ran an AI agent through 300 fictional company projects to find out whether it can carry out the internal reviews that decide a project's future, all the way to the decision. It can, under conditions I describe here. The harder question is how much human work remains once it does." />
   <meta property="og:url" content="https://jeremycanale.com/last-human-gate/en/" />
   <meta property="og:image" content="https://jeremycanale.com/images/last-human-gate-slide-en.jpg" />
   <meta property="og:image:secure_url" content="https://jeremycanale.com/images/last-human-gate-slide-en.jpg" />
@@ -38,7 +38,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Can AI take over the reviews that decide a project’s future?" />
-  <meta name="twitter:description" content="A study of 300 fictional projects tests whether an AI agent can perform a company’s internal reviews. Its results raise a separate question: how much human work would remain?" />
+  <meta name="twitter:description" content="I ran an AI agent through 300 fictional company projects to find out whether it can carry out the internal reviews that decide a project's future, all the way to the decision. It can, under conditions I describe here. The harder question is how much human work remains once it does." />
   <meta name="twitter:image" content="https://jeremycanale.com/images/last-human-gate-slide-en.jpg" />
   <meta name="twitter:image:alt" content="The Last Human Gate, a research paper by Jeremy Canale" />
 
@@ -55,12 +55,12 @@
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeremycanale.com/last-human-gate/en/" },
     "headline": "Can AI take over the reviews that decide a project’s future?",
     "alternativeHeadline": "Forward deployed engineering for governance automation: the paper, the benchmark and the labor account",
-    "description": "A study of 300 fictional projects tests whether an AI agent can perform a company’s internal reviews. Its results raise a separate question: how much human work would remain?",
+    "description": "I ran an AI agent through 300 fictional company projects to find out whether it can carry out the internal reviews that decide a project's future, all the way to the decision. It can, under conditions I describe here. The harder question is how much human work remains once it does.",
     "image": "https://jeremycanale.com/images/last-human-gate-slide-en.jpg",
     "inLanguage": "en",
     "datePublished": "2026-09-25",
     "dateModified": "2026-09-25",
-    "wordCount": 6307,
+    "wordCount": 6482,
     "citation": "https://arxiv.org/abs/2609.29345",
     "author": {
       "@type": "Person",
@@ -168,14 +168,14 @@
       <header class="post-header">
         <span class="post-kicker post-kicker-signal">Research · Enterprise AI · Work</span>
         <h1 class="post-title">Can AI take over the reviews that decide a project’s future?</h1>
-        <p class="post-dek">A study of 300 fictional projects tests whether an AI agent can perform a company’s internal reviews. Its results raise a separate question: how much human work would remain?</p>
+        <p class="post-dek">I ran an AI agent through 300 fictional company projects to find out whether it can carry out the internal reviews that decide a project's future, all the way to the decision. It can, under conditions I describe here. The harder question is how much human work remains once it does.</p>
         <div class="post-byline">
           <span class="post-byline-mark" aria-hidden="true">JC</span>
           <span><b>Jeremy Canale</b></span>
           <span class="sep">·</span>
           <time datetime="2026-09-25">25 September 2026</time>
           <span class="sep">·</span>
-          <span data-read-time>26 min read</span>
+          <span data-read-time>29 min read</span>
           <span class="sep">·</span>
           <a href="../" hreflang="fr" lang="fr">Version française</a>
         </div>
@@ -234,51 +234,65 @@
 
       <nav class="post-toc" aria-label="In this article">
         <span class="post-toc-title">In this article</span>
-        <ol><li><a href="#fde">The FDE role</a></li><li><a href="#dgf">The DGF reviews</a></li><li><a href="#conditions">Conditions for delegation</a></li><li><a href="#protocole">The test protocol</a></li><li><a href="#notation">How scoring works</a></li><li><a href="#resultats">What the results show</a></li><li><a href="#exemples">Two reviews, step by step</a></li><li><a href="#repetition">Repeated tests</a></li><li><a href="#information">The missing information</a></li><li><a href="#heures">Counting human hours</a></li><li><a href="#scenarios">Staffing scenarios</a></li><li><a href="#long-terme">The long-term hypothesis</a></li><li><a href="#prediction-2033">The 2033 test</a></li><li><a href="#conclusion">The takeaways</a></li></ol>
+        <ol><li><a href="#fde">Why governance reviews first</a></li>
+<li><a href="#dgf">What a gate checks</a></li>
+<li><a href="#conditions">What an agent needs</a></li>
+<li><a href="#protocole">The experiment</a></li>
+<li><a href="#notation">How a review is scored</a></li>
+<li><a href="#resultats">The results</a></li>
+<li><a href="#exemples">Falcon and Meridian</a></li>
+<li><a href="#repetition">Repeat runs and authority</a></li>
+<li><a href="#information">The missing fact</a></li>
+<li><a href="#heures">Count hours, not cases</a></li>
+<li><a href="#scenarios">Four staffing scenarios</a></li>
+<li><a href="#long-terme">How far it can go</a></li>
+<li><a href="#prediction-2033">My 2033 prediction</a></li>
+<li><a href="#conclusion">What to do with this</a></li></ol>
       </nav>
 
       <div class="post-body">
 
-<div class="post-stats"><div><b>300</b><span>distinct fictional projects</span></div><div><b>5,094</b><span>scored reviews in the main tests</span></div><div><b>3</b><span>models tested with the same agent</span></div><div><b>94.98%</b><span>review pass rate with the best-performing model</span></div></div>
-<p class="post-table-note">Main tests: 22–23 September 2026. A review passes only when it meets all five scoring criteria. <a class="post-cite" href="#src-4">[4]</a><a class="post-cite" href="#src-6">[6]</a></p>
+<div class="post-stats">
+  <div><b>300</b><span>fictional projects, 100 purchases, 100 integrations, 100 developments</span></div>
+  <div><b>5,094</b><span>gate reviews scored in the main runs, across 899 complete project routes</span></div>
+  <div><b>3</b><span>models driven by the same agent, the same rules and the same scorer</span></div>
+  <div><b>94.98%</b><span>of reviews meeting all five scoring criteria with the best model</span></div>
+</div>
+<p class="post-table-note">Main runs on 22 and 23 September 2026. A review passes only when it meets all five criteria at once: decision, problems, actions, sources and authority.</p>
 
 <figure class="post-chart">
 <span class="post-chart-tag">The idea behind The Last Human Gate</span>
 <div class="post-diagram is-square"><svg viewBox="0 0 360 360" role="img" aria-label="The review stays mandatory. Who performs it can change."><defs><marker id="hero-arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8" fill="#81959b"/></marker></defs><g font-family="Arial, sans-serif" fill="#152d38"><rect x="7" y="12" width="157" height="53" rx="9" fill="#fff" stroke="#dbe3e4"/><rect x="195" y="12" width="157" height="53" rx="9" fill="#fff" stroke="#dbe3e4"/><text x="85" y="44" text-anchor="middle" font-size="12">Project documents</text><text x="273" y="44" text-anchor="middle" font-size="12">Written rules</text><path d="M85 65 V87 H180 M273 65 V87 H180" fill="none" stroke="#81959b" stroke-width="1.4"/><path d="M180 87 V109" fill="none" stroke="#81959b" stroke-width="1.4" marker-end="url(#hero-arr)"/><rect x="65" y="111" width="230" height="83" rx="11" fill="#e9f3f0" stroke="#b8d3c9"/><text x="180" y="145" font-size="18" font-weight="700" text-anchor="middle">Review agent</text><text x="180" y="170" font-size="11" text-anchor="middle">Reads · checks · explains</text><path d="M180 194 V224" stroke="#81959b" fill="none" marker-end="url(#hero-arr)"/><rect x="48" y="226" width="264" height="43" rx="7" fill="#fff" stroke="#dbe3e4"/><path d="M70 239 l8 -4 8 4 v8 q-8 12 -16 0z" fill="none" stroke="#136c66" stroke-width="1.3"/><text x="189" y="252" font-size="12" text-anchor="middle">Authorization check</text><path d="M180 269 V297" stroke="#81959b" fill="none" marker-end="url(#hero-arr)"/><rect x="65" y="300" width="230" height="50" rx="9" fill="#152d38"/><text x="180" y="331" font-size="14" text-anchor="middle" fill="white">Documented decision</text></g></svg></div>
-<figcaption><strong>The review stays mandatory.</strong><br/>Who performs it can change. Its requirements cannot.</figcaption>
+<figcaption>The review stays mandatory. Who performs it can change. Its requirements cannot.</figcaption>
 </figure>
 
 <section class="post-section" id="fde">
 <span class="post-num">01 / The starting point</span>
+<h2>Why I started with the reviews that govern projects</h2>
 
-<h2>Why project reviews could be a starting point for engineers deploying AI</h2>
+<p class="post-lead">Before your company buys software, connects two systems or launches an application, several specialists have to look at the project. Are the contract terms acceptable? Is the data protected the way its classification requires? Do the test results support going live? AI does not make those questions go away. It changes who answers them.</p>
 
-<p>Before a company buys software, connects two systems or launches an application, several specialists need to review the project. Are the contract terms acceptable? Is the data adequately protected? Do the test results support going live? AI does not make those questions disappear. It could, however, change who answers them.</p>
+<p>That is the question I set out to answer in <em>The Last Human Gate</em>, published on arXiv on 24 September 2026: can an AI agent carry out a project review through to the final decision, without a specialist having to redo the work? And if it can, how much human work is left? Those are two different questions, and this article keeps them apart. The first is answered by an experiment. The second is answered by counting hours.</p>
 
-<p>That is the starting point of <em>The Last Human Gate</em>, a study by Jeremy Canale. It asks a specific question: <strong>can an AI agent carry out a project review through to the final decision, without a specialist having to redo its work?</strong> It then asks a second, quite different question: how much human work would remain? <a class="post-cite" href="#src-1">[1]</a></p>
-
-<p>The title refers to <em>Forward Deployed Engineers</em>, or FDEs. The presentations describe engineers who work directly with a client’s teams to turn an AI demonstration into a system people can use every day. They identify the need, build the solution, connect it to company applications and data, deploy it and keep it running. Their work is not limited to project governance. <a class="post-cite" href="#src-1">[1]</a></p>
-
-<p>The author nevertheless proposes governance reviews as a promising starting point. Similar questions recur across projects; many of the rules are already written down; one review’s conclusions feed the next; and the result can be tested. These features make the work easier to specify and evaluate. <a class="post-cite" href="#src-3">[3]</a></p>
+<p>The title refers to forward deployed engineers, the FDEs who sit with a client's teams and turn an AI demonstration into a system people use every day. They identify the need, build the solution, connect it to the company's applications and data, deploy it and keep it running. Their work is not limited to governance. I nevertheless propose governance reviews as their first target, for four reasons.</p>
 
 <div class="post-concepts post-concepts-4">
-<div><span class="post-concept-n">01</span><h3>Recurring project files</h3><p>The same review approach can serve multiple projects when the information, rules and scope are comparable.</p></div>
-<div><span class="post-concept-n">02</span><h3>Written decision rules</h3><p>Thresholds and permissions can become software checks. Less structured situations still need interpretation.</p></div>
-<div><span class="post-concept-n">03</span><h3>Findings that carry forward</h3><p>A shared record helps prevent findings from getting lost or being copied repeatedly between teams.</p></div>
-<div><span class="post-concept-n">04</span><h3>Results that can be tested</h3><p>Prepared cases can test whether a review is correct, rather than merely whether its wording is convincing.</p></div>
+  <div><span class="post-concept-n">01</span><h3>The same dossiers keep coming back</h3><p>Hundreds of projects a year go through the same reviews with similar documents. One review solution serves them all, and the same approach transfers to the next company.</p></div>
+  <div><span class="post-concept-n">02</span><h3>The rules are already written</h3><p>Thresholds, mandatory documents and signing authorities can become software checks. Only the less structured situations still need interpretation.</p></div>
+  <div><span class="post-concept-n">03</span><h3>Findings carry forward</h3><p>What Security finds feeds Architecture and the final decision. A shared record stops findings from getting lost or being retyped between teams.</p></div>
+  <div><span class="post-concept-n">04</span><h3>The result can be tested</h3><p>Prepared cases tell you whether a review is correct, not merely whether its wording sounds convincing.</p></div>
 </div>
 
-<p>An FDE’s own AI deployments also have to pass the company’s reviews. Automating those reviews could make later deployments easier. That would require someone responsible for the whole process, rather than a single department. The hours FDEs spend building and supporting the system must also count towards its cost. <strong>The claim that governance will be automated before other business activities is an adoption hypothesis, not an observed sequence.</strong> <a class="post-cite" href="#src-3">[3]</a></p>
+<p>There is a practical reason on top of those four. Every AI system an FDE deploys has to pass the company's own reviews. Automating the reviews clears the road for everything that follows. It requires one owner for the whole route rather than one department, and the hours the FDEs spend building and supporting the system belong in the bill. I come back to that bill in section 10.</p>
 </section>
 
 <section class="post-section" id="dgf">
-<span class="post-num">02 / Understanding the DGF</span>
+<span class="post-num">02 / The DGF</span>
+<h2>What has to be checked before a project can move forward</h2>
 
-<h2>What has to be checked before a project can move forward?</h2>
+<p>I call the set of required reviews a project must pass its Digital Governance Framework, or DGF. A gate is one checkpoint on that route. At each gate a reviewer reads the available documents and records, names the problems, asks for the necessary corrections and makes a decision. It is a job, not a box to tick.</p>
 
-<p>The study uses <strong>Digital Governance Framework</strong>, or DGF, for the required reviews a project must pass. A <em>gate</em> is one checkpoint along that route. The reviewer examines the available documents and records, identifies problems, requests any necessary corrections and makes a decision. The job involves much more than filling in an “approved” box. <a class="post-cite" href="#src-2">[2]</a></p>
-
-<p>Not every project follows the same route. The benchmark distinguishes buying a solution, integrating existing systems and developing an application. The first two routes have six reviews each; the third has five. <a class="post-cite" href="#src-2">[2]</a></p>
+<p>Not every project follows the same route. Buying a solution, integrating existing systems and developing an application each have their own sequence. The first two pass six gates, the third passes five, and every route ends with a General review that consolidates the earlier decisions with the budget and the strategy.</p>
 
 <figure class="post-chart">
 <h3>Three routes through the same governance framework</h3>
@@ -305,14 +319,13 @@
 <span class="post-route-node"><span class="stepno">04</span>Tech Readiness</span>
 <span class="post-route-node"><span class="stepno">05</span>General</span>
 </div>
-<figcaption>Routes used in DGF-Bench. Every scheduled review runs, even after a rejection, so later reviews and the final decision can still be evaluated. <a class="post-cite" href="#src-2">[2]</a></figcaption>
+<figcaption>The routes used in DGF-Bench. Every scheduled review runs, even after a rejection, so the reviews downstream and the final decision can still be evaluated.</figcaption>
 </figure>
 
-<p>Several specialists can read the same project file without doing the same job. The legal reviewer and the security reviewer look for different problems. The final General review considers the earlier conclusions alongside the project’s budget and its fit with company strategy. <a class="post-cite" href="#src-2">[2]</a></p>
+<p>Several specialists read the same dossier without doing the same job. The legal reviewer and the security reviewer look for different problems in the same contract and the same architecture. Here is what each gate asks, and the kind of material it examines.</p>
 
 <div class="post-table-wrap"><table class="post-table"><thead><tr><th>Review</th><th>Question to answer</th><th>Examples of information to check</th></tr></thead><tbody><tr><td>Procurement</td><td>Does the supplier meet selection and pricing requirements?</td><td>Proposals, supplier checks, sanctions screening and three-year total cost.</td></tr><tr><td>Legal</td><td>Are the contract terms acceptable, and can the signer commit the company?</td><td>Data-processing agreement, liability, termination terms and signing authority.</td></tr><tr><td>Compliance</td><td>Does the project meet the requirements that apply to it?</td><td>Privacy impact assessment, data locations and relevant obligations.</td></tr><tr><td>Security</td><td>Are the safeguards appropriate for the data and the risks?</td><td>Access permissions, network exposure, monitoring and known vulnerabilities.</td></tr><tr><td>IT</td><td>Is the solution compatible with company systems, and can it be supported?</td><td>Approved technologies, capacity, support ownership and change management.</td></tr><tr><td>Architecture</td><td>Does the design meet the project’s technical requirements?</td><td>IP address ranges, interfaces, response times, data ownership and exit options.</td></tr><tr><td>Tech Readiness</td><td>Do the tests show that the solution is ready to operate?</td><td>Load, restore and recovery tests; operating procedures; handover to operations.</td></tr><tr><td>General</td><td>Taking the reviews and business commitments together, can the project proceed?</td><td>Earlier decisions, budget, strategy and change planning.</td></tr></tbody></table></div>
-
-<p>These questions summarize the policies supplied in the benchmark. They are not complete job descriptions or a universal process that every company is required to use. <a class="post-cite" href="#src-2">[2]</a></p>
+<p class="post-table-note">The questions summarize the policies I supplied to the benchmark. Your company may merge, split or reorder these gates; the obligations behind them stay.</p>
 
 <h3>Five possible decisions, not just yes or no</h3>
 
@@ -324,24 +337,23 @@
 <div><span class="post-concept-n">NO_GO</span><h3>NO</h3><p>Do not proceed with the proposal in its current form.</p></div>
 </div>
 
-<div class="post-note"><strong>Rejecting a project can be a successful result.</strong><p>The test evaluates the review, not the agent’s ability to get every project approved. When a proposal should be rejected, a properly justified rejection is the correct outcome. <a class="post-cite" href="#src-5">[5]</a></p></div>
+<div class="post-note"><strong>Rejecting a project can be the right result.</strong><p>The benchmark scores the quality of the review, not the agent's ability to get projects approved. When a proposal should be refused, a properly justified refusal is the correct answer, and it counts as a success.</p></div>
 </section>
 
 <section class="post-section" id="conditions">
-<span class="post-num">03 / The paper’s proposal</span>
+<span class="post-num">03 / The conditions</span>
+<h2>What an agent needs before it can take over a specialist's review</h2>
 
-<h2>What would an agent need to take over a specialist’s review?</h2>
-
-<p>The paper separates the required review from the job title of the person who currently performs it. A review can be mandatory without its execution being inherently human. But an AI system has to satisfy three conditions before it can take over. <a class="post-cite" href="#src-3">[3]</a></p>
+<p>A job title tells you who does the work today, not whether the work must be done by a person. A review can be mandatory without its execution being human. For an agent to take it over, three conditions have to hold at the same time.</p>
 
 <div class="post-concepts">
-<div><span class="post-concept-n">01</span><h3>Access to the necessary information</h3><p>The agent must be able to consult the relevant documents and records, or request missing information where the rules allow it. A claim that backups exist does not establish that a restore test succeeded.</p></div>
-<div><span class="post-concept-n">02</span><h3>A reliable review result</h3><p>It must handle difficult and incomplete cases, identify the right problems, request the necessary actions and provide sources that support its conclusions.</p></div>
-<div><span class="post-concept-n">03</span><h3>Decisions within its authority</h3><p>The agent proposes a decision. A separate check determines whether it is allowed to grant it. Requesting conditional approval does not mean that approval will be authorized.</p></div>
+  <div><span class="post-concept-n">01</span><h3>Access to the information</h3><p>The agent must be able to open the relevant documents and records, or ask for what is missing when the rules allow it. A sentence saying that backups exist does not prove that a restore test succeeded. The agent has to see the test record.</p></div>
+  <div><span class="post-concept-n">02</span><h3>A reliable review</h3><p>It must handle difficult and incomplete dossiers, find the right problems, request the right actions and point to the sources that support each finding. Filling the form correctly is not the same as being right.</p></div>
+  <div><span class="post-concept-n">03</span><h3>Decisions within its authority</h3><p>The agent proposes a decision. A separate check decides whether it is allowed to grant it. Asking for a conditional approval does not mean the approval is authorized.</p></div>
 </div>
 
 <figure class="post-chart">
-<h3>Helping a reviewer is not the same as replacing the review task</h3>
+<h3>Helping a reviewer is not the same as replacing the review</h3>
 <div class="post-lanes">
 <div class="post-lane"><h4>ASSISTANCE</h4>
 <div class="post-lane-step">The agent prepares a draft</div>
@@ -360,73 +372,74 @@
 <div class="post-lane-end">The task is replaced; any remaining human work must still be counted.</div>
 </div>
 </div>
-<figcaption>The distinction is about work actually performed, not whether the system is called a copilot or an autonomous agent. Accountability remains with the company and the people it designates. <a class="post-cite" href="#src-3">[3]</a></figcaption>
+<figcaption>The distinction is about work actually performed, not about whether you call the system a copilot or an autonomous agent. Accountability stays with the company and the people it designates.</figcaption>
 </figure>
 
-<p>A fourth condition is needed to claim a reduction in human work: <strong>total human hours must fall</strong>. A review that disappears from one team’s workload but reappears at a service provider has not been eliminated. An agent that sends every case to a person does not replace any reviews either. <a class="post-cite" href="#src-3">[3]</a></p>
+<p>A fourth condition applies the moment you talk about staffing: total human hours must fall. A review that disappears from one team's calendar and reappears at a supplier has not been eliminated. An agent that sends every dossier to a person for a second reading has not replaced anything either. If your reviewers still reread everything the agent produced, you have bought assistance. Decide which of the two you are paying for before you decide what it is worth.</p>
 </section>
 
 <section class="post-section" id="protocole">
 <span class="post-num">04 / The experiment</span>
+<h2>How I tested this without touching a real company's dossiers</h2>
 
-<h2>How can this be tested without using confidential company projects?</h2>
+<p>DGF-Bench uses 300 entirely fictional projects: 100 purchases, 100 integrations and 100 application developments. A program defines the facts of each project, draws its architecture and writes the documents the reviews need. It deliberately mixes projects that meet the requirements with projects that do not.</p>
 
-<p>DGF-Bench uses <strong>300 entirely fictional projects</strong>: 100 purchases, 100 integrations and 100 application developments. A program defines the facts for each project, draws its architecture and creates the documents needed for the reviews. It deliberately includes projects that meet the requirements and projects that do not. <a class="post-cite" href="#src-4">[4]</a></p>
+<p>Each project holds about 26 Word documents, plus tables and an architecture diagram: a project charter, contracts, security test reports, operating procedures, backup, restore and load test results. Some documents are incomplete, outdated or contradictory on purpose. A summary can say that a contract is signed while the contract register still lists it as a draft, exactly the kind of discrepancy a good reviewer is paid to catch.</p>
 
-<p>Each project contains about 26 Word documents, along with tables and an architecture diagram. These include a project charter, contracts, security test reports, operating procedures and backup, restore or load test results. Some documents are incomplete, outdated or inconsistent. A summary might say that a contract has been signed while the contract register still lists it as a draft. <a class="post-cite" href="#src-4">[4]</a></p>
-
-<p>The agent does not create the project it reviews. It reads the project file, queries simulated company systems, requests missing information and produces the findings for each review. Those findings are passed to the next reviewer exactly as written, <strong>including any errors</strong>. No one corrects them along the way. <a class="post-cite" href="#src-5">[5]</a></p>
+<p>The agent does not create the project it reviews. It reads the dossier, queries simulated company systems, asks for missing information and writes its findings for each gate. Those findings are handed to the next gate exactly as written, errors included. Nobody corrects them along the way, because nobody would in a real deployment either.</p>
 
 <figure class="post-chart">
 <h3>From a fictional project to a score: two separate paths</h3>
 <p class="post-table-note">On a small screen, scroll horizontally to see the full diagram.</p>
 <div class="post-diagram"><svg viewBox="0 0 1010 520" role="img" aria-label="The same program prepares the project and its scoring answers. Authorization is checked during the review; scoring happens after the route. No human evaluator writes the test answers or corrects the agent’s conclusions between reviews."><defs><marker id="wf-arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8" fill="#81959b"/></marker></defs><rect x="15" y="20" width="275" height="90" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="152.5" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">The program generates</text><text x="152.5" y="77" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">the project and its answers</text><rect x="695" y="20" width="295" height="113" rx="12" fill="#fbf3e7" stroke="#e1d5bd"/><text x="842.5" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Answer file for scoring</text><text x="842.5" y="77" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Hidden from the agent</text><text x="842.5" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">99_hidden_ground_truth.json</text><text x="490" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="400" fill="#566b73">prepared from the same project facts</text><g fill="none" stroke="#81959b" stroke-width="1.5" marker-end="url(#wf-arr)"><path d="M290 72 H694"/><path d="M152 110 V203"/><path d="M290 275 H364"/><path d="M640 275 H695"/><path d="M842 316 V406"/><path d="M499 333 V406"/><path d="M526 407 V334"/></g><rect x="15" y="205" width="275" height="135" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="152.5" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Information the agent can access</text><text x="152.5" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Project documents</text><text x="152.5" y="287" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Structured summary of facts</text><text x="152.5" y="312" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Rules + simulated systems</text><rect x="365" y="205" width="275" height="135" rx="12" fill="#e9f3f0" stroke="#b8d3c9"/><text x="502.5" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Review agent</text><text x="502.5" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Reads and checks information</text><text x="502.5" y="287" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Identifies problems</text><text x="502.5" y="312" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Proposes a decision</text><rect x="695" y="237" width="295" height="79" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="842.5" y="269" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Results from the full route</text><text x="842.5" y="294" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Decisions, sources and logs</text><text x="428" y="386" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#566b73">DURING THE REVIEW</text><rect x="365" y="410" width="275" height="80" rx="12" fill="#fff" stroke="#dbe3e4"/><text x="502.5" y="442" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Authorization check</text><text x="502.5" y="467" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Accepts or rejects the request</text><text x="765" y="386" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#566b73">AFTER ALL REVIEWS</text><rect x="695" y="410" width="295" height="80" rx="12" fill="#e9f3f0" stroke="#b8d3c9"/><text x="842.5" y="442" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#152d38">Scoring program</text><text x="842.5" y="467" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="400" fill="#152d38">Checks all five criteria</text><path d="M980 133 V175 H1002 V450 H991" fill="none" stroke="#a2854d" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#wf-arr)"/></svg></div>
-<figcaption>The same program prepares the project and its scoring answers. Authorization is checked during the review; scoring happens after the route. No human evaluator writes the test answers or corrects the agent’s conclusions between reviews. <a class="post-cite" href="#src-5">[5]</a></figcaption>
+<figcaption>The same program prepares the project and the answers used for scoring. Authorization is checked during the review; scoring happens after the whole route. No human writes the answers or corrects the agent between two gates.</figcaption>
 </figure>
 
-<div class="post-note"><strong>The agent receives more than a pile of documents.</strong><p>The protocol also supplies written rules and a structured summary of the project facts, as well as access to the information available through simulated systems. The separate file containing the answers used for scoring remains hidden. This information setting matters when interpreting the results. <a class="post-cite" href="#src-4">[4]</a></p></div>
+<div class="post-note"><strong>The agent gets more than a pile of documents.</strong><p>It also receives the written rules of each gate, a structured summary of the project facts and access to the information exposed by the simulated systems. What it never sees is the separate file holding the answers used to score it. That information setting is part of the result, and section 9 shows what happens when a fact is missing from it.</p></div>
 
 <figure class="post-chart">
-<h3>An actual test document: the architecture diagram for Project Falcon</h3>
+<h3>An actual test document: the architecture diagram of Project Falcon</h3>
 <div class="post-diagram is-doc"><a href="../../images/last-human-gate/falcon-architecture.png" target="_blank" rel="noopener"><img alt="Azure architecture diagram from fictional project DGF-BLD-035200, reproduced from slide 12." height="1320" loading="lazy" src="../../images/last-human-gate/falcon-architecture.png" width="1980"/></a></div>
-<figcaption>Original illustration reproduced without modification. The diagram is part of what the reviewer must check; its presence in the file does not establish that the design is valid. <a class="post-cite" href="#src-4">[4]</a></figcaption>
+<figcaption>Reproduced without modification from the dossier. The diagram is part of what the reviewer must check. Its presence in the file proves nothing about the design.</figcaption>
 </figure>
 
-<p>The same agent is run with three models: <strong>Gemini 3.8 Flash, GPT-5.6 Luna and DeepSeek v4.1 Flash</strong>. These are the model and endpoint names reported in the presentations for the tests on 22–23 September 2026. The settings are the same: temperature zero, at most 20 reasoning turns and 40 tool calls per review. <a class="post-cite" href="#src-4">[4]</a></p>
-
-<p>The plan called for 1,700 reviews per model, or 900 complete project runs. One run was excluded after a technical failure at the model provider. The main results therefore cover <strong>899 runs and 5,094 reviews</strong>. The presentations report $99.58 in model-call charges for the study, including failed attempts. That is not the cost of building or operating a production system in a company. <a class="post-cite" href="#src-4">[4]</a></p>
+<p>The same agent runs with three models: Gemini 3.8 Flash, GPT-5.6 Luna and DeepSeek v4.1 Flash, the endpoint names as served on 22 and 23 September 2026. The settings are identical: temperature zero, at most 20 reasoning turns and 40 tool calls per review. The plan called for 1,700 reviews per model, 900 complete project runs in total. One run was lost to a technical failure at the model provider, so the main results cover 899 runs and 5,094 reviews. The model calls for the whole experiment cost $99.58, failed attempts included. That is the price of the experiment, not the price of building or operating such a system in a company.</p>
 </section>
 
 <section class="post-section" id="notation">
-<span class="post-num">05 / Understanding the scores</span>
+<span class="post-num">05 / The scoring</span>
+<h2>A program decides whether the agent passed, not a panel</h2>
 
-<h2>Who decides whether the agent passes? A program, not a human panel</h2>
+<p>When the program creates a project, it fixes its facts: whether the contract is signed, whether the supplier has been vetted, whether the required test passed. From those facts and its rules it derives the decision to take, the problems to report and the actions to request, and it saves those answers for scoring. No human writes them, and no human judges the agent's prose.</p>
 
-<p>When the program creates a project, it defines its facts: whether a contract is signed, whether the supplier has been checked or whether a required test has passed. <strong>It uses those facts and its programmed rules to determine the decision, the problems to report and the actions to request.</strong> It saves those answers for scoring. No human evaluator writes them. <a class="post-cite" href="#src-5">[5]</a></p>
-
-<p>This information is stored in <code>99_hidden_ground_truth.json</code>. The <code>canonical_truth</code> field describes the fictional project’s facts; <code>reference_decisions</code> contains the prepared answers for each review. The agent cannot read this file. Once the route is complete, the scoring program uses it to check the responses, also accounting for conditional approvals properly authorized during the run. <a class="post-cite" href="#src-5">[5]</a></p>
+<p>The answers live in <code>99_hidden_ground_truth.json</code>. The <code>canonical_truth</code> field holds the facts of the fictional project; <code>reference_decisions</code> holds the expected answers for each gate. The agent cannot read this file. Once the route is complete, the scoring program compares the agent's submissions with it, taking into account any conditional approvals that were properly authorized during the run.</p>
 
 <figure class="post-chart">
 <h3>Every review has to satisfy five criteria</h3>
-<ol class="post-steps"><li><strong>Decision.</strong> Choose the decision required for the case.</li><li><strong>Problems.</strong> Report every required problem, without adding others.</li><li><strong>Actions.</strong> Request the necessary corrections.</li><li><strong>Sources.</strong> Cite accepted sources and quote the required passages exactly.</li><li><strong>Authority.</strong> Stay within the permissions granted.</li></ol>
-<figcaption>The strict score is all or nothing. A failure on any one criterion means that the review fails. <a class="post-cite" href="#src-5">[5]</a></figcaption>
+<ol class="post-steps">
+  <li><strong>Decision.</strong> The decision required for the case.</li>
+  <li><strong>Problems.</strong> Every required problem reported, none added.</li>
+  <li><strong>Actions.</strong> The necessary corrections requested.</li>
+  <li><strong>Sources.</strong> Accepted sources cited, with the required passages quoted exactly.</li>
+  <li><strong>Authority.</strong> The decision within the permissions granted.</li>
+</ol>
+<figcaption>The strict score is all or nothing. A failure on any one criterion fails the review.</figcaption>
 </figure>
 
-<p>For sources, the check goes beyond a plausible reference. The program inspects the tool-use logs to confirm that the agent actually opened the sources it cites. It also checks that quoted excerpts match the required passages word for word. A correct decision can therefore fail the test because its supporting quotation does not meet the protocol’s requirements. <a class="post-cite" href="#src-5">[5]</a></p>
+<p>For sources, the check goes further than a plausible reference. The scorer reads the tool logs to confirm that the agent actually opened the sources it cites, then checks that its quotations match the required passages word for word. A correct decision can therefore fail because its supporting quotation does not meet the standard an auditor would apply.</p>
 
-<p>Authorization is checked at a different point. When an agent requests conditional approval, the tool checks whether its authority covers the review and project phase, whether every unresolved problem is included and whether those problems are eligible for conditional approval. The test checks that the required conditions are present; <strong>it does not establish that they will be effective in practice</strong>. <a class="post-cite" href="#src-5">[5]</a></p>
+<p>Authorization is checked at a different moment. When the agent asks for a conditional approval, the tool checks that its mandate covers this gate and this project phase, that every unresolved problem is listed and that those problems are eligible for conditional approval. If any of that fails, the request is refused and the refusal is recorded.</p>
 
-<div class="post-note post-note-alert"><strong>Requesting a correction does not carry it out.</strong><p>An agent can request a restore test. The benchmark does not then restore a backup on a real system. It evaluates the review and the decision. Automating the correction would also require executing the authorized action, recording its result and reviewing the project again. <a class="post-cite" href="#src-5">[5]</a></p></div>
+<div class="post-note post-note-alert"><strong>Requesting a correction does not carry it out.</strong><p>The agent can require a restore test. The benchmark does not then restore a backup somewhere. It evaluates the review and the decision. Automating the correction as well would mean executing the authorized action, recording its result and reviewing the project again, which is a separate task with its own authority.</p></div>
 </section>
 
 <section class="post-section" id="resultats">
-<span class="post-num">06 / The main results</span>
+<span class="post-num">06 / The results</span>
+<h2>100% correct decisions, 95% complete reviews, 77% complete routes</h2>
 
-<h2>100% correct decisions does not mean 100% successful reviews</h2>
+<p>With Gemini, the agent takes the correct decision in every one of the 1,694 reviews evaluated. Yet only 94.98% of those reviews meet all five criteria, and only 76.92% of projects pass every gate on their route. The three numbers measure three different things, and you need all three before you delegate anything.</p>
 
-<p>Using Gemini, the agent makes the correct decision in all <strong>1,694 evaluated reviews</strong>. Yet only 94.98% of those reviews meet all five scoring criteria, and only 76.92% of projects pass every review. Those numbers measure three different things. <a class="post-cite" href="#src-6">[6]</a></p>
-
-<p>The first measures the decision itself. The second also requires a complete, properly sourced and authorized review. The third requires every review in a project to pass: a single failed review means the route fails. “77% of projects passed” therefore does not mean “77% of projects were approved.” <a class="post-cite" href="#src-5">[5]</a><a class="post-cite" href="#src-6">[6]</a></p>
+<p>The first measures the decision alone. The second requires a complete review: correct decision, complete findings, correct actions, exact sources, respected authority. The third requires every gate of a project to pass; a single failed review fails the route. "77% of projects passed" does not mean "77% of projects were approved": many of them were correctly refused.</p>
 
 <figure class="post-chart">
 <h3>1 / Reviews that meet all five criteria</h3>
@@ -437,7 +450,7 @@
 <div class="bars-group"><span class="bars-label">DeepSeek v4.1 Flash</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:74.18%"></span></div><span class="bars-value">74.18%</span></div></div>
 </div>
 <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>50</span><span>100</span></div></div>
-<figcaption>Strict review success: a failure on any one criterion means the review fails. <a class="post-cite" href="#src-6">[6]</a></figcaption>
+<figcaption>Strict review success. A failure on any one criterion fails the review. The grey bar is a conventional program applying the rules to the structured facts, with no AI.</figcaption>
 </figure>
 
 <figure class="post-chart">
@@ -449,95 +462,103 @@
 <div class="bars-group"><span class="bars-label">DeepSeek v4.1 Flash</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:24.67%"></span></div><span class="bars-value">24.67%</span></div></div>
 </div>
 <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>50</span><span>100</span></div></div>
-<figcaption>Complete-route success: every one of a project’s five or six reviews must pass. Correctly rejecting a proposal can count as a successful review. <a class="post-cite" href="#src-6">[6]</a></figcaption>
+<figcaption>Complete-route success. Every one of the five or six gates must pass. Correctly refusing a proposal counts as a passed gate.</figcaption>
 </figure>
 
-<p>With GPT-5.6 Luna and DeepSeek v4.1 Flash, strict review pass rates are 83.29% and 74.18%, respectively. Complete-route pass rates are 42.33% and 24.67%. The presentations separately report approximately 98% and 95% correct decisions for these two models. <a class="post-cite" href="#src-6">[6]</a></p>
+<p>With GPT-5.6 Luna and DeepSeek v4.1 Flash, the strict pass rates are 83.29% and 74.18%, and the complete-route rates fall to 42.33% and 24.67%. Their decisions are correct in about 98% and 95% of reviews. The gap between a correct decision and a complete review is where the engineering work lies.</p>
 
-<h3>The main weakness: source citations</h3>
+<h3>The weak point: exact source citations</h3>
 
-<p>For Gemini, all 85 failed reviews fail solely because of a missing source citation or a quotation that does not meet the requirements. In Procurement, Luna and DeepSeek make the correct decision in 96% and 97% of reviews, but pass all criteria in only 33% and 43%. Their citations include a spreadsheet that the scoring program does not accept as a source. <a class="post-cite" href="#src-6">[6]</a></p>
+<p>All 85 of Gemini's failed reviews fail for one reason only: a missing source, or a quotation that does not meet the requirement. In Procurement, Luna and DeepSeek take the correct decision in 96% and 97% of reviews but pass all criteria in only 33% and 43%, because they cite a spreadsheet that the scoring rules do not accept as a source. The decision is right; the evidence trail is not.</p>
 
-<p>There are substantive errors as well. The presentations describe two: Luna approves a Legal review despite a missing data-processing agreement, while DeepSeek submits a placeholder <code>GO</code> when overlapping address ranges require <code>NO_GO</code>. No incorrect approval is reported for Gemini in the main tests. That describes the observed cases; it is not a guarantee for future projects. <a class="post-cite" href="#src-6">[6]</a></p>
+<p>There are substantive errors too, and I count them separately because they are the ones that matter to a CISO. Luna approves one Legal review despite a missing data-processing agreement. DeepSeek submits a placeholder <code>GO</code> where overlapping address ranges require <code>NO_GO</code>. Gemini records no wrong approval in the main runs. Across about 5,100 reviews, that is one false approval each for Luna and DeepSeek, and zero, three and one serious problems missed.</p>
 
 <figure class="post-chart">
 <h3>Performance changes with the type of review</h3>
 <div class="post-table-wrap"><table class="post-table"><thead><tr><th>Review</th><th class="num">Gemini 3.8 Flash</th><th class="num">GPT-5.6 Luna</th><th class="num">DeepSeek v4.1 Flash</th></tr></thead><tbody><tr><td>Architecture</td><td style="background:rgba(34,211,238,0.227)" class="num">85.43%</td><td style="background:rgba(34,211,238,0.238)" class="num"><strong>89.50%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.200)" class="num">75.00%</td></tr><tr><td>Compliance</td><td style="background:rgba(34,211,238,0.266)" class="num"><strong>100.00%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.255)" class="num">96.00%</td><td style="background:rgba(34,211,238,0.234)" class="num">88.00%</td></tr><tr><td>General</td><td style="background:rgba(34,211,238,0.234)" class="num"><strong>87.96%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.164)" class="num">61.67%</td><td style="background:rgba(34,211,238,0.182)" class="num">68.67%</td></tr><tr><td>IT</td><td style="background:rgba(34,211,238,0.266)" class="num"><strong>100.00%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.260)" class="num">97.67%</td><td style="background:rgba(34,211,238,0.231)" class="num">87.00%</td></tr><tr><td>Legal</td><td style="background:rgba(34,211,238,0.265)" class="num"><strong>99.50%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.214)" class="num">80.50%</td><td style="background:rgba(34,211,238,0.182)" class="num">68.50%</td></tr><tr><td>Procurement</td><td style="background:rgba(34,211,238,0.255)" class="num"><strong>96.00%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.088)" class="num">33.00%</td><td style="background:rgba(34,211,238,0.115)" class="num">43.00%</td></tr><tr><td>Security</td><td style="background:rgba(34,211,238,0.262)" class="num"><strong>98.66%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.245)" class="num">92.00%</td><td style="background:rgba(34,211,238,0.192)" class="num">72.33%</td></tr><tr><td>Tech Readiness</td><td style="background:rgba(34,211,238,0.237)" class="num">89.00%</td><td style="background:rgba(34,211,238,0.258)" class="num"><strong>97.00%</strong>&nbsp;*</td><td style="background:rgba(34,211,238,0.189)" class="num">71.00%</td></tr></tbody></table></div>
 <p class="post-table-note">* Highest score in that row. Darker cells indicate higher pass rates.</p>
-<figcaption>Share of reviews meeting all five criteria, by review type and model. <a class="post-cite" href="#src-6">[6]</a></figcaption>
+<figcaption>Share of reviews meeting all five criteria, by gate and by model. No model is best on every gate: Luna leads on Architecture and Tech Readiness and collapses on Procurement and General.</figcaption>
 </figure>
 
-<h3>Why include a conventional program with no AI?</h3>
+<h3>What the program with no AI tells you</h3>
 
-<p>The fixed-rule comparison program scores 100% across all 1,700 reviews and 300 projects. That result matters: <strong>when the facts are already structured and the rules are explicit, conventional software may be enough</strong>. The question is what an agent adds when information is scattered, difficult to retrieve or contradictory. The benchmark does not establish that a language model is always necessary. <a class="post-cite" href="#src-6">[6]</a></p>
+<p>The conventional rules program scores 100% on all 1,700 reviews and 300 projects. That is the most useful number in the table for anyone planning a deployment. When the facts are already structured and the rules are explicit, ordinary software is enough, and it costs nothing per call. The agent earns its place where the facts are scattered across documents, hard to retrieve or contradictory. Build the deterministic core first, then put the agent around it for the parts that need reading and investigation.</p>
 
-<details><summary>What changes under a different citation-scoring rule?</summary><p>The presentations report an alternative analysis that accepts the same values quoted in a different order. It would recover 69 additional reviews for Gemini, 38 for Luna and 52 for DeepSeek. Gemini would reach 99.06% review success and 94.98% complete-route success. This is a different scoring rule, not an improvement to the agent. The main results remain those shown in the charts above. <a class="post-cite" href="#src-6">[6]</a></p></details>
+<p>One more result shows where the lever is. If the scoring accepts the same values quoted in a different order, 69 more reviews pass for Gemini, 38 for Luna and 52 for DeepSeek, and Gemini reaches 99.06% of reviews and 94.98% of complete routes. Nothing changed in the agent's judgment. What changed is how evidence is represented. That is a tooling problem, and tooling problems are the ones an FDE can fix in weeks.</p>
 </section>
 
 <section class="post-section" id="exemples">
-<span class="post-num">07 / Two project files</span>
+<span class="post-num">07 / Two dossiers</span>
+<h2>Falcon and Meridian: what the agent actually does at a gate</h2>
 
-<h2>Falcon and Meridian: what the agent actually does</h2>
+<p>Two dossiers from the execution logs show what sits behind the percentages. I chose them after the evaluation to illustrate the mechanism, one success and one instructive failure.</p>
 
-<p>Two examples from the execution logs make the scores easier to understand. They were selected after the evaluation to illustrate how it works, rather than to provide a separate measure of performance. <a class="post-cite" href="#src-7">[7]</a></p>
-
-<div class="post-case"><div class="post-case-top"><span class="post-case-tag">Project Falcon</span><span class="post-case-outcome">REVIEW PASSED</span></div>
+<div class="post-case">
+<div class="post-case-top"><span class="post-case-tag">Project Falcon</span><span class="post-case-outcome">Review passed</span></div>
 <h3>The operating instructions are still a draft</h3>
-<p>During the Tech Readiness review, the agent discovers that the runbook—the document explaining how to operate the application—has not been finalized.</p>
-<div class="post-case-flow"><div><small>Finding</small>The documents needed for the operations handover are incomplete.</div><div><small>Requested action</small>Finish the document and hand it over to the operations team.</div><div><small>Decision</small>GO WITH CONDITIONS, after the authorization check accepts the request.</div></div>
-<p>The agent quotes the passage establishing the problem. The condition must be met before the application goes live; it remains open, with a named person responsible. The test does not claim that the document has already been completed. With each of the three models, all five Falcon reviews pass. <a class="post-cite" href="#src-7">[7]</a></p>
+<p>Falcon is a fictional HR portal for 1,000 employees, with a budget of EUR 500,000 and confidential data. During the Tech Readiness review, the agent reads the operating documents and finds that the runbook, the document that explains how to run the application, is still marked as a draft.</p>
+<div class="post-case-flow">
+  <div><small>Finding</small>The documents needed for the operations handover are incomplete.</div>
+  <div><small>Requested action</small>Finish the runbook and hand it over to the operations team.</div>
+  <div><small>Decision</small>GO WITH CONDITIONS, after the authorization check accepts the request.</div>
+</div>
+<p>The agent quotes the line that establishes the problem, checks its mandate, requests a conditional approval and gets it. The condition stays open, with a named owner, and must be met before the application goes live. That is exactly what you would expect from a good human reviewer. With each of the three models, all five Falcon reviews pass.</p>
 </div>
 
-<div class="post-case"><div class="post-case-top"><span class="post-case-tag">Project Meridian</span><span class="post-case-outcome is-warn">CORRECT DECISION, FAILED REVIEW</span></div>
-<h3>The right findings, but an inexact quotation</h3>
-<p>The agent identifies two defects: a required API gateway is missing, and response time is 55 milliseconds rather than the required 20. It asks for the necessary corrections and makes the right decision: REWORK.</p>
-<div class="post-case-flow"><div><small>Findings</small>A missing gateway and an excessive response time.</div><div><small>Authorization</small>Two requests for conditional approval are rejected: the defects must be corrected.</div><div><small>Scoring</small>One quotation reverses the order of two facts. The review receives a strict score of zero.</div></div>
-<p>The decision, findings and requested corrections are otherwise correct. The review scores 0.95 under the weighted method, but fails the strict method, which requires every criterion to pass. <a class="post-cite" href="#src-7">[7]</a></p>
+<div class="post-case">
+<div class="post-case-top"><span class="post-case-tag">Project Meridian</span><span class="post-case-outcome is-warn">Correct decision, failed review</span></div>
+<h3>The right findings, an inexact quotation</h3>
+<p>The agent finds two defects: a required API gateway is missing, and the measured response time is 55 milliseconds against a target of 20. It requests the two corrections and takes the right decision: REWORK.</p>
+<div class="post-case-flow">
+  <div><small>Findings</small>A missing gateway and an excessive response time.</div>
+  <div><small>Authorization</small>Two requests for conditional approval are refused: these defects must be fixed, not accepted.</div>
+  <div><small>Scoring</small>One quotation lists two facts in the reverse order of the source record. The strict score is zero.</div>
+</div>
+<p>Decision, findings and requested corrections are all correct. The review scores 0.95 under a weighted method and fails under the strict one, because every criterion has to pass. The authorization tool did its job twice, refusing approvals the agent was not entitled to.</p>
 </div>
 
-<p>For this particular failure, the proposed fix is not necessarily a more capable model. It is a tool that attaches the exact source passage to each finding, rather than leaving the agent to reconstruct it. The study proposes this improvement; it does not present it as an already validated fix. <a class="post-cite" href="#src-7">[7]</a></p>
+<p>Meridian tells you what to build. The fix is not a more capable model. It is a tool that attaches the exact source passage, with its location and version, to each finding, so that the agent never has to reconstruct a quotation from memory. An evidence service of that kind removes the single largest cause of failure in these runs.</p>
 </section>
 
 <section class="post-section" id="repetition">
-<span class="post-num">08 / Reliability and authorization</span>
+<span class="post-num">08 / Reliability and authority</span>
+<h2>The same dossier can pass one attempt and fail the next</h2>
 
-<h2>The same project can pass one attempt and fail the next</h2>
-
-<p>After the main tests, 15 projects are reviewed three more times with each model, producing <strong>135 additional project runs</strong>. The question is no longer just whether a project passed, but whether all of its reviews pass on every attempt. <a class="post-cite" href="#src-8">[8]</a></p>
+<p>A benchmark score is one attempt. A deployment is thousands. After the main runs, I took 15 projects, five per route, and reviewed each of them three more times with each model: 135 additional project runs, with no best-of-three selection. The question is no longer whether a project passed, but whether all of its reviews pass every time.</p>
 
 <figure class="post-chart">
-<h3>Passing once is not the same as passing three times in a row</h3>
+<h3>Passing once is not passing three times in a row</h3>
 <div class="post-repeat">
 <div><h4>Gemini 3.8 Flash</h4><strong>9 of 15</strong><div class="post-waffle" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>projects whose reviews all pass on all three attempts.</p></div>
 <div><h4>GPT-5.6 Luna</h4><strong>3 of 15</strong><div class="post-waffle" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>projects whose reviews all pass on all three attempts.</p></div>
 <div><h4>DeepSeek v4.1 Flash</h4><strong>0 of 15</strong><div class="post-waffle" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>projects whose reviews all pass on all three attempts.</p></div>
 </div>
-<figcaption>Each square represents one project. A filled square means all of its reviews passed on each of the three additional attempts. <a class="post-cite" href="#src-8">[8]</a></figcaption>
+<figcaption>Each square is one project. A filled square means all of its reviews passed on each of the three additional attempts.</figcaption>
 </figure>
 
-<p>Across the 45 repeated runs per model, every review passes in 35 runs with Gemini, 19 with Luna and 11 with DeepSeek. Strict review pass rates are 96.08%, 82.75% and 73.33%. No incorrect approval or missed serious problem is reported in these 135 runs. The stated model-call cost of the repeat tests is $12.56. <a class="post-cite" href="#src-8">[8]</a></p>
+<p>Across the 45 repeated runs per model, every review passes in 35 runs with Gemini, 19 with Luna and 11 with DeepSeek. The strict review rates hold at 96.08%, 82.75% and 73.33%. No wrong approval and no serious problem missed in these 135 runs. The repeat tests cost $12.56 in model calls. The lesson for a rollout is simple: before an agent takes over a gate, run the same dossiers several times and look at the variance, not only the average.</p>
 
-<h3>Authority cannot rest on the model’s own assurance</h3>
+<h3>Authority cannot rest on the model's own assurance</h3>
 
-<p>The presentations also report requests for conditional approval submitted to the authorization tool. They distinguish requests made, requests rejected and approvals eventually used in final decisions. These counts are not counts of unique projects. <a class="post-cite" href="#src-8">[8]</a></p>
+<p>The agent can ask the authorization tool for permission to approve with conditions. The tool records three things: the requests made, the requests refused and the approvals actually used in final decisions. These are counts of calls, not of projects; one gate can produce several requests.</p>
 
-<div class="post-table-wrap"><table class="post-table"><thead><tr><th>Requests reported in the study</th><th class="num">Gemini</th><th class="num">Luna</th><th class="num">DeepSeek</th></tr></thead><tbody><tr><td class="wrap">Requests for conditional approval</td><td class="num">864</td><td class="num">394</td><td class="num">216</td></tr><tr><td class="wrap">Requests rejected by the check</td><td class="num">466</td><td class="num">40</td><td class="num">14</td></tr><tr><td class="wrap">Approvals used in final decisions</td><td class="num">398</td><td class="num">353</td><td class="num">202</td></tr></tbody></table></div>
+<div class="post-table-wrap"><table class="post-table"><thead><tr><th>Requests recorded in the main runs</th><th class="num">Gemini</th><th class="num">Luna</th><th class="num">DeepSeek</th></tr></thead><tbody><tr><td class="wrap">Requests for conditional approval</td><td class="num">864</td><td class="num">394</td><td class="num">216</td></tr><tr><td class="wrap">Requests rejected by the check</td><td class="num">466</td><td class="num">40</td><td class="num">14</td></tr><tr><td class="wrap">Approvals used in final decisions</td><td class="num">398</td><td class="num">353</td><td class="num">202</td></tr></tbody></table></div>
+<p class="post-table-note">Requests recorded in the main runs. The same 391 eligible gates are available to every model.</p>
 
-<p>With Gemini, the agent makes more requests and has more requests rejected. An agent can therefore seek approval that the system will not grant. <strong>The separate authorization check—not a promise in the model’s response—is what blocks that approval.</strong> <a class="post-cite" href="#src-8">[8]</a></p>
+<p>Gemini asks most often and is refused most often: 466 of its 864 requests. An agent will seek approvals that the rules do not allow, sometimes insistently. What stops them is the separate authorization check, not a promise written in the model's answer. If you take one architectural rule from this article, take this one: the component that grants authority must not be the component that reasons.</p>
 
 <figure class="post-chart">
-<h3>Execution logs reproduced from the presentation</h3>
+<h3>Execution logs from the benchmark console</h3>
 <div class="post-diagram"><a href="../../images/last-human-gate/power.png" target="_blank" rel="noopener"><img alt="DGF-Bench console screenshot showing decisions, tool calls and costs for Gemini, Luna and DeepSeek." height="670" loading="lazy" src="../../images/last-human-gate/power.png" width="1880"/></a></div>
-<figcaption>Each review line records the model, project, decision, reasoning turns, tool calls and cost. This screenshot shows the 45 jobs in one attempt; all three attempts total 135 project runs. <a class="post-cite" href="#src-8">[8]</a></figcaption>
+<figcaption>Each review line records the model, the project, the decision, the number of reasoning turns, the tool calls and the cost. This capture shows one attempt of the 45 repeat jobs.</figcaption>
 </figure>
 </section>
 
 <section class="post-section" id="information">
 <span class="post-num">09 / Access to information</span>
+<h2>Better reasoning cannot recover a fact that was never provided</h2>
 
-<h2>Better reasoning cannot recover information that was never provided</h2>
-
-<p>The study presents two variants of a project with identical text in all 26 Word documents. Yet the required decision is different. The difference appears in a separate record: the supplier has completed its background check in one case but not the other. <a class="post-cite" href="#src-9">[9]</a></p>
+<p>Take two projects with strictly identical text in all 26 Word documents. The required decision is nonetheless different, because the difference sits in a separate record: in one project the supplier has completed its background check, in the other it has not.</p>
 
 <figure class="post-chart">
 <h3>Identical documents, a different fact, a different decision</h3>
@@ -546,48 +567,49 @@
 <div><h4>PROJECT A</h4><p>The separate CSV record says:<br/><strong>the supplier check is complete.</strong></p><div class="post-fork-result">Required decision: GO</div></div>
 <div><h4>PROJECT B</h4><p>The separate CSV record says:<br/><strong>the supplier check has not been completed.</strong></p><div class="post-fork-result">Required decision: REWORK</div></div>
 </div>
-<figcaption>A reviewer restricted to the Word documents receives the same information in both cases and cannot reliably distinguish between them. <a class="post-cite" href="#src-9">[9]</a></figcaption>
+<figcaption>A reviewer restricted to the Word documents receives the same information in both cases and cannot tell them apart, whatever the model.</figcaption>
 </figure>
 
-<p>This limitation applies to a person as well as an AI agent. Reasoning cannot supply a fact that the reviewer has never been given. Allowing access to the CSV record, or permitting a justified request for missing information, changes the task. <a class="post-cite" href="#src-9">[9]</a></p>
+<p>This limit applies to a person as much as to an agent. Reasoning cannot produce a fact that nobody gave the reviewer. Giving the agent access to the CSV record, or allowing it to file a justified request for the missing information, changes the task and makes it solvable.</p>
 
-<p>The example helps explain the FDE’s role. Connecting an agent to the right records, controlling its access and defining what happens when information is missing are parts of the system—not details to address after choosing a model. In the study’s framework, access to information is a condition of a valid review. <a class="post-cite" href="#src-3">[3]</a><a class="post-cite" href="#src-9">[9]</a></p>
+<p>This is the first job of the FDE, before any prompt: connect the agent to the authoritative records, decide what it may read, and specify what it must do when a fact is missing. In my framework, access to information is a condition of a valid review, not a detail to sort out after choosing a model. Any deployment that hands the agent only the PDFs is leaving out information a fair test and a safe operation both require.</p>
 </section>
 
 <section class="post-section" id="heures">
-<span class="post-num">10 / From scores to employment</span>
+<span class="post-num">10 / From scores to jobs</span>
+<h2>Automating 80% of the cases does not remove 80% of the work</h2>
 
-<h2>Automating 80% of cases does not remove 80% of the work</h2>
-
-<p>A pass rate does not measure hours saved. An agent may handle most straightforward cases while leaving specialists with the cases that take the longest. Human checks, error correction and platform operations add further work. <a class="post-cite" href="#src-10">[10]</a></p>
+<p>A pass rate does not measure hours saved. An agent can take over most of the straightforward dossiers and leave the specialists exactly the cases that take the longest. Human checks, error correction and platform operations then add hours of their own. To know what you have actually saved, you have to add up everything that is left.</p>
 
 <figure class="post-chart">
 <h3>Human work that must be counted after automation</h3>
 <div class="post-concepts post-concepts-4">
-<div><span class="post-concept-n">01</span><h3>Cases still handled by people</h3><p>Their number multiplied by the actual time each one requires.</p></div>
-<div><span class="post-concept-n">02</span><h3>Verification</h3><p>Signatures, spot checks and any reviews that remain necessary.</p></div>
-<div><span class="post-concept-n">03</span><h3>Error correction</h3><p>Finding and repairing mistakes, including their downstream effects.</p></div>
-<div><span class="post-concept-n">04</span><h3>Maintenance and support</h3><p>Integrations, rules, tests, supervision and supplier assistance.</p></div>
+  <div><span class="post-concept-n">01</span><h3>Cases still handled by people</h3><p>Their number multiplied by the real time each one takes, which can be longer than before.</p></div>
+  <div><span class="post-concept-n">02</span><h3>Verification</h3><p>Signatures, spot checks and any second readings that remain necessary.</p></div>
+  <div><span class="post-concept-n">03</span><h3>Error correction</h3><p>Finding and repairing mistakes, including their effects on the reviews downstream.</p></div>
+  <div><span class="post-concept-n">04</span><h3>Maintenance and support</h3><p>Integrations, rules, test cases, supervision and supplier assistance.</p></div>
 </div>
-<figcaption>Every hour counts, regardless of which department or supplier performs it. Moving work is not the same as eliminating it. <a class="post-cite" href="#src-10">[10]</a></figcaption>
+<figcaption>Every hour counts, whichever department or supplier performs it. Moving work is not eliminating it.</figcaption>
 </figure>
 
-<p>Consider the example in the presentation. AI handles the easiest 80% of cases. Each remaining case takes twice the original average handling time, so the remaining 20% already accounts for <strong>40% of the original workload</strong>. If the new working arrangement makes those cases take another 50% longer, they alone account for 60% of the original workload. Maintenance has not yet been added. <a class="post-cite" href="#src-10">[10]</a></p>
+<p>Here is the arithmetic that surprises most people. Suppose the agent handles the easiest 80% of the cases. Each remaining case takes twice the original average time, so the remaining 20% already represents 40% of the original workload. If the new division of labor makes those cases another 50% longer, because a specialist now has to pick up a dossier cold, they alone represent 60% of the original workload. Maintenance has not been added yet.</p>
 
-<p>Quality matters too. A mistake that goes undetected initially may create work later: someone has to find it, understand its consequences and correct it. A dangerous error left uncorrected does not become acceptable because the system is cheap to run. <a class="post-cite" href="#src-10">[10]</a></p>
+<p>Quality plays the same way. A mistake that goes unnoticed at first creates work later: someone has to find it, understand its consequences and correct it. And a dangerous error left uncorrected does not become acceptable because the system is cheap to run.</p>
 
-<details><summary>The equation used in the study</summary><div class="post-formula">L<sub>A</sub> = λ [q h<sub>E</sub> + (1 − q) h<sub>R</sub> + h<sub>W</sub>] + B<sub>A</sub></div>
-<p><strong>λ</strong> is the number of cases in the period; <strong>q</strong> is the share still handled by people; <strong>h<sub>E</sub></strong> is human time per remaining case; <strong>h<sub>R</sub></strong> is verification time for other cases; <strong>h<sub>W</sub></strong> is average correction time per case; and <strong>B<sub>A</sub></strong> is maintenance and support work during the period. The purpose is to add up actual hours, rather than infer them from the share of cases automated. <a class="post-cite" href="#src-10">[10]</a></p></details>
+<details>
+<summary>The equation I use to count the remaining work</summary>
+<div class="post-formula">L<sub>A</sub> = λ [q h<sub>E</sub> + (1 − q) h<sub>R</sub> + h<sub>W</sub>] + B<sub>A</sub></div>
+<p><strong>λ</strong> is the number of cases in the period; <strong>q</strong> the share still handled by people; <strong>h<sub>E</sub></strong> the human time per remaining case; <strong>h<sub>R</sub></strong> the verification time on the other cases; <strong>h<sub>W</sub></strong> the average correction time per case; and <strong>B<sub>A</sub></strong> the maintenance and support work over the period. The point is to add up real hours instead of inferring them from the share of cases automated.</p>
+</details>
 
-<p>Measuring a reduction therefore requires tracking comparable project types before and after automation: handling time, referrals to people, corrections and support. Consistent case identifiers help avoid counting the same task twice or overlooking work altogether. <a class="post-cite" href="#src-10">[10]</a></p>
+<p>To measure a reduction in your own organization, track the same types of dossiers before and after automation: handling time, cases sent back to people, corrections and support. Keep consistent case identifiers so that the same task is never counted twice and no work is forgotten.</p>
 </section>
 
 <section class="post-section" id="scenarios">
 <span class="post-num">11 / Four ways to organize the work</span>
-
 <h2>The same automation can leave a need for 44 or 169 FTE</h2>
 
-<p>The study illustrates this with a starting workload of <strong>140 full-time equivalents</strong>, or FTE. An FTE represents the amount of work associated with one full-time role; it is not necessarily a particular employee or position. The following four scenarios keep the same share of cases automated but change how the remaining work is organized. <strong>They are calculations based on assumptions, not staffing levels observed in a company.</strong> <a class="post-cite" href="#src-11">[11]</a></p>
+<p>Take a governance function that occupies 140 full-time equivalents today. An FTE is a quantity of work, not a particular person. The four scenarios below keep the same share of cases automated and change only how the remaining work is organized. The gap between them is the whole point.</p>
 
 <figure class="post-chart">
 <h3>Human capacity needed for the same scope of work · FTE</h3>
@@ -599,26 +621,25 @@
 <div class="bars-group"><span class="bars-label">S3 · Every decision is rechecked</span><div class="bars-row"><div class="bars-track"><span class="bars-fill" style="--w:93.84%"></span></div><span class="bars-value">168.92</span></div></div>
 </div>
 <div class="bars-axis" aria-hidden="true"><div><span>0</span><span>90</span><span>180</span></div></div>
-<figcaption>Same technology, same share of cases automated. The differences come from complex-case handling time, verification, corrections and support. None of these four scenarios reaches the 28 FTE threshold corresponding to an 80% reduction. <a class="post-cite" href="#src-11">[11]</a></figcaption>
+<figcaption>Same technology, same share of automated cases. The differences come from complex-case handling time, verification, corrections and support. None of the four reaches the 28 FTE that an 80% reduction would require.</figcaption>
 </figure>
 
-<p><strong>S0: AI also helps with complex cases.</strong> Specialists handle them in half the time, and the other cases receive limited checks. The result is 43.52 FTE, a reduction of about 69%. This is the most optimistic scenario and includes no maintenance time. <a class="post-cite" href="#src-11">[11]</a></p>
+<p><strong>S0: the AI also helps on the complex cases.</strong> Specialists handle them in half the time, and the other cases get limited checks. The result is 43.52 FTE, a reduction of about 69%. It is the most optimistic scenario, and it counts no maintenance at all.</p>
 
-<p><strong>S1: difficult cases take as long as before.</strong> Specialists handle them without AI assistance. Other cases receive brief checks, and each team assigns one person to keep the platform running. Required capacity rises to 85.32 FTE. <strong>S2</strong> keeps those assumptions and adds half an hour of correction time per case, bringing the result to 89.07 FTE. <a class="post-cite" href="#src-11">[11]</a></p>
+<p><strong>S1: the difficult cases take as long as before.</strong> Specialists handle them without AI assistance, the other cases get brief checks, and each team assigns one person to keep the platform running. The need rises to 85.32 FTE. <strong>S2</strong> keeps those assumptions and adds half an hour of correction per case: 89.07 FTE.</p>
 
-<p><strong>S3: people recheck every decision.</strong> Complex cases take 50% longer; verification is more extensive; corrections take two hours per case; and two people per team run the platform. Required capacity reaches 168.92 FTE—about 21% more human work than before automation. <a class="post-cite" href="#src-11">[11]</a></p>
+<p><strong>S3: people recheck every decision.</strong> Complex cases take 50% longer, verification is extensive, corrections take two hours per case and two people per team run the platform. The need reaches 168.92 FTE, about 21% more human work than before automation. An organization that trusts nothing the agent produces ends up paying for the agent and for the reviewers.</p>
 
-<blockquote>The share of cases automated is not enough. What matters is how much time the organization still requires from people.</blockquote>
+<blockquote>The share of cases automated is not the number that matters. What matters is how much time the organization still asks of people.</blockquote>
 
-<p>The study does not claim that any of these scenarios already describes a real deployment. They show why a benchmark result cannot be translated directly into a staffing reduction. <a class="post-cite" href="#src-11">[11]</a></p>
+<p>Before you promise a headcount figure, decide which scenario you are actually building: who handles the exceptions, with what assistance, how much verification you keep, and who runs the platform. The same model gives you 44 or 169 depending on those four answers.</p>
 </section>
 
 <section class="post-section" id="long-terme">
-<span class="post-num">12 / The longer study</span>
+<span class="post-num">12 / The long view</span>
+<h2>How far automation can go, and on what timescale</h2>
 
-<h2>How far could automation go—and on what timescale?</h2>
-
-<p>The longer study takes the hypothesis further: eventually, agents could perform every review, including complex cases and the final decision. The work of supervising them, maintaining rules and handling exceptions could then be automated too. <strong>Complete automation is not a result established by the benchmark.</strong> <a class="post-cite" href="#src-12">[12]</a></p>
+<p>The benchmark stops at the review. The longer version of my work pushes the hypothesis to its end: eventually, agents perform every review, including the complex cases and the final decision, and the work of supervising them, maintaining the rules and handling exceptions gets automated in turn. Here is what that path looks like for the same 140-FTE function.</p>
 
 <figure class="post-chart">
 <h3>Five levels of automation, not five dates · FTE</h3>
@@ -630,21 +651,21 @@
 <div><span class="lbl">Every task is automated</span><div class="post-level-bar" aria-hidden="true"><i class="buy" style="width:0.0000%"></i><i class="integrate" style="width:0.0000%"></i><i class="build" style="width:0.0000%"></i><i class="support" style="width:0.0000%"></i></div><span class="val">0.00</span></div>
 </div>
 <div class="post-level-legend"><span><i class="buy"></i>Purchases</span><span><i class="integrate"></i>Integrations</span><span><i class="build"></i>Development</span><span><i class="support"></i>Support</span></div>
-<figcaption>Theoretical scenarios from the longer study. The final bar is zero because that scenario assumes that every task, including support, is automated; it is neither a measurement nor a forecast. <a class="post-cite" href="#src-12">[12]</a></figcaption>
+<figcaption>Levels of automation from the extended study. The last bar is zero because that level assumes every task, support included, is automated.</figcaption>
 </figure>
 
-<p>The required checks do not disappear in these scenarios. Human work falls as their execution is automated. Reaching zero also requires eliminating the work of the team operating the agents. As long as that work remains, it creates a minimum workload that cannot be ignored. <a class="post-cite" href="#src-12">[12]</a></p>
+<p>The checks never disappear in these scenarios. What shrinks is the human work needed to execute them. The last step, from a small support team to zero, is the hardest: as long as a team operates the agents, it sets a floor under the headcount.</p>
 
-<p>Starting from 140 FTE, automating 80% of review work leaves 28 FTE of review work. Add five FTE to operate the platform, and the total is <strong>33 FTE</strong>, not 28. To reach 28 FTE overall, about 84% of review work would have to be automated with a five-FTE support team, or about 91% with a fifteen-FTE team. <a class="post-cite" href="#src-12">[12]</a></p>
+<p>That floor is easy to underestimate. From 140 FTE, automating 80% of the review work leaves 28 FTE of review work. Add five FTE to run the platform and the total is 33, not 28. To land at 28 overall you need to automate about 84% of the review work with a five-person support team, or about 91% with a fifteen-person team. Every FTE you add to support has to be earned back in review work.</p>
 
 <h3>A timeline built from explicit assumptions</h3>
 
-<p>The presentations also reproduce a timing calculation from the longer study. It starts with a cited May 2026 estimate: tasks equivalent to three hours of human work, completed successfully 80% of the time, with that task duration assumed to double every seven months. A typical review is assumed to represent 24 hours of human work. Three doublings would therefore take it to February 2028. These are inputs to the scenario, not measured durations for the benchmark’s reviews. <a class="post-cite" href="#src-12">[12]</a></p>
+<p>When could a whole review be delegated? I built the estimate from four stages, each with a stated assumption. It starts from a May 2026 measurement: the best agents complete tasks worth about three hours of human work with an 80% success rate, and that task length has been doubling every seven months. A typical gate review represents about 24 hours of human work, three doublings away, which lands in February 2028.</p>
 
-<p>Next, the error rate has to fall from 20% to roughly one failure in a thousand. The calculation then adds a year of testing with specialists and another year for organizational authorization. It varies the time needed for each tenfold reduction in the error rate: six, twelve or twenty-four months. <a class="post-cite" href="#src-12">[12]</a></p>
+<p>Capability is not enough. The error rate then has to fall from 20% to roughly one failure in a thousand, followed by a year of testing with specialists and another year for the company to grant the authority. The unknown is how long each tenfold reduction of the error rate takes: six, twelve or twenty-four months.</p>
 
 <figure class="post-chart">
-<h3>Illustrative dates, not a guaranteed deployment schedule</h3>
+<h3>Illustrative dates, not a deployment schedule</h3>
 <div class="post-timeline">
 <div><time>May 2026</time>Scenario starting point: three hours of human work at an 80% success rate.</div>
 <div><time>February 2028</time>The equivalent of 24 hours if task duration continues to double every seven months.</div>
@@ -653,99 +674,83 @@
 <div class="is-target"><time>20 September 2033</time>Separate deadline for testing the prediction of an 80% reduction in FTE.</div>
 <div><time>October 2034</time>Delegation in the slow error-reduction scenario.</div>
 </div>
-<figcaption>The calculation adds capability, reliability, evaluation and authorization stages. Inaccessible information or a required human signature could prevent delegation even as the model improves. <a class="post-cite" href="#src-12">[12]</a></figcaption>
+<figcaption>Capability, reliability, evaluation and authorization are added in sequence. Inaccessible information or a legally required human signature can block delegation even when the model is ready.</figcaption>
 </figure>
 
-<h3>Six predictions that make the hypothesis testable</h3>
+<h3>Six predictions you can check against your own data</h3>
 
-<div class="post-concepts post-concepts-4"><div><span class="post-concept-n">H1</span><h3>Well-defined reviews are easier to automate.</h3><p>Clear inputs, written rules and testable outputs should improve reliability, regardless of the model used.</p></div><div><span class="post-concept-n">H2</span><h3>A shared review record reduces duplicate work.</h3><p>Passing findings and sources forward should reduce repeated work; agents should also produce the record at a lower cost.</p></div><div><span class="post-concept-n">H3</span><h3>The cases left to people take longer.</h3><p>Their share of working hours should exceed their share of the case count.</p></div><div><span class="post-concept-n">H4</span><h3>Counting all remaining work improves the estimate.</h3><p>Including complex cases, corrections and support should predict remaining hours better than a simple automation percentage.</p></div><div><span class="post-concept-n">H5</span><h3>Preparing decisions comes before authority to approve them.</h3><p>Companies should let AI prepare decisions before delegating the corresponding decision rights.</p></div><div><span class="post-concept-n">H6</span><h3>Human-only tasks become fewer.</h3><p>Tasks that currently require people should become automatable faster than new human-only tasks appear.</p></div></div>
+<div class="post-concepts post-concepts-4">
+  <div><span class="post-concept-n">H1</span><h3>Well-defined reviews automate first</h3><p>Clear inputs, written rules and testable outputs improve reliability whatever the model.</p></div>
+  <div><span class="post-concept-n">H2</span><h3>A shared review record cuts duplicate work</h3><p>Passing findings and sources forward reduces repeated work, and agents produce that record cheaply.</p></div>
+  <div><span class="post-concept-n">H3</span><h3>The cases left to people take longer</h3><p>Their share of the hours exceeds their share of the case count.</p></div>
+  <div><span class="post-concept-n">H4</span><h3>Counting all the remaining work predicts better</h3><p>Complex cases, corrections and support forecast the remaining hours better than an automation percentage.</p></div>
+  <div><span class="post-concept-n">H5</span><h3>Preparing decisions comes before approving them</h3><p>Companies let AI prepare decisions before delegating the corresponding decision rights.</p></div>
+  <div><span class="post-concept-n">H6</span><h3>Human-only tasks become fewer</h3><p>Tasks that require people today become automatable faster than new human-only tasks appear.</p></div>
+</div>
 
-<p>The hypothesis would be undermined if a review remained inherently human, if a human signature remained mandatory, if an “automated” service depended on hidden human work or if the support team could never be reduced. The longer study presents a conjecture to test, not a proven law. <a class="post-cite" href="#src-12">[12]</a></p>
+<p>The hypothesis fails if a review stays inherently human, if a human signature remains mandatory, if an "automated" service quietly runs on hidden human work, or if the support team can never be reduced. Each of those is observable in a real deployment, which is why I put them on the list.</p>
 </section>
 
 <section class="post-section" id="prediction-2033">
-<span class="post-num">13 / A specific deadline</span>
-
-<h2>The author’s prediction: at least 80% fewer FTE by 2033</h2>
+<span class="post-num">13 / A dated prediction</span>
+<h2>My prediction: at least 80% fewer FTE by 2033</h2>
 
 <div class="post-deadline">
-<span class="post-deadline-eyebrow">A PREDICTION SEPARATE FROM THE BENCHMARK RESULTS</span>
+<span class="post-deadline-eyebrow">A prediction with a deadline, a scope and failure conditions</span>
 <div class="post-deadline-number">−80%</div>
 <h3>by 20 September 2033</h3>
-<p>For the same DGF reviews, with a comparable workload, the same quality and the same turnaround time, relative to the baseline year ending 20 September 2026.</p>
-<p>In the 140-FTE example, that means <strong>28 FTE or fewer, including all human work</strong>. <a class="post-cite" href="#src-13">[13]</a></p>
+<p>For the same DGF reviews, with a comparable workload, the same quality and the same turnaround time, relative to the baseline year that ended on 20 September 2026.</p>
+<p>In the 140-FTE example, that means <strong>28 FTE or fewer, all human work included</strong>.</p>
 </div>
 
-<p>The author does not calculate this reduction from Gemini’s pass rate. It is a separate prediction with explicit failure conditions. The count must include people preparing and performing reviews, handling complex cases, checking results, correcting errors, maintaining and supervising agents, and providing supplier support. <a class="post-cite" href="#src-13">[13]</a></p>
+<p>I do not derive this figure from Gemini's pass rate. It is a separate prediction with explicit conditions. The count includes everyone who contributes to the reviews: the people who prepare and perform them, handle the complex cases, check results, correct errors, maintain and supervise the agents, and support the suppliers.</p>
 
-<p>The prediction fails if more than 20% of the original human work remains, if quality deteriorates or if reviews take longer. Excluding the most difficult business units, overlooking new support functions or moving the deadline would also invalidate a claim of success. <a class="post-cite" href="#src-13">[13]</a></p>
+<p>The prediction fails if more than 20% of the original human work remains, if quality drops or if reviews take longer. It also fails if the comparison excludes the most difficult business units, forgets new support functions or moves the deadline. Fewer employees with contractors doing the same hours does not count. Faster approvals with more defects getting through does not count. A department renamed "AI oversight" whose staff still perform the reviews by hand does not count.</p>
 
-<div class="post-note post-note-alert"><strong>Without records of working hours, the result is unknown.</strong><p>The English presentation states that no company had enrolled at the point described, even though the baseline year had ended. A new study could establish a new baseline year, but that would start another seven-year test—not move the 2033 deadline. <a class="post-cite" href="#src-13">[13]</a></p></div>
+<div class="post-note post-note-alert"><strong>Without records of working hours, the result is unknown.</strong><p>To test the prediction you need auditable time records before and after. No company has been enrolled yet, and the baseline year has already closed. A company that starts recording now supports a new seven-year test on its own baseline; it does not move the 2033 deadline.</p></div>
 
-<h3>What would this mean for the people doing the work today?</h3>
+<h3>What this means for the people doing the work today</h3>
 
-<p>The division of work proposed in the study leaves people responsible for defining rules, making decisions that have not been delegated, providing required signatures, conducting spot checks and operating the system. People must also carry out the corrections requested by reviews until those actions are automated. Specialists could spend less time on individual files and more on designing, testing and maintaining decision rules. <a class="post-cite" href="#src-13">[13]</a></p>
+<p>In the division of work I propose, people keep the definition of the rules, the decisions that have not been delegated, the signatures the law or the company requires, the spot checks and the operation of the system. They also carry out the corrections the reviews request, until those actions are automated too. Specialists spend less time on individual dossiers and more on designing, testing and maintaining the decision rules.</p>
 
-<p>This does not guarantee that every job survives, or that every job disappears. A genuine reduction in required hours can eliminate positions; a company could instead keep the same team and handle more projects. Renaming people “AI supervisors” does not change the calculation. The unit being measured is work, regardless of job title. <a class="post-cite" href="#src-13">[13]</a></p>
+<p>That guarantees neither that every job survives nor that every job disappears. A real reduction in required hours can remove positions; a company can also keep the same team and handle more projects with it. Renaming people "AI supervisors" changes nothing in the arithmetic. What gets measured is work, whatever the job title.</p>
 
-<details><summary>Could the same logic apply to insurance or banking?</summary><p>The longer study considers activities with a similar structure: examine a file, apply rules, make a decision and explain it. Examples include underwriting, claims handling and credit analysis. DGF-Bench did not test these occupations. <a class="post-cite" href="#src-13">[13]</a></p>
-<p>The presentations offer three external illustrations: at Allianz, agents process small claims while a person authorizes payment; at AIG, they prepare analysis while an underwriter decides; at Upstart, the presentations report that more than 90% of funded loans are approved without human review, while about a quarter of all applications are referred to a person. Funded loans and all applications are different denominators. These examples are reported as cited in the presentations, not as benchmark findings. <a class="post-cite" href="#src-13">[13]</a></p>
-<p>Sector-specific rules and decisions that directly affect individuals require a different evaluation setting. Faster turnaround, a high automated-approval rate and fewer human working hours are not interchangeable measures.</p></details>
+<details>
+<summary>Does the same logic apply to insurance or banking?</summary>
+<p>The structure is the same: examine a file, apply rules, decide, explain. Underwriting, claims handling and credit analysis all fit it. DGF-Bench did not test those occupations, so I offer three external examples instead. At Allianz, agents process small claims while a person authorizes the payment. At AIG, they prepare the analysis while an underwriter decides. At Upstart, more than 90% of funded loans are approved without human review, while about a quarter of all applications are referred to a person; funded loans and all applications are different denominators.</p>
+<p>Sector rules and decisions that affect individuals directly call for their own evaluation setting. A shorter turnaround, a high automated-approval rate and fewer human hours are three different things, and none of them substitutes for the other two.</p>
+</details>
 </section>
 
 <section class="post-section" id="conclusion">
-<span class="post-num">14 / Conclusion</span>
+<span class="post-num">14 / What to do with this</span>
+<h2>Five decisions before you delegate a gate</h2>
 
-<h2>What the study establishes—and what remains to be tested</h2>
+<p>The agents completed 5,094 scored reviews across 899 project routes. The best model took every decision correctly, most of its reviews met all five criteria, and its main weakness was the evidence trail, which is a tooling problem. Repeat runs showed variance you have to measure, and the authorization tool refused hundreds of approvals the agent was not entitled to. Everything else in this article follows from those facts. Here is what I would do with them.</p>
 
-<p>DGF-Bench shows agents carrying out reviews of fictional projects with defined access to documents, facts and rules. The best-performing model makes every correct decision in the evaluated sample, but not every review meets all five criteria. Exact source citations and consistency across repeated runs remain weaknesses. <a class="post-cite" href="#src-6">[6]</a><a class="post-cite" href="#src-8">[8]</a></p>
-
-<div class="post-table-wrap"><table class="post-table"><thead><tr><th>Type of conclusion</th><th>What the presentations support</th></tr></thead><tbody><tr><td class="wrap">Measured in the experiment</td><td>Agents completed 5,094 scored reviews across 899 project runs. Decision accuracy, strict review success and complete-route success are distinct measures.</td></tr><tr><td class="wrap">Calculated under assumptions</td><td>Depending on the working arrangements, the 140-FTE example can result in roughly 44 or 169 FTE. Long-term automation levels and dates are illustrative.</td></tr><tr><td class="wrap">Predicted by the author</td><td>At least an 80% reduction in FTE for comparable work by 20 September 2033; in the longer term, automation of every review and its supervision.</td></tr><tr><td class="wrap">Not established by these tests</td><td>Superiority to human specialists, real-company hours saved, the practical effectiveness of requested corrections or the order in which sectors will adopt AI.</td></tr></tbody></table></div>
-
-<p>The presentations describe the release of project files, agent responses, tool-use logs, scoring code and cost records. They explain that the reported results can be recalculated from those materials without making new paid calls to the models. <a class="post-cite" href="#src-14">[14]</a></p>
-
-<blockquote>The review remains mandatory. The questions are who performs it, what information they can access, which decisions they may make—and how much work they leave for everyone else.</blockquote>
-</section>
-
-<section class="post-section" id="sources">
-<span class="post-num">Trace the claims to the documents</span>
-
-<h2 id="sources">Sources and reading notes</h2>
-
-<p>This article adapts the two supplied presentations, in English and French. Its figures, examples and hypotheses come from those documents; it does not report a new experiment or an independent audit of the code repository. Charts have been redrawn from the values in the presentations.</p>
-
-<p class="post-table-note"><strong>Source documents:</strong><br/>The_Last_Human_Gate_Research_Paper(1).pptx<br/>The_Last_Human_Gate_Research_Paper_FR(1)(2).pptx</p>
-
-<ol class="post-sources">
-<li id="src-1"><strong>Starting point and the FDE role</strong> Slides 1–4 of the English and French presentations. Role definition, research question and distinction between the experiment and the broader hypothesis.</li>
-<li id="src-2"><strong>Routes and the eight reviews</strong> Slides 5–6. Buy, Integrate and Build routes, the five decisions and the questions addressed by each review.</li>
-<li id="src-3"><strong>Conditions for substitution and the FDE role</strong> Slides 7–8. Information access, review quality, authority and a net reduction in human work.</li>
-<li id="src-4"><strong>Dataset and test protocol</strong> Slides 9, 12–13 and their notes. Generated projects, accessible information, settings, dates, volumes and costs. Original architecture image extracted from slide 12.</li>
-<li id="src-5"><strong>Authorization and scoring</strong> Slides 9–11, especially the detailed account of the answer file. The presentations refer to synthetic_environment.py, score_submission.py and openrouter_eval/benchmark_runner.py.</li>
-<li id="src-6"><strong>Main results and errors</strong> Slides 15–16 and the underlying chart values. The presentations refer to paper tables 8–9 and PAPER_RESULTS.md. Rates are reproduced; the scores have not been recalculated.</li>
-<li id="src-7"><strong>Falcon and Meridian examples</strong> Slide 17 and notes. Projects DGF-BLD-035200_build and DGF-BLD-035201_build. The presentation describes these as examples selected after evaluation.</li>
-<li id="src-8"><strong>Repeat tests, authorization and execution logs</strong> Slides 14 and 18; the note to slide 16 for serious errors. The presentations refer to paper section 6.6 and table 10. Original console image extracted from slide 14.</li>
-<li id="src-9"><strong>Inaccessible information</strong> Slide 19. Two variants with identical text in all 26 Word documents; supplier-check status differs in a CSV record.</li>
-<li id="src-10"><strong>Measuring human work</strong> Slide 20 and notes. Workload equation, longer remaining cases, corrections and maintenance; refers to paper section 4.</li>
-<li id="src-11"><strong>Four organizational scenarios</strong> Slide 21 and chart data: 140, 43.52, 85.32, 89.07 and 168.92 FTE. Illustrative assumptions, not company measurements.</li>
-<li id="src-12"><strong>Longer study: levels, timing and hypotheses</strong> Slides 22–24. The presentations refer to appendix E and sections 8, 15 and 17.7 of the longer study. H6 follows the more detailed formulation in the English presentation.</li>
-<li id="src-13"><strong>The 2033 prediction and implications for work</strong> Slides 25–27. Scope of labor, failure criteria and external examples. The English version supplies the enrollment status and the distinction between baseline periods.</li>
-<li id="src-14"><strong>Conclusion and access to data and code</strong> Slides 28–30. Experimental limits, links to both papers, project data, logs, scoring and reproduction information.</li>
+<ol class="post-decisions">
+  <li><strong>Write the gate contract before writing a prompt.</strong> Name the inputs the reviewer may use, the policy version, the mandate, the five expected outputs and the population of dossiers, difficult cases and legitimate refusals included.</li>
+  <li><strong>Connect the authoritative records.</strong> Project A and Project B differ by one CSV field. If the agent cannot read it or ask for it, no model will save you. Decide what it may read and what it must do when a fact is missing.</li>
+  <li><strong>Keep the authority outside the model.</strong> The agent proposes; a deterministic check grants or refuses; the refusal is logged. Gemini asked 864 times and was refused 466 times. That refusal is the safety mechanism.</li>
+  <li><strong>Attach the evidence by tool, not by quotation.</strong> Meridian failed on the order of two fields in a quotation. An evidence service that copies the source value and its location fixes the largest single cause of failure.</li>
+  <li><strong>Count hours, not cases.</strong> Follow the same dossiers before and after, including exceptions, verification, corrections and platform support. Decide which of the four staffing scenarios you are building, then announce a headcount figure.</li>
 </ol>
 
-<details><summary>Notes on the source materials</summary><p>The description of scoring follows the detailed explanation on slides 9–11: the program creates the projects and computes the test answers without a human evaluator. A “correct decision” means the decision required by this test, not an independent judgment from a panel of specialists.</p>
-<p>The two versions do not always provide the same level of detail. The more precise wording of H6, the 2026 baseline and the absence of an enrolled company are attributed to the English version in the source notes above.</p>
-<p>The original architecture diagram is titled “Secure Vendor Portal,” while the presentation commentary describes Falcon as an HR portal. The image is unchanged; the narrative simply uses “Project Falcon.” Some older French notes still refer to a pending arXiv submission, while the slides already display arXiv:2609.29345. The links below follow those displayed in the presentations.</p></details>
+<p>Start with the reviews whose rules are already written and whose facts are already structured, put a conventional rules engine at their core, and let the agent read, investigate and propose around it. Run the same dossiers several times before you trust the average. Then measure the hours. That is the sequence that turns a benchmark score into a governance function that costs less to run and still holds.</p>
 
-<p class="post-table-note">The following links are those given in the presentations:</p>
+<blockquote>The review remains mandatory. The questions are who performs it, what information they can access, which decisions they may make, and how much work they leave for everyone else.</blockquote>
+</section>
+
+<h2 id="sources">Read the paper, run the benchmark</h2>
 
 <div class="post-links">
-<a class="post-link" href="https://arxiv.org/abs/2609.29345" target="_blank" rel="noopener noreferrer"><strong>Read the paper on arXiv <span aria-hidden="true">↗</span></strong><small>The Last Human Gate · arXiv:2609.29345</small></a>
-<a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench" target="_blank" rel="noopener noreferrer"><strong>Explore DGF-Bench <span aria-hidden="true">↗</span></strong><small>Code, data and execution logs</small></a>
-<a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench/blob/main/paper2/From_Governance_Reviews_to_Task_Substitution.pdf" target="_blank" rel="noopener noreferrer"><strong>Open the 28-page paper <span aria-hidden="true">↗</span></strong><small>Research paper linked in the presentations</small></a>
-<a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench/blob/main/paper/The_Last_Human_Gate.pdf" target="_blank" rel="noopener noreferrer"><strong>Open the longer 66-page study <span aria-hidden="true">↗</span></strong><small>Hypotheses, objections and long-term scenarios</small></a>
+  <a class="post-link" href="https://arxiv.org/abs/2609.29345" target="_blank" rel="noopener noreferrer"><strong>The paper on arXiv <span aria-hidden="true">↗</span></strong><small>The Last Human Gate · arXiv:2609.29345 · 28 pages</small></a>
+  <a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench" target="_blank" rel="noopener noreferrer"><strong>DGF-Bench on GitHub <span aria-hidden="true">↗</span></strong><small>Code, the 300 dossiers, execution logs, scores and cost ledgers</small></a>
+  <a class="post-link" href="https://github.com/jeremy1392/dgf-agentic-bench/blob/main/paper/The_Last_Human_Gate.pdf" target="_blank" rel="noopener noreferrer"><strong>The extended study, 66 pages <span aria-hidden="true">↗</span></strong><small>Hypotheses, objections and the long-term scenarios</small></a>
+  <a class="post-link" href="../../The_Last_Human_Gate_Research_Paper.pdf" download="The_Last_Human_Gate_Research_Paper.pdf"><strong>The 30-slide deck (PDF)</strong><small>The slides shown at the top of this article</small></a>
 </div>
-</section>
+
+<p class="post-table-note">Every number in this article can be recomputed from the released dossiers, traces and scoring code without new paid model calls. Models are named by their endpoint identifiers as served on 22 to 24 September 2026. The FTE scenarios and the 2033 prediction are declared assumptions and a dated forecast, to be tested against recorded working hours.</p>
 
         <div class="post-end">
           <a class="btn btn-primary" href="../../The_Last_Human_Gate_Research_Paper.pdf" download="The_Last_Human_Gate_Research_Paper.pdf">
