@@ -1334,6 +1334,9 @@ html[dir="rtl"] .pub-item:hover { transform: translateX(-4px); }
 .contrib-stats b { font-weight: 600; }
 .contrib-stats .add { color: var(--green); }
 .contrib-stats .del { color: var(--rose); }
+/* Several destinations for one entry (site, package registry, repository) stay grouped
+   on the right of the card footer instead of being spread by the parent's space-between. */
+.contrib-links { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px 18px; }
 .contrib-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.86rem; font-weight: 600; color: var(--cyan); }
 .contrib-link svg { width: 14px; height: 14px; }
 .contrib-link:hover { color: var(--cyan-soft); }
