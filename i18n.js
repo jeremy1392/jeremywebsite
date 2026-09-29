@@ -16,6 +16,37 @@ window.I18N = {
     brand:  { tag: "Agentic Security" },
     nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Work with me" },
     /* Research paper: The Last Human Gate (arXiv 2609.29345) with its 30-slide deck. Newest post. */
+    /* arXiv papers. `external: true` keeps the absolute URL as is and opens it in a new tab;
+       `slug` replaces the anchor id that slugOf() would otherwise read from the path.
+       Titles stay in English in every locale: a paper's title is its citation. */
+    paperBench: {
+      kicker: "Research paper · arXiv",
+      date: "29 September 2026",
+      dateISO: "2026-09-29",
+      title: "DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards",
+      desc: "A board of agents reviews synthetic dossiers under 61 executable rules while an attacker plants deceptive content in the evidence the organization does not vouch for. Attacks that imitate the organization's own process passed against four of six models; direct orders and false authority almost never did.",
+      note: "arXiv:2609.34913 · cs.AI · open source package dgf-bench",
+      cta: "Read on arXiv",
+      url: "https://arxiv.org/abs/2609.34913",
+      external: true,
+      slug: "paper-dgf-bench",
+      cover: "images/paper-dgf-bench-arxiv.jpg",
+      variant: "signal"
+    },
+    paperGate: {
+      kicker: "Research paper · arXiv",
+      date: "24 September 2026",
+      dateISO: "2026-09-24",
+      title: "The Last Human Gate: Forward Deployed Engineering for Governance Automation",
+      desc: "A task-substitution framework for Digital Governance Frameworks, treating each gate as an executable contract, with a residual-work threshold that explains why automating most cases can still increase total human work. Measured on 300 synthetic projects and 899 evaluable runs.",
+      note: "arXiv:2609.29345 · cs.AI · 28 pages",
+      cta: "Read on arXiv",
+      url: "https://arxiv.org/abs/2609.29345",
+      external: true,
+      slug: "paper-last-human-gate",
+      cover: "images/paper-last-human-gate-arxiv.jpg",
+      variant: "signal"
+    },
     paper: {
       kicker: "Agentic security · Research paper",
       date: "25 September 2026",
@@ -319,6 +350,37 @@ window.I18N = {
     brand:  { tag: "Sécurité Agentique" },
     nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Collaborer" },
     /* Article de recherche : The Last Human Gate (arXiv 2609.29345) et son deck de 30 slides. Article le plus récent. */
+    /* Articles arXiv. `external: true` conserve l'URL absolue et ouvre un nouvel onglet ;
+       `slug` remplace l'identifiant d'ancre que slugOf() tirerait du chemin.
+       Les titres restent en anglais dans toutes les langues : le titre d'un article est sa citation. */
+    paperBench: {
+      kicker: "Article de recherche · arXiv",
+      date: "29 septembre 2026",
+      dateISO: "2026-09-29",
+      title: "DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards",
+      desc: "Un comité d'agents examine des dossiers de synthèse sous 61 règles exécutables, pendant qu'un attaquant glisse du contenu trompeur dans les pièces dont l'organisation ne se porte pas garante. Les attaques qui imitent le processus interne ont réussi contre quatre modèles sur six ; les ordres directs et les fausses autorités, presque jamais.",
+      note: "arXiv:2609.34913 · cs.AI · paquet open source dgf-bench · en anglais",
+      cta: "Lire sur arXiv",
+      url: "https://arxiv.org/abs/2609.34913",
+      external: true,
+      slug: "paper-dgf-bench",
+      cover: "images/paper-dgf-bench-arxiv.jpg",
+      variant: "signal"
+    },
+    paperGate: {
+      kicker: "Article de recherche · arXiv",
+      date: "24 septembre 2026",
+      dateISO: "2026-09-24",
+      title: "The Last Human Gate: Forward Deployed Engineering for Governance Automation",
+      desc: "Un cadre de substitution des tâches pour les cadres de gouvernance numérique, où chaque jalon devient un contrat exécutable, avec un seuil de travail résiduel qui explique pourquoi automatiser la majorité des cas peut malgré tout augmenter la charge humaine. Mesuré sur 300 projets fictifs et 899 exécutions évaluables.",
+      note: "arXiv:2609.29345 · cs.AI · 28 pages · en anglais",
+      cta: "Lire sur arXiv",
+      url: "https://arxiv.org/abs/2609.29345",
+      external: true,
+      slug: "paper-last-human-gate",
+      cover: "images/paper-last-human-gate-arxiv.jpg",
+      variant: "signal"
+    },
     paper: {
       kicker: "Sécurité agentique · Article de recherche",
       date: "25 septembre 2026",

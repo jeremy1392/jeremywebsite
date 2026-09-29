@@ -125,6 +125,14 @@ function slugOf(url) {
   return String(url).replace(/^\/+|\/+$/g, '').split('/')[0] || 'resource';
 }
 
+/* An entry marked `external: true` points outside the site (an arXiv paper, say).
+   Its URL is absolute, so it must not be prefixed with the path back to the site root,
+   it opens in a new tab, and it carries its own `slug` because slugOf() reads a path. */
+function entryHref(g, prefix) { return g.external ? g.url : prefix + g.url; }
+function entryTarget(g) { return g.external ? ' target="_blank" rel="noopener noreferrer"' : ''; }
+function entryAbsUrl(g) { return g.external ? g.url : `${BASE_URL}/${g.url}`; }
+function entrySlug(g) { return g.slug || slugOf(g.url); }
+
 /* Remove a previously injected guide block (nav link + banner) so injection stays idempotent
    and index.html, which is both the English output and the source of the other locales,
    never carries two banners or a banner in the wrong language. */
@@ -164,18 +172,19 @@ function injectGuideNavLink(html, dict, prefix) {
 /* Render one banner (survival kit, incident post-mortem, ...) above the first section.
    `g.date` / `g.dateISO` add a publication date, `g.variant` picks the accent. */
 function injectBanner(html, g, prefix) {
-  const url = prefix + g.url;
+  const url = entryHref(g, prefix);
+  const anchor = entrySlug(g);
   const banner = `    <!-- guide:start -->
     <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
-    <section class="resource-banner${g.variant ? ' resource-banner-' + g.variant : ''}" id="${slugOf(g.url)}" aria-labelledby="${slugOf(g.url)}-title">
-      <a class="resource-banner-inner" href="${url}">
+    <section class="resource-banner${g.variant ? ' resource-banner-' + g.variant : ''}" id="${anchor}" aria-labelledby="${anchor}-title">
+      <a class="resource-banner-inner" href="${url}"${entryTarget(g)}>
         <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
         <div class="resource-banner-text">
           <div class="resource-banner-head">
             <span class="resource-banner-kicker">${escapeHtml(g.kicker)}</span>
             ${g.date ? `<time class="resource-banner-date" datetime="${escapeHtml(g.dateISO || '')}">${escapeHtml(g.date)}</time>` : ''}
           </div>
-          <h2 id="${slugOf(g.url)}-title">${escapeHtml(g.title)}</h2>
+          <h2 id="${anchor}-title">${escapeHtml(g.title)}</h2>
           <p>${escapeHtml(g.desc)}</p>
           <span class="resource-banner-note">${escapeHtml(g.note)}</span>
         </div>
@@ -628,7 +637,7 @@ function buildRoot() {
 /* ---------- BLOG INDEX (fr + en) ---------- */
 /* One page per locale that declares a `blog` block, listing the paper, soc, analysis, incident and
    guide entries (newest first) with the same data as the home banners, plus an RSS feed next to it. */
-function blogPosts(dict) { return [dict.paper, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
+function blogPosts(dict) { return [dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
 
 function renderBlogPage(lang) {
   const dict = I18N[lang], bl = dict.blog;
@@ -647,7 +656,7 @@ function renderBlogPage(lang) {
     "@context": "https://schema.org", "@type": "Blog", "@id": url, "url": url,
     "name": bl.heading, "description": bl.metaDesc, "inLanguage": lang, "author": person, "publisher": person,
     "blogPost": posts.map(g => ({
-      "@type": "BlogPosting", "headline": g.title, "description": g.desc, "url": `${BASE_URL}/${g.url}`,
+      "@type": "BlogPosting", "headline": g.title, "description": g.desc, "url": entryAbsUrl(g),
       "datePublished": g.dateISO, "image": `${BASE_URL}/${g.cover}`, "inLanguage": lang, "author": person
     }))
   };
@@ -656,7 +665,7 @@ function renderBlogPage(lang) {
     { "@type": "ListItem", "position": 2, "name": bl.nav, "item": url } ] };
   const cards = posts.map(g => `
         <article class="blog-card">
-          <a class="resource-banner-inner${g.variant ? ' resource-banner-' + g.variant : ''}" href="${prefix + g.url}">
+          <a class="resource-banner-inner${g.variant ? ' resource-banner-' + g.variant : ''}" href="${entryHref(g, prefix)}"${entryTarget(g)}>
             <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
             <div class="resource-banner-text">
               <div class="resource-banner-head">
@@ -831,8 +840,8 @@ function renderBlogFeed(lang) {
   const url = `${BASE_URL}/${bl.url}`;
   const items = blogPosts(dict).map(g => `    <item>
       <title>${escapeXml(g.title)}</title>
-      <link>${BASE_URL}/${g.url}</link>
-      <guid isPermaLink="true">${BASE_URL}/${g.url}</guid>
+      <link>${entryAbsUrl(g)}</link>
+      <guid isPermaLink="true">${entryAbsUrl(g)}</guid>
       <pubDate>${new Date(g.dateISO + 'T09:00:00+02:00').toUTCString()}</pubDate>
       <description>${escapeXml(g.desc)}</description>
     </item>`).join('\n');

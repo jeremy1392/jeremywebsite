@@ -7,11 +7,25 @@
     <language>en</language>
     <atom:link href="https://jeremycanale.com/blog/en/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards</title>
+      <link>https://arxiv.org/abs/2609.34913</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2609.34913</guid>
+      <pubDate>Tue, 29 Sep 2026 07:00:00 GMT</pubDate>
+      <description>A board of agents reviews synthetic dossiers under 61 executable rules while an attacker plants deceptive content in the evidence the organization does not vouch for. Attacks that imitate the organization's own process passed against four of six models; direct orders and false authority almost never did.</description>
+    </item>
+    <item>
       <title>Can AI take over the reviews that decide a project’s future?</title>
       <link>https://jeremycanale.com/last-human-gate/en/</link>
       <guid isPermaLink="true">https://jeremycanale.com/last-human-gate/en/</guid>
       <pubDate>Fri, 25 Sep 2026 07:00:00 GMT</pubDate>
       <description>I ran an AI agent through 300 fictional projects to see whether it can carry out the reviews that decide a project’s future, all the way to the decision. It can, under conditions. The harder question is how much human work remains.</description>
+    </item>
+    <item>
+      <title>The Last Human Gate: Forward Deployed Engineering for Governance Automation</title>
+      <link>https://arxiv.org/abs/2609.29345</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2609.29345</guid>
+      <pubDate>Thu, 24 Sep 2026 07:00:00 GMT</pubDate>
+      <description>A task-substitution framework for Digital Governance Frameworks, treating each gate as an executable contract, with a residual-work threshold that explains why automating most cases can still increase total human work. Measured on 300 synthetic projects and 899 evaluable runs.</description>
     </item>
     <item>
       <title>SOC and Blue Teaming: two applied AI use cases for security operations</title>
