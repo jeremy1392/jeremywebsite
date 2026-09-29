@@ -131,8 +131,9 @@ window.I18N = {
       rotorPrefix: "I architect",
       sub: "Twelve years securing the world's most regulated industries, banking, insurance, defense. Now building the security perimeter for autonomous AI agents, MCP infrastructure and the cloud platforms they run on.",
       cta1: "Engage Jeremy",
-      cta2: "LinkedIn Profile",
-      cta3: "Malt Profile",
+      cta2: "LinkedIn",
+      cta3: "Malt",
+      cta4: "Google Scholar",
       meta1Value: "12+", meta1Label: "years in cyber",
       meta2Value: "8",   meta2Label: "Fortune-500 clients",
       meta3Value: "25+", meta3Label: "industry certifications",
@@ -335,6 +336,7 @@ window.I18N = {
       desc: "Boards, CISOs, insurers and AI platform teams, if you're shipping autonomous agents, multi-cloud workloads or building cyber-underwriting capability, I can help.",
       linkedin: "LinkedIn",
       malt: "Malt",
+      scholar: "Google Scholar",
       loc1: "Singapore", loc2: "Dubai", loc3: "Paris", loc4: "Palo Alto"
     },
 
@@ -466,8 +468,9 @@ window.I18N = {
       rotorPrefix: "Je conçois",
       sub: "Douze ans à sécuriser les industries les plus régulées au monde, banque, assurance, défense. Aujourd'hui je construis le périmètre de sécurité des agents IA autonomes, des infrastructures MCP et des plateformes cloud qui les supportent.",
       cta1: "Me solliciter",
-      cta2: "Profil LinkedIn",
-      cta3: "Profil Malt",
+      cta2: "LinkedIn",
+      cta3: "Malt",
+      cta4: "Google Scholar",
       meta1Value: "12+", meta1Label: "ans en cybersécurité",
       meta2Value: "8",   meta2Label: "clients Fortune-500",
       meta3Value: "25+", meta3Label: "certifications",
@@ -670,6 +673,7 @@ window.I18N = {
       desc: "Conseils d'administration, CISOs, assureurs, équipes plateforme IA, si vous déployez des agents autonomes, des workloads multi-cloud ou bâtissez une capacité de cyber-underwriting, je peux vous aider.",
       linkedin: "LinkedIn",
       malt: "Malt",
+      scholar: "Google Scholar",
       loc1: "Singapour", loc2: "Dubaï", loc3: "Paris", loc4: "Palo Alto"
     },
 
@@ -691,8 +695,9 @@ window.I18N = {
       rotorPrefix: "我设计",
       sub: "十二年深耕全球最受监管的行业银行、保险与国防。如今，我为自主 AI 智能体、MCP 基础设施以及承载它们的云平台构建全新的安全边界。",
       cta1: "联系合作",
-      cta2: "LinkedIn 主页",
-      cta3: "Malt 主页",
+      cta2: "LinkedIn",
+      cta3: "Malt",
+      cta4: "Google Scholar",
       meta1Value: "12+", meta1Label: "年网络安全经验",
       meta2Value: "8",   meta2Label: "财富 500 强客户",
       meta3Value: "25+", meta3Label: "行业认证",
@@ -895,6 +900,7 @@ window.I18N = {
       desc: "董事会、CISO、保险公司与 AI 平台团队如果您正在落地自主智能体、多云负载或构建网络承保能力，我可以提供帮助。",
       linkedin: "LinkedIn",
       malt: "Malt",
+      scholar: "Google Scholar",
       loc1: "新加坡", loc2: "迪拜", loc3: "巴黎", loc4: "帕罗奥图"
     },
 
@@ -916,8 +922,9 @@ window.I18N = {
       rotorPrefix: "أُصمِّم",
       sub: "اثنا عشر عامًا في تأمين أكثر القطاعات تنظيمًا في العالم, البنوك والتأمين والدفاع. واليوم أُؤسِّس محيط الأمن لوكلاء الذكاء الاصطناعي المستقلين، وبنية MCP التحتية، والمنصات السحابية التي تُشغِّلهم.",
       cta1: "تواصل معي",
-      cta2: "الملف الشخصي على LinkedIn",
-      cta3: "الملف الشخصي على Malt",
+      cta2: "LinkedIn",
+      cta3: "Malt",
+      cta4: "Google Scholar",
       meta1Value: "+12", meta1Label: "عامًا في الأمن السيبراني",
       meta2Value: "8",   meta2Label: "عملاء Fortune 500",
       meta3Value: "+25", meta3Label: "شهادة مهنية",
@@ -1120,6 +1127,7 @@ window.I18N = {
       desc: "مجالس الإدارة، مدراء أمن المعلومات، شركات التأمين، وفرق منصات الذكاء الاصطناعي, إن كنت تُطلق وكلاء مستقلين أو أحمال عمل متعددة السحب أو تبني قدرة اكتتاب سيبراني، يمكنني المساعدة.",
       linkedin: "LinkedIn",
       malt: "Malt",
+      scholar: "Google Scholar",
       loc1: "سنغافورة", loc2: "دبي", loc3: "باريس", loc4: "بالو ألتو"
     },
 
