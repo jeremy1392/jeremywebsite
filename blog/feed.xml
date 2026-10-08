@@ -7,6 +7,13 @@
     <language>fr</language>
     <atom:link href="https://jeremycanale.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements</title>
+      <link>https://arxiv.org/abs/2610.08540</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2610.08540</guid>
+      <pubDate>Tue, 06 Oct 2026 07:00:00 GMT</pubDate>
+      <description>L'alignement devient-il plus simple ou plus difficile à mesure que les modèles grandissent ? Le traiter comme une propriété unique masque la réponse. Mesurée risque par risque, la charge nécessaire pour tenir un objectif de sûreté suit son propre exposant, et c'est le risque corrigé qui croît le plus vite qui fixe le régime. Deux mesures préenregistrées, sur Pythia et sur Qwen2.5 de 0,5 à 72 milliards de paramètres.</description>
+    </item>
+    <item>
       <title>DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards</title>
       <link>https://arxiv.org/abs/2609.34913</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2609.34913</guid>

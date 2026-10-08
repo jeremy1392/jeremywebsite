@@ -7,6 +7,13 @@
     <language>en</language>
     <atom:link href="https://jeremycanale.com/blog/en/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements</title>
+      <link>https://arxiv.org/abs/2610.08540</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2610.08540</guid>
+      <pubDate>Tue, 06 Oct 2026 07:00:00 GMT</pubDate>
+      <description>Does alignment get easier or harder as models grow? Treating it as one property hides the answer. Measured per risk, the burden of holding a safety target follows its own scaling exponent, and the fastest-growing corrected risk sets the long-run regime. Two preregistered measurements, on Pythia and on Qwen2.5 from 0.5B to 72B.</description>
+    </item>
+    <item>
       <title>DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards</title>
       <link>https://arxiv.org/abs/2609.34913</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2609.34913</guid>

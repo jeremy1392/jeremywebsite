@@ -2230,6 +2230,7 @@ html[dir="rtl"] .guide-callout { border-radius: var(--radius) 0 0 var(--radius);
   padding: 0 var(--pad-x) clamp(24px, 4vw, 48px);
 }
 .resource-banner-inner {
+  position: relative;   /* ancre l'overlay du lien de titre */
   display: grid;
   grid-template-columns: 220px 1fr auto;
   gap: clamp(18px, 3vw, 36px);
@@ -2283,6 +2284,30 @@ html[dir="rtl"] .guide-callout { border-radius: var(--radius) 0 0 var(--radius);
   color: var(--text-mute);
 }
 .resource-banner-cta { flex-shrink: 0; }
+
+/* The title carries the card's link and stretches over the whole card, so the card stays
+   clickable as a whole without wrapping everything in one anchor. */
+.resource-banner-link { color: inherit; }
+.resource-banner-link::after { content: ""; position: absolute; inset: 0; }
+/* The CTA is a span sitting under that overlay, so it never receives :hover of its own:
+   the card's hover drives it instead. */
+.resource-banner-inner:hover .resource-banner-cta { transform: translateY(-1px); box-shadow: 0 10px 36px rgba(34, 211, 238, 0.55); }
+
+/* Second destination, raised above the title overlay so it keeps its own click. */
+.resource-banner-extra {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 10px 0 0 !important;
+  font-size: 0.84rem;
+}
+.resource-banner-extra a { color: var(--cyan); font-weight: 600; border-bottom: 1px solid rgba(34, 211, 238, 0.35); }
+.resource-banner-extra a:hover { color: var(--cyan-soft); border-bottom-color: var(--cyan); }
+.resource-banner-extra span { color: var(--text-mute); }
+
 @media (max-width: 1023px) {
   .resource-banner-inner { grid-template-columns: 180px 1fr; }
   .resource-banner-cta   { grid-column: 2; justify-self: start; }

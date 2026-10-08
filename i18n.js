@@ -19,6 +19,21 @@ window.I18N = {
     /* arXiv papers. `external: true` keeps the absolute URL as is and opens it in a new tab;
        `slug` replaces the anchor id that slugOf() would otherwise read from the path.
        Titles stay in English in every locale: a paper's title is its citation. */
+    paperAlign: {
+      kicker: "Research paper · arXiv",
+      date: "6 October 2026",
+      dateISO: "2026-10-06",
+      title: "Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements",
+      desc: "Does alignment get easier or harder as models grow? Treating it as one property hides the answer. Measured per risk, the burden of holding a safety target follows its own scaling exponent, and the fastest-growing corrected risk sets the long-run regime. Two preregistered measurements, on Pythia and on Qwen2.5 from 0.5B to 72B.",
+      note: "arXiv:2610.08540 · cs.AI · preregistered protocol",
+      cta: "Read on arXiv",
+      url: "https://arxiv.org/abs/2610.08540",
+      external: true,
+      slug: "paper-alignment-scaling",
+      cover: "images/paper-alignment-scaling-arxiv.jpg",
+      variant: "signal",
+      extra: { url: "https://www.aisafety.fun/", label: "aisafety.fun", note: "Four browser games that play out these laws" }
+    },
     paperBench: {
       kicker: "Research paper · arXiv",
       date: "29 September 2026",
@@ -355,6 +370,21 @@ window.I18N = {
     /* Articles arXiv. `external: true` conserve l'URL absolue et ouvre un nouvel onglet ;
        `slug` remplace l'identifiant d'ancre que slugOf() tirerait du chemin.
        Les titres restent en anglais dans toutes les langues : le titre d'un article est sa citation. */
+    paperAlign: {
+      kicker: "Article de recherche · arXiv",
+      date: "6 octobre 2026",
+      dateISO: "2026-10-06",
+      title: "Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements",
+      desc: "L'alignement devient-il plus simple ou plus difficile à mesure que les modèles grandissent ? Le traiter comme une propriété unique masque la réponse. Mesurée risque par risque, la charge nécessaire pour tenir un objectif de sûreté suit son propre exposant, et c'est le risque corrigé qui croît le plus vite qui fixe le régime. Deux mesures préenregistrées, sur Pythia et sur Qwen2.5 de 0,5 à 72 milliards de paramètres.",
+      note: "arXiv:2610.08540 · cs.AI · protocole préenregistré · en anglais",
+      cta: "Lire sur arXiv",
+      url: "https://arxiv.org/abs/2610.08540",
+      external: true,
+      slug: "paper-alignment-scaling",
+      cover: "images/paper-alignment-scaling-arxiv.jpg",
+      variant: "signal",
+      extra: { url: "https://www.aisafety.fun/", label: "aisafety.fun", note: "Quatre jeux en ligne qui font jouer ces lois" }
+    },
     paperBench: {
       kicker: "Article de recherche · arXiv",
       date: "29 septembre 2026",

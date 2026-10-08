@@ -133,6 +133,14 @@ function entryTarget(g) { return g.external ? ' target="_blank" rel="noopener no
 function entryAbsUrl(g) { return g.external ? g.url : `${BASE_URL}/${g.url}`; }
 function entrySlug(g) { return g.slug || slugOf(g.url); }
 
+/* Some entries have a second destination (a paper and the site that demonstrates it).
+   It sits inside the card, above the title's stretched overlay, so it stays clickable. */
+function entryExtra(g, indent) {
+  if (!g.extra) return '';
+  return `
+${indent}<p class="resource-banner-extra"><a href="${g.extra.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(g.extra.label)}</a><span>${escapeHtml(g.extra.note)}</span></p>`;
+}
+
 /* Remove a previously injected guide block (nav link + banner) so injection stays idempotent
    and index.html, which is both the English output and the source of the other locales,
    never carries two banners or a banner in the wrong language. */
@@ -177,22 +185,22 @@ function injectBanner(html, g, prefix) {
   const banner = `    <!-- guide:start -->
     <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
     <section class="resource-banner${g.variant ? ' resource-banner-' + g.variant : ''}" id="${anchor}" aria-labelledby="${anchor}-title">
-      <a class="resource-banner-inner" href="${url}"${entryTarget(g)}>
+      <div class="resource-banner-inner">
         <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
         <div class="resource-banner-text">
           <div class="resource-banner-head">
             <span class="resource-banner-kicker">${escapeHtml(g.kicker)}</span>
             ${g.date ? `<time class="resource-banner-date" datetime="${escapeHtml(g.dateISO || '')}">${escapeHtml(g.date)}</time>` : ''}
           </div>
-          <h2 id="${anchor}-title">${escapeHtml(g.title)}</h2>
+          <h2 id="${anchor}-title"><a class="resource-banner-link" href="${url}"${entryTarget(g)}>${escapeHtml(g.title)}</a></h2>
           <p>${escapeHtml(g.desc)}</p>
-          <span class="resource-banner-note">${escapeHtml(g.note)}</span>
+          <span class="resource-banner-note">${escapeHtml(g.note)}</span>${entryExtra(g, '          ')}
         </div>
         <span class="btn btn-primary resource-banner-cta">
           <span>${escapeHtml(g.cta)}</span>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </span>
-      </a>
+      </div>
     </section>
     <!-- guide:end -->
 
@@ -637,7 +645,7 @@ function buildRoot() {
 /* ---------- BLOG INDEX (fr + en) ---------- */
 /* One page per locale that declares a `blog` block, listing the paper, soc, analysis, incident and
    guide entries (newest first) with the same data as the home banners, plus an RSS feed next to it. */
-function blogPosts(dict) { return [dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
+function blogPosts(dict) { return [dict.paperAlign, dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
 
 function renderBlogPage(lang) {
   const dict = I18N[lang], bl = dict.blog;
@@ -665,22 +673,22 @@ function renderBlogPage(lang) {
     { "@type": "ListItem", "position": 2, "name": bl.nav, "item": url } ] };
   const cards = posts.map(g => `
         <article class="blog-card">
-          <a class="resource-banner-inner${g.variant ? ' resource-banner-' + g.variant : ''}" href="${entryHref(g, prefix)}"${entryTarget(g)}>
+          <div class="resource-banner-inner${g.variant ? ' resource-banner-' + g.variant : ''}">
             <img class="resource-banner-cover" src="${prefix + g.cover}" width="1200" height="627" alt="" loading="lazy" />
             <div class="resource-banner-text">
               <div class="resource-banner-head">
                 <span class="resource-banner-kicker">${escapeHtml(g.kicker)}</span>
                 ${g.date ? `<time class="resource-banner-date" datetime="${escapeHtml(g.dateISO || '')}">${escapeHtml(g.date)}</time>` : ''}
               </div>
-              <h2>${escapeHtml(g.title)}</h2>
+              <h2><a class="resource-banner-link" href="${entryHref(g, prefix)}"${entryTarget(g)}>${escapeHtml(g.title)}</a></h2>
               <p>${escapeHtml(g.desc)}</p>
-              <span class="resource-banner-note">${escapeHtml(g.note)}</span>
+              <span class="resource-banner-note">${escapeHtml(g.note)}</span>${entryExtra(g, '              ')}
             </div>
             <span class="btn btn-primary resource-banner-cta">
               <span>${escapeHtml(g.cta)}</span>
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </span>
-          </a>
+          </div>
         </article>`).join('\n');
 
   return `<!doctype html>
