@@ -3,9 +3,23 @@
   <channel>
     <title>Jeremy Canale, blog (English)</title>
     <link>https://jeremycanale.com/blog/en/</link>
-    <description>Incident analyses, architecture proposals and free resources on securing agent platforms, cloud estates and their governance.</description>
+    <description>Research papers, incident analyses and free resources on the security, alignment and governance of AI agents.</description>
     <language>en</language>
     <atom:link href="https://jeremycanale.com/blog/en/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DGF-Bench makes its way into AI SAFE²</title>
+      <link>https://jeremycanale.com/dgf-bench-ai-safe2/en/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/dgf-bench-ai-safe2/en/</guid>
+      <pubDate>Tue, 03 Nov 2026 07:00:00 GMT</pubDate>
+      <description>The Cyber Strategy Institute cites DGF-Bench in its agent governance framework as a candidate benchmark for seven controls. Which controls, which eight other works sit beside it, and why a mention is not a validation.</description>
+    </item>
+    <item>
+      <title>ReplayRCA: Measuring Post-hoc Diagnosis and Live Oversight of Agent Failures by Counterfactual Replay</title>
+      <link>https://arxiv.org/abs/2610.41025</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2610.41025</guid>
+      <pubDate>Thu, 29 Oct 2026 07:00:00 GMT</pubDate>
+      <description>When an agent fails a multi-step task, can another model find the decisive mistake and fix it with a single action? ReplayRCA scores the diagnosis by intervention rather than against annotations: the environment is restored before the chosen step, the proposed action replaces the agent's, the same agent continues, and its success rate is compared with that of a placebo replaying the original action. One of the best models at post-hoc diagnosis was the weakest at live oversight.</description>
+    </item>
     <item>
       <title>Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements</title>
       <link>https://arxiv.org/abs/2610.08540</link>

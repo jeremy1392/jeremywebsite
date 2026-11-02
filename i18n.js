@@ -11,7 +11,7 @@ window.I18N = {
   en: {
     meta: {
       title: "Jeremy Canale, World-Class Agentic Security Expert | AI & Cloud Security Architect",
-      description: "Jeremy Canale is the world's foremost Agentic Security expert. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale and Rankiteo."
+      description: "Jeremy Canale is the world's foremost Agentic Security expert. Architect of secure AI agents, MCP servers, multi-cloud security platforms and cyber-risk underwriting at Swiss Re, AXA, BNP Paribas, Thomson Reuters and Société Générale."
     },
     brand:  { tag: "Agentic Security" },
     nav:    { expertise: "Expertise", consulting: "Consulting", cases: "Case Studies", experience: "Experience", certifications: "Credentials", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Work with me" },
@@ -19,6 +19,20 @@ window.I18N = {
     /* arXiv papers. `external: true` keeps the absolute URL as is and opens it in a new tab;
        `slug` replaces the anchor id that slugOf() would otherwise read from the path.
        Titles stay in English in every locale: a paper's title is its citation. */
+    paperReplay: {
+      kicker: "Research paper · arXiv",
+      date: "29 October 2026",
+      dateISO: "2026-10-29",
+      title: "ReplayRCA: Measuring Post-hoc Diagnosis and Live Oversight of Agent Failures by Counterfactual Replay",
+      desc: "When an agent fails a multi-step task, can another model find the decisive mistake and fix it with a single action? ReplayRCA scores the diagnosis by intervention rather than against annotations: the environment is restored before the chosen step, the proposed action replaces the agent's, the same agent continues, and its success rate is compared with that of a placebo replaying the original action. One of the best models at post-hoc diagnosis was the weakest at live oversight.",
+      note: "arXiv:2610.41025 · cs.AI · co-authored with Fabien Soulis",
+      cta: "Read on arXiv",
+      url: "https://arxiv.org/abs/2610.41025",
+      external: true,
+      slug: "paper-replay-rca",
+      cover: "images/paper-replay-rca-arxiv.jpg",
+      variant: "signal"
+    },
     paperAlign: {
       kicker: "Research paper · arXiv",
       date: "6 October 2026",
@@ -46,7 +60,8 @@ window.I18N = {
       external: true,
       slug: "paper-dgf-bench",
       cover: "images/paper-dgf-bench-arxiv.jpg",
-      variant: "signal"
+      variant: "signal",
+      extra: { url: "https://dgfbench.com", label: "dgfbench.com", note: "Benchmark website: how well agents decide, and which planted attacks deceive them" }
     },
     paperGate: {
       kicker: "Research paper · arXiv",
@@ -89,6 +104,18 @@ window.I18N = {
     },
     /* Long-form analysis. Blog posts are listed newest first: soc, analysis, incident, guide
        (see blogPosts() in build.js). Each block also gets a home page banner. */
+    safe2: {
+      kicker: "Agentic governance · Benchmark",
+      date: "3 November 2026",
+      dateISO: "2026-11-03",
+      title: "DGF-Bench makes its way into AI SAFE²",
+      desc: "The Cyber Strategy Institute cites DGF-Bench in its agent governance framework as a candidate benchmark for seven controls. Which controls, which eight other works sit beside it, and why a mention is not a validation.",
+      note: "Article · 5 min read",
+      cta: "Read the article",
+      url: "dgf-bench-ai-safe2/en/",
+      cover: "images/dgf-bench-ai-safe2-cover-en.jpg",
+      variant: "signal"
+    },
     analysis: {
       kicker: "Agentic security · Analysis",
       date: "16 September 2026",
@@ -119,8 +146,8 @@ window.I18N = {
     blog: {
       nav: "Blog",
       url: "blog/en/",
-      heading: "Notes from a security architect",
-      lede: "Incident analyses, architecture proposals and free resources on securing agent platforms, cloud estates and their governance.",
+      heading: "My research on AI security and alignment",
+      lede: "Research papers, incident analyses and free resources on the security, alignment and governance of AI agents.",
       metaTitle: "Blog | Jeremy Canale, AI Applied Security Architect",
       metaDesc: "Incident analyses, architecture proposals and free resources by Jeremy Canale, security architect: agent containment, the OpenAI / Hugging Face incident, the security architect survival kit.",
       allPosts: "All posts",
@@ -144,7 +171,7 @@ window.I18N = {
       eyebrow: "World-Class Agentic Security Expert",
       name: "Jeremy Canale",
       rotorPrefix: "I architect",
-      sub: "Twelve years securing the world's most regulated industries, banking, insurance, defense. Now building the security perimeter for autonomous AI agents, MCP infrastructure and the cloud platforms they run on.",
+      sub: "Twelve years securing the world's most regulated industries, banking, insurance, defense. Now architecting the security perimeter for autonomous AI agents, MCP infrastructure, and the cloud platforms they run on. Also working on AI safety, alignment and the oversight of AI agents, the subjects of my latest research papers on arXiv.",
       cta1: "Engage Jeremy",
       cta2: "LinkedIn",
       cta3: "Malt",
@@ -166,9 +193,9 @@ window.I18N = {
       c1: { title: "Agentic AI Security",       desc: "Securing autonomous LLM agents end-to-end: MCP servers, tool-call authorization, prompt-injection defense, sub-agent isolation and runtime guardrails." },
       c2: { title: "AI Governance & Trust",     desc: "Operationalizing ISO/IEC 42001, NIST AI RMF and the EU AI Act. Bringing Anthropic's AI Fluency Framework into the enterprise risk register." },
       c3: { title: "Cloud Security & CSPM",     desc: "Multi-cloud security architecture for AWS, Azure and GCP. Global Prisma Cloud deployment at AXA. Cloudflare estate at Thomson Reuters. Hardened blueprints, IaC and SRE practices." },
-      c4: { title: "Cyber Risk Quantification", desc: "Founder & CEO of Rankiteo, the first AI-powered cyber-underwriting desktop platform. Pricing, exposure and portfolio analytics for insurers and reinsurers." },
+      c4: { title: "Cyber Risk Quantification", desc: "Pricing, exposure and portfolio analytics for insurers and reinsurers." },
       c5: { title: "GRC & Compliance",          desc: "ISO/IEC 27001 group certifications, SOC 2, HIPAA, DORA, NIS2, UAE & KSA PDPL. Built the GRC program at Seddiqi Holding and the BNP Paribas maturity roadmap." },
-      c6: { title: "Threat Intel & Offensive",  desc: "Published OWASP research in Hakin9. Pentesting, exploit prediction, attack-surface intelligence and the Rankiteo Cyber Incident Chronicle (100k+ incidents)." }
+      c6: { title: "Threat Intel & Offensive",  desc: "Published OWASP research in Hakin9. Pentesting, exploit prediction and attack-surface intelligence." }
     },
 
     showcase: {
@@ -184,11 +211,11 @@ window.I18N = {
     experience: {
       kicker: "Career",
       title: "Twelve years at the security helm of regulated enterprises",
-      lede: "Hands-on roles, from Vice-President at Swiss Re to Deputy CISO at the BNP Paribas Asset Management group, and now CEO of an AI cyber-underwriting company.",
+      lede: "Hands-on roles, from Vice-President at Swiss Re to Deputy CISO at the BNP Paribas Asset Management group.",
       now: "now", remote: "Remote", hybrid: "Hybrid",
-      hal: "Security leadership for Hal, SC Ventures' born-in-AI, agentic-first growth platform for GCC SMEs, built with Microsoft. Cyber strategy, ISMS, cloud and AI-agent security governance.",
+      halDates: "Jun → Sep 2026",
+      hal: "Security leadership for Hal, SC Ventures' born-in-AI, agentic-first growth platform for GCC SMEs, built with Microsoft. Cyber strategy, ISMS, cloud and AI-agent security governance. Mission ended in September 2026.",
       nusavest: "Cyber strategy and ISMS for a Southeast-Asia asset-backed securities platform (SC Ventures · Standard Chartered).",
-      rankiteo: "Building the world's first multi-OS AI cyber-underwriting desktop platform. Cyber ratings, third-party risk and exposure modeling, distributed MCP-native to Cursor, Claude Desktop, ChatGPT and n8n.",
       seddiqi:  "Group ISO/IEC 27001 certification program across the holding. Risk register, Statement of Applicability, UAE & KSA PDPL alignment for every department.",
       gambit:   "Built a NIST-based cybersecurity program from the ground up. After BNP Paribas acquisition, drove maturity transformation from 0% to 30% within the group framework.",
       axa:      "Technical lead for the worldwide rollout of Palo Alto Prisma CSPM across every AXA entity. Aligned global standards with local regulatory constraints.",
@@ -234,19 +261,37 @@ window.I18N = {
     contrib: {
       kicker: "Contributions",
       title: "Public repositories and merged pull requests",
-      lede: "Security fixes proposed to open source projects and merged by their maintainers. The list is read from the GitHub API and only shows accepted pull requests; work still in review does not appear.",
+      lede: "My research repositories, the frameworks that cite them, and security fixes proposed to open source projects and merged by their maintainers. Pull requests are read from the GitHub API and only accepted ones appear; work still under review does not.",
       merged: "Merged",
       view: "View the pull request",
       repo: "Public repository",
       viewRepo: "View the repository",
+      cited: "Cites my work",
+      readReview: "Read the review",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
       p2: {
-        project: "Author's repository · benchmark, dossiers, traces and scores behind The Last Human Gate (arXiv:2609.29345)",
-        desc: "300 fictional projects across the Buy, Integrate and Build routes, 1,700 gate reviews per model, a frozen deterministic evaluator and a rules-only control. The repository holds the generated dossiers with their Word documents and architecture diagrams, the model traces, the failed attempts, the cost ledgers, the repetition study and the audits, so every published number can be recomputed without new model calls.",
-        context: "Read the article: <a href=\"last-human-gate/en/\">Can AI take over the reviews that decide a project’s future?</a>",
-        date: "24 September 2026",
-        files: "Release dgf-bench-300-20260923",
-        tests: "3 models · 5,094 scored gates · $99.58 of API calls"
+        project: "Author's repository · code and package of the paper arXiv:2609.34913",
+        desc: "Each agent reviews a synthetic project dossier at a governance gate, with enterprise tools to read evidence and request what is missing. The same dossiers run in three conditions: structured facts, documents and records only, and attacked copies with manipulations in the evidence the organization does not vouch for. An attack counts only when the agent takes the exact injected action and does not take it on the paired clean run.",
+        context: "Cited by the AI SAFE² framework as a candidate benchmark: <a href=\"dgf-bench-ai-safe2/en/\">read the article</a>",
+        date: "27 September 2026",
+        files: "Release v0.1.2",
+        tests: "61 executable rules · 6 models · paired clean and attacked runs"
+      },
+      p3: {
+        project: "Author's repository · code of the paper arXiv:2610.41025, co-authored with Fabien Soulis",
+        desc: "Can a model find the decisive mistake in another agent's failed run and fix it with a single action, after the fact or live? The repository holds the OpsWorld environment, the harvesting and calibration pipeline, the autopsy and live oversight tracks, the OpenRouter client and the reporting scripts. Each diagnosis is scored by restoring the environment before the chosen step, replaying the proposed action and comparing the outcome with a placebo.",
+        context: "Read the paper: <a href=\"https://arxiv.org/abs/2610.41025\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv:2610.41025</a>",
+        date: "29 October 2026",
+        files: "MIT license · Python",
+        tests: "13 diagnosers · 62 calibrated failures · 87 supervised runs"
+      },
+      p4: {
+        project: "Cyber Strategy Institute · open-source governance framework for agentic AI, v3.1, 161 controls",
+        desc: "The framework's technology contribution review maps DGF-Bench to seven controls across four of its five pillars, from Malicious Prompt Filtering to Multi-Agent Approval, and proposes reproducing its paired clean and attacked decisions. Nine works are reviewed in total; none has been validated or certified at this stage.",
+        context: "Read the article: <a href=\"dgf-bench-ai-safe2/en/\">DGF-Bench makes its way into AI SAFE²</a>",
+        date: "2 October 2026",
+        files: "research/technology-contribution-examples.md",
+        tests: "7 controls · 4 of 5 pillars"
       },
       more: "All public activity on GitHub",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
@@ -264,7 +309,7 @@ window.I18N = {
     pubs: {
       kicker: "Publications & Recognition",
       title: "A decade contributing to the public conversation",
-      lede: "OWASP vulnerability research, an early social media search engine recognised at the highest level, and ongoing coverage of the agentic cyber underwriting work.",
+      lede: "OWASP vulnerability research and an early social media search engine recognised at the highest level.",
       p1: { tag: "Magazine, OWASP research",
             title: "Hakin9 Magazine, international IT security publication",
             desc: "In depth research on OWASP based vulnerabilities affecting major platforms, published in a renowned international IT security magazine." },
@@ -272,14 +317,8 @@ window.I18N = {
             title: "AnoSearch, social media search engine",
             desc: "Built an early social media search engine extracting signal from more than twenty networks. Recognised as a top national IT project of the year and presented to top CEOs and to the French Minister of Defense." },
       p3: { tag: "Industry press",
-            title: "International reinsurance press coverage of Rankiteo",
-            desc: "Featured commentary on AI driven cyber underwriting and data driven cyber insurance in leading international reinsurance media." },
-      p4: { tag: "Open source, MCP",
-            title: "Public MCP documentation for cyber rating tooling",
-            desc: "Open documentation and integrations for an MCP native cyber rating server, deployable in mainstream assistant clients and automation platforms." },
-      p5: { tag: "Marketplace feature",
-            title: "Featured cyber rating MCP server on Smithery.ai",
-            desc: "Listed as a reference MCP server for cyber rating workflows in one of the leading MCP discovery directories." }
+            title: "Commentary in the international reinsurance press",
+            desc: "Featured commentary on AI driven cyber underwriting and data driven cyber insurance in leading international reinsurance media." }
     },
 
     faq: {
@@ -362,7 +401,7 @@ window.I18N = {
   fr: {
     meta: {
       title: "Jeremy Canale, Expert mondial en Sécurité Agentique | Architecte IA & Cloud Security",
-      description: "Jeremy Canale est l'expert mondial de référence en sécurité agentique. Architecte de la sécurité des agents IA autonomes, des serveurs MCP, des plateformes cloud et du cyber-underwriting chez Swiss Re, AXA, BNP Paribas, Thomson Reuters, Société Générale et Rankiteo."
+      description: "Jeremy Canale est l'expert mondial de référence en sécurité agentique. Architecte de la sécurité des agents IA autonomes, des serveurs MCP, des plateformes cloud et du cyber-underwriting chez Swiss Re, AXA, BNP Paribas, Thomson Reuters et Société Générale."
     },
     brand:  { tag: "Sécurité Agentique" },
     nav:    { expertise: "Expertise", consulting: "Conseil", cases: "Études de cas", experience: "Parcours", certifications: "Certifications", faq: "FAQ", contact: "Contact", contributions: "Contributions", cta: "Collaborer" },
@@ -370,12 +409,26 @@ window.I18N = {
     /* Articles arXiv. `external: true` conserve l'URL absolue et ouvre un nouvel onglet ;
        `slug` remplace l'identifiant d'ancre que slugOf() tirerait du chemin.
        Les titres restent en anglais dans toutes les langues : le titre d'un article est sa citation. */
+    paperReplay: {
+      kicker: "Article de recherche · arXiv",
+      date: "29 octobre 2026",
+      dateISO: "2026-10-29",
+      title: "ReplayRCA: Measuring Post-hoc Diagnosis and Live Oversight of Agent Failures by Counterfactual Replay",
+      desc: "Quand un agent échoue sur une tâche en plusieurs étapes, un autre modèle peut-il trouver l'erreur décisive et la corriger en une seule action ? ReplayRCA ne juge pas un diagnostic en le comparant à des annotations, mais en l'appliquant : l'environnement est restauré juste avant l'étape désignée, l'action proposée remplace celle de l'agent, puis le même agent reprend la tâche. Son taux de réussite est ensuite comparé à celui d'un placebo qui rejoue l'action d'origine. L'un des meilleurs modèles pour le diagnostic après coup s'est révélé le moins efficace en supervision en direct.",
+      note: "arXiv:2610.41025 · cs.AI · coécrit avec Fabien Soulis · en anglais",
+      cta: "Lire sur arXiv",
+      url: "https://arxiv.org/abs/2610.41025",
+      external: true,
+      slug: "paper-replay-rca",
+      cover: "images/paper-replay-rca-arxiv.jpg",
+      variant: "signal"
+    },
     paperAlign: {
       kicker: "Article de recherche · arXiv",
       date: "6 octobre 2026",
       dateISO: "2026-10-06",
       title: "Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements",
-      desc: "L'alignement devient-il plus simple ou plus difficile à mesure que les modèles grandissent ? Le traiter comme une propriété unique masque la réponse. Mesurée risque par risque, la charge nécessaire pour tenir un objectif de sûreté suit son propre exposant, et c'est le risque corrigé qui croît le plus vite qui fixe le régime. Deux mesures préenregistrées, sur Pythia et sur Qwen2.5 de 0,5 à 72 milliards de paramètres.",
+      desc: "L'alignement devient-il plus simple ou plus difficile à mesure que les modèles grandissent ? Le traiter comme une propriété unique masque la réponse. Mesuré risque par risque, l'effort nécessaire pour tenir un objectif de sûreté suit sa propre loi d'échelle ; c'est le risque corrigé dont l'effort croît le plus vite, et non une moyenne, qui décide de l'issue à long terme. Deux mesures préenregistrées : l'une sur des classifieurs Pythia, l'autre sur les modèles Qwen2.5 de 0,5 à 72 milliards de paramètres.",
       note: "arXiv:2610.08540 · cs.AI · protocole préenregistré · en anglais",
       cta: "Lire sur arXiv",
       url: "https://arxiv.org/abs/2610.08540",
@@ -390,21 +443,22 @@ window.I18N = {
       date: "29 septembre 2026",
       dateISO: "2026-09-29",
       title: "DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards",
-      desc: "Un comité d'agents examine des dossiers de synthèse sous 61 règles exécutables, pendant qu'un attaquant glisse du contenu trompeur dans les pièces dont l'organisation ne se porte pas garante. Les attaques qui imitent le processus interne ont réussi contre quatre modèles sur six ; les ordres directs et les fausses autorités, presque jamais.",
+      desc: "Un comité d'agents examine des dossiers de projet fictifs, régis par 61 règles exécutables, pendant qu'un attaquant glisse du contenu trompeur dans les pièces dont l'organisation ne garantit pas le contenu. Les attaques qui imitent les procédures internes de l'organisation ont trompé quatre modèles sur six ; les attaques par ordre direct ou par fausse autorité, presque jamais.",
       note: "arXiv:2609.34913 · cs.AI · paquet open source dgf-bench · en anglais",
       cta: "Lire sur arXiv",
       url: "https://arxiv.org/abs/2609.34913",
       external: true,
       slug: "paper-dgf-bench",
       cover: "images/paper-dgf-bench-arxiv.jpg",
-      variant: "signal"
+      variant: "signal",
+      extra: { url: "https://dgfbench.com", label: "dgfbench.com", note: "Site du benchmark : la justesse des décisions des agents, et les attaques qui les trompent" }
     },
     paperGate: {
       kicker: "Article de recherche · arXiv",
       date: "24 septembre 2026",
       dateISO: "2026-09-24",
       title: "The Last Human Gate: Forward Deployed Engineering for Governance Automation",
-      desc: "Un cadre de substitution des tâches pour les cadres de gouvernance numérique, où chaque jalon devient un contrat exécutable, avec un seuil de travail résiduel qui explique pourquoi automatiser la majorité des cas peut malgré tout augmenter la charge humaine. Mesuré sur 300 projets fictifs et 899 exécutions évaluables.",
+      desc: "Un modèle de substitution des tâches appliqué aux cadres de gouvernance numérique : chaque jalon y devient un contrat exécutable, et un seuil de travail résiduel explique pourquoi automatiser la majorité des cas peut malgré tout alourdir la charge humaine. Mesuré sur 300 projets fictifs et 899 exécutions évaluables.",
       note: "arXiv:2609.29345 · cs.AI · 28 pages · en anglais",
       cta: "Lire sur arXiv",
       url: "https://arxiv.org/abs/2609.29345",
@@ -418,7 +472,7 @@ window.I18N = {
       date: "25 septembre 2026",
       dateISO: "2026-09-25",
       title: "L’IA peut-elle remplacer les spécialistes qui valident les projets ?",
-      desc: "J’ai fait passer un agent IA sur 300 projets fictifs pour savoir s’il peut réaliser les revues qui décident du sort d’un projet, jusqu’à la décision finale. Il le peut, à certaines conditions. La vraie question est la quantité de travail humain qui reste.",
+      desc: "J’ai confié 300 projets fictifs à un agent IA pour savoir s’il peut mener, jusqu’à la décision finale, les revues qui décident du sort d’un projet. Il le peut, sous conditions. La vraie question est de savoir quelle part du travail reste aux humains.",
       note: "Recherche · 31 min de lecture · arXiv + deck de 30 slides",
       cta: "Lire l'article",
       url: "last-human-gate/",
@@ -431,7 +485,7 @@ window.I18N = {
       date: "17 septembre 2026",
       dateISO: "2026-09-17",
       title: "SOC et Blue Teaming : deux cas d'usage de l'IA appliquée aux opérations de sécurité",
-      desc: "Accélérer l'investigation SOC sans donner au modèle de pouvoir direct sur la production, et automatiser le triage de malware avec Malcat : architecture de sécurité, limites d'automatisation et analyse économique détaillée.",
+      desc: "Accélérer l'investigation SOC sans donner au modèle de pouvoir direct sur la production, et automatiser le triage de malware avec Malcat : architecture de sécurité, limites de l'automatisation et analyse économique détaillée.",
       note: "Cas pratique · 26 min de lecture · PDF, 26 slides",
       cta: "Lire le cas pratique",
       url: "ai-soc-blue/",
@@ -440,6 +494,18 @@ window.I18N = {
     },
     /* Analyse longue. Les articles du blog sont listés du plus récent au plus ancien :
        soc, analysis, incident, guide (voir blogPosts() dans build.js). */
+    safe2: {
+      kicker: "Gouvernance agentique · Benchmark",
+      date: "3 novembre 2026",
+      dateISO: "2026-11-03",
+      title: "DGF-Bench fait son entrée dans AI SAFE²",
+      desc: "Le Cyber Strategy Institute cite DGF-Bench dans AI SAFE², son framework de gouvernance des agents, comme benchmark candidat pour tester sept de ses contrôles. Les contrôles concernés, les huit autres travaux cités, et pourquoi une citation ne vaut pas validation.",
+      note: "Article · 7 min de lecture",
+      cta: "Lire l'article",
+      url: "dgf-bench-ai-safe2/",
+      cover: "images/dgf-bench-ai-safe2-cover-fr.jpg",
+      variant: "signal"
+    },
     analysis: {
       kicker: "Sécurité agentique · Analyse",
       date: "16 septembre 2026",
@@ -470,8 +536,8 @@ window.I18N = {
     blog: {
       nav: "Blog",
       url: "blog/",
-      heading: "Notes d'architecte sécurité",
-      lede: "Analyses d'incidents, propositions d'architecture et ressources gratuites sur la sécurité des plateformes d'agents, du cloud et de leur gouvernance.",
+      heading: "Mes recherches sur la sécurité des IA et l'alignement",
+      lede: "Articles de recherche, analyses d'incidents et ressources gratuites sur la sécurité, l'alignement et la gouvernance des agents IA.",
       metaTitle: "Blog | Jeremy Canale, AI Applied Security Architect",
       metaDesc: "Analyses d'incidents, propositions d'architecture et ressources gratuites par Jeremy Canale, architecte sécurité : confinement des agents, incident OpenAI / Hugging Face, kit de survie de l'architecte sécurité.",
       allPosts: "Toutes les publications",
@@ -496,7 +562,7 @@ window.I18N = {
       eyebrow: "Expert mondial en Sécurité Agentique",
       name: "Jeremy Canale",
       rotorPrefix: "Je conçois",
-      sub: "Douze ans à sécuriser les industries les plus régulées au monde, banque, assurance, défense. Aujourd'hui je construis le périmètre de sécurité des agents IA autonomes, des infrastructures MCP et des plateformes cloud qui les supportent.",
+      sub: "Douze ans à sécuriser les industries les plus régulées au monde, banque, assurance, défense. Aujourd'hui je construis le périmètre de sécurité des agents IA autonomes, des infrastructures MCP et des plateformes cloud qui les supportent. Je m'intéresse aussi à l'AI safety, à l'alignement et à la supervision des agents IA, sujets de mes derniers articles de recherche publiés sur arXiv.",
       cta1: "Me solliciter",
       cta2: "LinkedIn",
       cta3: "Malt",
@@ -518,9 +584,9 @@ window.I18N = {
       c1: { title: "Sécurité IA agentique",       desc: "Sécurisation de bout en bout des agents LLM autonomes : serveurs MCP, autorisation des tool-calls, défense contre l'injection de prompt, isolation des sous-agents et garde-fous runtime." },
       c2: { title: "Gouvernance IA & Confiance",  desc: "Opérationnalisation d'ISO/IEC 42001, du NIST AI RMF et de l'AI Act européen. Intégration du AI Fluency Framework d'Anthropic dans le registre des risques d'entreprise." },
       c3: { title: "Sécurité Cloud & CSPM",       desc: "Architecture multi-cloud AWS, Azure et GCP. Déploiement Prisma Cloud mondial chez AXA. Estate Cloudflare chez Thomson Reuters. Blueprints durcis, IaC et pratiques SRE." },
-      c4: { title: "Quantification du cyber-risque", desc: "Fondateur & CEO de Rankiteo, la première plateforme desktop d'AI cyber-underwriting. Pricing, exposition et analytique de portefeuille pour assureurs et réassureurs." },
+      c4: { title: "Quantification du cyber-risque", desc: "Pricing, exposition et analytique de portefeuille pour assureurs et réassureurs." },
       c5: { title: "GRC & Conformité",            desc: "Certifications ISO/IEC 27001 groupe, SOC 2, HIPAA, DORA, NIS2, PDPL EAU & KSA. Programme GRC chez Seddiqi Holding et roadmap de maturité BNP Paribas." },
-      c6: { title: "Threat Intel & Offensif",     desc: "Publications OWASP dans Hakin9. Pentesting, prédiction d'exploits, attack-surface intelligence et la Cyber Incident Chronicle Rankiteo (100k+ incidents)." }
+      c6: { title: "Threat Intel & Offensif",     desc: "Publications OWASP dans Hakin9. Pentesting, prédiction d'exploits et attack-surface intelligence." }
     },
 
     showcase: {
@@ -536,11 +602,11 @@ window.I18N = {
     experience: {
       kicker: "Parcours",
       title: "Douze ans à la barre de la sécurité des entreprises régulées",
-      lede: "Postes opérationnels, de Vice-Président chez Swiss Re à Deputy CISO chez BNP Paribas Asset Management, et aujourd'hui CEO d'une société de cyber-underwriting IA.",
+      lede: "Postes opérationnels, de Vice-Président chez Swiss Re à Deputy CISO chez BNP Paribas Asset Management.",
       now: "auj.", remote: "Distanciel", hybrid: "Hybride",
-      hal: "Direction sécurité de Hal, la plateforme de croissance née dans l'IA et agentic-first de SC Ventures pour les PME du Golfe, construite avec Microsoft. Stratégie cyber, SMSI, gouvernance de la sécurité cloud et des agents IA.",
+      halDates: "juin → sept. 2026",
+      hal: "Direction sécurité de Hal, la plateforme de croissance née dans l'IA et agentic-first de SC Ventures pour les PME du Golfe, construite avec Microsoft. Stratégie cyber, SMSI, gouvernance de la sécurité cloud et des agents IA. Mission terminée en septembre 2026.",
       nusavest: "Stratégie cyber et SMSI pour une plateforme sud-est-asiatique d'asset-backed securities (SC Ventures · Standard Chartered).",
-      rankiteo: "Construction de la première plateforme desktop multi-OS d'AI cyber-underwriting. Cyber-ratings, risque tiers, modélisation d'exposition, distribuée nativement en MCP vers Cursor, Claude Desktop, ChatGPT et n8n.",
       seddiqi:  "Programme de certification ISO/IEC 27001 groupe à travers tout le holding. Registre des risques, SoA, alignement PDPL EAU & KSA pour chaque département.",
       gambit:   "Construction d'un programme cybersécurité basé NIST de zéro. Après acquisition par BNP Paribas, transformation de la maturité de 0 % à 30 % dans le framework groupe.",
       axa:      "Lead technique du déploiement mondial de Palo Alto Prisma CSPM sur chaque entité AXA. Alignement des standards globaux avec les contraintes réglementaires locales.",
@@ -586,19 +652,37 @@ window.I18N = {
     contrib: {
       kicker: "Contributions",
       title: "Dépôts publics et pull requests acceptées",
-      lede: "Correctifs de sécurité proposés à des projets open source et fusionnés par leurs mainteneurs. La liste est lue depuis l'API GitHub et n'affiche que les pull requests acceptées ; les travaux encore en revue n'y figurent pas.",
+      lede: "Les dépôts de mes travaux de recherche, les frameworks qui les citent, et les correctifs de sécurité proposés à des projets open source puis fusionnés par leurs mainteneurs. Les pull requests sont lues depuis l'API GitHub et seules celles qui ont été acceptées apparaissent ; celles encore en cours d'examen n'y figurent pas.",
       merged: "Fusionnée",
       view: "Voir la pull request",
       repo: "Dépôt public",
       viewRepo: "Voir le dépôt",
+      cited: "Cite mes travaux",
+      readReview: "Lire l'analyse",
       /* Carte de dépôt curée (DGF-Bench, dépôt de l'auteur), statique : la recherche API exclut les dépôts de l'auteur. */
       p2: {
-        project: "Dépôt de l'auteur · benchmark, dossiers, traces et scores de The Last Human Gate (arXiv:2609.29345)",
-        desc: "300 projets fictifs sur les parcours Buy, Integrate et Build, 1 700 revues de gate par modèle, un évaluateur déterministe figé et un contrôle à règles seules. Le dépôt contient les dossiers générés avec leurs documents Word et schémas d'architecture, les traces des modèles, les tentatives échouées, les registres de coûts, l'étude de répétition et les audits : chaque chiffre publié peut être recalculé sans nouvel appel aux modèles.",
-        context: "Lire l'article : <a href=\"last-human-gate/\">L’IA peut-elle remplacer les spécialistes qui valident les projets ?</a>",
-        date: "24 septembre 2026",
-        files: "Version dgf-bench-300-20260923",
-        tests: "3 modèles · 5 094 gates notées · 99,58 $ d'appels API"
+        project: "Dépôt de l'auteur · code et paquet de l'article arXiv:2609.34913",
+        desc: "Chaque agent examine un dossier de projet fictif à un point de validation de la gouvernance, avec des outils d'entreprise pour lire les pièces et demander celles qui manquent. Les mêmes dossiers sont soumis dans trois conditions : avec les faits structurés, avec les seuls documents et registres, et en copies attaquées dont les pièces non garanties par l'organisation ont été manipulées. Une attaque ne compte que si l'agent exécute l'action précise qui a été injectée et ne l'exécute pas sur la copie intacte.",
+        context: "Cité par le framework AI SAFE² comme benchmark candidat : <a href=\"dgf-bench-ai-safe2/\">lire l'article</a>",
+        date: "27 septembre 2026",
+        files: "Version v0.1.2",
+        tests: "61 règles exécutables · 6 modèles · exécutions appariées, intactes et attaquées"
+      },
+      p3: {
+        project: "Dépôt de l'auteur · code de l'article arXiv:2610.41025, coécrit avec Fabien Soulis",
+        desc: "Un modèle peut-il trouver l'erreur décisive dans l'exécution ratée d'un autre agent et la corriger en une seule action, après coup ou en direct ? Le dépôt contient l'environnement OpsWorld, la chaîne de collecte et de calibrage des échecs, les deux protocoles d'évaluation (autopsie et supervision en direct), le client OpenRouter et les scripts de rapport. Chaque diagnostic est noté en restaurant l'environnement avant l'étape désignée, en rejouant l'action proposée et en comparant le résultat à celui d'un placebo.",
+        context: "Lire l'article de recherche : <a href=\"https://arxiv.org/abs/2610.41025\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv:2610.41025</a>",
+        date: "29 octobre 2026",
+        files: "Licence MIT · Python",
+        tests: "13 modèles évalués · 62 échecs calibrés · 87 exécutions supervisées"
+      },
+      p4: {
+        project: "Cyber Strategy Institute · framework open source de gouvernance de l'IA agentique, v3.1, 161 contrôles",
+        desc: "L'analyse des contributions technologiques du framework associe DGF-Bench à sept contrôles répartis sur quatre de ses cinq piliers, du filtrage des prompts malveillants à l'approbation multi-agents, et propose de reproduire ses décisions sur dossiers intacts et attaqués. Neuf travaux y sont examinés ; aucun n'est validé ni certifié à ce stade.",
+        context: "Lire l'article : <a href=\"dgf-bench-ai-safe2/\">DGF-Bench fait son entrée dans AI SAFE²</a>",
+        date: "2 octobre 2026",
+        files: "research/technology-contribution-examples.md",
+        tests: "7 contrôles · 4 piliers sur 5"
       },
       more: "Toute l'activité publique sur GitHub",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
@@ -616,7 +700,7 @@ window.I18N = {
     pubs: {
       kicker: "Publications & Reconnaissance",
       title: "Une décennie de contribution au débat public",
-      lede: "Recherche de vulnérabilités OWASP, un moteur de recherche social précoce reconnu au plus haut niveau, et une couverture continue des travaux d'agentic cyber-underwriting.",
+      lede: "Recherche de vulnérabilités OWASP et un moteur de recherche social précoce reconnu au plus haut niveau.",
       p1: { tag: "Magazine, recherche OWASP",
             title: "Hakin9 Magazine, publication internationale de sécurité informatique",
             desc: "Recherche approfondie sur des vulnérabilités OWASP affectant des plateformes majeures, publiée dans un magazine international de sécurité informatique reconnu." },
@@ -624,14 +708,8 @@ window.I18N = {
             title: "AnoSearch, moteur de recherche réseaux sociaux",
             desc: "Construction d'un moteur de recherche social précoce extrayant le signal de plus de vingt réseaux. Reconnu projet IT national de l'année et présenté à des CEOs de premier plan et au Ministre français de la Défense." },
       p3: { tag: "Presse spécialisée",
-            title: "Couverture internationale de Rankiteo dans la presse réassurance",
-            desc: "Commentaires repris sur l'IA cyber-underwriting et la cyber-assurance data-driven dans les médias internationaux de la réassurance." },
-      p4: { tag: "Open source, MCP",
-            title: "Documentation MCP publique pour outillage de cyber-rating",
-            desc: "Documentation ouverte et intégrations d'un serveur MCP natif de cyber-rating, déployable dans les clients assistants courants et les plateformes d'automatisation." },
-      p5: { tag: "Mise en avant marketplace",
-            title: "Serveur MCP de cyber-rating mis en avant sur Smithery.ai",
-            desc: "Référencé comme serveur MCP de référence pour les workflows de cyber-rating dans l'un des annuaires MCP majeurs." }
+            title: "Commentaires dans la presse internationale de la réassurance",
+            desc: "Commentaires repris sur l'IA cyber-underwriting et la cyber-assurance data-driven dans les médias internationaux de la réassurance." }
     },
 
     faq: {
@@ -714,7 +792,7 @@ window.I18N = {
   zh: {
     meta: {
       title: "Jeremy Canale, 世界级智能体安全专家 | AI 与云安全架构师",
-      description: "Jeremy Canale 是全球顶尖的智能体（Agentic）AI 安全专家。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透、法兴银行及 Rankiteo 担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
+      description: "Jeremy Canale 是全球顶尖的智能体（Agentic）AI 安全专家。曾在瑞士再保险、安盛、法国巴黎银行、汤森路透及法兴银行担任 AI 智能体、MCP 服务器、多云安全平台与网络风险承保的总架构师。"
     },
     brand:  { tag: "智能体安全" },
     nav:    { expertise: "专长领域", consulting: "咨询服务", cases: "客户案例", experience: "履历", certifications: "资质认证", faq: "常见问题", contact: "联系", contributions: "开源贡献", cta: "开启合作" },
@@ -723,7 +801,7 @@ window.I18N = {
       eyebrow: "世界级智能体安全专家",
       name: "Jeremy Canale",
       rotorPrefix: "我设计",
-      sub: "十二年深耕全球最受监管的行业银行、保险与国防。如今，我为自主 AI 智能体、MCP 基础设施以及承载它们的云平台构建全新的安全边界。",
+      sub: "十二年深耕全球最受监管的行业银行、保险与国防。如今，我为自主 AI 智能体、MCP 基础设施以及承载它们的云平台构建全新的安全边界。我同时关注 AI 安全（AI Safety）、对齐（Alignment）与 AI 智能体监督，这也是我近期发表在 arXiv 上的研究论文的主题。",
       cta1: "联系合作",
       cta2: "LinkedIn",
       cta3: "Malt",
@@ -745,9 +823,9 @@ window.I18N = {
       c1: { title: "智能体 AI 安全",       desc: "全链路保护自主 LLM 智能体：MCP 服务器、工具调用授权、提示注入防御、子智能体隔离与运行时护栏。" },
       c2: { title: "AI 治理与信任",        desc: "落地 ISO/IEC 42001、NIST AI RMF 与欧盟 AI 法案。将 Anthropic AI Fluency 框架纳入企业风险登记册。" },
       c3: { title: "云安全与 CSPM",        desc: "AWS、Azure、GCP 多云安全架构。安盛全球 Prisma Cloud 部署，汤森路透 Cloudflare 体系。加固蓝图、IaC 与 SRE 实践。" },
-      c4: { title: "网络风险量化",         desc: "Rankiteo 创始人兼 CEO全球首个 AI 驱动的桌面级网络承保平台。为保险与再保险公司提供定价、敞口与组合分析。" },
+      c4: { title: "网络风险量化",         desc: "为保险与再保险公司提供定价、敞口与组合分析。" },
       c5: { title: "GRC 与合规",           desc: "ISO/IEC 27001 集团认证、SOC 2、HIPAA、DORA、NIS2、阿联酋 / 沙特 PDPL。Seddiqi Holding GRC 计划与 BNP Paribas 成熟度路线图主导者。" },
-      c6: { title: "威胁情报与攻击面",     desc: "在《Hakin9》发表 OWASP 研究。渗透测试、漏洞预测、攻击面情报，以及 Rankiteo 网络事件编年史（10 万 + 起）。" }
+      c6: { title: "威胁情报与攻击面",     desc: "在《Hakin9》发表 OWASP 研究。渗透测试、漏洞预测与攻击面情报。" }
     },
 
     showcase: {
@@ -763,11 +841,11 @@ window.I18N = {
     experience: {
       kicker: "职业生涯",
       title: "十二年掌舵受监管企业的安全战略",
-      lede: "亲历一线，从瑞士再保险副总裁到 BNP Paribas 资产管理副 CISO如今是一家 AI 网络承保公司的 CEO。",
+      lede: "亲历一线，从瑞士再保险副总裁到 BNP Paribas 资产管理副 CISO。",
       now: "至今", remote: "远程", hybrid: "混合办公",
-      hal: "为 Hal 提供安全领导：SC Ventures 面向海湾中小企业、与 Microsoft 共建的 AI 原生、智能体优先增长平台。网络战略、ISMS、云与 AI 智能体安全治理。",
+      halDates: "2026年6月 → 9月",
+      hal: "为 Hal 提供安全领导：SC Ventures 面向海湾中小企业、与 Microsoft 共建的 AI 原生、智能体优先增长平台。网络战略、ISMS、云与 AI 智能体安全治理。该任务已于 2026 年 9 月结束。",
       nusavest: "为东南亚资产支持证券平台（SC Ventures · 渣打银行）制定网络战略与 ISMS。",
-      rankiteo: "打造全球首个多操作系统 AI 网络承保桌面平台。提供网络评级、第三方风险与敞口建模通过 MCP 原生分发至 Cursor、Claude Desktop、ChatGPT 与 n8n。",
       seddiqi:  "在整个控股集团推行 ISO/IEC 27001 认证计划。风险登记、SoA 与阿联酋 / 沙特 PDPL 对齐。",
       gambit:   "从零搭建基于 NIST 的网络安全计划。在 BNP Paribas 收购后，于集团框架内将成熟度从 0 提升至 30%。",
       axa:      "负责 Palo Alto Prisma CSPM 在安盛全球各实体的部署。在全球标准与本地监管约束之间寻求一致。",
@@ -813,19 +891,37 @@ window.I18N = {
     contrib: {
       kicker: "开源贡献",
       title: "公开仓库与已合并的 Pull Request",
-      lede: "向开源项目提交并已被维护者合并的安全修复。列表直接读取自 GitHub API，仅显示已被接受的 Pull Request，仍在评审中的工作不会出现。",
+      lede: "我的研究仓库、引用这些研究的框架，以及向开源项目提交并已被维护者合并的安全修复。Pull Request 直接读取自 GitHub API，仅显示已被接受的部分，仍在评审中的工作不会出现。",
       merged: "已合并",
       view: "查看 Pull Request",
       repo: "公开仓库",
       viewRepo: "查看仓库",
+      cited: "引用了我的工作",
+      readReview: "阅读评审",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
       p2: {
-        project: "作者的仓库 · The Last Human Gate（arXiv:2609.29345）背后的基准测试、案卷、轨迹与评分",
-        desc: "300 个虚构项目，覆盖采购、集成与开发三条路线，每个模型 1,700 次门禁评审，一个冻结的确定性评分程序和一个仅按规则运行的对照。仓库包含生成的案卷（含 Word 文档与架构图）、模型轨迹、失败的尝试、成本账目、重复实验与审计，所有公布的数字都可以在不重新调用模型的情况下复算。",
-        context: "阅读文章：<a href=\"last-human-gate/en/\">Can AI take over the reviews that decide a project’s future?</a>",
-        date: "2026年9月24日",
-        files: "发布版本 dgf-bench-300-20260923",
-        tests: "3 个模型 · 5,094 次评分门禁 · 99.58 美元 API 调用"
+        project: "作者的仓库 · 论文 arXiv:2609.34913 的代码与软件包",
+        desc: "每个智能体在一个治理关卡上审查一份合成的项目案卷，并可使用企业工具查阅证据、索取缺失材料。同一批案卷在三种条件下运行：提供结构化事实；仅提供文档与记录；以及在组织不为其背书的证据中植入篡改内容的受攻击副本。只有当智能体执行了被注入的确切操作、且在配对的干净运行中没有执行该操作时，攻击才计为成功。",
+        context: "被 AI SAFE² 框架列为候选基准：<a href=\"dgf-bench-ai-safe2/en/\">阅读文章（英文）</a>",
+        date: "2026年9月27日",
+        files: "发布版本 v0.1.2",
+        tests: "61 条可执行规则 · 6 个模型 · 干净与受攻击的配对运行"
+      },
+      p3: {
+        project: "作者的仓库 · 论文 arXiv:2610.41025 的代码，与 Fabien Soulis 合著",
+        desc: "一个模型能否在另一个智能体失败的运行中找出决定性错误，并仅用一个操作加以纠正，无论是事后还是实时？仓库包含 OpsWorld 环境、失败案例的采集与校准流程、事后剖析与实时监督两条评测赛道、OpenRouter 客户端以及报告脚本。每次诊断的评分方式是：将环境恢复到所选步骤之前，重放所提出的操作，并将结果与安慰剂对照进行比较。",
+        context: "阅读论文：<a href=\"https://arxiv.org/abs/2610.41025\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv:2610.41025</a>",
+        date: "2026年10月29日",
+        files: "MIT 许可证 · Python",
+        tests: "13 个诊断模型 · 62 个校准失败案例 · 87 次受监督运行"
+      },
+      p4: {
+        project: "Cyber Strategy Institute · 面向智能体 AI 的开源治理框架，v3.1，161 项控制",
+        desc: "该框架的技术贡献评审将 DGF-Bench 对应到其五大支柱中四个支柱下的七项控制，从恶意提示过滤到多智能体审批，并建议复现其在干净与受攻击案卷上的配对决策。评审共涉及九项工作，目前均未经验证或认证。",
+        context: "阅读文章：<a href=\"dgf-bench-ai-safe2/en/\">DGF-Bench makes its way into AI SAFE²</a>",
+        date: "2026年10月2日",
+        files: "research/technology-contribution-examples.md",
+        tests: "7 项控制 · 5 个支柱中的 4 个"
       },
       more: "GitHub 上的全部公开活动",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
@@ -843,7 +939,7 @@ window.I18N = {
     pubs: {
       kicker: "出版与认可",
       title: "十年来对公共议题的贡献",
-      lede: "OWASP 漏洞研究，曾获最高级别认可的早期社交媒体搜索引擎，以及智能体网络承保工作的持续报道。",
+      lede: "OWASP 漏洞研究，以及曾获最高级别认可的早期社交媒体搜索引擎。",
       p1: { tag: "杂志 · OWASP 研究",
             title: "Hakin9 杂志，国际 IT 安全出版物",
             desc: "针对影响主流平台的 OWASP 漏洞进行深入研究，发表于一本国际知名的 IT 安全杂志。" },
@@ -851,14 +947,8 @@ window.I18N = {
             title: "AnoSearch，社交媒体搜索引擎",
             desc: "构建了一个早期社交媒体搜索引擎，从 20 多个网络中提取信号。被评为年度国家级 IT 项目，并向顶级 CEO 与法国国防部长进行展示。" },
       p3: { tag: "行业媒体",
-            title: "国际再保险媒体对 Rankiteo 的报道",
-            desc: "在主流国际再保险媒体上对 AI 驱动的网络承保与数据驱动的网络保险进行报道与评论。" },
-      p4: { tag: "开源 · MCP",
-            title: "面向网络评级工具的公开 MCP 文档",
-            desc: "MCP 原生网络评级服务器的开放文档与集成，可在主流助手客户端与自动化平台中部署。" },
-      p5: { tag: "市场推荐",
-            title: "在 Smithery.ai 上推荐的网络评级 MCP 服务器",
-            desc: "在主流 MCP 发现目录之一中，被列为网络评级工作流的参考 MCP 服务器。" }
+            title: "国际再保险媒体上的评论",
+            desc: "在主流国际再保险媒体上对 AI 驱动的网络承保与数据驱动的网络保险进行报道与评论。" }
     },
 
     faq: {
@@ -941,7 +1031,7 @@ window.I18N = {
   ar: {
     meta: {
       title: "جيريمي كانال, خبير عالمي في أمن الوكلاء الذكيين | مهندس أمن الذكاء الاصطناعي والسحابة",
-      description: "جيريمي كانال هو الخبير العالمي الأول في أمن الوكلاء الذكيين (Agentic Security). مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale وRankiteo."
+      description: "جيريمي كانال هو الخبير العالمي الأول في أمن الوكلاء الذكيين (Agentic Security). مهندس أمن وكلاء الذكاء الاصطناعي المستقلين، خوادم MCP، منصات الأمن السحابية، والاكتتاب السيبراني لدى Swiss Re وAXA وBNP Paribas وThomson Reuters وSociété Générale."
     },
     brand:  { tag: "أمن الوكلاء الذكيين" },
     nav:    { expertise: "الخبرة", consulting: "الاستشارات", cases: "دراسات حالة", experience: "المسيرة", certifications: "الشهادات", faq: "الأسئلة الشائعة", contact: "تواصل", contributions: "المساهمات", cta: "ابدأ التعاون" },
@@ -950,7 +1040,7 @@ window.I18N = {
       eyebrow: "خبير عالمي في أمن الوكلاء الذكيين",
       name: "جيريمي كانال",
       rotorPrefix: "أُصمِّم",
-      sub: "اثنا عشر عامًا في تأمين أكثر القطاعات تنظيمًا في العالم, البنوك والتأمين والدفاع. واليوم أُؤسِّس محيط الأمن لوكلاء الذكاء الاصطناعي المستقلين، وبنية MCP التحتية، والمنصات السحابية التي تُشغِّلهم.",
+      sub: "اثنا عشر عامًا في تأمين أكثر القطاعات تنظيمًا في العالم, البنوك والتأمين والدفاع. واليوم أُؤسِّس محيط الأمن لوكلاء الذكاء الاصطناعي المستقلين، وبنية MCP التحتية، والمنصات السحابية التي تُشغِّلهم. وأهتم أيضًا بسلامة الذكاء الاصطناعي (AI Safety) والمواءمة (Alignment) والإشراف على وكلاء الذكاء الاصطناعي، وهي موضوعات أحدث أوراقي البحثية المنشورة على arXiv.",
       cta1: "تواصل معي",
       cta2: "LinkedIn",
       cta3: "Malt",
@@ -972,9 +1062,9 @@ window.I18N = {
       c1: { title: "أمن الذكاء الاصطناعي الوكيلي",   desc: "تأمين شامل لوكلاء LLM المستقلين: خوادم MCP، تفويض استدعاء الأدوات، الدفاع ضد حقن التعليمات، عزل الوكلاء الفرعيين، وضوابط زمن التشغيل." },
       c2: { title: "حوكمة الذكاء الاصطناعي والثقة", desc: "تفعيل ISO/IEC 42001 وNIST AI RMF وقانون الذكاء الاصطناعي الأوروبي. دمج إطار AI Fluency من Anthropic في سجل المخاطر المؤسسي." },
       c3: { title: "أمن السحابة و CSPM",            desc: "هندسة أمنية متعددة السحب لـ AWS وAzure وGCP. نشر Prisma Cloud عالميًا لدى AXA. منظومة Cloudflare لدى Thomson Reuters. مخطَّطات مُحصَّنة، IaC وممارسات SRE." },
-      c4: { title: "تقدير المخاطر السيبرانية",     desc: "مؤسس ومدير تنفيذي لـ Rankiteo, أول منصة سطح مكتب للاكتتاب السيبراني المعزَّز بالذكاء الاصطناعي. التسعير، التعرُّض وتحليلات المحفظة للمؤمِّنين ومُعيدي التأمين." },
+      c4: { title: "تقدير المخاطر السيبرانية",     desc: "التسعير، التعرُّض وتحليلات المحفظة للمؤمِّنين ومُعيدي التأمين." },
       c5: { title: "الحوكمة والامتثال GRC",         desc: "شهادات ISO/IEC 27001 على مستوى المجموعة، SOC 2، HIPAA، DORA، NIS2، PDPL الإمارات والمملكة العربية السعودية. بناء برنامج GRC لمجموعة الصدِّيقي وخارطة طريق نضج BNP Paribas." },
-      c6: { title: "استخبارات التهديدات والاختراق", desc: "أبحاث OWASP منشورة في مجلة Hakin9. اختبار الاختراق، التنبؤ بالاستغلال، استخبارات سطح الهجوم، وسجل حوادث Rankiteo (أكثر من 100 ألف حادثة)." }
+      c6: { title: "استخبارات التهديدات والاختراق", desc: "أبحاث OWASP منشورة في مجلة Hakin9. اختبار الاختراق، التنبؤ بالاستغلال، واستخبارات سطح الهجوم." }
     },
 
     showcase: {
@@ -990,11 +1080,11 @@ window.I18N = {
     experience: {
       kicker: "المسيرة",
       title: "اثنا عشر عامًا في قيادة أمن المؤسسات المنظَّمة",
-      lede: "أدوار ميدانية، من نائب رئيس Swiss Re إلى نائب رئيس أمن المعلومات في مجموعة BNP Paribas Asset Management, واليوم رئيس تنفيذي لشركة اكتتاب سيبراني بالذكاء الاصطناعي.",
+      lede: "أدوار ميدانية، من نائب رئيس Swiss Re إلى نائب رئيس أمن المعلومات في مجموعة BNP Paribas Asset Management.",
       now: "الآن", remote: "عن بُعد", hybrid: "هجين",
-      hal: "قيادة الأمن لمنصة Hal، منصة النمو المولودة في الذكاء الاصطناعي والقائمة على الوكلاء من SC Ventures للمنشآت الصغيرة والمتوسطة في الخليج، والمبنية مع Microsoft. استراتيجية سيبرانية، نظام إدارة أمن المعلومات، وحوكمة أمن السحابة ووكلاء الذكاء الاصطناعي.",
+      halDates: "يونيو → سبتمبر 2026",
+      hal: "قيادة الأمن لمنصة Hal، منصة النمو المولودة في الذكاء الاصطناعي والقائمة على الوكلاء من SC Ventures للمنشآت الصغيرة والمتوسطة في الخليج، والمبنية مع Microsoft. استراتيجية سيبرانية، نظام إدارة أمن المعلومات، وحوكمة أمن السحابة ووكلاء الذكاء الاصطناعي. انتهت المهمة في سبتمبر 2026.",
       nusavest: "استراتيجية الأمن السيبراني ونظام إدارة أمن المعلومات لمنصة جنوب شرق آسيوية للأوراق المالية المدعومة بالأصول (SC Ventures · Standard Chartered).",
-      rankiteo: "بناء أول منصة سطح مكتب متعددة الأنظمة للاكتتاب السيبراني بالذكاء الاصطناعي. تصنيفات سيبرانية، مخاطر الطرف الثالث ونمذجة التعرُّض, مع توزيع MCP أصيل إلى Cursor وClaude Desktop وChatGPT وn8n.",
       seddiqi:  "برنامج شهادة ISO/IEC 27001 على مستوى المجموعة عبر كامل القابضة. سجل المخاطر، بيان القابلية للتطبيق، ومحاذاة PDPL الإمارات والسعودية لكل قسم.",
       gambit:   "بناء برنامج أمن سيبراني قائم على NIST من الصفر. بعد استحواذ BNP Paribas، قُدت تحوُّل النضج من 0% إلى 30% ضمن إطار المجموعة.",
       axa:      "القيادة التقنية للنشر العالمي لـ Palo Alto Prisma CSPM عبر كل كيانات AXA. مواءمة المعايير العالمية مع القيود التنظيمية المحلية.",
@@ -1040,19 +1130,37 @@ window.I18N = {
     contrib: {
       kicker: "المساهمات",
       title: "مستودعات عامة وطلبات سحب مدمجة",
-      lede: "إصلاحات أمنية مقترحة على مشاريع مفتوحة المصدر ودمجها القائمون عليها. تُقرأ القائمة من واجهة GitHub البرمجية ولا تعرض إلا طلبات السحب المقبولة، أما الأعمال التي ما زالت قيد المراجعة فلا تظهر.",
+      lede: "مستودعات أبحاثي، والأطر التي تستشهد بها، وإصلاحات أمنية مقترحة على مشاريع مفتوحة المصدر دمجها القائمون عليها. تُقرأ طلبات السحب من واجهة GitHub البرمجية ولا يظهر منها إلا ما قُبل، أما الأعمال التي لا تزال قيد المراجعة فلا تظهر.",
       merged: "مدمج",
       view: "عرض طلب السحب",
       repo: "مستودع عام",
       viewRepo: "عرض المستودع",
+      cited: "يستشهد بعملي",
+      readReview: "اقرأ المراجعة",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
       p2: {
-        project: "مستودع المؤلف · المعيار والملفات والآثار والدرجات وراء دراسة The Last Human Gate (arXiv:2609.29345)",
-        desc: "300 مشروع خيالي عبر مسارات الشراء والتكامل والبناء، و1,700 مراجعة بوابة لكل نموذج، ومقيّم حتمي مجمَّد، وضابط يعمل بالقواعد وحدها. يضم المستودع الملفات المولَّدة بمستندات Word ومخططات المعمارية، وآثار النماذج، والمحاولات الفاشلة، وسجلات التكلفة، ودراسة التكرار والتدقيقات، بحيث يمكن إعادة حساب كل رقم منشور دون استدعاءات جديدة للنماذج.",
-        context: "اقرأ المقال: <a href=\"last-human-gate/en/\">Can AI take over the reviews that decide a project’s future?</a>",
-        date: "24 سبتمبر 2026",
-        files: "الإصدار dgf-bench-300-20260923",
-        tests: "3 نماذج · 5,094 بوابة مقيَّمة · 99.58 دولاراً من استدعاءات API"
+        project: "مستودع المؤلف · شيفرة الورقة البحثية arXiv:2609.34913 وحزمتها",
+        desc: "يراجع كل وكيل ملف مشروع اصطناعيًا عند بوابة حوكمة، مستعينًا بأدوات مؤسسية لقراءة الأدلة وطلب ما ينقص منها. تُشغَّل الملفات نفسها في ثلاث حالات: مع الحقائق المنظَّمة، ومع المستندات والسجلات وحدها، وفي نسخ مُهاجَمة جرى فيها التلاعب بالأدلة التي لا تضمنها المؤسسة. ولا يُحتسب الهجوم ناجحًا إلا إذا نفّذ الوكيل الإجراء المحقون بعينه ولم ينفّذه في التشغيل النظيف المقابل.",
+        context: "استشهد به إطار AI SAFE² كمعيار مرشَّح: <a href=\"dgf-bench-ai-safe2/en/\">اقرأ المقال (بالإنجليزية)</a>",
+        date: "27 سبتمبر 2026",
+        files: "الإصدار v0.1.2",
+        tests: "61 قاعدة قابلة للتنفيذ · 6 نماذج · تشغيلات نظيفة ومُهاجَمة متقابلة"
+      },
+      p3: {
+        project: "مستودع المؤلف · شيفرة الورقة البحثية arXiv:2610.41025، بالاشتراك مع Fabien Soulis",
+        desc: "هل يستطيع نموذج أن يجد الخطأ الحاسم في تشغيل فاشل لوكيل آخر ويصححه بإجراء واحد، بعد وقوعه أو أثناءه؟ يضم المستودع بيئة OpsWorld، ومسار جمع الإخفاقات ومعايرتها، ومساري التقييم (التشريح اللاحق والإشراف المباشر)، وعميل OpenRouter، ونصوص إعداد التقارير. ويُقيَّم كل تشخيص بإعادة البيئة إلى ما قبل الخطوة المختارة، وإعادة تنفيذ الإجراء المقترح، ومقارنة النتيجة بتشغيل ضابط (placebo).",
+        context: "اقرأ الورقة البحثية: <a href=\"https://arxiv.org/abs/2610.41025\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv:2610.41025</a>",
+        date: "29 أكتوبر 2026",
+        files: "رخصة MIT · Python",
+        tests: "13 نموذج تشخيص · 62 إخفاقًا معايَرًا · 87 تشغيلًا خاضعًا للإشراف"
+      },
+      p4: {
+        project: "Cyber Strategy Institute · إطار حوكمة مفتوح المصدر للذكاء الاصطناعي الوكيلي، الإصدار 3.1، 161 ضابطًا",
+        desc: "تربط مراجعة المساهمات التقنية في الإطار معيار DGF-Bench بسبعة ضوابط موزعة على أربع من ركائزه الخمس، من تصفية الأوامر الخبيثة إلى الموافقة متعددة الوكلاء، وتقترح إعادة إنتاج قراراته المتقابلة على الملفات النظيفة والمُهاجَمة. تتناول المراجعة تسعة أعمال، ولم يُعتمد أي منها أو يُصادَق عليه حتى الآن.",
+        context: "اقرأ المقال: <a href=\"dgf-bench-ai-safe2/en/\">DGF-Bench makes its way into AI SAFE²</a>",
+        date: "2 أكتوبر 2026",
+        files: "research/technology-contribution-examples.md",
+        tests: "7 ضوابط · 4 من 5 ركائز"
       },
       more: "كل النشاط العام على GitHub",
       /* Runtime labels used by initContributions() in app.js for generated cards. */
@@ -1070,7 +1178,7 @@ window.I18N = {
     pubs: {
       kicker: "النشر والاعتراف",
       title: "عقد من الإسهام في النقاش العام",
-      lede: "بحث ثغرات OWASP، ومحرك بحث اجتماعي مبكر حظي بأعلى مستويات الاعتراف، وتغطية مستمرة لأعمال الاكتتاب السيبراني الوكيلي.",
+      lede: "بحث ثغرات OWASP، ومحرك بحث اجتماعي مبكر حظي بأعلى مستويات الاعتراف.",
       p1: { tag: "مجلة · بحث OWASP",
             title: "مجلة Hakin9، منشور دولي لأمن المعلومات",
             desc: "بحث معمَّق حول ثغرات قائمة على OWASP تؤثر في منصات كبرى، نُشِر في مجلة دولية مرموقة في أمن المعلومات." },
@@ -1078,14 +1186,8 @@ window.I18N = {
             title: "AnoSearch، محرك بحث وسائل التواصل الاجتماعي",
             desc: "بناء محرك بحث اجتماعي مبكر يستخرج الإشارة من أكثر من عشرين شبكة. اعتُرف به كأحد أفضل المشاريع التقنية الوطنية للسنة، وقُدِّم لرؤساء تنفيذيين كبار ولوزير الدفاع الفرنسي." },
       p3: { tag: "صحافة متخصصة",
-            title: "تغطية إعلام إعادة التأمين الدولي لـ Rankiteo",
-            desc: "تعليقات بارزة حول الاكتتاب السيبراني المعتمد على الذكاء الاصطناعي والتأمين السيبراني المدفوع بالبيانات في أبرز وسائل إعلام إعادة التأمين الدولية." },
-      p4: { tag: "مفتوح المصدر · MCP",
-            title: "وثائق MCP عامة لأدوات التصنيف السيبراني",
-            desc: "وثائق وتكاملات مفتوحة لخادم MCP أصيل للتصنيف السيبراني، قابل للنشر في عملاء المساعدين الرئيسية ومنصات الأتمتة." },
-      p5: { tag: "إدراج في السوق",
-            title: "خادم MCP للتصنيف السيبراني مُميَّز على Smithery.ai",
-            desc: "مُدرَج بوصفه خادم MCP مرجعيًا لمسارات التصنيف السيبراني ضمن أحد أبرز أدلة اكتشاف MCP." }
+            title: "تعليقات في إعلام إعادة التأمين الدولي",
+            desc: "تعليقات بارزة حول الاكتتاب السيبراني المعتمد على الذكاء الاصطناعي والتأمين السيبراني المدفوع بالبيانات في أبرز وسائل إعلام إعادة التأمين الدولية." }
     },
 
     faq: {

@@ -18,13 +18,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Jeremy Canale" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Notes from a security architect" />
-  <meta property="og:description" content="Incident analyses, architecture proposals and free resources on securing agent platforms, cloud estates and their governance." />
+  <meta property="og:title" content="My research on AI security and alignment" />
+  <meta property="og:description" content="Research papers, incident analyses and free resources on the security, alignment and governance of AI agents." />
   <meta property="og:url" content="https://jeremycanale.com/blog/en/" />
-  <meta property="og:image" content="https://jeremycanale.com/images/paper-alignment-scaling-arxiv.jpg" />
+  <meta property="og:image" content="https://jeremycanale.com/images/dgf-bench-ai-safe2-cover-en.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Notes from a security architect" />
-  <meta name="twitter:description" content="Incident analyses, architecture proposals and free resources on securing agent platforms, cloud estates and their governance." />
+  <meta name="twitter:title" content="My research on AI security and alignment" />
+  <meta name="twitter:description" content="Research papers, incident analyses and free resources on the security, alignment and governance of AI agents." />
 
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +38,7 @@
   "@type": "Blog",
   "@id": "https://jeremycanale.com/blog/en/",
   "url": "https://jeremycanale.com/blog/en/",
-  "name": "Notes from a security architect",
+  "name": "My research on AI security and alignment",
   "description": "Incident analyses, architecture proposals and free resources by Jeremy Canale, security architect: agent containment, the OpenAI / Hugging Face incident, the security architect survival kit.",
   "inLanguage": "en",
   "author": {
@@ -62,6 +62,44 @@
     ]
   },
   "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "DGF-Bench makes its way into AI SAFE²",
+      "description": "The Cyber Strategy Institute cites DGF-Bench in its agent governance framework as a candidate benchmark for seven controls. Which controls, which eight other works sit beside it, and why a mention is not a validation.",
+      "url": "https://jeremycanale.com/dgf-bench-ai-safe2/en/",
+      "datePublished": "2026-11-03",
+      "image": "https://jeremycanale.com/images/dgf-bench-ai-safe2-cover-en.jpg",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Jeremy Canale",
+        "url": "https://jeremycanale.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/jcanale13/",
+          "https://www.malt.fr/profile/jeremycanale",
+          "https://scholar.google.com/citations?user=iL6H-UoAAAAJ"
+        ]
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "ReplayRCA: Measuring Post-hoc Diagnosis and Live Oversight of Agent Failures by Counterfactual Replay",
+      "description": "When an agent fails a multi-step task, can another model find the decisive mistake and fix it with a single action? ReplayRCA scores the diagnosis by intervention rather than against annotations: the environment is restored before the chosen step, the proposed action replaces the agent's, the same agent continues, and its success rate is compared with that of a placebo replaying the original action. One of the best models at post-hoc diagnosis was the weakest at live oversight.",
+      "url": "https://arxiv.org/abs/2610.41025",
+      "datePublished": "2026-10-29",
+      "image": "https://jeremycanale.com/images/paper-replay-rca-arxiv.jpg",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Jeremy Canale",
+        "url": "https://jeremycanale.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/jcanale13/",
+          "https://www.malt.fr/profile/jeremycanale",
+          "https://scholar.google.com/citations?user=iL6H-UoAAAAJ"
+        ]
+      }
+    },
     {
       "@type": "BlogPosting",
       "headline": "Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements",
@@ -320,11 +358,49 @@
     <section class="blog-wrap">
       <header class="blog-head">
         <span class="kicker">Blog</span>
-        <h1>Notes from a security architect</h1>
-        <p class="lede">Incident analyses, architecture proposals and free resources on securing agent platforms, cloud estates and their governance.</p>
+        <h1>My research on AI security and alignment</h1>
+        <p class="lede">Research papers, incident analyses and free resources on the security, alignment and governance of AI agents.</p>
       </header>
       <h2 class="blog-list-title">Latest posts</h2>
       <div class="blog-list">
+
+        <article class="blog-card">
+          <div class="resource-banner-inner resource-banner-signal">
+            <img class="resource-banner-cover" src="../../images/dgf-bench-ai-safe2-cover-en.jpg" width="1200" height="627" alt="" loading="lazy" />
+            <div class="resource-banner-text">
+              <div class="resource-banner-head">
+                <span class="resource-banner-kicker">Agentic governance · Benchmark</span>
+                <time class="resource-banner-date" datetime="2026-11-03">3 November 2026</time>
+              </div>
+              <h2><a class="resource-banner-link" href="../../dgf-bench-ai-safe2/en/">DGF-Bench makes its way into AI SAFE²</a></h2>
+              <p>The Cyber Strategy Institute cites DGF-Bench in its agent governance framework as a candidate benchmark for seven controls. Which controls, which eight other works sit beside it, and why a mention is not a validation.</p>
+              <span class="resource-banner-note">Article · 5 min read</span>
+            </div>
+            <span class="btn btn-primary resource-banner-cta">
+              <span>Read the article</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="resource-banner-inner resource-banner-signal">
+            <img class="resource-banner-cover" src="../../images/paper-replay-rca-arxiv.jpg" width="1200" height="627" alt="" loading="lazy" />
+            <div class="resource-banner-text">
+              <div class="resource-banner-head">
+                <span class="resource-banner-kicker">Research paper · arXiv</span>
+                <time class="resource-banner-date" datetime="2026-10-29">29 October 2026</time>
+              </div>
+              <h2><a class="resource-banner-link" href="https://arxiv.org/abs/2610.41025" target="_blank" rel="noopener noreferrer">ReplayRCA: Measuring Post-hoc Diagnosis and Live Oversight of Agent Failures by Counterfactual Replay</a></h2>
+              <p>When an agent fails a multi-step task, can another model find the decisive mistake and fix it with a single action? ReplayRCA scores the diagnosis by intervention rather than against annotations: the environment is restored before the chosen step, the proposed action replaces the agent's, the same agent continues, and its success rate is compared with that of a placebo replaying the original action. One of the best models at post-hoc diagnosis was the weakest at live oversight.</p>
+              <span class="resource-banner-note">arXiv:2610.41025 · cs.AI · co-authored with Fabien Soulis</span>
+            </div>
+            <span class="btn btn-primary resource-banner-cta">
+              <span>Read on arXiv</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </article>
 
         <article class="blog-card">
           <div class="resource-banner-inner resource-banner-signal">
@@ -357,6 +433,7 @@
               <h2><a class="resource-banner-link" href="https://arxiv.org/abs/2609.34913" target="_blank" rel="noopener noreferrer">DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards</a></h2>
               <p>A board of agents reviews synthetic dossiers under 61 executable rules while an attacker plants deceptive content in the evidence the organization does not vouch for. Attacks that imitate the organization's own process passed against four of six models; direct orders and false authority almost never did.</p>
               <span class="resource-banner-note">arXiv:2609.34913 · cs.AI · open source package dgf-bench</span>
+              <p class="resource-banner-extra"><a href="https://dgfbench.com" target="_blank" rel="noopener noreferrer">dgfbench.com</a><span>Benchmark website: how well agents decide, and which planted attacks deceive them</span></p>
             </div>
             <span class="btn btn-primary resource-banner-cta">
               <span>Read on arXiv</span>
@@ -487,8 +564,6 @@
       <span>© <span id="year"></span> Jeremy Canale</span>
       <span class="dot-sep">·</span>
       <span>Agentic Security · AI Trust · Cloud GRC</span>
-      <span class="dot-sep">·</span>
-      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
       <span class="dot-sep">·</span>
       <a href="https://jeremycanale.com/blog/en/feed.xml">RSS</a>
     </div>

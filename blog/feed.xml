@@ -3,43 +3,57 @@
   <channel>
     <title>Jeremy Canale, blog (français)</title>
     <link>https://jeremycanale.com/blog/</link>
-    <description>Analyses d'incidents, propositions d'architecture et ressources gratuites sur la sécurité des plateformes d'agents, du cloud et de leur gouvernance.</description>
+    <description>Articles de recherche, analyses d'incidents et ressources gratuites sur la sécurité, l'alignement et la gouvernance des agents IA.</description>
     <language>fr</language>
     <atom:link href="https://jeremycanale.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DGF-Bench fait son entrée dans AI SAFE²</title>
+      <link>https://jeremycanale.com/dgf-bench-ai-safe2/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/dgf-bench-ai-safe2/</guid>
+      <pubDate>Tue, 03 Nov 2026 07:00:00 GMT</pubDate>
+      <description>Le Cyber Strategy Institute cite DGF-Bench dans AI SAFE², son framework de gouvernance des agents, comme benchmark candidat pour tester sept de ses contrôles. Les contrôles concernés, les huit autres travaux cités, et pourquoi une citation ne vaut pas validation.</description>
+    </item>
+    <item>
+      <title>ReplayRCA: Measuring Post-hoc Diagnosis and Live Oversight of Agent Failures by Counterfactual Replay</title>
+      <link>https://arxiv.org/abs/2610.41025</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2610.41025</guid>
+      <pubDate>Thu, 29 Oct 2026 07:00:00 GMT</pubDate>
+      <description>Quand un agent échoue sur une tâche en plusieurs étapes, un autre modèle peut-il trouver l'erreur décisive et la corriger en une seule action ? ReplayRCA ne juge pas un diagnostic en le comparant à des annotations, mais en l'appliquant : l'environnement est restauré juste avant l'étape désignée, l'action proposée remplace celle de l'agent, puis le même agent reprend la tâche. Son taux de réussite est ensuite comparé à celui d'un placebo qui rejoue l'action d'origine. L'un des meilleurs modèles pour le diagnostic après coup s'est révélé le moins efficace en supervision en direct.</description>
+    </item>
     <item>
       <title>Toward Alignment Scaling Laws: A Framework and First Preregistered Measurements</title>
       <link>https://arxiv.org/abs/2610.08540</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2610.08540</guid>
       <pubDate>Tue, 06 Oct 2026 07:00:00 GMT</pubDate>
-      <description>L'alignement devient-il plus simple ou plus difficile à mesure que les modèles grandissent ? Le traiter comme une propriété unique masque la réponse. Mesurée risque par risque, la charge nécessaire pour tenir un objectif de sûreté suit son propre exposant, et c'est le risque corrigé qui croît le plus vite qui fixe le régime. Deux mesures préenregistrées, sur Pythia et sur Qwen2.5 de 0,5 à 72 milliards de paramètres.</description>
+      <description>L'alignement devient-il plus simple ou plus difficile à mesure que les modèles grandissent ? Le traiter comme une propriété unique masque la réponse. Mesuré risque par risque, l'effort nécessaire pour tenir un objectif de sûreté suit sa propre loi d'échelle ; c'est le risque corrigé dont l'effort croît le plus vite, et non une moyenne, qui décide de l'issue à long terme. Deux mesures préenregistrées : l'une sur des classifieurs Pythia, l'autre sur les modèles Qwen2.5 de 0,5 à 72 milliards de paramètres.</description>
     </item>
     <item>
       <title>DGF-Bench: A Benchmark for Simulating and Auditing Deception Against Multi-Agent Governance Boards</title>
       <link>https://arxiv.org/abs/2609.34913</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2609.34913</guid>
       <pubDate>Tue, 29 Sep 2026 07:00:00 GMT</pubDate>
-      <description>Un comité d'agents examine des dossiers de synthèse sous 61 règles exécutables, pendant qu'un attaquant glisse du contenu trompeur dans les pièces dont l'organisation ne se porte pas garante. Les attaques qui imitent le processus interne ont réussi contre quatre modèles sur six ; les ordres directs et les fausses autorités, presque jamais.</description>
+      <description>Un comité d'agents examine des dossiers de projet fictifs, régis par 61 règles exécutables, pendant qu'un attaquant glisse du contenu trompeur dans les pièces dont l'organisation ne garantit pas le contenu. Les attaques qui imitent les procédures internes de l'organisation ont trompé quatre modèles sur six ; les attaques par ordre direct ou par fausse autorité, presque jamais.</description>
     </item>
     <item>
       <title>L’IA peut-elle remplacer les spécialistes qui valident les projets ?</title>
       <link>https://jeremycanale.com/last-human-gate/</link>
       <guid isPermaLink="true">https://jeremycanale.com/last-human-gate/</guid>
       <pubDate>Fri, 25 Sep 2026 07:00:00 GMT</pubDate>
-      <description>J’ai fait passer un agent IA sur 300 projets fictifs pour savoir s’il peut réaliser les revues qui décident du sort d’un projet, jusqu’à la décision finale. Il le peut, à certaines conditions. La vraie question est la quantité de travail humain qui reste.</description>
+      <description>J’ai confié 300 projets fictifs à un agent IA pour savoir s’il peut mener, jusqu’à la décision finale, les revues qui décident du sort d’un projet. Il le peut, sous conditions. La vraie question est de savoir quelle part du travail reste aux humains.</description>
     </item>
     <item>
       <title>The Last Human Gate: Forward Deployed Engineering for Governance Automation</title>
       <link>https://arxiv.org/abs/2609.29345</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2609.29345</guid>
       <pubDate>Thu, 24 Sep 2026 07:00:00 GMT</pubDate>
-      <description>Un cadre de substitution des tâches pour les cadres de gouvernance numérique, où chaque jalon devient un contrat exécutable, avec un seuil de travail résiduel qui explique pourquoi automatiser la majorité des cas peut malgré tout augmenter la charge humaine. Mesuré sur 300 projets fictifs et 899 exécutions évaluables.</description>
+      <description>Un modèle de substitution des tâches appliqué aux cadres de gouvernance numérique : chaque jalon y devient un contrat exécutable, et un seuil de travail résiduel explique pourquoi automatiser la majorité des cas peut malgré tout alourdir la charge humaine. Mesuré sur 300 projets fictifs et 899 exécutions évaluables.</description>
     </item>
     <item>
       <title>SOC et Blue Teaming : deux cas d'usage de l'IA appliquée aux opérations de sécurité</title>
       <link>https://jeremycanale.com/ai-soc-blue/</link>
       <guid isPermaLink="true">https://jeremycanale.com/ai-soc-blue/</guid>
       <pubDate>Thu, 17 Sep 2026 07:00:00 GMT</pubDate>
-      <description>Accélérer l'investigation SOC sans donner au modèle de pouvoir direct sur la production, et automatiser le triage de malware avec Malcat : architecture de sécurité, limites d'automatisation et analyse économique détaillée.</description>
+      <description>Accélérer l'investigation SOC sans donner au modèle de pouvoir direct sur la production, et automatiser le triage de malware avec Malcat : architecture de sécurité, limites de l'automatisation et analyse économique détaillée.</description>
     </item>
     <item>
       <title>Une course à la puissance. Mais... un retard sur l'alignement</title>

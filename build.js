@@ -485,8 +485,6 @@ ${relatedHtml}
       <span>© <span id="year"></span> Jeremy Canale</span>
       <span class="dot-sep">·</span>
       <span>${escapeHtml(dict.footer.tag)}</span>
-      <span class="dot-sep">·</span>
-      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
     </div>
   </footer>
 
@@ -542,6 +540,8 @@ ${mainAlternates}
   // Standalone pages (blog / downloadable resources). Each group lists its language
   // versions so every entry carries the hreflang alternates of its siblings.
   const EXTRA_GROUPS = [
+    { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
+      pages: { fr: BASE_URL + '/dgf-bench-ai-safe2/', en: BASE_URL + '/dgf-bench-ai-safe2/en/' } },
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
       pages: { fr: BASE_URL + '/last-human-gate/', en: BASE_URL + '/last-human-gate/en/' } },
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
@@ -645,7 +645,7 @@ function buildRoot() {
 /* ---------- BLOG INDEX (fr + en) ---------- */
 /* One page per locale that declares a `blog` block, listing the paper, soc, analysis, incident and
    guide entries (newest first) with the same data as the home banners, plus an RSS feed next to it. */
-function blogPosts(dict) { return [dict.paperAlign, dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
+function blogPosts(dict) { return [dict.safe2, dict.paperReplay, dict.paperAlign, dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
 
 function renderBlogPage(lang) {
   const dict = I18N[lang], bl = dict.blog;
@@ -829,8 +829,6 @@ ${cards}
       <span>© <span id="year"></span> Jeremy Canale</span>
       <span class="dot-sep">·</span>
       <span>${escapeHtml(dict.footer.tag)}</span>
-      <span class="dot-sep">·</span>
-      <a href="https://rankiteo.com" target="_blank" rel="noopener noreferrer">Rankiteo</a>
       <span class="dot-sep">·</span>
       <a href="${feed}">RSS</a>
     </div>
