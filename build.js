@@ -540,6 +540,9 @@ ${mainAlternates}
   // Standalone pages (blog / downloadable resources). Each group lists its language
   // versions so every entry carries the hreflang alternates of its siblings.
   const EXTRA_GROUPS = [
+    // English only: no French version, so one language and x-default.
+    { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
+      pages: { en: BASE_URL + '/intune-agent-detector/' } },
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
       pages: { fr: BASE_URL + '/dgf-bench-ai-safe2/', en: BASE_URL + '/dgf-bench-ai-safe2/en/' } },
     { xDefault: 'en', changefreq: 'yearly', priority: '0.8',
@@ -645,7 +648,7 @@ function buildRoot() {
 /* ---------- BLOG INDEX (fr + en) ---------- */
 /* One page per locale that declares a `blog` block, listing the paper, soc, analysis, incident and
    guide entries (newest first) with the same data as the home banners, plus an RSS feed next to it. */
-function blogPosts(dict) { return [dict.safe2, dict.paperReplay, dict.paperAlign, dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
+function blogPosts(dict) { return [dict.agentDetector, dict.safe2, dict.paperReplay, dict.paperAlign, dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
 
 function renderBlogPage(lang) {
   const dict = I18N[lang], bl = dict.blog;

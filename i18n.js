@@ -104,6 +104,18 @@ window.I18N = {
     },
     /* Long-form analysis. Blog posts are listed newest first: soc, analysis, incident, guide
        (see blogPosts() in build.js). Each block also gets a home page banner. */
+    agentDetector: {
+      kicker: "Agentic security · Detection tool",
+      date: "8 November 2026",
+      dateISO: "2026-11-08",
+      title: "Agent Detector: finding the AI agents on company Windows PCs",
+      desc: "A Windows detector, published on GitHub and deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Event Log. It never blocks anything.",
+      note: "Article · 8 min read · code on GitHub",
+      cta: "Read the article",
+      url: "intune-agent-detector/",
+      cover: "images/intune-agent-detector-cover.jpg",
+      variant: "signal"
+    },
     safe2: {
       kicker: "Agentic governance · Benchmark",
       date: "3 November 2026",
@@ -269,6 +281,14 @@ window.I18N = {
       cited: "Cites my work",
       readReview: "Read the review",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
+      p5: {
+        project: "Author's repository · Windows detector in Go, deployed as an Intune Win32 app",
+        desc: "Detects the 39 AI tools of its catalog, home-made agents that connect to an LLM service and run commands, and recent use left in Windows traces. Every user who has an agent must accept the company AI policy in a window that comes back at each scan, and scans and acceptances go to the Windows Event Log for the SIEM. Detection only: it never blocks, closes or uninstalls anything.",
+        context: "Read the article: <a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
+        date: "8 November 2026",
+        files: "Go · PowerShell",
+        tests: "39 catalogued tools · scan under 2 seconds · no network call"
+      },
       p2: {
         project: "Author's repository · code and package of the paper arXiv:2609.34913",
         desc: "Each agent reviews a synthetic project dossier at a governance gate, with enterprise tools to read evidence and request what is missing. The same dossiers run in three conditions: structured facts, documents and records only, and attacked copies with manipulations in the evidence the organization does not vouch for. An attack counts only when the agent takes the exact injected action and does not take it on the paired clean run.",
@@ -494,6 +514,19 @@ window.I18N = {
     },
     /* Analyse longue. Les articles du blog sont listés du plus récent au plus ancien :
        soc, analysis, incident, guide (voir blogPosts() dans build.js). */
+    /* Article en anglais uniquement : le titre reste en anglais, la note le signale. */
+    agentDetector: {
+      kicker: "Sécurité agentique · Outil de détection",
+      date: "8 novembre 2026",
+      dateISO: "2026-11-08",
+      title: "Agent Detector: finding the AI agents on company Windows PCs",
+      desc: "Un détecteur Windows publié sur GitHub et déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.",
+      note: "Article en anglais · 8 min de lecture · code sur GitHub",
+      cta: "Lire l'article",
+      url: "intune-agent-detector/",
+      cover: "images/intune-agent-detector-cover.jpg",
+      variant: "signal"
+    },
     safe2: {
       kicker: "Gouvernance agentique · Benchmark",
       date: "3 novembre 2026",
@@ -660,6 +693,14 @@ window.I18N = {
       cited: "Cite mes travaux",
       readReview: "Lire l'analyse",
       /* Carte de dépôt curée (DGF-Bench, dépôt de l'auteur), statique : la recherche API exclut les dépôts de l'auteur. */
+      p5: {
+        project: "Dépôt de l'auteur · détecteur Windows en Go, déployé comme application Win32 Intune",
+        desc: "Repère les 39 outils d'IA de son catalogue, les agents développés en interne qui se connectent à un service de LLM et exécutent des commandes, et les usages récents laissés dans les traces de Windows. Chaque utilisateur chez qui un agent est trouvé doit accepter la politique IA de l'entreprise dans une fenêtre qui revient à chaque analyse ; analyses et acceptations sont consignées dans le journal d'événements Windows, pour le SIEM. Détection seulement : il ne bloque, ne ferme et ne désinstalle rien.",
+        context: "Lire l'article (en anglais) : <a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
+        date: "8 novembre 2026",
+        files: "Go · PowerShell",
+        tests: "39 outils catalogués · analyse en moins de 2 secondes · aucun appel réseau"
+      },
       p2: {
         project: "Dépôt de l'auteur · code et paquet de l'article arXiv:2609.34913",
         desc: "Chaque agent examine un dossier de projet fictif à un point de validation de la gouvernance, avec des outils d'entreprise pour lire les pièces et demander celles qui manquent. Les mêmes dossiers sont soumis dans trois conditions : avec les faits structurés, avec les seuls documents et registres, et en copies attaquées dont les pièces non garanties par l'organisation ont été manipulées. Une attaque ne compte que si l'agent exécute l'action précise qui a été injectée et ne l'exécute pas sur la copie intacte.",
@@ -899,6 +940,14 @@ window.I18N = {
       cited: "引用了我的工作",
       readReview: "阅读评审",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
+      p5: {
+        project: "作者的仓库 · 用 Go 编写的 Windows 检测程序，以 Intune Win32 应用部署",
+        desc: "检测其目录中的 39 款 AI 工具、连接 LLM 服务并执行命令的自建智能体，以及 Windows 痕迹中留下的近期使用记录。凡检测到智能体的用户，都必须在每次扫描都会重新出现的窗口中接受公司的 AI 政策；扫描与接受记录写入 Windows 事件日志，供 SIEM 使用。仅做检测：从不阻止、关闭或卸载任何程序。",
+        context: "阅读文章（英文）：<a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
+        date: "2026年11月8日",
+        files: "Go · PowerShell",
+        tests: "目录收录 39 款工具 · 扫描不到 2 秒 · 无网络请求"
+      },
       p2: {
         project: "作者的仓库 · 论文 arXiv:2609.34913 的代码与软件包",
         desc: "每个智能体在一个治理关卡上审查一份合成的项目案卷，并可使用企业工具查阅证据、索取缺失材料。同一批案卷在三种条件下运行：提供结构化事实；仅提供文档与记录；以及在组织不为其背书的证据中植入篡改内容的受攻击副本。只有当智能体执行了被注入的确切操作、且在配对的干净运行中没有执行该操作时，攻击才计为成功。",
@@ -1138,6 +1187,14 @@ window.I18N = {
       cited: "يستشهد بعملي",
       readReview: "اقرأ المراجعة",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
+      p5: {
+        project: "مستودع المؤلف · أداة كشف لنظام Windows مكتوبة بلغة Go وتُنشر كتطبيق Win32 عبر Intune",
+        desc: "تكشف أدوات الذكاء الاصطناعي الـ39 الواردة في فهرسها، والوكلاء المطوَّرين داخليًا الذين يتصلون بخدمة LLM وينفذون أوامر، والاستخدام الحديث الذي تتركه آثار Windows. ويتعيّن على كل مستخدم يُكتشف لديه وكيل أن يقبل سياسة الذكاء الاصطناعي للشركة في نافذة تعود عند كل فحص، وتُسجَّل عمليات الفحص والقبول في سجل أحداث Windows لاستخدامها في SIEM. للكشف فقط: لا تحظر أي شيء ولا تغلقه ولا تزيل تثبيته.",
+        context: "اقرأ المقال (بالإنجليزية): <a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
+        date: "8 نوفمبر 2026",
+        files: "Go · PowerShell",
+        tests: "39 أداة في الفهرس · فحص في أقل من ثانيتين · بلا أي اتصال شبكي"
+      },
       p2: {
         project: "مستودع المؤلف · شيفرة الورقة البحثية arXiv:2609.34913 وحزمتها",
         desc: "يراجع كل وكيل ملف مشروع اصطناعيًا عند بوابة حوكمة، مستعينًا بأدوات مؤسسية لقراءة الأدلة وطلب ما ينقص منها. تُشغَّل الملفات نفسها في ثلاث حالات: مع الحقائق المنظَّمة، ومع المستندات والسجلات وحدها، وفي نسخ مُهاجَمة جرى فيها التلاعب بالأدلة التي لا تضمنها المؤسسة. ولا يُحتسب الهجوم ناجحًا إلا إذا نفّذ الوكيل الإجراء المحقون بعينه ولم ينفّذه في التشغيل النظيف المقابل.",

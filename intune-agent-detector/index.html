@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark" class="tech-page post-page">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070b1c" />
+
+  <title>Agent Detector: finding the AI agents on company Windows PCs | Jeremy Canale</title>
+  <meta name="description" content="A Windows detector, published on GitHub and deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Windows Event Log. Detection only: it never blocks anything." />
+  <meta name="keywords" content="AI agent detection, shadow AI, Microsoft Intune, Win32 app, Windows Event Log, Microsoft Sentinel, AI policy, Claude Code, Cursor, Ollama, MCP, endpoint security, Jeremy Canale" />
+  <meta name="author" content="Jeremy Canale" />
+  <link rel="canonical" href="https://jeremycanale.com/intune-agent-detector/" />
+  <link rel="alternate" hreflang="en" href="https://jeremycanale.com/intune-agent-detector/" />
+  <link rel="alternate" hreflang="x-default" href="https://jeremycanale.com/intune-agent-detector/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Jeremy Canale" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Agent Detector: finding the AI agents on company Windows PCs" />
+  <meta property="og:description" content="Find known AI tools and home-made agents on company Windows PCs, make every user accept the AI policy, and log it all for the SIEM. Detection only." />
+  <meta property="og:url" content="https://jeremycanale.com/intune-agent-detector/" />
+  <meta property="og:image" content="https://jeremycanale.com/images/intune-agent-detector-cover.jpg" />
+  <meta property="og:image:secure_url" content="https://jeremycanale.com/images/intune-agent-detector-cover.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="Agent Detector for Microsoft Intune, by Jeremy Canale" />
+  <meta property="article:author" content="https://www.linkedin.com/in/jcanale13/" />
+  <meta property="article:published_time" content="2026-11-08T09:00:00+01:00" />
+  <meta property="article:section" content="Security" />
+  <meta property="article:tag" content="Agentic security" />
+  <meta property="article:tag" content="Microsoft Intune" />
+  <meta property="article:tag" content="Shadow AI" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agent Detector: finding the AI agents on company Windows PCs" />
+  <meta name="twitter:description" content="Find known AI tools and home-made agents on company Windows PCs, make every user accept the AI policy, and log it all for the SIEM. Detection only." />
+  <meta name="twitter:image" content="https://jeremycanale.com/images/intune-agent-detector-cover.jpg" />
+  <meta name="twitter:image:alt" content="Agent Detector for Microsoft Intune, by Jeremy Canale" />
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://jeremycanale.com/intune-agent-detector/"
+    },
+    "headline": "Agent Detector: finding the AI agents on company Windows PCs",
+    "description": "A Windows detector, published on GitHub and deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Windows Event Log. Detection only: it never blocks anything.",
+    "image": "https://jeremycanale.com/images/intune-agent-detector-cover.jpg",
+    "inLanguage": "en",
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08",
+    "wordCount": 1846,
+    "author": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com",
+      "jobTitle": "AI Applied Security Architect",
+      "sameAs": [
+        "https://www.linkedin.com/in/jcanale13/",
+        "https://www.malt.fr/profile/jeremycanale",
+        "https://scholar.google.com/citations?user=iL6H-UoAAAAJ",
+        "https://github.com/jeremy1392"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Jeremy Canale",
+      "url": "https://jeremycanale.com"
+    },
+    "about": {
+      "@type": "SoftwareSourceCode",
+      "name": "Agent Detector",
+      "codeRepository": "https://github.com/jeremy1392/IntuneAgentDetector",
+      "programmingLanguage": [
+        "Go",
+        "PowerShell"
+      ],
+      "runtimePlatform": "Windows"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Jeremy Canale",
+        "item": "https://jeremycanale.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://jeremycanale.com/blog/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Agent Detector",
+        "item": "https://jeremycanale.com/intune-agent-detector/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18" />
+          <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#070b1c" stop-opacity="0" />
+        </radialGradient>
+        <pattern id="bgDots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#22d3ee" fill-opacity="0.10" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgDots)" />
+      <rect width="1200" height="800" fill="url(#bgGlow)" />
+    </svg>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="../index.html#top" class="brand" aria-label="Jeremy Canale">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="32" height="32">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L36 10 V22 C36 30 28 36 20 38 C12 36 4 30 4 22 V10 Z" fill="none" stroke="url(#brandGrad)" stroke-width="2" />
+          <circle cx="20" cy="18" r="3.2" fill="url(#brandGrad)" />
+          <circle cx="12" cy="24" r="1.8" fill="#22d3ee" />
+          <circle cx="28" cy="24" r="1.8" fill="#a78bfa" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Jeremy Canale</span>
+        <span class="brand-tag">Agentic Security</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html#expertise">Expertise</a>
+      <a href="../index.html#consulting">Consulting</a>
+      <a href="../index.html#cases">Case Studies</a>
+      <a href="../blog/en/">Blog</a>
+      <a href="../index.html#contributions">Contributions</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#certifications">Credentials</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" data-lang-switch data-lang-urls="{&quot;en&quot;:&quot;./&quot;,&quot;fr&quot;:&quot;../blog/&quot;,&quot;zh&quot;:&quot;../zh.html&quot;,&quot;ar&quot;:&quot;../ar.html&quot;}">
+        <button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z" />
+          </svg>
+          <span data-current-lang>EN</span>
+          <svg viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox">
+          <li><button data-lang="en" type="button"><span>EN</span> English</button></li>
+          <li><button data-lang="fr" type="button"><span>FR</span> Français</button></li>
+          <li><button data-lang="zh" type="button"><span>中文</span> 简体中文</button></li>
+          <li><button data-lang="ar" type="button"><span>AR</span> العربية</button></li>
+        </ul>
+      </div>
+      <a class="btn btn-primary header-cta" href="../index.html#contact">
+        <span>Work with me</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <article class="post-wrap">
+
+      <header class="post-header">
+        <span class="post-kicker post-kicker-signal">Agentic security · Detection tool</span>
+        <h1 class="post-title">Agent Detector: finding the AI agents on company Windows PCs</h1>
+        <p class="post-dek">Coding agents, AI editors, local models, and twenty lines of Python that call an LLM and run shell commands. I built a small detector that finds them on Windows PCs, shows users the company AI policy, and leaves IT Security a record in the Event Log. It never blocks anything.</p>
+        <div class="post-byline">
+          <span class="post-byline-mark" aria-hidden="true">JC</span>
+          <span><b>Jeremy Canale</b></span>
+          <span class="sep">·</span>
+          <time datetime="2026-11-08">8 November 2026</time>
+          <span class="sep">·</span>
+          <span data-read-time>8 min read</span>
+          <span class="sep">·</span>
+          <a href="https://github.com/jeremy1392/IntuneAgentDetector" target="_blank" rel="noopener noreferrer">Code on GitHub</a>
+        </div>
+      </header>
+
+      <nav class="post-toc" aria-label="Contents">
+        <span class="post-toc-title">Contents</span>
+        <ol>
+          <li><a href="#blind-spot">The blind spot</a></li>
+          <li><a href="#detects">What it detects</a></li>
+          <li><a href="#unknown">Unknown agents</a></li>
+          <li><a href="#users">What users see</a></li>
+          <li><a href="#security">What IT Security gets</a></li>
+          <li><a href="#privacy">Privacy and limits</a></li>
+          <li><a href="#deploy">Deploying it</a></li>
+        </ol>
+      </nav>
+
+      <div class="post-body">
+
+        <section class="post-section" id="blind-spot">
+          <span class="post-num">01 / The blind spot</span>
+          <h2>AI agents now run on the endpoint</h2>
+
+          <p class="post-lead">A security team can approve GitHub Copilot, publish an AI policy and filter a few websites, and still not know what runs on its laptops. Many agents run locally: Claude Code or Codex in a terminal, Cursor or Windsurf as the editor, Ollama serving a model on the machine, and scripts that nobody declared. An agent can be twenty lines of Python that call an LLM API and pass the answer to a shell.</p>
+
+          <p>Agent Detector is my answer to that blind spot, for Windows fleets managed with Microsoft Intune. It is a small Go program, <code>detectoragent.exe</code>, that Intune installs on every PC with a scheduled task. The task scans the PC two minutes after each logon, then every hour. A scan takes well under two seconds and makes no network connection <a class="post-cite" href="#src-1">[1]</a>.</p>
+
+          <p>One design choice shapes the rest: the detector only detects. It never blocks, closes or uninstalls anything. What it does instead is ask every user who has an AI tool to read and accept the company's AI policy, and write every detection and every acceptance to the Windows Event Log.</p>
+        </section>
+
+        <section class="post-section" id="detects">
+          <span class="post-num">02 / What it detects</span>
+          <h2>Three kinds of findings</h2>
+
+          <p>A scan collects, in parallel and without any network request, a snapshot of the running processes, the TCP table and the Windows DNS cache, the execution traces Windows keeps, and an inventory of the registry and of known folders <a class="post-cite" href="#src-2">[2]</a>. From that, it reports three kinds of findings.</p>
+
+          <div class="post-concepts">
+            <div><h3>Known tools</h3><p>39 tools in an embedded catalog, from command-line agents to local model runtimes.</p></div>
+            <div><h3>Home-made agents</h3><p>Any process connected to an LLM service, and above all one that also runs shells or interpreters.</p></div>
+            <div><h3>Recent use</h3><p>BAM and Prefetch traces and agent history folders, so a tool used between two scans still shows up.</p></div>
+          </div>
+
+          <div class="post-table-wrap"><table class="post-table"><thead><tr><th>Category</th><th>Examples from the catalog</th></tr></thead><tbody>
+            <tr><td>CLI agents</td><td>Claude Code, OpenAI Codex, Gemini CLI, GitHub Copilot CLI, OpenCode, Aider, Goose, Open Interpreter</td></tr>
+            <tr><td>Desktop assistants</td><td>Claude Desktop (including Cowork), ChatGPT Desktop</td></tr>
+            <tr><td>AI editors</td><td>Cursor, Windsurf, Kiro, Trae</td></tr>
+            <tr><td>Editor extensions</td><td>GitHub Copilot, VS Code agent mode with MCP servers, Cline, Roo Code, Kilo Code, Continue, Amazon Q, Gemini Code Assist, Augment, Tabnine, Qodo, JetBrains AI and Junie</td></tr>
+            <tr><td>Local LLM runtimes</td><td>Ollama, LM Studio, Jan, GPT4All, AnythingLLM, llama.cpp and llamafile, Hugging Face local models</td></tr>
+            <tr><td>Agentic browsers</td><td>Perplexity Comet, AI browser extensions</td></tr>
+            <tr><td>Gateways and frameworks</td><td>LiteLLM proxy, Browser Use, CrewAI, AutoGen, OpenAI Agents SDK, Claude Agent SDK</td></tr>
+          </tbody></table></div>
+          <p class="post-table-note">Categories and examples from the technical reference <a class="post-cite" href="#src-2">[2]</a>. The catalog is embedded in the program and rebuilt with it.</p>
+
+          <p>Each finding is graded on three axes. The level goes from <em>active</em> (running or connected now) to <em>recent</em> (used in the last 30 days), <em>installed</em>, and <em>residue</em> (leftover data). The confidence is high when the evidence is a package, an install path, a command line or a vendor signature; medium for an executable name, a behavior or a configuration; low for circumstantial evidence, such as a connection to a shared CDN address. The third axis says whether the tool is approved. A finding is actionable when it is not approved, at least installed, and of medium or high confidence <a class="post-cite" href="#src-2">[2]</a>.</p>
+        </section>
+
+        <section class="post-section" id="unknown">
+          <span class="post-num">03 / Unknown agents</span>
+          <h2>Finding agents that have no signature</h2>
+
+          <p>Known tools are the easy part. The harder case is the agent a developer wrote last week: it has no installer and no name in any catalog, so the scanner looks at behavior instead. It joins the TCP table with the DNS cache, which maps remote addresses back to host names, to see which process talks to which LLM endpoint. The catalog lists model providers, aggregators such as OpenRouter, inference platforms, gateways and known relays <a class="post-cite" href="#src-2">[2]</a> <a class="post-cite" href="#src-3">[3]</a>.</p>
+
+          <div class="post-table-wrap"><table class="post-table"><thead><tr><th>Finding</th><th>What triggers it</th></tr></thead><tbody>
+            <tr><td><code>&lt;provider&gt; used by &lt;process&gt;</code></td><td>A process is connected to an LLM endpoint of the catalog.</td></tr>
+            <tr><td><code>Probable custom AI agent (&lt;process&gt;)</code></td><td>That process also runs shells or interpreters: cmd, PowerShell, bash, git and others.</td></tr>
+            <tr><td><code>Unknown LLM relay &lt;host&gt;</code></td><td>A <code>*_BASE_URL</code> or <code>*_API_BASE</code> variable points to a host outside the catalog.</td></tr>
+            <tr><td><code>Local LLM runtime in &lt;process&gt;</code></td><td>A process loads inference libraries: <code>ggml*</code>, <code>llama*</code>, <code>onnxruntime-genai</code>.</td></tr>
+            <tr><td><code>MCP server …</code></td><td>An MCP server runs (<code>@modelcontextprotocol/…</code>, <code>mcp-server-*</code>, <code>uvx mcp-…</code>). When an agent launched it, the evidence goes to that agent instead.</td></tr>
+            <tr><td><code>Automated browser</code></td><td>A browser runs under automation (<code>--remote-debugging-port</code>, Playwright, Puppeteer). When an agent drives it, the evidence goes to that agent instead.</td></tr>
+          </tbody></table></div>
+
+          <p>The shell rule is what separates a chat client from an agent. A Python process that talks to an Anthropic or OpenAI endpoint is reported as that provider used by <code>python.exe</code>. If the same process also starts <code>cmd.exe</code>, PowerShell or <code>git</code>, it is reported as a probable custom AI agent. The unknown relay rule covers the other common pattern: an SDK pointed at a proxy or gateway that no catalog knows, through its base URL variable.</p>
+        </section>
+
+        <section class="post-section" id="users">
+          <span class="post-num">04 / What users see</span>
+          <h2>A window that comes back while the agent is there</h2>
+
+          <figure class="post-figure">
+            <a href="../images/intune-agent-detector/disclaimer.png" target="_blank" rel="noopener">
+              <img src="../images/intune-agent-detector/disclaimer.png" width="731" height="598" loading="lazy" alt="The Agent Detector window: the detected tools, each marked approved or not approved, the company text, a checkbox and an I accept button" />
+            </a>
+            <figcaption>The window with the demo branding that the repository ships for previews. ACME Corporation is a fictitious company.</figcaption>
+          </figure>
+
+          <p>When a scan finds an agent, a window opens on the user's screen. It lists the detected tools, each marked approved or not approved, followed by the company's text. The user must tick a box, then click <em>I accept</em>. The window has no close button and stays on top of the others <a class="post-cite" href="#src-2">[2]</a>.</p>
+
+          <p>Accepting does not silence it. The window comes back at every scan for as long as an agent is still detected, whether it is installed, running or used in the last 30 days, and approved tools are listed too. Leftover files of an uninstalled tool and low-confidence findings never open it. The acceptance is logged, so the record shows who accepted which text, and when.</p>
+
+          <p>There is a Windows detail behind this. The scan runs as SYSTEM in session 0, which cannot draw on a user's desktop. The program therefore lists the active sessions, takes each signed-in user's token and relaunches itself in that session to show the window, without waiting for the click. When the user accepts, the window process writes the acceptance event under the user's own identity.</p>
+
+          <p>Everything the user reads comes from one branding file: company name, logo, texts, a link to the AI policy and a contact address. The file carries a version number, recorded with every display and every acceptance, so you can prove which text each user accepted. The build and the installer both refuse an invalid branding file, so a typo never deploys the default text silently <a class="post-cite" href="#src-2">[2]</a>.</p>
+        </section>
+
+        <section class="post-section" id="security">
+          <span class="post-num">05 / What IT Security gets</span>
+          <h2>Events for the SIEM, and a report in Intune</h2>
+
+          <p>Every scan writes to the Windows Application log, under the <code>DetectorAgent</code> source, with one JSON document per event <a class="post-cite" href="#src-2">[2]</a>.</p>
+
+          <div class="post-table-wrap"><table class="post-table"><thead><tr><th>Event</th><th>Level</th><th>Content</th></tr></thead><tbody>
+            <tr><td>100</td><td>Information, Warning if actionable</td><td>Scan summary and a compact list of all findings</td></tr>
+            <tr><td>300</td><td>Information, Warning if actionable</td><td>One finding with its evidence</td></tr>
+            <tr><td>400</td><td>Information</td><td>Window shown to a user</td></tr>
+            <tr><td>410</td><td>Information</td><td>Policy accepted, written under the user's identity</td></tr>
+            <tr><td>900</td><td>Error</td><td>Scanner or window error</td></tr>
+          </tbody></table></div>
+
+          <p>In Microsoft Sentinel, a data collection rule on the Application log with the XPath query <code>Application!*[System[Provider[@Name='DetectorAgent']]]</code> collects them. The reference suggests three rules: a dashboard of findings by tool, category and user; an alert on actionable findings; and an alert when a PC sends no scan summary for more than 24 hours, since a local administrator can remove the task <a class="post-cite" href="#src-2">[2]</a>.</p>
+
+          <p>For administrators who work in Intune rather than in the SIEM, an optional detection-only Remediations script marks each PC that has unapproved tools as <em>With issues</em> and names the tools in the detection output. It requires Windows Enterprise E3/E5, Education A3/A5 or Windows VDA licenses <a class="post-cite" href="#src-1">[1]</a>.</p>
+
+          <p>Approval is a single list in the catalog. It takes tool ids, such as <code>github-copilot</code>, and endpoint host names, such as a company's own Azure OpenAI resource. An approved tool stays visible to the user, marked approved, but no longer counts as a violation: no warning in the Event Log and no issue in the Intune report.</p>
+        </section>
+
+        <section class="post-section" id="privacy">
+          <span class="post-num">06 / Privacy and limits</span>
+          <h2>What it does not collect, and what it cannot see</h2>
+
+          <p>The detector never collects prompts, conversations, file contents or API key values; for API key variables, it only notes that they exist. Command lines go into the report for investigation, masked and truncated first. Key formats such as those of OpenAI, Anthropic, Google, GitHub and Hugging Face, bearer tokens, <code>--api-key</code> style arguments, <code>*_KEY=</code> assignments and credentials in URLs are replaced before anything leaves the process. Of a base URL, only the host name is kept <a class="post-cite" href="#src-2">[2]</a>.</p>
+
+          <p>It also has limits, and the reference states them plainly. It is not continuous: an agent started and stopped between two scans is only seen through its traces, and a script run by <code>python.exe</code> leaves only <code>python.exe</code> behind. The DNS cache keeps names for a few minutes. Agents that run entirely in the cloud, in a virtual machine, in WSL or in a container are out of reach of an endpoint scan, and need a web proxy with TLS inspection and Defender for Cloud Apps. Signatures are parsed but not cryptographically verified, to keep the scan fast <a class="post-cite" href="#src-2">[2]</a>.</p>
+
+          <div class="post-note"><strong>Before deploying in France.</strong> Update the IT charter, inform and consult the CSE, and record the processing in the GDPR register with a DPIA. The default text of the window is a draft: have it validated by your legal team and your data protection officer <a class="post-cite" href="#src-1">[1]</a> <a class="post-cite" href="#src-2">[2]</a>.</div>
+        </section>
+
+        <section class="post-section" id="deploy">
+          <span class="post-num">07 / Deploying it</span>
+          <h2>From the repository to every PC</h2>
+
+          <p>The README is written as a tutorial for Microsoft 365 administrators, in five steps <a class="post-cite" href="#src-1">[1]</a>.</p>
+
+          <ol>
+            <li><strong>Customize.</strong> Put your logo, texts, AI policy link and contact e-mail in <code>branding/branding.yaml</code>, and list the approved tools in <code>rules/catalog.yaml</code>.</li>
+            <li><strong>Build.</strong> With Go 1.26 or later, <code>.\build.ps1 -Version 1.0.0</code> runs the tests, builds the program and prints the value Intune uses to detect the installation. A preview command shows the window with your branding.</li>
+            <li><strong>Sign.</strong> The same script signs the program and the scripts with your code-signing certificate. Signing is mandatory if your PCs enforce the AllSigned PowerShell policy.</li>
+            <li><strong>Package.</strong> Wrap the output folder in an <code>.intunewin</code> file with Microsoft's Win32 Content Prep Tool <a class="post-cite" href="#src-4">[4]</a>, or let <code>build.ps1</code> do it.</li>
+            <li><strong>Deploy.</strong> Add a Windows app (Win32) in the Intune admin center, with a registry detection rule on <code>HKLM\SOFTWARE\DetectorAgent</code>, and assign it to all devices.</li>
+          </ol>
+
+          <p>Two options are worth deciding before the first deployment. Silent mode, <code>-NoDisclaimer</code>, scans and logs without showing any window, so you can see what your fleet looks like before users see anything. An assignment filter on device ownership keeps personal PCs enrolled in the tenant out of scope.</p>
+
+          <p>The code, the catalog and the full reference are on GitHub <a class="post-cite" href="#src-1">[1]</a>. The catalog is the part that will age fastest: its endpoints and identifiers were checked against vendor documentation and DNS on 8 November 2026, and the reference recommends reviewing it every month <a class="post-cite" href="#src-2">[2]</a> <a class="post-cite" href="#src-3">[3]</a>.</p>
+        </section>
+
+        <h2 id="sources">Sources</h2>
+
+        <ol class="post-sources">
+          <li id="src-1">Jeremy Canale, <a href="https://github.com/jeremy1392/IntuneAgentDetector/blob/main/README.md" target="_blank" rel="noopener noreferrer">“IntuneAgentDetector”</a>, GitHub repository and deployment tutorial (README).</li>
+          <li id="src-2"><a href="https://github.com/jeremy1392/IntuneAgentDetector/blob/main/docs/REFERENCE.md" target="_blank" rel="noopener noreferrer">“Agent Detector: technical reference”</a>, <code>docs/REFERENCE.md</code>.</li>
+          <li id="src-3"><a href="https://github.com/jeremy1392/IntuneAgentDetector/blob/main/rules/catalog.yaml" target="_blank" rel="noopener noreferrer">Detection catalog</a>, <code>rules/catalog.yaml</code>, version 2026.11.08.</li>
+          <li id="src-4">Microsoft, <a href="https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool" target="_blank" rel="noopener noreferrer">Microsoft Win32 Content Prep Tool</a>, GitHub repository.</li>
+        </ol>
+
+        <div class="post-note">
+          <strong>Method.</strong> Written from the repository as published on 8 November 2026: README, technical reference, catalog and source code.
+        </div>
+
+        <div class="post-end">
+          <a class="btn btn-primary" href="../blog/en/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            All posts
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjeremycanale.com%2Fintune-agent-detector%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            Share
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="guide-author">
+      <div class="guide-author-card">
+        <span class="guide-author-mark" aria-hidden="true">JC</span>
+        <div class="guide-author-body">
+          <strong>Jeremy Canale</strong>
+          <span class="guide-author-role">AI Applied Security Architect</span>
+          <p>I work with large enterprises on the security of their cloud platforms and, for the past two years, of their agent platforms: identities, isolation, egress control and halt triggers. If that is your problem too, get in touch.</p>
+          <div class="guide-author-links">
+            <a href="https://www.linkedin.com/in/jcanale13/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.malt.fr/profile/jeremycanale" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 9.2 5.5 6.3" fill="currentColor" aria-hidden="true"><path d="M20.195 8.581c-.069 0-.285.026-.484.113-.432.181-.597.311-.597.58v5.023c0 .277.26.355.735.355.467 0 .649-.087.649-.355V8.858c0-.173-.113-.277-.303-.277zm3.502 4.903c-.345.087-.45.113-.57.113-.147 0-.2-.044-.2-.2v-2.161h.788c.207 0 .285-.078.285-.285 0-.173-.078-.26-.285-.26h-.787v-.839c0-.259-.087-.363-.268-.363-.173 0-.415.156-.934.597-.528.45-.83.744-.83.951 0 .121.086.199.224.199h.424v2.335c0 .683.337 1.08.925 1.08.39 0 .675-.146 1.012-.406.311-.242.51-.432.51-.596 0-.139-.103-.217-.294-.165zm-15.21-3.078c-.13 0-.285.026-.484.112-.433.19-.597.312-.597.58v3.2c0 .276.26.354.735.354.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277Zm1.816 0c-.355 0-.675.121-.986.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .251-.078.416-.078.164 0 .25.173.25.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.934-1.115zm2.43 0c-.337 0-.692.121-1.003.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .25-.078.432-.078s.268.173.268.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.951-1.115zm5.335 0a1.29 1.29 0 0 0-.484.112c-.26.113-.398.2-.467.312-.26-.303-.597-.398-.977-.398-1.116 0-1.911.942-1.911 2.283 0 1.124.605 1.954 1.461 1.954.26 0 .493-.104.77-.363.216-.2.32-.329.32-.45a.14.14 0 0 0-.147-.147c-.121 0-.251.104-.416.104-.354 0-.596-.545-.596-1.35 0-.803.32-1.348.804-1.348.32 0 .562.242.562.657v2.525c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277ZM3.499 13.563l-.21.21.619.618c.304.304.79.598 1.244.144.339-.34.26-.695.073-.98-.06.004-1.726.008-1.726.008zm-.963-2.325.21-.21-.608-.607c-.304-.303-.765-.621-1.243-.143-.351.35-.273.692-.087.97Zm2.86.416c-.037.043-1.511 1.524-1.511 1.524h1.154c.43 0 .981-.101.981-.777 0-.496-.296-.683-.624-.747zm-3.244-.031H.981c-.43 0-.981.135-.981.778 0 .479.307.676.641.745.04-.046 1.511-1.523 1.511-1.523zm1.484 3.04-.618-.618-.608.607a2.613 2.613 0 0 1-.137.128c.07.333.266.639.745.639s.676-.307.745-.641c-.043-.037-.085-.073-.127-.115zM2.41 10.15l.608.607.618-.618a2.25 2.25 0 0 1 .128-.118c-.065-.327-.251-.623-.747-.623s-.682.297-.746.625c.046.04.092.08.14.127zm2.742.117c-.455-.454-.94-.16-1.244.144l-2.87 2.87c-.303.303-.621.765-.143 1.243.478.478.94.16 1.243-.143l2.87-2.87c.304-.304.598-.79.144-1.244Z"/></svg>
+              Malt
+            </a>
+            <a href="https://scholar.google.com/citations?user=iL6H-UoAAAAJ" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              Google Scholar
+            </a>
+            <a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Canale,+J" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+              arXiv
+            </a>
+            <a href="mailto:contact@jeremycanale.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              contact@jeremycanale.com
+            </a>
+            <a href="../security-architect-guide/en/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              The security architect survival kit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jeremy Canale</span>
+      <span class="dot-sep">·</span>
+      <span>Agentic Security · AI Trust · Cloud GRC</span>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

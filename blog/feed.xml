@@ -7,6 +7,13 @@
     <language>fr</language>
     <atom:link href="https://jeremycanale.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Agent Detector: finding the AI agents on company Windows PCs</title>
+      <link>https://jeremycanale.com/intune-agent-detector/</link>
+      <guid isPermaLink="true">https://jeremycanale.com/intune-agent-detector/</guid>
+      <pubDate>Sun, 08 Nov 2026 07:00:00 GMT</pubDate>
+      <description>Un détecteur Windows publié sur GitHub et déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.</description>
+    </item>
+    <item>
       <title>DGF-Bench fait son entrée dans AI SAFE²</title>
       <link>https://jeremycanale.com/dgf-bench-ai-safe2/</link>
       <guid isPermaLink="true">https://jeremycanale.com/dgf-bench-ai-safe2/</guid>
