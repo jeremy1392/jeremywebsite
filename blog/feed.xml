@@ -7,11 +7,18 @@
     <language>fr</language>
     <atom:link href="https://jeremycanale.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation</title>
+      <link>https://arxiv.org/abs/2611.12377</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2611.12377</guid>
+      <pubDate>Mon, 09 Nov 2026 07:00:00 GMT</pubDate>
+      <description>Les agents autonomes peuvent accélérer la croissance du shadow IT, et pour retirer ce qu'ils laissent derrière eux, il faut d'abord le détecter. L'article propose une taxonomie de neuf classes d'agents et de six couches d'empreinte sur le poste de travail, et présente Agent Detector, un détecteur Windows open source qui rattache chaque comportement à l'identité du service distant. Sur un banc contrôlé, deux règles fondées sur le seul comportement ont signalé à tort chaque programme jumeau qui dialogue avec un service sans IA ; Agent Detector n'en a signalé aucun et a détecté chaque agent dans la majorité des exécutions.</description>
+    </item>
+    <item>
       <title>Agent Detector: finding the AI agents on company Windows PCs</title>
       <link>https://jeremycanale.com/intune-agent-detector/</link>
       <guid isPermaLink="true">https://jeremycanale.com/intune-agent-detector/</guid>
       <pubDate>Sun, 08 Nov 2026 07:00:00 GMT</pubDate>
-      <description>Un détecteur Windows publié sur GitHub et déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.</description>
+      <description>Un détecteur Windows open source, déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.</description>
     </item>
     <item>
       <title>DGF-Bench fait son entrée dans AI SAFE²</title>

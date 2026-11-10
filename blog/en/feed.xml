@@ -7,11 +7,18 @@
     <language>en</language>
     <atom:link href="https://jeremycanale.com/blog/en/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation</title>
+      <link>https://arxiv.org/abs/2611.12377</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2611.12377</guid>
+      <pubDate>Mon, 09 Nov 2026 07:00:00 GMT</pubDate>
+      <description>Autonomous agents can make shadow IT grow faster, and retiring what they leave behind starts with detecting it. The paper proposes a taxonomy of nine agent classes and six layers of endpoint footprint, and presents Agent Detector, an open-source Windows detector that ties behaviour to the identity of the remote service. On a controlled bench, two behavioural rules flagged every non-AI twin of an agent; Agent Detector flagged none and detected every agent in the majority of runs.</description>
+    </item>
+    <item>
       <title>Agent Detector: finding the AI agents on company Windows PCs</title>
       <link>https://jeremycanale.com/intune-agent-detector/</link>
       <guid isPermaLink="true">https://jeremycanale.com/intune-agent-detector/</guid>
       <pubDate>Sun, 08 Nov 2026 07:00:00 GMT</pubDate>
-      <description>A Windows detector, published on GitHub and deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Event Log. It never blocks anything.</description>
+      <description>An open-source Windows detector, deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Event Log. It never blocks anything.</description>
     </item>
     <item>
       <title>DGF-Bench makes its way into AI SAFE²</title>

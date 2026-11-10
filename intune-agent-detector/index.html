@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#070b1c" />
 
   <title>Agent Detector: finding the AI agents on company Windows PCs | Jeremy Canale</title>
-  <meta name="description" content="A Windows detector, published on GitHub and deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Windows Event Log. Detection only: it never blocks anything." />
+  <meta name="description" content="An open-source Windows detector, deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Windows Event Log. Detection only: it never blocks anything." />
   <meta name="keywords" content="AI agent detection, shadow AI, Microsoft Intune, Win32 app, Windows Event Log, Microsoft Sentinel, AI policy, Claude Code, Cursor, Ollama, MCP, endpoint security, Jeremy Canale" />
   <meta name="author" content="Jeremy Canale" />
   <link rel="canonical" href="https://jeremycanale.com/intune-agent-detector/" />
@@ -32,6 +32,7 @@
   <meta property="article:tag" content="Agentic security" />
   <meta property="article:tag" content="Microsoft Intune" />
   <meta property="article:tag" content="Shadow AI" />
+  <meta property="article:tag" content="Open source" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Agent Detector: finding the AI agents on company Windows PCs" />
@@ -54,12 +55,12 @@
       "@id": "https://jeremycanale.com/intune-agent-detector/"
     },
     "headline": "Agent Detector: finding the AI agents on company Windows PCs",
-    "description": "A Windows detector, published on GitHub and deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Windows Event Log. Detection only: it never blocks anything.",
+    "description": "An open-source Windows detector, deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Windows Event Log. Detection only: it never blocks anything.",
     "image": "https://jeremycanale.com/images/intune-agent-detector-cover.jpg",
     "inLanguage": "en",
     "datePublished": "2026-11-08",
-    "dateModified": "2026-11-08",
-    "wordCount": 1846,
+    "dateModified": "2026-11-10",
+    "wordCount": 1939,
     "author": {
       "@type": "Person",
       "name": "Jeremy Canale",
@@ -198,7 +199,7 @@
     <article class="post-wrap">
 
       <header class="post-header">
-        <span class="post-kicker post-kicker-signal">Agentic security · Detection tool</span>
+        <span class="post-kicker post-kicker-signal">Agentic security · Open source</span>
         <h1 class="post-title">Agent Detector: finding the AI agents on company Windows PCs</h1>
         <p class="post-dek">Coding agents, AI editors, local models, and twenty lines of Python that call an LLM and run shell commands. I built a small detector that finds them on Windows PCs, shows users the company AI policy, and leaves IT Security a record in the Event Log. It never blocks anything.</p>
         <div class="post-byline">
@@ -210,6 +211,8 @@
           <span data-read-time>8 min read</span>
           <span class="sep">·</span>
           <a href="https://github.com/jeremy1392/IntuneAgentDetector" target="_blank" rel="noopener noreferrer">Code on GitHub</a>
+          <span class="sep">·</span>
+          <a href="https://arxiv.org/abs/2611.12377" target="_blank" rel="noopener noreferrer">Paper on arXiv</a>
         </div>
       </header>
 
@@ -352,6 +355,8 @@
           <p>Two options are worth deciding before the first deployment. Silent mode, <code>-NoDisclaimer</code>, scans and logs without showing any window, so you can see what your fleet looks like before users see anything. An assignment filter on device ownership keeps personal PCs enrolled in the tenant out of scope.</p>
 
           <p>The code, the catalog and the full reference are on GitHub <a class="post-cite" href="#src-1">[1]</a>. The catalog is the part that will age fastest: its endpoints and identifiers were checked against vendor documentation and DNS on 8 November 2026, and the reference recommends reviewing it every month <a class="post-cite" href="#src-2">[2]</a> <a class="post-cite" href="#src-3">[3]</a>.</p>
+
+          <p>The research paper that goes with the detector, co-authored with Fabien Soulis, is on arXiv <a class="post-cite" href="#src-5">[5]</a>. It proposes a taxonomy of nine classes of agents and six layers of endpoint footprint, and argues that rules based only on the structure of processes and connections cannot tell an agent from its behavioral twin, the same program talking to a non-AI service. On a controlled bench of synthetic agents, AI components and benign workloads, two behavioral rules flagged every behavioral twin; Agent Detector flagged none and detected every agent in the majority of runs.</p>
         </section>
 
         <h2 id="sources">Sources</h2>
@@ -361,6 +366,7 @@
           <li id="src-2"><a href="https://github.com/jeremy1392/IntuneAgentDetector/blob/main/docs/REFERENCE.md" target="_blank" rel="noopener noreferrer">“Agent Detector: technical reference”</a>, <code>docs/REFERENCE.md</code>.</li>
           <li id="src-3"><a href="https://github.com/jeremy1392/IntuneAgentDetector/blob/main/rules/catalog.yaml" target="_blank" rel="noopener noreferrer">Detection catalog</a>, <code>rules/catalog.yaml</code>, version 2026.11.08.</li>
           <li id="src-4">Microsoft, <a href="https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool" target="_blank" rel="noopener noreferrer">Microsoft Win32 Content Prep Tool</a>, GitHub repository.</li>
+          <li id="src-5">J. Canale and F. Soulis, <a href="https://arxiv.org/abs/2611.12377" target="_blank" rel="noopener noreferrer">“Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation”</a>, arXiv:2611.12377, 9 November 2026.</li>
         </ol>
 
         <div class="post-note">

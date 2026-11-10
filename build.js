@@ -648,7 +648,7 @@ function buildRoot() {
 /* ---------- BLOG INDEX (fr + en) ---------- */
 /* One page per locale that declares a `blog` block, listing the paper, soc, analysis, incident and
    guide entries (newest first) with the same data as the home banners, plus an RSS feed next to it. */
-function blogPosts(dict) { return [dict.agentDetector, dict.safe2, dict.paperReplay, dict.paperAlign, dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
+function blogPosts(dict) { return [dict.paperShadow, dict.agentDetector, dict.safe2, dict.paperReplay, dict.paperAlign, dict.paperBench, dict.paper, dict.paperGate, dict.soc, dict.analysis, dict.incident, dict.guide].filter(Boolean); }
 
 function renderBlogPage(lang) {
   const dict = I18N[lang], bl = dict.blog;

@@ -19,6 +19,21 @@ window.I18N = {
     /* arXiv papers. `external: true` keeps the absolute URL as is and opens it in a new tab;
        `slug` replaces the anchor id that slugOf() would otherwise read from the path.
        Titles stay in English in every locale: a paper's title is its citation. */
+    paperShadow: {
+      kicker: "Research paper · arXiv",
+      date: "9 November 2026",
+      dateISO: "2026-11-09",
+      title: "Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation",
+      desc: "Autonomous agents can make shadow IT grow faster, and retiring what they leave behind starts with detecting it. The paper proposes a taxonomy of nine agent classes and six layers of endpoint footprint, and presents Agent Detector, an open-source Windows detector that ties behaviour to the identity of the remote service. On a controlled bench, two behavioural rules flagged every non-AI twin of an agent; Agent Detector flagged none and detected every agent in the majority of runs.",
+      note: "arXiv:2611.12377 · cs.AI, cs.CR · co-authored with Fabien Soulis",
+      cta: "Read on arXiv",
+      url: "https://arxiv.org/abs/2611.12377",
+      external: true,
+      slug: "paper-shadow-ai",
+      cover: "images/paper-shadow-ai-arxiv.jpg",
+      variant: "signal",
+      extra: { url: "https://github.com/jeremy1392/IntuneAgentDetector", label: "GitHub", note: "The detector's code, catalog and evaluation bench" }
+    },
     paperReplay: {
       kicker: "Research paper · arXiv",
       date: "29 October 2026",
@@ -105,11 +120,11 @@ window.I18N = {
     /* Long-form analysis. Blog posts are listed newest first: soc, analysis, incident, guide
        (see blogPosts() in build.js). Each block also gets a home page banner. */
     agentDetector: {
-      kicker: "Agentic security · Detection tool",
+      kicker: "Agentic security · Open source",
       date: "8 November 2026",
       dateISO: "2026-11-08",
       title: "Agent Detector: finding the AI agents on company Windows PCs",
-      desc: "A Windows detector, published on GitHub and deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Event Log. It never blocks anything.",
+      desc: "An open-source Windows detector, deployed with Microsoft Intune, that finds known AI tools and home-made agents on company PCs, makes every user accept the AI policy, and logs everything to the Event Log. It never blocks anything.",
       note: "Article · 8 min read · code on GitHub",
       cta: "Read the article",
       url: "intune-agent-detector/",
@@ -282,11 +297,11 @@ window.I18N = {
       readReview: "Read the review",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
       p5: {
-        project: "Author's repository · Windows detector in Go, deployed as an Intune Win32 app",
+        project: "Author's repository · detector, catalog and evaluation bench of the paper arXiv:2611.12377, co-authored with Fabien Soulis",
         desc: "Detects the 39 AI tools of its catalog, home-made agents that connect to an LLM service and run commands, and recent use left in Windows traces. Every user who has an agent must accept the company AI policy in a window that comes back at each scan, and scans and acceptances go to the Windows Event Log for the SIEM. Detection only: it never blocks, closes or uninstalls anything.",
         context: "Read the article: <a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
         date: "8 November 2026",
-        files: "Go · PowerShell",
+        files: "MIT license · Go · PowerShell",
         tests: "39 catalogued tools · scan under 2 seconds · no network call"
       },
       p2: {
@@ -429,6 +444,21 @@ window.I18N = {
     /* Articles arXiv. `external: true` conserve l'URL absolue et ouvre un nouvel onglet ;
        `slug` remplace l'identifiant d'ancre que slugOf() tirerait du chemin.
        Les titres restent en anglais dans toutes les langues : le titre d'un article est sa citation. */
+    paperShadow: {
+      kicker: "Article de recherche · arXiv",
+      date: "9 novembre 2026",
+      dateISO: "2026-11-09",
+      title: "Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation",
+      desc: "Les agents autonomes peuvent accélérer la croissance du shadow IT, et pour retirer ce qu'ils laissent derrière eux, il faut d'abord le détecter. L'article propose une taxonomie de neuf classes d'agents et de six couches d'empreinte sur le poste de travail, et présente Agent Detector, un détecteur Windows open source qui rattache chaque comportement à l'identité du service distant. Sur un banc contrôlé, deux règles fondées sur le seul comportement ont signalé à tort chaque programme jumeau qui dialogue avec un service sans IA ; Agent Detector n'en a signalé aucun et a détecté chaque agent dans la majorité des exécutions.",
+      note: "arXiv:2611.12377 · cs.AI, cs.CR · coécrit avec Fabien Soulis · en anglais",
+      cta: "Lire sur arXiv",
+      url: "https://arxiv.org/abs/2611.12377",
+      external: true,
+      slug: "paper-shadow-ai",
+      cover: "images/paper-shadow-ai-arxiv.jpg",
+      variant: "signal",
+      extra: { url: "https://github.com/jeremy1392/IntuneAgentDetector", label: "GitHub", note: "Le code du détecteur, son catalogue et le banc d'évaluation" }
+    },
     paperReplay: {
       kicker: "Article de recherche · arXiv",
       date: "29 octobre 2026",
@@ -516,11 +546,11 @@ window.I18N = {
        soc, analysis, incident, guide (voir blogPosts() dans build.js). */
     /* Article en anglais uniquement : le titre reste en anglais, la note le signale. */
     agentDetector: {
-      kicker: "Sécurité agentique · Outil de détection",
+      kicker: "Sécurité agentique · Open source",
       date: "8 novembre 2026",
       dateISO: "2026-11-08",
       title: "Agent Detector: finding the AI agents on company Windows PCs",
-      desc: "Un détecteur Windows publié sur GitHub et déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.",
+      desc: "Un détecteur Windows open source, déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.",
       note: "Article en anglais · 8 min de lecture · code sur GitHub",
       cta: "Lire l'article",
       url: "intune-agent-detector/",
@@ -694,11 +724,11 @@ window.I18N = {
       readReview: "Lire l'analyse",
       /* Carte de dépôt curée (DGF-Bench, dépôt de l'auteur), statique : la recherche API exclut les dépôts de l'auteur. */
       p5: {
-        project: "Dépôt de l'auteur · détecteur Windows en Go, déployé comme application Win32 Intune",
+        project: "Dépôt de l'auteur · détecteur, catalogue et banc d'évaluation de l'article arXiv:2611.12377, coécrit avec Fabien Soulis",
         desc: "Repère les 39 outils d'IA de son catalogue, les agents développés en interne qui se connectent à un service de LLM et exécutent des commandes, et les usages récents laissés dans les traces de Windows. Chaque utilisateur chez qui un agent est trouvé doit accepter la politique IA de l'entreprise dans une fenêtre qui revient à chaque analyse ; analyses et acceptations sont consignées dans le journal d'événements Windows, pour le SIEM. Détection seulement : il ne bloque, ne ferme et ne désinstalle rien.",
         context: "Lire l'article (en anglais) : <a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
         date: "8 novembre 2026",
-        files: "Go · PowerShell",
+        files: "Licence MIT · Go · PowerShell",
         tests: "39 outils catalogués · analyse en moins de 2 secondes · aucun appel réseau"
       },
       p2: {
@@ -941,11 +971,11 @@ window.I18N = {
       readReview: "阅读评审",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
       p5: {
-        project: "作者的仓库 · 用 Go 编写的 Windows 检测程序，以 Intune Win32 应用部署",
+        project: "作者的仓库 · 论文 arXiv:2611.12377 的检测程序、目录与评测基准，与 Fabien Soulis 合著",
         desc: "检测其目录中的 39 款 AI 工具、连接 LLM 服务并执行命令的自建智能体，以及 Windows 痕迹中留下的近期使用记录。凡检测到智能体的用户，都必须在每次扫描都会重新出现的窗口中接受公司的 AI 政策；扫描与接受记录写入 Windows 事件日志，供 SIEM 使用。仅做检测：从不阻止、关闭或卸载任何程序。",
         context: "阅读文章（英文）：<a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
         date: "2026年11月8日",
-        files: "Go · PowerShell",
+        files: "MIT 许可证 · Go · PowerShell",
         tests: "目录收录 39 款工具 · 扫描不到 2 秒 · 无网络请求"
       },
       p2: {
@@ -1188,11 +1218,11 @@ window.I18N = {
       readReview: "اقرأ المراجعة",
       /* Curated repository card (the author's own DGF-Bench), kept static: the API search excludes the author's repositories. */
       p5: {
-        project: "مستودع المؤلف · أداة كشف لنظام Windows مكتوبة بلغة Go وتُنشر كتطبيق Win32 عبر Intune",
+        project: "مستودع المؤلف · أداة الكشف والفهرس ومنصة التقييم الخاصة بالورقة البحثية arXiv:2611.12377، بالاشتراك مع Fabien Soulis",
         desc: "تكشف أدوات الذكاء الاصطناعي الـ39 الواردة في فهرسها، والوكلاء المطوَّرين داخليًا الذين يتصلون بخدمة LLM وينفذون أوامر، والاستخدام الحديث الذي تتركه آثار Windows. ويتعيّن على كل مستخدم يُكتشف لديه وكيل أن يقبل سياسة الذكاء الاصطناعي للشركة في نافذة تعود عند كل فحص، وتُسجَّل عمليات الفحص والقبول في سجل أحداث Windows لاستخدامها في SIEM. للكشف فقط: لا تحظر أي شيء ولا تغلقه ولا تزيل تثبيته.",
         context: "اقرأ المقال (بالإنجليزية): <a href=\"intune-agent-detector/\">Agent Detector: finding the AI agents on company Windows PCs</a>",
         date: "8 نوفمبر 2026",
-        files: "Go · PowerShell",
+        files: "رخصة MIT · Go · PowerShell",
         tests: "39 أداة في الفهرس · فحص في أقل من ثانيتين · بلا أي اتصال شبكي"
       },
       p2: {

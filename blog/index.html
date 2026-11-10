@@ -21,7 +21,7 @@
   <meta property="og:title" content="Mes recherches sur la sécurité des IA et l'alignement" />
   <meta property="og:description" content="Articles de recherche, analyses d'incidents et ressources gratuites sur la sécurité, l'alignement et la gouvernance des agents IA." />
   <meta property="og:url" content="https://jeremycanale.com/blog/" />
-  <meta property="og:image" content="https://jeremycanale.com/images/intune-agent-detector-cover.jpg" />
+  <meta property="og:image" content="https://jeremycanale.com/images/paper-shadow-ai-arxiv.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mes recherches sur la sécurité des IA et l'alignement" />
   <meta name="twitter:description" content="Articles de recherche, analyses d'incidents et ressources gratuites sur la sécurité, l'alignement et la gouvernance des agents IA." />
@@ -64,8 +64,27 @@
   "blogPost": [
     {
       "@type": "BlogPosting",
+      "headline": "Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation",
+      "description": "Les agents autonomes peuvent accélérer la croissance du shadow IT, et pour retirer ce qu'ils laissent derrière eux, il faut d'abord le détecter. L'article propose une taxonomie de neuf classes d'agents et de six couches d'empreinte sur le poste de travail, et présente Agent Detector, un détecteur Windows open source qui rattache chaque comportement à l'identité du service distant. Sur un banc contrôlé, deux règles fondées sur le seul comportement ont signalé à tort chaque programme jumeau qui dialogue avec un service sans IA ; Agent Detector n'en a signalé aucun et a détecté chaque agent dans la majorité des exécutions.",
+      "url": "https://arxiv.org/abs/2611.12377",
+      "datePublished": "2026-11-09",
+      "image": "https://jeremycanale.com/images/paper-shadow-ai-arxiv.jpg",
+      "inLanguage": "fr",
+      "author": {
+        "@type": "Person",
+        "name": "Jeremy Canale",
+        "url": "https://jeremycanale.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/jcanale13/",
+          "https://www.malt.fr/profile/jeremycanale",
+          "https://scholar.google.com/citations?user=iL6H-UoAAAAJ"
+        ]
+      }
+    },
+    {
+      "@type": "BlogPosting",
       "headline": "Agent Detector: finding the AI agents on company Windows PCs",
-      "description": "Un détecteur Windows publié sur GitHub et déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.",
+      "description": "Un détecteur Windows open source, déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.",
       "url": "https://jeremycanale.com/intune-agent-detector/",
       "datePublished": "2026-11-08",
       "image": "https://jeremycanale.com/images/intune-agent-detector-cover.jpg",
@@ -385,14 +404,34 @@
 
         <article class="blog-card">
           <div class="resource-banner-inner resource-banner-signal">
+            <img class="resource-banner-cover" src="../images/paper-shadow-ai-arxiv.jpg" width="1200" height="627" alt="" loading="lazy" />
+            <div class="resource-banner-text">
+              <div class="resource-banner-head">
+                <span class="resource-banner-kicker">Article de recherche · arXiv</span>
+                <time class="resource-banner-date" datetime="2026-11-09">9 novembre 2026</time>
+              </div>
+              <h2><a class="resource-banner-link" href="https://arxiv.org/abs/2611.12377" target="_blank" rel="noopener noreferrer">Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation</a></h2>
+              <p>Les agents autonomes peuvent accélérer la croissance du shadow IT, et pour retirer ce qu'ils laissent derrière eux, il faut d'abord le détecter. L'article propose une taxonomie de neuf classes d'agents et de six couches d'empreinte sur le poste de travail, et présente Agent Detector, un détecteur Windows open source qui rattache chaque comportement à l'identité du service distant. Sur un banc contrôlé, deux règles fondées sur le seul comportement ont signalé à tort chaque programme jumeau qui dialogue avec un service sans IA ; Agent Detector n'en a signalé aucun et a détecté chaque agent dans la majorité des exécutions.</p>
+              <span class="resource-banner-note">arXiv:2611.12377 · cs.AI, cs.CR · coécrit avec Fabien Soulis · en anglais</span>
+              <p class="resource-banner-extra"><a href="https://github.com/jeremy1392/IntuneAgentDetector" target="_blank" rel="noopener noreferrer">GitHub</a><span>Le code du détecteur, son catalogue et le banc d'évaluation</span></p>
+            </div>
+            <span class="btn btn-primary resource-banner-cta">
+              <span>Lire sur arXiv</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="resource-banner-inner resource-banner-signal">
             <img class="resource-banner-cover" src="../images/intune-agent-detector-cover.jpg" width="1200" height="627" alt="" loading="lazy" />
             <div class="resource-banner-text">
               <div class="resource-banner-head">
-                <span class="resource-banner-kicker">Sécurité agentique · Outil de détection</span>
+                <span class="resource-banner-kicker">Sécurité agentique · Open source</span>
                 <time class="resource-banner-date" datetime="2026-11-08">8 novembre 2026</time>
               </div>
               <h2><a class="resource-banner-link" href="../intune-agent-detector/">Agent Detector: finding the AI agents on company Windows PCs</a></h2>
-              <p>Un détecteur Windows publié sur GitHub et déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.</p>
+              <p>Un détecteur Windows open source, déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.</p>
               <span class="resource-banner-note">Article en anglais · 8 min de lecture · code sur GitHub</span>
             </div>
             <span class="btn btn-primary resource-banner-cta">

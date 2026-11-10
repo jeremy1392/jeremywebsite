@@ -833,16 +833,39 @@
     <!-- ====================== CERTIFICATIONS ====================== -->
     <!-- guide:start -->
     <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
+    <section class="resource-banner resource-banner-signal" id="paper-shadow-ai" aria-labelledby="paper-shadow-ai-title">
+      <div class="resource-banner-inner">
+        <img class="resource-banner-cover" src="images/paper-shadow-ai-arxiv.jpg" width="1200" height="627" alt="" loading="lazy" />
+        <div class="resource-banner-text">
+          <div class="resource-banner-head">
+            <span class="resource-banner-kicker">Article de recherche · arXiv</span>
+            <time class="resource-banner-date" datetime="2026-11-09">9 novembre 2026</time>
+          </div>
+          <h2 id="paper-shadow-ai-title"><a class="resource-banner-link" href="https://arxiv.org/abs/2611.12377" target="_blank" rel="noopener noreferrer">Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation</a></h2>
+          <p>Les agents autonomes peuvent accélérer la croissance du shadow IT, et pour retirer ce qu'ils laissent derrière eux, il faut d'abord le détecter. L'article propose une taxonomie de neuf classes d'agents et de six couches d'empreinte sur le poste de travail, et présente Agent Detector, un détecteur Windows open source qui rattache chaque comportement à l'identité du service distant. Sur un banc contrôlé, deux règles fondées sur le seul comportement ont signalé à tort chaque programme jumeau qui dialogue avec un service sans IA ; Agent Detector n'en a signalé aucun et a détecté chaque agent dans la majorité des exécutions.</p>
+          <span class="resource-banner-note">arXiv:2611.12377 · cs.AI, cs.CR · coécrit avec Fabien Soulis · en anglais</span>
+          <p class="resource-banner-extra"><a href="https://github.com/jeremy1392/IntuneAgentDetector" target="_blank" rel="noopener noreferrer">GitHub</a><span>Le code du détecteur, son catalogue et le banc d'évaluation</span></p>
+        </div>
+        <span class="btn btn-primary resource-banner-cta">
+          <span>Lire sur arXiv</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </section>
+    <!-- guide:end -->
+
+    <!-- guide:start -->
+    <!-- ====================== RESOURCE BANNER (locale-specific, see i18n guide block) ====================== -->
     <section class="resource-banner resource-banner-signal" id="intune-agent-detector" aria-labelledby="intune-agent-detector-title">
       <div class="resource-banner-inner">
         <img class="resource-banner-cover" src="images/intune-agent-detector-cover.jpg" width="1200" height="627" alt="" loading="lazy" />
         <div class="resource-banner-text">
           <div class="resource-banner-head">
-            <span class="resource-banner-kicker">Sécurité agentique · Outil de détection</span>
+            <span class="resource-banner-kicker">Sécurité agentique · Open source</span>
             <time class="resource-banner-date" datetime="2026-11-08">8 novembre 2026</time>
           </div>
           <h2 id="intune-agent-detector-title"><a class="resource-banner-link" href="intune-agent-detector/">Agent Detector: finding the AI agents on company Windows PCs</a></h2>
-          <p>Un détecteur Windows publié sur GitHub et déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.</p>
+          <p>Un détecteur Windows open source, déployé avec Microsoft Intune, qui repère les outils d'IA connus et les agents développés en interne sur les postes de l'entreprise, fait accepter la politique IA à chaque utilisateur et consigne tout dans le journal d'événements Windows. Il ne bloque rien.</p>
           <span class="resource-banner-note">Article en anglais · 8 min de lecture · code sur GitHub</span>
         </div>
         <span class="btn btn-primary resource-banner-cta">
@@ -2338,12 +2361,13 @@
             <div class="contrib-state"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg><span  data-i18n="contrib.repo">Dépôt public</span></div>
           </div>
           <h3 class="contrib-title"><a href="https://github.com/jeremy1392/IntuneAgentDetector" target="_blank" rel="noopener noreferrer" dir="ltr">Agent Detector: find the AI agents on company Windows PCs, deployed with Intune</a></h3>
-          <div class="contrib-project"  data-i18n="contrib.p5.project">Dépôt de l'auteur · détecteur Windows en Go, déployé comme application Win32 Intune</div>
+          <div class="contrib-project"  data-i18n="contrib.p5.project">Dépôt de l'auteur · détecteur, catalogue et banc d'évaluation de l'article arXiv:2611.12377, coécrit avec Fabien Soulis</div>
           <p  data-i18n="contrib.p5.desc">Repère les 39 outils d'IA de son catalogue, les agents développés en interne qui se connectent à un service de LLM et exécutent des commandes, et les usages récents laissés dans les traces de Windows. Chaque utilisateur chez qui un agent est trouvé doit accepter la politique IA de l'entreprise dans une fenêtre qui revient à chaque analyse ; analyses et acceptations sont consignées dans le journal d'événements Windows, pour le SIEM. Détection seulement : il ne bloque, ne ferme et ne désinstalle rien.</p>
           <p  data-i18n="contrib.p5.context">Lire l'article (en anglais) : <a href="intune-agent-detector/">Agent Detector: finding the AI agents on company Windows PCs</a></p>
           <div class="contrib-foot">
-            <div class="contrib-stats"><time datetime="2026-11-08"  data-i18n="contrib.p5.date">8 novembre 2026</time> · <span  data-i18n="contrib.p5.files">Go · PowerShell</span> · <span  data-i18n="contrib.p5.tests">39 outils catalogués · analyse en moins de 2 secondes · aucun appel réseau</span></div>
+            <div class="contrib-stats"><time datetime="2026-11-08"  data-i18n="contrib.p5.date">8 novembre 2026</time> · <span  data-i18n="contrib.p5.files">Licence MIT · Go · PowerShell</span> · <span  data-i18n="contrib.p5.tests">39 outils catalogués · analyse en moins de 2 secondes · aucun appel réseau</span></div>
             <div class="contrib-links">
+              <a class="contrib-link" href="https://arxiv.org/abs/2611.12377" target="_blank" rel="noopener noreferrer" dir="ltr">arXiv<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
               <a class="contrib-link" href="https://github.com/jeremy1392/IntuneAgentDetector" target="_blank" rel="noopener noreferrer"><span  data-i18n="contrib.viewRepo">Voir le dépôt</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
             </div>
           </div>
